@@ -10,7 +10,7 @@
     <div class="col col-50">
         <div class="list">
             <span ng-repeat="cur in data.currencies">
-            <a ng-if="!(selected.cross2 && selected.cross2['Numeric Code'] == cur['Numeric Code'])"  href="#" class="item item-icon-left size-14" ng-click="selected.cross1 = cur">
+            <a ng-if="!(selected.cross2 && selected.cross2['Numeric Code'] == cur['Numeric Code'])"  href="#" class="item item-icon-left size-14" ng-click="selected.cross1 = cur" ng-class="{'positive':(selected.cross1 && selected.cross1['Numeric Code'] == cur['Numeric Code'])}">
             <i ng-class="{'ion-ios7-circle-filled':(selected.cross1 && selected.cross1['Numeric Code'] == cur['Numeric Code']), 'ion-ios7-circle-outline':!(selected.cross1 && selected.cross1['Numeric Code'] == cur['Numeric Code'])}" class="icon size-14"></i>
             {{cur['Alphabetic Code']}}
             </a>
@@ -20,7 +20,7 @@
     <div class="col col-50">
         <div class="list">
             <span ng-repeat="cur in data.currencies">
-            <a ng-if="!(selected.cross1 && selected.cross1['Numeric Code'] == cur['Numeric Code'])" href="#" class="item item-icon-left size-14" ng-click="selected.cross2 = cur">
+            <a ng-if="!(selected.cross1 && selected.cross1['Numeric Code'] == cur['Numeric Code'])" href="#" class="item item-icon-left size-14" ng-click="selected.cross2 = cur" ng-class="{'positive':(selected.cross2 && selected.cross2['Numeric Code'] == cur['Numeric Code'])}">
             <i ng-class="{'ion-ios7-circle-filled':(selected.cross2 && selected.cross2['Numeric Code'] == cur['Numeric Code']), 'ion-ios7-circle-outline':!(selected.cross2 && selected.cross2['Numeric Code'] == cur['Numeric Code'])}" class="icon size-14"></i>
             {{cur['Alphabetic Code']}}
             </a>
