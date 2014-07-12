@@ -1,0 +1,43 @@
+<ion-view title="FXPAL" hide-back-button="true">
+<ion-nav-buttons side="left">
+<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+</ion-nav-buttons>
+<ion-content has-header="true" padding="true" ng-controller="analyticsController">
+<div class="row row-top">
+    <div class="col col-50">
+        <h4><i class="icon ion-ios7-world"></i> Crosses 
+        <span ng-if="(selected.cross1 && selected.cross2)" class="positive">{{selected.cross1['Alphabetic Code']}}/{{selected.cross2['Alphabetic Code']}}</span>
+        </h4>
+        <div class="row">
+            <div class="col col-50">
+                <div class="list">
+                    <a ng-if="!(selected.cross2 && selected.cross2['Numeric Code'] == cur['Numeric Code'])"  href="#" class="item item-icon-left" ng-repeat="cur in data.currencies" ng-click="selected.cross1 = cur">
+                    <i ng-class="{'ion-ios7-circle-filled':(selected.cross1 && selected.cross1['Numeric Code'] == cur['Numeric Code']), 'ion-ios7-circle-outline':!(selected.cross1 && selected.cross1['Numeric Code'] == cur['Numeric Code'])}" class="icon"></i>
+                    {{cur['Alphabetic Code']}}
+                    </a>
+                </div>
+            </div>
+            <div class="col col-50">
+                <div class="list">
+                    <a ng-if="!(selected.cross1 && selected.cross1['Numeric Code'] == cur['Numeric Code'])" href="#" class="item item-icon-left" ng-repeat="cur in data.currencies" ng-click="selected.cross2 = cur">
+                    <i ng-class="{'ion-ios7-circle-filled':(selected.cross2 && selected.cross2['Numeric Code'] == cur['Numeric Code']), 'ion-ios7-circle-outline':!(selected.cross2 && selected.cross2['Numeric Code'] == cur['Numeric Code'])}" class="icon"></i>
+                    {{cur['Alphabetic Code']}}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col col-50">
+        sdsd
+    </div>
+</div>
+<div class="row row-bottom">
+    <div class="col col-50">
+        sd
+    </div>
+    <div class="col col-50">
+        sdsd
+    </div>
+</div>
+</ion-content>
+</ion-view>
