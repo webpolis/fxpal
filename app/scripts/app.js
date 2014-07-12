@@ -7,7 +7,16 @@ angular.module('aifxApp', ['ngAnimate', 'ngCookies', 'ngResource', 'ngRoute', 'n
         url: '/main',
         views: {
             'menuContent': {
-                templateUrl: 'views/main.html'
+                templateUrl: 'views/main.html',
+                controller: 'analyticsController'
+            }
+        }
+    }).state('app.cross', {
+        url: '/cross',
+        views: {
+            'menuContent': {
+                templateUrl: 'views/cross.html',
+                controller: 'analyticsController'
             }
         }
     });

@@ -8,7 +8,8 @@
     "jsonPath": true,
     "flexmonster": true,
     "console": true,
-    "csv2json":true
+    "csv2json": true,
+    "moment": true
   },
   "globalstrict": true,
   "quotmark": true,

@@ -13,7 +13,8 @@
     "angular-touch": "~1.2.20",
     "angular-route": "~1.2.20",
     "ionic": "~1.0",
-    "csv2json": "~0.0.4"
+    "csv2json": "~0.0.4",
+    "momentjs": "~2.7.0"
   },
   "devDependencies": {
     "angular-mocks": "~1.2.20",
