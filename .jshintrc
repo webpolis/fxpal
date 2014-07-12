@@ -1,0 +1,25 @@
+{
+  "browser": true,
+  "esnext": true,
+  "globals": {
+    "angular": true,
+    "require": true,
+    "define": true,
+    "jsonPath": true,
+    "flexmonster": true,
+    "console": true,
+    "csv2json":true
+  },
+  "globalstrict": true,
+  "quotmark": true,
+  "smarttabs": true,
+  "trailing": true,
+  "undef": true,
+  "unused": false,
+  "multistr": true,
+  "strict": true,
+  "evil": true,
+  "expr": true,
+  "debug": true,
+  "node":true
+}
