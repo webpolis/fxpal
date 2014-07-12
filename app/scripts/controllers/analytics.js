@@ -35,7 +35,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         angular.forEach(crosses, function(c, k) {
             angular.forEach(crossesRev, function(cc, kk) {
                 var ccc = c + cc;
-                if (c !== cc && (finalCrosses.indexOf(ccc.split('').reverse().join('')) === -1)) {
+                if (c !== cc && finalCrosses.indexOf(cc + c) === -1) {
                     finalCrosses.push(ccc);
                 }
             });
