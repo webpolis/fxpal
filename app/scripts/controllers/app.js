@@ -4,8 +4,8 @@ angular.module('aifxApp').controller('appController', function($scope, $ionicSid
         currencies: null
     };
     $scope.selected = {
-    	cross1:null,
-    	cross2:null
+        cross1: null,
+        cross2: null
     };
     $scope.toggleLeft = function() {
         $ionicSideMenuDelegate.$getByHandle('menuLeft').toggleLeft();
