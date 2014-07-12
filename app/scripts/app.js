@@ -2,8 +2,7 @@
 angular.module('aifxApp', ['ngAnimate', 'ngCookies', 'ngResource', 'ngRoute', 'ngSanitize', 'ngTouch', 'ionic']).config(function($stateProvider, $urlRouterProvider) {
     $stateProvider.state('app', {
         url: '/app',
-        templateUrl: 'views/menu.html',
-        controller: 'appController'
+        templateUrl: 'views/menu.html'
     }).state('app.test', {
         url: '/test',
         views: {

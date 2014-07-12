@@ -4,7 +4,7 @@ angular.module('aifxApp').controller('appController', function($scope, $ionicSid
         currencies: null
     };
     $scope.toggleLeft = function() {
-        $ionicSideMenuDelegate.toggleLeft();
+        $ionicSideMenuDelegate.$getByHandle('menuLeft').toggleLeft();
     };
     $scope.init = function() {
         csv2json.csv('data/currencies.csv', function(data) {

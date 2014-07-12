@@ -12,7 +12,7 @@
     "angular-animate": "~1.2.20",
     "angular-touch": "~1.2.20",
     "angular-route": "~1.2.20",
-    "ionic": "~0.9.27",
+    "ionic": "~1.0",
     "csv2json": "~0.0.4"
   },
   "devDependencies": {
