@@ -1,6 +1,9 @@
 'use strict';
-angular.module('aifxApp').controller('analyticsController', function($scope, $ionicSideMenuDelegate, $http) {
+angular.module('aifxApp').controller('analyticsController', function($scope, $ionicSideMenuDelegate, $http, $ionicLoading) {
     $scope.start = function() {
+        $ionicLoading.show({
+            template: 'Loading...'
+        });
         var cross = $scope.selected.cross1['Alphabetic Code'] + $scope.selected.cross2['Alphabetic Code'],
             startDate = moment().subtract('years', 2).format('YYYY-MM-DD'),
             endDate = moment().format('YYYY-MM-DD');
@@ -9,6 +12,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                 $scope.data.cross.columns = ret.column_names;
                 $scope.data.cross.data = ret.data;
             }
+            $ionicLoading.hide();
         });
     };
 });
