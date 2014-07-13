@@ -10,9 +10,11 @@
     <div class="col col-80">
         <div class="card">
             <div class="item item-divider">
-                <span class="maroon">Correlated items</span>
+                <span class="maroon pull-left">Correlated items</span>
+                <span class="pull-right gray">Daily change</span>
             </div>
             <div class="item item-text-wrap">
+                <span class="energized" ng-if="!selected.correlation || selected.correlation.length == 0">No relevant items found</span>
                 <div class="row" ng-repeat="corr in selected.correlation">
                     <div class="col col-90">
                         <span class="size-12" ng-class="{'green':corr.rel>0,'red':corr.rel<0}">

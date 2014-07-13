@@ -98,6 +98,9 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                         sets.push(cross + '.1');
                     }
                 });
+                if (sets.length === 0) {
+                    return;
+                }
                 $ionicLoading.show({
                     template: 'Loading...'
                 });
