@@ -1,9 +1,14 @@
 'use strict';
-angular.module('aifxApp').controller('analyticsController', function($scope, $ionicSideMenuDelegate, $http, $ionicLoading) {
+angular.module('aifxApp').controller('analyticsController', function($scope, $ionicSideMenuDelegate, $http, $ionicLoading, $stateParams) {
     $scope.start = function() {
         $ionicLoading.show({
             template: 'Loading...'
         });
+        // set cross via param
+        if (angular.isDefined($stateParams.cross)) {
+            $scope.selected.cross1 = jsonPath.eval($scope.data.currencies, '$[?(@.currCode=="' + $stateParams.cross.split('').splice(0, 3).join('') + '")]')[0];
+            $scope.selected.cross2 = jsonPath.eval($scope.data.currencies, '$[?(@.currCode=="' + $stateParams.cross.split('').splice(3, 3).join('') + '")]')[0];
+        }
         var cross = $scope.selected.cross1.currCode + $scope.selected.cross2.currCode,
             startDate = moment().subtract('years', 4).format('YYYY-MM-DD'),
             endDate = moment().format('YYYY-MM-DD');
@@ -54,4 +59,5 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             $ionicLoading.hide();
         });
     };
+    $scope.related = function() {};
 });

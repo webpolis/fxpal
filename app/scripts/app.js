@@ -12,7 +12,7 @@ angular.module('aifxApp', ['ngAnimate', 'ngCookies', 'ngResource', 'ngRoute', 'n
             }
         }
     }).state('app.cross', {
-        url: '/cross',
+        url: '/cross/:cross',
         views: {
             'menuContent': {
                 templateUrl: 'views/cross.html',
