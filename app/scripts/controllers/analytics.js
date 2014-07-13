@@ -13,15 +13,14 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                 $scope.data.cross.data = ret.data;
             }
             $scope.correlation();
-            $ionicLoading.hide();
         }).error(function(err) {
             $ionicLoading.hide();
         });
     };
     $scope.correlation = function() {
-        /**
-         * http://quandl.com/api/v1/multisets.csv?columns=QUANDL.USDJPY.1,QUANDL.USDJPY.2,QUANDL.EURJPY.1,QUANDL.EURJPY.2&collapse=daily&auth_token=pWGUEdRoPxqEdp66WRYv
-         */
+        $ionicLoading.show({
+            template: 'Loading...'
+        });
         var startDate = moment().subtract('years', 3).format('YYYY-MM-DD');
         // build crosses
         var crosses = [],
@@ -30,6 +29,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         angular.forEach($scope.data.currencies, function(cur) {
             crosses.push(cur['Alphabetic Code']);
         });
+        crosses.sort();
         var crossesRev = angular.copy(crosses);
         crossesRev.reverse();
         angular.forEach(crosses, function(c, k) {
@@ -41,5 +41,17 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             });
         });
         $scope.data.crosses = finalCrosses;
+        // build multiset url
+        var sets = $scope.data.crosses.map(function(cross) {
+            return ['QUANDL.' + cross + '.1', 'QUANDL.' + cross + '.2', 'QUANDL.' + cross + '.3'].join(',');
+        }).join(',');
+        // retrieve multiset
+        $http.get($scope.config.urls.multiset.replace(/\{\{sets\}\}/gi, sets).replace(/\{\{startDate\}\}/gi, startDate)).success(function(ret) {
+            if (angular.isArray(ret.column_names) && angular.isArray(ret.data)) {
+                $scope.data.multiset.columns = ret.column_names;
+                $scope.data.multiset.data = ret.data;
+            }
+            $ionicLoading.hide();
+        });
     };
 });

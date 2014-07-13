@@ -2,7 +2,10 @@
 angular.module('aifxApp').controller('appController', function($scope, $ionicSideMenuDelegate, $rootScope) {
     $scope.data = {
         currencies: null,
-        multiset: null,
+        multiset: {
+            columns: null,
+            data: null
+        },
         cross: {
             columns: null,
             data: null
