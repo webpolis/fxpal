@@ -5,23 +5,23 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             template: 'Loading...'
         });
         var cross = $scope.selected.cross1.currCode + $scope.selected.cross2.currCode,
-            startDate = moment().subtract('years', 3).format('YYYY-MM-DD'),
+            startDate = moment().subtract('years', 4).format('YYYY-MM-DD'),
             endDate = moment().format('YYYY-MM-DD');
         $http.get($scope.config.urls.cross.replace(/\{\{cross\}\}/gi, cross).replace(/\{\{startDate\}\}/gi, startDate).replace(/\{\{endDate\}\}/gi, endDate)).success(function(ret) {
             if (angular.isArray(ret.column_names) && angular.isArray(ret.data)) {
                 $scope.data.cross.columns = ret.column_names;
                 $scope.data.cross.data = ret.data;
             }
-            $scope.correlation();
+            $scope.multiset();
         }).error(function(err) {
             $ionicLoading.hide();
         });
     };
-    $scope.correlation = function() {
+    $scope.multiset = function() {
         $ionicLoading.show({
             template: 'Loading...'
         });
-        var startDate = moment().subtract('years', 3).format('YYYY-MM-DD');
+        var startDate = moment().subtract('years', 4).format('YYYY-MM-DD');
         // build crosses
         var crosses = [],
             i = 0,
