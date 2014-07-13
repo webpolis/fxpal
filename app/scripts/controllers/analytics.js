@@ -17,7 +17,8 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                 $scope.data.cross.columns = ret.column_names;
                 $scope.data.cross.data = ret.data;
             }
-            $scope.multiset();
+            $scope.correlated();
+            $ionicLoading.hide();
         }).error(function(err) {
             $ionicLoading.hide();
         });
@@ -56,7 +57,6 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                 $scope.data.multiset.columns = ret.column_names;
                 $scope.data.multiset.data = ret.data;
             }
-            $scope.correlated();
             $ionicLoading.hide();
         });
     };
