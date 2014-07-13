@@ -10,9 +10,16 @@
     <div class="col col-50">
         <div class="card">
             <div class="item item-divider">
-                Related items
+                <span class="maroon">Correlated items</span>
             </div>
             <div class="item item-text-wrap">
+                <ul class="list">
+                    <li class="item size-12" ng-repeat="corr in selected.correlation">
+                        <span ng-class="{'green':corr.rel>0,'red':corr.rel<0}">
+                        <i class="icon" ng-class="{'ion-plus-round':corr.rel>0,'ion-minus-round':corr.rel<0}"></i> {{corr.cross1 || corr.cross2}}
+                        </span>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>

@@ -1,5 +1,5 @@
 'use strict';
-angular.module('aifxApp').controller('analyticsController', function($scope, $ionicSideMenuDelegate, $http, $ionicLoading, $stateParams) {
+angular.module('aifxApp').controller('analyticsController', function($scope, $ionicSideMenuDelegate, $http, $ionicLoading, $stateParams, $timeout) {
     $scope.start = function() {
         $ionicLoading.show({
             template: 'Loading...'
@@ -56,8 +56,37 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                 $scope.data.multiset.columns = ret.column_names;
                 $scope.data.multiset.data = ret.data;
             }
+            $scope.correlated();
             $ionicLoading.hide();
         });
     };
-    $scope.related = function() {};
+    $scope.correlated = function() {
+        csv2json.csv('data/correlCrosses.csv', function(data) {
+            var correlation = jsonPath.eval(data, '$[?(@.cross1=="' + $stateParams.cross + '" || @.cross2=="' + $stateParams.cross + '")]').map(function(rel) {
+                rel.rel = parseFloat(rel.rel);
+                return rel;
+            });
+            correlation.sort(function(a, b) {
+                if (a.rel < b.rel) {
+                    return 1;
+                } else if (a.rel > b.rel) {
+                    return -1;
+                }
+                return 0;
+            });
+            $timeout(function() {
+                $scope.selected.correlation = correlation.map(function(cor) {
+                    var curCross = $scope.selected.cross1.currCode + $scope.selected.cross2.currCode;
+                    if (cor.cross1 === curCross) {
+                        delete cor.cross1;
+                    } else if (cor.cross2 === curCross) {
+                        delete cor.cross2;
+                    }
+                    return cor;
+                }).filter(function(cor) {
+                    return ((cor.rel >= $scope.config.correlation.min) || (cor.rel <= -($scope.config.correlation.min)));
+                });
+            }, 150);
+        });
+    };
 });
