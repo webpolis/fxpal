@@ -1,4 +1,4 @@
-Country,Currency,Alphabetic Code,Numeric Code
+country,currency,currCode,numCode
 AUSTRALIA,Australian Dollar,AUD,36
 CANADA,Canadian Dollar,CAD,124
 EUROPEAN UNION ,Euro,EUR,978

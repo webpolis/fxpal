@@ -4,7 +4,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         $ionicLoading.show({
             template: 'Loading...'
         });
-        var cross = $scope.selected.cross1['Alphabetic Code'] + $scope.selected.cross2['Alphabetic Code'],
+        var cross = $scope.selected.cross1.currCode + $scope.selected.cross2.currCode,
             startDate = moment().subtract('years', 3).format('YYYY-MM-DD'),
             endDate = moment().format('YYYY-MM-DD');
         $http.get($scope.config.urls.cross.replace(/\{\{cross\}\}/gi, cross).replace(/\{\{startDate\}\}/gi, startDate).replace(/\{\{endDate\}\}/gi, endDate)).success(function(ret) {
@@ -27,7 +27,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             i = 0,
             finalCrosses = [];
         angular.forEach($scope.data.currencies, function(cur) {
-            crosses.push(cur['Alphabetic Code']);
+            crosses.push(cur.currCode);
         });
         crosses.sort();
         var crossesRev = angular.copy(crosses);
@@ -43,7 +43,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         $scope.data.crosses = finalCrosses;
         // build multiset url
         var sets = $scope.data.crosses.map(function(cross) {
-            return ['QUANDL.' + cross + '.1', 'QUANDL.' + cross + '.2', 'QUANDL.' + cross + '.3'].join(',');
+            return ['QUANDL.' + cross + '.1'].join(',');
         }).join(',');
         // retrieve multiset
         $http.get($scope.config.urls.multiset.replace(/\{\{sets\}\}/gi, sets).replace(/\{\{startDate\}\}/gi, startDate)).success(function(ret) {
