@@ -26,7 +26,7 @@ angular.module('aifxApp').controller('appController', function($scope, $ionicSid
         // used for multiset query
         commodities: ['OFDP.FUTURE_B1.1', 'WGC.GOLD_DAILY_USD.1', 'WSJ.CORN_2.1', 'OFDP.SILVER_5.1', 'WSJ.PL_MKT.1', 'WSJ.COPPER.1', 'WSJ.FE_TJN.1', 'WSJ.ZINC.1', 'NIKKEI.INDEX.4', 'YAHOO.INDEX_AORD.4', 'YAHOO.INDEX_GSPTSE.4', 'YAHOO.INDEX_GDAXI.4', 'YAHOO.INDEX_FTSE.4', 'BCB.UDJIAD1.1'],
         correlation: {
-            min: 0.77
+            min: 0.71
         }
     };
     $scope.toggleLeft = function() {

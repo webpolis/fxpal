@@ -61,8 +61,11 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         });
     };
     $scope.correlated = function() {
+        var curCross = $scope.selected.cross1.currCode + $scope.selected.cross2.currCode,
+            revCurCross = $scope.selected.cross2.currCode + $scope.selected.cross1.currCode;
         csv2json.csv('data/correlCrosses.csv', function(data) {
-            var correlation = jsonPath.eval(data, '$[?(@.cross1=="' + $stateParams.cross + '" || @.cross2=="' + $stateParams.cross + '")]').map(function(rel) {
+            var expr = '$[?(@.cross1=="' + curCross + '" || @.cross2=="' + curCross + '" || @.cross1=="' + revCurCross + '" || @.cross2=="' + revCurCross + '")]';
+            var correlation = jsonPath.eval(data, expr).map(function(rel) {
                 rel.rel = parseFloat(rel.rel);
                 return rel;
             });
@@ -76,10 +79,9 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             });
             $timeout(function() {
                 $scope.selected.correlation = correlation.map(function(cor) {
-                    var curCross = $scope.selected.cross1.currCode + $scope.selected.cross2.currCode;
-                    if (cor.cross1 === curCross) {
+                    if (cor.cross1 === curCross || cor.cross1 === revCurCross) {
                         delete cor.cross1;
-                    } else if (cor.cross2 === curCross) {
+                    } else if (cor.cross2 === curCross || cor.cross2 === revCurCross) {
                         delete cor.cross2;
                     }
                     return cor;
