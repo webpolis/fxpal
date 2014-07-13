@@ -88,6 +88,48 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                 }).filter(function(cor) {
                     return ((cor.rel >= $scope.config.correlation.min) || (cor.rel <= -($scope.config.correlation.min)));
                 });
+                // retrieve daily change per correlated item
+                var sets = [];
+                angular.forEach($scope.selected.correlation, function(cor) {
+                    var cross = cor.cross1 || cor.cross2;
+                    if (!(/^[a-z]+\..*$/gi.test(cross))) {
+                        sets.push('QUANDL.' + cross + '.1');
+                    } else {
+                        sets.push(cross + '.1');
+                    }
+                });
+                $ionicLoading.show({
+                    template: 'Loading...'
+                });
+                $http.get($scope.config.urls.dailyChange.replace(/\{\{sets\}\}/gi, sets.join(','))).success(function(ret) {
+                    // update correlated items and set daily change
+                    var dailyChange = {};
+                    if (angular.isArray(ret.column_names) && angular.isArray(ret.data)) {
+                        angular.forEach(ret.column_names, function(col, k) {
+                            if (k === 0) {
+                                // avoid date col
+                                return;
+                            }
+                            dailyChange[col.replace(/^(?:QUANDL\.)?([^\s]+).*$/gi, '$1')] = null;
+                        });
+                        // get non null values
+                        var keys = Object.keys(dailyChange);
+                        angular.forEach(ret.data, function(d, kk) {
+                            angular.forEach(d, function(val, kkk) {
+                                if (kkk === 0) {
+                                    // avoid date col
+                                    return;
+                                }
+                                if (val !== null && dailyChange[keys[kkk - 1]] === null) {
+                                    var ix = keys[kkk - 1];
+                                    dailyChange[ix] = val;
+                                    jsonPath.eval($scope.selected.correlation, '$[?(@.cross1 && @.cross1 == "' + ix + '" || @.cross2 && @.cross2 == "' + ix + '")]')[0].change = val;
+                                }
+                            });
+                        });
+                    }
+                    $ionicLoading.hide();
+                });
             }, 150);
         });
     };
