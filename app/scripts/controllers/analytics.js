@@ -60,6 +60,40 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             $ionicLoading.hide();
         });
     };
+    $scope.computeChange = function(sets, type) {
+        $ionicLoading.show({
+            template: 'Loading...'
+        });
+        $http.get($scope.config.urls[type].replace(/\{\{sets\}\}/gi, sets.join(','))).success(function(ret) {
+            // update correlated items and set change
+            var change = {};
+            if (angular.isArray(ret.column_names) && angular.isArray(ret.data)) {
+                angular.forEach(ret.column_names, function(col, k) {
+                    if (k === 0) {
+                        // avoid date col
+                        return;
+                    }
+                    change[col.replace(/^(?:QUANDL\.)?([^\s]+).*$/gi, '$1')] = null;
+                });
+                // get non null values
+                var keys = Object.keys(change);
+                angular.forEach(ret.data, function(d, kk) {
+                    angular.forEach(d, function(val, kkk) {
+                        if (kkk === 0) {
+                            // avoid date col
+                            return;
+                        }
+                        if (val !== null && change[keys[kkk - 1]] === null) {
+                            var ix = keys[kkk - 1];
+                            change[ix] = val;
+                            jsonPath.eval($scope.selected.correlation, '$[?(@.cross1 && @.cross1 == "' + ix + '" || @.cross2 && @.cross2 == "' + ix + '")]')[0][type] = val;
+                        }
+                    });
+                });
+            }
+            $ionicLoading.hide();
+        });
+    };
     $scope.correlated = function() {
         var curCross = $scope.selected.cross1.currCode + $scope.selected.cross2.currCode,
             revCurCross = $scope.selected.cross2.currCode + $scope.selected.cross1.currCode;
@@ -101,38 +135,8 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                 if (sets.length === 0) {
                     return;
                 }
-                $ionicLoading.show({
-                    template: 'Loading...'
-                });
-                $http.get($scope.config.urls.dailyChange.replace(/\{\{sets\}\}/gi, sets.join(','))).success(function(ret) {
-                    // update correlated items and set daily change
-                    var dailyChange = {};
-                    if (angular.isArray(ret.column_names) && angular.isArray(ret.data)) {
-                        angular.forEach(ret.column_names, function(col, k) {
-                            if (k === 0) {
-                                // avoid date col
-                                return;
-                            }
-                            dailyChange[col.replace(/^(?:QUANDL\.)?([^\s]+).*$/gi, '$1')] = null;
-                        });
-                        // get non null values
-                        var keys = Object.keys(dailyChange);
-                        angular.forEach(ret.data, function(d, kk) {
-                            angular.forEach(d, function(val, kkk) {
-                                if (kkk === 0) {
-                                    // avoid date col
-                                    return;
-                                }
-                                if (val !== null && dailyChange[keys[kkk - 1]] === null) {
-                                    var ix = keys[kkk - 1];
-                                    dailyChange[ix] = val;
-                                    jsonPath.eval($scope.selected.correlation, '$[?(@.cross1 && @.cross1 == "' + ix + '" || @.cross2 && @.cross2 == "' + ix + '")]')[0].change = val;
-                                }
-                            });
-                        });
-                    }
-                    $ionicLoading.hide();
-                });
+                $scope.computeChange(sets, 'dailyChange');
+                $scope.computeChange(sets, 'weeklyChange');
             }, 150);
         });
     };
