@@ -44,7 +44,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         // build multiset url
         var sets = $scope.data.crosses.map(function(cross) {
             return ['QUANDL.' + cross + '.1'].join(',');
-        }).join(',');
+        }).concat($scope.config.commodities).join(',');
         // retrieve multiset
         $http.get($scope.config.urls.multiset.replace(/\{\{sets\}\}/gi, sets).replace(/\{\{startDate\}\}/gi, startDate)).success(function(ret) {
             if (angular.isArray(ret.column_names) && angular.isArray(ret.data)) {

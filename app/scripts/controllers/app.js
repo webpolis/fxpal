@@ -21,7 +21,9 @@ angular.module('aifxApp').controller('appController', function($scope, $ionicSid
         urls: {
             cross: 'http://www.quandl.com/api/v1/datasets/QUANDL/{{cross}}.json?trim_start={{startDate}}&trim_end={{endDate}}&collapse=daily&auth_token={{token}}',
             multiset: 'http://quandl.com/api/v1/multisets.json?columns={{sets}}&collapse=daily&trim_start={{startDate}}&auth_token={{token}}'
-        }
+        },
+        // used for multiset query
+        commodities: ['OFDP.FUTURE_B1.1', 'WGC.GOLD_DAILY_USD.1', 'WSJ.CORN_2.1', 'OFDP.SILVER_5.1', 'WSJ.PL_MKT.1', 'WSJ.COPPER.1', 'WSJ.FE_TJN.1', 'WSJ.ZINC.1']
     };
     $scope.toggleLeft = function() {
         $ionicSideMenuDelegate.$getByHandle('menuLeft').toggleLeft();
