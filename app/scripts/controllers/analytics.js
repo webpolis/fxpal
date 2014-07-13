@@ -100,7 +100,12 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         csv2json.csv('data/correlCrosses.csv', function(data) {
             var expr = '$[?(@.cross1=="' + curCross + '" || @.cross2=="' + curCross + '" || @.cross1=="' + revCurCross + '" || @.cross2=="' + revCurCross + '")]';
             var correlation = jsonPath.eval(data, expr).map(function(rel) {
-                rel.rel = parseFloat(rel.rel);
+                // if cross is reverted, we should invert correlation value
+                var corValue = parseFloat(rel.rel);
+                if (rel.cross1 === revCurCross || rel.cross2 === revCurCross) {
+                    corValue = -(corValue);
+                }
+                rel.rel = corValue;
                 return rel;
             });
             correlation.sort(function(a, b) {
