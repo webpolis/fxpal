@@ -97,22 +97,25 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         });
     };
     $scope.processEvents = function() {
-        $ionicLoading.show({
-            template: 'Loading...'
-        });
         $scope.selected.events = [];
-        var startWeekDate = moment().startOf('week').format('MM-DD-YYYY'),
-            url = $scope.config.urls.events.replace(/\{\{startWeekDate\}\}/gi, startWeekDate);
-        $.getJSON('http://whateverorigin.org/get?url=' + url + '&callback=?', function(csv) {
+        // match crosses
+        var re = new RegExp('(' + [$scope.selected.cross1.currCode, $scope.selected.cross2.currCode].join('|') + ')', 'gi');
+        var parseCsv = function(csv) {
             csv2json.csv.parse(csv.contents, function(row) {
-                $scope.selected.events.push(row);
-            });
-            $scope.selected.events = $scope.selected.events.filter(function(ev) {
-                var re = new RegExp('(' + [$scope.selected.cross1.currCode, $scope.selected.cross2.currCode].join('|') + ')', 'gi');
-                return re.test(ev.Currency);
+                if (re.test(row.Currency)) {
+                    $scope.selected.events.push(row);
+                }
             });
             $ionicLoading.hide();
-        });
+        };
+        for (var w = 0; w < 4; w++) {
+            $ionicLoading.show({
+                template: 'Loading...'
+            });
+            var startWeekDate = moment().subtract('week', w).startOf('week').format('MM-DD-YYYY'),
+                url = $scope.config.urls.events.replace(/\{\{startWeekDate\}\}/gi, startWeekDate);
+            $.getJSON('http://whateverorigin.org/get?url=' + url + '&callback=?', parseCsv);
+        }
     };
     $scope.correlated = function() {
         var curCross = $scope.selected.cross1.currCode + $scope.selected.cross2.currCode,
