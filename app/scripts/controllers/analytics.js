@@ -19,6 +19,8 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             }
             $scope.correlated();
             $ionicLoading.hide();
+            $scope.processEvents();
+            //$scope.multiset();
         }).error(function(err) {
             $ionicLoading.hide();
         });
@@ -50,7 +52,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         // build multiset url
         var sets = $scope.data.crosses.map(function(cross) {
             return ['QUANDL.' + cross + '.1'].join(',');
-        }).concat($scope.config.commodities).join(',');
+        }).concat($scope.config.multiVariables).join(',');
         // retrieve multiset
         $http.get($scope.config.urls.multiset.replace(/\{\{sets\}\}/gi, sets).replace(/\{\{startDate\}\}/gi, startDate)).success(function(ret) {
             if (angular.isArray(ret.column_names) && angular.isArray(ret.data)) {
@@ -91,6 +93,24 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                     });
                 });
             }
+            $ionicLoading.hide();
+        });
+    };
+    $scope.processEvents = function() {
+        $ionicLoading.show({
+            template: 'Loading...'
+        });
+        $scope.selected.events = [];
+        var startWeekDate = moment().startOf('week').format('MM-DD-YYYY'),
+            url = $scope.config.urls.events.replace(/\{\{startWeekDate\}\}/gi, startWeekDate);
+        $.getJSON('http://whateverorigin.org/get?url=' + url + '&callback=?', function(csv) {
+            csv2json.csv.parse(csv.contents, function(row) {
+                $scope.selected.events.push(row);
+            });
+            $scope.selected.events = $scope.selected.events.filter(function(ev) {
+                var re = new RegExp('(' + [$scope.selected.cross1.currCode, $scope.selected.cross2.currCode].join('|') + ')', 'gi');
+                return re.test(ev.Currency);
+            });
             $ionicLoading.hide();
         });
     };

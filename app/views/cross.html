@@ -2,17 +2,17 @@
 <ion-nav-buttons side="left">
 <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
 </ion-nav-buttons>
-<ion-content has-header="true" padding="true">
+<ion-content has-header="true" padding="true" ng-init="start()">
 <h4><i class="icon ion-ios7-world"></i> Cross
 <span ng-if="(selected.cross1 && selected.cross2)" class="positive">{{selected.cross1.currCode}}/{{selected.cross2.currCode}}</span>
 </h4>
-<div class="card" ng-init="start()">
+<div class="card">
     <div class="item item-divider">
         <span class="maroon pull-left">Correlations</span>
     </div>
     <div class="item item-text-wrap">
         <span class="energized" ng-if="!selected.correlation || selected.correlation.length == 0">No relevant items found</span>
-        <div class="row row-top">
+        <div class="row row-top" ng-if="!(!selected.correlation || selected.correlation.length == 0)">
             <div class="col">
                 <span class="gray size-13">Market / Index</span>
             </div>
@@ -34,6 +34,24 @@
             </div>
             <div class="col">
                 <i class="icon size-16" ng-class="{'ion-android-arrow-up-right green':corr.weeklyChange>0,'ion-android-arrow-down-right red':corr.weeklyChange<0,'ion-android-remove':corr.weeklyChange==0}"></i>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card">
+    <div class="item item-divider">
+        <span class="maroon pull-left">Events</span>
+    </div>
+    <div class="item item-text-wrap">
+        <span class="energized" ng-if="!selected.events || selected.events.length == 0">No relevant events found</span>
+        <div class="row row-top" ng-if="!(!selected.events || selected.events.length == 0)">
+            <div class="col">
+                <span class="gray size-13">Event</span>
+            </div>
+        </div>
+        <div class="row" ng-if="!(!selected.events || selected.events.length == 0)">
+            <div class="col">
+            {{selected.events}}
             </div>
         </div>
     </div>

@@ -9,7 +9,8 @@
     "flexmonster": true,
     "console": true,
     "csv2json": true,
-    "moment": true
+    "moment": true,
+    "$": true
   },
   "globalstrict": true,
   "quotmark": true,
