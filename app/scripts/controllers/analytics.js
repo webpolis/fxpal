@@ -1,5 +1,5 @@
 'use strict';
-angular.module('aifxApp').controller('analyticsController', function($scope, $ionicSideMenuDelegate, $http, $ionicLoading, $stateParams, $timeout) {
+angular.module('aifxApp').controller('analyticsController', function($scope, $ionicSideMenuDelegate, $http, $ionicLoading, $stateParams, $timeout, $q) {
     $scope.start = function() {
         $ionicLoading.show({
             template: 'Loading...'
@@ -98,24 +98,48 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
     };
     $scope.processEvents = function() {
         $scope.selected.events = [];
+        var w = 0,
+            maxWeeks = 4,
+            all = [];
         // match crosses
         var re = new RegExp('(' + [$scope.selected.cross1.currCode, $scope.selected.cross2.currCode].join('|') + ')', 'gi');
         var parseCsv = function(csv) {
+            var data = [];
             csv2json.csv.parse(csv.contents, function(row) {
                 if (re.test(row.Currency)) {
-                    $scope.selected.events.push(row);
+                    data.push(row);
                 }
             });
-            $ionicLoading.hide();
+            return data;
         };
-        for (var w = 0; w < 4; w++) {
-            $ionicLoading.show({
-                template: 'Loading...'
-            });
+        $ionicLoading.show({
+            template: 'Loading...'
+        });
+        all = Array.apply(null, new Array(maxWeeks)).map(String.valueOf, '').map(function(i, w) {
+            var def = $q.defer();
             var startWeekDate = moment().subtract('week', w).startOf('week').format('MM-DD-YYYY'),
                 url = $scope.config.urls.events.replace(/\{\{startWeekDate\}\}/gi, startWeekDate);
-            $.getJSON('http://whateverorigin.org/get?url=' + url + '&callback=?', parseCsv);
-        }
+            $http.jsonp('http://whateverorigin.org/get?url=' + url + '&callback=JSON_CALLBACK').success(function(ret) {
+                def.resolve(parseCsv(ret));
+            }).error(def.reject);
+            return def.promise;
+        });
+        $q.all(all).then(function(ret) {
+            $ionicLoading.hide();
+            angular.forEach(ret, function(rows) {
+                $scope.selected.events = $scope.selected.events.concat(rows);
+            });
+            $scope.selected.events.sort(function(a, b) {
+                var aDate = $scope.utils.parseDate([a.Date, moment().format('YYYY'), a.Time, a['Time Zone']].join(' '));
+                var bDate = $scope.utils.parseDate([b.Date, moment().format('YYYY'), b.Time, b['Time Zone']].join(' '));
+                if (aDate < bDate) {
+                    return 1;
+                } else if (aDate > bDate) {
+                    return -1;
+                }
+                return 0;
+            });
+        });
     };
     $scope.correlated = function() {
         var curCross = $scope.selected.cross1.currCode + $scope.selected.cross2.currCode,

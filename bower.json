@@ -16,7 +16,8 @@
     "csv2json": "~0.0.4",
     "momentjs": "~2.7.0",
     "jsonpath": "*",
-    "colors": "~2.0.0"
+    "colors": "~2.0.0",
+    "jquery.query-yql": "https://github.com/hail2u/jquery.query-yql.git#~0.4.1"
   },
   "devDependencies": {
     "angular-mocks": "~1.2.20",
