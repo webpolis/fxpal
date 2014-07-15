@@ -1,5 +1,8 @@
 'use strict';
-angular.module('aifxApp').controller('analyticsController', function($scope, $ionicSideMenuDelegate, $http, $ionicLoading, $stateParams, $timeout, $q) {
+angular.module('aifxApp').controller('analyticsController', function($scope, $ionicSideMenuDelegate, $http, $ionicLoading, $stateParams, $timeout, $q, ngTableParams) {
+    $scope.tblEvents = new ngTableParams({}, {
+        counts: []
+    });
     $scope.start = function() {
         $ionicLoading.show({
             template: 'Loading...'
