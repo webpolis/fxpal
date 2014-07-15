@@ -140,9 +140,9 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             });
             // sort by date desc
             $scope.selected.events.sort(function(a, b) {
-                if (a.localDate < b.localDate) {
+                if (new Date(a.localDate) < new Date(b.localDate)) {
                     return 1;
-                } else if (a.localDate > b.localDate) {
+                } else if (new Date(a.localDate) > new Date(b.localDate)) {
                     return -1;
                 }
                 return 0;
