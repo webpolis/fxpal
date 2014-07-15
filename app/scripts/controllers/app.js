@@ -27,7 +27,7 @@ angular.module('aifxApp').controller('appController', function($scope, $ionicSid
             multiset: 'http://quandl.com/api/v1/multisets.json?columns={{sets}}&collapse=daily&trim_start={{startDate}}&auth_token={{token}}',
             cpi: 'http://quandl.com/api/v1/multisets.json?columns=&rows=10',
             rate: 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.xchange%20where%20pair%20%3D%20%22{{cross}}%22&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=',
-            candlestick: 'http://api-sandbox.oanda.com/v1/candles?instrument={{cross1}}_{{cross2}}&count={{count}}&candleFormat=midpoint&granularity={{period}}',
+            candlestick: 'http://api-sandbox.oanda.com/v1/candles?instrument={{cross1}}_{{cross2}}&count={{count}}&candleFormat=midpoint&granularity={{period}}&weeklyAlignment=Monday',
             dailyChange: 'http://www.quandl.com/api/v1/multisets.json?columns={{sets}}&collapse=daily&auth_token={{token}}&rows=1&transformation=rdiff&rows=4',
             weeklyChange: 'http://www.quandl.com/api/v1/multisets.json?columns={{sets}}&collapse=weekly&auth_token={{token}}&rows=1&transformation=rdiff&rows=4',
             yahooIndex: 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quoteslist%20where%20symbol%20in%20({{quotes}})&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=',

@@ -66,6 +66,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         });
     };
     $scope.computeChange = function(sets, type) {
+        var def = $q.defer();
         $ionicLoading.show({
             template: 'Loading...'
         });
@@ -94,11 +95,16 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                                     var ix = keys[kkk - 1];
                                     change[ix] = val;
                                     jsonPath.eval($scope.selected.correlation, '$[?(@.cross1 && @.cross1 == "' + ix + '" || @.cross2 && @.cross2 == "' + ix + '")]')[0][type] = val;
+                                    jsonPath.eval($scope.selected.correlation, '$[?(@.cross1 && @.cross1 == "' + ix + '" || @.cross2 && @.cross2 == "' + ix + '")]')[0].label = ix;
                                 }
                             });
                         });
                     }
                     $ionicLoading.hide();
+                    def.resolve();
+                }).error(function(err) {
+                    $ionicLoading.hide();
+                    def.reject(err);
                 });
                 break;
             case 'dailyChange':
@@ -115,13 +121,20 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                                 var ticker = jsonPath.eval($scope.config.maps.tickers, '$.[?(@.symbol=="' + symbol + '")]')[0];
                                 try {
                                     jsonPath.eval($scope.selected.correlation, '$[?(@.cross1 && @.cross1 == "' + ticker.quandl + '" || @.cross2 && @.cross2 == "' + ticker.quandl + '")]')[0][type] = parseFloat(quote.Change);
+                                    jsonPath.eval($scope.selected.correlation, '$[?(@.cross1 && @.cross1 == "' + ticker.quandl + '" || @.cross2 && @.cross2 == "' + ticker.quandl + '")]')[0].label = ticker.name;
                                 } catch (err) {}
                             });
                         }
                     }
+                    $ionicLoading.hide();
+                    def.resolve();
+                }).error(function(err) {
+                    $ionicLoading.hide();
+                    def.reject(err);
                 });
                 break;
         }
+        return def.promise;
     };
     $scope.processEvents = function() {
         $scope.selected.events = [];
@@ -227,8 +240,9 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                 if (sets.length === 0) {
                     return;
                 }
-                $scope.computeChange(null, 'dailyChange');
-                $scope.computeChange(sets, 'weeklyChange');
+                $scope.computeChange(sets, 'weeklyChange').then(function() {
+                    $scope.computeChange(null, 'dailyChange');
+                });
             }, 150);
         });
     };

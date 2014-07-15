@@ -26,7 +26,7 @@
         <div class="row" ng-repeat="corr in selected.correlation">
             <div class="col">
                 <span class="size-12" ng-class="{'green':corr.rel>0,'red':corr.rel<0}">
-                <i class="icon" ng-class="{'ion-plus-round':corr.rel>0,'ion-minus-round':corr.rel<0}"></i> {{corr.cross1 || corr.cross2}}
+                <i class="icon" ng-class="{'ion-plus-round':corr.rel>0,'ion-minus-round':corr.rel<0}"></i> {{corr.label}}
                 </span>
             </div>
             <div class="col">
