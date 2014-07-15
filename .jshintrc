@@ -23,5 +23,6 @@
   "evil": true,
   "expr": true,
   "debug": true,
+  "newcap": false,
   "node":true
 }

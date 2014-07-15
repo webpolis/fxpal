@@ -69,35 +69,59 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         $ionicLoading.show({
             template: 'Loading...'
         });
-        $http.get($scope.config.urls[type].replace(/\{\{sets\}\}/gi, sets.join(','))).success(function(ret) {
-            // update correlated items and set change
-            var change = {};
-            if (angular.isArray(ret.column_names) && angular.isArray(ret.data)) {
-                angular.forEach(ret.column_names, function(col, k) {
-                    if (k === 0) {
-                        // avoid date col
-                        return;
+        switch (type) {
+            case 'weeklyChange':
+                $http.get($scope.config.urls[type].replace(/\{\{sets\}\}/gi, sets.join(','))).success(function(ret) {
+                    // update correlated items and set change
+                    var change = {};
+                    if (angular.isArray(ret.column_names) && angular.isArray(ret.data)) {
+                        angular.forEach(ret.column_names, function(col, k) {
+                            if (k === 0) {
+                                // avoid date col
+                                return;
+                            }
+                            change[col.replace(/^(?:QUANDL\.)?([^\s]+).*$/gi, '$1')] = null;
+                        });
+                        // get non null values
+                        var keys = Object.keys(change);
+                        angular.forEach(ret.data, function(d, kk) {
+                            angular.forEach(d, function(val, kkk) {
+                                if (kkk === 0) {
+                                    // avoid date col
+                                    return;
+                                }
+                                if (val !== null && change[keys[kkk - 1]] === null) {
+                                    var ix = keys[kkk - 1];
+                                    change[ix] = val;
+                                    jsonPath.eval($scope.selected.correlation, '$[?(@.cross1 && @.cross1 == "' + ix + '" || @.cross2 && @.cross2 == "' + ix + '")]')[0][type] = val;
+                                }
+                            });
+                        });
                     }
-                    change[col.replace(/^(?:QUANDL\.)?([^\s]+).*$/gi, '$1')] = null;
+                    $ionicLoading.hide();
                 });
-                // get non null values
-                var keys = Object.keys(change);
-                angular.forEach(ret.data, function(d, kk) {
-                    angular.forEach(d, function(val, kkk) {
-                        if (kkk === 0) {
-                            // avoid date col
-                            return;
-                        }
-                        if (val !== null && change[keys[kkk - 1]] === null) {
-                            var ix = keys[kkk - 1];
-                            change[ix] = val;
-                            jsonPath.eval($scope.selected.correlation, '$[?(@.cross1 && @.cross1 == "' + ix + '" || @.cross2 && @.cross2 == "' + ix + '")]')[0][type] = val;
-                        }
-                    });
+                break;
+            case 'dailyChange':
+                var tickers = $scope.config.maps.tickers.map(function(ticker) {
+                    var symbol = '"' + (/\./g.test(ticker.symbol) ? ticker.symbol : '^' + ticker.symbol) + '"';
+                    return symbol;
                 });
-            }
-            $ionicLoading.hide();
-        });
+                var symbols = $scope.config.yqls.quotes.replace(/\{\{sets\}\}/gi, tickers.join(','));
+                $http.get($scope.config.urls.yql.replace(/\{\{query\}\}/gi, encodeURIComponent(symbols))).success(function(ret) {
+                    if (angular.isDefined(ret.query) && angular.isObject(ret.query.results)) {
+                        if (angular.isArray(ret.query.results.quote)) {
+                            angular.forEach(ret.query.results.quote, function(quote) {
+                                var symbol = quote.Symbol.replace(/\^/g, '');
+                                var ticker = jsonPath.eval($scope.config.maps.tickers, '$.[?(@.symbol=="' + symbol + '")]')[0];
+                                try {
+                                    jsonPath.eval($scope.selected.correlation, '$[?(@.cross1 && @.cross1 == "' + ticker.quandl + '" || @.cross2 && @.cross2 == "' + ticker.quandl + '")]')[0][type] = parseFloat(quote.Change);
+                                } catch (err) {}
+                            });
+                        }
+                    }
+                });
+                break;
+        }
     };
     $scope.processEvents = function() {
         $scope.selected.events = [];
@@ -203,7 +227,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                 if (sets.length === 0) {
                     return;
                 }
-                $scope.computeChange(sets, 'dailyChange');
+                $scope.computeChange(null, 'dailyChange');
                 $scope.computeChange(sets, 'weeklyChange');
             }, 150);
         });
