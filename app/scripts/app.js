@@ -1,5 +1,5 @@
 'use strict';
-angular.module('aifxApp', ['ngAnimate', 'ngCookies', 'ngResource', 'ngRoute', 'ngSanitize', 'ngTouch', 'ionic']).config(function($stateProvider, $urlRouterProvider) {
+angular.module('aifxApp', ['ngAnimate', 'ngCookies', 'ngResource', 'ngRoute', 'ngSanitize', 'ngTouch', 'ionic', 'ngTable']).config(function($stateProvider, $urlRouterProvider) {
     $stateProvider.state('app', {
         url: '/app',
         templateUrl: 'views/menu.html'

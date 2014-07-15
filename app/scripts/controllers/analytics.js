@@ -98,7 +98,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
     };
     $scope.processEvents = function() {
         $scope.selected.events = [];
-        var maxWeeks = 4,
+        var maxWeeks = 6,
             all = [];
         // match crosses
         var re = new RegExp('(' + [$scope.selected.cross1.currCode, $scope.selected.cross2.currCode].join('|') + ')', 'gi');
