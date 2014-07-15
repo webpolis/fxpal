@@ -39,16 +39,16 @@ csv2json.csv('data/oandaCurrencies.csv', function(curr) {
     oandaCurrencies = curr;
 });
 angular.module('aifxApp').service('api', function api($http, $q) {
-    var urlRate = 'http://api-sandbox.oanda.com/v1/candles?instrument={{cross1}}_{{cross2}}&count={{count}}&candleFormat=midpoint&granularity={{period}}&weeklyAlignment=Monday';
+    var urlRate = 'http://api-sandbox.oanda.com/v1/candles?instrument={{cross1}}_{{cross2}}&count={{count}}&candleFormat={{format}}&granularity={{period}}&weeklyAlignment=Monday';
     return {
-        getCandlesticks: function(symbol, period, count) {
+        getCandlesticks: function(symbol, period, count, midpoint) {
             var def = $q.defer();
             var cross1 = symbol.split('').splice(0, 3).join(''),
                 cross2 = symbol.split('').splice(3, 3).join('');
             var cross = jsonPath.eval(oandaCurrencies, '$.[?(@.instrument=="' + [cross1, '_', cross2].join('') + '")]')[0] ||  null;
             cross1 = cross === null ? symbol.split('').splice(3, 3).join('') : cross1;
             cross2 = cross === null ? symbol.split('').splice(0, 3).join('') : cross2;
-            var url = urlRate.replace(/\{\{cross1\}\}/gi, cross1).replace(/\{\{cross2\}\}/gi, cross2).replace(/\{\{count\}\}/gi, count).replace(/\{\{period\}\}/gi, period);
+            var url = urlRate.replace(/\{\{cross1\}\}/gi, cross1).replace(/\{\{cross2\}\}/gi, cross2).replace(/\{\{count\}\}/gi, count).replace(/\{\{period\}\}/gi, period).replace(/\{\{format\}\}/gi, (angular.isDefined(midpoint) && !midpoint ? 'bidask' : 'midpoint'));
             $http.get(url).success(function(data) {
                 def.resolve({
                     data: data,
