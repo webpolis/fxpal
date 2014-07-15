@@ -98,8 +98,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
     };
     $scope.processEvents = function() {
         $scope.selected.events = [];
-        var w = 0,
-            maxWeeks = 4,
+        var maxWeeks = 4,
             all = [];
         // match crosses
         var re = new RegExp('(' + [$scope.selected.cross1.currCode, $scope.selected.cross2.currCode].join('|') + ')', 'gi');
@@ -115,6 +114,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         $ionicLoading.show({
             template: 'Loading...'
         });
+        // retrieve events
         all = Array.apply(null, new Array(maxWeeks)).map(String.valueOf, '').map(function(i, w) {
             var def = $q.defer();
             var startWeekDate = moment().subtract('week', w).startOf('week').format('MM-DD-YYYY'),
@@ -129,12 +129,20 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             angular.forEach(ret, function(rows) {
                 $scope.selected.events = $scope.selected.events.concat(rows);
             });
+            // convert date to local
+            $scope.selected.events = $scope.selected.events.map(function(ev) {
+                var o = {};
+                for (var p in ev) {
+                    o[angular.lowercase(p)] = ev[p];
+                }
+                o.localDate = $scope.utils.parseDate([ev.Date, moment().format('YYYY'), ev.Time, ev['Time Zone']].join(' '));
+                return o;
+            });
+            // sort by date desc
             $scope.selected.events.sort(function(a, b) {
-                var aDate = $scope.utils.parseDate([a.Date, moment().format('YYYY'), a.Time, a['Time Zone']].join(' '));
-                var bDate = $scope.utils.parseDate([b.Date, moment().format('YYYY'), b.Time, b['Time Zone']].join(' '));
-                if (aDate < bDate) {
+                if (a.LocalDate < b.LocalDate) {
                     return 1;
-                } else if (aDate > bDate) {
+                } else if (a.LocalDate > b.LocalDate) {
                     return -1;
                 }
                 return 0;
