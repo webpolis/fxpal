@@ -1,6 +1,6 @@
 'use strict';
-angular.module('aifxApp').controller('appController', function($scope, $ionicSideMenuDelegate, $rootScope, utils, $state) {
-    $scope.utils = utils, $scope.state = $state;
+angular.module('aifxApp').controller('appController', function($scope, $ionicSideMenuDelegate, $rootScope, utils, $state, api) {
+    $scope.utils = utils, $scope.state = $state, $scope.api = api;
     $scope.data = {
         currencies: null,
         multiset: {

@@ -50,7 +50,10 @@ angular.module('aifxApp').service('api', function api($http, $q) {
             cross2 = cross === null ? symbol.split('').splice(0, 3).join('') : cross2;
             var url = urlRate.replace(/\{\{cross1\}\}/gi, cross1).replace(/\{\{cross2\}\}/gi, cross2).replace(/\{\{count\}\}/gi, count).replace(/\{\{period\}\}/gi, period);
             $http.get(url).success(function(data) {
-                def.resolve(data, (cross === null));
+                def.resolve({
+                    data: data,
+                    isRevertedCross: (cross === null)
+                });
             }).error(def.reject);
             return def.promise;
         }

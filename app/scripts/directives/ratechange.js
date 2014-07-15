@@ -9,14 +9,14 @@ angular.module('aifxApp').directive('rateChange', function($interval, $http, api
             count: '='
         },
         link: function postLink(scope, element, attrs) {
-            api.getCandlesticks(scope.symbol.label, scope.period, scope.count).then(function(data, isRevertedCross) {
-                var diffLast2 = data.candles[0].closeMid - data.candles[1].closeMid;
+            api.getCandlesticks(scope.symbol.label, scope.period, scope.count).then(function(ret) {
+                var diffLast2 = ret.data.candles[0].closeMid - ret.data.candles[1].closeMid;
                 switch (scope.period) {
                     case 'D':
-                        scope.symbol.dailyChange = isRevertedCross ? -(diffLast2) : diffLast2;
+                        scope.symbol.dailyChange = ret.isRevertedCross ? -(diffLast2) : diffLast2;
                         break;
                     case 'W':
-                        scope.symbol.weeklyChange = isRevertedCross ? -(diffLast2) : diffLast2;
+                        scope.symbol.weeklyChange = ret.isRevertedCross ? -(diffLast2) : diffLast2;
                         break;
                 }
             });

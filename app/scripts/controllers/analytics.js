@@ -16,37 +16,19 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                         });
      */
     $scope.optsHighchartsCross = {
-        'options': {
-            'chart': {
-                'type': 'column'
-            },
-            'plotOptions': {
-                'series': {
-                    'stacking': ''
-                }
-            }
-        },
-        'series': [],
+        'series': [{
+            name: 'Close',
+            data: []
+        }],
+        useHighStocks: true,
         'title': {
-            'text': 'Support & Resistance'
+            'text': 'Close'
         },
         'credits': {
             'enabled': false
-        },
-        'loading': false,
-        'size': {
-            'width': ''
-        },
-        'subtitle': {
-            'text': ''
-        },
-        'yAxis': {
-            title: {
-                text: 'Price'
-            }
         }
     };
-    $scope.start = function(loadExtras) {
+    $scope.start = function(loadExtras, loadChart) {
         $ionicLoading.show({
             template: 'Loading...'
         });
@@ -67,6 +49,9 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             if (!angular.isDefined(loadExtras) || loadExtras) {
                 $scope.correlated();
                 $scope.processEvents();
+            }
+            if (loadChart) {
+                $scope.chart();
             }
             //$scope.multiset();
         }).error(function(err) {
@@ -308,6 +293,16 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                     $scope.computeChange(null, 'dailyChange');
                 });
             }, 150);
+        });
+    };
+    $scope.chart = function() {
+        var curCross = $scope.selected.cross1.currCode + $scope.selected.cross2.currCode;
+        $scope.api.getCandlesticks(curCross, 'H1', 160).then(function(ret) {
+            if (angular.isDefined(ret.data) && angular.isArray(ret.data.candles)) {
+                $scope.optsHighchartsCross.series[0].data = ret.data.candles.map(function(candle) {
+                    return [moment(candle.time).valueOf(), /* candle.openMid, candle.highMid, candle.lowMid,*/ candle.closeMid];
+                });
+            }
         });
     };
 });
