@@ -131,19 +131,24 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             });
             // convert date to local
             $scope.selected.events = $scope.selected.events.map(function(ev) {
-                var o = {};
+                var o = {}, reCross = new RegExp('^(' + [$scope.selected.cross1.currCode, $scope.selected.cross2.currCode].join('|') + ')\\s+', 'g');
                 for (var p in ev) {
                     o[angular.lowercase(p)] = ev[p];
+                    if (/event/gi.test(p)) {
+                        o.event = o.event.replace(reCross, '');
+                    }
                 }
                 o.localDate = $scope.utils.parseDate([ev.Date, moment().format('YYYY'), ev.Time, ev['Time Zone']].join(' '));
                 return o;
+            }).filter(function(ev) {
+                return ev.actual !== '' ||  ev.forecast !== '' ||  ev.previous !== '';
             });
             // sort by date desc
             $scope.selected.events.sort(function(a, b) {
                 if (new Date(a.localDate) < new Date(b.localDate)) {
-                    return 1;
-                } else if (new Date(a.localDate) > new Date(b.localDate)) {
                     return -1;
+                } else if (new Date(a.localDate) > new Date(b.localDate)) {
+                    return 1;
                 }
                 return 0;
             });
