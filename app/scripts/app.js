@@ -19,6 +19,14 @@ angular.module('aifxApp', ['ngAnimate', 'ngCookies', 'ngResource', 'ngRoute', 'n
                 controller: 'analyticsController'
             }
         }
+    }).state('app.chart', {
+        url: '/cross/:cross/chart',
+        views: {
+            'menuContent': {
+                templateUrl: 'views/chart.html',
+                controller: 'analyticsController'
+            }
+        }
     });
     $urlRouterProvider.otherwise('/app/main');
 });

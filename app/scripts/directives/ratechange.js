@@ -62,7 +62,7 @@ angular.module('aifxApp').directive('rateChange', function($interval, $http) {
                         scope.symbol.dailyChange = cross === null ? -(diffLast2) : diffLast2;
                         break;
                     case 'W':
-                        scope.symbol.weeklyChange = cross === null ? -(diffLast2) : diffLast2;;
+                        scope.symbol.weeklyChange = cross === null ? -(diffLast2) : diffLast2;
                         break;
                 }
             });

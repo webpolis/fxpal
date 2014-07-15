@@ -3,7 +3,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
     $scope.tblEvents = new ngTableParams({}, {
         counts: []
     });
-    $scope.start = function() {
+    $scope.start = function(loadExtras) {
         $ionicLoading.show({
             template: 'Loading...'
         });
@@ -20,9 +20,11 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                 $scope.data.cross.columns = ret.column_names;
                 $scope.data.cross.data = ret.data;
             }
-            $scope.correlated();
             $ionicLoading.hide();
-            $scope.processEvents();
+            if (!angular.isDefined(loadExtras) || loadExtras) {
+                $scope.correlated();
+                $scope.processEvents();
+            }
             //$scope.multiset();
         }).error(function(err) {
             $ionicLoading.hide();
