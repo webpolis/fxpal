@@ -56,12 +56,13 @@ angular.module('aifxApp').directive('rateChange', function($interval, $http) {
             cross2 = cross === null ? scope.symbol.label.split('').splice(0, 3).join('') : cross2;
             var url = urlRate.replace(/\{\{cross1\}\}/gi, cross1).replace(/\{\{cross2\}\}/gi, cross2).replace(/\{\{count\}\}/gi, scope.count).replace(/\{\{period\}\}/gi, scope.period);
             $http.get(url).success(function(data) {
+                var diffLast2 = data.candles[0].closeMid - data.candles[1].closeMid;
                 switch (scope.period) {
                     case 'D':
-                        scope.symbol.dailyChange = data.candles[0].closeMid - data.candles[1].closeMid;
+                        scope.symbol.dailyChange = cross === null ? -(diffLast2) : diffLast2;
                         break;
                     case 'W':
-                        scope.symbol.weeklyChange = data.candles[0].closeMid - data.candles[1].closeMid;
+                        scope.symbol.weeklyChange = cross === null ? -(diffLast2) : diffLast2;;
                         break;
                 }
             });
