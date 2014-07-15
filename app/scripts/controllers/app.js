@@ -20,6 +20,7 @@ angular.module('aifxApp').controller('appController', function($scope, $ionicSid
         events: null
     }, $scope.rootScope = $rootScope;
     $scope.config = {
+        appName: 'FXPAL',
         token: 'pWGUEdRoPxqEdp66WRYv',
         oandaToken: 'ce6b72e81af59be0bbc90152cad8d731-03d41860ed7849e3c4555670858df786',
         urls: {

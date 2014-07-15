@@ -3,6 +3,49 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
     $scope.tblEvents = new ngTableParams({}, {
         counts: []
     });
+    /**
+     * $scope.optsHighchartsReport.series.push({
+                            'data': sampleData.map(function(v, n) {
+                                return ran - (n * (Math.ceil(Math.random() * 100)));
+                            }),
+                            'id': 'serie-' + k,
+                            'name': measure.reportMeasureLabel,
+                            'type': (angular.isDefined(measure.reportMeasureType) ? measure.reportMeasureType : 'column'),
+                            'color': $scope.utils.getRandomColorCode(),
+                            'dashStyle': 'Solid'
+                        });
+     */
+    $scope.optsHighchartsCross = {
+        'options': {
+            'chart': {
+                'type': 'column'
+            },
+            'plotOptions': {
+                'series': {
+                    'stacking': ''
+                }
+            }
+        },
+        'series': [],
+        'title': {
+            'text': 'Support & Resistance'
+        },
+        'credits': {
+            'enabled': false
+        },
+        'loading': false,
+        'size': {
+            'width': ''
+        },
+        'subtitle': {
+            'text': ''
+        },
+        'yAxis': {
+            title: {
+                text: 'Price'
+            }
+        }
+    };
     $scope.start = function(loadExtras) {
         $ionicLoading.show({
             template: 'Loading...'

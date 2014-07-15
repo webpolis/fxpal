@@ -18,7 +18,9 @@
     "jsonpath": "*",
     "colors": "~2.0.0",
     "ng-table": "~0.3.3",
-    "regression-js": "*"
+    "regression-js": "*",
+    "highcharts-release": "~4.0.3",
+    "highcharts-ng": "~0.0.6"
   },
   "devDependencies": {
     "angular-mocks": "~1.2.20",
