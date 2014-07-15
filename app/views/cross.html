@@ -26,13 +26,16 @@
         <div class="row" ng-repeat="corr in selected.correlation">
             <div class="col">
                 <span class="size-12" ng-class="{'green':corr.rel>0,'red':corr.rel<0}">
-                <i class="icon" ng-class="{'ion-plus-round':corr.rel>0,'ion-minus-round':corr.rel<0}"></i> {{corr.label}}
+                <i class="icon" ng-class="{'ion-plus-round':corr.rel>0,'ion-minus-round':corr.rel<0}"></i>
+                {{corr.label}}
                 </span>
             </div>
             <div class="col">
+                <rate-change ng-if="corr.currency" period="D" count="2" symbol="corr"></rate-change>
                 <i class="icon size-16" ng-class="{'ion-android-arrow-up-right green':corr.dailyChange>0,'ion-android-arrow-down-right red':corr.dailyChange<0,'ion-android-remove':corr.dailyChange==0}"></i>
             </div>
             <div class="col">
+                <rate-change ng-if="corr.currency" period="W" count="2" symbol="corr"></rate-change>
                 <i class="icon size-16" ng-class="{'ion-android-arrow-up-right green':corr.weeklyChange>0,'ion-android-arrow-down-right red':corr.weeklyChange<0,'ion-android-remove':corr.weeklyChange==0}"></i>
             </div>
         </div>

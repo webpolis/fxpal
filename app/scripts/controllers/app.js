@@ -35,15 +35,12 @@ angular.module('aifxApp').controller('appController', function($scope, $ionicSid
             events: 'http://www.dailyfx.com/files/Calendar-{{startWeekDate}}.csv',
             yql: 'https://query.yahooapis.com/v1/public/yql?q={{query}}&format=json&diagnostics=false&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys'
         },
-        // used for multiset query
-        multiVariables: ['OFDP.FUTURE_B1.1', 'WGC.GOLD_DAILY_USD.1', 'WSJ.CORN_2.1', 'OFDP.SILVER_5.1', 'WSJ.PL_MKT.1', 'WSJ.COPPER.1', 'WSJ.FE_TJN.1', 'WSJ.ZINC.1', 'NIKKEI.INDEX.4', 'YAHOO.INDEX_AORD.4', 'YAHOO.INDEX_GSPTSE.4', 'YAHOO.INDEX_GDAXI.4', 'YAHOO.INDEX_FTSE.4', 'BCB.UDJIAD1.1' /*, 'RATEINF.CPI_USA.1', 'RATEINF.CPI_JPN.1', 'RATEINF.CPI_DEU.1', 'RATEINF.CPI_FRA.1', 'RATEINF.CPI_GBR.1', 'RATEINF.CPI_ITA.1', 'RATEINF.CPI_RUS.1', 'RATEINF.CPI_CAN.1', 'RATEINF.CPI_AUS.1'*/ ],
         correlation: {
             min: 0.71
         },
         yqls: {
             quotes: 'select * from yahoo.finance.quote where symbol in ({{sets}})'
         },
-        // keys are tickers used by yql
         maps: {
             tickers: [{
                 quandl: 'YAHOO.INDEX_GDAXI',

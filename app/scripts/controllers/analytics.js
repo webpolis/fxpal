@@ -55,7 +55,9 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         // build multiset url
         var sets = $scope.data.crosses.map(function(cross) {
             return ['QUANDL.' + cross + '.1'].join(',');
-        }).concat($scope.config.multiVariables).join(',');
+        }).concat($scope.config.maps.tickers.map(function(ticker) {
+            return ticker.quandl;
+        })).join(',');
         // retrieve multiset
         $http.get($scope.config.urls.multiset.replace(/\{\{sets\}\}/gi, sets).replace(/\{\{startDate\}\}/gi, startDate)).success(function(ret) {
             if (angular.isArray(ret.column_names) && angular.isArray(ret.data)) {
@@ -65,6 +67,13 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             $ionicLoading.hide();
         });
     };
+    /**
+     * we only process commodities & indexes here; currencies are handled by rateChange directive
+     *
+     * @param  {[type]} sets [description]
+     * @param  {[type]} type [description]
+     * @return {[type]}      [description]
+     */
     $scope.computeChange = function(sets, type) {
         var def = $q.defer();
         $ionicLoading.show({
@@ -93,8 +102,16 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                                 }
                                 if (val !== null && change[keys[kkk - 1]] === null) {
                                     var ix = keys[kkk - 1];
-                                    change[ix] = val;
-                                    jsonPath.eval($scope.selected.correlation, '$[?(@.cross1 && @.cross1 == "' + ix + '" || @.cross2 && @.cross2 == "' + ix + '")]')[0][type] = val;
+                                    var ticker = jsonPath.eval($scope.config.maps.tickers, '$.[?(@.quandl=="' + ix + '")]')[0] ||  false;
+                                    if (ticker) {
+                                        change[ix] = val;
+                                        // set value
+                                        jsonPath.eval($scope.selected.correlation, '$[?(@.cross1 && @.cross1 == "' + ix + '" || @.cross2 && @.cross2 == "' + ix + '")]')[0][type] = val;
+                                    } else {
+                                        // set currency flag
+                                        jsonPath.eval($scope.selected.correlation, '$[?(@.cross1 && @.cross1 == "' + ix + '" || @.cross2 && @.cross2 == "' + ix + '")]')[0].currency = true;
+                                    }
+                                    // set label
                                     jsonPath.eval($scope.selected.correlation, '$[?(@.cross1 && @.cross1 == "' + ix + '" || @.cross2 && @.cross2 == "' + ix + '")]')[0].label = ix;
                                 }
                             });
@@ -120,7 +137,9 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                                 var symbol = quote.Symbol.replace(/\^/g, '');
                                 var ticker = jsonPath.eval($scope.config.maps.tickers, '$.[?(@.symbol=="' + symbol + '")]')[0];
                                 try {
+                                    // set value
                                     jsonPath.eval($scope.selected.correlation, '$[?(@.cross1 && @.cross1 == "' + ticker.quandl + '" || @.cross2 && @.cross2 == "' + ticker.quandl + '")]')[0][type] = parseFloat(quote.Change);
+                                    // set label
                                     jsonPath.eval($scope.selected.correlation, '$[?(@.cross1 && @.cross1 == "' + ticker.quandl + '" || @.cross2 && @.cross2 == "' + ticker.quandl + '")]')[0].label = ticker.name;
                                 } catch (err) {}
                             });
@@ -183,7 +202,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             }).filter(function(ev) {
                 return ev.actual !== '' ||  ev.forecast !== '' ||  ev.previous !== '';
             });
-            // sort by date desc
+            // sort by date asc
             $scope.selected.events.sort(function(a, b) {
                 if (new Date(a.localDate) < new Date(b.localDate)) {
                     return -1;
