@@ -11,7 +11,8 @@
     "csv2json": true,
     "moment": true,
     "$": true,
-    "google": true
+    "google": true,
+    "regression": true
   },
   "globalstrict": true,
   "quotmark": true,

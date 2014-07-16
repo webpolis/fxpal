@@ -3,29 +3,17 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
     $scope.tblEvents = new ngTableParams({}, {
         counts: []
     });
-    /**
-     * $scope.optsHighchartsReport.series.push({
-                            'data': sampleData.map(function(v, n) {
-                                return ran - (n * (Math.ceil(Math.random() * 100)));
-                            }),
-                            'id': 'serie-' + k,
-                            'name': measure.reportMeasureLabel,
-                            'type': (angular.isDefined(measure.reportMeasureType) ? measure.reportMeasureType : 'column'),
-                            'color': $scope.utils.getRandomColorCode(),
-                            'dashStyle': 'Solid'
-                        });
-     */
     $scope.optsHighchartsCross = {
+        exporting: {
+            enabled: false
+        },
         'series': [{
-            name: 'Close Price',
-            data: [],
+            name: 'Avg. Markets Close Price',
+            data: null,
             type: 'line',
             pointInterval: 1 * 3600 * 1000
         }],
         useHighStocks: true,
-        'title': {
-            'text': 'Close Price'
-        },
         'credits': {
             'enabled': false
         },
@@ -302,12 +290,22 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
     };
     $scope.chart = function() {
         var curCross = $scope.selected.cross1.currCode + $scope.selected.cross2.currCode;
+        $scope.selected.candles = [];
         $scope.api.getCandlesticks(curCross, 'H1', 160, false).then(function(ret) {
             if (angular.isDefined(ret.data) && angular.isArray(ret.data.candles)) {
                 angular.forEach(ret.data.candles, function(candle) {
                     var time = moment(candle.time).valueOf();
-                    var c = new Array(time, /*candle.openAsk, candle.highAsk, candle.lowAsk, */ candle.closeAsk);
-                    $scope.optsHighchartsCross.series[0].data.push(c);
+                    var close = ret.isRevertedCross ? 1 / candle.closeAsk : candle.closeAsk;
+                    var c = new Array(time, /*candle.openAsk, candle.highAsk, candle.lowAsk, */ close);
+                    $scope.selected.candles.push(c);
+                });
+                $scope.optsHighchartsCross.series[0].data = $scope.selected.candles;
+                var linearRegresssion = regression('exponential', $scope.selected.candles);
+                $scope.optsHighchartsCross.series.push({
+                    name: 'Regression',
+                    data: linearRegresssion.points,
+                    type: 'line',
+                    pointInterval: 1 * 3600 * 1000
                 });
             }
         });
