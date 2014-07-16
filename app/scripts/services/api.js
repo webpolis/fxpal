@@ -39,7 +39,10 @@ csv2json.csv('data/oandaCurrencies.csv', function(curr) {
     oandaCurrencies = curr;
 });
 angular.module('aifxApp').service('api', function api($http, $q) {
-    var urlRate = 'http://api-sandbox.oanda.com/v1/candles?instrument={{cross1}}_{{cross2}}&count={{count}}&candleFormat={{format}}&granularity={{period}}&weeklyAlignment=Monday';
+    var sandbox = false,
+        oandaToken = 'ce6b72e81af59be0bbc90152cad8d731-03d41860ed7849e3c4555670858df786';
+    var apiUrl = sandbox ? 'http://api-sandbox.oanda.com' : 'https://api-fxpractice.oanda.com';
+    var urlRate = apiUrl + '/v1/candles?instrument={{cross1}}_{{cross2}}&count={{count}}&candleFormat={{format}}&granularity={{period}}&weeklyAlignment=Monday';
     return {
         getCandlesticks: function(symbol, period, count, midpoint) {
             var def = $q.defer();
@@ -49,7 +52,11 @@ angular.module('aifxApp').service('api', function api($http, $q) {
             cross1 = cross === null ? symbol.split('').splice(3, 3).join('') : cross1;
             cross2 = cross === null ? symbol.split('').splice(0, 3).join('') : cross2;
             var url = urlRate.replace(/\{\{cross1\}\}/gi, cross1).replace(/\{\{cross2\}\}/gi, cross2).replace(/\{\{count\}\}/gi, count).replace(/\{\{period\}\}/gi, period).replace(/\{\{format\}\}/gi, (angular.isDefined(midpoint) && !midpoint ? 'bidask' : 'midpoint'));
-            $http.get(url).success(function(data) {
+            $http.get(url, {
+                headers: {
+                    'Authorization': 'Bearer ' + oandaToken
+                }
+            }).success(function(data) {
                 def.resolve({
                     data: data,
                     isRevertedCross: (cross === null)

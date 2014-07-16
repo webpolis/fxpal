@@ -23,7 +23,6 @@ angular.module('aifxApp').controller('appController', function($scope, $ionicSid
     $scope.config = {
         appName: 'FXPAL',
         token: 'pWGUEdRoPxqEdp66WRYv',
-        oandaToken: 'ce6b72e81af59be0bbc90152cad8d731-03d41860ed7849e3c4555670858df786',
         urls: {
             cross: 'http://www.quandl.com/api/v1/datasets/QUANDL/{{cross}}.json?trim_start={{startDate}}&trim_end={{endDate}}&collapse=daily&auth_token={{token}}',
             multiset: 'http://quandl.com/api/v1/multisets.json?columns={{sets}}&collapse=daily&trim_start={{startDate}}&auth_token={{token}}',
