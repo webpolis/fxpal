@@ -11,7 +11,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             text: false
         },
         'series': [{
-            name: 'Avg. Markets Close Price',
+            name: 'Average Markets Price',
             data: null,
             type: 'candlestick',
             pointInterval: null
@@ -41,6 +41,10 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         label: 'Month',
         granularity: 'H4',
         pointInterval: 14400000
+    }, {
+        label: 'Year',
+        granularity: 'D',
+        pointInterval: 86400000
     }];
     $scope.optChartPeriod = null;
     $scope.start = function(loadExtras, loadChart) {
@@ -324,6 +328,9 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                 break;
             case 'Month':
                 bars = 186;
+                break;
+            case 'Year':
+                bars = 365;
                 break;
         }
         $scope.selected.candles = [];
