@@ -7,13 +7,22 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         exporting: {
             enabled: false
         },
+        chart: {},
+        title: {
+            text: false
+        },
         'series': [{
             name: 'Avg. Markets Close Price',
             data: null,
             type: 'line',
-            pointInterval: 1 * 3600 * 1000
+            pointInterval: null
+        }, {
+            name: 'Regression',
+            data: null,
+            type: 'spline',
+            pointInterval: null
         }],
-        useHighStocks: true,
+        useHighStocks: false,
         'credits': {
             'enabled': false
         },
@@ -21,6 +30,20 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             type: 'datetime'
         }
     };
+    $scope.optsChartPeriods = [{
+        label: 'Intraday',
+        granularity: 'M15',
+        pointInterval: 900000
+    }, {
+        label: 'Week',
+        granularity: 'H1',
+        pointInterval: 3600000
+    }, {
+        label: 'Month',
+        granularity: 'H4',
+        pointInterval: 14400000
+    }];
+    $scope.optChartPeriod = null;
     $scope.start = function(loadExtras, loadChart) {
         $ionicLoading.show({
             template: 'Loading...'
@@ -44,7 +67,8 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                 $scope.processEvents();
             }
             if (loadChart) {
-                $scope.chart();
+                $scope.optChartPeriod = $scope.optsChartPeriods[0];
+                $scope.chart($scope.optChartPeriod);
             }
             //$scope.multiset();
         }).error(function(err) {
@@ -288,10 +312,23 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             }, 150);
         });
     };
-    $scope.chart = function() {
-        var curCross = $scope.selected.cross1.currCode + $scope.selected.cross2.currCode;
+    $scope.chart = function(period) {
+        $scope.optsHighchartsCross.series[0].data = null;
+        var curCross = $scope.selected.cross1.currCode + $scope.selected.cross2.currCode,
+            bars = 0;
+        switch (period.label) {
+            case 'Intraday':
+                bars = 96;
+                break;
+            case 'Week':
+                bars = 120;
+                break;
+            case 'Month':
+                bars = 120;
+                break;
+        }
         $scope.selected.candles = [];
-        $scope.api.getCandlesticks(curCross, 'H1', 160, false).then(function(ret) {
+        $scope.api.getCandlesticks(curCross, period.granularity, bars, false).then(function(ret) {
             if (angular.isDefined(ret.data) && angular.isArray(ret.data.candles)) {
                 angular.forEach(ret.data.candles, function(candle) {
                     var time = moment(candle.time).valueOf();
@@ -299,14 +336,11 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                     var c = new Array(time, /*candle.openAsk, candle.highAsk, candle.lowAsk, */ close);
                     $scope.selected.candles.push(c);
                 });
+                $scope.optsHighchartsCross.series[0].pointInterval = period.pointInterval;
                 $scope.optsHighchartsCross.series[0].data = $scope.selected.candles;
                 var linearRegresssion = regression('exponential', $scope.selected.candles);
-                $scope.optsHighchartsCross.series.push({
-                    name: 'Regression',
-                    data: linearRegresssion.points,
-                    type: 'line',
-                    pointInterval: 1 * 3600 * 1000
-                });
+                $scope.optsHighchartsCross.series[1].pointInterval = period.pointInterval;
+                $scope.optsHighchartsCross.series[1].data = linearRegresssion.points;
             }
         });
     };
