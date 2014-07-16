@@ -321,10 +321,10 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                 bars = 96;
                 break;
             case 'Week':
-                bars = 120;
+                bars = 168;
                 break;
             case 'Month':
-                bars = 120;
+                bars = 186;
                 break;
         }
         $scope.selected.candles = [];
