@@ -20,7 +20,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             name: 'Close Price',
             data: [],
             type: 'line',
-            pointInterval: 60 * 30 * 1000
+            pointInterval: 1 * 3600 * 1000
         }],
         useHighStocks: true,
         'title': {
