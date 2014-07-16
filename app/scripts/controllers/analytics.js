@@ -18,7 +18,9 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
     $scope.optsHighchartsCross = {
         'series': [{
             name: 'Close Price',
-            data: []
+            data: [],
+            type: 'line',
+            pointInterval: 60 * 30 * 1000
         }],
         useHighStocks: true,
         'title': {
@@ -26,6 +28,9 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         },
         'credits': {
             'enabled': false
+        },
+        xAxis: {
+            type: 'datetime'
         }
     };
     $scope.start = function(loadExtras, loadChart) {
@@ -299,8 +304,10 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         var curCross = $scope.selected.cross1.currCode + $scope.selected.cross2.currCode;
         $scope.api.getCandlesticks(curCross, 'H1', 160, false).then(function(ret) {
             if (angular.isDefined(ret.data) && angular.isArray(ret.data.candles)) {
-                $scope.optsHighchartsCross.series[0].data = ret.data.candles.map(function(candle) {
-                    return [moment(candle.time).valueOf(), /* candle.openMid, candle.highMid, candle.lowMid,*/ candle.closeAsk];
+                angular.forEach(ret.data.candles, function(candle) {
+                    var time = moment(candle.time).valueOf();
+                    var c = new Array(time, /*candle.openAsk, candle.highAsk, candle.lowAsk, */ candle.closeAsk);
+                    $scope.optsHighchartsCross.series[0].data.push(c);
                 });
             }
         });

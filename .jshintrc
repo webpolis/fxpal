@@ -10,7 +10,8 @@
     "console": true,
     "csv2json": true,
     "moment": true,
-    "$": true
+    "$": true,
+    "google": true
   },
   "globalstrict": true,
   "quotmark": true,

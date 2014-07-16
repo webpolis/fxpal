@@ -17,7 +17,8 @@ angular.module('aifxApp').controller('appController', function($scope, $ionicSid
         cross1: null,
         cross2: null,
         correlation: null,
-        events: null
+        events: null,
+        candles: null
     }, $scope.rootScope = $rootScope;
     $scope.config = {
         appName: 'FXPAL',
