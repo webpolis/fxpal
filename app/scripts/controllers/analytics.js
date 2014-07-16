@@ -7,14 +7,13 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         exporting: {
             enabled: false
         },
-        chart: {},
         title: {
             text: false
         },
         'series': [{
             name: 'Avg. Markets Close Price',
             data: null,
-            type: 'line',
+            type: 'candlestick',
             pointInterval: null
         }, {
             name: 'Regression',
@@ -22,7 +21,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             type: 'spline',
             pointInterval: null
         }],
-        useHighStocks: false,
+        useHighStocks: true,
         'credits': {
             'enabled': false
         },
@@ -313,7 +312,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         });
     };
     $scope.chart = function(period) {
-        $scope.optsHighchartsCross.series[0].data = null;
+        $scope.optsHighchartsCross.series[0].data = [];
         var curCross = $scope.selected.cross1.currCode + $scope.selected.cross2.currCode,
             bars = 0;
         switch (period.label) {
@@ -332,12 +331,15 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             if (angular.isDefined(ret.data) && angular.isArray(ret.data.candles)) {
                 angular.forEach(ret.data.candles, function(candle) {
                     var time = moment(candle.time).valueOf();
+                    var open = ret.isRevertedCross ? 1 / candle.openAsk : candle.openAsk;
                     var close = ret.isRevertedCross ? 1 / candle.closeAsk : candle.closeAsk;
-                    var c = new Array(time, /*candle.openAsk, candle.highAsk, candle.lowAsk, */ close);
-                    $scope.selected.candles.push(c);
+                    var high = ret.isRevertedCross ? 1 / candle.highAsk : candle.highAsk;
+                    var low = ret.isRevertedCross ? 1 / candle.lowAsk : candle.lowAsk;
+                    var c = new Array(time, open, high, low, close);
+                    $scope.optsHighchartsCross.series[0].data.push(c);
+                    $scope.selected.candles.push([time, close]);
                 });
                 $scope.optsHighchartsCross.series[0].pointInterval = period.pointInterval;
-                $scope.optsHighchartsCross.series[0].data = $scope.selected.candles;
                 var linearRegresssion = regression('exponential', $scope.selected.candles);
                 $scope.optsHighchartsCross.series[1].pointInterval = period.pointInterval;
                 $scope.optsHighchartsCross.series[1].data = linearRegresssion.points;
