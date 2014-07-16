@@ -55,7 +55,8 @@ angular.module('aifxApp').service('api', function api($http, $q) {
             $http.get(url, {
                 headers: {
                     'Authorization': 'Bearer ' + oandaToken
-                }
+                },
+                cache: true
             }).success(function(data) {
                 def.resolve({
                     data: data,

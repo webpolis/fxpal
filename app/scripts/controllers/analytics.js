@@ -333,7 +333,6 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                 bars = 365;
                 break;
         }
-        $scope.selected.candles = [];
         $scope.api.getCandlesticks(curCross, period.granularity, bars, false).then(function(ret) {
             if (angular.isDefined(ret.data) && angular.isArray(ret.data.candles)) {
                 angular.forEach(ret.data.candles, function(candle) {
@@ -344,10 +343,9 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                     var low = ret.isRevertedCross ? 1 / candle.lowAsk : candle.lowAsk;
                     var c = new Array(time, open, high, low, close);
                     $scope.optsHighchartsCross.series[0].data.push(c);
-                    $scope.selected.candles.push([time, close]);
                 });
                 $scope.optsHighchartsCross.series[0].pointInterval = period.pointInterval;
-                var linearRegresssion = regression('exponential', $scope.selected.candles);
+                var linearRegresssion = regression('exponential', $scope.optsHighchartsCross.series[0].data);
                 $scope.optsHighchartsCross.series[1].pointInterval = period.pointInterval;
                 $scope.optsHighchartsCross.series[1].data = linearRegresssion.points;
             }
