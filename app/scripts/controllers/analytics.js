@@ -337,10 +337,10 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             if (angular.isDefined(ret.data) && angular.isArray(ret.data.candles)) {
                 angular.forEach(ret.data.candles, function(candle) {
                     var time = moment(candle.time).valueOf();
-                    var open = ret.isRevertedCross ? 1 / candle.openAsk : candle.openAsk;
-                    var close = ret.isRevertedCross ? 1 / candle.closeAsk : candle.closeAsk;
-                    var high = ret.isRevertedCross ? 1 / candle.highAsk : candle.highAsk;
-                    var low = ret.isRevertedCross ? 1 / candle.lowAsk : candle.lowAsk;
+                    var open = parseFloat(ret.isRevertedCross ? (1 / candle.openAsk).toFixed(4) : candle.openAsk.toFixed(4));
+                    var close = parseFloat(ret.isRevertedCross ? (1 / candle.closeAsk).toFixed(4) : candle.closeAsk.toFixed(4));
+                    var high = parseFloat(ret.isRevertedCross ? (1 / candle.highAsk).toFixed(4) : candle.highAsk.toFixed(4));
+                    var low = parseFloat(ret.isRevertedCross ? (1 / candle.lowAsk).toFixed(4) : candle.lowAsk.toFixed(4));
                     var c = new Array(time, open, high, low, close);
                     $scope.optsHighchartsCross.series[0].data.push(c);
                 });
