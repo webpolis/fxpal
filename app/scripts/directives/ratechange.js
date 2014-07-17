@@ -9,7 +9,13 @@ angular.module('aifxApp').directive('rateChange', function($interval, $http, api
             count: '='
         },
         link: function postLink(scope, element, attrs) {
-            api.getCandlesticks(scope.symbol.label, scope.period, scope.count).then(function(ret) {
+            var cross1 = scope.symbol.label.split('').splice(0, 3).join(''),
+                cross2 = scope.symbol.label.split('').splice(3, 3).join('');
+            api.getCandlesticks({
+                instrument: cross1 + '_' + cross2,
+                granularity: scope.period,
+                count: scope.count
+            }).then(function(ret) {
                 var diffLast2 = ret.data.candles[0].closeMid - ret.data.candles[1].closeMid;
                 switch (scope.period) {
                     case 'D':

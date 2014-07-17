@@ -317,23 +317,29 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
     };
     $scope.chart = function(period) {
         $scope.optsHighchartsCross.series[0].data = [];
-        var curCross = $scope.selected.cross1.currCode + $scope.selected.cross2.currCode,
-            bars = 0;
+        var start = null;
         switch (period.label) {
             case 'Intraday':
-                bars = 96;
+                start = moment().subtract('day', 1).utc().format('YYYY-MM-DDTHH:mm:ssZ');
                 break;
             case 'Week':
-                bars = 168;
+                start = moment().subtract('week', 1).utc().format('YYYY-MM-DDTHH:mm:ssZ');
                 break;
             case 'Month':
-                bars = 186;
+                start = moment().subtract('month', 1).utc().format('YYYY-MM-DDTHH:mm:ssZ');
                 break;
             case 'Year':
-                bars = 365;
+                start = moment().subtract('year', 1).utc().format('YYYY-MM-DDTHH:mm:ssZ');
                 break;
         }
-        $scope.api.getCandlesticks(curCross, period.granularity, bars, false).then(function(ret) {
+        var optsOanda = {
+            instrument: [$scope.selected.cross1.currCode, $scope.selected.cross2.currCode].join('_'),
+            granularity: period.granularity,
+            candleFormat: 'bidask',
+            start: start,
+            end: moment().utc().format('YYYY-MM-DDTHH:mm:ssZ')
+        };
+        $scope.api.getCandlesticks(optsOanda).then(function(ret) {
             if (angular.isDefined(ret.data) && angular.isArray(ret.data.candles)) {
                 angular.forEach(ret.data.candles, function(candle) {
                     var time = moment(candle.time).valueOf();
