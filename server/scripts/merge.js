@@ -37,7 +37,8 @@ var mergeCalendars = function() {
         var year = calendar.replace(/.*\b(\d{4})\b.*/g, '$1');
         var data = fs.readFileSync(calendar);
         var parser = csv({
-            columns: true
+            columns: true,
+            trim: true
         });
         parser.on('readable', function() {
             var row = null;
@@ -69,14 +70,25 @@ var mergeCalendars = function() {
             }
         });
         parser.on('error', function(err) {
-            console.log(err.message);
+            //console.log(err.message);
         });
         parser.on('finish', function() {
-            console.log(dataCalendar);
+            def.resolve();
         });
         parser.write(data);
         parser.end();
     });
     return def.promise;
 };
-mergeCalendars();
+mergeCalendars().then(function() {
+    var cols = Object.keys(dataCalendar[0]),
+        outCsv = __dirname + '/../../app/data/calendar.csv';
+    fs.appendFileSync(outCsv, cols.join(',') + '\n');
+    dataCalendar.forEach(function(row) {
+        var data = [];
+        for (var c in row) {
+            data.push(row[c]);
+        }
+        fs.appendFileSync(outCsv, data.join(',') + '\n');
+    });
+});
