@@ -1,0 +1,153 @@
+Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Sun Jun 2,18:00,GMT,USD,USD Fed's Bernanke Gives Graduation Speech at Princeton University,Low,,,
+Sun Jun 2,23:30,GMT,aud,AUD AiG Performance of Manufacturing Index,Medium,43.8,,36.7
+Sun Jun 2,23:50,GMT,jpy,JPY Capital Spending,Medium,-3.9%,-5.5%,-8.7%
+Sun Jun 2,23:50,GMT,jpy,JPY Capital Spending excl Software,Medium,-5.2%,-5.4%,-7.2%
+Mon Jun 3,00:00,GMT,aud,AUD RPData-Rismark House PX Actual,Low,-1.2%,,-0.5%
+Mon Jun 3,00:30,GMT,aud,AUD TD Securities Inflation (MoM),Low,0.2%,,0.3%
+Mon Jun 3,00:30,GMT,aud,AUD TD Securities Inflation (YoY),Low,2.2%,,2.1%
+Mon Jun 3,01:00,GMT,cny,CNY Non-manufacturing PMI,Medium,54.3,,54.5
+Mon Jun 3,01:30,GMT,aud,AUD ANZ Job Advertisements (MoM),Low,-2.4%,,-1.7%
+Mon Jun 3,01:30,GMT,aud,AUD Retail Sales s.a. (MoM),Medium,0.2%,0.3%,-0.4%
+Mon Jun 3,01:30,GMT,aud,AUD Company Operating Profit (QoQ),Low,3.0%,1.5%,-0.5%
+Mon Jun 3,01:30,GMT,aud,AUD Inventories,Low,-0.6%,0.0%,0.2%
+Mon Jun 3,01:45,GMT,cny,CNY HSBC Manufacturing PMI,Medium,49.2,49.6,50.4
+Mon Jun 3,01:50,GMT,USD,USD Fed's Yellen Speaks on Regulation in Shanghai,Low,,,
+Mon Jun 3,05:00,GMT,jpy,JPY Vehicle Sales (YoY),Low,-7.3%,,2.0%
+Mon Jun 3,06:30,GMT,aud,AUD RBA Commodity Price Index,Low,87.0,,85.5
+Mon Jun 3,06:30,GMT,aud,AUD RBA Commodity Index SDR (YoY),Low,-8.6%,,-7.3%
+Mon Jun 3,07:30,GMT,chf,CHF SVME-Purchasing Managers Index,Medium,52.2,50.8,50.2
+Mon Jun 3,07:45,GMT,eur,EUR Italian Purchasing Manager Index Manufacturing,Low,47.3,46.2,45.5
+Mon Jun 3,07:50,GMT,eur,EUR French Purchasing Manager Index Manufacturing,Low,46.4,45.5,45.5
+Mon Jun 3,07:55,GMT,eur,EUR German Purchasing Manager Index Manufacturing,Medium,49.4,49.0,49.0
+Mon Jun 3,08:00,GMT,eur,EUR Euro-Zone Purchasing Manager Index Manufacturing,Medium,48.3,47.8,47.8
+Mon Jun 3,08:30,GMT,gbp,GBP Purchasing Manager Index Manufacturing,Medium,51.3,50.3,50.2
+Mon Jun 3,11:20,GMT,USD,USD Fed's Williams Speaks in Stockholm,Low,,,
+Mon Jun 3,12:58,GMT,usd,USD Markit US PMI Final,Low,52.3,52.0,52.0
+Mon Jun 3,14:00,GMT,usd,USD Construction Spending (MoM),Medium,0.4%,0.9%,-1.7%
+Mon Jun 3,14:00,GMT,usd,USD ISM Manufacturing,High,49.0,50.7,50.7
+Mon Jun 3,14:00,GMT,usd,USD ISM Prices Paid,Medium,49.5,50.0,50
+Mon Jun 3,14:00,GMT,USD,USD Revisions to Construction data back to Jan. 2011,Low,,,
+Mon Jun 3,21:00,GMT,usd,USD Total Vehicle Sales,Low,15.24M,15.10M,14.88M
+Mon Jun 3,21:00,GMT,usd,USD Domestic Vehicle Sales,Low,11.95M,11.95M,11.76M
+Mon Jun 3,23:01,GMT,gbp,GBP BRC Sales Like-For-Like,Low,1.8,1.3%,-2.2%
+Mon Jun 3,23:50,GMT,jpy,JPY Monetary Base (YoY),Low,31.6%,,23.1%
+Mon Jun 3,23:50,GMT,jpy,JPY Monetary Base End of period,Low,¥159.2T,,¥155.3T
+Tue Jun 4,01:30,GMT,aud,AUD Current Account Balance (Australian Dollar),Medium,-8.5B,-9.0B,-14.8B
+Tue Jun 4,01:30,GMT,aud,AUD Australia Net Exports of GDP,Low,1.0%,0.8%,0.6%
+Tue Jun 4,01:30,GMT,jpy,JPY Labor Cash Earnings (YoY),Medium,0.3%,,-0.9%
+Tue Jun 4,04:30,GMT,aud,AUD Reserve Bank of Australia Rate Decision,High,2.75%,2.75%,2.75%
+Tue Jun 4,08:30,GMT,gbp,GBP Purchasing Manager Index Construction,Medium,50.8,49.8,49.4
+Tue Jun 4,09:00,GMT,eur,EUR Euro-Zone Producer Price Index (MoM),Low,-0.6%,-0.2%,-0.2%
+Tue Jun 4,09:00,GMT,eur,EUR Euro-Zone Producer Price Index (YoY),Medium,-0.2%,0.2%,0.6%
+Tue Jun 4,12:30,GMT,cad,CAD International Merchandise Trade (Canadian dollar),Low,-0.57B,-0.50B,0.02B
+Tue Jun 4,12:30,GMT,USD,USD Annual Revisions of the International Trade Report,Low,,,
+Tue Jun 4,12:30,GMT,usd,USD Trade Balance,Medium,-$40.3B,-$41.0B,-$38.8B
+Tue Jun 4,13:45,GMT,usd,USD ISM New York,Low,54.4,55.0,58.3
+Tue Jun 4,14:00,GMT,usd,USD IBD/TIPP Economic Optimism,Low,49.0,50,45.1
+Tue Jun 4,16:30,GMT,usd,USD Fed's Raskin Speaks on Employment,Low,,,
+Tue Jun 4,18:15,GMT,usd,USD Fed's George Speaks on Economy in New Mexico,Low,,,
+Tue Jun 4,22:45,GMT,nzd,NZD Value of All Buildings s.a.,Low,5.8%,,1.8%
+Tue Jun 4,23:01,GMT,gbp,GBP BRC Shop Price Index,Low, -0.1%,,0.4%
+Tue Jun 4,23:30,GMT,aud,AUD AiG Performance of Service Index,Medium,40.6,,44.1
+Wed Jun 5,00:00,GMT,USD,USD Fed's Fisher Speaks on Monetary Policy in Toronto,Low,,,
+Wed Jun 5,01:00,GMT,nzd,NZD ANZ Commodity Price,Low,-1.6%,,12.6%
+Wed Jun 5,01:30,GMT,aud,AUD Gross Domestic Product (QoQ),High,0.6%,0.7%,0.6%
+Wed Jun 5,01:30,GMT,aud,AUD Gross Domestic Product (YoY),High,2.5%,2.7%,3.2%
+Wed Jun 5,01:45,GMT,cny,CNY HSBC Services PMI,Medium,51.2,,51.1
+Wed Jun 5,07:45,GMT,eur,EUR Italian Purchasing Manager Index Services,Low,46.5,47.5,47.0
+Wed Jun 5,07:50,GMT,eur,EUR French Purchasing Manager Index Services,Low,44.3,44.3,44.3
+Wed Jun 5,07:55,GMT,eur,EUR German Purchasing Manager Index Services,Medium,49.7,49.8,49.8
+Wed Jun 5,08:00,GMT,eur,EUR Euro-Zone Purchasing Manager Index Services,Medium,47.2,47.5,47.5
+Wed Jun 5,08:00,GMT,eur,EUR Euro-Zone Purchasing Manager Index Composite,Medium,47.7,47.7,47.7
+Wed Jun 5,08:30,GMT,gbp,GBP Purchasing Manager Index Services,Medium,54.9,53.1,52.9
+Wed Jun 5,08:30,GMT,gbp,GBP Official Reserves (Changes),Low,-$1559M,,-$1149M
+Wed Jun 5,09:00,GMT,eur,EUR Euro-Zone Gross Domestic Product s.a. (QoQ),High,-0.2%,-0.2%,-0.2%
+Wed Jun 5,09:00,GMT,eur,EUR Euro-Zone Gross Domestic Product s.a. (YoY),High,-1.1%,-1.0%,-1.0%
+Wed Jun 5,09:00,GMT,eur,EUR Euro-Zone Household Consumption (QoQ),Low,0.1%,,-0.6%
+Wed Jun 5,09:00,GMT,eur,EUR Euro-Zone Gross Fixed Capital (QoQ),Low,-1.6%,,-1.4%
+Wed Jun 5,09:00,GMT,eur,EUR Euro-Zone Government Expenditure (QoQ),Low,-0.1%,,0.0%
+Wed Jun 5,09:00,GMT,eur,EUR Euro-Zone Retail Sales (MoM),Low,-0.5%,-0.2%,-0.2%
+Wed Jun 5,09:00,GMT,eur,EUR Euro-Zone Retail Sales (YoY),Medium,-1.1%,-0.8%,-2.2%
+Wed Jun 5,11:00,GMT,usd,USD MBA Mortgage Applications,Low,-11.5%,,-8.8%
+Wed Jun 5,12:15,GMT,usd,USD ADP Employment Change,Medium,135K,165K,119K
+Wed Jun 5,12:30,GMT,cad,CAD Building Permits (MoM),Medium,10.5%,-3.0%,8.6%
+Wed Jun 5,12:30,GMT,usd,USD Non-Farm Productivity,Low,0.5%,0.6%,0.7%
+Wed Jun 5,12:30,GMT,usd,USD Unit Labor Costs,Low,-4.3%,0.5%,0.5%
+Wed Jun 5,14:00,GMT,usd,USD Factory Orders,Medium,1.0%,1.5%,-4.9%
+Wed Jun 5,14:00,GMT,usd,USD USD ISM Non-Manufacutring Composite,Medium,53.7,53.5,53.1
+Wed Jun 5,14:30,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,-6267K,-800K,3000K
+Wed Jun 5,14:30,GMT,usd,USD DOE Cushing OK Crude Inventory,Low,-484K,,335K
+Wed Jun 5,14:30,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,-366K,1000K,-1514K
+Wed Jun 5,14:30,GMT,usd,USD DOE U.S. Distillate Inventory,Low,2611K,1400K,1851K
+Wed Jun 5,18:00,GMT,USD,USD US Federal Reserve Releases Beige Book,Medium,,,
+Wed Jun 5,23:50,GMT,jpy,JPY Japan Buying Foreign Bonds (Yen),Medium,¥-1172.5B,,-¥1119.6B
+Wed Jun 5,23:50,GMT,jpy,JPY Japan Buying Foreign Stocks (Yen),Medium,¥-137.3B,,-¥105.0B
+Wed Jun 5,23:50,GMT,jpy,JPY Foreign Buying Japan Bonds (Yen),Low,¥-119.7B,,-¥458.4B
+Wed Jun 5,23:50,GMT,jpy,JPY Foreign Buying Japan Stocks (Yen),Low,¥-191.1B,,¥-68.5B
+Thu Jun 6,01:30,GMT,aud,AUD Trade Balance (Australian dollar),Medium,28M,180M,555M
+Thu Jun 6,02:00,GMT,jpy,JPY Tokyo Avg Office Vacancies (%),Low,8.33,,8.54
+Thu Jun 6,05:30,GMT,eur,EUR French ILO Unemployment Rate,Low,10.8%,10.8%,10.5%
+Thu Jun 6,07:00,GMT,gbp,GBP Halifax Plc House Prices s.a. (MoM),Low,0.4%,0.2%,1.1%
+Thu Jun 6,07:00,GMT,gbp,GBP Halifax House Price (3MoY),Low,2.6%,2.5%,2.0%
+Thu Jun 6,07:15,GMT,chf,CHF Consumer Price Index (MoM),Medium,0.1%,0.1%,0.0%
+Thu Jun 6,07:15,GMT,chf,CHF Consumer Price Index (YoY),Medium,-0.5%,-0.6%,-0.6%
+Thu Jun 6,07:15,GMT,chf,CHF CPI - EU Harmonised (MoM),Low,0.0%,,-0.1%
+Thu Jun 6,07:15,GMT,chf,CHF CPI - EU Harmonised (YoY),Low,-0.2%,,-0.4%
+Thu Jun 6,08:00,GMT,gbp,GBP New Car Registrations (YoY),Low,11.0%,,14.8%
+Thu Jun 6,08:30,GMT,gbp,GBP Lloyds Employment Confidence,Low,-37,,-41
+Thu Jun 6,10:00,GMT,eur,EUR German Factory Orders s.a. (MoM),Medium,-2.3%,-1.0%,2.3%
+Thu Jun 6,10:00,GMT,eur,EUR German Factory Orders n.s.a. (YoY),Medium,-0.4%,0.9%,-0.3%
+Thu Jun 6,11:00,GMT,gbp,GBP Bank of England Rate Decision,High,0.50%,0.50%,0.50%
+Thu Jun 6,11:00,GMT,gbp,GBP BOE Asset Purchase Target,High,375B,375B,375B
+Thu Jun 6,11:30,GMT,usd,USD Challenger Job Cuts (YoY),Low,-41.2%,,-6.0%
+Thu Jun 6,11:30,GMT,usd,USD RBC Consumer Outlook Index,Low,51.8,,50.2
+Thu Jun 6,11:45,GMT,eur,EUR European Central Bank Rate Decision,High,0.50%,0.50%,0.50%
+Thu Jun 6,11:45,GMT,eur,EUR ECB Deposit Facility Rate,High,0.00%,0.00%,0.00%
+Thu Jun 6,12:30,GMT,usd,USD Initial Jobless Claims,Medium,346K,345K,357K
+Thu Jun 6,12:30,GMT,usd,USD Continuing Claims,Low,2952K,2973K,2986K
+Thu Jun 6,12:30,GMT,eur,EUR ECB's Draghi Holds Press Conference After Rate Decision,High,,,
+Thu Jun 6,14:00,GMT,cad,CAD Ivey Purchasing Managers Index s.a.,Medium,63.1,56.0,52.2
+Thu Jun 6,14:30,GMT,usd,USD EIA Natural Gas Storage Change,Low,111,100,88
+Thu Jun 6,16:00,GMT,usd,USD Fed's Plosser Speaks on Economy in Boston,Low,,,
+Thu Jun 6,16:00,GMT,usd,USD Household Change in Net Worth,Low,$3003B,,$1397B
+Thu Jun 6,23:30,GMT,aud,AUD AiG Performance of Construction Index,Medium,35.3,,35.2
+Thu Jun 6,23:50,GMT,jpy,JPY Official Reserve Assets,Low,$1250.2B,,$1258.0B
+Fri Jun 7,05:00,GMT,jpy,JPY Coincident Index,Low,94.8,94.9,93.8
+Fri Jun 7,05:00,GMT,jpy,JPY Leading Index,Medium,99.3,98.8,98.0
+Fri Jun 7,06:00,GMT,eur,EUR German Trade Balance (euros),Medium,18.1B,17.0B,18.8B
+Fri Jun 7,06:00,GMT,eur,EUR German Current Account (euros),Low,17.6B,13.0B,20.4B
+Fri Jun 7,06:00,GMT,eur,EUR German Imports s.a. (MoM),Low,2.3%,0.5%,0.7%
+Fri Jun 7,06:00,GMT,eur,EUR German Exports s.a. (MoM),Low,1.9%,0.1%,0.5%
+Fri Jun 7,06:00,GMT,eur,EUR German Labor Costs Workday Adj (YoY),Low,3.9%,,3.1%
+Fri Jun 7,06:00,GMT,eur,EUR German Labor Costs Seas. Adj. (QoQ),Low,1.1%,,0.9%
+Fri Jun 7,06:30,GMT,aud,AUD Foreign Reserves (Australian dollar),Low,A$51.7B,,A$49.8B
+Fri Jun 7,06:30,GMT,eur,"EUR Bundesbank Releases New GDP, Inflation Forecasts",Medium,,,
+Fri Jun 7,07:00,GMT,chf,CHF Foreign Currency Reserves,Low,441.4B,440.5B,436.1B
+Fri Jun 7,08:30,GMT,gbp,GBP BoE/GfK Inflation Next 12 Mths,Low,3.6%,,3.6%
+Fri Jun 7,08:30,GMT,gbp,GBP Visible Trade Balance (Pounds),Medium,-£8224,-£8800,-£9175
+Fri Jun 7,08:30,GMT,gbp,GBP Trade Balance Non EU (Pounds),Medium,-£3414,-£3550,-£3469
+Fri Jun 7,08:30,GMT,gbp,GBP Total Trade Balance (Pounds),Medium,-£2579,-£3000,-£3249
+Fri Jun 7,10:00,GMT,eur,EUR German Industrial Production s.a. (MoM),Low,1.8%,0.0%,1.2%
+Fri Jun 7,10:00,GMT,eur,EUR German Industrial Production n.s.a. and w.d.a. (YoY),Medium,1.0%,-0.7%,-2.4%
+Fri Jun 7,10:00,GMT,eur,ECB Announces 3-Year LTRO Repayment,Low,2.93B,,3.1B
+Fri Jun 7,12:30,GMT,usd,USD Unemployment Rate,High,7.6%,7.5%,7.5%
+Fri Jun 7,12:30,GMT,usd,USD Change in Private Payrolls,Medium,178K,175K,157K
+Fri Jun 7,12:30,GMT,usd,USD Change in Manufacturing Payrolls,Low,-8K,4K,-9K
+Fri Jun 7,12:30,GMT,usd,USD Change in Household Employment,Low,319,,293
+Fri Jun 7,12:30,GMT,usd,USD Underemployment Rate (U6),Medium,13.8%,,13.9%
+Fri Jun 7,12:30,GMT,usd,USD Average Hourly Earning All Employees (YoY),Medium,2.0%,2.1%,1.9%
+Fri Jun 7,12:30,GMT,usd,USD Two-Month Payroll Net Revision,Medium,-12K,,
+Fri Jun 7,12:30,GMT,cad,CAD Participation Rate,Low,66.7,66.5,66.5
+Fri Jun 7,12:30,GMT,usd,USD Change in Non-farm Payrolls,High,175K,163K,149K
+Fri Jun 7,12:30,GMT,usd,USD Average Hourly Earning All Employees (MoM),Low,0.0%,0.2%,0.2%
+Fri Jun 7,12:30,GMT,usd,USD Average Weekly Hours All Employees,Low,34.5,34.5,34.4
+Fri Jun 7,12:30,GMT,cad,CAD Unemployment Rate,High,7.1%,7.2%,7.2%
+Fri Jun 7,12:30,GMT,cad,CAD Net Change in Employment,High,95.0K,15.0K,12.5K
+Fri Jun 7,12:30,GMT,cad,CAD Full Time Employment Change,Medium,76.7,,36
+Fri Jun 7,12:30,GMT,cad,CAD Part Time Employment Change,Low,18.2,,-23.6
+Fri Jun 7,12:30,GMT,cad,CAD Labor Productivity (QoQ),Low,0.2%,0.2%,0.1%
+Fri Jun 7,19:00,GMT,usd,USD Consumer Credit,Medium,$11.058B,$12.900B,$8.369B
+Sat Jun 8,02:13,GMT,cny,CNY Trade Balance (USD),Medium,$20.43B,$20.00B,$18.16B
+Sat Jun 8,02:13,GMT,cny,CNY Exports (YoY),Medium,1.0%,7.4%,14.7%
+Sat Jun 8,02:13,GMT,cny,CNY Imports (YoY),Medium,-0.3%,6.6%,16.8%

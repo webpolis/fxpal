@@ -1,0 +1,163 @@
+Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Sun Sep 2,22:45,GMT,nzd,NZD Terms of Trade Index (QoQ),Medium,-2.6%,-2.0%,-2.3%
+Sun Sep 2,23:01,GMT,gbp,GBP Lloyds Business Barometer,Low,10,,-8
+Sun Sep 2,23:30,GMT,aud,AUD AiG Performance of Manufacturing Index,Medium,45.3,,40.3
+Sun Sep 2,23:50,GMT,jpy,JPY Capital Spending,Medium,7.7%,8.9%,3.3%
+Sun Sep 2,23:50,GMT,jpy,JPY Capital Spending excl Software,Medium,6.6%,7.8%,3.5%
+Mon Sep 3,00:00,GMT,aud,AUD RPData-Rismark House PX Actual,Low,0.0%,,0.6%
+Mon Sep 3,00:30,GMT,aud,AUD TD Securities Inflation (MoM),Medium,0.6%,,0.2%
+Mon Sep 3,00:30,GMT,aud,AUD TD Securities Inflation (YoY),Medium,2.2%,,1.5%
+Mon Sep 3,01:00,GMT,cny,CNY Non-manufacturing PMI,Medium,56.3,,55.6
+Mon Sep 3,01:30,GMT,aud,AUD Company Operating Profit (QoQ),Low,-0.7%,1.0%,-3.7%
+Mon Sep 3,01:30,GMT,aud,AUD Inventories,Low,0.6%,0.2%,1.3%
+Mon Sep 3,01:30,GMT,aud,AUD Retail Sales s.a. (MoM),Medium,-0.8%,0.2%,1.2%
+Mon Sep 3,01:30,GMT,aud,AUD ANZ Job Advertisements (MoM),Low,-2.3%,,-0.8%
+Mon Sep 3,02:30,GMT,cny,CNY HSBC Manufacturing PMI,Medium,47.6,,49.3
+Mon Sep 3,05:00,GMT,jpy,JPY Vehicle Sales (YoY),Low,7.3%,,36.1%
+Mon Sep 3,06:30,GMT,aud,AUD RBA Commodity Price Index,Low,90.3,,94.4
+Mon Sep 3,06:30,GMT,aud,AUD RBA Commodity Index SDR (YoY),Low,-13.7%,,-11.1%
+Mon Sep 3,07:15,GMT,chf,CHF Retail Sales (Real) (YoY),Medium,3.2%,,3.3%
+Mon Sep 3,07:30,GMT,chf,CHF SVME-Purchasing Managers Index,Medium,46.7,49.1,48.6
+Mon Sep 3,07:45,GMT,eur,EUR Italian Purchasing Manager Index Manufacturing,Low,43.6,45,44.3
+Mon Sep 3,07:50,GMT,eur,EUR French Purchasing Manager Index Manufacturing,Low,46.0,46.2,46.2
+Mon Sep 3,07:55,GMT,eur,EUR German Purchasing Manager Index Manufacturing,Medium,44.7,45.1,45.1
+Mon Sep 3,08:00,GMT,eur,EUR Euro-Zone Purchasing Manager Index Manufacturing,Medium,45.1,45.3,45.3
+Mon Sep 3,08:30,GMT,gbp,GBP Purchasing Manager Index Manufacturing,Medium,49.5,46.1,45.2
+Mon Sep 3,23:01,GMT,gbp,GBP BRC Sales Like-For-Like (YoY),Low,-0.4%,-0.5%,0.1%
+Mon Sep 3,23:50,GMT,jpy,JPY Monetary Base (YoY),Low,6.5%,,8.6%
+Tue Sep 4,,,GBP,GBP Halifax Plc House Prices s.a. (MoM),Low,,0.2%,-0.6%
+Tue Sep 4,,,GBP,GBP Halifax House Price (3MoY),Low,,-0.8%,-0.6%
+Tue Sep 4,01:00,GMT,nzd,NZD ANZ Commodity Price,Low,0.5%,,-0.4%
+Tue Sep 4,01:30,GMT,jpy,JPY Labor Cash Earnings (YoY),Low,-1.2%,-0.5%,-0.4%
+Tue Sep 4,01:30,GMT,aud,AUD Current Account Balance (Australian Dollar),Medium,-11801M,-12200M,-12997M
+Tue Sep 4,01:30,GMT,aud,AUD Australia Net Exports of GDP,Low,0.3,0.6,-0.5
+Tue Sep 4,04:30,GMT,aud,AUD Reserve Bank of Australia Rate Decision,High,3.5%,3.5%,3.5%
+Tue Sep 4,05:45,GMT,chf,CHF Gross Domestic Product (QoQ),Medium,-0.1%,0.2%,0.5%
+Tue Sep 4,05:45,GMT,chf,CHF Gross Domestic Product (YoY),High,0.5%,1.6%,1.2%
+Tue Sep 4,08:30,GMT,gbp,GBP Purchasing Manager Index Construction,Medium,49.0,50,50.9
+Tue Sep 4,09:00,GMT,eur,EUR Euro-Zone Producer Price Index (MoM),Medium,0.4%,0.2%,-0.5%
+Tue Sep 4,09:00,GMT,eur,EUR Euro-Zone Producer Price Index (YoY),High,1.8%,1.6%,1.8%
+Tue Sep 4,10:30,GMT,eur,EUR EU's Van Rompuy Meets Germany's Merkel in Berlin,Low,,,
+Tue Sep 4,11:00,GMT,eur,EUR French President Hollande Meets Italian PM in Rome,Low,,,
+Tue Sep 4,12:58,GMT,usd,USD Markit US PMI Final,Medium,51.5,51.9,51.4
+Tue Sep 4,14:00,GMT,usd,USD ISM Manufacturing,High,49.6,50.0,49.8
+Tue Sep 4,14:00,GMT,usd,USD ISM Prices Paid,Medium,54.0,46.0,39.5
+Tue Sep 4,14:00,GMT,usd,USD Construction Spending (MoM),Medium,-0.9%,0.4%,0.4%
+Tue Sep 4,14:35,GMT,gbp,GBP Purchasing Manager Index Services,Medium,53.7,51.1,51
+Tue Sep 4,21:00,GMT,usd,USD Total Vehicle Sales,Low,14.46M,14.20M,14.05M
+Tue Sep 4,21:00,GMT,usd,USD Domestic Vehicle Sales,Low,11.54M,11.03M,11.00M
+Tue Sep 4,22:45,GMT,nzd,NZD Value of All Buildings s.a.,Low,0.8%,3.0%,-0.4%
+Tue Sep 4,23:01,GMT,gbp,GBP BRC Shop Price Index (YoY),Low,1.1%,,1.0%
+Tue Sep 4,23:30,GMT,aud,AUD AiG Performance of Service Index,Medium,42.4,,46.5
+Wed Sep 5,01:30,GMT,JPY,JPY BOJ Board Member Miyao's Speech and Press Conference,Low,,,
+Wed Sep 5,01:30,GMT,aud,AUD Gross Domestic Product (QoQ),High,0.6%,0.7%,1.4%
+Wed Sep 5,01:30,GMT,aud,AUD Gross Domestic Product (YoY),High,3.7%,3.7%,4.4%
+Wed Sep 5,02:30,GMT,cny,CNY HSBC Services PMI,Medium,52.0,,53.1
+Wed Sep 5,07:15,GMT,chf,CHF Consumer Price Index (YoY),Medium,-0.5%,-0.4%,-0.7%
+Wed Sep 5,07:15,GMT,CHF,CHF CPI - EU Harmonised (MoM),Medium,-0.3%,,-0.3%
+Wed Sep 5,07:15,GMT,CHF,CHF CPI - EU Harmonised (YoY),Medium,-0.5%,,-0.8%
+Wed Sep 5,07:15,GMT,chf,CHF Consumer Price Index (MoM),Medium,0.0%,0.1%,-0.5%
+Wed Sep 5,07:45,GMT,EUR,EUR Italian Purchasing Manager Index Services,Low,44.0,43.3,43
+Wed Sep 5,07:50,GMT,EUR,EUR French Purchasing Manager Index Services,Low,49.2,50.2,50.2
+Wed Sep 5,07:55,GMT,EUR,EUR German Purchasing Manager Index Services,Medium,48.3,48.3,48.3
+Wed Sep 5,08:00,GMT,eur,EUR Euro-Zone Purchasing Manager Index Services,Medium,47.2,47.5,47.5
+Wed Sep 5,08:00,GMT,EUR,EUR Euro-Zone Purchasing Manager Index Composite,Medium,46.3,46.6,46.6
+Wed Sep 5,08:30,GMT,gbp,GBP Official Reserves (Changes),Low,$732M,,$528M
+Wed Sep 5,09:00,GMT,eur,EUR Euro-Zone Retail Sales (MoM),Low,-0.2%,-0.2%,0.1%
+Wed Sep 5,09:00,GMT,eur,EUR Euro-Zone Retail Sales (YoY),Medium,-1.7%,-1.7%,-0.9%
+Wed Sep 5,11:00,GMT,usd,USD MBA Mortgage Applications,Low,-2.5%,,-4.3%
+Wed Sep 5,12:30,GMT,usd,USD Non-Farm Productivity,Low,2.2%,1.8%,1.6%
+Wed Sep 5,12:30,GMT,usd,USD Unit Labor Costs,Low,1.5%,1.4%,1.7%
+Wed Sep 5,13:00,GMT,cad,CAD Bank of Canada Rate Decision,High,1.00%,1.00%,1.00%
+Wed Sep 5,13:45,GMT,usd,USD ISM New York,Low,51.4,,55.2
+Wed Sep 5,23:50,GMT,jpy,JPY Japan Buying Foreign Bonds (¥),Low,875.4B,,1047.4B
+Wed Sep 5,23:50,GMT,jpy,JPY Japan Buying Foreign Stocks (¥),Low,-34.6B,,-57.9B
+Wed Sep 5,23:50,GMT,jpy,JPY Foreign Buying Japan Bonds (¥),Low,395.4B,,215.4B
+Wed Sep 5,23:50,GMT,jpy,JPY Foreign Buying Japan Stocks (¥),Low,-44.8B,,-135.3B
+Thu Sep 6,01:30,GMT,aud,AUD Employment Change,High,-8.8K,5.0K,11.7K
+Thu Sep 6,01:30,GMT,aud,AUD Unemployment Rate,High,5.1%,5.3%,5.2%
+Thu Sep 6,01:30,GMT,aud,AUD Full Time Employment Change,Medium,0.6K,,7.6K
+Thu Sep 6,01:30,GMT,aud,AUD Part Time Employment Change,Low,-9.3K,,4.1K
+Thu Sep 6,01:30,GMT,aud,AUD Participation Rate,Low,65.0%,65.2%,65.2%
+Thu Sep 6,02:00,GMT,jpy,JPY Tokyo Avg Office Vacancies (%),Low,-9.17,,9.3
+Thu Sep 6,03:40,GMT,JPY,JPY BOJ Governor Shirakawa to Speak,Medium,,,
+Thu Sep 6,05:30,GMT,eur,EUR French ILO Unemployment Rate,Medium,10.2%,10.2%,10.0%
+Thu Sep 6,05:30,GMT,eur,EUR French ILO Mainland Unemployment Rate,Low,9.7%,9.8%,9.6%
+Thu Sep 6,05:30,GMT,eur,EUR French Mainland Unemployment Change,Low,52K,,58K
+Thu Sep 6,07:00,GMT,gbp,GBP Halifax House Prices sa (MoM),Low,-0.4%,0.2%,-0.7%
+Thu Sep 6,07:00,GMT,gbp,GBP Halifax House Price 3Mths/Year (AUG),Low,-0.9%,-0.8%,-0.6%
+Thu Sep 6,08:30,GMT,eur,"EUR Spanish Sale of 2014, 2015, 2016 Bonds",Medium,,,
+Thu Sep 6,09:00,GMT,eur,EUR Euro-Zone Gross Fixed Capital (QoQ),Low,-0.8%,-0.6%,-1.3%
+Thu Sep 6,09:00,GMT,eur,EUR Euro-Zone Government Expenditure (QoQ),Low,0.1%,-0.2%,0.4%
+Thu Sep 6,09:00,GMT,eur,EUR Euro-Zone Household Consumption (QoQ),Low,-0.2%,-0.2%,-0.2%
+Thu Sep 6,09:00,GMT,eur,EUR Euro-Zone Gross Domestic Product s.a. (QoQ),High,-0.2%,-0.2%,-0.2%
+Thu Sep 6,09:00,GMT,eur,EUR Euro-Zone Gross Domestic Product s.a. (YoY),High,-0.5%,-0.4%,-0.4%
+Thu Sep 6,09:30,GMT,EUR,"EUR Bundesbank's Dombret, Nagel Speak at Event in Tokyo",Low,,,
+Thu Sep 6,10:00,GMT,eur,EUR German Factory Orders s.a. (MoM),Low,0.5%,0.3%,-1.6%
+Thu Sep 6,10:00,GMT,eur,EUR German Factory Orders n.s.a. (YoY),Medium,-4.5%,-4.5%,-7.6%
+Thu Sep 6,11:00,GMT,gbp,GBP BOE Asset Purchase Target,High,375B,375B,375B
+Thu Sep 6,11:00,GMT,gbp,GBP Bank of England Rate Decision,High,0.50%,0.50%,0.50%
+Thu Sep 6,11:30,GMT,usd,USD Challenger Job Cuts (YoY),Low,-36.9%,,-44.5%
+Thu Sep 6,11:45,GMT,eur,EUR European Central Bank Rate Decision,High,0.75%,0.50%,0.75%
+Thu Sep 6,12:15,GMT,usd,USD ADP Employment Change,Medium,201K,140K,173K
+Thu Sep 6,12:30,GMT,eur,EUR ECB's Draghi Holds Press Conference After Rate Decision,High,,,
+Thu Sep 6,12:30,GMT,usd,USD Initial Jobless Claims,Medium,365K,370K,377K
+Thu Sep 6,12:30,GMT,usd,USD Continuing Claims,Low,3322K,3315K,3328K
+Thu Sep 6,14:00,GMT,usd,USD ISM Non-Manufacturing Composite,Medium,53.7,52.5,52.6
+Thu Sep 6,14:30,GMT,usd,USD EIA Natural Gas Storage Change,Low,28,33,66
+Thu Sep 6,15:00,GMT,usd,USD DOE U.S. Distillate Inventory,Low,993K,-1550K,873K
+Thu Sep 6,15:00,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,-2334K,-3000K,-1509K
+Thu Sep 6,15:00,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,-7426K,-4950K,3778K
+Thu Sep 6,15:00,GMT,usd,USD DOE Cushing OK Crude Inventory,Low,94K,,-421K
+Thu Sep 6,23:30,GMT,aud,AUD AiG Performance of Construction Index,Medium,32.2,,32.6
+Thu Sep 6,23:50,GMT,jpy,JPY Official Reserve Assets,Low,$1273.2B,,$1272.8B
+Fri Sep 7,,,USD,USD ICSC Chain Store Sales (YoY),Low,,,1.9%
+Fri Sep 7,,,GBP,GBP New Car Registrations (YoY),Low,,,9.3%
+Fri Sep 7,,,EUR,EUR German Wholesale Price Index (MoM),Low,,,0.3%
+Fri Sep 7,,,EUR,EUR German Wholesale Price Index (YoY),Low,,,2.0%
+Fri Sep 7,01:30,GMT,aud,AUD Trade Balance (Australian dollar),Medium,-556M,-300M,-227M
+Fri Sep 7,05:00,GMT,jpy,JPY Leading Index,Medium,91.8,91.6,93.2
+Fri Sep 7,05:00,GMT,jpy,JPY Coincident Index,Low,92.8,93.2,94.1
+Fri Sep 7,05:45,GMT,chf,CHF Unemployment Rate,Medium,2.8%,2.8%,2.7%
+Fri Sep 7,05:45,GMT,chf,CHF Unemployment Rate s.a.,Medium,2.9%,2.9%,2.9%
+Fri Sep 7,06:00,GMT,eur,EUR German Exports s.a. (MoM),Low,0.5%,-0.5%,-1.4%
+Fri Sep 7,06:00,GMT,eur,EUR German Imports s.a. (MoM),Low,0.9%,-0.3%,-2.9%
+Fri Sep 7,06:00,GMT,eur,EUR German Current Account (euros),Low,12.8B,13.5B,18.5B
+Fri Sep 7,06:00,GMT,eur,EUR German Labor Costs Workday Adj (YoY),Low,2.5%,,
+Fri Sep 7,06:00,GMT,eur,EUR German Labor Costs Seas. Adj. (QoQ),Low,1.5%,,
+Fri Sep 7,06:00,GMT,eur,EUR German Trade Balance (euros),Medium,16.9B,15.3B,18.0 B
+Fri Sep 7,06:30,GMT,aud,AUD Foreign Reserves (Australian dollar),Low,A$44.1B,,A$46.8B
+Fri Sep 7,06:45,GMT,eur,EUR French Central Govt. Balance (€),Low,-85.5B,,-56.7B
+Fri Sep 7,06:45,GMT,cny,EUR Frech Trade Balance (€),Low,-4271M,-5850M,-6065M
+Fri Sep 7,07:00,GMT,chf,CHF Foreign Currency Reserves,Low,418.4B,,408.6B
+Fri Sep 7,08:30,GMT,gbp,GBP Producer Price Index Input n.s.a. (MoM),Low,2.0%,1.7%,0.4%
+Fri Sep 7,08:30,GMT,gbp,GBP Producer Price Index Input n.s.a. (YoY),Low,1.4%,1.4%,-2.4%
+Fri Sep 7,08:30,GMT,gbp,GBP Producer Price Index Output n.s.a. (MoM),Low,0.5%,0.2%,0.1%
+Fri Sep 7,08:30,GMT,gbp,GBP Producer Price Index Output n.s.a. (YoY),Medium,2.2%,1.9%,1.8%
+Fri Sep 7,08:30,GMT,gbp,GBP Producer Price Index Output Core n.s.a. (MoM),Low,0.1%,0.0%,-0.1%
+Fri Sep 7,08:30,GMT,gbp,GBP Producer Price Index Output Core n.s.a. (YoY),Medium,1.2%,1.2%,1.2%
+Fri Sep 7,08:30,GMT,gbp,GBP BoE/GfK Inflation Next 12 Mths,High,3.2%,,3.7%
+Fri Sep 7,08:30,GMT,gbp,GBP Industrial Production (MoM),Low,2.9%,1.5%,-2.4%
+Fri Sep 7,08:30,GMT,gbp,GBP Industrial Production (YoY),Medium,-0.8%,-2.7%,-3.8%
+Fri Sep 7,08:30,GMT,gbp,GBP Manufacturing Production (MoM),Low,"3,2%",1.8%,-2.9%
+Fri Sep 7,08:30,GMT,gbp,GBP Manufacturing Production (YoY),Medium,-0.5%,-2.4%,--3.9%
+Fri Sep 7,10:00,GMT,eur,EUR German Industrial Production s.a. (MoM),Low,1.3%,0.0%,-0.4%
+Fri Sep 7,10:00,GMT,eur,EUR German Industrial Production n.s.a. and w.d.a. (YoY),Medium,-1.4%,-3.0%,0.3%
+Fri Sep 7,12:30,GMT,cad,CAD Labor Productivity (QoQ),Low,-0.4%,-0.2%,0.0%
+Fri Sep 7,12:30,GMT,cad,CAD Unemployment Rate,High,7.3%,7.3%,7.3%
+Fri Sep 7,12:30,GMT,usd,USD Change in Non-farm Payrolls,High,96K,130K,141K
+Fri Sep 7,12:30,GMT,cad,CAD Net Change in Employment,High,34.3K,10.0K,-30.4K
+Fri Sep 7,12:30,GMT,usd,USD Change in Private Payrolls,Medium,103K,142K,162K
+Fri Sep 7,12:30,GMT,cad,CAD Part Time Employment Change,Low,46.7,,-51.6
+Fri Sep 7,12:30,GMT,usd,USD Average Hourly Earnings All Employees (MoM),Medium,0.0%,0.2%,0.1%
+Fri Sep 7,12:30,GMT,cad,CAD Participation Rate,Low,66.6,66.5,66.5
+Fri Sep 7,12:30,GMT,usd,USD Average Hourly Earnings All Employees (YoY),Medium,1.7%,1.9%,1.7%
+Fri Sep 7,12:30,GMT,cad,CAD Building Permits (MoM),Low,-2.3%,-1.0%,0.0%
+Fri Sep 7,12:30,GMT,usd,USD Change in Manufacturing Payrolls,Low,-15K,10K,23K
+Fri Sep 7,12:30,GMT,cad,CAD Full Time Employment Change,Medium,-12.5,,21.3
+Fri Sep 7,12:30,GMT,usd,USD Unemployment Rate,High,8.1%,8.3%,8.3%
+Fri Sep 7,12:30,GMT,usd,USD Average Weekly Hours All Employees,Low,34.4,34.5,34.4
+Fri Sep 7,12:30,GMT,usd,USD Change in Household Employment,Low,-119,,-195
+Fri Sep 7,12:30,GMT,usd,USD Underemployment Rate (U6),Medium,14.7%,,15.0%
+Fri Sep 7,14:00,GMT,cad,CAD Ivey Purchasing Managers Index s.a.,Medium,62.5,59.0,62.8
+Fri Sep 7,14:00,GMT,gbp,GBP NIESR Gross Domestic Product Estimate,High,0.2%,,0.3%

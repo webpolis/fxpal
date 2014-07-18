@@ -1,0 +1,136 @@
+Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Sun Oct 16,21:30,GMT,nzd,NZD Performance Services Index,Low,53.2,,53.8
+Sun Oct 16,23:01,GMT,gbp,GBP Rightmove House Prices (MoM),Low,2.8%,,0.7%
+Sun Oct 16,23:01,GMT,gbp,GBP Rightmove House Prices (YoY),Medium,1.2%,,1.5%
+Mon Oct 17,00:30,GMT,aud,AUD New Motor Vehicle Sales (MoM),Low,-1.5%,,3.4%
+Mon Oct 17,00:30,GMT,aud,AUD New Motor Vehicle Sales (YoY),Low,1.3%,,4.6%
+Mon Oct 17,04:30,GMT,jpy,JPY Industrial Production (MoM),Low,0.4%,,0.8%
+Mon Oct 17,04:30,GMT,jpy,JPY Industrial Production (YoY),Medium,0.4%,,0.6%
+Mon Oct 17,04:30,GMT,jpy,JPY Capacity Utilization (MoM),Low,2.4%,,0.6%
+Mon Oct 17,12:30,GMT,cad,CAD International Securities Transactions (Canadian dollar),Low,7.92B,10.00B,12.13B
+Mon Oct 17,12:30,GMT,usd,USD Empire Manufacturing,Low,-8.48,-4,-8.82
+Mon Oct 17,13:15,GMT,usd,USD Industrial Production,Medium,0.2%,0.2%,0.0%
+Mon Oct 17,13:15,GMT,usd,USD Capacity Utilization,Low,77.4%,77.5%,77.3%
+Mon Oct 17,14:30,GMT,cad,CAD Business Outlook Future Sales,Medium,6,,20
+Mon Oct 17,14:30,GMT,cad,CAD Bank of Canada Senior Loan Officer Survey,Medium,-26.9,,-49.6
+Mon Oct 17,23:00,GMT,USD,USD Fed's Evans Speaks in Detroit,LOW,,,
+Mon Oct 17,23:30,GMT,USD,USD Fed's Lacker Speaks on Economy in Maryland,LOW,,,
+Tue Oct 18,00:30,GMT,AUD,AUD Reserve Bank's Board October Minutes,HIGH,,,
+Tue Oct 18,02:00,GMT,cny,CNY Real GDP YTD (YoY),High,9.4%,9.5%,9.6%
+Tue Oct 18,02:00,GMT,cny,CNY Real GDP (QoQ),High,2.3%,,2.4%
+Tue Oct 18,02:00,GMT,cny,CNY Real GDP (YoY),High,9.1%,9.3%,9.5%
+Tue Oct 18,02:00,GMT,cny,CNY Industrial Production YTD (YoY),Medium,14.2%,14.1%,14.2%
+Tue Oct 18,02:00,GMT,cny,CNY Industrial Production (YoY),Medium,13.8%,13.4%,13.5%
+Tue Oct 18,02:00,GMT,cny,CNY Fixed Assets Inv Excl. Rural YTD (YoY),Medium,24.9%,24.8%,25.0%
+Tue Oct 18,02:00,GMT,cny,CNY Retail Sales YTD (YoY),Medium,17.0%,16.9%,16.9%
+Tue Oct 18,02:00,GMT,cny,CNY Retail Sales (YoY),Medium,17.7%,17.0%,17.0%
+Tue Oct 18,05:30,GMT,jpy,JPY Nationwide Department Store Sales (YoY),Low,-2.4%,,-2.9%
+Tue Oct 18,05:30,GMT,jpy,JPY Tokyo Department Store Sales (YoY),Low,-3.6%,,-1.7%
+Tue Oct 18,06:00,GMT,jpy,JPY Machine Tool Orders (YoY) (SEP F),Medium,20.1%,,20.3%
+Tue Oct 18,06:00,GMT,eur,EUR EU 25 New Car Registrations,Low,0.7%,,7.7%
+Tue Oct 18,08:30,GMT,gbp,GBP Consumer Price Index (MoM),Medium,0.6%,0.4%,0.6%
+Tue Oct 18,08:30,GMT,gbp,GBP Consumer Price Index (YoY),High,5.2%,4.9%,4.5%
+Tue Oct 18,08:30,GMT,gbp,GBP Core Consumer Price Index (YoY),Medium,3.3%,3.2%,3.1%
+Tue Oct 18,08:30,GMT,gbp,GBP Retail Price Index,Low,237.9,237.6,236.1
+Tue Oct 18,08:30,GMT,gbp,GBP Retail Price Index (MoM),Low,0.8%,0.5%,0.6%
+Tue Oct 18,08:30,GMT,gbp,GBP Retail Price Index (YoY),Low,5.6%,5.4%,5.2%
+Tue Oct 18,08:30,GMT,gbp,GBP Retail Price Index Ex Mort Int.Payments (YoY),Low,5.7%,5.5%,5.3%
+Tue Oct 18,09:00,GMT,eur,EUR German ZEW Survey (Economic Sentiment),High,-48.3,-45,-43.3
+Tue Oct 18,09:00,GMT,eur,EUR German ZEW Survey (Current Situation),Medium,38.4,40,43.6
+Tue Oct 18,09:00,GMT,eur,EUR Euro-Zone ZEW Survey (Economic Sentiment),Medium,-51.2,,-44.6
+Tue Oct 18,09:00,GMT,eur,EUR Italian Current Account (euros),Low,-5393M,,1663M
+Tue Oct 18,12:15,GMT,USD,USD Fed's Rosengren Gives Welcome Remarks at Boston Fed Conference,LOW,,,
+Tue Oct 18,12:30,GMT,usd,USD Producer Price Index Ex Food & Energy (MoM),Medium,0.2%,0.1%,0.1%
+Tue Oct 18,12:30,GMT,usd,USD Producer Price Index (YoY),High,6.9%,6.4%,6.5%
+Tue Oct 18,12:30,GMT,usd,USD Producer Price Index Ex Food & Energy (YoY),High,2.5%,2.4%,2.5%
+Tue Oct 18,12:30,GMT,usd,USD Producer Price Index (MoM),Medium,0.8%,0.2%,0.0%
+Tue Oct 18,13:00,GMT,usd,USD Net Long-term TIC Flows,Medium,$57.9B,-$20.0B,$9.1B
+Tue Oct 18,13:00,GMT,usd,USD Total Net TIC Flows,Low,$89.6B,,-$52.4B
+Tue Oct 18,14:00,GMT,usd,USD NAHB Housing Market Index,Low,18,15,14
+Tue Oct 18,16:30,GMT,USD,USD Fed's Bernanke Speaks in Boston,HIGH,,,
+Tue Oct 18,23:30,GMT,aud,AUD Westpac Leading Index (MoM),Low,0.8%,,0.6%
+Wed Oct 19,00:00,GMT,aud,AUD DEWR Internet Skilled Vacancies MoM,Low,-1.3%,,-0.6%
+Wed Oct 19,01:45,GMT,cny,CNY Actual FDI (YoY),Medium,7.9%,,11.1%
+Wed Oct 19,02:00,GMT,cny,CNY Conference Board China August Leading Economic Index,Low,159.5,,158.7
+Wed Oct 19,04:30,GMT,jpy,JPY All Industry Activity Index (MoM),Medium,-0.5%,-0.4%,0.4%
+Wed Oct 19,08:00,GMT,eur,EUR Italian Industrial Sales n.s.a. (YoY),Low,12.0%,,7.8%
+Wed Oct 19,08:00,GMT,eur,EUR Euro-Zone Current Account n.s.a. (euros),Low,-6.3B,,-3.2B
+Wed Oct 19,08:00,GMT,eur,EUR Euro-Zone Current Account s.a. (euros),Low,-5.0B,,-12.9B
+Wed Oct 19,08:00,GMT,eur,EUR Italian Industrial Orders s.a. (MoM),Low,5.0%,1.7%,1.8%
+Wed Oct 19,08:00,GMT,eur,EUR Italian Industrial Orders n.s.a. (YoY),Low,10.5%,4.2%,6.5%
+Wed Oct 19,08:00,GMT,eur,EUR Italian Industrial Sales s.a. (MoM),Low,4.0%,,1.6%
+Wed Oct 19,08:30,GMT,GBP,GBP Bank of England Minutes,HIGH,,,
+Wed Oct 19,09:00,GMT,eur,EUR Euro-Zone Construction Output s.a. (MoM),Low,0.2%,,1.4%
+Wed Oct 19,09:00,GMT,eur,EUR Euro-Zone Construction Output w.d.a. (YoY),Low,2.5%,,1.2%
+Wed Oct 19,11:00,GMT,usd,USD MBA Mortgage Applications,Low,-14.9%,,1.3%
+Wed Oct 19,12:30,GMT,USD,USD Fed's Rosengren Speaks at Boston Fed Conference,LOW,,,
+Wed Oct 19,12:30,GMT,cad,CAD Leading Indicators (MoM),Medium,-0.1%,0.1%,0.0%
+Wed Oct 19,12:30,GMT,usd,USD Consumer Price Index (MoM),Medium,0.3%,0.3%,0.4%
+Wed Oct 19,12:30,GMT,usd,USD Consumer Price Index Ex Food & Energy (MoM),Medium,0.1%,0.2%,0.2%
+Wed Oct 19,12:30,GMT,usd,USD Consumer Price Index (YoY),High,3.9%,3.9%,3.8%
+Wed Oct 19,12:30,GMT,usd,USD Housing Starts,Medium,658K,594K,572K
+Wed Oct 19,12:30,GMT,usd,USD Consumer Price Index Core Index s.a.,Medium,226.137,,226.014
+Wed Oct 19,12:30,GMT,usd,USD Building Permits (MoM),Low,-5.0%,-2.4%,4.0%
+Wed Oct 19,12:30,GMT,usd,USD Consumer Price Index Ex Food & Energy (YoY),High,2.0%,2.1%,2.0%
+Wed Oct 19,12:30,GMT,usd,USD Consumer Price Index n.s.a.,Medium,226.889,226.947,226.545
+Wed Oct 19,12:30,GMT,usd,USD Housing Starts (MoM),Low,15.0%,3.3%,-7.0%
+Wed Oct 19,12:30,GMT,usd,USD Building Permits,Medium,590K,610K,625K
+Wed Oct 19,14:30,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,-3324K,-1000K,-4134K
+Wed Oct 19,14:30,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,-4729K,2000K,1344K
+Wed Oct 19,14:30,GMT,usd,USD DOE Cushing OK Crude Inventory,Low,471K,,532K
+Wed Oct 19,14:30,GMT,usd,USD DOE U.S. Distillate Inventory,Low,-4266K,-1500K,-2929K
+Wed Oct 19,18:00,GMT,USD,USD Fed Releases Beige Book Economic Survey,Medium,,,
+Thu Oct 20,00:30,GMT,aud,AUD RBA Foreign Exchange Transaction (Australian dollar),Low,641M,,367M
+Thu Oct 20,00:30,GMT,aud,AUD NAB Business Confidence,Low,-4,,5
+Thu Oct 20,05:00,GMT,jpy,JPY Coincident Index,Low,107.6,,107.4
+Thu Oct 20,05:00,GMT,jpy,JPY Leading Index,Medium,104.3,,103.8
+Thu Oct 20,06:00,GMT,eur,EUR German Producer Prices (MoM),Medium,0.3%,0.2%,-0.3%
+Thu Oct 20,06:00,GMT,chf,CHF Exports (MoM),Low,3.4%,,-6.9%
+Thu Oct 20,06:00,GMT,chf,CHF Imports (MoM),Low,1.3%,,-0.3%
+Thu Oct 20,06:00,GMT,eur,EUR German Producer Prices (YoY),Medium,5.5%,5.5%,5.5%
+Thu Oct 20,06:00,GMT,chf,CHF Trade Balance (Swiss franc),Medium,1.85B,,0.76B
+Thu Oct 20,07:00,GMT,JPY,JPY Convenience Store Sales (YoY),LOW,,,7.9%
+Thu Oct 20,08:30,GMT,gbp,GBP Retail Sales (MoM),Low,0.7%,0.2%,-0.4%
+Thu Oct 20,08:30,GMT,gbp,GBP Retail Sales (YoY),Medium,0.4%,0.6%,-1.0%
+Thu Oct 20,08:30,GMT,gbp,GBP Retail Sales w/Auto Fuel (MoM),Low,0.6%,0.0%,-0.4%
+Thu Oct 20,08:30,GMT,gbp,GBP Retail Sales w/Auto Fuel (YoY),Medium,0.6%,0.6%,-0.8%
+Thu Oct 20,09:00,GMT,chf,CHF ZEW Survey (Expectations),Medium,-54.4,,-75.7
+Thu Oct 20,10:00,GMT,eur,EUR German Economic Ministry New GDP Forecasts,Medium,,,
+Thu Oct 20,12:30,GMT,usd,USD Initial Jobless Claims,Low,403K,400K,409K
+Thu Oct 20,12:30,GMT,usd,USD Continuing Claims,Low,3719K,3690K,3684K
+Thu Oct 20,12:30,GMT,cad,CAD Wholesale Sales (MoM),Low,0.2%,0.5%,0.9%
+Thu Oct 20,13:45,GMT,usd,USD Bloomberg Economic Expectations,Low,-45,,-34
+Thu Oct 20,13:45,GMT,usd,USD Bloomberg Consumer Comfort,Low,-48.4,-50.3,-50.8
+Thu Oct 20,14:00,GMT,eur,EUR Euro-Zone Consumer Confidence,Medium,-19.9,-20.0,-19.1
+Thu Oct 20,14:00,GMT,usd,USD Existing Home Sales,Medium,4.91M,4.91M,5.06M
+Thu Oct 20,14:00,GMT,usd,USD Existing Home Sales (MoM),Low,-3.0%,-2.3%,8.4%
+Thu Oct 20,14:00,GMT,usd,USD Leading Indicators,Medium,0.2%,0.2%,0.3%
+Thu Oct 20,14:00,GMT,usd,USD Philadelphia Fed.,Medium,8.7,-9.5,-17.5
+Thu Oct 20,14:15,GMT,USD,USD Fed's Bullard to Speak at St. Louis Economic Policy Conference,LOW,,,
+Thu Oct 20,14:30,GMT,usd,USD EIA Natural Gas Storage Change,Low,103,110,112
+Thu Oct 20,21:45,GMT,nzd,NZD Net Migration s.a.,Low,-660.0,,120.0
+Thu Oct 20,23:01,GMT,gbp,GBP Nationwide Consumer Confidence,Medium,45,49,48
+Fri Oct 21,00:00,GMT,USD,USD Fed's Kocherlakota Speaks on Economic Education in Minneapolis,LOW,,,
+Fri Oct 21,00:30,GMT,aud,AUD Import Price Index (QoQ),Low,0.0%,0.5%,0.8%
+Fri Oct 21,00:30,GMT,aud,AUD Export Price Index (QoQ),Low,4.0%,3.6%,6.0%
+Fri Oct 21,01:35,GMT,cny,CNY MNI October Flash Business Sentiment Survey,Low,58.5,,59.8
+Fri Oct 21,02:00,GMT,nzd,NZD Credit Card Spending s.a. (MoM),Medium,1.6%,,-1.4%
+Fri Oct 21,02:00,GMT,nzd,NZD Credit Card Spending (YoY),Medium,5.2%,,4.7%
+Fri Oct 21,06:45,GMT,eur,EUR French Own-Company Production Outlook,Low,4,,4
+Fri Oct 21,06:45,GMT,eur,EUR French Production Outlook Indicator,Low,-29,,-29
+Fri Oct 21,06:45,GMT,eur,EUR French Business Confidence Indicator,Low,97,98,99
+Fri Oct 21,07:00,GMT,chf,CHF Money Supply M3 (YoY),Low,8.2%,,7.6%
+Fri Oct 21,07:00,GMT,chf,CHF Real Estate Index Family Homes,Medium,398.6,,396.3
+Fri Oct 21,08:00,GMT,eur,EUR German IFO - Expectations,Medium,97.0,97,97.9
+Fri Oct 21,08:00,GMT,eur,EUR German IFO - Business Climate,Medium,106.4,106.2,107.4
+Fri Oct 21,08:00,GMT,eur,EUR German IFO - Current Assessment,Medium,116.7,116.5,117.9
+Fri Oct 21,08:30,GMT,gbp,GBP Public Finances (PSNCR) (Pounds),Medium,19.9B,18.0B,11.8B
+Fri Oct 21,08:30,GMT,gbp,GBP Public Sector Net Borrowing (Pounds),Medium,11.4b,11.8B,10.9B
+Fri Oct 21,08:30,GMT,gbp,GBP PSNB ex Interventions,Medium,14.1B,15.0B,13.7B
+Fri Oct 21,09:00,GMT,eur,EUR Euro-Zone Government Debt-GDP Ratio,High,85.4%,,85.1%
+Fri Oct 21,11:00,GMT,cad,CAD Consumer Price Index (MoM),Medium,0.2%,0.2%,0.3%
+Fri Oct 21,11:00,GMT,cad,CAD Consumer Price Index (YoY),High,3.2%,3.1%,3.1%
+Fri Oct 21,11:00,GMT,cad,CAD Bank Canada Consumer Price Index Core (MoM),Medium,0.5%,0.2%,0.4%
+Fri Oct 21,11:00,GMT,cad,CAD Bank Canada Consumer Price Index Core (YoY),High,2.2%,2.0%,1.9%
+Fri Oct 21,11:00,GMT,cad,CAD Consumer Price Index,Medium,120.6,,120.3
+Fri Oct 21,17:00,GMT,USD,USD Fed's Kocherlakota Speaks in Minneapolis,LOW,,,

@@ -1,0 +1,84 @@
+Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Mon Dec 31,00:01,GMT,gbp,GBP Lloyds Business Barometer,Low,20,,17
+Mon Dec 31,00:30,GMT,aud,AUD Private Sector Credit (MoM),Medium,0.0%,0.2%,0.1%
+Mon Dec 31,00:30,GMT,aud,AUD Private Sector Credit (YoY),Medium,3.5%,3.7%,3.8%
+Mon Dec 31,01:45,GMT,cny,CNY HSBC Manufacturing PMI,Medium,51.5,50.9,50.5
+Mon Dec 31,15:30,GMT,usd,USD Dallas Fed Manufacturing Activity,Low,6.8,-0.5,-2.8
+Tue Jan 1,01:00,GMT,cny,CNY Manufacturing PMI,High,50.6,51.0,50.6
+Tue Jan 1,22:30,GMT,aud,AUD AiG Performance of Manufacturing Index,Medium,44.3,,44.3
+Tue Jan 1,23:00,GMT,aud,AUD RPData-Rismark House PX Actual,Low,-0.3%,,0.0%
+Tue Jan 1,23:44,GMT,cny,CNY Leading Index,Medium,100.21,,100.37
+Wed Jan 2,05:30,GMT,aud,AUD RBA Commodity Price Index,Low,89.2,,88.3
+Wed Jan 2,05:30,GMT,aud,AUD RBA Commodity Index SDR (YoY),Low,-8.0%,,-10.3%
+Wed Jan 2,08:45,GMT,eur,EUR Italian Purchasing Manager Index Manufacturing,Low,46.7,45.3,45.1
+Wed Jan 2,08:50,GMT,eur,EUR French Purchasing Manager Index Manufacturing,Low,44.6,44.6,44.6
+Wed Jan 2,08:55,GMT,eur,EUR German Purchasing Manager Index Manufacturing,Medium,46.0,46.3,46.3
+Wed Jan 2,09:00,GMT,eur,EUR Euro-zone Purchasing Manager Index Manufacturing,Medium,46.1,46.3,46.3
+Wed Jan 2,09:30,GMT,gbp,GBP Purchasing Manager Index Manufacturing,Medium,51.4,49.1,49.2
+Wed Jan 2,13:00,GMT,eur,EUR German Consumer Price Index (MoM),Medium,0.9%,0.7%,-0.1%
+Wed Jan 2,13:00,GMT,eur,EUR German Consumer Price Index (YoY),High,2.1%,1.9%,1.9%
+Wed Jan 2,13:00,GMT,eur,EUR German Consumer Price Index - EU Harmonised (YoY),High,2.1%,1.9%,1.9%
+Wed Jan 2,13:00,GMT,eur,EUR German Consumer Price Index - EU Harmonised (MoM),Medium,1.0%,0.7%,-0.2%
+Wed Jan 2,13:58,GMT,usd,USD Markit US PMI Final,Low,54.0,53.6,54.2
+Wed Jan 2,15:00,GMT,usd,USD Construction Spending (MoM),Medium,-0.3%,0.6%,0.7%
+Wed Jan 2,15:00,GMT,usd,USD ISM Manufacturing,High,50.7,50.5,49.5
+Wed Jan 2,15:00,GMT,usd,USD ISM Prices Paid,Medium,55.5,50.8,52.5
+Thu Jan 3,01:00,GMT,cny,CNY Non-manufacturing PMI,Medium,56.1,,55.6
+Thu Jan 3,07:00,GMT,gbp,GBP Nationwide House Prices s.a. (MoM),Low,,0.7%,0.6%
+Thu Jan 3,07:00,GMT,gbp,GBP Nationwide House Prices s.a. (MoM),Low,-0.1%,0.0%,0.0%
+Thu Jan 3,07:00,GMT,gbp,GBP Nationwide House Prices n.s.a. (YoY),Medium,-1.0%,-0.9%,-1.2%
+Thu Jan 3,08:00,GMT,chf,CHF KOF Swiss Leading Indicator,Medium,1.28,1.4,1.5
+Thu Jan 3,08:30,GMT,chf,CHF SVME-Purchasing Managers Index,Medium,49.5,48.4,48.5
+Thu Jan 3,08:55,GMT,eur,EUR German Unemployment Change,High,3K,10K,5K
+Thu Jan 3,08:55,GMT,eur,EUR German Unemployment Rate s.a.,Medium,6.9%,6.9%,6.9%
+Thu Jan 3,09:00,GMT,eur,EUR Euro-zone M3 s.a. (YoY),Low,3.8%,3.8%,3.9%
+Thu Jan 3,09:00,GMT,eur,EUR Euro-zone M3 s.a. (3M),Low,3.4%,3.5%,3.1%
+Thu Jan 3,09:30,GMT,gbp,GBP Purchasing Manager Index Construction,Medium,48.7,49.5,49.3
+Thu Jan 3,12:00,GMT,usd,USD MBA Mortgage Applications,Low,-10.4%,,-11.2%
+Thu Jan 3,12:30,GMT,usd,USD Challenger Job Cuts (YoY),Low,-22.1%,,34.4%
+Thu Jan 3,13:15,GMT,usd,USD ADP Employment Change,Medium,215K,140K,118K
+Thu Jan 3,13:30,GMT,usd,USD Initial Jobless Claims,Medium,372K,360K,352K
+Thu Jan 3,13:30,GMT,usd,USD Continuing Claims,Low,3245K,3215K,3201K
+Thu Jan 3,19:00,GMT,USD,USD Minutes of FOMC Meeting,High,,,
+Thu Jan 3,22:00,GMT,usd,USD Total Vehicle Sales,Low,15.30M,15.30M,15.46M
+Thu Jan 3,22:00,GMT,usd,USD Domestic Vehicle Sales,Low,11.97M,11.70M,12.01M
+Thu Jan 3,22:30,GMT,aud,AUD AiG Performance of Service Index,Medium,43.2,,47.1
+Fri Jan 4,01:45,GMT,cny,CNY HSBC Services PMI,Medium,51.7,,52.1
+Fri Jan 4,07:00,GMT,eur,EUR Germany Retail Sales (MoM),Medium,1.2%,0.8%,-1.3%
+Fri Jan 4,07:00,GMT,eur,EUR German Retail Sales (YoY),Medium,-0.9%,-1.6%,0.2%
+Fri Jan 4,07:45,GMT,eur,EUR Italian Purchasing Manager Index Services,Low,45.6,45,44.6
+Fri Jan 4,08:50,GMT,eur,EUR French Purchasing Manager Index Services,Low,45.2,46.0,46
+Fri Jan 4,08:55,GMT,eur,EUR German Purchasing Manager Index Services,Medium,52.0,52.1,52.1
+Fri Jan 4,09:00,GMT,eur,EUR Euro-zone Purchasing Manager Index Composite,Medium,47.2,47.3,47.3
+Fri Jan 4,09:00,GMT,eur,EUR Euro-zone Purchasing Manager Index Services,Medium,47.8,47.8,47.8
+Fri Jan 4,09:30,GMT,gbp,GBP M4 Money Supply (YoY),Low,-2.8%,,-3.1%
+Fri Jan 4,09:30,GMT,gbp,GBP M4 Ex IOFCs 3M Annualised,Low,4.3%,,5.4%
+Fri Jan 4,09:30,GMT,gbp,GBP Official Reserves (Changes),Low,$-350M,,$44M
+Fri Jan 4,09:30,GMT,gbp,GBP Purchasing Manager Index Services,Medium,48.9,50.2,50.2
+Fri Jan 4,09:30,GMT,gbp,GBP Net Consumer Credit,Medium,0.1B,0.0B,-0.3B
+Fri Jan 4,09:30,GMT,gbp,GBP Net Lending Sec. on Dwellings,Medium,-0.2B,0.5B,0.1B
+Fri Jan 4,09:30,GMT,gbp,GBP Mortgage Approvals,Medium,54.0K,54.0K,53.1K
+Fri Jan 4,09:30,GMT,gbp,GBP M4 Money Supply (MoM),Low,-0.2%,,0.2%
+Fri Jan 4,10:00,GMT,eur,EUR Euro-zone Consumer Price Index Estimate (YoY),Medium,2.2%,2.1%,2.2%
+Fri Jan 4,13:30,GMT,usd,USD Change in Manufacturing Payrolls,Medium,25K,5K,5K
+Fri Jan 4,13:30,GMT,usd,USD Change in Private Payrolls,Low,168K,150K,171K
+Fri Jan 4,13:30,GMT,usd,USD Unemployment Rate,High,7.8%,7.7%,7.8%
+Fri Jan 4,13:30,GMT,usd,USD Underemployment Rate (U6),Medium,14.4%,,14.4%
+Fri Jan 4,13:30,GMT,usd,USD Change in Household Employment,Medium,28,,-51
+Fri Jan 4,13:30,GMT,usd,USD Average Hourly Earnings All Employees (MoM),Medium,0.3%,0.2%,0.3%
+Fri Jan 4,13:30,GMT,usd,USD Average Hourly Earnings All Employees (YoY),Medium,2.1%,1.7%,1.9%
+Fri Jan 4,13:30,GMT,usd,USD Average Weekly Hours All Employees,Low,34.5,34.4,34.4
+Fri Jan 4,13:30,GMT,cad,CAD Net Change in Employment,High,39.8K,5.0K,59.3K
+Fri Jan 4,13:30,GMT,cad,CAD Part Time Employment Change,Low,-1.4,,4.1
+Fri Jan 4,13:30,GMT,cad,CAD Unemployment Rate,High,7.1%,7.3%,7.2%
+Fri Jan 4,13:30,GMT,usd,USD Change in Nonfarm Payrolls,High,155K,145K,161K
+Fri Jan 4,13:30,GMT,cad,CAD Industrial Product Price (MoM),Low,-0.3%,-0.3%,-0.1%
+Fri Jan 4,13:30,GMT,cad,CAD Raw Materials Price Index (MoM),Low,-1.9%,-1.0%,0.1%
+Fri Jan 4,13:30,GMT,cad,CAD Participation Rate,Low,66.8,66.8,66.8
+Fri Jan 4,15:00,GMT,usd,USD Factory Orders,Medium,0.0%,0.4%,0.8%
+Fri Jan 4,15:00,GMT,usd,USD ISM Non-Manufacturing Composite,Medium,56.1,54.3,54.7
+Fri Jan 4,15:30,GMT,usd,USD EIA Natural Gas Storage Change,Low,-135,-130,-72
+Fri Jan 4,18:15,GMT,USD,USD Fed's Plosser Speaks on Real Business Cycles in San Diego,Low,,,
+Fri Jan 4,18:30,GMT,usd,USD Fed's Lacker Speaks on Economic Outlook in Baltimore,Low,,,
+Fri Jan 4,20:30,GMT,USD,USD Fed's Yellen Speaks on Systemic Risk in San Diego,Low,,,
+Fri Jan 4,22:30,GMT,USD,USD Fed's Bullard to Speak to Economists in San Diego,Low,,,

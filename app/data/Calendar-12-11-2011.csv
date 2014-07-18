@@ -1,0 +1,164 @@
+Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Sun Dec 11,23:50,GMT,JPY,JPY Domestic Corporate Goods Price Index (MoM),LOW,0.1%,-0.1%,-0.7%
+Sun Dec 11,23:50,GMT,JPY,JPY Domestic Corporate Goods Price Index (YoY),LOW,1.7%,1.5%,1.7%
+Mon Dec 12,00:30,GMT,AUD,AUD Home Loans,Medium,0.7%,0.0%,2.2%
+Mon Dec 12,00:30,GMT,AUD,AUD Investment Lending,LOW,-5.5%,,1.9%
+Mon Dec 12,00:30,GMT,AUD,AUD Value of Loans (MoM),LOW,-1.2%,,0.7%
+Mon Dec 12,00:30,GMT,AUD,AUD Trade Balance (Australian dollar),Medium,1595M,2000M,2564M
+Mon Dec 12,05:00,GMT,JPY,JPY Consumer Confidence,Medium,38.1,38.3,38.6
+Mon Dec 12,06:00,GMT,JPY,JPY Machine Tool Orders (YoY),Medium,15.9%,,26.0%
+Mon Dec 12,07:00,GMT,EUR,EUR German Wholesale Price Index (MoM),LOW,0.7%,,-1.0%
+Mon Dec 12,07:00,GMT,EUR,EUR German Wholesale Price Index (YoY),LOW,4.9%,,5.0%
+Mon Dec 12,07:45,GMT,EUR,EUR French Wages (QoQ),LOW,0.3%,,0.4%
+Mon Dec 12,08:51,GMT,EUR,EUR French Current Account (euros),LOW,-4.5B,,-4.0B
+Mon Dec 12,19:00,GMT,USD,USD Monthly Budget Statement,Medium,-$137.3B,-$139.9B,-$150.4B
+Mon Dec 12,21:00,GMT,NZD,NZD New Zealand Manpower Survey,LOW,16%,,23%
+Mon Dec 12,21:40,GMT,AUD,AUD Australia Manpower Survey,LOW,13%,,16%
+Mon Dec 12,21:45,GMT,NZD,NZD Food Prices (MoM),LOW,0.2%,,-1.3%
+Mon Dec 12,23:01,GMT,EUR,EUR Germany First Quarter Manpower Employment Outlook (Table),LOW,,,
+Mon Dec 12,23:50,GMT,JPY,JPY Tertiary Industry Index (MoM),Medium,0.6%,0.4%,-0.7%
+Tue Dec 13,00:01,GMT,GBP,GBP RICS House Price Balance,Medium,-17%,-25%,-24%
+Tue Dec 13,00:30,GMT,AUD,AUD Dwelling Starts,Medium,-6.8%,-1.0%,-4.7%
+Tue Dec 13,00:30,GMT,AUD,AUD NAB Business Confidence,Medium,2,,2
+Tue Dec 13,00:30,GMT,AUD,AUD NAB Business Conditions,LOW,1,,-1
+Tue Dec 13,01:00,GMT,JPY,JPY Japan Manpower Survey,LOW,11,,10
+Tue Dec 13,05:01,GMT,CNY,CNY China Manpower Survey,LOW,17%,,25%
+Tue Dec 13,06:30,GMT,EUR,EUR French Consumer Price Index - EU Harmonised (MoM),LOW,0.3%,0.1%,0.3%
+Tue Dec 13,06:30,GMT,EUR,EUR French Consumer Price Index - EU Harmonised (YoY),LOW,2.7%,2.5%,2.5%
+Tue Dec 13,06:30,GMT,EUR,EUR French Consumer Price Index (MoM),LOW,0.3%,0.1%,0.2%
+Tue Dec 13,06:30,GMT,EUR,EUR French Consumer Price Index (YoY),LOW,2.5%,2.4%,2.3%
+Tue Dec 13,06:30,GMT,EUR,EUR French Consumer Price Index Ex Tobacco Index,LOW,123,122.78,122.73
+Tue Dec 13,06:45,GMT,CHF,CHF SECO December 2011 Economic Forecasts (Table),Medium,,,
+Tue Dec 13,09:30,GMT,GBP,GBP DCLG UK House Prices (YoY),LOW,-0.4%,,-1.4%
+Tue Dec 13,09:30,GMT,GBP,GBP Consumer Price Index (MoM),Medium,0.2%,0.2%,0.1%
+Tue Dec 13,09:30,GMT,GBP,GBP Consumer Price Index (YoY),HIGH,4.8%,4.8%,5.0%
+Tue Dec 13,09:30,GMT,GBP,GBP Core Consumer Price Index (YoY),HIGH,3.2%,3.3%,3.4%
+Tue Dec 13,09:30,GMT,GBP,GBP Retail Price Index,LOW,238.5,238.4,238
+Tue Dec 13,09:30,GMT,GBP,GBP Retail Price Index (MoM),LOW,0.2%,0.2%,0.0%
+Tue Dec 13,09:30,GMT,GBP,GBP Retail Price Index (YoY),LOW,5.2%,5.1%,5.4%
+Tue Dec 13,09:30,GMT,GBP,GBP Retail Price Index Ex Mort Int.Payments (YoY),LOW,5.3%,5.3%,5.6%
+Tue Dec 13,10:00,GMT,EUR,EUR German ZEW Survey (Current Situation),Medium,26.8,31,34.2
+Tue Dec 13,10:00,GMT,EUR,EUR Euro-Zone ZEW Survey (Economic Sentiment),Medium,-54.1,,-59.1
+Tue Dec 13,10:00,GMT,EUR,EUR German ZEW Survey (Economic Sentiment),HIGH,-53.8,-55.8,-55.2
+Tue Dec 13,12:30,GMT,USD,USD NFIB Small Business Optimism,LOW,92,91.5,90.2
+Tue Dec 13,13:30,GMT,USD,USD Advance Retail Sales,HIGH,0.2%,0.6%,0.5%
+Tue Dec 13,13:30,GMT,USD,USD Retail Sales Less Autos,Medium,0.2%,0.4%,0.6%
+Tue Dec 13,13:30,GMT,USD,USD Retail Sales Ex Auto & Gas,Medium,0.2%,0.4%,0.7%
+Tue Dec 13,15:00,GMT,USD,USD IBD/TIPP Economic Optimism,LOW,42.8,42.3,40.6
+Tue Dec 13,15:00,GMT,USD,USD Business Inventories,Medium,0.8%,0.8%,0.0%
+Tue Dec 13,19:15,GMT,USD,USD Federal Open Market Committee Rate Decision,HIGH,0.3%,0.3%,0.3%
+Tue Dec 13,23:30,GMT,AUD,AUD Westpac Consumer Confidence,Medium,-8.3%,,6.3%
+Tue Dec 13,23:30,GMT,AUD,AUD Westpac Consumer Confidence Index,LOW,94.7,,103.4
+Wed Dec 14,00:00,GMT,AUD,AUD DEWR Internet Skilled Vacancies MoM,LOW,-1.00%,,-1.90%
+Wed Dec 14,02:00,GMT,CNY,CNY Conference Board China October Leading Economic Index,LOW,,,
+Wed Dec 14,02:00,GMT,NZD,NZD Non Resident Bond Holdings,LOW,60.2%,,61.4%
+Wed Dec 14,04:30,GMT,JPY,JPY Industrial Production (MoM),LOW,2.2%,,2.4%
+Wed Dec 14,04:30,GMT,JPY,JPY Industrial Production (YoY),Medium,0.1%,,0.4%
+Wed Dec 14,04:30,GMT,JPY,JPY Capacity Utilization (MoM),LOW,4.1%,,-3.6%
+Wed Dec 14,07:05,GMT,CNY,CNY New Yuan Loans,HIGH,562.2B,550.0B,586.8B
+Wed Dec 14,07:05,GMT,CNY,CNY Money Supply - M0 (YoY),LOW,12.0%,,11.9%
+Wed Dec 14,07:05,GMT,CNY,CNY Money Supply - M1 (YoY),LOW,7.8%,8.6%,8.4%
+Wed Dec 14,07:05,GMT,CNY,CNY Money Supply - M2 (YoY),LOW,12.7%,12.8%,12.9%
+Wed Dec 14,08:15,GMT,CHF,CHF Producer & Import Prices (MoM),LOW,-0.8%,-0.2%,-0.2%
+Wed Dec 14,08:15,GMT,CHF,CHF Producer & Import Prices (YoY),LOW,-2.4%,-1.8%,-1.8%
+Wed Dec 14,09:30,GMT,GBP,GBP Claimant Count Rate,Medium,5.0%,5.1%,5.0%
+Wed Dec 14,09:30,GMT,GBP,GBP Jobless Claims Change,HIGH,3.0K,13.7K,5.3K
+Wed Dec 14,09:30,GMT,GBP,GBP Average Weekly Earnings 3M/YoY,Medium,2.0%,2.0%,2.3%
+Wed Dec 14,09:30,GMT,GBP,GBP Weekly Earnings exBonus 3M/YoY,LOW,1.8%,1.7%,1.7%
+Wed Dec 14,09:30,GMT,GBP,GBP ILO Unemployment Rate (3M),Medium,8.3%,8.3%,8.3%
+Wed Dec 14,10:00,GMT,EUR,EUR Euro-Zone Industrial Production w.d.a. (YoY),Medium,1.3%,2.1%,2.2%
+Wed Dec 14,10:00,GMT,EUR,EUR Euro-Zone Industrial Production s.a. (MoM),LOW,-0.1%,0.0%,-2.0%
+Wed Dec 14,10:00,GMT,CHF,CHF ZEW Survey (Expectations),Medium,-72,,-64.3
+Wed Dec 14,12:00,GMT,USD,USD MBA Mortgage Applications,LOW,4.1%,,12.8%
+Wed Dec 14,13:30,GMT,USD,USD Fed's Lockhart Speaks about Midtown Atlanta,LOW,,,
+Wed Dec 14,13:30,GMT,CAD,CAD Leading Indicators (MoM),Medium,0.8%,0.3%,0.2%
+Wed Dec 14,13:30,GMT,CAD,CAD Manufacturing Shipments (MoM),LOW,-0.8%,-0.6%,2.6%
+Wed Dec 14,13:30,GMT,USD,USD Import Price Index (MoM),LOW,0.7%,1.0%,-0.6%
+Wed Dec 14,13:30,GMT,USD,USD Import Price Index (YoY),LOW,9.9%,10.2%,11.0%
+Wed Dec 14,15:30,GMT,USD,USD DOE U.S. Crude Oil Inventories,LOW,-1932K,-2500K,1336K
+Wed Dec 14,15:30,GMT,USD,USD DOE Cushing OK Crude Inventory,LOW,83K,,-196K
+Wed Dec 14,15:30,GMT,USD,USD DOE U.S. Distillate Inventory,LOW,480K,1000K,2533K
+Wed Dec 14,15:30,GMT,USD,USD DOE U.S. Gasoline Inventories,LOW,3824K,1200K,5147K
+Wed Dec 14,21:30,GMT,NZD,NZD Business NZ Performance of Manufacturing Index,Medium,45.7,,46.5
+Wed Dec 14,23:50,GMT,jpy,JPY Foreign Buying Japan Stocks (Yen),Low,-¥303.9B,,¥58.5B
+Wed Dec 14,23:50,GMT,jpy,JPY Japan Buying Foreign Stocks (Yen),Low,-¥32.9B,,¥89.9B
+Wed Dec 14,23:50,GMT,jpy,JPY Foreign Buying Japan Bonds (Yen),Low,¥403.5B,,-¥261.2B
+Wed Dec 14,23:50,GMT,jpy,JPY Tankan Large Manufacturers Index,Medium,-4,-2,2
+Wed Dec 14,23:50,GMT,jpy,JPY Tankan Non-Manufacturing Index,Medium,4,1,1
+Wed Dec 14,23:50,GMT,jpy,JPY Tankan Large Manufacturers Outlook,High,-5,-3,4
+Wed Dec 14,23:50,GMT,jpy,JPY Tankan Non-Manufacturing Outlook,Medium,0,1,1
+Wed Dec 14,23:50,GMT,jpy,JPY Tankan Large All Industry Capex,Medium,1.4%,2.5%,3.0%
+Wed Dec 14,23:50,GMT,jpy,JPY Japan Buying Foreign Bonds (Yen),Low,¥403.5B,,¥261.2B
+Thu Dec 15,00:00,GMT,aud,AUD Consumer Inflation Expectation,Medium,2.4%,,2.5%
+Thu Dec 15,00:30,GMT,aud,AUD New Motor Vehicle Sales (MoM),Low,-0.7%,,1.0%
+Thu Dec 15,00:30,GMT,aud,AUD New Motor Vehicle Sales (YoY),Low,2.9%,,4.3%
+Thu Dec 15,00:30,GMT,aud,AUD RBA Foreign Exchange Transaction (Australian dollar),Low,A$330M,,A$401M
+Thu Dec 15,02:00,GMT,cny,CNY Actual FDI (YoY),Low,-9.8%,,8.8%
+Thu Dec 15,02:30,GMT,cny,CNY HSBC Flash China Manufacturing PMI,Low,49.0,,48.0
+Thu Dec 15,04:00,GMT,jpy,JPY Tokyo Condominium Sales (YoY),Low,31.0%,,-9.3%
+Thu Dec 15,06:00,GMT,jpy,JPY Machine Tool Orders (YoY),Medium,15.8,,15.9%
+Thu Dec 15,08:00,GMT,eur,EUR French Purchasing Manager Index Manufacturing,Low,48.7,47.0,47.3
+Thu Dec 15,08:00,GMT,eur,EUR French Purchasing Manager Index Services,Low,50.2,49.0,49.6
+Thu Dec 15,08:15,GMT,chf,CHF Industrial Production (QoQ),Medium,-1.4%,-0.9%,2.9%
+Thu Dec 15,08:15,GMT,chf,CHF Industrial Production (YoY),Medium,-1.4%,0.0%,1.6%
+Thu Dec 15,08:30,GMT,eur,EUR German Purchasing Manager Index Manufacturing,Medium,48.1,47.5,47.9
+Thu Dec 15,08:30,GMT,eur,EUR German Purchasing Manager Index Services,Medium,52.7,50,0,50.3
+Thu Dec 15,08:30,GMT,chf,CHF Swiss National Bank Rate Decision,High,0.00%,0.00%,0.00%
+Thu Dec 15,09:00,GMT,EUR,EUR ECB Publishes Dec. Monthly Report,HIGH,,,
+Thu Dec 15,09:00,GMT,eur,EUR Euro-Zone Purchasing Manager Index Composite,Medium,47.9,46.5,47.0
+Thu Dec 15,09:00,GMT,eur,EUR Italian Consumer Price Index (NIC incl. tobacco) (MoM),Low,-0.1%,-0.1%,-0.1%
+Thu Dec 15,09:00,GMT,eur,EUR Italian Consumer Price Index (NIC incl. tobacco) (YoY),Low,3.3%,3.3%,3.3%
+Thu Dec 15,09:00,GMT,eur,EUR Euro-Zone Purchasing Manager Index Services,Medium,48.3,47.0,47.5
+Thu Dec 15,09:00,GMT,eur,EUR Italian Consumer Price Index - EU Harmonized (MoM),Low,-0.1%,-0.1%,-0.1%
+Thu Dec 15,09:00,GMT,eur,EUR Italian Consumer Price Index - EU Harmonized (YoY),Low,3.7%,3.7%,3.7%
+Thu Dec 15,09:00,GMT,eur,EUR Euro-Zone Purchasing Manager Index Manufacturing,Medium,46.9,46.0,46.4
+Thu Dec 15,09:30,GMT,gbp,GBP Retail Sales (MoM),Low,-0.7%,-0.4%,0.9%
+Thu Dec 15,09:30,GMT,gbp,GBP Retail Sales (YoY),Medium,0.5%,0.3%,1.1%
+Thu Dec 15,09:30,GMT,gbp,GBP Retail Sales w/Auto Fuel (MoM),Low,-0.4%,-0.3%,1.0%
+Thu Dec 15,09:30,GMT,gbp,GBP BoE/GfK Inflation Next 12 Mths,High,4.1%,,4.2%
+Thu Dec 15,09:30,GMT,gbp,GBP Retail Sales w/Auto Fuel (YoY),Medium,0.7%,0.4%,1.1%
+Thu Dec 15,10:00,GMT,eur,EUR Euro-Zone Consumer Price Index (YoY),High,3.0%,3.0%,3.0%
+Thu Dec 15,10:00,GMT,eur,EUR Euro-Zone Employment (QoQ),Low,-0.1%,,0.2%
+Thu Dec 15,10:00,GMT,eur,EUR Euro-Zone Consumer Price Index - Core (YoY),High,1.6%,1.6%,1.6%
+Thu Dec 15,10:00,GMT,eur,EUR Euro-Zone Consumer Price Index (MoM),Medium,0.1%,0.1%,0.3%
+Thu Dec 15,10:00,GMT,eur,EUR Euro-Zone Employment (YoY),Low,0.2%,,0.5%
+Thu Dec 15,10:00,GMT,eur,EUR Italian General Government Debt,Low,1909.2B,,1883.7B
+Thu Dec 15,11:00,GMT,gbp,GBP CBI Trends Total Orders,Medium,-23,-20,-19
+Thu Dec 15,11:00,GMT,gbp,GBP CBI Trends Selling Prices,Low,7,-1,2
+Thu Dec 15,13:30,GMT,cad,CAD Capacity Utilization Rate,Low,81.3%,79.0%,79.9%
+Thu Dec 15,13:30,GMT,usd,USD Producer Price Index (MoM),Low,0.3%,0.2%,-0.3%
+Thu Dec 15,13:30,GMT,usd,USD Producer Price Index Ex Food & Energy (MoM),Low,0.1%,0.2%,0.0%
+Thu Dec 15,13:30,GMT,usd,USD Producer Price Index (YoY),Medium,5.7%,5.8%,5.9%
+Thu Dec 15,13:30,GMT,usd,USD Producer Price Index Ex Food & Energy (YoY),Medium,2.9%,2.9%,2.8%
+Thu Dec 15,13:30,GMT,usd,USD Current Account Balance,Low,-$110.3B,-$108.5B,-$124.7B
+Thu Dec 15,13:30,GMT,usd,USD Empire Manufacturing,Low,9.53,3,0.61
+Thu Dec 15,13:30,GMT,usd,USD Initial Jobless Claims,Low,366K,390K,385K
+Thu Dec 15,13:30,GMT,usd,USD Continuing Claims,Low,3603K,3637K,3599K
+Thu Dec 15,14:00,GMT,usd,USD Net Long-term TIC Flows,Medium,$4.8B,$62.5B,$68.3B
+Thu Dec 15,14:00,GMT,usd,USD Total Net TIC Flows,Low,-$48.8B,,$65.0B
+Thu Dec 15,14:15,GMT,usd,USD Industrial Production,Medium,-0.2%,0.1%,0.7%
+Thu Dec 15,14:15,GMT,usd,USD Capacity Utilization,Low,77.8%,77.8%,78.0%
+Thu Dec 15,15:00,GMT,usd,USD Philadelphia Fed.,Low,10.3,5,3.6
+Thu Dec 15,15:30,GMT,usd,USD EIA Natural Gas Storage Change,Low,-102,-92,-20
+Thu Dec 15,18:00,GMT,USD,USD NY Fed's Baxter Testifies Before House Subcommittee,LOW,,,
+Thu Dec 15,20:20,GMT,USD,USD Fed's Lockhart to Give Commencement Speech in Atlanta,LOW,,,
+Fri Dec 16,07:00,GMT,EUR,EUR EU 25 New Car Registrations,LOW,,,-1.8%
+Fri Dec 16,07:45,GMT,eur,EUR French Own-Company Production Outlook,Low,-2,,-5
+Fri Dec 16,07:45,GMT,eur,EUR French Production Outlook Indicator,Low,-37,,-35
+Fri Dec 16,07:45,GMT,eur,EUR French Business Confidence Indicator,Low,94,93,96
+Fri Dec 16,08:00,GMT,EUR,EUR Draghi, King, Bini Smaghi, Visco, Regling at Rome Conference,LOW,,,
+Fri Dec 16,10:00,GMT,eur,EUR Euro-Zone Labor Costs (YoY),Low,2.7%,,3.3%
+Fri Dec 16,10:00,GMT,eur,EUR Euro-Zone Trade Balance s.a. (euros),Low,0.3B,0.5B,2.2B
+Fri Dec 16,10:00,GMT,eur,EUR Euro-Zone Trade Balance (euros),Low,1.1B,1.0B,2.7B
+Fri Dec 16,10:00,GMT,eur,EUR Italian Current Account (euros),Low,-2489M,,-3530M
+Fri Dec 16,10:30,GMT,CHF,CHF KOF Institute December Economic Forecast,Medium,,,
+Fri Dec 16,13:30,GMT,cad,CAD International Securities Transactions (Canadian dollar),Low,2.03B,7.25B,7.35B
+Fri Dec 16,13:30,GMT,usd,USD Consumer Price Index (YoY),High,3.4%,3.5%,3.5%
+Fri Dec 16,13:30,GMT,usd,USD Consumer Price Index n.s.a.,Low,226.230,226.221,226.421
+Fri Dec 16,13:30,GMT,usd,USD Consumer Price Index Core Index s.a.,Low,226.836,,226.444
+Fri Dec 16,13:30,GMT,usd,USD Consumer Price Index (MoM),Medium,0.0%,0.1%,-0.1%
+Fri Dec 16,13:30,GMT,usd,USD Consumer Price Index Ex Food & Energy (MoM),Medium,0.2%,0.1%,0.1%
+Fri Dec 16,13:30,GMT,usd,USD Consumer Price Index Ex Food & Energy (YoY),High,2.2%,2.1%,2.1%
+Fri Dec 16,14:30,GMT,USD,USD Fed's Kamin Testifies on Economic Situation in Europe,LOW,,,
+Fri Dec 16,16:15,GMT,USD,USD Fed's Evans Speaks on Econometric Policy Tools in Italy,LOW,,,
+Fri Dec 16,17:55,GMT,USD,USD Fed's Fisher Speaks on Economy in Austin, Texas,LOW,,,

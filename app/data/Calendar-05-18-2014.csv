@@ -1,0 +1,149 @@
+Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Sun May 18,22:30,GMT,nzd,NZD Performance Services Index,Low,58.9,,58.5
+Sun May 18,22:45,GMT,nzd,NZD Producer Prices- Inputs (QoQ),Low,1.0%,0.4%,-0.7%
+Sun May 18,22:45,GMT,nzd,NZD Producer Prices- Outputs (QoQ),Low,0.9%,0.7%,-0.4%
+Sun May 18,23:01,GMT,gbp,GBP Rightmove House Prices (MoM),Low,3.6%,,2.6%
+Sun May 18,23:01,GMT,gbp,GBP Rightmove House Prices (YoY),Low,8.9%,,7.3%
+Sun May 18,23:50,GMT,jpy,JPY Housing Loans (YoY),Low,2.9%,,2.9%
+Sun May 18,23:50,GMT,jpy,JPY Machine Orders (MoM),Low,19.1%,6%,-4.6%
+Sun May 18,23:50,GMT,jpy,JPY Machine Orders (YoY),Low,16.1%,4.30%,10.8%
+Mon May 19,04:00,GMT,jpy,JPY Tokyo Condominium Sales (YoY),Low,-39.6%,,-9.7%
+Mon May 19,09:00,GMT,eur,EUR Euro-Zone Construction Output s.a. (MoM),Low,-0.6%,,0.4%
+Mon May 19,09:00,GMT,eur,EUR Euro-Zone Construction Output w.d.a. (YoY),Low,5.2%,,7.5%
+Mon May 19,16:10,GMT,usd,USD Fed's Williams and Fisher to Discuss Monetary Policy ,Low,,,
+Tue May 20,00:00,GMT,aud,AUD Conference Board Leading Index,Medium,0.0%,,0.2%
+Tue May 20,01:30,GMT,aud,AUD RBA Minutes May Meeting,Medium,,,
+Tue May 20,04:30,GMT,jpy,JPY All Industry Activity Index (MoM),Medium,1.5%,1.6%,-1.1%
+Tue May 20,05:00,GMT,jpy,JPY Coincident Index,Medium,114.5,114.0,112.9
+Tue May 20,05:00,GMT,jpy,JPY Leading Index,Medium,107.1,106.5,108.7
+Tue May 20,05:30,GMT,jpy,JPY Nationwide Department Store Sales (YoY),Low,-12.0%,,25.4%
+Tue May 20,05:30,GMT,jpy,JPY Tokyo Department Store Sales (YoY),Low,-10.8%,,25.5%
+Tue May 20,06:00,GMT,EUR,EUR German Producer Prices (MoM),Medium,-0.1%,0%,-0.3%
+Tue May 20,06:00,GMT,jpy,JPY Machine Tool Orders (YoY),Low,48.7%,48.8%,41.8%
+Tue May 20,06:00,GMT,EUR,EUR German Producer Prices (YoY),Medium,-0.9%,-0.8%,-0.9%
+Tue May 20,07:00,GMT,jpy,JPY Convenience Store Sales (YoY),Low,-2.2%,,2.9%
+Tue May 20,08:30,GMT,gbp,GBP Consumer Price Index (MoM),High,0.4%,0.3%,0.2%
+Tue May 20,08:30,GMT,gbp,GBP Retail Price Index,Medium,255.7,256.1,254.8
+Tue May 20,08:30,GMT,gbp,GBP Retail Price Index (MoM),Medium,0.4%,0.5%,0.2%
+Tue May 20,08:30,GMT,gbp,GBP Consumer Price Index (YoY),High,1.8%,1.7%,1.6%
+Tue May 20,08:30,GMT,gbp,GBP Core Consumer Price Index (YoY),Medium,2.0%,1.8%,1.6%
+Tue May 20,08:30,GMT,gbp,GBP Retail Price Index (YoY),Medium,2.5%,2.6%,2.5%
+Tue May 20,08:30,GMT,gbp,GBP Retail Price Index Ex Mort Int.Payments (YoY),Low,2.6%,2.7%,2.5%
+Tue May 20,08:30,GMT,gbp,GBP Producer Price Index Input n.s.a. (MoM),Low,0%,0.1%,0.2%
+Tue May 20,08:30,GMT,gbp,GBP Producer Price Index Input n.s.a. (YoY),Low,1%,1%,1.1%
+Tue May 20,08:30,GMT,gbp,GBP Producer Price Index Output n.s.a. (MoM),Medium,0%,0.2%,0.2%
+Tue May 20,08:30,GMT,gbp,GBP Producer Price Index Output n.s.a. (YoY),Medium,0.6%,0.7%,0.5%
+Tue May 20,08:30,GMT,gbp,GBP Producer Price Index Output Core n.s.a. (MoM),Low,-1.1%,-0.2%,-0.4%
+Tue May 20,08:30,GMT,gbp,GBP Producer Price Index Output Core n.s.a. (YoY),Low,-5.5%,-4.9%,-6.3%
+Tue May 20,08:30,GMT,gbp,GBP DCLG UK House Prices (YoY),Low,8.0%,9.6%,9.1%
+Tue May 20,12:30,GMT,cad,CAD Wholesale Sales (MoM),Low,-0.4%,0.4%,1.1%
+Tue May 20,16:30,GMT,usd,USD Fed's Plosser Speaks on the Economy,Low,,,
+Tue May 20,17:00,GMT,usd,USD Fed's Dudley Speaks on Economy and Monetary Policy,Low,,,
+Tue May 20,22:45,GMT,nzd,NZD Net Migration s.a.,Low,4080,,3890
+Tue May 20,23:50,GMT,jpy,JPY Merchandise Trade Balance Total (Yen),Low,-¥808.9B,-¥646B,-¥1446B
+Tue May 20,23:50,GMT,jpy,JPY Adjusted Merchandise Trade Balance (Yen),Low,-¥844.6B,-¥633.0B,-¥1626.8B
+Tue May 20,23:50,GMT,jpy,JPY Merchandise Trade Exports (YoY),Low,5.1%,4.8%,1.8%
+Tue May 20,23:50,GMT,jpy,JPY Merchandise Trade Imports (YoY),Low,3.4%,0.8%,18.1%
+Wed May 21,00:30,GMT,aud,AUD Westpac Consumer Conf Index,Medium,92.9,,99.7
+Wed May 21,00:30,GMT,aud,AUD Westpac Consumer Confidence,Medium,-6.8%,,0.3%
+Wed May 21,01:00,GMT,aud,AUD Skilled Vacancies (MoM),Low,-0.2%,,-0.2%
+Wed May 21,01:30,GMT,aud,AUD Wage Cost Index (QoQ),Medium,0.7%,0.7%,0.7%
+Wed May 21,01:30,GMT,aud,AUD Wage Cost Index (YoY),Medium,2.6%,2.6%,2.6%
+Wed May 21,02:41,GMT,jpy,JPY BOJ 2014 Monetary Base Target,Medium,¥270T,¥270T,¥270T
+Wed May 21,03:00,GMT,nzd,NZD Credit Card Spending (MoM),Low,-3.2%,,1.3%
+Wed May 21,03:00,GMT,nzd,NZD Credit Card Spending (YoY),Low,3.2%,,8.1%
+Wed May 21,05:00,GMT,jpy,JPY Supermarket Sales (YoY),Low,-5.4%,,9.4%
+Wed May 21,06:30,GMT,jpy,JPY BOJ Governor Kuroda Press Conference After Rate Decision,High,,,
+Wed May 21,07:00,GMT,chf,CHF Money Supply M3 (YoY),Low,8.0%,,9.1%
+Wed May 21,08:00,GMT,eur,EUR Euro-Zone Current Account s.a. (euros),Low,€18.8B,,€21.8B
+Wed May 21,08:00,GMT,eur,EUR Euro-Zone Current Account n.s.a. (euros),Low,€20.9B,,€13.8B
+Wed May 21,08:30,GMT,GBP,GBP Bank of England Minutes,High,,,
+Wed May 21,08:30,GMT,gbp,GBP Retail Sales (MoM),Medium,1.8%,0.5%,0.1%
+Wed May 21,08:30,GMT,gbp,GBP Retail Sales (YoY),Medium,7.7%,5.2%,4.9%
+Wed May 21,08:30,GMT,gbp,GBP Retail Sales Incl. Auto (MoM),Medium,1.3%,0.4%,0.5%
+Wed May 21,08:30,GMT,gbp,GBP Retail Sales Incl. Auto (YoY),Medium,6.9%,5.1%,4.8%
+Wed May 21,11:00,GMT,usd,USD MBA Mortgage Applications,Medium,0.9%,,3.6%
+Wed May 21,14:00,GMT,usd,USD Fed's Dudley Speaks on Regional Economy and Jobs,Low,,,
+Wed May 21,14:00,GMT,eur,EUR Euro-Zone Consumer Confidence,Medium,-7.1,-8.3,-8.6
+Wed May 21,14:30,GMT,usd,USD DOE Cushing OK Crude Inventory,Low,-225K,,-592K
+Wed May 21,14:30,GMT,usd,USD DOE U.S. Distillate Inventory,Low,3399K,-500K,-1124K
+Wed May 21,14:30,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,-7226K,0K,947K
+Wed May 21,14:30,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,970K,0K,-772K
+Wed May 21,15:00,GMT,USD,USD Fed's Yellen Gives Commencement Speech at New York University,Medium,,,
+Wed May 21,16:50,GMT,USD,USD Fed's George Speaks on the Economy and Banking in Washington,Low,,,
+Wed May 21,17:30,GMT,USD,USD Fed's Kocherlakota Speaks on Monetary Policy in Minneapolis,Low,,,
+Wed May 21,18:00,GMT,USD,USD Fed Releases Minutes from April 29-30 FOMC Meeting,High,,,
+Wed May 21,22:00,GMT,nzd,NZD ANZ Job Advertisements (MoM),Low,2.6%,,1.2%
+Wed May 21,23:50,GMT,jpy,JPY Foreign Buying Japan Bonds (Yen),Low,¥345.7B,,¥855.9B
+Wed May 21,23:50,GMT,jpy,JPY Japan Buying Foreign Stocks (Yen),Low,¥140.8B,,-¥150.3B
+Wed May 21,23:50,GMT,jpy,JPY Japan Buying Foreign Bonds (Yen),Low,¥1414.3B,,¥345.7B
+Wed May 21,23:50,GMT,jpy,JPY Foreign Buying Japan Stocks (Yen),Low,¥-153.9B,,¥-9.3B
+Thu May 22,01:35,GMT,jpy,JPY Markit/JMMA Japan Manufacturing PMI,Low,49.9,,49.4
+Thu May 22,01:45,GMT,cny,CNY HSBC Manufacturing PMI,Medium,49.7,48.3,48.1
+Thu May 22,03:00,GMT,nzd,NZD 2Yr Inflation Expectation,Medium,2.36%,,2.33%
+Thu May 22,05:00,GMT,jpy,Bank of Japan Monthly Economic Report for May,Medium,,,
+Thu May 22,07:00,GMT,eur,EUR French Markit Composite PMI,Medium,49.3,50.5,50.6
+Thu May 22,07:00,GMT,eur,EUR French Markit Services PMI,Medium,49.2,50.2,50.4
+Thu May 22,07:00,GMT,eur,EUR French Markit Manufacturing PMI,Medium,49.3,51.0,51.2
+Thu May 22,07:30,GMT,eur,EUR German Markit/BME Composite PMI,Medium,56.1,56.0,56.1
+Thu May 22,07:30,GMT,eur,EUR German Markit/BME Manufacturing PMI,Medium,52.9,54.0,54.1
+Thu May 22,07:30,GMT,eur,EUR German Markit Services PMI,Medium,56.4,54.5,54.7
+Thu May 22,08:00,GMT,eur,EUR Euro-zone Markit Services PMI,Medium,53.5,53.0,53.1
+Thu May 22,08:00,GMT,eur,EUR Euro-zone Markit Manufacturing PMI,Medium,52.5,53.2,53.4
+Thu May 22,08:00,GMT,eur,EUR Euro-zone Markit Composite PMI,Medium,53.9,53.9,54.0
+Thu May 22,08:30,GMT,gbp,GBP Central Government NCR,Low,1.9B,,22.7B
+Thu May 22,08:30,GMT,gbp,GBP PSNB ex Interventions,Low,7.4B,4.8B,7.9B
+Thu May 22,08:30,GMT,gbp,GBP Imports,Low,-1.1%,0.2%,-0.4%
+Thu May 22,08:30,GMT,gbp,GBP Public Finances (PSNCR) (Pounds),Low,-10.6B,,15.7B
+Thu May 22,08:30,GMT,gbp,GBP Private Consumption,Medium,0.8%,0.6%,0.4%
+Thu May 22,08:30,GMT,gbp,GBP Government Spending,Medium,0.1%,0.2%,0.0%
+Thu May 22,08:30,GMT,gbp,GBP Index of Services (3M/3M),Low,0.9%,0.9%,0.8%
+Thu May 22,08:30,GMT,gbp,GBP Total Business Investment (YoY),Low,8.7%,,8.7%
+Thu May 22,08:30,GMT,gbp,GBP Gross Domestic Product (QoQ),High,0.8%,0.8%,0.7%
+Thu May 22,08:30,GMT,gbp,GBP Gross Domestic Product (YoY),High,3.1%,3.1%,2.7%
+Thu May 22,08:30,GMT,gbp,GBP Gross Fixed Capital Formation,Low,0.6%,1.2%,1.9%
+Thu May 22,08:30,GMT,gbp,GBP Public Sector Net Borrowing (Pounds),Low,£9.6B,£3.4B,£6.1B
+Thu May 22,08:30,GMT,gbp,GBP Exports,Medium,-1.0%,0.0%,2.8%
+Thu May 22,08:30,GMT,gbp,GBP Index of Services (MoM),Low,0.4%,0.3%,0.2%
+Thu May 22,08:30,GMT,gbp,GBP Total Business Investment (QoQ),Low,2.7%,2.2%,2.4%
+Thu May 22,10:00,GMT,gbp,GBP CBI Trends Total Orders,Low,0,4,-1
+Thu May 22,10:00,GMT,gbp,GBP CBI Trends Selling Prices,Low,4,10,9
+Thu May 22,12:30,GMT,cad,CAD Retail Sales (MoM),Medium,-0.1%,0.3%,0.7%
+Thu May 22,12:30,GMT,cad,CAD Retail Sales Less Autos (MoM),Medium,0.1%,0.4%,0.9%
+Thu May 22,12:30,GMT,usd,USD Initial Jobless Claims,Medium,326K,310K,298K
+Thu May 22,12:30,GMT,usd,USD Chicago Fed Nat Activity Index,Medium,-0.32,0.00,0.34
+Thu May 22,12:30,GMT,usd,USD Continuing Claims,Medium,2653K,2670K,2666K
+Thu May 22,13:45,GMT,usd,USD Markit Manufacturing PMI,Medium,56.2,55.5,55.4
+Thu May 22,14:00,GMT,usd,USD Existing Home Sales,Medium,4.65,4.69M,4.59M
+Thu May 22,14:00,GMT,usd,USD Existing Home Sales (MoM),Medium,1.3%,2.2%,-0.2%
+Thu May 22,14:00,GMT,usd,USD Leading Indicators,Medium,0.4%,0.4%,1.0%
+Thu May 22,14:30,GMT,usd,USD EIA Natural Gas Storage Change,Low,106B,102B,105B
+Thu May 22,15:00,GMT,USD,USD Kansas City Fed Manf. Activity,Medium,,7,7
+Thu May 22,19:00,GMT,USD,USD API Monthly Statistical Report,Low,,,
+Thu May 22,20:00,GMT,usd,USD Fed's Williams to Speak,Low,,,
+Fri May 23,01:00,GMT,nzd,NZD ANZ Consumer Confidence Index,Medium,127.6,,133.5
+Fri May 23,01:00,GMT,nzd,NZD ANZ Consumer Confidence (MoM),Medium,-4.4%,,1.1%
+Fri May 23,02:00,GMT,cny,CNY Conference Board China April Leading Economic Index,Low,288.1,,285.5
+Fri May 23,06:00,GMT,eur,EUR German Capital Investment,Low,3.2%,2.1%,0.7%
+Fri May 23,06:00,GMT,eur,EUR German Domestic Demand,Medium,1.9%,1.4%,-0.3%
+Fri May 23,06:00,GMT,eur,EUR German Gross Domestic Product n.s.a. (YoY),Medium,2.5%,2.5%,2.5%
+Fri May 23,06:00,GMT,eur,EUR German Construction Investment,Low,3.6%,3.2%,0.2%
+Fri May 23,06:00,GMT,eur,EUR German Exports,Medium,0.2%,0.6%,2.5%
+Fri May 23,06:00,GMT,eur,EUR German Imports,Low,2.2%,1.0%,1.3%
+Fri May 23,06:00,GMT,eur,EUR German Gross Domestic Product s.a. (QoQ),Medium,0.8%,0.8%,0.4%
+Fri May 23,06:00,GMT,eur,EUR German Gross Domestic Product w.d.a. (YoY),Medium,2.5%,2.5%,1.3%
+Fri May 23,06:00,GMT,eur,EUR German Private Consumption,Medium,0.7%,0.6%,-0.3%
+Fri May 23,06:00,GMT,eur,EUR German Government Spending,Low,0.4%,0.3%,-0.3%
+Fri May 23,08:00,GMT,eur,EUR German IFO - Current Assessment,Medium,114.8,115.5,115.3
+Fri May 23,08:00,GMT,eur,EUR German IFO - Expectations,Medium,106.2,106.6,107.3
+Fri May 23,08:00,GMT,eur,EUR German IFO - Business Climate,Medium,110.4,110.9,111.2
+Fri May 23,12:30,GMT,cad,CAD Bank Canada Consumer Price Index Core (MoM),Medium,0.2%,0.2%,0.3%
+Fri May 23,12:30,GMT,cad,CAD CPI Core s.a. (MoM),Medium,0.1%,,0.1%
+Fri May 23,12:30,GMT,cad,CAD Consumer Price Index (MoM),High,0.3%,0.3%,0.6%
+Fri May 23,12:30,GMT,cad,CAD Bank Canada Consumer Price Index Core (YoY),Medium,1.4%,1.4%,1.3%
+Fri May 23,12:30,GMT,cad,CAD Consumer Price Index,Medium,125.2,124.9,124.8
+Fri May 23,12:30,GMT,cad,CAD CPI s.a. (MoM),Medium,0.2%,0.2%,0.2%
+Fri May 23,12:30,GMT,cad,CAD Consumer Price Index (YoY),High,2%,2%,1.5%
+Fri May 23,14:00,GMT,usd,USD New Home Sales (MoM),Medium,6.4%,10.7%,-6.9%
+Fri May 23,14:00,GMT,usd,USD New Home Sales,Medium,433K,425K,407K
+Fri May 23,14:00,GMT,USD,USD U.S. Releases New Home Sales Revisions,Low,,,

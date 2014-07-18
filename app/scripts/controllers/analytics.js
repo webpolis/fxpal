@@ -267,7 +267,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
     $scope.correlated = function() {
         var curCross = $scope.selected.cross1.currCode + $scope.selected.cross2.currCode,
             revCurCross = $scope.selected.cross2.currCode + $scope.selected.cross1.currCode;
-        csv2json.csv('data/correlCrosses.csv', function(data) {
+        csv2json.csv('data/multisetsOutputs.csv', function(data) {
             var expr = '$[?(@.cross1=="' + curCross + '" || @.cross2=="' + curCross + '" || @.cross1=="' + revCurCross + '" || @.cross2=="' + revCurCross + '")]';
             var correlation = jsonPath.eval(data, expr).map(function(rel) {
                 // if cross is reverted, we should invert correlation value
@@ -321,16 +321,16 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         var start = null;
         switch (period.label) {
             case 'Intraday':
-                start = moment().subtract('day', 1).utc().format('YYYY-MM-DDTHH:mm:ssZ');
+                start = moment().subtract('day', 1).utc().format($scope.utils.rfc3339);
                 break;
             case 'Week':
-                start = moment().subtract('week', 1).utc().format('YYYY-MM-DDTHH:mm:ssZ');
+                start = moment().subtract('week', 1).utc().format($scope.utils.rfc3339);
                 break;
             case 'Month':
-                start = moment().subtract('month', 1).utc().format('YYYY-MM-DDTHH:mm:ssZ');
+                start = moment().subtract('month', 1).utc().format($scope.utils.rfc3339);
                 break;
             case 'Year':
-                start = moment().subtract('year', 1).utc().format('YYYY-MM-DDTHH:mm:ssZ');
+                start = moment().subtract('year', 1).utc().format($scope.utils.rfc3339);
                 break;
         }
         var optsOanda = {
@@ -338,7 +338,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             granularity: period.granularity,
             candleFormat: 'bidask',
             start: start,
-            end: moment().utc().format('YYYY-MM-DDTHH:mm:ssZ')
+            end: moment().utc().format($scope.utils.rfc3339)
         };
         $scope.api.getCandlesticks(optsOanda).then(function(ret) {
             if (angular.isDefined(ret.data) && angular.isArray(ret.data.candles)) {

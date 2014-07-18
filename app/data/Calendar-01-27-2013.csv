@@ -1,0 +1,150 @@
+Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Sun Jan 27,01:30,GMT,cny,CNY Industrial Profits YTD (YoY),Medium,5.3%,,3.0%
+Sun Jan 27,21:30,GMT,nzd,NZD Performance Services Index,Low,51.5,,54.2
+Sun Jan 27,23:50,GMT,jpy,JPY Corporate Service Price (YoY),Low,-0.4%,-0.5%,-0.5%
+Mon Jan 28,00:01,GMT,gbp,GBP Hometrack Housing Survey (MoM),Low,0.0%,,-0.1%
+Mon Jan 28,00:01,GMT,gbp,GBP Hometrack Housing Survey (YoY),Low,-0.3%,,-0.3%
+Mon Jan 28,07:00,GMT,eur,EUR German Import Price Index (MoM),Low,-0.5%,-0.1%,0.0%
+Mon Jan 28,09:00,GMT,eur,EUR Euro-Zone M3 s.a. (YoY),Low,3.3%,3.9%,3.8%
+Mon Jan 28,09:00,GMT,eur,EUR Euro-Zone M3 s.a. (3M),Low,3.7%,3.8%,3.4%
+Mon Jan 28,13:30,GMT,usd,USD Durables Ex Transportation,Medium,1.3%,0.8%,1.2%
+Mon Jan 28,13:30,GMT,usd,USD Cap Goods Ship Nondef Ex Air,Low,0.3%,0.8%,2.2%
+Mon Jan 28,13:30,GMT,usd,USD Durable Goods Orders,High,4.6%,2.0%,0.7%
+Mon Jan 28,13:30,GMT,usd,USD Cap Goods Orders Nondef Ex Air,Low,0.2%,-2.0%,3.0%
+Mon Jan 28,15:00,GMT,usd,USD Pending Home Sales (YoY),Medium,4.9%,11.5%,8.8%
+Mon Jan 28,15:00,GMT,usd,USD Pending Home Sales (MoM),Low,-4.3%,0.0%,1.6%
+Mon Jan 28,15:30,GMT,usd,USD Dallas Fed Manufacturing Activity,Low,5.5,3.0,6.8
+Mon Jan 28,21:45,GMT,nzd,NZD Imports (New Zealand dollars),Low,3.58B,4.13B,4.42B
+Mon Jan 28,21:45,GMT,nzd,NZD Trade Balance (New Zealand dollars),Medium,486M,-105M,-590M
+Mon Jan 28,21:45,GMT,nzd,NZD Balance (YTD) (New Zealand dollars),Medium,-1208M,-1870B,-1393B
+Mon Jan 28,21:45,GMT,nzd,NZD Exports (New Zealand dollars),Low,4.07B,3.98B,3.83B
+Mon Jan 28,23:00,GMT,aud,AUD Conference Board Leading Index,Medium,-0.2%,,0.2%
+Tue Jan 29,00:30,GMT,aud,AUD NAB Business Confidence,Medium,3,,-9
+Tue Jan 29,00:30,GMT,aud,AUD NAB Business Conditions,Low,-4,,-6
+Tue Jan 29,05:00,GMT,jpy,JPY Small Business Confidence,Medium,44.3,,43.8
+Tue Jan 29,07:00,GMT,eur,EUR German Import Price Index (YoY),Low,0.3%,0.9%,1.1%
+Tue Jan 29,07:00,GMT,eur,EUR German GfK Consumer Confidence Survey,Medium,5.8,5.7,5.7
+Tue Jan 29,08:35,GMT,cny,CNY Leading Index,Medium,100.50,,100.37
+Tue Jan 29,14:00,GMT,usd,USD S&P/CS 20 City (MoM) s.a.,Low,0.63%,0.70%,0.61%
+Tue Jan 29,14:00,GMT,usd,USD S&P/Case-Shiller Composite-20 (YoY),Low,5.52%,5.55%,4.21%
+Tue Jan 29,14:00,GMT,usd,USD S&P/Case-Shiller Home Price Index,Low,145.82,145.94,145.95
+Tue Jan 29,15:00,GMT,usd,USD Consumer Confidence,High,58.6,64.0,66.7
+Tue Jan 29,21:45,GMT,nzd,NZD Building Permits (MoM),Low,9.4%,6.0%,-5.2%
+Tue Jan 29,23:50,GMT,jpy,JPY Retail Trade (YoY),Medium,0.4%,0.3%,1.2%
+Tue Jan 29,23:50,GMT,jpy,JPY Large Retailers' Sales,Medium,0.0%,-1.0%,0.9%
+Tue Jan 29,23:50,GMT,jpy,JPY Retail Trade s.a. (MoM),Low,0.1%,0.4%,-0.1%
+Wed Jan 30,00:00,GMT,aud,AUD DEWR Internet Skilled Vacancies (MoM),Low,-2.8%,,-3.4%
+Wed Jan 30,07:00,GMT,chf,CHF UBS Consumption Indicator,Medium,1.34,,1.23
+Wed Jan 30,08:00,GMT,eur,EUR Spain GDP (Constant SA) (YoY),Medium,-1.8%,-1.7%,-1.6%
+Wed Jan 30,08:00,GMT,chf,CHF KOF Swiss Leading Indicator,Medium,1.05,1.20,1.29
+Wed Jan 30,08:00,GMT,eur,EUR Spain GDP (Constant SA) (QoQ),Medium,-0.7%,-0.6%,-0.3%
+Wed Jan 30,09:30,GMT,gbp,GBP Net Consumer Credit,Medium,0.6B,0.2B,0.1B
+Wed Jan 30,09:30,GMT,gbp,GBP Net Lending Sec. on Dwellings,Medium,1.0B,0.5B,0.0B
+Wed Jan 30,09:30,GMT,gbp,GBP M4 Money Supply (YoY),Low,-1.0%,,-2.9%
+Wed Jan 30,09:30,GMT,gbp,GBP Mortgage Approvals,Medium,55.8K,54.5K,54.0K
+Wed Jan 30,09:30,GMT,gbp,GBP M4 Money Supply (MoM),Low,0.7%,,-0.2%
+Wed Jan 30,09:30,GMT,gbp,GBP M4 Ex IOFCs 3M Annualised,Low,3.8%,3.4%,4.8%
+Wed Jan 30,10:00,GMT,eur,EUR Euro-Zone Economic Confidence,Low,89.2,88.2,87.8
+Wed Jan 30,10:00,GMT,eur,EUR Euro-Zone Business Climate Indicator,Low,-1.09,-1,-1.11
+Wed Jan 30,10:00,GMT,eur,EUR Euro-Zone Industrial Confidence,Low,-13.9,-13.5,-14.2
+Wed Jan 30,10:00,GMT,eur,EUR Euro-Zone Consumer Confidence,Medium,-23.9,-23.9,-23.9
+Wed Jan 30,10:00,GMT,eur,EUR Euro-Zone Services Confidence,Low,-8.8,-9,-9.8
+Wed Jan 30,12:00,GMT,usd,USD MBA Mortgage Applications,Low,-8.1%,,7.0%
+Wed Jan 30,13:15,GMT,usd,USD ADP Employment Change,Medium,192K,165K,185K
+Wed Jan 30,13:30,GMT,usd,USD Gross Domestic Product Price Index,High,0.6%,1.5%,2.7%
+Wed Jan 30,13:30,GMT,usd,USD Core Personal Consumption Expenditure (QoQ),Medium,0.9%,0.9%,1.1%
+Wed Jan 30,13:30,GMT,usd,USD Gross Domestic Product (Annualized),High,-0.1%,1.1%,3.1%
+Wed Jan 30,13:30,GMT,usd,USD Personal Consumption,Medium,2.2%,2.1%,1.6%
+Wed Jan 30,15:30,GMT,usd,USD DOE U.S. Distillate Inventory,Low,-2315K,-500K,508K
+Wed Jan 30,15:30,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,5947K,2500K,2813K
+Wed Jan 30,15:30,GMT,usd,USD DOE Cushing OK Crude Inventory,Low,284K,,-471K
+Wed Jan 30,15:30,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,-956K,1000K,-1738K
+Wed Jan 30,19:15,GMT,usd,USD Federal Open Market Committee Rate Decision,High,0.25%,0.25%,0.25%
+Wed Jan 30,20:00,GMT,nzd,NZD Reserve Bank of New Zealand Rate Decision,High,2.50%,2.50%,2.50%
+Wed Jan 30,23:50,GMT,jpy,JPY Industrial Production (MoM),Low,2.5%,4.1%,-1.4%
+Wed Jan 30,23:50,GMT,jpy,JPY Japan Buying Foreign Bonds (Yen),Low,¥663.1B,,-¥35.1B
+Wed Jan 30,23:50,GMT,jpy,JPY Japan Buying Foreign Stocks (Yen),Low,-¥254.1B,,-¥235.2B
+Wed Jan 30,23:50,GMT,jpy,JPY Foreign Buying Japan Bonds (Yen),Low,-¥228.8B,,¥481.0B
+Wed Jan 30,23:50,GMT,jpy,JPY Foreign Buying Japan Stocks (Yen),Low,¥248.6B,,¥196.2B
+Wed Jan 30,23:50,GMT,jpy,JPY Loans & Discounts Corp (YoY),Low,1.0%,,0.44%
+Wed Jan 30,23:50,GMT,jpy,JPY Industrial Production (YoY),Medium,-7.8%,-5.6%,-5.5%
+Thu Jan 31,,,JPY,JPY Bank of Japan Deputy Governor Yamaguchi Speaks,Medium,,,
+Thu Jan 31,00:00,GMT,aud,AUD HIA New Home Sales (MoM),Medium,6.2%,,3.0%
+Thu Jan 31,00:01,GMT,gbp,GBP GfK Consumer Confidence Survey,Medium,-26,-28,-29
+Thu Jan 31,00:30,GMT,aud,AUD Private Sector Credit (MoM),Low,0.4%,0.2%,0.0%
+Thu Jan 31,00:30,GMT,aud,AUD Private Sector Credit (YoY),Medium,3.6%,3.4%,3.5%
+Thu Jan 31,00:30,GMT,aud,AUD Export Price Index (QoQ),Low,-2.4%,-1.5%,-6.4%
+Thu Jan 31,00:30,GMT,aud,AUD Import Price Index (QoQ),Low,0.3%,0.4%,-2.4%
+Thu Jan 31,01:30,GMT,jpy,JPY Labor Cash Earnings (YoY),Medium,-1.4%,,-0.8%
+Thu Jan 31,02:00,GMT,nzd,NZD Money Supply M3 (YoY),Low,6.0%,,5.5%
+Thu Jan 31,04:00,GMT,jpy,JPY Vehicle Production (YoY),Low,-17.2%,,-8.4%
+Thu Jan 31,05:00,GMT,jpy,JPY Housing Starts (YoY),Medium,10.0%,13.5%,10.3%
+Thu Jan 31,05:00,GMT,jpy,JPY Annualized Housing Starts,Medium,0.880M,0.895M,0.906M
+Thu Jan 31,05:00,GMT,jpy,JPY Construction Orders (YoY),Low,4.8%,,-2.1%
+Thu Jan 31,07:00,GMT,gbp,GBP Nationwide House Prices s.a. (MoM),Low,0.5%,0.2%,0.0%
+Thu Jan 31,07:00,GMT,eur,EUR German Retail Sales (MoM),Low,-1.7%,-0.1%,0.6%
+Thu Jan 31,07:00,GMT,gbp,GBP Nationwide House Prices n.s.a. (YoY),Medium,0.0%,-0.3%,-1.0%
+Thu Jan 31,07:00,GMT,eur,EUR German Retail Sales (YoY),Medium,-4.7%,-1.5%,-0.6%
+Thu Jan 31,08:00,GMT,chf,CHF SNB Releases 4Q Currency Holdings ,Medium,,,
+Thu Jan 31,08:55,GMT,eur,EUR German Unemployment Rate s.a.,Medium,6.8%,6.9%,6.9%
+Thu Jan 31,08:55,GMT,eur,EUR German Unemployment Change,High,-16K,8K,-2K
+Thu Jan 31,12:30,GMT,usd,USD Challenger Job Cuts (YoY),Low,-24.4%,,-22.1%
+Thu Jan 31,13:00,GMT,eur,EUR German Consumer Price Index (MoM),Medium,-0.5%,-0.4%,0.9%
+Thu Jan 31,13:00,GMT,eur,EUR German Consumer Price Index (YoY),High,1.7%,2.0%,2.1%
+Thu Jan 31,13:00,GMT,eur,EUR German Consumer Price Index - EU Harmonised (MoM),Medium,-0.7%,-0.5%,0.9%
+Thu Jan 31,13:00,GMT,eur,EUR German Consumer Price Index - EU Harmonised (YoY),High,1.9%,2.0%,2.0%
+Thu Jan 31,13:30,GMT,cad,CAD Gross Domestic Product (MoM),Medium,0.3%,0.2%,0.1%
+Thu Jan 31,13:30,GMT,cad,CAD Gross Domestic Product (YoY),High,1.3%,1.4%,1.1%
+Thu Jan 31,13:30,GMT,usd,USD Employment Cost Index,Low,0.5%,0.5%,0.4%
+Thu Jan 31,13:30,GMT,usd,USD Personal Spending,Medium,0.2%,0.3%,0.4%
+Thu Jan 31,13:30,GMT,usd,USD Personal Consumption Expenditure Deflator (MoM),Low,0.0%,0.0%,-0.2%
+Thu Jan 31,13:30,GMT,usd,USD Personal Consumption Expenditure Core (YoY),Low,1.3%,1.4%,1.5%
+Thu Jan 31,13:30,GMT,usd,USD Continuing Claims,Low,3197K,3171K,3175K
+Thu Jan 31,13:30,GMT,cad,CAD Industrial Product Price (MoM),Low,0.0%,0.0%,-0.3%
+Thu Jan 31,13:30,GMT,usd,USD Personal Income,Medium,2.6%,0.8%,0.6%
+Thu Jan 31,13:30,GMT,usd,USD Personal Consumption Expenditure Deflator (YoY),Low,1.3%,1.4%,1.4%
+Thu Jan 31,13:30,GMT,usd,USD Personal Consumption Expenditure Core (MoM),Low,0.0%,0.1%,0.0%
+Thu Jan 31,13:30,GMT,usd,USD Initial Jobless Claims,Medium,368K,351K,330K
+Thu Jan 31,13:30,GMT,cad,CAD Raw Materials Price Index (MoM),Low,-2.0%,0.3%,-1.9%
+Thu Jan 31,14:00,GMT,usd,USD NAPM-Milwaukee,Low,51.3,52,52.2
+Thu Jan 31,14:45,GMT,usd,USD Chicago Purchasing Manager,Low,55.6,50.5,50.0
+Thu Jan 31,15:30,GMT,usd,USD EIA Natural Gas Storage Change,Low,-194,-204,-172
+Thu Jan 31,21:45,GMT,nzd,NZD Net Migration s.a.,Low,0,,590
+Thu Jan 31,22:30,GMT,aud,AUD AiG Performance of Manufacturing Index,Medium,40.2,,44.3
+Thu Jan 31,23:00,GMT,aud,AUD RPData-Rismark House PX Actual,Low,1.2%,,-0.30%
+Thu Jan 31,23:30,GMT,jpy,JPY Jobless Rate,Medium,4.2%,4.10%,4.1%
+Thu Jan 31,23:30,GMT,jpy,JPY Job-To-Applicant Ratio,Low,0.82,0.8,0.8
+Thu Jan 31,23:30,GMT,jpy,JPY Household Spending (YoY),Medium,-0.7%,-0.2%,0.2%
+Fri Feb 1,,,JPY,JPY Official Reserve Assets,Low,,,$1268.1B
+Fri Feb 1,00:30,GMT,aud,AUD Producer Price Index (QoQ),Medium,0.2%,0.3%,0.6%
+Fri Feb 1,00:30,GMT,aud,AUD Producer Price Index (YoY),Medium,1.0%,1.2%,1.1%
+Fri Feb 1,01:00,GMT,cny,CNY Manufacturing PMI,Medium,50.4,51.0,50.6
+Fri Feb 1,01:45,GMT,cny,CNY HSBC Manufacturing PMI,Medium,52.3,52,51.5
+Fri Feb 1,05:00,GMT,jpy,JPY Vehicle Sales (YoY),Low,-12.9%,,-3.4%
+Fri Feb 1,05:30,GMT,aud,AUD RBA Commodity Index SDR (YoY),Low,-6.4%,,-8.7%
+Fri Feb 1,05:30,GMT,aud,AUD RBA Commodity Price Index,Low,90.3,,88.5
+Fri Feb 1,08:30,GMT,chf,CHF SVME-Purchasing Managers Index,Medium,52.5,50.5,49.2
+Fri Feb 1,08:45,GMT,eur,EUR Italian Purchasing Manager Index Manufacturing,Low,47.8,47.4,46.7
+Fri Feb 1,08:50,GMT,eur,EUR French Purchasing Manager Index Manufacturing,Low,42.9,42.9,42.9
+Fri Feb 1,08:55,GMT,eur,EUR German Purchasing Manager Index Manufacturing,Medium,49.8,48.8,48.8
+Fri Feb 1,09:00,GMT,eur,EUR Euro-Zone Purchasing Manager Index Manufacturing,Medium,47.9,47.5,47.5
+Fri Feb 1,09:00,GMT,eur,EUR Italian Unemployment Rate s.a.,Low,11.2%,11.2%,11.2%
+Fri Feb 1,09:30,GMT,gbp,GBP Purchasing Manager Index Manufacturing,Medium,50.8,51.0,51.2
+Fri Feb 1,10:00,GMT,eur,EUR Euro-Zone Unemployment Rate,Medium,11.7%,11.9%,11.7%
+Fri Feb 1,10:00,GMT,eur,EUR Euro-Zone Consumer Price Index Estimate (YoY),Medium,2.0%,2.2%,2.2%
+Fri Feb 1,13:30,GMT,usd,USD Change in Non-farm Payrolls,High,157K,165K,196K
+Fri Feb 1,13:30,GMT,usd,USD Change in Manufacturing Payrolls,Low,4K,10K,8K
+Fri Feb 1,13:30,GMT,usd,USD Average Weekly Hours All Employees,Low,34.4,34.5,34.4
+Fri Feb 1,13:30,GMT,usd,USD Change in Private Payrolls,Medium,166K,168K,202K
+Fri Feb 1,13:30,GMT,usd,USD Unemployment Rate,High,7.9%,7.8%,7.8%
+Fri Feb 1,13:30,GMT,usd,USD Average Hourly Earning (YoY) All Employees,Medium,2.1%,2.1%,2.1%
+Fri Feb 1,13:30,GMT,usd,USD Change in Household Employment,Medium,17,,28
+Fri Feb 1,13:30,GMT,usd,USD Underemployment Rate (U6),Medium,14.4%,,14.4%
+Fri Feb 1,13:30,GMT,usd,USD Average Hourly Earning (MoM) All Employees,Medium,0.2%,0.1%,0.3%
+Fri Feb 1,13:58,GMT,usd,USD Markit US PMI Final,Low,55.8,55.5,56.1
+Fri Feb 1,14:55,GMT,usd,USD U. of Michigan Confidence,Medium,73.8,71.5,71.3
+Fri Feb 1,15:00,GMT,usd,USD Construction Spending (MoM),Medium,0.9%,0.6%,-0.3%
+Fri Feb 1,15:00,GMT,usd,USD ISM Prices Paid,Medium,56.5,56.0,55.5
+Fri Feb 1,15:00,GMT,usd,USD ISM Manufacturing,High,53.1,50.6,50.2
+Fri Feb 1,22:00,GMT,usd,USD Domestic Vehicle Sales,Low,12.08,11.9M,11.97M
+Fri Feb 1,22:00,GMT,usd,USD Total Vehicle Sales,Low,15.23,15.20M,15.30M

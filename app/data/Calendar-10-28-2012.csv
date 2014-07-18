@@ -1,0 +1,161 @@
+Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Sun Oct 28,,,CNY,CNY Leading Index,Low,,,99.63
+Sun Oct 28,23:50,GMT,jpy,JPY Retail Trade (YoY),Medium,0.4%,1.0%,1.7%
+Sun Oct 28,23:50,GMT,jpy,JPY Retail Trade s.a. (MoM),Low,-3.6%,-1.5%,1.5%
+Sun Oct 28,23:50,GMT,jpy,JPY Large Retailers' Sales,Medium,-1.0%,-1.2%,-0.9%
+Mon Oct 29,,,eur,EUR Greece Expected to Meet with Troika to Discuss Progress,Medium,,,
+Mon Oct 29,00:01,GMT,gbp,GBP Lloyds Business Barometer,Low,17,,10
+Mon Oct 29,00:01,GMT,gbp,GBP Hometrack Housing Survey (MoM),Low,-0.1%,,-0.1%
+Mon Oct 29,00:01,GMT,gbp,GBP Hometrack Housing Survey (YoY),Low,-0.4%,,-0.5%
+Mon Oct 29,09:30,GMT,gbp,GBP Net Consumer Credit,Medium,1.2B,0.1B,-0.1B
+Mon Oct 29,09:30,GMT,gbp,GBP Net Lending Sec. on Dwellings,Medium,0.5B,0.5B,-0.2B
+Mon Oct 29,09:30,GMT,gbp,GBP Mortgage Approvals,Medium,50.0K,48.7K,47.9K
+Mon Oct 29,09:30,GMT,gbp,GBP M4 Money Supply (YoY),Low,-3.5%,,-4.0%
+Mon Oct 29,09:30,GMT,gbp,GBP M4 Money Supply (M/M),Low,0.2%,0.3%,0.3%
+Mon Oct 29,09:30,GMT,gbp,GBP M4 Ex IOFCs 3M Annualized (SEP),Medium,7.4%,5.9%,7.9%
+Mon Oct 29,12:30,GMT,usd,USD Personal Income,Medium,0.4%,0.4%,0.1%
+Mon Oct 29,12:30,GMT,usd,USD Personal Spending,Medium,0.8%,0.6%,0.5%
+Mon Oct 29,12:30,GMT,usd,USD PCE Deflator (MoM),Low,0.4%,0.4%,0.4%
+Mon Oct 29,12:30,GMT,usd,USD Personal Consumption Expenditure Deflator (YoY),Low,1.7%,1.7%,1.5%
+Mon Oct 29,12:30,GMT,usd,USD Personal Consumption Expenditure Core (MoM),Medium,0.1%,0.1%,0.1%
+Mon Oct 29,12:30,GMT,usd,USD Personal Consumption Expenditure Core (YoY),High,1.7%,1.7%,1.6%
+Mon Oct 29,13:00,GMT,eur,EUR German Consumer Price Index (MoM),Medium,0.0%,0.0%,0.0%
+Mon Oct 29,13:00,GMT,eur,EUR German Consumer Price Index (YoY),High,2.0%,1.9%,2.0%
+Mon Oct 29,13:00,GMT,eur,EUR German Consumer Price Index - EU Harmonised (MoM),Medium,0.1%,0.0%,0.0%
+Mon Oct 29,13:00,GMT,eur,EUR German Consumer Price Index - EU Harmonised (YoY),High,2.1%,2.0%,2.1%
+Mon Oct 29,14:30,GMT,usd,USD Dallas Fed Manufacturing Activity,Low,1.8,0.0,-0.9
+Mon Oct 29,16:00,GMT,eur,EUR Spain Spain Deadline for Bad Bank List RescueRequirement,Medium,,,
+Mon Oct 29,19:00,GMT,usd,USD US Treasury Issues Quarterly Borrowing Estimate,Medium,,,
+Mon Oct 29,23:30,GMT,jpy,JPY Jobless Rate,Low,4.2%,4.2%,4.2%
+Mon Oct 29,23:30,GMT,jpy,JPY Job-To-Applicant Ratio,Low,0.81,0.83,0.83
+Mon Oct 29,23:30,GMT,jpy,JPY Household Spending (YoY),Medium,-0.9%,0.8%,1.8%
+Mon Oct 29,23:50,GMT,jpy,JPY Industrial Production (YoY),Medium,-8.1%,-7.1%,-4.6%
+Mon Oct 29,23:50,GMT,jpy,JPY Industrial Production (MoM),Low,-4.1%,-3.1%,-1.6%
+Tue Oct 30,,,eur,EUR Spain Budget Balance (YTD),Medium,,,-50.13B
+Tue Oct 30,00:00,GMT,aud,AUD HIA New Home Sales (MoM),Medium,-3.7%,,-5.3%
+Tue Oct 30,04:00,GMT,jpy,JPY Vehicle Production (YoY),Low,-12.4%,,4.5%
+Tue Oct 30,05:49,GMT,jpy,JPY Bank of Japan Rate Decision,High,0.10%,0.10%,0.10%
+Tue Oct 30,07:00,GMT,AUD,AUD RBA's Lowe Speaks at Fixed-Income Conference in Sydney,Low,,,
+Tue Oct 30,07:00,GMT,chf,CHF UBS Consumption Indicator,Medium,1.07,,1.02
+Tue Oct 30,08:00,GMT,eur,EUR Spain GDP (QoQ),Medium,-0.3%,-0.4%,-0.4%
+Tue Oct 30,08:00,GMT,eur,EUR Spain GDP (YoY),Medium,-1.6%,-1.7%,-1.3%
+Tue Oct 30,08:00,GMT,eur,EUR ECB Draghi Speaks on Central Banking,Medium,,,
+Tue Oct 30,08:55,GMT,eur,EUR German Unemployment Rate,High,6.9%,6.9%,6.9%
+Tue Oct 30,08:55,GMT,eur,EUR German Unemployment Change,High,20K,10K,12K
+Tue Oct 30,10:00,GMT,eur,EUR Euro-Zone Business Climate Indicator,Medium,-1.62,-1.38,-1.34
+Tue Oct 30,10:00,GMT,eur,EUR Euro-Zone Consumer Confidence,Medium,-25.7,-25.6,-25.6
+Tue Oct 30,10:00,GMT,eur,EUR Euro-Zone Services Confidence,Low,-12.1,-13,-11.9
+Tue Oct 30,10:00,GMT,eur,EUR Italy to Sell 5 and 10 Year Bonds,Medium,,,
+Tue Oct 30,10:00,GMT,eur,EUR Euro-Zone Economic Confidence,Low,84.5,84.4,85.2
+Tue Oct 30,10:00,GMT,eur,EUR Euro-Zone Industrial Confidence,Low,-18.0,-17,-15.9
+Tue Oct 30,11:00,GMT,gbp,GBP CBI Reported Sales,Low,30,8,6
+Tue Oct 30,12:30,GMT,cad,CAD Industrial Product Price (MoM),Low,0.5%,0.2%,-0.1%
+Tue Oct 30,12:30,GMT,cad,CAD Raw Materials Price Index (MoM),Low,1.3%,1.1%,3.5%
+Tue Oct 30,13:00,GMT,usd,USD S&P/CS 20 City MoM% SA,Low,0.49%,0.50%,0.32%
+Tue Oct 30,13:00,GMT,usd,USD S&P/Case-Shiller Composite-20 (YoY),Low,2.03%,1.9%,1.2%
+Tue Oct 30,13:00,GMT,usd,USD S&P/Case-Shiller Home Price Index,Low,145.87,,144.60
+Tue Oct 30,16:42,GMT,eur,EUR Spain Budget (YtD) (SEP),High,-€46.11 Bln,,-€50.13B
+Tue Oct 30,21:45,GMT,nzd,NZD Building Permits (MoM),Low,7.8%,3.0%,1.9%
+Tue Oct 30,23:15,GMT,jpy,JPY Nomura/JMMA Manufacturing Purchasing Manager Index,Medium,46.9,,48.0
+Wed Oct 31,,,eur,EUR Bank of Portugal Publishes Bank Survey on Credit Market,Low,,,
+Wed Oct 31,00:00,GMT,USD,USD Fed's Kocherlakota Speaks at Town Hall Forum in Minnesota,Low,,,
+Wed Oct 31,,,eur,EUR Spain Bond Redemption EUR 14.97B,Medium,,,
+Wed Oct 31,,,eur,EUR Spain Current Account,Medium,,,0.5B
+Wed Oct 31,,,eur,EUR Greece Retail Sales,Low,,,-0.1%
+Wed Oct 31,00:01,GMT,gbp,GBP GfK Consumer Confidence Survey,Medium,-30,-28,-28
+Wed Oct 31,00:30,GMT,aud,AUD Building Approvals (MoM),Low,7.8%,1.0%,8.8%
+Wed Oct 31,00:30,GMT,aud,AUD Building Approvals (YoY),Low,12.4%,2.1%,-12.8%
+Wed Oct 31,00:30,GMT,aud,AUD Private Sector Credit (YoY),Medium,4.0%,3.9%,4.1%
+Wed Oct 31,00:30,GMT,aud,AUD Private Sector Credit (MoM),Medium,0.3%,0.2%,0.2%
+Wed Oct 31,01:30,GMT,jpy,JPY Labor Cash Earnings (YoY),Low,0.0%,-0.4%,0.0%
+Wed Oct 31,02:00,GMT,nzd,NZD Money Supply M3 (YoY),Low,6.4%,,7.1%
+Wed Oct 31,05:00,GMT,jpy,JPY Construction Orders (YoY),Low,3.6%,,8.7%
+Wed Oct 31,05:00,GMT,jpy,JPY Housing Starts (YoY),Medium,15.5%,17.0%,-5.5%
+Wed Oct 31,05:00,GMT,jpy,JPY Annualized Housing Starts,Medium,0.866M,0.870M,0.888M
+Wed Oct 31,06:45,GMT,cny,CNY China Leading Index,Low,100.49,,99.81
+Wed Oct 31,07:00,GMT,eur,EUR Germany Retail Sales (MoM),Medium,1.5%,0.3%,0.1%
+Wed Oct 31,07:00,GMT,eur,EUR Germany Retail Sales (YoY),Medium,-3.1%,-1.1%,-1.1%
+Wed Oct 31,07:45,GMT,eur,EUR France Producer Prices (MoM),Low,0.3%,0.2%,1.3%
+Wed Oct 31,07:45,GMT,eur,EUR France Consumer Spending (MoM),Medium,0.1%,0.2%,-0.8%
+Wed Oct 31,07:45,GMT,eur,EUR France Consumer Spending (YoY),Medium,-0.3%,-0.2%,-0.6%
+Wed Oct 31,07:45,GMT,eur,EUR France Producer Prices (YoY),Low,2.9%,2.4%,2.8%
+Wed Oct 31,08:00,GMT,eur,EUR Spain Total Housing Permits (YoY),Low,-31.7%,,-37.1%
+Wed Oct 31,08:00,GMT,eur,EUR Spain Total Housing Permits (MoM),Low,-37.2%,,10.7%
+Wed Oct 31,09:00,GMT,eur,EUR Italy Unemployment Rate (SA),Medium,10.8%,10.8%,10.6%
+Wed Oct 31,10:00,GMT,eur,EUR Italy CPI (NIC incl. tobacco) (YoY),Medium,2.6%,2.9%,3.2%
+Wed Oct 31,10:00,GMT,eur,EUR Italy CPI - EU Harmonized (YoY),Medium,2.8%,3.1%,3.4%
+Wed Oct 31,10:00,GMT,eur,EUR Euro-Zone Consumer Price Index Estimate (YoY),Medium,2.5%,2.5%,2.7%
+Wed Oct 31,10:00,GMT,eur,EUR Euro-Zone Unemployment Rate,Medium,11.6%,11.4%,11.5%
+Wed Oct 31,10:00,GMT,eur,EUR Italy CPI (NIC incl. tobacco) (MoM),Medium,0.0%,0.3%,0.0%
+Wed Oct 31,10:00,GMT,eur,EUR Italy CPI - EU Harmonized (MoM) ,Medium,0.3%,0.6%,2.1%
+Wed Oct 31,11:00,GMT,usd,USD MBA Mortgage Applications,Low,-4.8%,,-12.0%
+Wed Oct 31,11:00,GMT,eur,EUR Italy PPI (MoM),Low,-0.1%,0.1%,0.9%
+Wed Oct 31,11:00,GMT,eur,EUR Italy PPI (YoY) ,Low,2.8%,2.7%,3.0%
+Wed Oct 31,11:30,GMT,eur,EUR Euro Area Finance Ministers Hold a Conference Call on Greece,Medium,,,
+Wed Oct 31,12:30,GMT,cad,CAD Gross Domestic Product (MoM),Medium,-0.1%,0.2%,0.2%
+Wed Oct 31,12:30,GMT,usd,USD Employment Cost Index,Low,0.4%,0.5%,0.5%
+Wed Oct 31,12:30,GMT,cad,CAD Gross Domestic Product YoY,High,1.2%,1.7%,1.9%
+Wed Oct 31,13:00,GMT,usd,USD NAPM-Milwaukee,Low,43.3,,47.1
+Wed Oct 31,13:30,GMT,usd,USD Fed's Raskin Gives Welcoming Remarks in Ellicott City,Low,,,
+Wed Oct 31,13:45,GMT,usd,USD Chicago Purchasing Manager,Low,49.9,51.0,49.7
+Wed Oct 31,21:30,GMT,aud,AUD AiG Performance of Manufacturing Index,Medium,45.2,,44.1
+Thu Nov 1,00:30,GMT,aud,AUD Export Price Index (QoQ),Low,-6.4%,-6.4%,0.9%
+Thu Nov 1,00:30,GMT,aud,AUD Import Price Index (QoQ),Low,-2.4%,-1.2%,2.4%
+Thu Nov 1,01:00,GMT,cny,CNY Manufacturing PMI,Medium,50.2,50.2,49.8
+Thu Nov 1,01:45,GMT,cny,CNY HSBC PMI Manufacturing,Medium,49.5,49.1,47.9
+Thu Nov 1,05:00,GMT,jpy,JPY Vehicle Sales (YoY),Medium,-9.0%,,-8.1%
+Thu Nov 1,05:30,GMT,aud,RBA Commodity Price Index,Low,87.3,,89.3
+Thu Nov 1,05:30,GMT,aud,AUD RBA Commodity Index SDR (YoY),Low,-16.0%,,-15.7%
+Thu Nov 1,07:00,GMT,gbp,GBP Nat'wide House prices sa (MoM),Low,0.6%,0.1%,-0.4%
+Thu Nov 1,07:00,GMT,gbp,GBP Nat'wide House prices nsa(YoY),Medium,0.9%,-1.2%,-1.4%
+Thu Nov 1,08:15,GMT,chf,CHF Retail Sales (Real) (YoY),Medium,5.4%,,6.0%
+Thu Nov 1,08:30,GMT,chf,CHF SVME-Purchasing Managers Index,Medium,46.1,44.7,43.6
+Thu Nov 1,09:00,GMT,eur,EUR Greece Manufacturing PMI,Low,41.0,,42.2
+Thu Nov 1,09:30,GMT,gbp,GBP Purchasing Manager Index Manufacturing,Medium,47.5,48,48.1
+Thu Nov 1,11:00,GMT,eur,EUR Ireland Unemployment Rate ,Medium,14.8%,,14.8%
+Thu Nov 1,11:30,GMT,usd,USD Challenger Job Cuts (YoY),Low,11.6%,,-70.8%
+Thu Nov 1,12:00,GMT,usd,USD RBC Consumer Outlook Index,Low,48.9,,48.4
+Thu Nov 1,12:15,GMT,usd,USD ADP Employment Change,Medium,158.0K,131.0K,114.0K
+Thu Nov 1,12:30,GMT,eur,EUR German Chancellor Merkel Hosts Irish PM Kenny,Low,,,
+Thu Nov 1,12:30,GMT,usd,USD Non-Farm Productivity,Medium,1.9%,1.8%,1.9%
+Thu Nov 1,12:30,GMT,usd,USD Unit Labor Costs,Low,-0.1%,0.8%,1.7%
+Thu Nov 1,12:30,GMT,usd,USD Initial Jobless Claims,Medium,363K,370K,372K
+Thu Nov 1,12:30,GMT,usd,USD Continuing Claims,Low,3263K,3250K,3259K
+Thu Nov 1,12:58,GMT,usd,USD Markit US PMI Final,Low,51.0,51.3,51.3
+Thu Nov 1,14:00,GMT,usd,USD Consumer Confidence,High,72.2,73.0,68.4
+Thu Nov 1,14:00,GMT,usd,USD ISM Manufacturing,High,51.7,51.0,51.5
+Thu Nov 1,14:00,GMT,usd,USD ISM Prices Paid,Medium,55.0,56.5,58.0
+Thu Nov 1,14:00,GMT,usd,USD Construction Spending (MoM),Medium,0.6%,0.7%,-0.1%
+Thu Nov 1,14:30,GMT,usd,USD EIA Natural Gas Storage Change,Low,65,,67
+Thu Nov 1,15:00,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,-2045K,1800K,5896K
+Thu Nov 1,15:00,GMT,usd,USD DOE U.S. Distillate Inventory,Low,-93K,-1400K,-646K
+Thu Nov 1,15:00,GMT,usd,USD DOE Cushing OK Crude Inventory,Low,-671K,,40K
+Thu Nov 1,15:00,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,935K,850K,1439K
+Thu Nov 1,21:00,GMT,USD,USD Fed's Rosengren Speaks on Economic Outlook in Massachusetts,Low,,,
+Thu Nov 1,21:00,GMT,usd,USD Total Vehicle Sales,Low,14.22M,15.00M,14.88M
+Thu Nov 1,21:00,GMT,usd,USD Domestic Vehicle Sales,Low,11.10M,11.48M,11.49M
+Thu Nov 1,23:50,GMT,jpy,JPY Monetary Base (YoY),Low,10.8%,,9.0%
+Fri Nov 2,00:00,GMT,nzd,NZD ANZ Commodity Price,Low,1.3%,,3.4%
+Fri Nov 2,00:30,GMT,aud,AUD Producer Price Index (QoQ),Medium,0.6%,1.0%,0.5%
+Fri Nov 2,00:30,GMT,aud,AUD Producer Price Index (YoY),Medium,1.1%,1.6%,1.1%
+Fri Nov 2,08:45,GMT,eur,EUR Italian Purchasing Manager Index Manufacturing,Medium,45.5,45.5,45.7
+Fri Nov 2,08:50,GMT,eur,EUR French Purchasing Manager Index Manufacturing,Medium,43.7,43.5,43.5
+Fri Nov 2,08:55,GMT,eur,EUR German Purchasing Manager Index Manufacturing,Medium,46.0,45.7,45.7
+Fri Nov 2,09:00,GMT,eur,EUR Euro-Zone Purchasing Manager Index Manufacturing,Medium,45.4,45.3,45.3
+Fri Nov 2,09:30,GMT,gbp,GBP Purchasing Manager Index Construction,Medium,50.9,49,49.5
+Fri Nov 2,12:30,GMT,cad,CAD Net Change in Employment,High,1.8K,10.0K,52.1K
+Fri Nov 2,12:30,GMT,usd,USD Change in Manufacturing Payrolls,Low,13K,-4K,-14K
+Fri Nov 2,12:30,GMT,usd,USD Avg Hourly Earning (YoY),Medium,1.6%,1.7%,1.9%
+Fri Nov 2,12:30,GMT,usd,USD Underemployment Rate (U6),Low,14.6%,,14.7%
+Fri Nov 2,12:30,GMT,usd,USD Avg Hourly Earning (MoM),Low,0.0%,0.2%,0.3%
+Fri Nov 2,12:30,GMT,usd,USD Change in Non-farm Payrolls,High,171K,125K,148K
+Fri Nov 2,12:30,GMT,cad,CAD Unemployment Rate,High,7.4%,7.4%,7.4%
+Fri Nov 2,12:30,GMT,usd,USD Change in Private Payrolls,Medium,184K,120K,128K
+Fri Nov 2,12:30,GMT,cad,CAD Full Time Employment Change,Medium,7.3K,,44.1K
+Fri Nov 2,12:30,GMT,usd,USD Unemployment Rate,High,7.9%,7.9%,7.8%
+Fri Nov 2,12:30,GMT,cad,CAD Participation Rate,Medium,66.8,66.8,66.8
+Fri Nov 2,12:30,GMT,usd,USD Avg Weekly Hours All Employees,Low,34.4,34.5,34.4
+Fri Nov 2,12:30,GMT,usd,USD Change in Household Employment,Low,410,,873
+Fri Nov 2,12:30,GMT,cad,CAD Part Time Employment Change,Low,-5.5K,,8K
+Fri Nov 2,14:00,GMT,usd,USD Factory Orders,Medium,4.8%,4.6%,-5.1%
+Sat Nov 3,00:00,GMT,cny,CNY Non-manufacturing PMI,Medium,55.5,,53.7

@@ -1,0 +1,160 @@
+Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Sun Jan 15,,,nzd,NZD REINZ Housing Price Index (MoM),Low,-0.1%,,1.1%
+Sun Jan 15,,,nzd,NZD REINZ Housing Price Index,Low,3301.4,,3304.3
+Sun Jan 15,,,nzd,NZD REINZ House Sales (YoY),Medium,20.9%,,16.9%
+Sun Jan 15,21:45,GMT,nzd,NZD Food Prices (MoM),Low,0.2%,,0.2%
+Sun Jan 15,23:30,GMT,aud,AUD TD Securities Inflation (YoY),Medium,2.4%,,2.1%
+Sun Jan 15,23:50,GMT,jpy,JPY Machine Orders (MoM),Medium,14.8%,5.1%,-6.9%
+Sun Jan 15,23:50,GMT,jpy,JPY Machine Orders (YoY),Medium,12.5%,3.8%,1.5%
+Sun Jan 15,23:50,GMT,jpy,JPY Domestic Corporate Goods Price Index (MoM),Low,0.1%,-0.1%,0.0%
+Sun Jan 15,23:50,GMT,jpy,JPY Domestic Corporate Goods Price Index (YoY),Low,1.3%,1.2%,1.6%
+Mon Jan 16,00:01,GMT,gbp,GBP Rightmove House Prices (MoM),Low,-0.8%,,-2.7%
+Mon Jan 16,00:01,GMT,gbp,GBP Rightmove House Prices (YoY),Medium,0.4%,,1.5%
+Mon Jan 16,00:30,GMT,aud,AUD Home Loans,Medium,1.4%,1.0%,0.8%
+Mon Jan 16,00:30,GMT,aud,AUD Investment Lending,Low,1.8%,,-5.0%
+Mon Jan 16,00:30,GMT,aud,AUD Value of Loans (MoM),Low,2.2%,,-0.5%
+Mon Jan 16,05:00,GMT,aud,AUD Owner-Occupied Home Loan Value (MoM),Low,2.2%,,-0.5%
+Mon Jan 16,08:15,GMT,chf,CHF Producer & Import Prices (MoM),Low,0.3%,-0.1%,-0.8%
+Mon Jan 16,08:15,GMT,chf,CHF Producer & Import Prices (YoY),Low,-2.3%,-2.8%,-2.4%
+Mon Jan 16,09:00,GMT,eur,EUR Italian Consumer Price Index (NIC incl. tobacco) (MoM),Low,0.4%,0.4%,0.4%
+Mon Jan 16,09:00,GMT,eur,EUR Italian Consumer Price Index - EU Harmonized (MoM),Low,0.3%,0.3%,0.3%
+Mon Jan 16,09:00,GMT,eur,EUR Italian Consumer Price Index - EU Harmonized (YoY),Low,3.7%,3.7%,3.7%
+Mon Jan 16,09:00,GMT,eur,EUR Italian Consumer Price Index (NIC incl. tobacco) (YoY),Low,3.3%,3.3%,3.3%
+Mon Jan 16,10:00,GMT,eur,EUR Italian General Government Debt,Medium,1905.0B,,1909.2B
+Mon Jan 16,16:00,GMT,eur,EUR French Bond Auction (Euros),Medium,8.6B,,
+Mon Jan 16,21:00,GMT,nzd,NZD NZIER Business Opinion Survey,Medium,0,,25
+Mon Jan 16,21:45,GMT,nzd,NZD NZ Card Spending - Retail (MoM),Medium,-0.3%,0.2%,-0.6%
+Mon Jan 16,21:45,GMT,nzd,NZD NZ Card Spending (MoM),Medium,-0.2%,-0.2%,-0.2%
+Mon Jan 16,23:50,GMT,jpy,JPY Tertiary Industry Index (MoM),Medium,-0.8%,-0.4%,0.7%
+Tue Jan 17,02:00,GMT,nzd,NZD Non Resident Bond Holdings,Low,59.1%,,60.2%
+Tue Jan 17,02:00,GMT,cny,CNY Industrial Production (YoY),Medium,12.8%,12.3%,12.4%
+Tue Jan 17,02:00,GMT,cny,CNY Industrial Production YTD (YoY),Medium,13.9%,13.8%,14.0%
+Tue Jan 17,02:00,GMT,cny,CNY Real GDP (QoQ),High,2.0%,,2.3%
+Tue Jan 17,02:00,GMT,cny,CNY Real GDP (YoY),High,8.9%,8.7%,9.1%
+Tue Jan 17,02:00,GMT,cny,CNY Real GDP YTD (YoY),High,9.2%,9.2%,9.4%
+Tue Jan 17,02:00,GMT,cny,CNY Retail Sales YTD (YoY),Medium,17.1%,17.0%,17.0%
+Tue Jan 17,02:00,GMT,cny,CNY Retail Sales (YoY),Medium,18.1%,17.3%,17.3%
+Tue Jan 17,06:00,GMT,jpy,JPY Machine Tool Orders (YoY),Medium,17.4%,,17.4%
+Tue Jan 17,07:00,GMT,eur,EUR EU 25 New Car Registrations,Low,-6.4%,,-3.5%
+Tue Jan 17,09:30,GMT,gbp,GBP DCLG UK House Prices (YoY),Low,-0.3%,,-0.4%
+Tue Jan 17,09:30,GMT,gbp,GBP Retail Price Index,Low,239.4,239.1,238.5
+Tue Jan 17,09:30,GMT,gbp,GBP Retail Price Index (MoM),Low,0.4%,0.3%,0.2%
+Tue Jan 17,09:30,GMT,gbp,GBP Retail Price Index (YoY),Low,4.8%,4.7%,5.2%
+Tue Jan 17,09:30,GMT,gbp,GBP Retail Price Index Ex Mort Int.Payments (YoY),Low,5.0%,4.9%,5.3%
+Tue Jan 17,09:30,GMT,eur,EUR Spanish Bond Auction (Euros),Medium,,,
+Tue Jan 17,09:30,GMT,gbp,GBP Consumer Price Index (MoM),Medium,0.4%,0.4%,0.2%
+Tue Jan 17,09:30,GMT,gbp,GBP Consumer Price Index (YoY),High,4.2%,4.2%,4.8%
+Tue Jan 17,09:30,GMT,gbp,GBP Core Consumer Price Index (YoY),High,3.0%,3.0%,3.2%
+Tue Jan 17,10:00,GMT,eur,EUR Euro-Zone Consumer Price Index (MoM),Medium,0.3%,0.4%,0.1%
+Tue Jan 17,10:00,GMT,eur,EUR German ZEW Survey (Current Situation),Medium,28.4,24.0,26.8
+Tue Jan 17,10:00,GMT,eur,EUR Euro-Zone Consumer Price Index - Core (YoY),High,1.6%,1.6%,1.6%
+Tue Jan 17,10:00,GMT,eur,EUR Euro-Zone Consumer Price Index (YoY),High,2.7%,2.8%,3.0%
+Tue Jan 17,10:00,GMT,CHF,CHF ZEW Survey (Expectations),Medium,,,-72
+Tue Jan 17,10:00,GMT,eur,EUR Euro-Zone ZEW Survey (Economic Sentiment),Medium,-32.5,,-54.1
+Tue Jan 17,10:00,GMT,eur,EUR German ZEW Survey (Economic Sentiment),High,-21.6,-49.2,-53.8
+Tue Jan 17,11:00,GMT,eur,EFSF Bond Auction (Euros),Medium,,1.5B,
+Tue Jan 17,13:30,GMT,USD,USD Revisions: Empire State Manufacturing Activity Index,LOW,,,
+Tue Jan 17,13:30,GMT,cad,CAD International Securities Transactions (Canadian dollar),Low,14.99B,,3.85B
+Tue Jan 17,13:30,GMT,usd,USD Empire Manufacturing,Low,13.48,11,8.19
+Tue Jan 17,14:00,GMT,cad,CAD Bank of Canada Rate Decision,High,1.00%,1.00%,1.00%
+Tue Jan 17,23:30,GMT,AUD,AUD Westpac Leading Index (MoM),LOW,,,0.1%
+Wed Jan 18,,,GBP,GBP CBI Trends Total Orders,LOW,,,-23
+Wed Jan 18,,,GBP,GBP CBI Trends Selling Prices,LOW,,,7
+Wed Jan 18,,,GBP,GBP CBI Business Optimism,LOW,,,-30
+Wed Jan 18,00:30,GMT,AUD,AUD New Motor Vehicle Sales (MoM),LOW,,,-0.7%
+Wed Jan 18,02:00,GMT,CNY,CNY China December Property Prices,Medium,,,
+Wed Jan 18,04:30,GMT,jpy,JPY Industrial Production (MoM),Low,-2.7%,,-2.6%
+Wed Jan 18,04:30,GMT,jpy,JPY Industrial Production (YoY),Medium,-4.2%,,-4.0%
+Wed Jan 18,04:30,GMT,jpy,JPY Capacity Utilization (MoM),Low,-2.9%,,4.1%
+Wed Jan 18,09:00,GMT,eur,EUR Italian Trade Balance (Total) (euros),Low,-1581M,,-1055M
+Wed Jan 18,09:00,GMT,eur,EUR Italian Trade Balance Eu (euros),Low,-386M,,-195M
+Wed Jan 18,09:30,GMT,gbp,GBP ILO Unemployment Rate (3M),Medium,8.4%,8.3%,8.3%
+Wed Jan 18,09:30,GMT,gbp,GBP Claimant Count Rate,Medium,5.0%,5.0%,5.0%
+Wed Jan 18,09:30,GMT,gbp,GBP Jobless Claims Change,High,1.2K,7.0K,0.2K
+Wed Jan 18,09:30,GMT,gbp,GBP Average Weekly Earnings 3M/YoY,Medium,1.9%,2.0%,2.1%
+Wed Jan 18,09:30,GMT,gbp,GBP Weekly Earnings exBonus 3M/YoY,Low,1.9%,1.9%,1.8%
+Wed Jan 18,10:00,GMT,eur,EUR Euro-Zone Construction Output s.a. (MoM),Low,0.8%,,-1.4%
+Wed Jan 18,10:00,GMT,eur,EUR Euro-Zone Construction Output w.d.a. (YoY),Low,0.2%,,-2.5%
+Wed Jan 18,10:00,GMT,eur,EUR Italian Current Account (euros),Low,-3448M,,-2489M
+Wed Jan 18,10:15,GMT,eur,German Bond Auction (Euros),Medium,,4B,
+Wed Jan 18,12:00,GMT,usd,USD MBA Mortgage Applications,Low,23.1%,,4.5%
+Wed Jan 18,13:30,GMT,usd,USD Producer Price Index (MoM),Low,-0.1%,0.1%,0.3%
+Wed Jan 18,13:30,GMT,usd,USD Producer Price Index Ex Food & Energy (YoY),Medium,3.0%,2.8%,2.9%
+Wed Jan 18,13:30,GMT,usd,USD Producer Price Index (YoY),Low,4.8%,5.1%,5.7%
+Wed Jan 18,13:30,GMT,usd,USD Producer Price Index Ex Food & Energy (MoM),Medium,0.3%,0.1%,0.1%
+Wed Jan 18,14:00,GMT,usd,USD Total Net TIC Flows,Low,$48.6B,$50.0B,-$39.6B
+Wed Jan 18,14:00,GMT,usd,USD Net Long-term TIC Flows,Low,$59.8B,$40.0B,$8.3B
+Wed Jan 18,14:15,GMT,usd,USD Capacity Utilization,Low,78.1%,78.1%,77.8%
+Wed Jan 18,14:15,GMT,usd,USD Industrial Production,Medium,0.4%,0.5%,-0.3%
+Wed Jan 18,15:00,GMT,usd,USD NAHB Housing Market Index,Low,25,22,21
+Wed Jan 18,21:00,GMT,nzd,NZD ANZ NZ Job Ads (MoM),Low,-2.3%,,0.8%
+Wed Jan 18,21:45,GMT,nzd,NZD Consumer Prices Index (QoQ),Medium,-0.3%,0.4%,0.4%
+Wed Jan 18,21:45,GMT,nzd,NZD Consumer Prices Index (YoY),High,1.8%,2.6%,4.6%
+Wed Jan 18,23:50,GMT,jpy,JPY Japan Buying Foreign Bonds (Yen),Low,¥920.0B,,¥386.5B
+Wed Jan 18,23:50,GMT,jpy,JPY Japan Buying Foreign Stocks (Yen),Low,-¥33.6B,,-¥56.4B
+Wed Jan 18,23:50,GMT,jpy,JPY Foreign Buying Japan Bonds (Yen),Low,¥192.3B,,-¥146.1B
+Wed Jan 18,23:50,GMT,jpy,JPY Foreign Buying Japan Stocks (Yen),Low,¥139.8B,,¥42.6B
+Thu Jan 19,00:00,GMT,nzd,NZD ANZ Consumer Confidence (MoM),Low,7.1%,,-0.6%
+Thu Jan 19,00:00,GMT,nzd,NZD ANZ Consumer Confidence Index,Low,116.1,,108.4
+Thu Jan 19,00:01,GMT,gbp,GBP Nationwide Consumer Confidence,Medium,,38,40
+Thu Jan 19,00:30,GMT,AUD,AUD New Motor Vehicle Sales (YoY),LOW,,,2.9%
+Thu Jan 19,00:30,GMT,aud,AUD RBA Foreign Exchange Transaction (Australian dollar),Low,737M,,330M
+Thu Jan 19,00:30,GMT,aud,AUD Participation Rate,Low,65.2%,65.5%,65.5%
+Thu Jan 19,00:30,GMT,aud,AUD Employment Change,High,-29.3K,10.0K,-7.5K
+Thu Jan 19,00:30,GMT,aud,AUD Unemployment Rate,High,5.2%,5.3%,5.2%
+Thu Jan 19,00:30,GMT,aud,AUD Full Time Employment Change,Medium,24.5K,18.8K,-39.4K
+Thu Jan 19,00:30,GMT,aud,AUD Part Time Employment Change,Medium,-53.7K,-8.8K,31.9K
+Thu Jan 19,02:00,GMT,CNY,CNY Conference Board China November Leading Economic Index,LOW,,,
+Thu Jan 19,04:00,GMT,jpy,JPY Tokyo Condominium Sales (YoY),Low,8.4%,,31.0%
+Thu Jan 19,09:00,GMT,EUR,EUR ECB Publishes Jan. Monthly Report,HIGH,,,
+Thu Jan 19,09:00,GMT,eur,EUR Euro-Zone Current Account n.s.a. (euros),Low,1.0B,,2.6B
+Thu Jan 19,09:00,GMT,eur,EUR Euro-Zone Current Account s.a. (euros),Low,-1.8B,,-6.6B
+Thu Jan 19,09:30,GMT,eur,Spanish Bond Auction (Euros),Medium,,,
+Thu Jan 19,10:00,GMT,eur,French Bond Auction (Euros),Medium,,,
+Thu Jan 19,11:00,GMT,eur,French Bond Auction (Euros),Medium,,,
+Thu Jan 19,13:30,GMT,cad,CAD Manufacturing Shipments (MoM),Low,2.0%,1.2%,-0.6%
+Thu Jan 19,13:30,GMT,usd,USD Consumer Price Index (MoM),Medium,0.0%,0.1%,0.0%
+Thu Jan 19,13:30,GMT,usd,USD Consumer Price Index Ex Food & Energy (MoM),Medium,0.1%,0.1%,0.2%
+Thu Jan 19,13:30,GMT,usd,USD Consumer Price Index (YoY),High,3.0%,3.0%,3.4%
+Thu Jan 19,13:30,GMT,usd,USD Building Permits,Medium,679K,679K,680K
+Thu Jan 19,13:30,GMT,usd,USD Building Permits (MoM),Low,-0.1%,-0.2%,5.6%
+Thu Jan 19,13:30,GMT,usd,USD Housing Starts,Medium,657K,680K,685K
+Thu Jan 19,13:30,GMT,usd,USD Housing Starts (MoM),Low,-4.1%,-0.7%,9.1%
+Thu Jan 19,13:30,GMT,usd,USD Consumer Price Index Ex Food & Energy (YoY),High,2.2%,2.2%,2.2%
+Thu Jan 19,13:30,GMT,usd,USD Consumer Price Index n.s.a.,Medium,225.672,225.782,226.230
+Thu Jan 19,13:30,GMT,usd,USD Continuing Claims,Low,3432K,3590K,3647K
+Thu Jan 19,13:30,GMT,usd,USD Initial Jobless Claims,Low,352K,384K,402K
+Thu Jan 19,13:30,GMT,usd,USD Consumer Price Index Core Index s.a.,Medium,227.166,,226.836
+Thu Jan 19,15:00,GMT,usd,USD Philadelphia Fed.,Medium,7.3,10.3,6.8
+Thu Jan 19,15:30,GMT,usd,USD EIA Natural Gas Storage Change,Low,-87,-86,-95
+Thu Jan 19,16:00,GMT,usd,USD DOE U.S. Distillate Inventory,Low,438K,1375K,3985K
+Thu Jan 19,16:00,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,3000K,-3438K,4958K
+Thu Jan 19,16:00,GMT,usd,USD DOE Cushing OK Crude Inventory,Low,-832K,,-191K
+Thu Jan 19,16:00,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,3717K,2350K,3610K
+Fri Jan 20,00:30,GMT,aud,AUD Export Price Index (QoQ),Low,-1.5%,-2.0%,4.0%
+Fri Jan 20,00:30,GMT,aud,AUD Import Price Index (QoQ),Low,2.5%,0.6%,0.0%
+Fri Jan 20,01:35,GMT,cny,CNY MNI January Flash Business Sentiment Survey,Low,48.8,,48.7
+Fri Jan 20,04:30,GMT,jpy,JPY All Industry Activity Index (MoM),Medium,-1.1%,-0.9%,0.8%
+Fri Jan 20,05:00,GMT,jpy,JPY Coincident Index,Low,90.3,,90.3
+Fri Jan 20,05:00,GMT,jpy,JPY Leading Index,Medium,93.2,,92.9
+Fri Jan 20,07:00,GMT,jpy,JPY Convenience Store Sales (YoY),Low,4.1%,,7.5%
+Fri Jan 20,07:00,GMT,eur,EUR German Producer Prices (MoM),Medium,-0.4%,0.1%,0.1%
+Fri Jan 20,07:00,GMT,eur,EUR German Producer Prices (YoY),High,4.0%,4.6%,5.2%
+Fri Jan 20,09:00,GMT,eur,EUR Italian Industrial Orders s.a. (MoM),Low,0.1%,,-1.6%
+Fri Jan 20,09:00,GMT,eur,EUR Italian Industrial Sales s.a. (MoM),Low,0.0%,,0.1%
+Fri Jan 20,09:00,GMT,eur,EUR Italian Industrial Sales n.s.a. (YoY),Low,0.2%,,1.1%
+Fri Jan 20,09:00,GMT,eur,EUR Italian Industrial Orders n.s.a. (YoY),Low,-0.7%,,-4.8%
+Fri Jan 20,09:30,GMT,gbp,GBP Retail Sales w/Auto Fuel (YoY),Medium,2.6%,2.4%,0.4%
+Fri Jan 20,09:30,GMT,gbp,GBP Retail Sales (MoM),Low,0.6%,0.7%,-0.8%
+Fri Jan 20,09:30,GMT,gbp,GBP Retail Sales (YoY),Medium,1.7%,1.7%,0.0%
+Fri Jan 20,09:30,GMT,gbp,GBP Retail Sales Ex Auto Fuel(YoY),Medium,1.7%,1.7%,0.0%
+Fri Jan 20,09:30,GMT,gbp,GBP Retail Sales w/Auto Fuel (MoM),Low,0.6%,0.60%,-0.5%
+Fri Jan 20,12:00,GMT,cad,CAD Consumer Price Index (MoM),Medium,-0.6%,-0.2%,0.1%
+Fri Jan 20,12:00,GMT,cad,CAD Consumer Price Index (YoY),High,2.3%,2.7%,2.9%
+Fri Jan 20,12:00,GMT,cad,CAD Bank Canada Consumer Price Index Core (YoY),High,1.9%,2.2%,2.1%
+Fri Jan 20,12:00,GMT,cad,CAD Bank Canada Consumer Price Index Core (MoM),Medium,-0.5%,-0.2%,0.1%
+Fri Jan 20,13:30,GMT,USD,USD American Petroleum Institute Monthly Report,LOW,,,
+Fri Jan 20,13:30,GMT,cad,CAD Wholesale Sales (MoM),Low,-0.4%,0.5%,0.9%
+Fri Jan 20,15:00,GMT,USD,USD American Petroleum Institute Monthly Report,LOW,,,
+Fri Jan 20,15:00,GMT,usd,USD Existing Home Sales (MoM),Low,5.0%,5.2%,3.3%
+Fri Jan 20,15:00,GMT,usd,USD Existing Home Sales,Medium,4.61M,4.65M,4.39M

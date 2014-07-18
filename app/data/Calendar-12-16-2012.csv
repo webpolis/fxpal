@@ -1,0 +1,153 @@
+Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Sun Dec 16,21:00,GMT,nzd,NZD Westpac NZ Consumer Confidence,Medium,111.1,,102.5
+Sun Dec 16,21:30,GMT,nzd,NZD Performance Services Index,Low,54.1,,58.1
+Mon Dec 17,00:01,GMT,gbp,GBP Rightmove House Prices (MoM),Low,-3.3%,,-2.6%
+Mon Dec 17,00:01,GMT,gbp,GBP Rightmove House Prices (YoY),Low,1.4%,,2.0%
+Mon Dec 17,06:00,GMT,jpy,Machine Tool Orders (YoY),Low,-21.3%,,-20.7%
+Mon Dec 17,10:00,GMT,eur,EUR Euro-zone Trade Balance,Low,10.2B,11.0B,9.5B
+Mon Dec 17,10:00,GMT,eur,EUR Euro-zone Trade Balance s.a.,Low,€7.9B,€11.0B,€11.0B
+Mon Dec 17,13:30,GMT,CAD,CAD International Securities Transactions,Low,,,C$13.90B
+Mon Dec 17,13:30,GMT,usd,USD Empire Manufacturing,Low,-8.10,-1.00,-5.22
+Mon Dec 17,14:00,GMT,usd,USD Total Net TIC Flows,Medium,-$56.7B,,$4.7B
+Mon Dec 17,14:00,GMT,usd,USD Net Long-term TIC Flows,Medium,$1.3B,$25.0B,$3.3B
+Mon Dec 17,14:00,GMT,cad,CAD Existing Home Sales (MoM),Medium,-1.7%,,-0.1%
+Mon Dec 17,14:30,GMT,eur,EUR ECB's Draghi Speaks to European Parliament Panel,Medium,,,
+Mon Dec 17,23:00,GMT,aud,AUD Conference Board Leading Index,Low,0.2%,,-0.4%
+Tue Dec 18,00:30,GMT,aud,AUD RBA December Meeting Minutes,High,,,
+Tue Dec 18,01:30,GMT,cny,CNY China Property Prices,Medium,,,
+Tue Dec 18,02:00,GMT,cny,CNY Actual FDI (YoY),Medium,-5.4%,-3.1%,-0.2%
+Tue Dec 18,05:30,GMT,jpy,JPY Nationwide Department Store Sales (YoY),Low,2.2%,,-2.4%
+Tue Dec 18,05:30,GMT,jpy,JPY Tokyo Department Store Sales (YoY),Low,3.1%,,-1.5%
+Tue Dec 18,09:30,GMT,gbp,GBP Retail Price Index Ex Mort Int.Payments (YoY),Low,2.9%,3.1%,3.1%
+Tue Dec 18,09:30,GMT,gbp,GBP Producer Price Index Output Core n.s.a. (MoM),Low,0.0%,0.1%,0.1%
+Tue Dec 18,09:30,GMT,gbp,GBP Core Consumer Price Index (YoY),High,2.6%,2.7%,2.6%
+Tue Dec 18,09:30,GMT,gbp,GBP Retail Price Index,Low,245.6,246.2,245.6
+Tue Dec 18,09:30,GMT,gbp,GBP Retail Price Index (MoM),Low,0.0%,0.2%,0.6%
+Tue Dec 18,09:30,GMT,gbp,GBP DCLG UK House Prices (YoY),Low,1.5%,,1.7%
+Tue Dec 18,09:30,GMT,gbp,GBP Producer Price Index Input n.s.a. (MoM),Low,0.1%,0.1%,0.1%
+Tue Dec 18,09:30,GMT,gbp,GBP Producer Price Index Input n.s.a. (YoY),Low,-0.3%,-0.1%,0.0%
+Tue Dec 18,09:30,GMT,gbp,GBP Producer Price Index Output n.s.a. (MoM),Low,-0.2%,0.2%,0.2%
+Tue Dec 18,09:30,GMT,gbp,GBP Producer Price Index Output n.s.a. (YoY),Medium,2.2%,2.5%,2.6%
+Tue Dec 18,09:30,GMT,gbp,GBP Producer Price Index Output Core n.s.a. (YoY),Medium,1.4%,1.5%,1.4%
+Tue Dec 18,09:30,GMT,gbp,GBP Consumer Price Index (MoM),Medium,0.2%,0.2%,0.5%
+Tue Dec 18,09:30,GMT,gbp,GBP Consumer Price Index (YoY),High,2.7%,2.7%,2.7%
+Tue Dec 18,09:30,GMT,gbp,GBP Retail Price Index (YoY),Medium,3.0%,3.2%,3.2%
+Tue Dec 18,10:00,GMT,eur,EUR Italian Current Account (mln Euro),Low,-245M,,-2581M
+Tue Dec 18,11:00,GMT,eur,EUR Ireland GDP s.a. (QoQ),Medium,0.2%,0.7%,0.4%
+Tue Dec 18,11:00,GMT,eur,EUR Ireland GDP (YoY),Medium,0.8%,,-0.5%
+Tue Dec 18,13:30,GMT,usd,USD Current Account Balance,Low,-$107.5B,-$103.0B,-$118.1
+Tue Dec 18,15:00,GMT,usd,USD NAHB Housing Market Index,Low,47,47,45
+Tue Dec 18,21:45,GMT,nzd,NZD Current Account Balance,Low,-4.418B,-4.400B,-1.797B
+Tue Dec 18,21:45,GMT,nzd,NZD Current Account Deficit-GDP Ratio,Low,-4.70%,-4.80%,-4.90%
+Tue Dec 18,23:30,GMT,aud,AUD Westpac Leading Index (MoM),Low,0.1%,,0.6%
+Tue Dec 18,23:50,GMT,jpy,JPY Merchandise Trade Balance Total (Yen),Medium,-¥953.4B,-¥1035.1B,-¥551.1B
+Tue Dec 18,23:50,GMT,jpy,JPY Merchandise Trade Exports (YoY),Low,-4.1,-5.5,-6.5
+Tue Dec 18,23:50,GMT,jpy,JPY Adjusted Merchandise Trade Balance (Yen),Low,-¥868.5B,-¥848.2B,-¥619.4B
+Tue Dec 18,23:50,GMT,jpy,JPY Merchandise Trade Imports (YoY),Low,0.8,0.6,-1.5
+Wed Dec 19,,,JPY,JPY BOJ Holds Monetary Policy Meeting,Low,,,
+Wed Dec 19,00:00,GMT,aud,AUD DEWR Internet Skilled Vacancies (MoM),Low,-3.5%,,-3.1%
+Wed Dec 19,04:30,GMT,jpy,JPY All Industry Activity Index (MoM),Medium,0.2%,0.2%,-0.4%
+Wed Dec 19,05:00,GMT,jpy,JPY Leading Index,Medium,92.8,,91.8
+Wed Dec 19,05:00,GMT,jpy,JPY Coincident Index,Medium,90.7,,91.3
+Wed Dec 19,09:00,GMT,eur,EUR Euro-zone Current Account s.a.,Low,3.9B,,2.4B
+Wed Dec 19,09:00,GMT,eur,EUR German IFO - Expectations,Medium,97.9,96.4,95.2
+Wed Dec 19,09:00,GMT,eur,EUR Italian Industrial Orders n.s.a. (YoY),Low,-0.1%,,-12.8%
+Wed Dec 19,09:00,GMT,eur,EUR Italian Industrial Orders s.a. (MoM),Low,0.0%,1.0%,-4.0%
+Wed Dec 19,09:00,GMT,eur,EUR Euro-zone Current Account n.s.a.,Low,7.2B,,5.0B
+Wed Dec 19,09:00,GMT,eur,EUR German IFO - Business Climate,Medium,102.4,102.0,101.4
+Wed Dec 19,09:00,GMT,eur,EUR German IFO - Current Assessment,Medium,107.1,108.0,108.1
+Wed Dec 19,09:00,GMT,eur,EUR Italian Industrial Sales s.a. (MoM),Low,-0.2%,,-4.2%
+Wed Dec 19,09:00,GMT,eur,EUR Italian Industrial Sales n.s.a. (YoY),Low,-4.7%,,-5.4%
+Wed Dec 19,09:30,GMT,gbp,GBP Bank of England Minutes,High,,,
+Wed Dec 19,10:00,GMT,eur,EUR Euro-zone Construction Output s.a. (MoM),Low,-1.6%,,-1.3%
+Wed Dec 19,10:00,GMT,eur,EUR Euro-zone Construction Output w.d.a. (YoY),Low,-4.1%,,-3.8%
+Wed Dec 19,11:00,GMT,gbp,GBP CBI Reported Sales,Low,19,25,33
+Wed Dec 19,12:00,GMT,usd,USD MBA Mortgage Applications,Low,-12.3%,,6.2%
+Wed Dec 19,13:30,GMT,cad,CAD Wholesale Sales (MoM),Low,0.9%,0.5%,-1.5%
+Wed Dec 19,13:30,GMT,usd,USD Housing Starts,Medium,861K,871K,888K
+Wed Dec 19,13:30,GMT,usd,USD Building Permits,Medium,899K,875K,868K
+Wed Dec 19,13:30,GMT,usd,USD Building Permits (MoM),Low,3.6%,0.8%,-2.5%
+Wed Dec 19,13:30,GMT,usd,Housing Starts MoM,Medium,-3.0%,-2.5%,5.3%
+Wed Dec 19,14:00,GMT,cad,CAD Teranet/National Bank HP Index,Low,154.02,,154.59
+Wed Dec 19,14:00,GMT,cad,CAD Teranet/National Bank HPI (MoM),Low,-0.4%,,-0.2%
+Wed Dec 19,14:00,GMT,cad,CAD Teranet/National Bank HPI (YoY),Low,3.4%,,3.4%
+Wed Dec 19,15:30,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,2207K,2000K,5000K
+Wed Dec 19,15:30,GMT,usd,USD DOE U.S. Distillate Inventory,Low,-1085K,1000K,2986K
+Wed Dec 19,15:30,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,-964K,-1750K,843K
+Wed Dec 19,15:30,GMT,usd,USD DOE Cushing OK Crude Inventory,Low,145K,,1187K
+Wed Dec 19,21:45,GMT,nzd,NZD Gross Domestic Product (QoQ),High,0.2%,0.4%,0.3%
+Wed Dec 19,21:45,GMT,nzd,NZD Gross Domestic Product (YoY),High,2.0%,2.5%,2.5%
+Wed Dec 19,23:50,GMT,jpy,JPY Japan Buying Foreign Bonds (Yen),Low,918.0B,,-637.2B
+Wed Dec 19,23:50,GMT,jpy,JPY Japan Buying Foreign Stocks (Yen),Low,-104.3B,,-62.7B
+Wed Dec 19,23:50,GMT,jpy,JPY Foreign Buying Japan Bonds (Yen),Low,157.6B,,-31.1B
+Wed Dec 19,23:50,GMT,jpy,JPY Foreign Buying Japan Stocks (Yen),Low,398.6B,,116.8B
+Thu Dec 20,00:00,GMT,nzd,NZD ANZ Business Confidence,Low,22.7,,26.4
+Thu Dec 20,00:00,GMT,nzd,NZD ANZ Activity Outlook (DEC),Low,31.4,,31.6
+Thu Dec 20,00:30,GMT,aud,AUD RBA Foreign Exchange Transaction,Low,A$414M,,A$275M
+Thu Dec 20,00:30,GMT,aud,AUD RBA Bulletin December QTR,Low,,,
+Thu Dec 20,02:00,GMT,cny,CNY Conference Board China Leading Economic Index,Low,248.5,,245.8
+Thu Dec 20,04:03,GMT,jpy,JPY Bank of Japan Rate Decision,High,0.10%,0.10%,0.10%
+Thu Dec 20,07:00,GMT,chf,CHF Trade Balance (Swiss franc),Medium,2.95B,2.23B,2.73B
+Thu Dec 20,07:00,GMT,chf,CHF Exports (MoM),Low,6.0%,,-7.3%
+Thu Dec 20,07:00,GMT,chf,CHF Imports (MoM),Low,0.2%,,-6.9%
+Thu Dec 20,07:00,GMT,eur,EUR German Producer Prices (MoM),Medium,-0.1%,-0.2%,0.0%
+Thu Dec 20,07:00,GMT,eur,EUR German Producer Prices (YoY),High,1.4%,1.4%,1.5%
+Thu Dec 20,07:00,GMT,jpy,JPY Convenience Store Sales (YoY),Low,-2.5%,,-2.1%
+Thu Dec 20,07:00,GMT,eur,EUR Germany Import Price Index (MoM),Low,0.0%,-0.2%,-0.6%
+Thu Dec 20,07:00,GMT,eur,EUR Germany Import Price Index (YoY),Low,1.1%,0.9%,1.5%
+Thu Dec 20,09:30,GMT,gbp,GBP Retail Sales (MoM),Low,0.1%,0.4%,-0.5%
+Thu Dec 20,09:30,GMT,gbp,GBP Retail Sales (YoY),Medium,2.0%,2.2%,1.4%
+Thu Dec 20,09:30,GMT,gbp,GBP Retail Sales w/Auto Fuel (MoM),Low,0.0%,0.4%,-0.7%
+Thu Dec 20,09:30,GMT,gbp,GBP Retail Sales w/Auto Fuel (YoY),Medium,0.9%,1.5%,0.8%
+Thu Dec 20,13:30,GMT,cad,CAD Retail Sales (MoM),Medium,0.7%,0.2%,0.2%
+Thu Dec 20,13:30,GMT,cad,CAD Retail Sales Less Autos (MoM),Low,0.5%,0.2%,0.1%
+Thu Dec 20,13:30,GMT,usd,USD Gross Domestic Product (Annualized),High,3.1%,2.8%,2.7%
+Thu Dec 20,13:30,GMT,usd,USD Personal Consumption,Medium,,1.4%,1.4%
+Thu Dec 20,13:30,GMT,usd,USD Gross Domestic Product Price Index,High,2.7%,2.7%,2.7%
+Thu Dec 20,13:30,GMT,usd,USD Core Personal Consumption Expenditure (QoQ),Medium,1.1%,1.1%,1.1%
+Thu Dec 20,13:30,GMT,usd,USD Initial Jobless Claims,Medium,361K,360K,344K
+Thu Dec 20,13:30,GMT,usd,USD Continuing Claims,Low,3125K,3200K,3213K
+Thu Dec 20,15:00,GMT,eur,EUR Euro-zone Consumer Confidence,Medium,-26.6,-26.5,-26.9
+Thu Dec 20,15:00,GMT,usd,USD Philadelphia Fed.,Medium,8.1,-3,-10.7
+Thu Dec 20,15:00,GMT,usd,USD Existing Home Sales,Medium,5.04M,4.90M,4.76M
+Thu Dec 20,15:00,GMT,usd,USD House Price Index (MoM),Low,0.5%,0.3%,0.0%
+Thu Dec 20,15:00,GMT,usd,USD Existing Home Sales (MoM),Low,5.9%,2.3%,1.5%
+Thu Dec 20,15:00,GMT,usd,USD Leading Indicators,Medium,-0.2%,-0.2%,0.3%
+Thu Dec 20,15:30,GMT,usd,USD EIA Natural Gas Storage Change,Low,-82,-76,2
+Thu Dec 20,21:45,GMT,nzd,NZD Net Migration s.a.,Low,590,,340
+Fri Dec 21,00:01,GMT,gbp,GBP GfK Consumer Confidence Survey,Medium,-29,-25,-22
+Fri Dec 21,01:35,GMT,cny,CNY MNI Flash Business Sentiment Indicator,Low,52.23,,53.78
+Fri Dec 21,02:00,GMT,nzd,NZD Credit Card Spending s.a. (MoM),Medium,0.4%,,0.3%
+Fri Dec 21,02:00,GMT,nzd,NZD Credit Card Spending (YoY),Medium,3.9%,,-0.9%
+Fri Dec 21,05:00,GMT,jpy,JPY Supermarket Sales (YoY),Low,-2.6%,,-4.0%
+Fri Dec 21,07:00,GMT,eur,EUR German GfK Consumer Confidence Survey,Medium,5.6,5.9,5.8
+Fri Dec 21,08:00,GMT,chf,CHF Money Supply M3 (YoY),Low,9.3%,8.6%,8.9%
+Fri Dec 21,09:30,GMT,gbp,GBP Public Finances (PSNCR) (Pounds),Medium,-6.8B,-1.0B,-14.6B
+Fri Dec 21,09:30,GMT,gbp,GBP Public Sector Net Borrowing (Pounds),Medium,15.3B,14.1B,6.0B
+Fri Dec 21,09:30,GMT,gbp,GBP Current Account (Pounds),Low,-12.8B,-14.0B,-17.4B
+Fri Dec 21,09:30,GMT,gbp,GBP Gross Domestic Product (YoY),High,0.0%,-0.1%,-0.1%
+Fri Dec 21,09:30,GMT,gbp,GBP Total Business Investment (QoQ),Low,3.8%,3.7%,3.7%
+Fri Dec 21,09:30,GMT,gbp,GBP Total Business Investment (YoY),Low,5.1%,4.5%,4.5%
+Fri Dec 21,09:30,GMT,gbp,GBP Index of Services (MoM),Low,0.1%,-0.2%,-0.6%
+Fri Dec 21,09:30,GMT,gbp,GBP Index of Services (3Mo3M),Low,1.1%,1.1%,1.2%
+Fri Dec 21,09:30,GMT,gbp,GBP PSNB ex Interventions,Medium,17.5B,16.0B,8.2B
+Fri Dec 21,09:30,GMT,gbp,GBP Gross Domestic Product (QoQ),High,0.9%,1.0%,1.0%
+Fri Dec 21,13:30,GMT,cad,CAD Gross Domestic Product (YoY),High,1.1%,1.2%,1.0%
+Fri Dec 21,13:30,GMT,cad,CAD Consumer Price Index (YoY),High,0.8%,1.1%,1.2%
+Fri Dec 21,13:30,GMT,cad,CAD Bank Canada Consumer Price Index Core (YoY),High,1.2%,1.3%,1.3%
+Fri Dec 21,13:30,GMT,cad,CAD Consumer Price Index s.a. (MoM),Low,-0.2%,0.1%,0.3%
+Fri Dec 21,13:30,GMT,cad,CAD Core CPI s.a. (MoM),Low,0.0%,0.2%,0.1%
+Fri Dec 21,13:30,GMT,cad,CAD Consumer Price Index,Low,121.9,122.2,122.2
+Fri Dec 21,13:30,GMT,usd,USD Personal Income,Medium,0.6%,0.3%,0.1%
+Fri Dec 21,13:30,GMT,usd,USD Personal Spending,Medium,0.4%,0.4%,-0.1%
+Fri Dec 21,13:30,GMT,usd,USD PCE Deflator (MoM),Low,-0.2%,-0.1%,0.1%
+Fri Dec 21,13:30,GMT,usd,USD Personal Consumption Expenditure Core (YoY),Medium,1.5%,1.6%,1.6%
+Fri Dec 21,13:30,GMT,cad,CAD Gross Domestic Product (MoM),Medium,0.1%,0.1%,0.0%
+Fri Dec 21,13:30,GMT,cad,CAD Consumer Price Index (MoM),Medium,-0.2%,0.0%,0.2%
+Fri Dec 21,13:30,GMT,cad,CAD Bank Canada Consumer Price Index Core (MoM),Medium,0.0%,0.2%,0.3%
+Fri Dec 21,13:30,GMT,usd,USD Chicago Fed Nat Activity Index,Low,0.10,,-0.64
+Fri Dec 21,13:30,GMT,usd,USD Personal Consumption Expenditure Deflator (YoY),Low,1.4%,1.5%,1.7%
+Fri Dec 21,13:30,GMT,usd,USD Personal Consumption Expenditure Core (MoM),Low,0.0%,0.1%,0.1%
+Fri Dec 21,14:55,GMT,usd,USD U. of Michigan Confidence,Medium,72.9,75.0,74.5
+Fri Dec 21,15:00,GMT,USD,USD American Petroleum Institute Monthly Report,Low,,,
+Fri Dec 21,16:00,GMT,usd,USD Kansas City Fed Manf. Activity,Low,-2,-5,-6

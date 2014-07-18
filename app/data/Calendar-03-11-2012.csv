@@ -1,0 +1,136 @@
+Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Sun Mar 11,23:50,GMT,jpy,JPY Machine Orders (MoM),Medium,3.4%,2.3%,-7.1%
+Sun Mar 11,23:50,GMT,jpy,JPY Domestic Corporate Goods Price Index (YoY),Low,0.6%,0.6%,0.5%
+Sun Mar 11,23:50,GMT,jpy,JPY Machine Orders (YoY),Medium,5.7%,4.4%,6.3%
+Sun Mar 11,23:50,GMT,jpy,JPY Domestic Corporate Goods Price Index (MoM),Low,0.2%,0.2%,-0.1%
+Mon Mar 12,00:01,GMT,gbp,GBP Lloyds Employment Confidence,Low,-69,,-73
+Mon Mar 12,05:00,GMT,jpy,JPY Consumer Confidence,Medium,39.5,40.5,40
+Mon Mar 12,07:00,GMT,eur,EUR German Wholesale Price Index (MoM),Low,1.0%,1.0%,1.2%
+Mon Mar 12,07:00,GMT,eur,EUR German Wholesale Price Index (YoY),Low,2.6%,2.6%,3.0%
+Mon Mar 12,09:00,GMT,eur,EUR Italian Gross Domestic Product s.a. and w.d.a. (QoQ),Low,-0.7%,-0.7%,-0.7%
+Mon Mar 12,09:00,GMT,eur,EUR Italian Gross Domestic Product s.a. and w.d.a. (YoY),Low,-0.4%,-0.5%,-0.5%
+Mon Mar 12,16:30,GMT,CAD,CAD Bank of Canada's Macklem Speaks in Sao Paulo,LOW,,,
+Mon Mar 12,18:00,GMT,usd,USD Monthly Budget Statement,Medium,-$231.7B,-$229.0B,-$222.5B
+Mon Mar 12,21:00,GMT,nzd,NZD REINZ Housing Price Index,Low,3280.5,,3253.8
+Mon Mar 12,21:00,GMT,nzd,NZD REINZ House Sales (YoY),Medium,37.0%,,25.2%
+Mon Mar 12,21:00,GMT,nzd,NZD REINZ Housing Price Index (MoM),Low,0.8%,,-1.4%
+Mon Mar 12,21:45,GMT,nzd,NZD Food Prices (MoM),Low,0.6%,,0.0%
+Mon Mar 12,23:00,GMT,nzd,NZD QV House Prices (YoY),Low,2.9%,,2.7%
+Mon Mar 12,23:01,GMT,EUR,EUR Germany Second Quarter Manpower Employment Outlook (Table),LOW,,,
+Mon Mar 12,23:50,GMT,jpy,JPY Tertiary Industry Index (MoM),Medium,-1.7%,0.2%,1.8
+Tue Mar 13,,,jpy,JPY Bank of Japan Rate Decision,High,0.10%,0.10%,0.10%
+Tue Mar 13,00:01,GMT,gbp,GBP RICS House Price Balance,Medium,-13%,-14%,-16%
+Tue Mar 13,00:30,GMT,aud,AUD Home Loans,Medium,-1.2%,-0.1%,2.1%
+Tue Mar 13,00:30,GMT,aud,AUD NAB Business Confidence,Medium,1,,4
+Tue Mar 13,00:30,GMT,aud,AUD Investment Lending,Low,-7.1%,,7.5%
+Tue Mar 13,00:30,GMT,aud,AUD Value of Loans (MoM),Low,0.1$,,2.1%
+Tue Mar 13,00:30,GMT,aud,AUD NAB Business Conditions,Low,3,,2
+Tue Mar 13,06:30,GMT,eur,EUR French CPI EU Harmoized (MoM) ,Low,0.5%,0.5%,-0.4%
+Tue Mar 13,06:30,GMT,eur,EUR French CPI (YoY) ,Medium,2.3%,2.4%,2.3%
+Tue Mar 13,06:30,GMT,eur,EUR French CPI (MoM) ,Low,0.4%,0.4%,-0.4%
+Tue Mar 13,06:30,GMT,eur,EUR French CPI EU Harmonized (YoY) ,Medium,2.5%,2.6%,2.6%
+Tue Mar 13,06:30,GMT,eur,EUR French CPI Index,Low,123.58,123.66,123.06
+Tue Mar 13,07:45,GMT,eur,EUR French Current Account (euros),Low,-4.2%,,-2.8B
+Tue Mar 13,08:15,GMT,chf,CHF Producer & Import Prices (MoM),Low,0.8%,0.2%,0.0%
+Tue Mar 13,08:15,GMT,chf,CHF Producer & Import Prices (YoY),Low,-1.9%,-2.4%,-2.4%
+Tue Mar 13,09:00,GMT,eur,EUR Italian CPI EU Harmonized (YoY) ,Low,3.4%,3.4%,3.4%
+Tue Mar 13,09:00,GMT,eur,EUR Italian CPI EU Harmonized (MoM) ,Low,0.2%,0.2%,0.2%
+Tue Mar 13,09:00,GMT,eur,EUR Italian CPI (YoY) ,Low,3.3%,3.3%,3.3%
+Tue Mar 13,09:00,GMT,eur,EUR Italian CPI (MoM) ,Low,0.4%,0.4%,0.4%
+Tue Mar 13,09:30,GMT,gbp,GBP Visible Trade Balance (Pounds),Medium,-£7532,-£7900,-£7184
+Tue Mar 13,09:30,GMT,gbp,GBP Total Trade Balance (Pounds),Low,-£1762,-£1900,-£1217
+Tue Mar 13,09:30,GMT,gbp,GBP DCLG UK House Prices (YoY),Low,0.2%,,0.1%
+Tue Mar 13,09:30,GMT,gbp,GBP Trade Balance Non EU (Pounds),Low,-£3678,-£4300,-£3601
+Tue Mar 13,10:00,GMT,eur,EUR German ZEW Survey (Current Situation),Medium,37.6,41.5,40.3
+Tue Mar 13,10:00,GMT,eur,EUR Euro-Zone ZEW Survey (Economic Sentiment),Medium,11.0,,-8.1
+Tue Mar 13,10:00,GMT,eur,EUR German ZEW Survey (Economic Sentiment),High,22.3,10,5.4
+Tue Mar 13,11:30,GMT,usd,USD NFIB Small Business Optimism,Low,94.3,94.3,93.9
+Tue Mar 13,12:30,GMT,usd,USD Advance Retail Sales,High,1.1%,1.1%,0.6%
+Tue Mar 13,12:30,GMT,usd,USD Retail Sales "Control Group",Low,0.5%,0.5%,1.0%
+Tue Mar 13,12:30,GMT,usd,USD Retail Sales Less Autos,Medium,0.9%,0.7%,1.1%
+Tue Mar 13,12:30,GMT,usd,USD Retail Sales Ex Auto & Gas,Medium,0.6%,0.5%,1.0%
+Tue Mar 13,14:00,GMT,usd,USD IBD/TIPP Economic Optimism,Low,47.5,50.2,49.4
+Tue Mar 13,14:00,GMT,usd,USD JOLTs Job Openings,Low,3459,3334,3540
+Tue Mar 13,14:00,GMT,usd,USD Business Inventories,Medium,0.7%,0.5%,0.6%
+Tue Mar 13,18:15,GMT,usd,USD Federal Open Market Committee Rate Decision,High,0.25%,0.25%,0.25%
+Tue Mar 13,23:30,GMT,aud,AUD Westpac Consumer Confidence,Medium,-5.0%,,4.2%
+Tue Mar 13,23:30,GMT,aud,AUD Westpac Consumer Confidence Index,Low,96.1,,101.1
+Tue Mar 13,23:50,GMT,jpy,JPY BSI Large All Industry (QoQ),Medium,-2.7%,,-2.5%
+Tue Mar 13,23:50,GMT,jpy,JPY BSI Large Manufacturing (QoQ),Medium,-7.3%,,-6.1%
+Wed Mar 14,00:30,GMT,aud,AUD Dwelling Starts,Low,-6.9%,-3.0%,-5.8%
+Wed Mar 14,02:00,GMT,nzd,NZD Non Resident Bond Holdings,Low,60.3%,,59.3%
+Wed Mar 14,04:30,GMT,jpy,JPY Industrial Production (MoM),Low,1.9%,,2.0%
+Wed Mar 14,04:30,GMT,jpy,JPY Capacity Utilization (MoM),Low,3.4%,,3.1%
+Wed Mar 14,04:30,GMT,jpy,JPY Industrial Production (YoY),Low,-1.3%,,-1.2%
+Wed Mar 14,06:00,GMT,jpy,JPY Machine Tool Orders (YoY),Medium,-8.6%,,-8.6%
+Wed Mar 14,09:30,GMT,gbp,GBP Claimant Count Rate,Medium,5.0%,5.0%,5.0%
+Wed Mar 14,09:30,GMT,gbp,GBP Jobless Claims Change,High,7.2K,5.0K,7.0K
+Wed Mar 14,09:30,GMT,gbp,GBP Average Weekly Earnings (3M/YoY),Medium,1.4%,1.9%,1.9%
+Wed Mar 14,09:30,GMT,gbp,GBP Weekly Earnings exBonus (3M/YoY),Low,1.7%,1.9%,2.0%
+Wed Mar 14,09:30,GMT,gbp,GBP ILO Unemployment Rate (3M),Medium,8.4%,8.4%,8.4%
+Wed Mar 14,10:00,GMT,eur,EUR Euro-Zone Consumer Price Index - Core (YoY),High,1.5%,1.6%,1.5%
+Wed Mar 14,10:00,GMT,eur,EUR Euro-Zone Industrial Production w.d.a. (YoY),High,,-0.7%,-1.8%
+Wed Mar 14,10:00,GMT,chf,CHF ZEW Survey (Expectations),Medium,0.0,,-21.2
+Wed Mar 14,10:00,GMT,eur,EUR Euro-Zone Consumer Price Index (MoM),Medium,0.5%,0.5%,-0.8%
+Wed Mar 14,10:00,GMT,eur,EUR Euro-Zone Consumer Price Index (YoY),High,2.7%,2.7%,2.6%
+Wed Mar 14,10:00,GMT,eur,EUR Euro-Zone Industrial Production s.a. (MoM),Medium,0.2%,0.6%,-1.1%
+Wed Mar 14,11:00,GMT,usd,USD MBA Mortgage Applications,Low,-2.4%,,-1.2%
+Wed Mar 14,12:30,GMT,cad,CAD Capacity Utilization Rate,Low,80.5%,81.6%,80.0%
+Wed Mar 14,12:30,GMT,usd,USD Import Price Index (MoM),Low,0.4%,0.6%,0.0%
+Wed Mar 14,12:30,GMT,usd,USD Import Price Index (YoY),Low,5.5%,5.8%,6.9%
+Wed Mar 14,12:30,GMT,usd,USD Current Account Balance,Low,-$124.1B,-$115.0B,-$107.6B
+Wed Mar 14,13:00,GMT,usd,USD Fed's Bernanke Speaks to Community Bankers in Nashville, TN,Medium,,,
+Wed Mar 14,14:30,GMT,usd,USD DOE Cushing OK Crude Inventory,Low,2519K,,2365K
+Wed Mar 14,14:30,GMT,usd,USD DOE U.S. Distillate Inventory,Low,-4862K,-1500K,-1944K
+Wed Mar 14,14:30,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,1750K,1600K,832K
+Wed Mar 14,14:30,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,-1410K,-1000K,-396K
+Wed Mar 14,21:00,GMT,nzd,NZD ANZ NZ Job Ads (MoM),Low,5.3%,,-1.8%
+Wed Mar 14,21:30,GMT,nzd,NZD Business NZ Performance of Manufacturing Index,Medium,57.7,,50.5
+Thu Mar 15,00:00,GMT,nzd,NZD ANZ Consumer Confidence Index,Low,110.2,,113.3
+Thu Mar 15,00:00,GMT,nzd,NZD ANZ Consumer Confidence (MoM),Low,-2.7%,,-2.4%
+Thu Mar 15,,,USD,USD Globe 2012: 12th Biennial Conference and Trade Fair, Vancouver,LOW,,,
+Thu Mar 15,00:00,GMT,aud,AUD Consumer Inflation Expectation,Medium,2.7%,,2.5%
+Thu Mar 15,00:30,GMT,aud,AUD New Motor Vehicle Sales (MoM),Low,0.0%,,1.3%
+Thu Mar 15,00:30,GMT,aud,AUD New Motor Vehicle Sales (YoY),Low,1.7%,,2.7%
+Thu Mar 15,00:30,GMT,aud,AUD RBA Foreign Exchange Transaction (Australian dollar),Low,372M,,383M
+Thu Mar 15,00:30,GMT,AUD,AUD Reserve Bank Board - Bulletin: March Quarter 2012,HIGH,,,
+Thu Mar 15,01:52,GMT,cny,CNY Actual FDI (YoY),Medium,-0.9%,14.6%,-0.3%
+Thu Mar 15,04:00,GMT,jpy,JPY Tokyo Condominium Sales (YoY),Low,13.0%,,32.6%
+Thu Mar 15,06:45,GMT,CHF,CHF SECO March 2012 Economic Forecasts,Medium,,,
+Thu Mar 15,07:00,GMT,eur,EUR EU 25 New Car Registrations,Low,-9.7%,,-7.1%
+Thu Mar 15,08:30,GMT,chf,CHF Swiss National Bank Rate Decision,High,0.00%,0.00%,0.00%
+Thu Mar 15,09:00,GMT,EUR,EUR ECB Publishes March Monthly Report,HIGH,,,
+Thu Mar 15,09:30,GMT,eur,EUR Italian General Government Debt,Medium,1935.8B,,1897.9B
+Thu Mar 15,10:00,GMT,eur,EUR Euro-Zone Employment (QoQ),Low,-0.2%,,-0.2%
+Thu Mar 15,10:00,GMT,eur,EUR Euro-Zone Employment (YoY),Low,-0.2%,,0.3%
+Thu Mar 15,10:00,GMT,eur,EUR Euro-Zone Labor Costs (YoY),Low,2.8%,2.3%,2.6%
+Thu Mar 15,12:30,GMT,usd,USD Empire Manufacturing,Low,20.21,17.5,19.53
+Thu Mar 15,12:30,GMT,usd,USD Producer Price Index (MoM),Low,0.4%,0.5%,0.1%
+Thu Mar 15,12:30,GMT,usd,USD Producer Price Index Ex Food & Energy (MoM),Low,0.2%,0.2%,0.4%
+Thu Mar 15,12:30,GMT,usd,USD Producer Price Index (YoY),Medium,3.3%,3.3%,4.1%
+Thu Mar 15,12:30,GMT,usd,USD Producer Price Index Ex Food & Energy (YoY),Medium,3.0%,2.9%,3.0%
+Thu Mar 15,12:30,GMT,usd,USD Initial Jobless Claims,Low,351K,355K,365K
+Thu Mar 15,12:30,GMT,usd,USD Continuing Claims,Low,3343K,3405K,3424K
+Thu Mar 15,13:00,GMT,usd,USD Total Net TIC Flows,Low,$18.8B,$40.0B,$95.2B
+Thu Mar 15,13:00,GMT,usd,USD Net Long-term TIC Flows,Medium,$101.0B,$38.5B,$19.1B
+Thu Mar 15,14:00,GMT,usd,USD Philadelphia Fed.,Medium,12.5,12,10.2
+Thu Mar 15,14:30,GMT,usd,USD EIA Natural Gas Storage Change,Low,-64,-59,-80
+Fri Mar 16,05:00,GMT,jpy,JPY Coincident Index,Low,92.7,,93.1
+Fri Mar 16,05:00,GMT,jpy,JPY Leading Index,Medium,94.4,,94.9
+Fri Mar 16,09:00,GMT,eur,EUR Italian Trade Balance (Total) (euros),Low,-4350M,,1150M
+Fri Mar 16,09:00,GMT,eur,EUR Italian Trade Balance Eu (euros),Low,756M,,-873M
+Fri Mar 16,10:00,GMT,eur,EUR Italian Current Account (euros),Low,-7953M,,402M
+Fri Mar 16,10:00,GMT,eur,EUR Euro-Zone Trade Balance s.a. (euros),Low,5.9B,6.0B,7.4B
+Fri Mar 16,10:00,GMT,eur,EUR Euro-Zone Trade Balance (euros),Low,-7.6B,-3.0B,9.1B
+Fri Mar 16,12:30,GMT,cad,CAD International Securities Transactions (Canadian dollar),Low,-4.19B,9.00B,8.17B
+Fri Mar 16,12:30,GMT,cad,CAD Manufacturing Shipments (MoM),Low,-0.9%,0.2%,0.6%
+Fri Mar 16,12:30,GMT,usd,USD Consumer Price Index (MoM),Medium,0.4%,0.4%,0.2%
+Fri Mar 16,12:30,GMT,usd,USD Consumer Price Index Ex Food & Energy (MoM),Medium,0.1%,0.2%,0.2%
+Fri Mar 16,12:30,GMT,usd,USD Consumer Price Index (YoY),High,2.9%,2.9%,2.9%
+Fri Mar 16,12:30,GMT,usd,USD Consumer Price Index Ex Food & Energy (YoY),High,2.2%,2.2%,2.3%
+Fri Mar 16,12:30,GMT,usd,USD Consumer Price Index n.s.a.,Low,227.663,227.954,226.665
+Fri Mar 16,12:30,GMT,usd,USD Consumer Price Index Core Index s.a.,Low,227.907,,227.684
+Fri Mar 16,13:15,GMT,usd,USD Industrial Production,Medium,0.0%,0.4%,0.4%
+Fri Mar 16,13:15,GMT,usd,USD Capacity Utilization,Low,78.7%,78.8%,78.8%
+Fri Mar 16,13:55,GMT,usd,USD U. of Michigan Confidence,High,74.3,75.6,75.3
+Fri Mar 16,14:00,GMT,USD,USD American Petroleum Institute Monthly Report,LOW,,,

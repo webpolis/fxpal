@@ -1,0 +1,173 @@
+Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Sun Mar 30,21:45,GMT,nzd,NZD Building Permits (MoM),Low,-1.7%,,-8.6%
+Sun Mar 30,23:01,GMT,gbp,GBP Hometrack Housing Survey (MoM),Low,0.6%,,0.7%
+Sun Mar 30,23:01,GMT,gbp,GBP Hometrack Housing Survey (YoY),Low,5.7%,,5.4%
+Sun Mar 30,23:15,GMT,jpy,JPY Markit/JMMA Japan Manufacturing PMI,Medium,53.9,,55.5
+Sun Mar 30,23:30,GMT,aud,AUD TD Securities Inflation (MOM),Low,0.2%,,0.2%
+Sun Mar 30,23:30,GMT,aud,AUD TD Securities Inflation (YoY),Low,2.7%,,2.7%
+Sun Mar 30,23:50,GMT,jpy,JPY Industrial Production (MoM),Low,-2.3%,0.3%,4%
+Sun Mar 30,23:50,GMT,jpy,JPY Industrial Production (YoY),Medium,6.9%,9.9%,10.3%
+Mon Mar 31,00:00,GMT,aud,AUD HIA New Home Sales (MoM),Low,4.6%,,0.5%
+Mon Mar 31,00:00,GMT,nzd,NZD ANZ Activity Outlook,Low,58.2,,58.5
+Mon Mar 31,00:30,GMT,aud,AUD Private Sector Credit (MoM),Low,0.4%,0.4%,0.4%
+Mon Mar 31,00:30,GMT,aud,AUD Private Sector Credit (YoY),Low,4.3%,4.3%,4.1%
+Mon Mar 31,02:00,GMT,nzd,NZD NBNZ Business Confidence,Low,67.3%,,70.8%
+Mon Mar 31,02:00,GMT,nzd,NZD Money Supply M3 (YoY),Low,6.9%,,7.0%
+Mon Mar 31,04:00,GMT,jpy,JPY Vehicle Production (YoY),Low,7.1%,,14.5%
+Mon Mar 31,05:00,GMT,jpy,JPY Housing Starts (YoY),Medium,1.0%,4.8%,12.3%
+Mon Mar 31,05:00,GMT,jpy,JPY Annualized Housing Starts,Medium,1%,4.9%,12.3%
+Mon Mar 31,05:00,GMT,jpy,JPY Construction Orders (YoY),Low,12.3%,,15.2%
+Mon Mar 31,06:00,GMT,eur,German Retail Sales (MoM) (FEB),Medium,1.3%,-0.5%,1.7%
+Mon Mar 31,06:00,GMT,eur,German Retail Sales (YoY) (FEB) ,Medium,2.0%,0.8%,0.9%
+Mon Mar 31,06:45,GMT,eur,EUR French Gross Domestic Product (YoY),Low,0.8%,0.8%,0.8%
+Mon Mar 31,06:45,GMT,eur,EUR French Gross Domestic Product (QoQ),Medium,0.3%,0.3%,-0.1%
+Mon Mar 31,07:00,GMT,chf,CHF KOF Swiss Leading Indicator,Medium,2,2,2
+Mon Mar 31,08:30,GMT,gbp,GBP Mortgage Approvals,Medium,70.3K,75.2K,76.8K
+Mon Mar 31,08:30,GMT,gbp,GBP M4 Money Supply (MoM),Low,0.7%,,0.3%
+Mon Mar 31,08:30,GMT,gbp,GBP M4 Money Supply (YoY),Low,0.7%,,-0.2%
+Mon Mar 31,08:30,GMT,gbp,GBP M4 Ex IOFCs 3M Annualised,Low,3.0%,1.5%,1.8%
+Mon Mar 31,08:30,GMT,gbp,GBP Net Consumer Credit,Medium,£0.6B,£0.7B,£0.6B
+Mon Mar 31,08:30,GMT,gbp,GBP Net Lending Sec. on Dwellings,Medium,£1.7B,£1.6B,£1.5B
+Mon Mar 31,09:00,GMT,eur,EUR Euro-Zone Consumer Price Index Estimate (YoY),High,0.5%,0.6%,0.8%
+Mon Mar 31,09:00,GMT,eur,EUR Euro-Zone Consumer Price Index - Core (YoY),High,0.8%,0.8%,1.0%
+Mon Mar 31,12:30,GMT,cad,CAD Average Weekly Earnings (YoY),Low,3.0%,,2.4%
+Mon Mar 31,12:30,GMT,cad,CAD Gross Domestic Product (MoM),Medium,0.5%,0.4%,-0.5%
+Mon Mar 31,12:30,GMT,cad,CAD Gross Domestic Product (YoY),High,2.5%,,2.4%
+Mon Mar 31,13:00,GMT,usd,USD NAPM-Milwaukee,Low,56.03,51.00,48.59
+Mon Mar 31,13:30,GMT,USD,USD Fed's Yellen Speaks at Development Conference in Chicago,Medium,,,
+Mon Mar 31,13:45,GMT,usd,USD Chicago Purchasing Manager,Medium,55.9,59,59.8
+Mon Mar 31,13:55,GMT,USD,USD Fed's Yellen Speaks at Development Conference in Chicago,Medium,,,
+Mon Mar 31,14:00,GMT,USD,USD U.S. Releases Annual Wholesale Inventory and Sales Revisions,Low,,,
+Mon Mar 31,14:30,GMT,usd,USD Dallas Fed Manufacturing Activity,Medium,4.9,3.0,0.3
+Mon Mar 31,22:30,GMT,aud,AUD AiG Performance of Manufacturing Index,Medium,47.9,,48.6
+Mon Mar 31,22:40,GMT,aud,AUD RPData/Rismark House Px (MoM),Low,2.3%,,0.0%
+Mon Mar 31,23:50,GMT,jpy,JPY Tankan Non-Manufacturing Index,Medium,24,24,20
+Mon Mar 31,23:50,GMT,jpy,JPY Tankan Large Manufacturers Outlook,Medium,8,13,14
+Mon Mar 31,23:50,GMT,jpy,JPY Tankan Non-Manufacturing Outlook,Medium,13,15,17
+Mon Mar 31,23:50,GMT,jpy,JPY Tankan Small Mfg Outlook,Low,-6,-3,-1
+Mon Mar 31,23:50,GMT,jpy,JPY Tankan Small Non-Mfg Outlook,Low,-4,-3,1
+Mon Mar 31,23:50,GMT,jpy,JPY Tankan Large All Industry Capex,Medium,0.0%,0.1%,4.6%
+Mon Mar 31,23:50,GMT,jpy,JPY Tankan Small Non-Mfg Index,Low,8,6,4
+Mon Mar 31,23:50,GMT,jpy,JPY Loans & Discounts Corp (YoY),Low,2.23%,,2.33%
+Mon Mar 31,23:50,GMT,jpy,JPY Tankan Large Manufacturers Index,Medium,17,18,16
+Mon Mar 31,23:50,GMT,jpy,JPY Tankan Small Mfg Index,Low,4,4,1
+Tue Apr 1,00:00,GMT,usd,USD Fed's Andolfatto Speaks on Virtual Currencies,Low,,,
+Tue Apr 1,01:00,GMT,CNY,CNY Manufacturing PMI,Medium,50.3,50.3,50.2
+Tue Apr 1,01:30,GMT,jpy,JPY Labor Cash Earnings (YoY),Low,0.0%,-0.1%,-0.2%
+Tue Apr 1,01:45,GMT,cny,CNY HSBC China Manufacturing PMI,Medium,48.0,48.1,48.1
+Tue Apr 1,03:30,GMT,aud,AUD Reserve Bank of Australia Rate Decision,High,2.50%,2.50%,2.50%
+Tue Apr 1,05:00,GMT,jpy,JPY Vehicle Sales (YoY),Low,14.5%,,15.0%
+Tue Apr 1,05:30,GMT,aud,AUD RBA Commodity Index SDR (YoY),Low,-12.8%,,-11.4%
+Tue Apr 1,05:30,GMT,aud,AUD Commodity Index,Low,103.9,,106.6
+Tue Apr 1,07:30,GMT,chf,CHF SVME-Purchasing Managers Index,Medium,54.4,56.7,57.6
+Tue Apr 1,07:45,GMT,eur,EUR Italian Markit/ADACI Manufacturing PMI,Low,52.4,52.0,52.3
+Tue Apr 1,07:50,GMT,eur,EUR French Markit Manufacturing PMI,Low,52.1,51.9,51.9
+Tue Apr 1,07:55,GMT,eur,EUR German Unemployment Change,High,-12K,-10K,-15K
+Tue Apr 1,07:55,GMT,eur,EUR German Unemployment Rate s.a.,High,6.7%,6.8%,6.7%
+Tue Apr 1,07:55,GMT,eur,EUR German Markit/BME Manufacturing PMI,Medium,53.7,53.8,53.8
+Tue Apr 1,08:00,GMT,eur,EUR Italian Unemployment Rate,Low,13.0%,12.9%,12.9%
+Tue Apr 1,08:00,GMT,eur,EUR Euro-Zone Markit Manufacturing PMI,Medium,53,53,53
+Tue Apr 1,08:30,GMT,gbp,GBP Markit PMI Manufacturing s.a.,Medium,55.3,56.7,56.2
+Tue Apr 1,08:30,GMT,eur,EUR Markit EU Manufacturing PMI,Low,53.4,,53.8
+Tue Apr 1,09:00,GMT,eur,EUR Euro-Zone Unemployment Rate,Medium,11.9%,12%,11.9%
+Tue Apr 1,12:30,GMT,cad,CAD Industrial Product Price (MoM),Low,1.0%,0.8%,1.4%
+Tue Apr 1,12:30,GMT,cad,CAD Raw Materials Price Index (MoM),Low,5.7%,2.8%,2.8%
+Tue Apr 1,13:30,GMT,cad,CAD RBC Canadian Manufacturing PMI,Medium,53.3,,52.9
+Tue Apr 1,13:45,GMT,usd,USD Markit US Manufacturing PMI,Low,55.5,56.0,55.5
+Tue Apr 1,14:00,GMT,usd,USD ISM Prices Paid,Medium,59.0,59.5,60.0
+Tue Apr 1,14:00,GMT,usd,USD ISM Manufacturing,High,53.7,54.0,53.2
+Tue Apr 1,14:00,GMT,usd,USD Construction Spending (MoM),Medium,0.1%,0.0%,-0.2%
+Tue Apr 1,14:00,GMT,usd,USD IBD/TIPP Economic Optimism,Low,48.0,46.0,45.1
+Tue Apr 1,19:39,GMT,usd,USD Domestic Vehicle Sales,Low,12.78M,12.30M,11.98M
+Tue Apr 1,19:39,GMT,usd,USD Total Vehicle Sales,Low,16.33M,15.80M,15.27M
+Tue Apr 1,20:30,GMT,USD,USD API Weekly Statistical Bulletin,Low,,,
+Tue Apr 1,23:50,GMT,jpy,JPY Monetary Base (YoY),Low,54.8%,,55.7%
+Tue Apr 1,23:50,GMT,jpy,JPY Monetary Base End of period,Medium,¥219.9T,,¥204.8T
+Wed Apr 2,00:00,GMT,nzd,NZD ANZ Commodity Price,Low,-0.1%,,0.9%
+Wed Apr 2,00:30,GMT,aud,AUD Job Vacancies,Low,2.6%,,-1.7%
+Wed Apr 2,00:30,GMT,aud,AUD Building Approvals (MoM),Low,-5.0%,-2.0%,6.9%
+Wed Apr 2,00:30,GMT,aud,AUD Building Approvals (YoY),Low,23.2%,27.9%,34.6%
+Wed Apr 2,06:00,GMT,gbp,GBP Nationwide House Prices (MoM),Low,0.4%,0.8%,0.7%
+Wed Apr 2,06:00,GMT,gbp,GBP Nationwide House Prices (YoY),Low,9.5%,9.7%,9.4%
+Wed Apr 2,08:30,GMT,gbp,GBP Markit/CIPS UK Construction PMI,Low,62.5,63.0,62.6
+Wed Apr 2,09:00,GMT,eur,EUR Euro-Zone Producer Price Index (MoM),Low,-0.6%,-0.1%,-0.1%
+Wed Apr 2,09:00,GMT,eur,EUR Euro-Zone Producer Price Index (YoY),Low,-3.3%,-2.8%,-2.7%
+Wed Apr 2,11:00,GMT,usd,USD MBA Mortgage Applications,Medium,-1.2%,,-3.5%
+Wed Apr 2,12:15,GMT,usd,USD ADP Employment Change,Medium,191K,195K,178K
+Wed Apr 2,13:45,GMT,usd,USD ISM New York,Low,52.0,,57.0
+Wed Apr 2,14:00,GMT,usd,USD Factory Orders,Medium,1.6%,1.2%,-1.0%
+Wed Apr 2,14:30,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,-2379K,2500K,6619K
+Wed Apr 2,14:30,GMT,usd,USD DOE Cushing OK Crude Inventory,Low,-1223K,,-1325K
+Wed Apr 2,14:30,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,-1574K,-2000K,-5101K
+Wed Apr 2,14:30,GMT,usd,USD DOE U.S. Distillate Inventory,Low,554K,0K,1555K
+Wed Apr 2,16:55,GMT,usd,USD Fed's Lockhart Speaks on Economy,Low,,,
+Wed Apr 2,20:00,GMT,USD,USD Fed's Bullard to Meet With Reporters in St. Louis,Low,,,
+Wed Apr 2,22:30,GMT,aud,AUD AiG Performance of Service Index,Medium,48.9,,55.2
+Wed Apr 2,23:15,GMT,jpy,JPY Markit/JMMA Japan Composite PMI,Medium,52.8,,52.0
+Wed Apr 2,23:15,GMT,jpy,JPY Markit Japan Services PMI,Medium,52.2,,49.3
+Wed Apr 2,23:50,GMT,jpy,JPY Foreign Buying Japan Bonds (Yen),Low,¥-763.6B,,¥-398.7B
+Wed Apr 2,23:50,GMT,jpy,JPY Foreign Buying Japan Stocks (Yen),Low,¥-515.5B,,¥-191B
+Wed Apr 2,23:50,GMT,jpy,JPY Japan Buying Foreign Stocks (Yen),Medium,¥31.3B,,-¥54.1B
+Wed Apr 2,23:50,GMT,jpy,JPY Japan Buying Foreign Bonds (Yen),Medium,¥-763.6B,,-¥398.7B
+Thu Apr 3,00:30,GMT,aud,AUD Retail Sales s.a. (MoM),Medium,0.2%,0.3%,1.2%
+Thu Apr 3,00:30,GMT,aud,AUD Trade Balance (Australian dollar),Medium,$1200M,$800M,$1392M
+Thu Apr 3,01:00,GMT,cny,CNY Non-manufacturing PMI,Medium,54.5,,55
+Thu Apr 3,01:45,GMT,cny,CNY HSBC China Composite PMI,Medium,49.3,,49.8
+Thu Apr 3,01:45,GMT,cny,CNY HSBC/Markit Services PMI,Medium,51.9,,51
+Thu Apr 3,02:50,GMT,aud,RBA Governor Stevens Addresses Business Lunch in Brisbane,Low,,,
+Thu Apr 3,07:45,GMT,eur,EUR Italian Markit/ADACI Composite PMI,Low,51.1,,53.4
+Thu Apr 3,07:45,GMT,eur,EUR Italian Markit/ADACI Services PMI,Low,49.5,52.3,52.9
+Thu Apr 3,07:50,GMT,eur,EUR French Markit Composite PMI,Low,51.8,51.6,51.6
+Thu Apr 3,07:50,GMT,eur,EUR French Markit Services PMI,Low,51.5,51.4,51.4
+Thu Apr 3,07:55,GMT,eur,EUR German Markit/BME Composite PMI,Low,54.3,55.0,55.0
+Thu Apr 3,07:55,GMT,eur,EUR German Markit Services PMI,Low,53.0,54.0,54.0
+Thu Apr 3,08:00,GMT,eur,EUR Markit Eurozone Services PMI,Low,52.2,52.4,52.4
+Thu Apr 3,08:00,GMT,eur,EUR Markit Eurozone Composite PMI,Low,53.1,53.2,53.2
+Thu Apr 3,08:30,GMT,gbp,GBP Official Reserves (Changes),Low,$-660M,,$1096M
+Thu Apr 3,08:30,GMT,eur,EUR Markit EU Composite PMI,Medium,54.1,,54.5
+Thu Apr 3,08:30,GMT,gbp,GBP Markit/CIPS UK Services PMI,Medium,57.6,58.2,58.2
+Thu Apr 3,08:30,GMT,eur,EUR Markit EU Services PMI,Medium,53.5,,53.9
+Thu Apr 3,08:30,GMT,gbp,GBP Markit/CIPS UK Composite PMI,Medium,57.6,58.1,58.2
+Thu Apr 3,09:00,GMT,eur,EUR Euro-Zone Retail Sales (MoM),Low,0.4%,-0.5%,1.0%
+Thu Apr 3,09:00,GMT,eur,EUR Euro-Zone Retail Sales (YoY),Medium,0.8%,0.7%,0.8%
+Thu Apr 3,11:30,GMT,usd,USD Challenger Job Cuts (YoY),Low,-30.2%,,-24.4%
+Thu Apr 3,11:30,GMT,usd,USD RBC Consumer Outlook Index,Low,50.0,,51.8
+Thu Apr 3,11:45,GMT,eur,EUR European Central Bank Rate Decision,High,0.25%,0.25%,0.25%
+Thu Apr 3,11:45,GMT,eur,EUR ECB Marginal Lending Facility,Medium,0.75%,0.75%,0.75%
+Thu Apr 3,11:45,GMT,eur,EUR ECB Deposit Facility Rate,Medium,0.00%,0.00%,0.00%
+Thu Apr 3,12:30,GMT,cad,CAD International Merchandise Trade (Canadian dollar),Low,0.29B,0.20B,-0.34B
+Thu Apr 3,12:30,GMT,usd,USD Trade Balance,Medium,$-42.3B,$-38.5B,$-39.3B
+Thu Apr 3,12:30,GMT,usd,USD Initial Jobless Claims,Medium,326K,317K,310K
+Thu Apr 3,12:30,GMT,usd,USD Continuing Claims,Medium,2836K,2850K,2814K
+Thu Apr 3,12:30,GMT,eur,EUR ECB President Draghi Holds Press Conference After Rate Decision,High,,,
+Thu Apr 3,13:45,GMT,usd,USD Markit US Services PMI,Low,55.3,55.5,55.5
+Thu Apr 3,13:45,GMT,usd,USD Markit US Composite PMI,Low,55.7,,55.8
+Thu Apr 3,14:00,GMT,usd,USD ISM Non-Manufacutring Composite,High,53.1,53.5,51.6
+Thu Apr 3,14:30,GMT,usd,USD EIA Natural Gas Storage Change,Low,-74,-75,-57
+Fri Apr 4,06:00,GMT,eur,EUR German Factory Orders n.s.a. (YoY),Medium,6.1%,6.8%,7.08%
+Fri Apr 4,06:00,GMT,eur,EUR German Factory Orders s.a. (MoM),Low,0.6%,0.2%,0.1%
+Fri Apr 4,07:00,GMT,gbp,GBP Halifax House Price (3MoY),Low,8.7%,9.4%,7.9%
+Fri Apr 4,07:00,GMT,gbp,GBP Halifax Plc House Prices s.a. (MoM),Low,-1.1%,0.6%,2.5%
+Fri Apr 4,07:30,GMT,eur,EUR German Markit Construction PMI,Medium,52.5,,53.6
+Fri Apr 4,08:00,GMT,gbp,GBP New Car Registrations (YoY),Low,17.7%,,3.0%
+Fri Apr 4,08:10,GMT,eur,EUR German Markit Retail PMI,Medium,50.2,,52.1
+Fri Apr 4,08:10,GMT,eur,EUR Euro-Zone Markit Retail PMI,Medium,49.2,,48.5
+Fri Apr 4,08:10,GMT,eur,EUR French Markit Retail PMI,Low,50.0,,48.4
+Fri Apr 4,08:10,GMT,eur,EUR Italian Markit Retail PMI,Low,46.5,,43.1
+Fri Apr 4,12:30,GMT,cad,CAD Net Change in Employment,High,42.9K,22.5K,-7.0K
+Fri Apr 4,12:30,GMT,cad,CAD Full Time Employment Change,Medium,12.8,,18.9
+Fri Apr 4,12:30,GMT,usd,USD Unemployment Rate,High,6.7%,6.6%,6.7%
+Fri Apr 4,12:30,GMT,usd,USD Change in Private Payrolls,Medium,192K,195K,188K
+Fri Apr 4,12:30,GMT,usd,USD Average Hourly Earnings (MoM),Low,0%,0.2%,0.4%
+Fri Apr 4,12:30,GMT,usd,USD Average Hourly Earnings (YoY),Medium,2.1%,2.3%,2.2%
+Fri Apr 4,12:30,GMT,usd,USD Average Weekly Hours All Employees,Medium,34.5,34.4,34.3
+Fri Apr 4,12:30,GMT,usd,USD Change in Household Employment,Medium,476,210,42
+Fri Apr 4,12:30,GMT,usd,USD Underemployment Rate,Medium,12.7%,,12.6%
+Fri Apr 4,12:30,GMT,usd,USD Labor Force Participation Rate,Medium,63.2%,,63.0%
+Fri Apr 4,12:30,GMT,cad,CAD Unemployment Rate,High,6.9%,7%,7%
+Fri Apr 4,12:30,GMT,cad,CAD Part Time Employment Change,Low,30.1,,-25.9
+Fri Apr 4,12:30,GMT,cad,CAD Participation Rate,Low,66.2,,66.2
+Fri Apr 4,12:30,GMT,usd,USD Change in Non-farm Payrolls,High,192K,200K,197K
+Fri Apr 4,12:30,GMT,usd,USD Change in Manufacturing Payrolls,Low,-1K,7K,19K
+Fri Apr 4,12:30,GMT,usd,USD Two-Month Payroll Net Revision,Medium,37K,,
+Fri Apr 4,14:00,GMT,cad,CAD Ivey Purchasing Managers Index s.a.,Medium,55.2,59.0,57.2

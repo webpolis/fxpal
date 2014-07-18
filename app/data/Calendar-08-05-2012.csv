@@ -1,0 +1,166 @@
+Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Sun Aug 5,23:01,GMT,gbp,GBP Lloyds Employment Confidence,Low,-51,,-53
+Mon Aug 6,00:30,GMT,aud,AUD TD Securities Inflation (MoM),Low,0.2%,,-0.2%
+Mon Aug 6,00:30,GMT,aud,AUD TD Securities Inflation (YoY),Medium,1.5%,,1.6%
+Mon Aug 6,01:30,GMT,aud,AUD ANZ Job Advertisements (MoM),Low,-0.8%,,-1.1%
+Mon Aug 6,05:00,GMT,jpy,JPY Leading Index,Medium,92.6,92.9,95.2
+Mon Aug 6,05:00,GMT,jpy,JPY Coincident Index,Low,93.8,93.9,95.8
+Mon Aug 6,07:00,GMT,gbp,GBP Halifax Plc House Prices s.a. (MoM),Low,-0.6%,-0.5%,0.8%
+Mon Aug 6,07:00,GMT,gbp,GBP Halifax House Price (3MoY),Low,-0.6%,-0.6%,-0.5%
+Mon Aug 6,08:00,GMT,gbp,GBP New Car Registrations (YoY),Low,9.3%,,3.5%
+Mon Aug 6,08:30,GMT,eur,EUR Euro-Zone Sentix Investor Confidence,Medium,-30.3,-31,-29.6
+Mon Aug 6,13:00,GMT,USD,USD Fed's Bernanke Speaks on Economic Measurement,Medium,,,
+Mon Aug 6,22:45,GMT,nzd,NZD Average Hourly Earnings (QoQ),Medium,0.2%,0.5%,1.3%
+Mon Aug 6,22:45,GMT,nzd,NZD Private Wages ex Overtime (QoQ),Low,0.5%,0.6%,0.5%
+Mon Aug 6,22:45,GMT,nzd,NZD Labor Cost Private Sector (QoQ),Low,0.5%,0.5%,0.5%
+Mon Aug 6,23:01,GMT,gbp,GBP BRC Sales Like-For-Like (YoY),Low,0.1%,-0.2%,1.4%
+Mon Aug 6,23:30,GMT,aud,AUD AiG Performance of Construction Index,Medium,32.6,,34.8
+Mon Aug 6,23:50,GMT,jpy,JPY Official Reserve Assets,Low,$1272.8B,,$1270.6B
+Tue Aug 7,04:30,GMT,aud,AUD Reserve Bank of Australia Rate Decision,High,3.5%,3.5%,3.5%
+Tue Aug 7,05:45,GMT,chf,CHF Unemployment Rate s.a.,Medium,2.9%,2.9%,2.9%
+Tue Aug 7,05:45,GMT,chf,CHF Unemployment Rate,Medium,2.7%,2.7%,2.7%
+Tue Aug 7,07:00,GMT,chf,CHF Foreign Currency Reserves,Low,406.5B,,365.1B
+Tue Aug 7,07:15,GMT,chf,CHF Consumer Price Index (MoM),Medium,-0.5%,-0.6%,-0.3%
+Tue Aug 7,07:15,GMT,chf,CHF Consumer Price Index (YoY),Medium,-0.7%,-0.8%,-1.1%
+Tue Aug 7,07:15,GMT,chf,CHF CPI - EU Harmonised (YoY),Medium,-0.8%,,-1.2%
+Tue Aug 7,07:15,GMT,chf,CHF CPI - EU Harmonised (MoM),Medium,-0.3%,,-0.2%
+Tue Aug 7,08:00,GMT,eur,EUR Italian Industrial Production sa (MoM),Low,-1.4%,-1.0%,1.0%
+Tue Aug 7,08:00,GMT,eur,EUR Italian Industrial Production nsa (YoY),Low,-8.2%,,-6.6%
+Tue Aug 7,08:00,GMT,eur,EUR Italian Industrial Production wda (YoY),Low,-8.2%,-6.5%,-6.7%
+Tue Aug 7,08:30,GMT,gbp,GBP Industrial Production (MoM),Low,-2.5%,-3.5%,1.0%
+Tue Aug 7,08:30,GMT,gbp,GBP Industrial Production (YoY),Medium,-4.3%,-5.3%,-1.8%
+Tue Aug 7,08:30,GMT,gbp,GBP Manufacturing Production (MoM),Low,-2.9%,-4.3%,1.2%
+Tue Aug 7,08:30,GMT,gbp,GBP Manufacturing Production (YoY),Medium,-4.3%,-5.7%,-1.8%
+Tue Aug 7,09:00,GMT,eur,EUR Italian Parliament to Give Final Approval on Spending Cuts,Medium,,,
+Tue Aug 7,09:00,GMT,eur,EUR Italian Gross Domestic Product s.a. and w.d.a. (QoQ),Low,-0.7%,-0.8%,-0.8%
+Tue Aug 7,09:00,GMT,eur,EUR Italian Gross Domestic Product s.a. and w.d.a. (YoY),Medium,-2.5%,-2.5%,-1.4%
+Tue Aug 7,10:00,GMT,eur,EUR German Factory Orders n.s.a. (YoY),Medium,-7.8%,-7.0%,-5.3%
+Tue Aug 7,10:00,GMT,eur,EUR German Factory Orders s.a. (MoM),Low,-1.7%,-0.8%,0.7%
+Tue Aug 7,12:30,GMT,cad,CAD Building Permits (MoM),Low,-2.5%,-3.9%,7.1%
+Tue Aug 7,14:00,GMT,cad,CAD Ivey Purchasing Managers Index s.a.,Medium,62.8,52.0,49.0
+Tue Aug 7,14:00,GMT,usd,USD JOLTs Job Openings,Low,3762,3717,3657
+Tue Aug 7,14:00,GMT,gbp,GBP NIESR Gross Domestic Product Estimate,High,-0.2%,,-0.7%
+Tue Aug 7,18:30,GMT,USD,USD Fed's Bernanke Speaks on Financial Education in Washington,Low,,,
+Tue Aug 7,19:00,GMT,usd,USD Consumer Credit,Medium,$6.459B,$10.250B,$16.698B
+Tue Aug 7,23:50,GMT,jpy,JPY Current Account Total (Yen),Low,¥433.3B,¥415.4B,¥215.1B
+Tue Aug 7,23:50,GMT,jpy,JPY Adjusted Current Account Total (Yen),Low,¥773.6B,¥714.7B,¥282.2B
+Tue Aug 7,23:50,GMT,jpy,JPY Trade Balance - BOP Basis (Yen),Medium,¥112.0B,¥114.9B,-¥848.2B
+Tue Aug 7,23:50,GMT,jpy,JPY Bank Lending Banks ex-Trust,Low,1.0%,0.8%,0.8%
+Tue Aug 7,23:50,GMT,jpy,JPY Bank Lending incl Trusts (YoY),Low,0.7%,,0.6%
+Tue Aug 7,23:50,GMT,jpy,JPY Current Account Balance (YoY),Low,-19.6%,-24.9%,-62.6%
+Wed Aug 8,01:30,GMT,aud,AUD Home Loans,Medium,1.3%,2.0%,-0.9%
+Wed Aug 8,01:30,GMT,aud,AUD Investment Lending,Low,4.9%,,-4.5%
+Wed Aug 8,01:30,GMT,aud,AUD Value of Loans (MoM),Low,1.2%,,0.4%
+Wed Aug 8,04:30,GMT,jpy,JPY Bankruptcies (YoY),Medium,-5.1%,,-16.3%
+Wed Aug 8,05:00,GMT,jpy,JPY Eco Watchers Survey: Current,Medium,44.2,43.2,43.8
+Wed Aug 8,05:00,GMT,jpy,JPY Eco Watchers Survey: Outlook,Medium,44.9,44.0,45.7
+Wed Aug 8,05:45,GMT,chf,CHF SECO Consumer Confidence,Medium,-17,-4,-8
+Wed Aug 8,06:00,GMT,eur,EUR German Imports s.a. (MoM),Low,-3.0%,-2.0%,6.2%
+Wed Aug 8,06:00,GMT,eur,EUR German Trade Balance (euros),Medium,17.9B,14.6B,15.6B
+Wed Aug 8,06:00,GMT,eur,EUR German Exports s.a. (MoM),Low,-1.5%,-1.3%,4.2%
+Wed Aug 8,06:00,GMT,eur,EUR German Current Account (euros),Low,16.5B,11.9B,8.1B
+Wed Aug 8,06:30,GMT,aud,AUD Foreign Reserves (Australian dollar),Low,A$46.8B,,A$47.2B
+Wed Aug 8,06:30,GMT,eur,EUR Bank of France Business Sentiment ,Low,90,90,91
+Wed Aug 8,06:45,GMT,eur,EUR French Trade Balance (Euros),Low,-5990M,-5000M,-5471M
+Wed Aug 8,09:30,GMT,gbp,GBP Bank of England Inflation Report,High,,,
+Wed Aug 8,10:00,GMT,eur,EUR German Industrial Production s.a. (MoM),Low,-0.9%,-0.8%,1.7%
+Wed Aug 8,10:00,GMT,eur,EUR German Industrial Production n.s.a. and w.d.a. (YoY),Medium,-0.3%,0.3%,-0.3%
+Wed Aug 8,11:00,GMT,usd,USD MBA Mortgage Applications,Low,-1.8%,,0.2%
+Wed Aug 8,12:30,GMT,usd,USD Unit Labor Costs,Low,1.7%,0.5%,5.6%
+Wed Aug 8,12:30,GMT,usd,USD Non-Farm Productivity,Low,1.6%,1.4%,-0.5%
+Wed Aug 8,14:30,GMT,usd,USD DOE Cushing OK Crude Inventory,Low,-802K,,-1385K
+Wed Aug 8,14:30,GMT,usd,USD DOE U.S. Distillate Inventory,Low,-724K,250K,-974K
+Wed Aug 8,14:30,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,-1801K,-1750K,-2174K
+Wed Aug 8,14:30,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,-3729K,-1550K,-6522K
+Wed Aug 8,22:45,GMT,nzd,NZD Unemployment Rate,Medium,6.8%,6.5%,6.7%
+Wed Aug 8,22:45,GMT,nzd,NZD Employment Change (QoQ),Medium,-0.1%,0.4%,0.4%
+Wed Aug 8,22:45,GMT,nzd,NZD Employment Change (YoY),Medium,0.6%,1.2%,0.9%
+Wed Aug 8,22:45,GMT,nzd,NZD Participation Rate (QoQ),Low,68.4%,68.6%,68.7%
+Wed Aug 8,23:50,GMT,jpy,JPY Japan Buying Foreign Bonds (Yen),Low,¥448.1B,,-¥33.4B
+Wed Aug 8,23:50,GMT,jpy,JPY Japan Buying Foreign Stocks (Yen),Low,-¥46.4B,,-¥12.6B
+Wed Aug 8,23:50,GMT,jpy,JPY Foreign Buying Japan Bonds (Yen),Low,¥735.0B,,¥57.0B
+Wed Aug 8,23:50,GMT,jpy,JPY Japan Money Stock M2+CD (YoY),Low,2.2%,2.2%,2.2%
+Wed Aug 8,23:50,GMT,jpy,JPY Japan Money Stock M3 (YoY),Low,1.9%,1.9%,1.9%
+Wed Aug 8,23:50,GMT,jpy,JPY Machine Orders (MoM),Low,5.6%,12.0%,-14.8%
+Wed Aug 8,23:50,GMT,jpy,JPY Machine Orders (YoY),Medium,-9.9%,-4.5%,1.0%
+Wed Aug 8,23:50,GMT,jpy,JPY Foreign Buying Japan Stocks (Yen),Low,-¥82.5B,,-¥76.4B
+Wed Aug 8,23:50,GMT,jpy,JPY Housing Loans (YoY),Medium,2.7%,,2.4%
+Thu Aug 9,00:00,GMT,nzd,NZD QV House Prices (YoY),Low,4.6%,,4.2%
+Thu Aug 9,01:00,GMT,nzd,NZD ANZ Consumer Confidence Index,Low,114.1,,110.5
+Thu Aug 9,01:00,GMT,nzd,NZD ANZ Consumer Confidence (MoM),Low,3.3%,,4.4%
+Thu Aug 9,01:30,GMT,cny,CNY Consumer Price Index (YoY),High,1.8%,1.7%,2.2%
+Thu Aug 9,01:30,GMT,aud,AUD Unemployment Rate,High,5.2%,5.3%,5.3%
+Thu Aug 9,01:30,GMT,aud,AUD Part Time Employment Change,Low,4.8K,,6.5K
+Thu Aug 9,01:30,GMT,aud,AUD Employment Change,High,14.0K,10.0K,-28.3K
+Thu Aug 9,01:30,GMT,cny,CNY Producer Price Index (YoY),Medium,-2.9%,-2.5%,-2.1%
+Thu Aug 9,01:30,GMT,aud,AUD Full Time Employment Change,Medium,9.2K,,-34.8K
+Thu Aug 9,01:30,GMT,aud,AUD Participation Rate,Low,65.2%,65.3%,65.3%
+Thu Aug 9,02:00,GMT,jpy,JPY Tokyo Avg Office Vacancies (%),Low,9.30,,9.43
+Thu Aug 9,03:22,GMT,jpy,JPY Bank of Japan Rate Decision,High,0.10%,0.10%,0.10%
+Thu Aug 9,04:00,GMT,nzd,NZD REINZ House Sales (YoY),Low,19.9%,,17.3%
+Thu Aug 9,04:00,GMT,nzd,NZD REINZ Housing Price Index (MoM),Low,-0.7%,,0.3%
+Thu Aug 9,04:00,GMT,nzd,NZD REINZ Housing Price Index (JUL),Low,3377.1,,3400.8
+Thu Aug 9,05:00,GMT,jpy,JPY Consumer Confidence,Medium,39.7,40.0,40.4
+Thu Aug 9,05:30,GMT,cny,CNY Industrial Production YTD (YoY),Medium,10.3%,10.4%,10.5%
+Thu Aug 9,05:30,GMT,cny,CNY Industrial Production (YoY),Medium,9.2%,9.7%,9.5%
+Thu Aug 9,05:30,GMT,cny,CNY Fixed Assets Inv Excl. Rural YTD YoY,Medium,20.4%,20.6%,20.4%
+Thu Aug 9,05:30,GMT,cny,CNY Retail Sales YTD (YoY),Medium,14.2%,14.3%,14.4%
+Thu Aug 9,05:30,GMT,cny,CNY Retail Sales (YoY),Medium,13.1%,13.5%,13.7%
+Thu Aug 9,06:00,GMT,jpy,JPY Machine Tool Orders (YoY),Medium,-6.8%,,-15.5%
+Thu Aug 9,08:00,GMT,eur,EUR Italian Trade Balance (Total) (Euros),Low,2517M,,1013M
+Thu Aug 9,08:00,GMT,EUR,EUR ECB Publishes Aug. Monthly Report,High,,,
+Thu Aug 9,08:00,GMT,eur,EUR Italian Trade Balance EU (Euros),Low,997M,,697M
+Thu Aug 9,08:30,GMT,gbp,GBP Trade Balance Non EU (Pounds),Low,-£5176M,-£4100M,-£3879M
+Thu Aug 9,08:30,GMT,gbp,GBP Visible Trade Balance (Pounds),Medium,-£10119M,-£8725M,-£8364M
+Thu Aug 9,08:30,GMT,gbp,GBP Total Trade Balance (Pounds),Low,-£4308M,-£3100M,-£2718M
+Thu Aug 9,12:15,GMT,cad,CAD Housing Starts,Medium,208.5K,211.5K,222.1K
+Thu Aug 9,12:30,GMT,cad,CAD New Housing Price Index (YoY),Low,2.3%,2.3%,2.4%
+Thu Aug 9,12:30,GMT,usd,USD Trade Balance,Medium,-$42.9B,-$47.5B,-$48.0B
+Thu Aug 9,12:30,GMT,usd,USD Continuing Claims,Low,3332K,3275K,3279K
+Thu Aug 9,12:30,GMT,cad,CAD New Housing Price Index (MoM),Low,0.2%,0.2%,0.3%
+Thu Aug 9,12:30,GMT,cad,CAD International Merchandise Trade (Canadian dollar),Low,-1.81B,-1.00B,-0.95B
+Thu Aug 9,12:30,GMT,usd,USD Initial Jobless Claims,Medium,361K,370K,367K
+Thu Aug 9,14:00,GMT,usd,USD Wholesale Inventories,Low,-0.2%,0.3%,0.0%
+Thu Aug 9,14:30,GMT,usd,USD EIA Natural Gas Storage Change,Low,24,30,28
+Thu Aug 9,22:45,GMT,nzd,NZD NZ Card Spending - Retail (MoM),Low,-0.6%,0.3%,0.4%
+Thu Aug 9,22:45,GMT,nzd,NZD NZ Card Spending (MoM),Medium,-0.8%,,0.1%
+Thu Aug 9,23:50,GMT,jpy,JPY Domestic Corporate Goods Price Index (MoM),Low,-0.4%,0.1%,-0.7%
+Thu Aug 9,23:50,GMT,jpy,JPY Domestic Corporate Goods Price Index (YoY),Low,-2.1%,-1.5%,-1.4%
+Fri Aug 10,01:30,GMT,AUD,AUD Reserve Bank Board - Statement on Monetary Policy,High,,,
+Fri Aug 10,03:00,GMT,cny,CNY Exports (YoY),Low,1.0%,8.0%,11.3%
+Fri Aug 10,03:00,GMT,cny,CNY Imports (YoY),Low,4.7%,7.0%,6.3%
+Fri Aug 10,03:00,GMT,cny,CNY Trade Balance (USD),Medium,$25.15B,$35.05B,$31.72B
+Fri Aug 10,04:30,GMT,jpy,JPY Industrial Production (MoM),Low,0.4%,,-0.1%
+Fri Aug 10,04:30,GMT,jpy,JPY Capacity Utilization (MoM),Low,-2.3%,,-2.2%
+Fri Aug 10,04:30,GMT,jpy,JPY Industrial Production (YoY),Medium,-1.5%,,-2.0%
+Fri Aug 10,05:00,GMT,cny,CNY Money Supply - M1 (YoY),Low,4.6%,5.3%,4.7%
+Fri Aug 10,05:00,GMT,cny,CNY Chinese New Yuan Loans,Low,540.1B,700.0B,919.8B
+Fri Aug 10,05:00,GMT,cny,CNY Chinese Money Supply - M2 (YoY),Medium,13.9%,13.8%,13.6%
+Fri Aug 10,05:00,GMT,cny,CNY Chinese Money Supply - M0 (YoY) ,Low,10.0%,,10.8%
+Fri Aug 10,06:00,GMT,eur,EUR German Consumer Price Index (YoY),Medium,"1,.7%",1.7%,1.7%
+Fri Aug 10,06:00,GMT,eur,EUR German CPI - EU Harmonised (YoY),High,1.9%,2.0%,2.0%
+Fri Aug 10,06:00,GMT,eur,EUR German CPI - EU Harmonised (MoM),High,0.4%,0.4%,0.4%
+Fri Aug 10,06:00,GMT,eur,EUR German Consumer Price Index (MoM),High,0.4%,0.4%,0.4%
+Fri Aug 10,06:45,GMT,eur,EUR French Industrial Production (MoM),Low,0.0%,0.1%,-2.1%
+Fri Aug 10,06:45,GMT,eur,EUR French Manufacturing Production (YoY),Low,-2.6%,-2.1%,-4.6%
+Fri Aug 10,06:45,GMT,eur,EUR French Central Government Balance Euros ,Medium,-56.7B,-62.9B,-69.9B
+Fri Aug 10,06:45,GMT,eur,EUR French Manufacturing Production (MoM),Low,0.1%,0.0%,-1.1%
+Fri Aug 10,06:46,GMT,eur,EUR French Industrial Production (YoY),Low,-2.3%,-1.8%,-3.7%
+Fri Aug 10,08:00,GMT,eur,EUR Italian CPI (NIC incl. tobacco) (YoY),Medium,3.1%,3.0%,3.0%
+Fri Aug 10,08:00,GMT,eur,EUR Italian CPI - EU Harmonized (MoM),Medium,-1.7%,-1.6%,-1.6%
+Fri Aug 10,08:00,GMT,eur,EUR Italian CPI (NIC incl. tobacco) (MoM),High,0.1%,0.0%,0.0%
+Fri Aug 10,08:00,GMT,eur,EUR Italian CPI - EU Harmonized (YoY),Medium,3.6%,3.7%,3.7%
+Fri Aug 10,08:30,GMT,gbp,GBP Producer Price Index Input n.s.a. (YoY),Low,-2.4%,-1.5%,-3.0%
+Fri Aug 10,08:30,GMT,gbp,GBP Producer Price Index Output n.s.a. (MoM),Low,0.0%,0.0%,-0.6%
+Fri Aug 10,08:30,GMT,gbp,GBP Producer Price Index Output Core n.s.a. (MoM),Low,0.0%,0.1%,-0.2%
+Fri Aug 10,08:30,GMT,gbp,GBP Producer Price Index Input n.s.a. (MoM),Low,1.3%,1.3%,-2.9%
+Fri Aug 10,08:30,GMT,gbp,GBP Producer Price Index Output n.s.a. (YoY),Medium,1.7%,2.0%,2.0%
+Fri Aug 10,08:30,GMT,gbp,GBP Producer Price Index Output Core n.s.a. (YoY),Medium,1.3%,1.6%,1.7%
+Fri Aug 10,12:30,GMT,cad,CAD Part Time Employment Change,Low,-51.6K,,-22.0K
+Fri Aug 10,12:30,GMT,cad,CAD Participation Rate,Low,66.5,66.7,66.7
+Fri Aug 10,12:30,GMT,usd,USD Import Price Index (MoM),Low,-0.6%,0.2%,-2.7%
+Fri Aug 10,12:30,GMT,usd,USD Import Price Index (YoY),Low,-3.2%,-2.5%,-2.6%
+Fri Aug 10,12:30,GMT,cad,CAD Unemployment Rate,High,7.3%,7.2%,7.2%
+Fri Aug 10,12:30,GMT,cad,CAD Net Change in Employment,High,-30.4K,6.0K,7.3K
+Fri Aug 10,12:30,GMT,cad,CAD Full Time Employment Change,Medium,21.3K,,29.3K
+Fri Aug 10,18:00,GMT,usd,USD Monthly Budget Statement,Medium,-$69.6B,-$93.0B,-129.4B

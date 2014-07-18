@@ -1,0 +1,129 @@
+Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Sun Sep 30,00:30,GMT,cny,CNY Leading Index,Medium,99.63,,99.24
+Sun Sep 30,23:01,GMT,gbp,GBP Hometrack Housing Survey (MoM),Low,-0.1%,,-0.1%
+Sun Sep 30,23:01,GMT,gbp,GBP Lloyds Business Barometer,Low,10,,10
+Sun Sep 30,23:01,GMT,gbp,GBP Hometrack Housing Survey (YoY),Low,-0.5%,,-0.5%
+Sun Sep 30,23:30,GMT,aud,AUD AiG Performance of Manufacturing Index,Medium,44.1,,45.3
+Sun Sep 30,23:50,GMT,jpy,JPY Tankan Large Manufacturers Index,Medium,-3,-4,-1
+Sun Sep 30,23:50,GMT,jpy,JPY Tankan Non-Manufacturing Index,Medium,8,6,8
+Sun Sep 30,23:50,GMT,jpy,JPY Tankan Large Manufacturers Outlook,High,-3,-5,1
+Sun Sep 30,23:50,GMT,jpy,JPY Tankan Non-Manufacturing Outlook,Medium,5,6,6
+Sun Sep 30,23:50,GMT,jpy,JPY Tankan Large All Industry Capex,Medium,6.4%,5.0%,6.2%
+Sun Sep 30,23:50,GMT,jpy,JPY Loans & Discounts Corp (YoY),Low,0.24%,,-0.21%
+Mon Oct 1,,,cad,CAD Statistics Canada Releases Historical GDP Revisions,Medium,,,
+Mon Oct 1,00:30,GMT,aud,AUD TD Securities Inflation (MoM),Low,0.2%,,0.6%
+Mon Oct 1,00:30,GMT,aud,AUD TD Securities Inflation (YoY),Medium,2.4%,,2.2%
+Mon Oct 1,01:00,GMT,cny,CNY Manufacturing PMI,Medium,49.8,50.1,49.2
+Mon Oct 1,05:00,GMT,jpy,JPY Vehicle Sales (YoY),Low,-8.1%,,7.3%
+Mon Oct 1,07:15,GMT,chf,CHF Retail Sales (Real) (YoY),Medium,5.9%,4.5%,2.9%
+Mon Oct 1,07:30,GMT,chf,CHF SVME-Purchasing Managers Index,Medium,43.6,47.5,46.7
+Mon Oct 1,07:45,GMT,eur,EUR Italian Purchasing Manager Index Manufacturing,Low,45.7,44.0,43.6
+Mon Oct 1,07:50,GMT,eur,EUR French Purchasing Manager Index Manufacturing,Low,42.7,42.6,42.6
+Mon Oct 1,07:55,GMT,eur,EUR German Purchasing Manager Index Manufacturing,Medium,47.4,47.3,47.3
+Mon Oct 1,08:00,GMT,eur,EUR Italian Unemployment Rate s.a.,Low,10.7%,10.8%,10.7%
+Mon Oct 1,08:00,GMT,eur,EUR Euro-Zone Purchasing Manager Index Manufacturing,Medium,46.1,46.0,46.0
+Mon Oct 1,08:30,GMT,gbp,GBP M4 Money Supply (YoY),Low,-4.1%,-4.3%,-4.6%
+Mon Oct 1,08:30,GMT,gbp,GBP M4 Ex IOFCs 3M Annualised,Low,7.8%,,5.0%
+Mon Oct 1,08:30,GMT,gbp,GBP Purchasing Manager Index Manufacturing,Medium,48.4,49.0,49.6
+Mon Oct 1,08:30,GMT,gbp,GBP Net Consumer Credit,Medium,-£0.1B,£0.1B,-£0.2B
+Mon Oct 1,08:30,GMT,gbp,GBP Net Lending Sec. on Dwellings,Medium,-£0.3B,£0.8B,£0.9B
+Mon Oct 1,08:30,GMT,gbp,GBP Mortgage Approvals,Medium,47.7K,49.2K,47.6K
+Mon Oct 1,08:30,GMT,gbp,GBP M4 Money Supply (MoM),Low,0.2%,0.0%,0.5%
+Mon Oct 1,09:00,GMT,eur,EUR Euro-Zone Unemployment Rate,Medium,11.4%,11.4%,11.4%
+Mon Oct 1,12:30,GMT,cad,CAD Industrial Product Price (MoM),Low,-0.1%,-0.1%,-0.6%
+Mon Oct 1,12:30,GMT,cad,CAD Raw Materials Price Index (MoM),Low,3.4%,1.2%,0.8%
+Mon Oct 1,12:58,GMT,usd,USD Markit US PMI Final,Medium,51.1,51.5,51.5
+Mon Oct 1,14:00,GMT,usd,USD ISM Manufacturing,High,51.5,49.7,49.6
+Mon Oct 1,14:00,GMT,usd,USD ISM Prices Paid,Medium,58.0,55.7,54.0
+Mon Oct 1,14:00,GMT,usd,USD Construction Spending (MoM),Medium,-0.6%,0.5%,-0.4%
+Mon Oct 1,16:00,GMT,USD,USD Fed's Williams Speaks in San Francisco,Low,,,
+Mon Oct 1,16:30,GMT,usd,USD Fed's Bernanke Speaks on Monetary Policy in Indianapolis,Low,,,
+Mon Oct 1,23:50,GMT,jpy,JPY Monetary Base (YoY),Low,9.0%,,6.5%
+Tue Oct 2,00:00,GMT,aud,AUD RPData-Rismark House PX Actual,Low,1.4%,,0.0%
+Tue Oct 2,01:00,GMT,nzd,NZD ANZ Commodity Price,Low,3.5%,,0.5%
+Tue Oct 2,01:30,GMT,jpy,JPY Labor Cash Earnings (YoY),Medium,0.2%,-1.0%,-1.6%
+Tue Oct 2,04:30,GMT,aud,AUD Reserve Bank of Australia Rate Decision,High,3.25%,3.50%,3.50%
+Tue Oct 2,06:00,GMT,gbp,GBP Nationwide House Prices s.a. (MoM),Low,-0.4%,0.0%,1.1%
+Tue Oct 2,06:00,GMT,gbp,GBP Nationwide House Prices n.s.a. (YoY),Medium,-1.4%,-0.7%,-0.7%
+Tue Oct 2,06:30,GMT,aud,AUD RBA Commodity Price Index,Low,90.1,,89.2
+Tue Oct 2,06:30,GMT,aud,AUD RBA Commodity Index SDR (YoY),Low,-14.9%,,-14.7%
+Tue Oct 2,08:30,GMT,gbp,GBP Purchasing Manager Index Construction,Medium,49.5,49.9,49.0
+Tue Oct 2,09:00,GMT,eur,EUR Euro-Zone Producer Price Index (MoM),Medium,0.9%,0.6%,0.3%
+Tue Oct 2,09:00,GMT,eur,EUR Euro-Zone Producer Price Index (YoY),High,2.7%,2.6%,1.6%
+Tue Oct 2,13:45,GMT,usd,USD ISM New York,Low,52.9,,51.4
+Tue Oct 2,21:00,GMT,usd,USD Total Vehicle Sales,Low,14.88M,14.50M,14.46M
+Tue Oct 2,21:00,GMT,usd,USD Domestic Vehicle Sales,Low,14.49M,11.40M,11.54M
+Tue Oct 2,23:01,GMT,gbp,GBP BRC Shop Price Index (YoY),Low,1.0%,,1.10%
+Tue Oct 2,23:30,GMT,aud,AUD AiG Performance of Service Index,Medium,41.9,,42.4
+Wed Oct 3,01:00,GMT,cny,CNY Non-manufacturing PMI,Medium,53.7,,56.3
+Wed Oct 3,01:00,GMT,aud,AUD HIA New Home Sales (MoM),Medium,-5.3%,,-5.6%
+Wed Oct 3,01:30,GMT,aud,AUD Trade Balance (Australian dollar),Medium,-2027M,-685M,-1530M
+Wed Oct 3,07:45,GMT,eur,EUR Italian Purchasing Manager Index Services,Low,44.5,44.0,44.0
+Wed Oct 3,07:50,GMT,eur,EUR French Purchasing Manager Index Services,Low,45.0,46.1,46.1
+Wed Oct 3,07:55,GMT,eur,EUR German Purchasing Manager Index Services,Medium,49.7,50.6,50.6
+Wed Oct 3,08:00,GMT,eur,EUR Euro-Zone Purchasing Manager Index Composite,Medium,46.1,45.9,45.9
+Wed Oct 3,08:00,GMT,eur,EUR Euro-Zone Purchasing Manager Index Services,Medium,46.1,46.0,46.0
+Wed Oct 3,08:30,GMT,gbp,GBP Purchasing Manager Index Services,Medium,52.2,53.0,53.7
+Wed Oct 3,08:30,GMT,gbp,GBP Official Reserves (Changes),Medium,$1899M,,$732M
+Wed Oct 3,09:00,GMT,eur,EUR Euro-Zone Retail Sales (MoM),Medium,0.1%,-0.1%,0.1%
+Wed Oct 3,09:00,GMT,eur,EUR Euro-Zone Retail Sales (YoY),High,-1.3%,-1.9%,-1.4%
+Wed Oct 3,11:00,GMT,usd,USD MBA Mortgage Applications,Low,16.6%,,2.8%
+Wed Oct 3,12:15,GMT,usd,USD ADP Employment Change,Medium,162K,140K,189K
+Wed Oct 3,14:00,GMT,usd,USD ISM Non-Manufacutring Composite,Medium,55.1,53.4,53.7
+Wed Oct 3,14:30,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,-482K,1500K,-2446K
+Wed Oct 3,14:30,GMT,usd,USD DOE Cushing OK Crude Inventory,Low,135K,,-83K
+Wed Oct 3,14:30,GMT,usd,USD DOE U.S. Distillate Inventory,Low,-3689K,-400K,-482K
+Wed Oct 3,14:30,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,114K,-500K,-481K
+Wed Oct 3,23:50,GMT,jpy,JPY Japan Buying Foreign Bonds (Yen),Low,1542.4B,,-65.9B
+Wed Oct 3,23:50,GMT,jpy,JPY Japan Buying Foreign Stocks (¥),Low,-0.9B,,-66.8B
+Wed Oct 3,23:50,GMT,jpy,JPY Foreign Buying Japan Bonds (¥),Low,298.0B,,-651.1B
+Wed Oct 3,23:50,GMT,jpy,JPY Foreign Buying Japan Stocks (¥),Low,-239.6B,,-101.7B
+Thu Oct 4,01:30,GMT,aud,AUD Building Approvals (MoM),Low,6.4%,4.7%,-21.2%
+Thu Oct 4,01:30,GMT,aud,AUD Building Approvals (YoY),Low,-15.4%,-14.3%,-10.6%
+Thu Oct 4,01:30,GMT,aud,AUD Retail Sales s.a. (MoM),Medium,0.2%,0.4%,-0.8%
+Thu Oct 4,07:00,GMT,gbp,GBP Halifax House Price (3MoY),Low,-1.2%,-0.9%,-0.9%
+Thu Oct 4,07:00,GMT,gbp,GBP Halifax Plc House Prices s.a. (MoM),Low,-0.4%,0.1%,-0.5%
+Thu Oct 4,07:15,GMT,chf,CHF Industrial Production (YoY),Medium,4.6%,,0.3%
+Thu Oct 4,08:00,GMT,gbp,GBP New Car Registrations (YoY),Low,8.2%,,0.1%
+Thu Oct 4,08:30,GMT,eur,"EUR Spain to Sell 2014, 2015, and 2017 Bonds ",Medium,,,
+Thu Oct 4,09:00,GMT,eur,"EUR France to Sell 2018, 2022, and 2041 Bonds",Medium,,,
+Thu Oct 4,11:00,GMT,gbp,GBP BOE Asset Purchase Target,High,375B,375B,375B
+Thu Oct 4,11:00,GMT,gbp,GBP Bank of England Rate Decision,High,0.50%,0.50%,0.50%
+Thu Oct 4,11:30,GMT,usd,USD Challenger Job Cuts (YoY),Low,-70.8%,,-36.9%
+Thu Oct 4,11:45,GMT,eur,EUR European Central Bank Rate Decision,High,0.75%,0.75%,0.75%
+Thu Oct 4,12:00,GMT,usd,USD RBC Consumer Outlook Index,Low,48.4,,50.4
+Thu Oct 4,12:30,GMT,usd,USD Initial Jobless Claims,Medium,367K,370K,363K
+Thu Oct 4,12:30,GMT,usd,USD Continuing Claims,Low,3281K,3275K,3281K
+Thu Oct 4,12:30,GMT,eur,EUR ECB's Draghi Holds Press Conference After Rate Decision,High,,,
+Thu Oct 4,14:00,GMT,cad,CAD Ivey Purchasing Managers Index s.a.,Medium,60.4,59.4,62.5
+Thu Oct 4,14:00,GMT,usd,USD Factory Orders,Medium,-5.2%,-5.9%,2.6%
+Thu Oct 4,14:30,GMT,usd,USD EIA Natural Gas Storage Change,Low,77,73,80
+Thu Oct 4,18:00,GMT,usd,USD Fed Releases Minutes from Sept. 13 FOMC Meeting,High,,,
+Thu Oct 4,23:30,GMT,aud,AUD AiG Performance of Construction Index,Medium,30.9,,32.2
+Thu Oct 4,23:30,GMT,aud,AUD AiG Performance of Construction Index,Medium,30.9,,32.2
+Fri Oct 5,00:45,GMT,usd,USD Fed's Bullard Speaks on U.S. Economy in Memphis,Low,,,
+Fri Oct 5,03:14,GMT,jpy,JPY Bank of Japan Rate Decision,High,0.10%,0.10%,0.10%
+Fri Oct 5,05:00,GMT,jpy,JPY Coincident Index,Low,93.6,93.6,93.8
+Fri Oct 5,05:00,GMT,jpy,JPY Leading Index,Medium,93.6,93.5,93.0
+Fri Oct 5,06:30,GMT,JPY,JPY BOJ Governor Shirakawa Briefing,High,,,
+Fri Oct 5,07:00,GMT,chf,CHF Foreign Currency Reserves,Low,429.3B,,420.8B
+Fri Oct 5,08:00,GMT,CHF,CHF KOF Institute October Economic Forecast,Medium,,,
+Fri Oct 5,10:00,GMT,eur,EUR German Factory Orders s.a. (MoM),Low,-1.3%,-0.5%,0.3%
+Fri Oct 5,10:00,GMT,eur,EUR German Factory Orders n.s.a. (YoY),Medium,-4.8%,-4.3%,-4.6%
+Fri Oct 5,12:30,GMT,cad,CAD Unemployment Rate,High,7.4%,7.3%,7.3%
+Fri Oct 5,12:30,GMT,usd,USD Change in Nonfarm Payrolls,High,114K,115K,142K
+Fri Oct 5,12:30,GMT,cad,CAD Net Change in Employment,High,52.1K,10.0K,34.3K
+Fri Oct 5,12:30,GMT,usd,USD Change in Private Payrolls,Medium,104K,130K,97K
+Fri Oct 5,12:30,GMT,usd,USD Change in Manufacturing Payrolls,Low,-16K,0K,-22K
+Fri Oct 5,12:30,GMT,cad,CAD Full Time Employment Change,Medium,44.1,,-12.5
+Fri Oct 5,12:30,GMT,usd,USD Unemployment Rate,High,7.8%,8.2%,8.1%
+Fri Oct 5,12:30,GMT,cad,CAD Part Time Employment Change,Low,8.0,,46.7
+Fri Oct 5,12:30,GMT,usd,USD Average Hourly Earnings All Employees (MoM),Medium,0.3%,0.2%,0.0%
+Fri Oct 5,12:30,GMT,cad,CAD Participation Rate,Low,66.8,,66.6
+Fri Oct 5,12:30,GMT,usd,USD Average Hourly Earnings All Employees (YoY),Medium,1.8%,1.8%,1.7%
+Fri Oct 5,12:30,GMT,cad,CAD Building Permits (MoM),Low,7.9%,-1.3%,-2.8%
+Fri Oct 5,12:30,GMT,usd,USD Average Weekly Hours All Employees,Low,34.5,34.4,34.4
+Fri Oct 5,12:30,GMT,usd,USD Change in Household Employment,Low,873,,-119
+Fri Oct 5,12:30,GMT,usd,USD Underemployment Rate (U6),Medium,14.7%,,14.7%
+Fri Oct 5,17:00,GMT,USD,USD Fed's Duke Speaks on Neighborhood Stabilization in New York,Low,,,
+Fri Oct 5,19:00,GMT,usd,USD Consumer Credit,Medium,$18.123B,$7.500B,-$2.454B

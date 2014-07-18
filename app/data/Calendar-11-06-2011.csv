@@ -1,0 +1,152 @@
+Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Sun Nov 06,22:30,GMT,aud,AUD AiG Perf of Constr Index,Low,34.7,,30.0
+Mon Nov 07,00:01,GMT,gbp,GBP Lloyds Employment Confidence,Low,-72,,-67
+Mon Nov 07,00:30,GMT,aud,AUD ANZ Job Advertisements (MoM),Medium,-0.7%,,-2.2%
+Mon Nov 07,05:00,GMT,jpy,JPY Leading Index CI ,Low,91.6,91.9,93.8
+Mon Nov 07,05:00,GMT,jpy,JPY Coincident Index,Low,88.9,89.0,90.3
+Mon Nov 07,06:45,GMT,chf,CHF Unemployment Rate,Medium,2.9%,2.9%,2.8%
+Mon Nov 07,06:45,GMT,chf,CHF Unemployment Rate s.a.,Medium,3.0%,3.0%,3.0%
+Mon Nov 07,08:00,GMT,gbp,GBP Halifax House Price 3MoY,Low,-1.8%,-2.3%,-2.3%
+Mon Nov 07,08:00,GMT,gbp,GBP Halifax Plc House Prices s.a. MoM,Low,1.2%,0.1%,-0.5%
+Mon Nov 07,08:15,GMT,chf,CHF Consumer Price Index (MoM),Medium,-0.1%,0.2%,0.3%
+Mon Nov 07,08:15,GMT,chf,CHF Consumer Price Index (YoY),Medium,-0.1%,0.2%,0.5%
+Mon Nov 07,08:15,GMT,chf,CHF CPI - EU Harmonised (MoM),Medium,-0.1%,,0.3%
+Mon Nov 07,08:15,GMT,chf,CHF CPI - EU Harmonised (YoY),Medium,-0.5%,,0.2%
+Mon Nov 07,09:30,GMT,eur,EUR Euro-Zone Sentix Investor Confidence,Medium,-21.2,-20.0,-18.5
+Mon Nov 07,10:00,GMT,eur,EUR Euro-Zone Retail Sales (MoM),Low,-0.7%,-0.1%,0.1%
+Mon Nov 07,10:00,GMT,eur,EUR Euro-Zone Retail Sales (YoY),Medium,-1.5%,-0.5%,-0.1%
+Mon Nov 07,11:00,GMT,eur,EUR German Industrial Production n.s.a. and w.d.a. (YoY),Medium,5.4%,7.2%,8.4%
+Mon Nov 07,11:00,GMT,eur,EUR German Industrial Production s.a. (MoM),Low,-2.7%,-0.9%,-0.4%
+Mon Nov 07,20:00,GMT,usd,USD Consumer Credit,Medium,$7.386B,$5.150B,-$9.682B
+Mon Nov 07,23:50,GMT,jpy,JPY Official Reserve Assets ,Low,$1209.9B,,$1200.6B
+Tue Nov 08,00:01,GMT,gbp,GBP BRC Sales Like-For-Like (YoY),Low,-0.6%,-0.2%,0.3%
+Tue Nov 08,00:01,GMT,gbp,GBP RICS House Price Balance,Medium,-24%,-23%,-23%
+Tue Nov 08,00:30,GMT,aud,AUD Trade Balance (Australian dollar),Medium,2564M,3000M,3100M
+Tue Nov 08,00:30,GMT,aud,AUD NAB Business Confidence,Medium,2,,-1
+Tue Nov 08,00:30,GMT,aud,AUD NAB Business Conditions,Medium,-1,,-2
+Tue Nov 08,06:45,GMT,chf,CHF SECO Consumer Confidence,Medium,-24,-22,-17
+Tue Nov 08,07:00,GMT,eur,EUR German Exports s.a. (MoM),Low,0.9%,-0.8%,3.2%
+Tue Nov 08,07:00,GMT,eur,EUR German Imports s.a. (MoM),Low,-0.8%,0.4%,-0.1%
+Tue Nov 08,07:00,GMT,eur,EUR German Current Account (euros),Low,15.7B,12.3B,6.5B
+Tue Nov 08,07:00,GMT,eur,EUR German Trade Balance (euros),Medium,17.4B,12.5B,11.8B
+Tue Nov 08,07:45,GMT,eur,EUR French Trade Balance (euros),Low,-6303M,-5800M,-4310M
+Tue Nov 08,08:30,GMT,gbp,GBP Industrial Production (YoY),Medium,-0.7%,-0.8%,-0.9%
+Tue Nov 08,08:30,GMT,gbp,GBP Industrial Production (MoM),Low,0.0%,0.1%,0.3%
+Tue Nov 08,09:30,GMT,gbp,GBP Manufacturing Production (MoM),Low,0.2%,0.1%,-0.3%
+Tue Nov 08,09:30,GMT,gbp,GBP Manufacturing Production (YoY),Medium,2.0%,1.9%,1.6%
+Tue Nov 08,12:30,GMT,usd,USD NFIB Small Business Optimism,Low,90.2,90.0,88.9
+Tue Nov 08,13:15,GMT,cad,CAD Housing Starts,Medium,207.6K,195.0K,208.8K
+Tue Nov 08,15:00,GMT,usd,USD IBD/TIPP Economic Optimism,Low,40.6,41.0,40.3
+Tue Nov 08,15:00,GMT,usd,USD JOLTs Job Openings,Low,3354,,3129
+Tue Nov 08,15:00,GMT,gbp,GBP NIESR Gross Domestic Product Estimate,Medium,0.5%,,0.5%
+Tue Nov 08,18:00,GMT,USD,USD Fed's Kocherlakota Speaks in Sioux Falls, South Dakota,LOW,,,
+Tue Nov 08,18:30,GMT,USD,USD Fed's Plosser Speaks on Monetary Policy in Philadelphia,LOW,,,
+Tue Nov 08,21:45,GMT,nzd,NZD NZ Card Spending - Retail (MoM),Low,1.5%,0.7%,0.7%
+Tue Nov 08,21:45,GMT,nzd,NZD NZ Card Spending (MoM),Low,1.8%,0.6%,0.4%
+Tue Nov 08,23:00,GMT,nzd,NZD QV House Prices (YoY),Low,1.2%,,0.7%
+Tue Nov 08,23:30,GMT,aud,AUD Westpac Consumer Confidence,Medium,6.3%,,0.4%
+Tue Nov 08,23:30,GMT,aud,AUD Westpac Consumer Confidence Index,Low,103.4,,97.2
+Tue Nov 08,23:50,GMT,jpy,JPY Current Account Total (Yen),Low,¥1584.8B,¥1452.2B,¥407.5B
+Tue Nov 08,23:50,GMT,jpy,JPY Bank Lending Banks ex-Trust,Low,0.1%,-0.2%,-0.3%
+Tue Nov 08,23:50,GMT,jpy,JPY Bank Lending incl Trusts (YoY),Low,0.0%,-0.1%,-0.3%
+Tue Nov 08,23:50,GMT,jpy,JPY Adjusted Current Account Total (Yen),Low,¥1186.6B,¥963.2B,¥652.6B
+Tue Nov 08,23:50,GMT,jpy,JPY Current Account Balance (YoY),Low,-21.40%,-31.30%,-64.30%
+Tue Nov 08,23:50,GMT,jpy,JPY Trade Balance - BOP Basis (Yen),Medium,¥373.2B,¥351.7B,-¥694.7B
+Wed Nov 09,00:01,GMT,gbp,GBP BRC Shop Price Index (YoY),Low,2.1%,,2.7%
+Wed Nov 09,00:30,GMT,aud,AUD Home Loans,Medium,2.2%,1.5%,1.2%
+Wed Nov 09,00:30,GMT,aud,AUD Investment Lending,Low,1.9%,,1.8%
+Wed Nov 09,00:30,GMT,aud,AUD Value of Loans (MoM),Low,0.7%,,0.6%
+Wed Nov 09,01:30,GMT,cny,CNY Consumer Price Index (YoY),High,5.5%,5.5%,6.1%
+Wed Nov 09,01:30,GMT,cny,CNY Producer Price Index (YoY),High,5.0%,5.8%,6.5%
+Wed Nov 09,04:30,GMT,jpy,JPY Bankruptcies (YoY),Medium,-14.1%,,-9.2%
+Wed Nov 09,05:00,GMT,jpy,JPY Eco Watchers Survey: Current,Medium,45.9,46.5,45.3
+Wed Nov 09,05:00,GMT,jpy,JPY Eco Watchers Survey: Outlook,Medium,45.9,,46.4
+Wed Nov 09,05:30,GMT,cny,CNY Retail Sales YTD (YoY),Medium,17.0%,17.0%,17.0%
+Wed Nov 09,05:30,GMT,cny,CNY Retail Sales (YoY),Medium,17.2%,17.6%,17.7%
+Wed Nov 09,05:38,GMT,cny,CNY Fixed Assets Inv Excl. Rural YTD (YoY),Medium,24.9%,24.8%,24.9%
+Wed Nov 09,05:55,GMT,cny,CNY Industrial Production YTD (YoY),Medium,14.1%,14.0%,14.2%
+Wed Nov 09,05:55,GMT,cny,CNY Industrial Production (YoY),Medium,13.2%,13.4%,13.8%
+Wed Nov 09,07:30,GMT,eur,EUR Bank of France Business Sentiment,Low,96,96,97
+Wed Nov 09,07:45,GMT,EUR,EUR French Survey of Industrial Investments (Table),LOW,,,
+Wed Nov 09,07:45,GMT,eur,EUR French Central Government Balance (euros),Low,-92.7B,-101.0B,-102.8B
+Wed Nov 09,09:30,GMT,gbp,GBP Visible Trade Balance (Pounds),Medium,-£9814,-£8000,-£8617
+Wed Nov 09,09:30,GMT,gbp,GBP Trade Balance Non EU (Pounds),Low,-£5715,-£4950,-£5142
+Wed Nov 09,09:30,GMT,gbp,GBP Total Trade Balance (Pounds),Low,-£3940,-£2100,-£2726
+Wed Nov 09,12:00,GMT,usd,USD MBA Mortgage Applications,Low,10.3%,,0.2%
+Wed Nov 09,13:30,GMT,cad,CAD New Housing Price Index (MoM),Low,0.2%,0.1%,0.1%
+Wed Nov 09,13:30,GMT,cad,CAD New Housing Price Index (YoY),Medium,2.2%,2.3%,2.3%
+Wed Nov 09,14:30,GMT,USD,USD Bernanke Speaks at Fed Conference on Small Business,Medium,,,
+Wed Nov 09,15:00,GMT,usd,USD Wholesale Inventories,Low,-0.1%,0.5%,0.4%
+Wed Nov 09,15:30,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,-1370K,500K,1826K
+Wed Nov 09,15:30,GMT,usd,USD DOE U.S. Distillate Inventory,Low,-6020K,-2200K,-3575K
+Wed Nov 09,15:30,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,-2107K,1000K,1356K
+Wed Nov 09,15:30,GMT,usd,USD DOE Cushing OK Crude Inventory,Low,-932K,,560K
+Wed Nov 09,21:30,GMT,nzd,NZD Business NZ Performance of Manufacturing Index,Medium,46.5,,50.5
+Wed Nov 09,23:50,GMT,jpy,JPY Japan Money Stock M2+CD (YoY),Low,2.7%,2.7%,2.7%
+Wed Nov 09,23:50,GMT,jpy,JPY Japan Money Stock M3 (YoY),Low,2.3%,2.3%,2.3%
+Wed Nov 09,23:50,GMT,jpy,JPY Machine Orders (MoM),Medium,-8.2%,-7.1%,11.0%
+Wed Nov 09,23:50,GMT,jpy,JPY Machine Orders (YoY),Medium,9.8%,10.6%,2.1%
+Thu Nov 10,00:00,GMT,aud,AUD Consumer Inflation Expectation,Low,2.5%,,3.1%
+Thu Nov 10,00:00,GMT,nzd,NZD ANZ Consumer Confidence Index,Low,109.0,,112.2
+Thu Nov 10,00:00,GMT,nzd,NZD ANZ Consumer Confidence MoM,Low,-2.9%,,-0.4%
+Thu Nov 10,00:30,GMT,aud,AUD Employment Change,High,10.1K,10.0K,22.5K
+Thu Nov 10,00:30,GMT,aud,AUD Unemployment Rate,High,5.2%,5.3%,5.3%
+Thu Nov 10,00:30,GMT,aud,AUD Full Time Employment Change,Medium,20.0K,,13.7K
+Thu Nov 10,00:30,GMT,aud,AUD Part Time Employment Change,Medium,-9.9K,,8.8K
+Thu Nov 10,00:30,GMT,aud,AUD Participation Rate,Low,65.6%,65.6%,65.6%
+Thu Nov 10,02:00,GMT,cny,CNY Trade Balance (USD),Medium,$17.03B,$25.75B,$14.51B
+Thu Nov 10,02:00,GMT,cny,CNY Exports (YoY),Low,15.9%,16.1%,17.1%
+Thu Nov 10,02:00,GMT,cny,CNY Imports (YoY),Low,28.7%,22.2%,20.9%
+Thu Nov 10,02:21,GMT,jpy,JPY Tokyo Avg Office Vacancies (%),Low,8.78,,8.64
+Thu Nov 10,05:00,GMT,jpy,JPY Consumer Confidence,Medium,38.6,39.0,38.6
+Thu Nov 10,06:00,GMT,jpy,JPY Machine Tool Orders (YoY) (OCT P),Medium,25.9%,,20.1%
+Thu Nov 10,06:30,GMT,eur,EUR French Consumer Price Index - EU Harmonised (MoM),Low,0.3%,0.1%,0.0%
+Thu Nov 10,06:30,GMT,eur,EUR French Consumer Price Index - EU Harmonised (YoY),Low,2.5%,2.5%,2.4%
+Thu Nov 10,06:30,GMT,eur,EUR French Consumer Price Index (MoM),Low,0.2%,0.2%,-0.1%
+Thu Nov 10,06:30,GMT,eur,EUR French Consumer Price Index (YoY),Low,2.3%,2.3%,2.2%
+Thu Nov 10,06:30,GMT,eur,EUR French Consumer Price Index Ex Tobacco Index,Low,122.73,122.65,122.49
+Thu Nov 10,07:00,GMT,eur,EUR German Consumer Price Index - EU Harmonised (YoY),High,2.9%,2.8%,2.8%
+Thu Nov 10,07:00,GMT,eur,EUR German Wholesale Price Index (MoM),Low,-1.0%,,0.3%
+Thu Nov 10,07:00,GMT,eur,EUR German Wholesale Price Index (YoY),Low,5.0%,,5.7%
+Thu Nov 10,07:00,GMT,eur,EUR German Consumer Price Index (MoM),Medium,0.0%,0.0%,0.0%
+Thu Nov 10,07:00,GMT,eur,EUR German Consumer Price Index (YoY),High,2.5%,2.5%,2.5%
+Thu Nov 10,07:00,GMT,eur,EUR German Consumer Price Index - EU Harmonised (MoM),Medium,0.1%,0.0%,0.0%
+Thu Nov 10,07:45,GMT,eur,EUR French Industrial Production (MoM),Low,-1.7%,-0.7%,0.5%
+Thu Nov 10,07:45,GMT,eur,EUR French Industrial Production (YoY),Low,2.3%,3.9%,4.5%
+Thu Nov 10,07:45,GMT,eur,EUR French Manufacturing Production (MoM),Low,-1.6%,-0.6%,0.6%
+Thu Nov 10,07:45,GMT,eur,EUR French Manufacturing Production (YoY),Low,3.4%,5.0%,5.3%
+Thu Nov 10,09:00,GMT,eur,EUR Italian Industrial Production s.a. (MoM),Low,-4.8%,-3.0%,3.9%
+Thu Nov 10,09:00,GMT,EUR,EUR ECB Publishes Nov. Monthly Report,HIGH,,,
+Thu Nov 10,09:00,GMT,eur,EUR Italian Industrial Production w.d.a. (YoY),Low,-2.7%,1.1%,4.7%
+Thu Nov 10,09:00,GMT,eur,EUR Italian Industrial Production n.s.a. (YoY),Low,-2.7%,0.5%,4.6%
+Thu Nov 10,10:00,GMT,eur,EUR European Commission Releases Economic Growth Forecasts,High,,,
+Thu Nov 10,12:00,GMT,gbp,GBP Bank of England Rate Decision,High,0.50%,0.50%,0.50%
+Thu Nov 10,12:00,GMT,gbp,GBP BOE Asset Purchase Target,High,275B,275B,275B
+Thu Nov 10,13:30,GMT,cad,CAD International Merchandise Trade (Canadian dollar),Low,1.25B,-0.56B,-0.49B
+Thu Nov 10,13:30,GMT,usd,USD Import Price Index (MoM),Low,-0.6%,0.0%,0.0%
+Thu Nov 10,13:30,GMT,usd,USD Import Price Index (YoY),Low,11.0%,11.8%,12.9%
+Thu Nov 10,13:30,GMT,usd,USD Trade Balance,Medium,-$43.1B,-$46.0B,-$44.9B
+Thu Nov 10,13:30,GMT,usd,USD Initial Jobless Claims,Low,390K,400K,400K
+Thu Nov 10,13:30,GMT,usd,USD Continuing Claims,Low,3615K,3680K,3707K
+Thu Nov 10,14:45,GMT,usd,USD Bloomberg Consumer Comfort,Low,-51.6,-51.0,-53.2
+Thu Nov 10,19:00,GMT,usd,USD Monthly Budget Statement,Medium,-$98.5B,-$102.5B,-$140.4B
+Thu Nov 10,21:45,GMT,nzd,NZD Food Prices (MoM),Low,-1.3%,,-1.0%
+Thu Nov 10,23:00,GMT,NZD,NZD REINZ Housing Price Index,Low,3268.5,,3279.2
+Thu Nov 10,23:00,GMT,NZD,NZD REINZ Housing Price Index MoM%,Low,-0.3%,,1.7%
+Thu Nov 10,23:00,GMT,nzd,NZD REINZ House Sales YoY%,Low,28.3%,,21.1%
+Thu Nov 10,23:50,GMT,jpy,JPY Loans & Discounts Corp (YoY),Low,-0.7%,,-1.6%
+Thu Nov 10,23:50,GMT,jpy,JPY Tertiary Industry Index (MoM),Medium,-0.7%,-0.5%,0.0%
+Thu Nov 10,23:50,GMT,jpy,JPY Domestic Corporate Goods Price Index (YoY),Low,1.7%,2.2%,2.5%
+Thu Nov 10,23:50,GMT,jpy,JPY Domestic Corporate Goods Price Index (MoM),Low,-0.7%,-0.2%,-0.1%
+Fri Nov 11,07:05,GMT,cny,CNY New Yuan Loans,High,586.8B,500.0B,470.0B
+Fri Nov 11,07:05,GMT,cny,CNY Money Supply - M1 (YoY),Low,8.4%,9.3%,8.9%
+Fri Nov 11,07:05,GMT,cny,CNY Money Supply - M2 (YoY),Low,12.9%,13.0%,13.0%
+Fri Nov 11,07:05,GMT,cny,CNY Money Supply - M0 (YoY),Low,11.9%,,12.7%
+Fri Nov 11,09:30,GMT,gbp,GBP Producer Price Index Input n.s.a. (MoM),Low,-0.8%,-0.3%,1.8%
+Fri Nov 11,09:30,GMT,gbp,GBP Producer Price Index Input n.s.a. (YoY),Medium,14.1%,14.6%,17.7%
+Fri Nov 11,09:30,GMT,gbp,GBP Producer Price Index Output n.s.a. (MoM),Low,0.0%,0.1%,0.3%
+Fri Nov 11,09:30,GMT,gbp,GBP Producer Price Index Output Core n.s.a. (MoM),Low,-0.1%,0.1%,0.3%
+Fri Nov 11,09:30,GMT,gbp,GBP Producer Price Index Output n.s.a. (YoY),Medium,5.7%,5.9%,6.3%
+Fri Nov 11,09:30,GMT,gbp,GBP Producer Price Index Output Core n.s.a. (YoY),Medium,3.4%,3.6%,3.8%
+Fri Nov 11,14:55,GMT,usd,USD U. of Michigan Confidence,High,64.2,61.5,60.9
+Fri Nov 11,19:45,GMT,USD,USD Fed's Williams Speaks on Panel at IMF Conference,LOW,,,

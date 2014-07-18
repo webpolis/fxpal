@@ -1,0 +1,158 @@
+Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Sun May 13,22:30,GMT,nzd,NZD Performance Services Index,Low,56.7,,54.2
+Sun May 13,22:45,GMT,nzd,NZD Retail Sales Ex Inflation (QoQ),Medium,-1.5%,-0.5%,1.8%
+Sun May 13,23:50,GMT,jpy,JPY Loans & Discounts Corp (YoY),Low,-0.41%,,0.15%
+Sun May 13,23:50,GMT,jpy,JPY Domestic Corporate Goods Price Index (MoM),Low,0.3%,0.1%,0.5%
+Sun May 13,23:50,GMT,jpy,JPY Domestic Corporate Goods Price Index (YoY),Low,-0.2%,-0.3%,0.5%
+Mon May 14,01:30,GMT,aud,AUD Value of Loans (MoM),Low,-0.3%,,-4.1%
+Mon May 14,01:30,GMT,aud,AUD Home Loans,Medium,0.3%,-2.0%,-2.5%
+Mon May 14,01:30,GMT,aud,AUD Investment Lending,Low,-1.0%,,4.3%
+Mon May 14,06:00,GMT,eur,EUR German Wholesale Price Index (MoM),Low,0.5%,,0.9%
+Mon May 14,06:00,GMT,eur,EUR German Wholesale Price Index (YoY),Low,2.4%,,2.2%
+Mon May 14,06:45,GMT,eur,EUR France Current Account [MAR] (Euro),Low,-4.1B,,-5.3B
+Mon May 14,07:15,GMT,chf,CHF Producer & Import Prices (MoM),Low,-0.1%,0.2%,0.3%
+Mon May 14,07:15,GMT,chf,CHF Producer & Import Prices (YoY),Low,-2.3%,-2.1%,-2.0%
+Mon May 14,08:00,GMT,eur,Italian CPI (NIC incl. tobacco) [April YoY],Low,3.3%,3.3%,3.3%
+Mon May 14,08:00,GMT,eur,Italian CPI - EU Harmonized [April MoM],Low,0.9%,0.9%,0.9%
+Mon May 14,08:00,GMT,eur,Italian CPI (NIC incl. tobacco) [April MoM],Low,0.5%,0.5%,0.5%
+Mon May 14,08:00,GMT,eur,Italian CPI - EU Harmonized [April YoY],Low,3.7%,3.8%,3.8%
+Mon May 14,08:30,GMT,eur,EUR Spain to Sell 364-518 Day Bills,Medium,,,
+Mon May 14,08:30,GMT,eur,EUR Italian General Government Debt,Medium,1946.1B,,1928.2B
+Mon May 14,09:00,GMT,eur,EUR Euro-Zone Industrial Production w.d.a. (YoY),Medium,-2.2%,-1.40%,-1.5%
+Mon May 14,09:00,GMT,eur,EUR Italy to Sell 2015-2025 Bonds,Medium,,,
+Mon May 14,09:00,GMT,eur,EUR Euro-Zone Industrial Production s.a. (MoM),Low,-0.3%,0.40%,0.8%
+Tue May 15,01:30,GMT,aud,AUD Reserve Bank Board May Minutes,High,,,
+Tue May 15,01:30,GMT,aud,AUD New Motor Vehicle Sales (MoM),Low,-0.7%,,4.1%
+Tue May 15,01:30,GMT,aud,AUD New Motor Vehicle Sales (YoY),Low,7.3%,,4.0%
+Tue May 15,01:48,GMT,cny,CNY Actual FDI (YoY),Medium,-0.7%,2.8%,-6.1%
+Tue May 15,03:00,GMT,nzd,NZD Non Resident Bond Holdings,Low,62.1%,,60.9%
+Tue May 15,05:00,GMT,jpy,JPY Consumer Confidence,Medium,40.0,40.8,40.3
+Tue May 15,05:30,GMT,eur,EUR French Consumer Price Index MoM (APR) ,High,0.1%,0.2%,0.8%
+Tue May 15,05:30,GMT,eur,EUR French Consumer Price Index YoY (APR) ,High,2.1%,2.2%,2.3%
+Tue May 15,05:30,GMT,eur,EUR French Gross Domestic Product (QoQ),Low,0.0%,0.0%,0.1%
+Tue May 15,05:30,GMT,eur,EUR French Gross Domestic Product (YoY),Medium,0.3%,0.5%,1.2%
+Tue May 15,06:00,GMT,eur,EUR German Gross Domestic Product w.d.a. (YoY),High,1.2%,0.8%,2.0%
+Tue May 15,06:00,GMT,eur,EUR German Gross Domestic Product n.s.a. (YoY),High,1.7%,0.9%,1.5%
+Tue May 15,06:00,GMT,eur,EUR German Gross Domestic Product s.a. (QoQ),High,0.5%,0.1%,-0.2%
+Tue May 15,06:45,GMT,eur,EUR French Non-Farm Payrolls QoQ (1Q P),Low,0.1%,-0.2%,-0.1%
+Tue May 15,06:45,GMT,eur,EUR French Wages QoQ (1Q P),Low,0.9%,0.7%,0.3%
+Tue May 15,08:00,GMT,eur,EUR Italian Gross Domestic Product s.a. and w.d.a. (QoQ),Low,-0.8%,-0.7%,-0.7%
+Tue May 15,08:00,GMT,eur,EUR Italian Gross Domestic Product s.a. and w.d.a. (YoY),Medium,-1.3%,-1.2%,-0.4%
+Tue May 15,08:30,GMT,gbp,GBP Visible Trade Balance (Pounds),Medium,--£8564,-£8400,-£8590
+Tue May 15,08:30,GMT,gbp,GBP Trade Balance Non EU (Pounds),Low,--£4109,-£4700,-£4871
+Tue May 15,08:30,GMT,gbp,GBP Total Trade Balance (Pounds),Low,--£2739,-£2900,-£2948
+Tue May 15,09:00,GMT,eur,EUR Bonds_EFSF to Sell 2017 Notes (Up to €1 Bln),Medium,,,
+Tue May 15,09:00,GMT,eur,EUR Portugal Gross Domestic Product n.s.a. (YoY) (1Q P),Medium,-2.2%,-3.1%,-2.9%
+Tue May 15,09:00,GMT,eur,EUR Euro-Zone Gross Domestic Product s.a. (QoQ),High,0.0%,-0.2%,-0.3%
+Tue May 15,09:00,GMT,eur,EUR Euro-Zone Gross Domestic Product s.a. (YoY),High,0.0%,-0.2%,0.7%
+Tue May 15,09:00,GMT,eur,EUR Portugal Gross Domestic Product s.a. (QoQ) (1Q P),Medium,-0.1%,-1.0%,-1.3%
+Tue May 15,09:00,GMT,eur,EUR German ZEW Survey (Current Situation),Medium,44.1,39.0,40.7
+Tue May 15,09:00,GMT,eur,EUR Euro-Zone ZEW Survey (Economic Sentiment),Medium,-2.4,,13.1
+Tue May 15,09:00,GMT,eur,EUR German ZEW Survey (Economic Sentiment),High,10.8,19.0,23.4
+Tue May 15,09:00,GMT,eur,EUR Bonds Greece to Sell 91-Day Bills (€1 Bln),Medium,,,
+Tue May 15,09:00,GMT,eur,EUR Greece Gross Domestic Product (YoY) (1Q A),Medium,-6.2%,,-7.5%
+Tue May 15,12:30,GMT,usd,USD Consumer Price Index (MoM),Medium,0.0%,0.0%,0.3%
+Tue May 15,12:30,GMT,usd,USD Empire Manufacturing,Low,17.09,9.00,6.56
+Tue May 15,12:30,GMT,usd,USD Consumer Price Index Ex Food & Energy (MoM),Medium,0.2%,0.2%,0.2%
+Tue May 15,12:30,GMT,usd,USD Consumer Price Index (YoY),High,2.3%,2.3%,2.7%
+Tue May 15,12:30,GMT,usd,USD Consumer Price Index Ex Food & Energy (YoY),High,2.3%,2.3%,2.3%
+Tue May 15,12:30,GMT,usd,USD Consumer Price Index n.s.a.,Low,230.085,229.904,229.392
+Tue May 15,12:30,GMT,usd,USD Consumer Price Index Core Index s.a.,Low,228.984,,228.432
+Tue May 15,12:30,GMT,usd,USD Advance Retail Sales,High,0.1%,0.1%,0.7%
+Tue May 15,12:30,GMT,usd,USD Retail Sales Less Autos,Medium,0.1%,0.2%,0.8%
+Tue May 15,12:30,GMT,usd,USD Retail Sales Ex Auto & Gas,Medium,0.1%,0.3%,0.8%
+Tue May 15,12:30,GMT,usd,USD Retail Sales "Control Group",Low,0.4%,0.3%,0.5%
+Tue May 15,13:00,GMT,usd,USD Total Net TIC Flows,Low,-$49.9B,,$92.6B
+Tue May 15,13:00,GMT,usd,USD Net Long-term TIC Flows,Medium,$32.6B,$32.5B,$10.1B
+Tue May 15,14:00,GMT,usd,USD Business Inventories,Medium,0.3%,0.4%,0.6%
+Tue May 15,14:00,GMT,usd,USD NAHB Housing Market Index,Low,29,26,24
+Tue May 15,23:50,GMT,jpy,JPY Machine Orders (MoM),Medium,-2.8%,-3.5%,2.8%
+Tue May 15,23:50,GMT,jpy,JPY Machine Orders (YoY),Medium,-1.1%,4.4%,8.9%
+Tue May 15,23:50,GMT,jpy,JPY Tertiary Industry Index (MoM),Medium,-0.6%,-0.4%,0.0%
+Wed May 16,00:30,GMT,aud,AUD Westpac Consumer Confidence,Medium,0.8%,,-1.6%
+Wed May 16,00:30,GMT,aud,AUD Westpac Consumer Confidence Index,Low,95.3,,94.5
+Wed May 16,01:30,GMT,aud,AUD Wage Cost Index (QoQ),Low,0.9%,0.8%,1.0%
+Wed May 16,01:30,GMT,aud,AUD Wage Cost Index (YoY),Low,3.6%,3.5%,3.6%
+Wed May 16,06:00,GMT,eur,EUR EU 25 New Car Registrations,Low,-6.9%,,-7.0%
+Wed May 16,08:00,GMT,eur,EUR Italy Trade Balance (Total) (Euro) [MAR],Low,2064M,,-1136M
+Wed May 16,08:00,GMT,eur,EUR Italy Trade Balance Eu (EURO) [MAR],Low,1554M,,416M
+Wed May 16,08:30,GMT,gbp,GBP Jobless Claims Change,High,-13.7K,5.0K,-5.4K
+Wed May 16,08:30,GMT,gbp,GBP Average Weekly Earnings (3M/YoY),Medium,0.6%,1.0%,1.1%
+Wed May 16,08:30,GMT,gbp,GBP ILO Unemployment Rate (3M),Medium,8.2%,8.4%,8.3%
+Wed May 16,08:30,GMT,gbp,GBP Claimant Count Rate,Medium,4.9%,5.0%,4.9%
+Wed May 16,08:30,GMT,gbp,GBP Weekly Earnings exBonus (3M/YoY),Low,1.6%,1.4%,1.6%
+Wed May 16,09:00,GMT,eur,EUR Euro-Zone Consumer Price Index (MoM),Medium,0.5%,0.5%,1.3%
+Wed May 16,09:00,GMT,eur,EUR Euro-Zone Consumer Price Index (YoY),High,2.6%,2.6%,
+Wed May 16,09:00,GMT,eur,EUR Euro-Zone Trade Balance s.a. (euros),Low,4.3B,3.8B,4.0B
+Wed May 16,09:00,GMT,eur,EUR Euro-Zone Consumer Price Index - Core (YoY),High,1.6%,1.5%,1.6%
+Wed May 16,09:00,GMT,chf,CHF ZEW Survey (Expectations),Medium,-4.0,,2.1
+Wed May 16,09:00,GMT,eur,EUR Euro-Zone Trade Balance (euros),Low,8.6B,4.0B,2.3B
+Wed May 16,09:30,GMT,gbp,GBP Bank of England Inflation Report,High,,,
+Wed May 16,11:00,GMT,usd,USD MBA Mortgage Applications,Low,9.2%,,1.70%
+Wed May 16,12:30,GMT,usd,USD Building Permits,Medium,715K,730K,769K
+Wed May 16,12:30,GMT,cad,CAD Manufacturing Shipments (MoM),Low,1.9%,0.4%,-0.2%
+Wed May 16,12:30,GMT,usd,USD Housing Starts,Medium,717K,685K,699K
+Wed May 16,12:30,GMT,usd,USD Housing Starts (MoM),Low,2.6%,4.7%,-2.6%
+Wed May 16,12:30,GMT,usd,USD Building Permits (MoM),Low,-7.0%,-4.5%,8.8%
+Wed May 16,13:15,GMT,usd,USD Industrial Production,Medium,1.1%,0.6%,-0.6%
+Wed May 16,13:15,GMT,usd,USD Capacity Utilization,Low,79.2%,79.0%,78.4%
+Wed May 16,13:15,GMT,usd,USD Manufacturing (SIC) Production,Low,0.6%,,-0.5%
+Wed May 16,14:00,GMT,usd,USD MBA Mortgage Foreclosures,Low,4.39%,,4.38%
+Wed May 16,14:00,GMT,usd,USD Mortgage Delinquencies,Low,7.4%,,7.6%
+Wed May 16,14:30,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,2128K,1750K,3652K
+Wed May 16,14:30,GMT,usd,USD DOE Cushing OK Crude Inventory,Low,1000K,,1163K
+Wed May 16,14:30,GMT,usd,USD DOE U.S. Distillate Inventory,Low,-969K,150K,-3251K
+Wed May 16,14:30,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,-2797K,-100K,-2613K
+Wed May 16,16:30,GMT,usd,USD Fed's Bullard Speaks on U.S. Economy in Kentucky,Low,,,
+Wed May 16,18:00,GMT,usd,Fed Releases Minutes from April 24-25 FOMC Meeting,High,,,
+Wed May 16,22:00,GMT,nzd,NZD ANZ NZ Job Ads (MoM),Low,-2.0%,,-0.9%
+Wed May 16,22:45,GMT,nzd,NZD Producer Prices- Inputs (QoQ),Low,0.3%,0.0%,0.5%
+Wed May 16,22:45,GMT,nzd,NZD Producer Prices- Outputs (QoQ),Low,-0.1%,0.0%,0.1%
+Wed May 16,23:50,GMT,jpy,JPY Gross Domestic Product Deflator (YoY),Low,-1.2%,-1.5%,-1.9%
+Wed May 16,23:50,GMT,jpy,JPY Gross Domestic Product (QoQ),High,1.0%,0.9%,0.0%
+Wed May 16,23:50,GMT,jpy,JPY Housing Loans (YoY),Medium,2.4%,,2.2%
+Wed May 16,23:50,GMT,jpy,JPY Nominal Gross Domestic Product (QoQ),High,1.0%,1.0%,-0.3%
+Wed May 16,23:50,GMT,jpy,JPY Gross Domestic Product Annualized,High,4.1%,3.5%,0.1%
+Thu May 17,01:00,GMT,aud,AUD Consumer Inflation Expectation,Medium,3.1%,,3.3%
+Thu May 17,01:00,GMT,nzd,NZD ANZ Consumer Confidence Index,Low,113.9,,114.0
+Thu May 17,01:00,GMT,nzd,NZD ANZ Consumer Confidence (MoM),Low,-0.1%,,3.4%
+Thu May 17,01:30,GMT,aud,AUD RBA Foreign Exchange Transaction (Australian dollar),Low,366M,,944M
+Thu May 17,01:30,GMT,aud,AUD Average Weekly Wages (QoQ),Medium,1.1%,1.0%,0.5%
+Thu May 17,01:30,GMT,aud,AUD Average Weekly Wages (YoY),Medium,4.4%,4.1%,4.3%
+Thu May 17,04:00,GMT,jpy,JPY Tokyo Condominium Sales (YoY),Low,81.7%,,-6.1%
+Thu May 17,04:30,GMT,jpy,JPY Industrial Production (MoM),Low,1.3%,,1.0%
+Thu May 17,04:30,GMT,jpy,JPY Industrial Production (YoY),Medium,14.2%,,13.9%
+Thu May 17,04:30,GMT,jpy,JPY Capacity Utilization (MoM),Low,1.3%,,-1.7%
+Thu May 17,06:00,GMT,jpy,JPY Japan Machine Tool Orders [APR F] YoY,Medium,0.4%,,0.5%
+Thu May 17,07:00,GMT,eur,EUR Spain Gross Domestic Product s.a. (QoQ),Medium,-0.3%,-0.3%,-0.3%
+Thu May 17,07:00,GMT,eur,EUR Spain Gross Domestic Product (Constant s.a.) (YoY) (1Q F),Medium,-0.4%,-0.4%,-0.4%
+Thu May 17,08:30,GMT,eur,EUR Bonds-Spain to Sell 2015 and 2016 Bonds,Medium,,,
+Thu May 17,12:30,GMT,cad,CAD International Securities Transactions (Canadian dollar),Low,-2.08B,8.00B,12.54B
+Thu May 17,12:30,GMT,usd,USD Initial Jobless Claims,Low,370K,365K,370K
+Thu May 17,12:30,GMT,cad,CAD Wholesale Sales (MoM),Low,0.4%,0.3%,1.5%
+Thu May 17,12:30,GMT,usd,USD Continuing Claims,Low,3265K,3225K,3247K
+Thu May 17,14:00,GMT,usd,USD Philadelphia Fed.,Medium,-5.8,10,8.5
+Thu May 17,14:00,GMT,usd,USD Leading Indicators,Medium,-0.1%,0.1%,0.3%
+Thu May 17,14:30,GMT,CAD,CAD Bank of Canada Publishes Review Collection of Academic Papers,LOW,,,
+Thu May 17,14:30,GMT,usd,USD EIA Natural Gas Storage Change,Low,61,54,30
+Thu May 17,16:35,GMT,usd,USD Fed's Bullard Speaks to Rotary Club of Louisville,Low,,,
+Fri May 18,,,USD,Revisions: Durable Goods Benchmarks,LOW,,,
+Fri May 18,01:30,GMT,CNY,CNY China April Property Prices,Medium,,,
+Fri May 18,01:35,GMT,cny,CNY MNI May Flash Business Sentiment Survey,Low,53.0,,56.0
+Fri May 18,05:30,GMT,jpy,JPY Nationwide Department Store Sales (YoY),Low,1.3%,,14.1%
+Fri May 18,05:30,GMT,jpy,JPY Tokyo Department Store Sales (YoY),Low,6.7%,,26.7%
+Fri May 18,06:00,GMT,eur,EUR German Producer Prices (MoM),Medium,0.2%,0.3%,0.6%
+Fri May 18,06:00,GMT,eur,EUR German Producer Prices (YoY),High,2.4%,2.5%,3.3%
+Fri May 18,08:00,GMT,eur,EUR Italy Industrial Sales s.a. MoM [MAR],Low,0.0%,,2.3%
+Fri May 18,08:00,GMT,eur,EUR Italy Industrial Orders n.s.a. YoY [MAR],Low,-14.3%,,-13.2%
+Fri May 18,08:00,GMT,eur,EUR Italy Industrial Sales  n.s.a. YoY [MAR] ,Low,-3.1%,,-1.5%
+Fri May 18,08:00,GMT,eur,EUR Italy Industrial Orders s.a. [MAR] MoM,Medium,3.5%,1.0%,-2.6%
+Fri May 18,12:30,GMT,USD,USD Revisions: Factory Orders,LOW,,,
+Fri May 18,12:30,GMT,cad,CAD Consumer Price Index (YoY),High,2.0%,1.9%,1.9%
+Fri May 18,12:30,GMT,cad,CAD Consumer Price Index s.a. (MoM),Low,0.2%,0.2%,0.2%
+Fri May 18,12:30,GMT,cad,CAD Core CPI s.a. (MoM),Low,0.4%,0.2%,0.1%
+Fri May 18,12:30,GMT,cad,CAD Consumer Price Index (MoM),Medium,0.4%,0.3%,0.4%
+Fri May 18,12:30,GMT,cad,CAD Bank Canada Consumer Price Index Core (MoM),Medium,0.4%,0.2%,0.3%
+Fri May 18,12:30,GMT,cad,CAD Bank Canada Consumer Price Index Core (YoY),High,2.1%,1.9%,1.9%
+Fri May 18,12:30,GMT,cad,CAD Consumer Price Index,Low,122.2,,121.7
+Fri May 18,14:00,GMT,USD,USD American Petroleum Institute Monthly Report,LOW,,,

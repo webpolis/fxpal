@@ -1,0 +1,152 @@
+Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Sun Apr 08,23:50,GMT,jpy,JPY Current Account Total (Yen),Low,¥1177.8B,¥1120.0B,-¥437.3B
+Sun Apr 08,23:50,GMT,jpy,JPY Adjusted Current Account Total (Yen),Low,¥854.1B,¥650.0B,¥115.6B
+Sun Apr 08,23:50,GMT,jpy,JPY Current Account Balance (YoY),Low,-30.7%,-34.1%,-180.00%
+Sun Apr 08,23:50,GMT,jpy,JPY Trade Balance - BOP Basis (Yen),Medium,¥102.1B,¥104.3B,-¥1381.6B
+Mon Apr 09,,,cny,CNY New Yuan Loans,High,1010.0B,797.5B,710.7B
+Mon Apr 09,,,cny,CNY Money Supply - M1 (YoY),Low,4.4%,5.0%,4.3%
+Mon Apr 09,,,cny,CNY Money Supply - M2 (YoY),Low,13.4%,13.0%,13.0%
+Mon Apr 09,,,cny,CNY Business Climate Index,Medium,127.3,,127.8
+Mon Apr 09,,,cny,CNY Entrepreneur Confidence Index,Low,123,,120.9
+Mon Apr 09,,,cny,CNY Foreign Exchange Reserves,Medium,$3305.0B,$3200.0B,$3181.1B
+Mon Apr 09,,,cny,CNY Money Supply - M0 (YoY),Low,10.6%,10.0%,8.8%
+Mon Apr 09,01:30,GMT,cny,CNY Producer Price Index (YoY),High,-0.3%,-0.3%,0.0%
+Mon Apr 09,01:30,GMT,cny,CNY Consumer Price Index (YoY),High,3.6%,3.4%,3.2%
+Mon Apr 09,04:30,GMT,jpy,JPY Bankruptcies (YoY),Medium,-1.9%,,5.2%
+Mon Apr 09,05:00,GMT,jpy,JPY Eco Watchers Survey: Current,Medium,51.8,46.5,45.9
+Mon Apr 09,05:00,GMT,jpy,JPY Eco Watchers Survey: Outlook,Medium,49.7,,50.1
+Mon Apr 09,14:30,GMT,cad,CAD Business Outlook Future Sales,Medium,35,,-4
+Mon Apr 09,14:30,GMT,cad,CAD Bank of Canda Senior Loan Officer Survey,Medium,-16.9,,-6.3
+Mon Apr 09,22:00,GMT,usd,USD Fed's Bernanke Speaks at Stone Mountain Conference,Low,,,
+Mon Apr 09,23:01,GMT,gbp,GBP Lloyds Employment Confidence,Low,-58,,-69
+Mon Apr 09,23:01,GMT,gbp,GBP RICS House Price Balance,Medium,-10% ,-13%,-13%
+Mon Apr 09,23:30,GMT,aud,AUD AiG Performance of Construction Index ,Low,36.2,,35.6
+Tue Apr 10,01:30,GMT,aud,AUD NAB Business Conditions,Low,4,,3
+Tue Apr 10,01:30,GMT,aud,AUD NAB Business Confidence,Medium,3,,1
+Tue Apr 10,01:30,GMT,aud,AUD ANZ Job Advertisements (MoM),Low,1.0%,,3.3%
+Tue Apr 10,03:03,GMT,cny,CNY Trade Balance (USD),Medium,$5.35B,-$3.15B,-$31.48B
+Tue Apr 10,03:03,GMT,cny,CNY Exports (YoY),Low,8.9%,7.0%,18.4%
+Tue Apr 10,03:03,GMT,cny,CNY Imports (YoY),Low,5.3%,9.0%,39.6%
+Tue Apr 10,03:09,GMT,jpy,JPY Bank of Japan Rate Decision,High,0.10%,0.10%,0.10%
+Tue Apr 10,05:45,GMT,chf,CHF Unemployment Rate,Medium,3.2%,3.3%,3.4%
+Tue Apr 10,05:45,GMT,chf,CHF Unemployment Rate s.a.,Medium,3.1%,3.1%,3.1%
+Tue Apr 10,06:00,GMT,eur,EUR German Exports s.a. (MoM),Low,1.6%,-1.2%,3.4%
+Tue Apr 10,06:00,GMT,eur,EUR German Imports s.a. (MoM),Low,3.9%,1.3%,2.4%
+Tue Apr 10,06:00,GMT,eur,EUR German Current Account (euros),Low,11.1B,12.0B,9.5B
+Tue Apr 10,06:00,GMT,eur,EUR German Trade Balance (euros),Medium,14,7B,12.0B,13.2B
+Tue Apr 10,06:00,GMT,jpy,JPY Machine Tool Orders (YoY),Medium,2.4%,,-8.6%
+Tue Apr 10,06:30,GMT,eur,EUR Bank of France Business Sentiment (MAR),Low,95,96,95
+Tue Apr 10,06:30,GMT,aud,AUD Foreign Reserves (Australian dollar),Low,A$49.9B,,A$49.1B
+Tue Apr 10,06:45,GMT,eur,EUR French Industrial Production (MoM),Low,0.3%,0.3%,0.2%
+Tue Apr 10,06:45,GMT,eur,EUR French Industrial Production (YoY),Low,-1.9%,-1.2%,-1.9%
+Tue Apr 10,06:45,GMT,eur,EUR French Manufacturing Production (MoM),Low,-1.2%,0.0%,-0.1%
+Tue Apr 10,06:45,GMT,eur,EUR French Manufacturing Production (YoY),Low,-3.7%,-1.7%,-1.7%
+Tue Apr 10,08:30,GMT,eur,EUR Euro-Zone Sentix Investor Confidence,Medium,-14.7,-9.1,-8.2
+Tue Apr 10,11:30,GMT,usd,USD NFIB Small Business Optimism ,Low,92.5,95.0,94.3
+Tue Apr 10,14:00,GMT,usd,USD IBD/TIPP Economic Optimism,Low,49.3,48.5,47.5
+Tue Apr 10,14:00,GMT,usd,USD Wholesale Inventories,Low,0.9%,0.5%,0.6%
+Tue Apr 10,16:30,GMT,usd,USD Fed's Fisher Speaks on the Economy in Oklahoma,Low,,,
+Tue Apr 10,16:45,GMT,usd,USD Fed's Lockhart Gives Welcome at Markets Conference in Georgia,Low,,,
+Tue Apr 10,18:30,GMT,usd,USD Fed's Kocherlakota Speaks in Minnesota,Low,,,
+Tue Apr 10,22:00,GMT,nzd,NZD NZIER Business Opinion Survey,Medium,13.0,,0
+Tue Apr 10,23:01,GMT,gbp,GBP BRC Sales Like-For-Like (YoY),Low,1.3%,0.0%,-0.3%
+Tue Apr 10,23:50,GMT,jpy,JPY Bank Lending Banks ex-Trust,Low,0.9%,0.7%,0.8%
+Tue Apr 10,23:50,GMT,jpy,JPY Bank Lending incl Trusts (YoY),Low,0.8%,,0.6%
+Tue Apr 10,23:50,GMT,jpy,JPY Machine Orders (YoY),Medium,8.9%,3.0%,5.7%
+Tue Apr 10,23:50,GMT,jpy,JPY Machine Orders (MoM),Medium,4.8%,-0.8%,3.4%
+Wed Apr 11,00:30,GMT,aud,AUD Westpac Consumer Confidence,Medium,-1.6%,,-5.0%
+Wed Apr 11,00:30,GMT,aud,AUD Westpac Consumer Confidence Index,Low,94.5,,96.1
+Wed Apr 11,01:30,GMT,aud,AUD Home Loans,Medium,-2.5%,-4.0%,-1.1%
+Wed Apr 11,01:30,GMT,aud,AUD Investment Lending,Low,4.4%,,-6.8%
+Wed Apr 11,01:30,GMT,aud,AUD Value of Loans (MoM),Low,-4.0%,,0.0%
+Wed Apr 11,06:00,GMT,eur,EUR German Wholesale Price Index (MoM),Low,0.9%,,1.0%
+Wed Apr 11,06:00,GMT,eur,EUR German Wholesale Price Index (YoY),Low,2.2%,,2.6%
+Wed Apr 11,11:00,GMT,usd,USD MBA Mortgage Applications,Low,-2.4%,,4.8%
+Wed Apr 11,12:15,GMT,cad,CAD Housing Starts,Medium,215.6K,200.0K,205.3K
+Wed Apr 11,12:20,GMT,USD,USD Fed's Lockhart Gives Opening and Closing Remarks at Georgia Conference,LOW,,,
+Wed Apr 11,12:30,GMT,usd,USD Import Price Index (MoM),Low,1.3%,0.8%,-0.1%
+Wed Apr 11,12:30,GMT,usd,USD Import Price Index (YoY),Low,3.4%,3.4%,5.0%
+Wed Apr 11,13:30,GMT,usd,USD Fed's George to Speak at Minsky Conference in New York,Low,,,
+Wed Apr 11,14:30,GMT,usd,USD Fed's Rosengren Speaks on Money Funds at Georgia Conference,Low,,,
+Wed Apr 11,14:30,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,2791K,2000K,9009K
+Wed Apr 11,14:30,GMT,usd,USD DOE Cushing OK Crude Inventory,Low,292K,,729K
+Wed Apr 11,14:30,GMT,usd,USD DOE U.S. Distillate Inventory,Low,-4000K,-250K,19K
+Wed Apr 11,14:30,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,-4277K,-1375K,-1457K
+Wed Apr 11,18:00,GMT,USD,USD Fed Releases Beige Book Economic Survey,Medium,,,
+Wed Apr 11,18:00,GMT,usd,USD Monthly Budget Statement,Medium,-$198.2B,-$196.0B,-$231.683B
+Wed Apr 11,21:00,GMT,USD,USD Fed's Bullard Delivers Opening Remarks in St. Louis,LOW,,,
+Wed Apr 11,22:30,GMT,nzd,NZD Business NZ Performance of Manufacturing Index,Medium,54.5,,57.7
+Wed Apr 11,22:45,GMT,nzd,NZD NZ Card Spending - Retail (MoM),Medium,0.3%,0.4%,-0.7%
+Wed Apr 11,22:45,GMT,nzd,NZD NZ Card Spending (MoM),Medium,-0.2%,0.5%,-0.3%
+Wed Apr 11,23:50,GMT,jpy,JPY Domestic Corporate Goods Price Index (MoM),Low,0.6%,0.4%,0.2%
+Wed Apr 11,23:50,GMT,jpy,JPY Domestic Corporate Goods Price Index (YoY),Low,0.6%,0.4%,0.6%
+Wed Apr 11,23:50,GMT,jpy,JPY Japan Money Stock M2+CD (YoY),Low,3.0%,2.8%,2.9%
+Wed Apr 11,23:50,GMT,jpy,JPY Japan Money Stock M3 (YoY),Low,2.6%,2.5%,2.5%
+Thu Apr 12,00:00,GMT,nzd,NZD QV House Prices (YoY),Low,3.0%,,2.9%
+Thu Apr 12,,,NZD,NZD REINZ Housing Price Index,LOW,,,3280.5
+Thu Apr 12,,,NZD,NZD REINZ Housing Price Index (MoM),LOW,,,0.8%
+Thu Apr 12,,,NZD,NZD REINZ House Sales (YoY),Medium,,,37.0%
+Thu Apr 12,01:00,GMT,aud,AUD Consumer Inflation Expectation,Medium,3.3%,,2.7%
+Thu Apr 12,01:00,GMT,NZD,NZD ANZ Consumer Confidence Index,LOW,,,110.2
+Thu Apr 12,01:00,GMT,NZD,NZD ANZ Consumer Confidence MoM,LOW,,,-2.7%
+Thu Apr 12,01:30,GMT,aud,AUD Part Time Employment Change,Medium,28.2K,,-15.4K
+Thu Apr 12,01:30,GMT,aud,AUD Full Time Employment Change,Medium,15.8K,,0.0K
+Thu Apr 12,01:30,GMT,aud,AUD Employment Change,High,44.0K,6.5K,-15.4K
+Thu Apr 12,01:30,GMT,aud,AUD Participation Rate,Low,65.4%,65.3%,65.2%
+Thu Apr 12,01:30,GMT,aud,AUD Unemployment Rate,High,5.2%,5.3%,5.2%
+Thu Apr 12,05:30,GMT,eur,EUR French CPI Ex Tobacco Index (MAR),Low,124.63,124.38,123.58
+Thu Apr 12,05:30,GMT,eur,EUR French CPI - EU Harmonised (YoY) [MAR],Medium,2.6%,2.3%,2.5%
+Thu Apr 12,05:30,GMT,eur,EUR French Consumer Price Index (MoM) (MAR),High,0.8%,0.6%,0.4%
+Thu Apr 12,05:30,GMT,eur,EUR France CPI - EU Harmonised (MoM) [MAR],Medium,0.9%,0.7%,0.5%
+Thu Apr 12,05:30,GMT,eur,EUR French Consumer Price Index (YoY) (MAR),High,2.3%,2.1%,2.3%
+Thu Apr 12,08:00,GMT,eur,EUR ECB Publishes April Monthly Report,High,,,
+Thu Apr 12,08:30,GMT,gbp,GBP Visible Trade Balance (Pounds),Medium,-£8772,-£7650,-£7883
+Thu Apr 12,08:30,GMT,gbp,GBP Trade Balance Non EU (Pounds),Low,-£5017,-£3825,-£3717
+Thu Apr 12,08:30,GMT,gbp,GBP Total Trade Balance (Pounds),Low,-£3396,-£2000,-£2501
+Thu Apr 12,09:00,GMT,eur,EUR Euro-Zone Industrial Production w.d.a. (YoY),Low,-1.8%,-1.8%,-1.7%
+Thu Apr 12,09:00,GMT,eur,EUR Euro-Zone Industrial Production s.a. (MoM),Medium,0.5%,-0.2%,0.0%
+Thu Apr 12,12:30,GMT,usd,USD Producer Price Index Ex Food & Energy (MoM),Low,0.3%,0.2%,0.2%
+Thu Apr 12,12:30,GMT,usd,USD Producer Price Index (YoY),Medium,2.8%,3.1%,3.3%
+Thu Apr 12,12:30,GMT,usd,USD Producer Price Index Ex Food & Energy (YoY),Medium,2.9%,2.8%,3.0%
+Thu Apr 12,12:30,GMT,usd,USD Initial Jobless Claims,Low,380K,355K,367K
+Thu Apr 12,12:30,GMT,usd,USD Continuing Claims,Low,3251K,3335K,3349K
+Thu Apr 12,12:30,GMT,cad,CAD New Housing Price Index (MoM),Low,0.3%,0.2%,0.1%
+Thu Apr 12,12:30,GMT,cad,CAD New Housing Price Index (YoY),Low,2.3%,,2.4%
+Thu Apr 12,12:30,GMT,cad,CAD International Merchandise Trade (Canadian dollar),Low,0.29B,2.20B,1.95B
+Thu Apr 12,12:30,GMT,usd,USD Trade Balance,Medium,-$46.0B,-$51.7B,-$52.5B
+Thu Apr 12,12:30,GMT,usd,USD Producer Price Index (MoM),Low,0.0%,0.3%,0.4%
+Thu Apr 12,13:00,GMT,EUR,EUR ECB's Praet Speaks in New York,LOW,,,
+Thu Apr 12,13:00,GMT,USD,USD Fed's Lockhart to Moderate Panel Discussion in Atlanta,LOW,,,
+Thu Apr 12,14:00,GMT,USD,USD New York Fed's Cumming to Speak on Panel in New York,LOW,,,
+Thu Apr 12,14:00,GMT,USD,USD Fed's Nellie Liang to Speak on Panel in New York,LOW,,,
+Thu Apr 12,14:30,GMT,usd,USD EIA Natural Gas Storage Change,Low,8,21,42
+Thu Apr 12,17:00,GMT,USD,USD Fed's Kocherlakota Speaks in Minnesota,LOW,,,
+Fri Apr 13,02:00,GMT,cny,CNY Industrial Production YTD (YoY),Medium,11.6%,11.3%,11.4%
+Fri Apr 13,02:00,GMT,cny,CNY Industrial Production (YoY),Medium,11.9%,11.6%,21.3%
+Fri Apr 13,02:00,GMT,cny,CNY Fixed Assets Inv Excl. Rural YTD (YoY),Medium,20.9%,21.0%,21.5%
+Fri Apr 13,02:00,GMT,cny,CNY Real GDP YTD (YoY),High,8.1%,8.4%,9.2%
+Fri Apr 13,02:00,GMT,cny,CNY Real GDP (QoQ),High,1.8%,1.9%,2.0%
+Fri Apr 13,02:00,GMT,cny,CNY Real GDP (YoY),High,8.1%,8.4%,8.9%
+Fri Apr 13,02:00,GMT,cny,CNY Retail Sales YTD (YoY),Medium,14.8%,14.8%,14.7%
+Fri Apr 13,02:00,GMT,cny,CNY Retail Sales (YoY),Medium,15.2%,15.1%,18.1%
+Fri Apr 13,06:00,GMT,eur,EUR German Consumer Price Index (MoM),Medium,0.3%,0.3%,0.3%
+Fri Apr 13,06:00,GMT,eur,EUR German Consumer Price Index (YoY),High,2.1%,2.1%,2.1%
+Fri Apr 13,06:00,GMT,eur,EUR German Consumer Price Index - EU Harmonised (MoM),Medium,0.4%,0.4%,0.4%
+Fri Apr 13,06:00,GMT,eur,EUR German Consumer Price Index - EU Harmonised (YoY),High,2.3%,2.3%,2.3%
+Fri Apr 13,08:30,GMT,gbp,GBP Producer Price Index Input n.s.a. (MoM),Low,1.9%,1.4%,2.5%
+Fri Apr 13,08:30,GMT,gbp,GBP Producer Price Index Output n.s.a. (MoM),Low,0.6%,0.5%,0.6%
+Fri Apr 13,08:30,GMT,gbp,GBP Producer Price Index Output n.s.a. (YoY),Medium,3.6%,3.5%,4.1%
+Fri Apr 13,08:30,GMT,gbp,GBP Producer Price Index Output Core n.s.a. (MoM),Low,0.1%,0.2%,0.5%
+Fri Apr 13,08:30,GMT,gbp,GBP Producer Price Index Output Core n.s.a. (YoY),Medium,2.5%,2.6%,3.0%
+Fri Apr 13,08:30,GMT,gbp,GBP Producer Price Index Input n.s.a. (YoY),Medium,5.8%,4.8%,7.8%
+Fri Apr 13,09:00,GMT,eur,EUR Italian CPI NIC Incl Tobacco (YoY) ,Low,3.3%,3.3%,3.3%
+Fri Apr 13,09:00,GMT,eur,EUR Italian CPI NIC Incl Tobacco (MoM) ,Low,0.5%,0.5%,0.5%
+Fri Apr 13,09:00,GMT,eur,EUR Italian CPI EU Harmonized (MoM) ,Low,2.5%,2.5%,2.5%
+Fri Apr 13,09:00,GMT,eur,EUR Italian CPI EU Harmonized (YoY) ,Low,3.8%,3.8%,3.8%
+Fri Apr 13,12:30,GMT,usd,USD Consumer Price Index Ex Food & Energy (MoM),Medium,0.2%,0.2%,0.1%
+Fri Apr 13,12:30,GMT,usd,USD Consumer Price Index Core Index s.a.,Low,228.432,,227.907
+Fri Apr 13,12:30,GMT,usd,USD Consumer Price Index n.s.a.,Low,229.392,229.254,227.663
+Fri Apr 13,12:30,GMT,usd,USD Consumer Price Index (YoY),High,2.7%,2.7%,2.9%
+Fri Apr 13,12:30,GMT,usd,USD Consumer Price Index Ex Food & Energy (YoY),High,2.3%,2.2%,2.2%
+Fri Apr 13,12:30,GMT,usd,USD Consumer Price Index (MoM),Medium,0.3%,0.3%,0.4%
+Fri Apr 13,13:55,GMT,usd,USD U. of Michigan Confidence,High,75.7,76.2,76.2

@@ -1,0 +1,143 @@
+Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Sun May 4,23:30,GMT,aud,AUD AiG Performance of Service Index,Medium,48.6,,48.9
+Mon May 5,00:30,GMT,aud,AUD TD Securities Inflation (MoM),Low,0.4%,,0.2%
+Mon May 5,00:30,GMT,aud,AUD TD Securities Inflation (YoY),Low,2.8%,,2.7%
+Mon May 5,01:30,GMT,aud,AUD Building Approvals (MoM),Low,-3.5%,2.0%,-5.4%
+Mon May 5,01:30,GMT,aud,AUD Building Approvals (YoY),Low,20.0%,31.2%,22.9%
+Mon May 5,01:30,GMT,aud,AUD ANZ Job Advertisements (MoM),Low,2.2%,,1.3%
+Mon May 5,01:45,GMT,cny,CNY HSBC China Manufacturing PMI,Medium,48.1,48.4,48.3
+Mon May 5,06:00,GMT,chf,CHF UBS Real Estate Bubble Index,Low,1.22,,1.23
+Mon May 5,08:30,GMT,eur,EUR Euro-Zone Sentix Investor Confidence,Medium,12.8,14.2,14.1
+Mon May 5,09:00,GMT,eur,EUR Euro-Zone Producer Price Index (MoM),Medium,-0.2%,-0.2%,-0.2%
+Mon May 5,09:00,GMT,eur,EUR Euro-Zone Producer Price Index (YoY),Medium,-1.6%,-1.7%,-1.7%
+Mon May 5,13:45,GMT,usd,USD Markit US Services PMI,Medium,55.0,54.5,54.2
+Mon May 5,13:45,GMT,usd,USD Markit US Composite PMI,Medium,55.6,,54.9
+Mon May 5,14:00,GMT,usd,USD ISM Non-Manufacutring Composite,Medium,55.2,54.0,53.1
+Tue May 6,01:30,GMT,aud,AUD Trade Balance (Australian Dollar),Medium,731M,1000M,1257M
+Tue May 6,04:30,GMT,aud,AUD Reserve Bank of Australia Rate Decision,High,2.50%,2.50%,2.50%
+Tue May 6,07:45,GMT,eur,EUR Italian Markit Composite PMI,Medium,52.6,,51.1
+Tue May 6,07:45,GMT,eur,EUR Italian Markit/ADACI Services PMI,Medium,51.1,50.5,49.5
+Tue May 6,07:50,GMT,eur,EUR French Markit Composite PMI,Medium,50.6,50.5,50.5
+Tue May 6,07:50,GMT,eur,EUR French Markit Services PMI,Medium,50.4,50.3,50.3
+Tue May 6,07:55,GMT,eur,EUR German Markit/BME Composite PMI,Medium,56.1,56.3,56.3
+Tue May 6,07:55,GMT,eur,EUR German Markit Services PMI,Medium,54.7,55.0,55.0
+Tue May 6,08:00,GMT,eur,EUR Euro-zone Markit Services PMI,Medium,53.1,53.1,53.1
+Tue May 6,08:00,GMT,eur,EUR Euro-zone Markit Composite PMI,Medium,54,54,54
+Tue May 6,08:30,GMT,gbp,GBP Markit/CIPS Composite PMI,Medium,55.1,,54.2
+Tue May 6,08:30,GMT,gbp,GBP Markit/CIPS Services PMI,Medium,58.7,57.8,57.6
+Tue May 6,08:30,GMT,eur,EUR EU Markit Composite PMI,Low,55.1,,54.2
+Tue May 6,08:30,GMT,gbp,GBP Official Reserves (Changes),Low,$139M,,-$660M
+Tue May 6,08:30,GMT,eur,EUR EU Markit Services PMI,Low,54.5,,53.5
+Tue May 6,09:00,GMT,eur,EUR Euro-Zone Retail s.a.les (MoM),Medium,0.3%,-0.2%,0.1%
+Tue May 6,09:00,GMT,eur,EUR Euro-Zone Retail s.a.les (YoY),Medium,0.9%,1.0%,1.0%
+Tue May 6,12:30,GMT,cad,CAD International Merchandise Trade (Canadian Dollar),Low,0.08B,0.30B,0.85B
+Tue May 6,12:30,GMT,usd,USD Trade Balance,Medium,$-40.4B,$-40.0B,$-41.9B
+Tue May 6,14:00,GMT,cad,CAD Ivey Purchasing Managers Index s.a.,Medium,54.1,54.5,55.2
+Tue May 6,14:00,GMT,usd,USD IBD/TIPP Economic Optimism,Low,45.8,47.5,48.0
+Tue May 6,22:45,GMT,nzd,NZD Unemployment Rate,Medium,6.0%,5.8%,6%
+Tue May 6,22:45,GMT,nzd,NZD Employment Change (QoQ),Medium,0.9%,0.6%,1.0%
+Tue May 6,22:45,GMT,nzd,NZD Employment Change (YoY),Medium,3.7%,3.4%,3.0%
+Tue May 6,22:45,GMT,nzd,NZD Participation Rate (QoQ),Medium,69.3,68.8%,68.9%
+Tue May 6,22:45,GMT,nzd,NZD Average Hourly Earnings (QoQ),Low,0.7%,1.0%,0.3%
+Tue May 6,22:45,GMT,nzd,NZD Private Wages Inc Overtime (QoQ) ,Low,0.3%,0.5%,0.6%
+Tue May 6,22:45,GMT,nzd,NZD Private Wages ex Overtime (QoQ),Low,0.3%,0.5%,0.6%
+Tue May 6,23:01,GMT,gbp,GBP BRC Shop Price Index (YoY),Low,-1.4%,-0.8%,-1.7%
+Tue May 6,23:15,GMT,jpy,JPY Markit Japan Services PMI,Medium,46.4,,52.2
+Tue May 6,23:15,GMT,jpy,JPY Markit/JMMA Japan Composite PMI,Medium,46.3,,52.8
+Tue May 6,23:30,GMT,aud,AUD AiG Performance of Construction Index,Low,45.9,,46.2
+Tue May 6,23:50,GMT,JPY,JPY Bank of Japan April 7-8 meeting minutes,High,,,
+Wed May 7,,,USD,USD Fed's Stein Speaks on the Economy in New York,Low,,,
+Wed May 7,01:30,GMT,aud,AUD Retail s.a.les Ex Inflation(QoQ),Medium,1.2%,1.6%,1.1%
+Wed May 7,01:30,GMT,aud,AUD Retail s.a.les s.a. (MoM),Medium,0.1%,0.4%,0.3%
+Wed May 7,01:45,GMT,cny,CNY HSBC China Services PMI,Medium,51.4,,51.9
+Wed May 7,01:45,GMT,cny,CNY HSBC China Composite PMI,Medium,49.5,,49.3
+Wed May 7,05:45,GMT,chf,CHF Unemployment Rate s.a.,Medium,3.2%,3.2%,3.2%
+Wed May 7,05:45,GMT,chf,CHF Unemployment Rate,Medium,3.2%,3.2%,3.3%
+Wed May 7,06:00,GMT,eur,EUR German Factory Orders n.s.a. (YoY),Medium,1.5%,4.3%,6.5%
+Wed May 7,06:00,GMT,eur,EUR German Factory Orders s.a. (MoM),Medium,-2.8%,0.3%,0.96%
+Wed May 7,06:30,GMT,aud,AUD Foreign Reserves (Australian dollar),Low,A$62.1B,,A$62.2B
+Wed May 7,07:00,GMT,chf,CHF Foreign Currency Reserves,Low,438.9B,,437.9B
+Wed May 7,07:30,GMT,eur,EUR German Markit Construction PMI,Low,49.7,,52.5
+Wed May 7,08:00,GMT,gbp,GBP New Car Registrations (YoY),Low,8.2%,,17.7%
+Wed May 7,08:10,GMT,eur,EUR German Markit Retail PMI,Low,53.1,,50.2
+Wed May 7,08:10,GMT,eur,EUR French Markit Retail PMI,Low,50.3,,50
+Wed May 7,08:10,GMT,eur,EUR Italian Markit Retail PMI,Low,49.5,,46.5
+Wed May 7,08:10,GMT,eur,EUR Euro-zone Markit Retail PMI,Low,51.2,,49.2
+Wed May 7,11:00,GMT,usd,USD MBA Mortgage Applications,Low,5.3%,,-5.9%
+Wed May 7,12:30,GMT,usd,USD Non-Farm Productivity,Low,-1.7%,-1.2%,2.3%
+Wed May 7,12:30,GMT,usd,USD Unit Labor Costs,Low,4.2%,2.6%,-0.4%
+Wed May 7,12:30,GMT,cad,CAD Building Permits (MoM),Medium,-3.0%,4.3%,-11.3%
+Wed May 7,14:00,GMT,usd,USD Fed's Yellen Testifies to Joint Economic Committee,High,,,
+Wed May 7,14:30,GMT,usd,DOE U.S. Gasoline Inventories,Low,1608K,500K,1564K
+Wed May 7,14:30,GMT,usd,DOE U.S. Distillate Inventory,Low,-447K,750K,1936K
+Wed May 7,14:30,GMT,usd,DOE U.S. Crude Oil Inventories,Low,-1781K,1250K,1698K
+Wed May 7,14:30,GMT,usd,DOE Cushing OK Crude Inventory,Low,-1395K,,-612K
+Wed May 7,19:00,GMT,usd,USD Consumer Credit,Low,$17.53B,$15.50B,$12.99B
+Wed May 7,23:01,GMT,gbp,GBP RICS House Price Balance,Low,54%,55%,57%
+Thu May 8,00:30,GMT,nzd,NZD QV House Prices (YoY),Low,8.4%,,8.8%
+Thu May 8,01:30,GMT,aud,AUD Full Time Employment Change,Medium,14.2K,,-22.7K
+Thu May 8,01:30,GMT,aud,AUD Participation Rate,Medium,64.7%,64.7%,64.8%
+Thu May 8,01:30,GMT,aud,AUD Employment Change,High,14.2K,8.8K,21.9K
+Thu May 8,01:30,GMT,aud,AUD Unemployment Rate,High,5.8%,5.9%,5.8%
+Thu May 8,01:30,GMT,aud,AUD Part Time Employment Change,Medium,0.0K,,44.6K
+Thu May 8,02:00,GMT,jpy,JPY Tokyo Avg Office Vacancies,Low,6.64,,6.7
+Thu May 8,02:18,GMT,cny,CNY Trade Balance,Medium,$18.46B,$16.7B,$7.7B
+Thu May 8,02:18,GMT,cny,CNY Exports (YoY),Medium,0.9%,-3.0%,-6.6%
+Thu May 8,02:18,GMT,cny,CNY Imports (YoY),Medium,0.8%,-2.1%,-11.3%
+Thu May 8,05:45,GMT,chf,CHF SECO Consumer Confidence,Low,1,3,2
+Thu May 8,06:00,GMT,eur,EUR German Industrial Production n.s.a. and w.d.a. (YoY),Medium,3.0%,4.4%,4.7%
+Thu May 8,06:00,GMT,eur,EUR German Industrial Production s.a. (MoM),Medium,-0.5%,0.2%,0.6%
+Thu May 8,07:00,GMT,gbp,GBP Halifax House Price (3MoY),Low,8.5%,9.1%,8.7%
+Thu May 8,07:00,GMT,gbp,GBP Halifax Plc House Prices s.a. (MoM),Low,-0.2%,0.9%,-1.2%
+Thu May 8,07:15,GMT,chf,CHF Consumer Price Index (MoM),High,0.1%,0.1%,0.4%
+Thu May 8,07:15,GMT,chf,CHF CPI EU Harmonized (MoM),Medium,0.1%,,0.6%
+Thu May 8,07:15,GMT,chf,CHF Consumer Price Index (YoY),High,0.0%,0.1%,0.0%
+Thu May 8,07:15,GMT,chf,CHF CPI EU Harmonized (YoY),Medium,0.1%,,-0.1%
+Thu May 8,11:00,GMT,gbp,GBP Bank of England Rate Decision,High,0.50%,0.50%,0.50%
+Thu May 8,11:00,GMT,gbp,GBP BOE Asset Purchase Target,High,375B,375B,375B
+Thu May 8,11:25,GMT,USD,USD Fed's Evans Speaks at Bank Regulation Conference in Chicago,Low,,,
+Thu May 8,11:30,GMT,USD,USD Fed's Tarullo Speaks at Bank Regulation Conference in Chicago,Low,,,
+Thu May 8,11:45,GMT,eur,EUR ECB Marginal Lending Facility,High,0.75%,0.75%,0.75%
+Thu May 8,11:45,GMT,eur,EUR ECB Deposit Facility Rate,High,0.00%,0.00%,0.00%
+Thu May 8,11:45,GMT,eur,EUR European Central Bank Rate Decision,High,0.25%,0.25%,0.25%
+Thu May 8,12:15,GMT,cad,CAD Housing Starts,Medium,194.8K,175.0,156.6K
+Thu May 8,12:30,GMT,cad,CAD New Housing Price Index (MoM),Medium,0.2%,0.2%,0.2%
+Thu May 8,12:30,GMT,usd,USD Continuing Claims,Medium,2685K,2758K,2761K
+Thu May 8,12:30,GMT,cad,CAD New Housing Price Index (YoY),Medium,1.6%,,1.5%
+Thu May 8,12:30,GMT,usd,USD Initial Jobless Claims,Medium,319K,325K,345K
+Thu May 8,12:30,GMT,eur,EUR ECB's Draghi Holds Press Conference After Rate Decision,High,,,
+Thu May 8,13:30,GMT,usd,USD Fed's Yellen Testifies on Economy to Senate Budget Committee,High,,,
+Thu May 8,14:30,GMT,usd,EIA Natural Gas Storage Change,Low,74,70,82
+Thu May 8,18:00,GMT,USD,USD Fed's Bullard Gives Welcome at Household Finance Conference,Low,,,
+Thu May 8,22:45,GMT,nzd,NZD Card Spending Retail (MoM),Low,0.3%,"0,6%",0.0%
+Thu May 8,22:45,GMT,nzd,NZD NZ Card Spending (MoM),Low,-0.4%,,-0.2%
+Thu May 8,23:50,GMT,jpy,JPY Official Reserve Assets,Low,$1282.8B,,$1279.3B
+Fri May 9,01:30,GMT,cny,CNY PPI (YoY),Low,-2.0%,-1.8%,-2.3%
+Fri May 9,01:30,GMT,cny,CNY CPI (YoY),Medium,1.8%,2%,2.4%
+Fri May 9,01:30,GMT,AUD,AUD RBA Statement on Monetary Policy,High,,,
+Fri May 9,05:00,GMT,jpy,JPY Leading Index,Medium,106.5,106.7,108.7
+Fri May 9,05:00,GMT,jpy,JPY Coincident Index,Medium,114.0,114.0,112.9
+Fri May 9,06:00,GMT,eur,EUR German Trade Balance (Euros),Medium,16.4B,17.4B,16.2B
+Fri May 9,06:00,GMT,eur,EUR German Current Account (Euros),Medium,19.5B,14.9B,13.8B
+Fri May 9,06:00,GMT,eur,EUR German Exports s.a. (MoM),Medium,-1.8%,1.3%,-1.4%
+Fri May 9,06:00,GMT,eur,EUR German Imports s.a. (MoM),Medium,-0.9%,0.6%,0.4%
+Fri May 9,08:30,GMT,gbp,GBP Manufacturing Production (YoY),Medium,3.3%,2.9%,3.9%
+Fri May 9,08:30,GMT,gbp,GBP Construction Output s.a. (MoM),Low,-1.0%,0.6%,-2.0%
+Fri May 9,08:30,GMT,gbp,GBP Industrial Production (MoM),Medium,-0.1%,-0.2%,0.8%
+Fri May 9,08:30,GMT,gbp,GBP Industrial Production (YoY),Medium,2.3%,2.4%,2.5%
+Fri May 9,08:30,GMT,gbp,GBP Manufacturing Production (MoM),Medium,0.5%,0.3%,1.0%
+Fri May 9,08:30,GMT,gbp,GBP Construction Output s.a. (YoY),Low,6.4%,7.1%,3.9%
+Fri May 9,08:30,GMT,gbp,GBP Visible Trade Balance (Pounds),Medium,-£8478,-£9000,-£8749
+Fri May 9,08:30,GMT,gbp,GBP Trade Balance Non EU (Pounds),Medium,-£3190,-£3000,-£2870
+Fri May 9,08:30,GMT,gbp,GBP Total Trade Balance (Pounds),Medium,-£1284,-£2000,-£1713
+Fri May 9,12:30,GMT,cad,CAD Unemployment Rate,High,6.9%,6.9%,6.9%
+Fri May 9,12:30,GMT,cad,CAD Full Time Employment Change,Medium,-30.9,,12.8
+Fri May 9,12:30,GMT,cad,CAD Part Time Employment Change,Medium,2.0,,30.1
+Fri May 9,12:30,GMT,cad,CAD Participation Rate,Medium,66.1%,66.3%,66.2%
+Fri May 9,12:30,GMT,cad,CAD Net Change in Employment,High,-28.9K,13.5K,42.9K
+Fri May 9,14:00,GMT,gbp,GBP NIESR Gross Domestic Product Estimate,Medium,1.0%,,0.8%
+Fri May 9,14:00,GMT,usd,USD JOLTs Job Openings,Medium,4014,4125,4125
+Fri May 9,14:00,GMT,usd,USD Wholes.a.le Trade s.a.les (MoM),Low,1.4%,1.1%,0.9%
+Fri May 9,14:00,GMT,usd,USD Wholes.a.le Inventories,Low,1.1%,0.5%,0.7%
+Sat May 10,,,USD,"USD Fed's Kocherlakota Speaks in St. Paul, MN",Low,,,
+Sat May 10,01:00,GMT,AUD,AUD Consumer Inflation Expectation,Low,,,2.4%

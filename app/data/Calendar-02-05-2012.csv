@@ -1,0 +1,127 @@
+Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Sun Feb 05,23:30,GMT,aud,AUD TD Securities Inflation (MoM),Low,0.2%,,0.5%
+Sun Feb 05,23:30,GMT,aud,AUD TD Securities Inflation (YoY),Medium,2.2%,,2.4%
+Mon Feb 06,,,JPY,JPY Machine Tool Orders (YoY),Medium,,,17.4%
+Mon Feb 06,,,JPY,JPY Tokyo Avg Office Vacancies (%),LOW,,,9.01
+Mon Feb 06,00:01,GMT,gbp,GBP Lloyds Employment Confidence,Low,-73,,-75
+Mon Feb 06,00:30,GMT,aud,AUD ANZ Job Advertisements (MoM),Low,6.0%,,-0.6%
+Mon Feb 06,00:30,GMT,aud,AUD Retail Sales Ex Inflation(QoQ),Medium,0.4%,0.6%,0.5%
+Mon Feb 06,00:30,GMT,aud,AUD Retail Sales s.a. (MoM),Medium,-0.1%,0.2%,0.1%
+Mon Feb 06,00:35,GMT,cny,CNY Leading Index,Low,100.25,,100.33
+Mon Feb 06,08:00,GMT,gbp,GBP Halifax Plc House Prices s.a. (MoM),Low,0.6%,0.1%,-1.0%
+Mon Feb 06,08:00,GMT,gbp,GBP Halifax House Price (3MoY),Low,-1.8%,-2.1%,-1.3%
+Mon Feb 06,09:30,GMT,eur,EUR Euro-Zone Sentix Investor Confidence,Medium,-11.1,-16.5,-21.1
+Mon Feb 06,11:00,GMT,eur,EUR German Factory Orders n.s.a. (YoY),Medium,0.0%,-0.4%,-4.3%
+Mon Feb 06,11:00,GMT,eur,EUR German Factory Orders s.a. (MoM),Medium,1.7%,1.0%,-4.9%
+Mon Feb 06,13:55,GMT,USD,USD Fed's Bullard Speaks on Inflation Targeting in Chicago,LOW,,,
+Mon Feb 06,15:00,GMT,cad,CAD Ivey Purchasing Managers Index s.a.,Medium,64.1,59.7,63.5
+Mon Feb 06,17:15,GMT,USD,USD Fed's Fisher Speaks on Economy in Washington,LOW,,,
+Mon Feb 06,21:45,GMT,nzd,NZD Average Hourly Earnings (QoQ),Medium,0.0%,0.5%,1.3%
+Mon Feb 06,21:45,GMT,nzd,NZD Private Wages ex Overtime (QoQ),Low,0.7%,0.5%,0.5%
+Mon Feb 06,21:45,GMT,nzd,NZD Labor Cost Private Sector (QoQ),Low,0.7%,0.5%,0.5%
+Mon Feb 06,22:30,GMT,aud,AUD AiG Performance of Construction Index,Medium,39.8,,41
+Mon Feb 06,23:50,GMT,jpy,JPY Official Reserve Assets,Low,$1306.7B,,$1295.8B
+Tue Feb 07,00:00,GMT,gbp,GBP New Car Registrations (YoY),Low,0.0%,,-3.7%
+Tue Feb 07,00:01,GMT,gbp,GBP BRC Sales Like-For-Like (YoY),Low,-0.3%,-0.8%,2.2%
+Tue Feb 07,03:30,GMT,aud,AUD Reserve Bank of Australia Rate Decision,High,4.25%,4.00%,4.25%
+Tue Feb 07,05:00,GMT,aud,AUD Foreign Reserves (Australian dollar),Low,A$46.8B,,A$46.1B
+Tue Feb 07,05:00,GMT,jpy,JPY Coincident Index,Low,93.2,93.1,90.3
+Tue Feb 07,05:00,GMT,jpy,JPY Leading Index,Medium,94.3,93.8,93.7
+Tue Feb 07,07:45,GMT,eur,EUR French Trade Balance (euros),Low,-4993M,-5350M,-4140M
+Tue Feb 07,08:00,GMT,chf,CHF Foreign Currency Reserves,Low,227.2B,,254.3B
+Tue Feb 07,11:00,GMT,eur,EUR German Industrial Production s.a. (MoM),Low,-2.9%,0.0%,0.0%
+Tue Feb 07,11:00,GMT,eur,EUR German Industrial Production n.s.a. and w.d.a. (YoY),Medium,0.9%,4.3%,4.4%
+Tue Feb 07,13:30,GMT,cad,CAD Building Permits (MoM),Low,11.1%,1.0%,-2.6%
+Tue Feb 07,15:00,GMT,usd,USD JOLTs Job Openings ,Low,3376,3250,3118
+Tue Feb 07,15:00,GMT,usd,USD IBD TIPP Economic Optimism ,Low,49.4,48.1,47.5
+Tue Feb 07,20:00,GMT,usd,USD Consumer Credit,Medium,$19.308B,$7.000B,$20.374B
+Tue Feb 07,23:50,GMT,jpy,JPY Bank Lending Banks ex-Trust,Low,0.7%,,0.5%
+Tue Feb 07,23:50,GMT,jpy,JPY Bank Lending incl Trusts (YoY),Low,0.6%,0.6%,0.4%
+Tue Feb 07,23:50,GMT,jpy,JPY Current Account Total (Yen),Low,¥303.5B,¥340.1B,¥138.5B
+Tue Feb 07,23:50,GMT,jpy,JPY Adjusted Current Account Total (Yen),Low,¥752.3B,¥625.3B,¥480.4B
+Tue Feb 07,23:50,GMT,jpy,JPY Current Account Balance (YoY),Low,-74.7%,-71.2%,-85.5%
+Tue Feb 07,23:50,GMT,jpy,JPY Trade Balance - BOP Basis (Yen),Medium,-¥145.8B,-¥135.0B,-¥585.1B
+Wed Feb 08,00:01,GMT,gbp,GBP BRC Shop Price Index (YoY),Low,1.4%,,1.7%
+Wed Feb 08,04:30,GMT,jpy,JPY Bankruptcies (YoY),Low,-5.4%,,-6.3%
+Wed Feb 08,05:00,GMT,jpy,JPY Eco Watchers Survey: Current,Medium,,47.4,47.0
+Wed Feb 08,05:00,GMT,jpy,JPY Eco Watchers Survey: Outlook,Medium,,45.5,44.4
+Wed Feb 08,06:45,GMT,chf,CHF Unemployment Rate,Medium,3.4%,3.5%,3.3%
+Wed Feb 08,06:45,GMT,chf,CHF Unemployment Rate s.a.,Medium,3.1%,3.1%,3.1%
+Wed Feb 08,07:00,GMT,eur,EUR German Exports s.a. (MoM),Low,-4.3%,-1.0%,2.6%
+Wed Feb 08,07:00,GMT,eur,EUR German Imports s.a. (MoM),Low,-3.9%,0.8%,-0.2%
+Wed Feb 08,07:00,GMT,eur,EUR German Current Account (euros),Low,19.3B,15.2B,14.7B
+Wed Feb 08,07:00,GMT,eur,EUR German Trade Balance (euros),Medium,12.9B,13.7B,15.9B
+Wed Feb 08,07:30,GMT,eur,EUR Bank of France Business Sentiment,Low,96,96,96
+Wed Feb 08,07:45,GMT,eur,EUR French Central Government Balance (euros),Low,-90.8B,-90.8B,-97.2B
+Wed Feb 08,12:00,GMT,usd,USD MBA Mortgage Applications,Low,7.5%,,-2.9%
+Wed Feb 08,13:15,GMT,cad,CAD Housing Starts,Medium,197.9K,194.0K,199.9K
+Wed Feb 08,15:30,GMT,USD,USD Fed's Williams Speaks on Economy in San Ramon, California,LOW,,,
+Wed Feb 08,15:30,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,304K,2500K,4175K
+Wed Feb 08,15:30,GMT,usd,USD DOE Cushing OK Crude Inventory,Low,367K,,1476K
+Wed Feb 08,15:30,GMT,usd,USD DOE U.S. Distillate Inventory,Low,1174K,-875K,-135K
+Wed Feb 08,15:30,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,1629K,875K,3017K
+Wed Feb 08,21:45,GMT,nzd,NZD Unemployment Rate,Medium,6.3%,6.5%,6.6%
+Wed Feb 08,21:45,GMT,nzd,NZD Employment Change (QoQ),Medium,0.1%,0.4%,0.2%
+Wed Feb 08,21:45,GMT,nzd,NZD Employment Change (YoY),Medium,1.6%,1.9%,1.1%
+Wed Feb 08,21:45,GMT,nzd,NZD Participation Rate (QoQ),Low,68.2%,68.5%,68.40%
+Wed Feb 08,23:50,GMT,jpy,JPY Housing Loans (YoY),Medium,2.20%,,2.10%
+Wed Feb 08,23:50,GMT,jpy,JPY Japan Money Stock M2+CD (YoY),Low,3.0%,3.1%,3.2%
+Wed Feb 08,23:50,GMT,jpy,JPY Japan Money Stock M3 (YoY),Low,2.6%,2.6%,2.6%
+Wed Feb 08,23:50,GMT,jpy,JPY Machine Orders (MoM),Low,-7.1%,-5.0%,14.8%
+Wed Feb 08,23:50,GMT,jpy,JPY Machine Orders (YoY),Medium,6.3%,8.5%,12.5%
+Thu Feb 09,01:30,GMT,cny,CNY Producer Price Index (YoY),High,0.7%,0.8%,1.7%
+Thu Feb 09,01:30,GMT,cny,CNY Consumer Price Index (YoY),High,4.5%,4.0%,4.1%
+Thu Feb 09,05:00,GMT,jpy,JPY Consumer Confidence,Medium,40.0,38.5,38.9
+Thu Feb 09,06:45,GMT,chf,CHF SECO Consumer Confidence,Medium,-19,-22,-24
+Thu Feb 09,07:45,GMT,eur,EUR French Survey of Industrial Investments,Medium,,,
+Thu Feb 09,09:30,GMT,gbp,GBP Industrial Production (MoM),Low,0.5%,0.2%,-0.5%
+Thu Feb 09,09:30,GMT,gbp,GBP Industrial Production (YoY),Medium,-3.3%,-3.1%,-3.6%
+Thu Feb 09,09:30,GMT,gbp,GBP Manufacturing Production (MoM),Low,1.0%,0.2%,-0.1%
+Thu Feb 09,09:30,GMT,gbp,GBP Manufacturing Production (YoY),Medium,0.8%,0.3%,-1.0%
+Thu Feb 09,09:30,GMT,gbp,GBP Visible Trade Balance (Pounds),Medium,-£7111,-£8908,-£8644
+Thu Feb 09,09:30,GMT,gbp,GBP Trade Balance Non EU (Pounds),Low,-£3748,-£5000,-£5037
+Thu Feb 09,09:30,GMT,gbp,GBP Total Trade Balance (Pounds),Low,-£1109,-£2700,-£2830
+Thu Feb 09,12:00,GMT,gbp,GBP BOE Asset Purchase Target,High,325B,325B,275B
+Thu Feb 09,12:00,GMT,gbp,GBP Bank of England Rate Decision,High,0.50%,0.50%,0.50%
+Thu Feb 09,12:45,GMT,eur,EUR European Central Bank Rate Decision,High,1.00%,1.00%,1.00%
+Thu Feb 09,13:30,GMT,cad,CAD New Housing Price Index (YoY),Low,0.1%,0.2%,0.3%
+Thu Feb 09,13:30,GMT,cad,CAD New Housing Price Index (YoY),Low,2.5%,2.5%,2.5%
+Thu Feb 09,13:30,GMT,usd,USD Initial Jobless Claims,Low,358K,370K,373K
+Thu Feb 09,13:30,GMT,usd,USD Continuing Claims,Low,3515K,3505K,3451K
+Thu Feb 09,15:00,GMT,usd,USD Wholesale Inventories,Low,1.0%,0.4%,0.0%
+Thu Feb 09,15:00,GMT,gbp,GBP NIESR Gross Domestic Product Estimate,High,-0.2%,,-0.2%
+Thu Feb 09,15:30,GMT,usd,USD EIA Natural Gas Storage Change,Low,-78,-86,-132
+Thu Feb 09,21:45,GMT,nzd,NZD NZ Card Spending - Retail (MoM),Medium,1.2%,0.5%,-0.2%
+Thu Feb 09,21:45,GMT,nzd,NZ Card Spending (MoM),Medium,1.0%,0.7%,-0.1%
+Thu Feb 09,23:50,GMT,jpy,JPY Domestic Corporate Goods Price Index (MoM),Low,-0.1%,0.1%,0.0%
+Thu Feb 09,23:50,GMT,jpy,JPY Domestic Corporate Goods Price Index (YoY),Low,0.5%,0.8%,1.2%
+Fri Feb 10,00:30,GMT,AUD,AUD Reserve Bank Board Statement on Monetary Policy,HIGH,,,
+Fri Feb 10,03:04,GMT,cny,CNY Trade Balance (USD),Medium,$27.28B,$10.40B,$16.52B
+Fri Feb 10,03:04,GMT,cny,CNY Exports (YoY),Low,-0.5%,-1.4%,13.4%
+Fri Feb 10,03:04,GMT,cny,CNY Imports (YoY),Low,-15.3%,-3.6%,11.8%
+Fri Feb 10,07:00,GMT,eur,EUR German Consumer Price Index (YoY),High,2.1%,2.0%,2.0%
+Fri Feb 10,07:00,GMT,eur,EUR German Consumer Price Index - EU Harmonised (YoY),High,2.3%,2.3%,2.3%
+Fri Feb 10,07:00,GMT,eur,EUR German Consumer Price Index (MoM),Medium,-0.4%,-0.4%,-0.4%
+Fri Feb 10,07:00,GMT,eur,EUR German Consumer Price Index - EU Harmonised (MoM),Medium,-0.5%,-0.5%,-0.5%
+Fri Feb 10,07:45,GMT,eur,EUR French Current Account (euros),Low,-3.0B,,-2.1B
+Fri Feb 10,07:45,GMT,eur,EUR French Manufacturing Production (MoM),Low,-1.4%,-1.0%,1.4%
+Fri Feb 10,07:45,GMT,eur,EUR French Manufacturing Production (YoY),Low,0.8%,0.9%,2.6%
+Fri Feb 10,07:45,GMT,eur,EUR French Industrial Production (MoM),Low,-1.4%,-0.87,1.1%
+Fri Feb 10,07:45,GMT,eur,EUR French Industrial Production (YoY),Low,-1.3%,-0.6%,1.1%
+Fri Feb 10,08:15,GMT,chf,CHF Consumer Price Index (MoM),Medium,-0.4%,-0.3%,-0.2%
+Fri Feb 10,08:15,GMT,chf,CHF Consumer Price Index (YoY),High,-0.8%,-0.8%,-0.7%
+Fri Feb 10,08:15,GMT,chf,CHF CPI - EU Harmonised (MoM),Medium,,-0.5%,0.3%
+Fri Feb 10,08:15,GMT,chf,CHF CPI - EU Harmonised (YoY),High,,-0.7%,-0.4%
+Fri Feb 10,09:00,GMT,eur,EUR Italian Industrial Production s.a. (MoM),Low,1.4%,-0.5%,0.3%
+Fri Feb 10,09:00,GMT,eur,EUR Italian Industrial Production w.d.a. (YoY),Low,-1,7%,-4.6%,-4.1%
+Fri Feb 10,09:00,GMT,eur,EUR Italian Industrial Production n.s.a. (YoY),Low,-7.7%,-7.2%,-4.1%
+Fri Feb 10,09:30,GMT,gbp,GBP Producer Price Index Input n.s.a. (MoM),Low,0.5%,0.2%,-0.6%
+Fri Feb 10,09:30,GMT,gbp,GBP Producer Price Index Input n.s.a. (YoY),Medium,7.0%,6.8%,8.9%
+Fri Feb 10,09:30,GMT,gbp,GBP Producer Price Index Output n.s.a. (MoM),Low,0.5%,0.1%,-0.2%
+Fri Feb 10,09:30,GMT,gbp,GBP Producer Price Index Output n.s.a. (YoY),Medium,4.1%,3.7%,4.8%
+Fri Feb 10,09:30,GMT,gbp,GBP Producer Price Index Output Core n.s.a. (MoM),Low,0.3%,0.0%,-0.1%
+Fri Feb 10,09:30,GMT,gbp,GBP Producer Price Index Output Core n.s.a. (YoY),Medium,2.4%,2.3%,3.0%
+Fri Feb 10,13:30,GMT,cad,CAD International Merchandise Trade (Canadian dollar),Low,2.69B,0.80B,1.17B
+Fri Feb 10,13:30,GMT,usd,USD Trade Balance,Medium,-$48.8B,-$48.5B,-$47.1B
+Fri Feb 10,14:55,GMT,usd,USD U. of Michigan Confidence,High,72.5,74.0,75.0
+Fri Feb 10,19:00,GMT,usd,USD Monthly Budget Statement,Medium,-$27.4B,-$31.6B,-$49.8B

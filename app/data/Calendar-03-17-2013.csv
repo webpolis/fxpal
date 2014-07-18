@@ -1,0 +1,141 @@
+Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Sun Mar 17,21:00,GMT,NZD,NZD Westpac NZ Consumer Confidence,Medium,110.8,,111.1
+Sun Mar 17,21:30,GMT,nzd,NZD Performance Services Index,Low,55.5,,52.8
+Mon Mar 18,00:01,GMT,gbp,GBP Rightmove House Prices (MoM),Low,1.7%,,2.8%
+Mon Mar 18,00:01,GMT,gbp,GBP Rightmove House Prices (YoY),Medium,1.2%,,1.1%
+Mon Mar 18,00:30,GMT,aud,AUD New Motor Vehicle Sales (MoM),Low,0.0%,,-2.2%
+Mon Mar 18,00:30,GMT,aud,AUD New Motor Vehicle Sales (YoY),Low,9.4%,,10.9%
+Mon Mar 18,01:30,GMT,CNY,CNY China February Property Prices,Medium,,,
+Mon Mar 18,06:45,GMT,CHF,CHF SECO March 2013 Economic Forecasts,Medium,,,
+Mon Mar 18,10:00,GMT,eur,EUR Euro-Zone Trade Balance s.a. (euros),Low,9.0B,10.9B,10.3B
+Mon Mar 18,10:00,GMT,eur,EUR Euro-Zone Trade Balance (euros),Low,-3.9B,-3.5B,10.8B
+Mon Mar 18,12:30,GMT,cad,CAD International Securities Transactions (Canadian dollar),Low,13.34B,,-1.92B
+Mon Mar 18,14:00,GMT,usd,USD NAHB Housing Market Index,Low,44,47,46
+Tue Mar 19,,,jpy,JPY Bank of Japan Governor Shirakawa Steps Down,High,,,
+Tue Mar 19,00:30,GMT,AUD,AUD RBA Policy Meeting - March Minutes,High,,,
+Tue Mar 19,02:00,GMT,cny,CNY Actual FDI (YoY),Medium,6.3%,-4.8%,-7.3%
+Tue Mar 19,02:00,GMT,cny,CNY Conference Board China February Leading Economic Index,Low,257.5,,254.3
+Tue Mar 19,05:00,GMT,jpy,JPY Leading Index,Medium,95.0,,96.3
+Tue Mar 19,05:00,GMT,jpy,JPY Coincident Index,Low,91.6,,92.0
+Tue Mar 19,05:30,GMT,jpy,JPY Nationwide Department Store Sales (YoY),Low,0.3%,,0.2%
+Tue Mar 19,05:30,GMT,jpy,JPY Tokyo Department Store Sales (YoY),Low,2.5%,,0.5%
+Tue Mar 19,06:30,GMT,jpy,JPY BOJ Shirakawa Holds Farewell News Conference ,Medium,,,
+Tue Mar 19,07:00,GMT,eur,EUR EU 25 New Car Registrations,Low,-10.5%,,-8.7%
+Tue Mar 19,09:30,GMT,gbp,GBP Producer Price Index Input n.s.a. (MoM),Low,3.2%,1.5%,1.3%
+Tue Mar 19,09:30,GMT,gbp,GBP Producer Price Index Input n.s.a. (YoY),Low,2.5%,0.8%,1.9%
+Tue Mar 19,09:30,GMT,gbp,GBP Core Consumer Price Index (YoY),High,2.3%,2.2%,2.3%
+Tue Mar 19,09:30,GMT,gbp,GBP Retail Price Index,Low,247.6,247.8,245.8
+Tue Mar 19,09:30,GMT,gbp,GBP Producer Price Index Output n.s.a. (MoM),Low,0.8%,0.4%,0.2%
+Tue Mar 19,09:30,GMT,gbp,GBP Producer Price Index Output n.s.a. (YoY),Medium,2.3%,1.8%,2.1%
+Tue Mar 19,09:30,GMT,gbp,GBP Producer Price Index Output Core n.s.a. (MoM),Low,0.3%,0.3%,0.3%
+Tue Mar 19,09:30,GMT,gbp,GBP Producer Price Index Output Core n.s.a. (YoY),Medium,1.3%,1.1%,1.4%
+Tue Mar 19,09:30,GMT,gbp,GBP DCLG UK House Prices (YoY),Low,2.2%,2.4%,3.3%
+Tue Mar 19,09:30,GMT,gbp,GBP Consumer Price Index (MoM),Medium,0.7%,0.7%,-0.5%
+Tue Mar 19,09:30,GMT,gbp,GBP Consumer Price Index (YoY),High,2.8%,2.8%,2.7%
+Tue Mar 19,09:30,GMT,gbp,GBP Retail Price Index (MoM),Low,0.7%,0.8%,-0.4%
+Tue Mar 19,09:30,GMT,gbp,GBP Retail Price Index (YoY),Medium,3.2%,3.3%,3.3%
+Tue Mar 19,09:30,GMT,gbp,GBP Retail Price Index Ex Mort Int.Payments (YoY),Low,3.2%,3.2%,3.3%
+Tue Mar 19,10:00,GMT,eur,EUR Euro-Zone Construction Output w.d.a. (YoY),Low,-7.3%,,-4.6%
+Tue Mar 19,10:00,GMT,eur,EUR Euro-Zone Construction Output s.a. (MoM),Low,-1.4%,,0.3%
+Tue Mar 19,10:00,GMT,eur,EUR Euro-Zone ZEW Survey (Economic Sentiment),Medium,33.4,,42.4
+Tue Mar 19,10:00,GMT,eur,EUR German ZEW Survey (Current Situation),Medium,13.6,6,5.2
+Tue Mar 19,10:00,GMT,eur,EUR German ZEW Survey (Economic Sentiment),High,48.5,48.1,48.2
+Tue Mar 19,12:30,GMT,usd,USD Housing Starts (MoM),Medium,0.8%,2.8%,-7.3%
+Tue Mar 19,12:30,GMT,usd,USD Building Permits (MoM),Medium,4.6%,2.3%,-0.6%
+Tue Mar 19,12:30,GMT,cad,CAD Wholesale Sales (MoM),Low,0.3%,0.4%,-1.1%
+Tue Mar 19,12:30,GMT,cad,CAD Manufacturing Shipments (MoM),Low,-0.2%,0.6%,-3.3%
+Tue Mar 19,12:30,GMT,usd,USD Housing Starts,Low,917K,915K,910K
+Tue Mar 19,12:30,GMT,usd,USD Building Permits,Low,946K,925K,904K
+Tue Mar 19,16:00,GMT,eur,EUR Cyprus Parliament to Vote on Deposit Levy for EU Bailout Plan,High,,,
+Tue Mar 19,21:45,GMT,nzd,NZD Current Account Balance,Medium,-3.255B,-2.950B,-4.385B
+Tue Mar 19,21:45,GMT,nzd,NZD Current Account Deficit-GDP Ratio,Low,-5.0%,-4.9%,-4.7%
+Tue Mar 19,23:30,GMT,aud,AUD Westpac Leading Index (MoM),Low,0.3%,,0.3%
+Wed Mar 20,00:00,GMT,aud,AUD DEWR Internet Skilled Vacancies (MoM),Low,-1.5%,,-1.7%
+Wed Mar 20,07:00,GMT,eur,EUR German Producer Prices (MoM),Low,-0.1%,0.2%,0.8%
+Wed Mar 20,07:00,GMT,eur,EUR German Producer Prices (YoY),Medium,1.2%,1.5%,1.7%
+Wed Mar 20,09:00,GMT,eur,EUR Euro-Zone Current Account n.s.a. (euros),Low,-4.5B,,29.0B
+Wed Mar 20,09:00,GMT,eur,EUR Euro-Zone Current Account s.a. (euros),Low,14.8B,,16.0B
+Wed Mar 20,09:30,GMT,GBP,GBP Bank of England Releases Monetary Policy Committee Minutes,High,,,
+Wed Mar 20,09:30,GMT,gbp,GBP Claimant Count Rate,Medium,4.7%,4.7%,4.7%
+Wed Mar 20,09:30,GMT,gbp,GBP Jobless Claims Change,High,-1.5K,-5.0K,-10.0K
+Wed Mar 20,09:30,GMT,gbp,GBP Average Weekly Earnings (3M/YoY),Medium,1.2%,1.5%,1.3%
+Wed Mar 20,09:30,GMT,gbp,GBP Weekly Earnings exBonus (3M/YoY),Low,1.2%,1.5%,1.3%
+Wed Mar 20,09:30,GMT,gbp,GBP ILO Unemployment Rate (3M),Medium,7.8%,7.8%,7.8%
+Wed Mar 20,09:30,GMT,gbp,GBP Employment Change (3M/3M),Medium,131K,140K,154K
+Wed Mar 20,10:00,GMT,chf,CHF ZEW Survey (Expectations),Medium,2.3,,10
+Wed Mar 20,11:00,GMT,usd,USD MBA Mortgage Applications,Low,-7.1%,,-4.7%
+Wed Mar 20,12:30,GMT,GBP,GBP U.K. Chancellor Osborne Presents 2013 Budget to Parliament,High,,,
+Wed Mar 20,13:00,GMT,cad,CAD Teranet/National Bank HPI (MoM),Low,-0.2%,,-0.3%
+Wed Mar 20,13:00,GMT,cad,CAD Teranet/National Bank HPI (YoY),Low,2.7%,,2.7%
+Wed Mar 20,13:00,GMT,cad,CAD Teranet/National Bank HP Index,Low,152.7,,153.0
+Wed Mar 20,14:30,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,2000K,-1314K,2624K
+Wed Mar 20,14:30,GMT,usd,USD DOE Cushing OK Crude Inventory,Low,-286K,,-1526K
+Wed Mar 20,14:30,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,-2000K,-1476K,-3571K
+Wed Mar 20,14:30,GMT,usd,USD DOE U.S. Distillate Inventory,Low,-1000K,-672K,83K
+Wed Mar 20,15:00,GMT,eur,EUR Euro-Zone Consumer Confidence,Medium,-23.5,-23.2,-23.6
+Wed Mar 20,18:00,GMT,usd,USD Federal Open Market Committee Rate Decision,High,0.25%,0.25%,0.25%
+Wed Mar 20,18:00,GMT,usd,USD Federal Reserve FOMC Meeting,High,,,
+Wed Mar 20,18:00,GMT,USD,USD Fed Releases Summary of Economic Projections,High,,,
+Wed Mar 20,18:30,GMT,USD,USD Fed's Bernanke Holds Press Conference in Washington,High,,,
+Wed Mar 20,21:45,GMT,nzd,NZD Gross Domestic Product (YoY),High,3.0%,2.3%,2.0%
+Wed Mar 20,21:45,GMT,nzd,NZD Gross Domestic Product (QoQ),High,1.5%,0.9%,0.2%
+Wed Mar 20,23:50,GMT,jpy,JPY Merchandise Trade Balance Total (Yen),Medium,-¥777.5B,-¥855.9B,-¥1630.9B
+Wed Mar 20,23:50,GMT,jpy,JPY Adjusted Merchandise Trade Balance (Yen),Low,-¥1086.6B,-¥1102.8B,-¥737.3B
+Wed Mar 20,23:50,GMT,jpy,JPY Merchandise Trade Exports (YoY),Low,-2.9,-1.7,6.4
+Wed Mar 20,23:50,GMT,jpy,JPY Merchandise Trade Imports (YoY),Low,11.9,15.0,7.3
+Thu Mar 21,00:00,GMT,aud,AUD CBAHIA House Affordability,Low,68.9,,65.8
+Thu Mar 21,00:30,GMT,aud,AUD RBA Foreign Exchange Transaction (Australian dollar),Low,328M,,393M
+Thu Mar 21,01:45,GMT,cny,CNY HSBC Flash Manufacturing PMI,Medium,51.7,50.8,50.4
+Thu Mar 21,02:00,GMT,nzd,NZD Credit Card Spending s.a. (MoM),Medium,3.3%,,-2.5%
+Thu Mar 21,02:00,GMT,nzd,NZD Credit Card Spending (YoY),Medium,4.7%,,0.5%
+Thu Mar 21,04:30,GMT,jpy,JPY All Industry Activity Index (MoM),Medium,-1.4%,-1.4%,1.6%
+Thu Mar 21,05:00,GMT,jpy,JPY Supermarket Sales (YoY),Low,-5.5%,,-4.7%
+Thu Mar 21,07:00,GMT,chf,CHF Trade Balance (Swiss franc),Medium,2.10B,2.00B,2.12B
+Thu Mar 21,07:00,GMT,chf,CHF Exports (MoM),Low,-2.6%,,3.7%
+Thu Mar 21,07:00,GMT,chf,CHF Imports (MoM),Low,-5.4%,,-1.3%
+Thu Mar 21,07:00,GMT,jpy,JPY Convenience Store Sales (YoY),Low,-4.7%,,-0.9%
+Thu Mar 21,08:00,GMT,eur,EUR French Purchasing Manager Index Manufacturing,Low,43.9,44.2,43.9
+Thu Mar 21,08:00,GMT,eur,EUR French Purchasing Manager Index Services,Low,41.9,44.0,43.7
+Thu Mar 21,08:00,GMT,chf,CHF Money Supply M3 (YoY),Low,9.8%,,9.4%
+Thu Mar 21,08:30,GMT,eur,EUR German Purchasing Manager Index Manufacturing,Medium,48.9,50.5,50.3
+Thu Mar 21,08:30,GMT,eur,EUR German Purchasing Manager Index Services,Medium,51.6,55.0,54.7
+Thu Mar 21,09:00,GMT,jpy,Kuroda Holds First Press Conference as Governor of BOJ,High,,,
+Thu Mar 21,09:00,GMT,eur,EUR Euro-Zone Purchasing Manager Index Services,Medium,46.5,48.2,47.9
+Thu Mar 21,09:00,GMT,eur,EUR Euro-Zone Purchasing Manager Index Manufacturing,Medium,46.6,48.2,47.9
+Thu Mar 21,09:00,GMT,eur,EUR Euro-Zone Purchasing Manager Index Composite,Medium,46.5,48.2,47.9
+Thu Mar 21,09:30,GMT,gbp,GBP Public Sector Net Borrowing (Pounds),Medium,4.4B,8.2B,-10.3B
+Thu Mar 21,09:30,GMT,gbp,GBP Retail Sales w/Auto Fuel (MoM),Low,2.1%,0.4%,-0.7%
+Thu Mar 21,09:30,GMT,gbp,GBP Retail Sales w/Auto Fuel (YoY),Medium,2.6%,0.5%,-0.5%
+Thu Mar 21,09:30,GMT,gbp,GBP Public Finances (PSNCR) (Pounds),Medium,-1.5B,-12.0B,-20.7B
+Thu Mar 21,09:30,GMT,gbp,GBP PSNB ex Interventions,Medium,2.8B,8.0B,-11.9B
+Thu Mar 21,09:30,GMT,gbp,GBP Retail Sales (MoM),Low,1.9%,0.6%,-0.4%
+Thu Mar 21,09:30,GMT,gbp,GBP Retail Sales (YoY),Medium,3.3%,1.2%,0.5%
+Thu Mar 21,11:00,GMT,gbp,GBP CBI Trends Total Orders,Low,-15,-15,-14
+Thu Mar 21,11:00,GMT,gbp,GBP CBI Trends Selling Prices,Low,5,17,20
+Thu Mar 21,12:30,GMT,usd,USD Continuing Claims,Low,3053K,3050K,3048K
+Thu Mar 21,12:30,GMT,cad,CAD Retail Sales (MoM),Medium,1.0%,0.9%,-2.3%
+Thu Mar 21,12:30,GMT,cad,CAD Retail Sales Less Autos (MoM),Low,0.5%,0.3%,-1.0%
+Thu Mar 21,12:30,GMT,usd,USD Initial Jobless Claims,Medium,336K,340K,334K
+Thu Mar 21,12:58,GMT,usd,USD Markit US PMI Preliminary,Medium,54.9,54.8,54.3
+Thu Mar 21,13:00,GMT,usd,USD House Price Index (MoM),Medium,0.6%,0.7%,0.5%
+Thu Mar 21,14:00,GMT,USD,USD API Monthly Statistical Report,Low,,,
+Thu Mar 21,14:00,GMT,usd,USD Philadelphia Fed.,Medium,2.0,-3.0,-12.5
+Thu Mar 21,14:00,GMT,usd,USD Existing Home Sales,Low,4.98M,5.00M,4.94M
+Thu Mar 21,14:00,GMT,usd,USD Existing Home Sales (MoM),Medium,0.8%,1.6%,0.8%
+Thu Mar 21,14:00,GMT,usd,USD Leading Indicators,Medium,0.5%,0.4%,0.5%
+Thu Mar 21,14:30,GMT,usd,USD EIA Natural Gas Storage Change,Low,-62,-70,-145
+Thu Mar 21,21:00,GMT,nzd,NZD ANZ NZ Job Ads (MoM),Low,1.0%,,-0.6%
+Thu Mar 21,21:45,GMT,nzd,NZD Net Migration s.a.,Low,500,,370
+Thu Mar 21,23:00,GMT,aud,AUD Conference Board Leading Index,Medium,0.2%,,-0.2%
+Thu Mar 21,23:50,GMT,jpy,JPY Foreign Buying Japan Stocks (Yen),Low,¥471.9B,,¥1121.9B
+Thu Mar 21,23:50,GMT,jpy,JPY Japan Buying Foreign Bonds (Yen),Low,-¥427.3B,,¥737.5B
+Thu Mar 21,23:50,GMT,jpy,JPY Japan Buying Foreign Stocks (Yen),Low,-¥537.1B,,-¥269.6B
+Thu Mar 21,23:50,GMT,jpy,JPY Foreign Buying Japan Bonds (Yen),Low,-¥485.6B,,-¥838.2B
+Fri Mar 22,01:35,GMT,cny,CNY MNI March Flash Business Sentiment Indicator,Low,58.39,,60.98
+Fri Mar 22,08:00,GMT,eur,EUR Cyprus Parliament to Debate Rejected Bank Levy Proposal,High,,,
+Fri Mar 22,09:00,GMT,eur,EUR German IFO - Business Climate,Medium,106.7,107.8,107.4
+Fri Mar 22,09:00,GMT,eur,EUR German IFO - Current Assessment,Medium,109.9,110.5,110.2
+Fri Mar 22,09:00,GMT,eur,EUR German IFO - Expectations,Medium,103.6,105.0,104.6
+Fri Mar 22,11:00,GMT,eur,EUR ECB Announces 3-Year LTRO Repayments,Medium,,,
+Fri Mar 22,12:45,GMT,USD,USD Fed's Raskin Speaks on Labor Market in Washington,Low,,,
+Fri Mar 22,16:00,GMT,USD,USD Fed Revisions of Industrial Production,Low,,,

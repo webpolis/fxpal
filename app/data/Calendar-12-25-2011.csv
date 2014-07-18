@@ -1,0 +1,69 @@
+Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Mon Dec 26,00:01,GMT,gbp,GBP Hometrack Housing Survey (MoM),Low,-0.2%,,-0.2%
+Mon Dec 26,00:01,GMT,gbp,GBP Hometrack Housing Survey (YoY),Low,-2.1%,,-2.3%
+Mon Dec 26,17:00,GMT,eur,EUR French Total Jobseekers Change,Low,29.9K,30.0K,34.4K
+Mon Dec 26,17:00,GMT,eur,EUR French Total Jobseekers,Low,2844.8K,,2814.9k
+Mon Dec 26,23:50,GMT,jpy,JPY Corporate Service Price (YoY),Low,-0.2%,0.0%,0.1%
+Tue Dec 27,,,CNY,CNY Leading Index,LOW,,,100.4
+Tue Dec 27,02:00,GMT,cny,CNY Industrial Profits YTD (YoY),Medium,24.4%,,25.3%
+Tue Dec 27,04:00,GMT,jpy,JPY Vehicle Production (YoY),Low,4.5%,,20.3%
+Tue Dec 27,05:00,GMT,jpy,JPY Construction Orders (YoY),Low,21.0%,,24.3%
+Tue Dec 27,05:00,GMT,jpy,JPY Annualized Housing Starts,Low,0.845M,0.802M,0.774M
+Tue Dec 27,05:00,GMT,jpy,JPY Housing Starts (YoY),Low,-0.3%,-4.9%,-5.8%
+Tue Dec 27,05:00,GMT,jpy,JPY Small Business Confidence,Low,45.6,,45.8
+Tue Dec 27,07:00,GMT,chf,CHF UBS Consumption Indicator,Medium,0.81,,0.90
+Tue Dec 27,14:00,GMT,usd,USD S&P/CS 20 City s.a. (MoM),Low,-0.62%,-0.40%,-0.66%
+Tue Dec 27,14:00,GMT,usd,USD S&P/Case-Shiller Composite-20 (YoY),Low,-3.40%,-3.20%,-3.54%
+Tue Dec 27,14:00,GMT,usd,USD S&P/Case-Shiller Home Price Index,Low,140.3,,142.04
+Tue Dec 27,15:00,GMT,usd,USD Consumer Confidence,High,64.5,58.5,55.2
+Tue Dec 27,15:00,GMT,usd,USD Richmond Fed Manufacturing Index,Low,3,5,0
+Tue Dec 27,15:30,GMT,usd,USD Dallas Fed Manufacturing Activity,Low,-3.0,4.5,3.2
+Tue Dec 27,23:30,GMT,jpy,JPY Job-To-Applicant Ratio,Low,0.69,0.68,0.67
+Tue Dec 27,23:30,GMT,jpy,JPY Household Spending (YoY),Medium,-3.2%,-1.2%,-0.4%
+Tue Dec 27,23:30,GMT,jpy,JPY Jobless Rate,Medium,4.5%,4.5%,4.5%
+Tue Dec 27,23:30,GMT,jpy,JPY Tokyo Consumer Price Index (YoY),Low,-0.4%,-0.6%,-0.9%
+Tue Dec 27,23:30,GMT,jpy,JPY Tokyo Consumer Price Index Ex-Fresh Food (YoY),Low,-0.3%,-0.4%,-0.5%
+Tue Dec 27,23:30,GMT,jpy,JPY Tokyo Consumer Price Index Ex Food, Energy (YoY),Low,-1.1%,-1.0%,-1.2%
+Tue Dec 27,23:30,GMT,jpy,JPY National Consumer Price Index (YoY),Medium,-0.5%,-0.4%,-0.2%
+Tue Dec 27,23:30,GMT,jpy,JPY National Consumer Price Index Ex-Fresh Food (YoY),Medium,-0.3%,-0.2%,-0.1%
+Tue Dec 27,23:30,GMT,jpy,JPY National Consumer Price Index Ex Food, Energy (YoY),Medium,-1.1%,-1.1%,-1.0%
+Tue Dec 27,23:50,GMT,jpy,JPY Retail Trade (YoY),Medium,-2.3%,0.0%,1.9%
+Tue Dec 27,23:50,GMT,jpy,JPY Retail Trade s.a. (MoM),Low,-2.1%,-0.5%,1.4%
+Tue Dec 27,23:50,GMT,jpy,JPY Large Retailers' Sales,Medium,-2.5%,-1.6%,-1.4%
+Tue Dec 27,23:50,GMT,jpy,JPY Industrial Production (MoM),Low,-2.6%,-0.8%,2.2%
+Tue Dec 27,23:50,GMT,jpy,JPY Industrial Production (YoY),Medium,-4.0%,-2.0%,0.1%
+Wed Dec 28,01:50,GMT,jpy,JPY Labor Cash Earnings (YoY),Low,-1.0%,0.0%,0.0%
+Wed Dec 28,10:30,GMT,chf,CHF KOF Swiss Leading Indicator,Medium,0.01,0.23,0.34
+Wed Dec 28,12:00,GMT,USD,USD MBA Mortgage Applications,LOW,,,
+Thu Dec 29,09:00,GMT,eur,EUR Italian Business Confidence,Low,92.5,93.7,94.0
+Thu Dec 29,09:00,GMT,eur,EUR Euro-Zone M3 s.a. (3M),Low,2.5%,2.8%,2.8%
+Thu Dec 29,09:00,GMT,eur,EUR Euro-Zone M3 s.a. (YoY),Low,2.0%,2.5%,2.6%
+Thu Dec 29,13:00,GMT,eur,EUR German Consumer Price Index - EU Harmonised (YoY),High,2.4%,2.4%,2.8%
+Thu Dec 29,13:00,GMT,eur,EUR German Consumer Price Index (MoM),Medium,0.8%,0.8%,0.0%
+Thu Dec 29,13:00,GMT,eur,EUR German Consumer Price Index (YoY),High,2.1%,2.2%,2.4%
+Thu Dec 29,13:00,GMT,eur,EUR German Consumer Price Index - EU Harmonised (MoM),Medium,0.8%,0.8%,0.0%
+Thu Dec 29,13:30,GMT,usd,USD Continuing Claims,Low,3601K,3600K,3567K
+Thu Dec 29,13:30,GMT,usd,USD Initial Jobless Claims,Low,381K,375K,366K
+Thu Dec 29,14:45,GMT,usd,USD Chicago Purchasing Manager,Low,62.5,61,62.6
+Thu Dec 29,15:00,GMT,usd,USD Pending Home Sales (MoM),Low,7.3%,1.5%,10.4%
+Thu Dec 29,15:00,GMT,usd,USD Pending Home Sales (YoY),Medium,6.9%,,7.3%
+Thu Dec 29,15:30,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,3899K,-2500K,-10570K
+Thu Dec 29,15:30,GMT,usd,USD DOE Cushing OK Crude Inventory,Low,-289K,,-990K
+Thu Dec 29,15:30,GMT,usd,USD DOE U.S. Distillate Inventory,Low,1205K,-650K,-2353K
+Thu Dec 29,15:30,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,-692K,-500K,-412K
+Thu Dec 29,16:00,GMT,usd,USD Kansas City Fed Manf. Activity,Low,-4,6,4
+Thu Dec 29,23:15,GMT,jpy,JPY Nomura/JMMA Manufacturing Purchasing Manager Index,Low,50.2,,49.1
+Thu Dec 29,23:30,GMT,aud,AUD RPData-Rismark House Px s.a.,Low,0.1%,,-0.6%
+Thu Dec 29,23:30,GMT,aud,AUD RPData-Rismark House Px Raw,Low,-0.2%,,-0.3%
+Fri Dec 30,00:30,GMT,aud,AUD Private Sector Credit (MoM),Medium,0.3%,0.3%,0.2%
+Fri Dec 30,00:30,GMT,aud,AUD Private Sector Credit (YoY),Medium,3.5%,3.6%,3.5%
+Fri Dec 30,01:35,GMT,cny,CNY MNI December Business Condition Survey,Low,52.78,53.65,54.64
+Fri Dec 30,02:30,GMT,cny,CNY HSBC Manufacturing PMI,Medium,48.7,,47.7
+Fri Dec 30,05:00,GMT,EUR,EUR German Retail Sales (MoM),LOW,,0.2%,0.7%
+Fri Dec 30,05:00,GMT,EUR,EUR German Retail Sales (YoY),Medium,,0.7%,-0.4%
+Fri Dec 30,07:00,GMT,gbp,GBP Nationwide House Prices s.a. (MoM),Low,-0.2%,0.0%,0.4%
+Fri Dec 30,07:00,GMT,gbp,GBP Nationwide House Prices n.s.a. (YoY),Medium,1.0%,1.5%,1.6%
+Fri Dec 30,09:00,GMT,eur,EUR Italian Producer Price Index (MoM),Low,0.2%,0.1%,-0.2%
+Fri Dec 30,09:00,GMT,eur,EUR Italian Producer Price Index (YoY),Low,4.5%,4.4%,4.7%
+Fri Dec 30,09:30,GMT,gbp,GBP Bank of England Housing Equity Withdrawal (Pounds) (3Q),Medium,-£8.6B,-£9.0B,-£9.6B
+Fri Dec 30,15:00,GMT,usd,USD NAPM-Milwaukee,Low,57.8,58.3,56.7

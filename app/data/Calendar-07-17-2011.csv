@@ -1,0 +1,119 @@
+Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Sun Jul 17,22:30,GMT,nzd,NZD Performance Services Index,Low,54.7,,53.0
+Sun Jul 17,22:45,GMT,nzd,NZD Consumer Prices Index (QoQ),Medium,1.0%,0.8%,0.8%
+Sun Jul 17,22:45,GMT,nzd,NZD Consumer Prices Index (YoY),Medium,5.3%,5.1%,4.5%
+Sun Jul 17,23:01,GMT,gbp,GBP Rightmove House Prices (MoM),Low,-1.6%,,0.6%
+Sun Jul 17,23:01,GMT,gbp,GBP Rightmove House Prices (YoY),Medium,0.1%,,1.1%
+Mon Jul 18,01:30,GMT,aud,AUD New Motor Vehicle Sales (YoY),Low,-11.5%,,-14.8%
+Mon Jul 18,01:30,GMT,aud,AUD New Motor Vehicle Sales (MoM),Low,1.3%,,-7.5%
+Mon Jul 18,12:30,GMT,cad,CAD International Securities Transactions (Canadian dollar),Low,15.400B,,8.520B
+Mon Jul 18,13:00,GMT,usd,USD Total Net TIC Flows,Low,-$67.5B,,$66.6B
+Mon Jul 18,13:00,GMT,usd,USD Net Long-term TIC Flows,Medium,$23.6B,$40.0B,$30.6B
+Mon Jul 18,14:00,GMT,usd,USD NAHB Housing Market Index,Low,15,14,13
+Tue Jul 19,01:30,GMT,aud,AUD Reserve Bank's Board July Minutes,High,,,
+Tue Jul 19,05:30,GMT,jpy,JPY Nationwide Department Store Sales (YoY),Low,0.3%,,-2.4%
+Tue Jul 19,05:30,GMT,jpy,JPY Tokyo Department Store Sales (YoY),Low,0.4%,,-4.3%
+Tue Jul 19,09:00,GMT,eur,EUR Euro-Zone Construction Output s.a. (MoM),Low,-1.1%,,1.2%
+Tue Jul 19,09:00,GMT,eur,EUR Euro-Zone Construction Output w.d.a. (YoY),Low,-1.9%,,-1.3%
+Tue Jul 19,09:00,GMT,eur,EUR German ZEW Survey (Current Situation),Medium,90.6,85.0,87.6
+Tue Jul 19,09:00,GMT,eur,EUR Euro-Zone ZEW Survey (Economic Sentiment),Medium,-7.0,,-5.9
+Tue Jul 19,09:00,GMT,eur,EUR German ZEW Survey (Economic Sentiment),High,-15.1,-12.5,-9.0
+Tue Jul 19,12:30,GMT,usd,USD Building Permits,Medium,624K,595K,609K
+Tue Jul 19,12:30,GMT,cad,CAD Leading Indicators (MoM),Medium,0.2%,0.8%,0.8%
+Tue Jul 19,12:30,GMT,usd,USD Housing Starts,Medium,629K,575K,549K
+Tue Jul 19,12:30,GMT,usd,USD Housing Starts (MoM%),Low,14.6%,2.7%,0.0%
+Tue Jul 19,12:30,GMT,usd,USD Building Permits (MoM%),Low,2.5%,-2.3%,8.2%
+Tue Jul 19,13:00,GMT,cad,CAD Bank of Canada Rate Decision,High,1.00%,1.00%,1.00%
+Wed Jul 20,00:30,GMT,aud,AUD Westpac Leading Index (MoM),Low,-0.1%,,0.1%
+Wed Jul 20,01:00,GMT,aud,AUD Consumer Inflation Expectation,MediumK,,,3.3%
+Wed Jul 20,01:00,GMT,aud,AUD DEWR Internet Skilled Vacancies ,Low,0.0%,,0.3%
+Wed Jul 20,01:30,GMT,jpy,JPY BOJ Deputy Governor Yamaguchi to Speak in Matsumoto City,Low,,,
+Wed Jul 20,02:00,GMT,cny,CNY Conference Board China Leading Index,Low,155.0,,154.3
+Wed Jul 20,05:00,GMT,jpy,JPY Coincident Index,Low,106.3,,106.0
+Wed Jul 20,05:00,GMT,jpy,JPY Leading Index,Medium,99.6,,99.8
+Wed Jul 20,06:00,GMT,eur,EUR German Producer Prices (MoM),Low,0.1%,0.0%,0.0%
+Wed Jul 20,06:00,GMT,eur,EUR German Producer Prices (YoY),Medium,5.6%,5.5%,6.1%
+Wed Jul 20,07:00,GMT,jpy,JPY Convenience Store Sales (YoY),Low,9.0%,,5.7%
+Wed Jul 20,08:00,GMT,eur,EUR Italian Industrial Orders s.a. (MoM),Low,4.1%,2.3%,-6.0%
+Wed Jul 20,08:00,GMT,eur,EUR Italian Industrial Orders n.s.a. (YoY),Low,13.6%,10.2%,5.8%
+Wed Jul 20,08:00,GMT,eur,EUR Italian Industrial Sales s.a. (MoM),Low,-1.7%,,1.5%
+Wed Jul 20,08:00,GMT,eur,EUR Italian Industrial Sales n.s.a. (YoY),Low,10.8%,,14.3%
+Wed Jul 20,08:30,GMT,gbp,GBP Bank of England Minutes,High,,,
+Wed Jul 20,09:00,GMT,eur,EUR Italian Current Account (euros),Low,-5094M,,-5604M
+Wed Jul 20,11:00,GMT,usd,USD MBA Mortgage Applications,Low,15.5%,,-5.1%
+Wed Jul 20,12:30,GMT,cad,CAD Wholesale Sales (MoM),Low,1.9%,0.1%,-0.1%
+Wed Jul 20,14:00,GMT,eur,EUR Euro-Zone Consumer Confidence,Medium,-11.4,-10.2,-10.3
+Wed Jul 20,14:00,GMT,usd,USD Existing Home Sales (MoM),Medium,-0.8%,1.9%,-3.8%
+Wed Jul 20,14:00,GMT,usd,USD Existing Home Sales,Medium,4.77M,4.90M,4.81M
+Wed Jul 20,14:30,GMT,CAD,CAD Monetary Policy Report,HIGH,,,
+Wed Jul 20,14:30,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,-3727K,-2000K,-3124K
+Wed Jul 20,14:30,GMT,usd,USD DOE U.S. Distillate Inventory,Low,3432K,1500K,2967K
+Wed Jul 20,14:30,GMT,usd,USD DOE Cushing OK Crude Inventory,Low,-977K,,615K
+Wed Jul 20,14:30,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,757K,-250K,-840K
+Wed Jul 20,14:30,GMT,usd,USD DOE U.S. Refinery Utilization,Low,2.3%,0.00%,-0.40%
+Wed Jul 20,22:15,GMT,USD,USD Fed's Sack to Speak to Money Marketeers in New York,LOW,,,
+Wed Jul 20,22:45,GMT,nzd,NZD Net Migration s.a.,Low,-340,,-340
+Wed Jul 20,23:01,GMT,gbp,GBP UK Nationwide Consumer Confidence,Medium,51,49,55
+Wed Jul 20,23:50,GMT,jpy,JPY Adjusted Merchandise Trade Balance (Yen),Low,-¥191.2B,-¥250.4B,-¥450.0B
+Wed Jul 20,23:50,GMT,jpy,JPY Merchandise Trade Exports (YoY),Low,-1.6,-4.1,-10.3
+Wed Jul 20,23:50,GMT,jpy,JPY Merchandise Trade Imports (YoY),Low,9.8,11.0,12.3
+Wed Jul 20,23:50,GMT,jpy,JPY Merchandise Trade Balance Total (Yen),Medium,¥70.7B,-¥149.0B,-¥855.8B
+Thu Jul 21,01:30,GMT,aud,AUD RBA Foreign Exchange Transaction (Australian dollar),Low,1280M,,601M
+Thu Jul 21,01:30,GMT,aud,AUD NAB Business Confidence ,Low,6,,11
+Thu Jul 21,02:30,GMT,cny,CNY HSBC Flash China Manufacturing PMI,Low,48.9,,50.1
+Thu Jul 21,03:00,GMT,nzd,NZD Credit Card Spending (YoY),Medium,4.5%,,5.5%
+Thu Jul 21,03:00,GMT,nzd,NZD Credit Card Spending s.a. (MoM),Medium,0.4%,,0.4%
+Thu Jul 21,04:30,GMT,jpy,JPY All Industry Activity Index (MoM),Medium,2.0%,1.8%,1.4%
+Thu Jul 21,06:00,GMT,chf,CHF Trade Balance (Swiss franc),Medium,1.74B,,3.25B
+Thu Jul 21,06:00,GMT,chf,CHF Imports (MoM),Low,2.5%,,-5.7%
+Thu Jul 21,06:00,GMT,chf,CHF Exports (MoM),Low,5.2%,,-3.7%
+Thu Jul 21,07:00,GMT,eur,EUR French Purchasing Managers' Index Manufacturing,Low,50.1,52.1,52.5
+Thu Jul 21,07:00,GMT,chf,CHF Money Supply M3 (YoY),Low,5.2%,,6.1%
+Thu Jul 21,07:00,GMT,eur,EUR French Purchasing Managers' Index Services,Low,54.2,55.5,56.1
+Thu Jul 21,07:00,GMT,CHF,CHF Real Estate Index Family Homes,LOW,,,392.3
+Thu Jul 21,07:30,GMT,eur,EUR German Purchasing Managers' Index Services (JUL A) ,Medium,52.9,56.1,56.7
+Thu Jul 21,07:30,GMT,eur,EUR German Purchasing Managers' Index Manufacturing (JUL A),High,52.1,54.1,54.6
+Thu Jul 21,08:00,GMT,eur,EUR Euro-Zone Current Account s.a. (euros),Low,-5.2B,,-5.4B
+Thu Jul 21,08:00,GMT,eur,EUR Euro-Zone Current Account n.s.a. (euros),Low,-18.3B,,-6.5B
+Thu Jul 21,08:00,GMT,eur,EUR Eurozone PMI Composite,Medium,50.8,52.6,53.3
+Thu Jul 21,08:00,GMT,eur,EUR Eurozone Purchasing Managers' Index  Manufacturing (JUL A),High,50.4,51.5,52.0
+Thu Jul 21,08:00,GMT,eur,EUR Eurozone PMI Services,Medium,51.4,53.2,53.7
+Thu Jul 21,08:30,GMT,gbp,GBP Public Finances (PSNCR) (Pounds),Medium,21.0B,17.0B,11.3B
+Thu Jul 21,08:30,GMT,gbp,GBP PSNB ex Interventions,Medium,14.0B,12.5B,16.6B
+Thu Jul 21,08:30,GMT,gbp,GBP Public Sector Net Borrowing (Pounds),Medium,12.0B,10.4B,14.6B
+Thu Jul 21,08:30,GMT,gbp,GBP Retail Sales (MoM),Low,0.8%,0.5%,-1.5%
+Thu Jul 21,08:30,GMT,gbp,GBP Retail Sales (YoY),Medium,0.2%,0.0%,-0.2%
+Thu Jul 21,08:30,GMT,gbp,GBP Retail Sales w/Auto Fuel (MoM),Low,0.7%,0.6%,-1.3%
+Thu Jul 21,08:30,GMT,gbp,GBP Retail Sales w/Auto Fuel (YoY),Medium,0.4%,0.4%,0.0%
+Thu Jul 21,09:00,GMT,chf,CHF ZEW Survey (Expectations),Medium,-58.9,,-24.3
+Thu Jul 21,10:00,GMT,eur,EUR Euro-zone Leaders Meet on Greece Crisis,High,,,
+Thu Jul 21,12:30,GMT,usd,USD Initial Jobless Claims,Low,418K,410K,408K
+Thu Jul 21,12:30,GMT,usd,USD Continuing Claims,Low,3698K,3705K,3748K
+Thu Jul 21,12:30,GMT,USD,USD Fed's Evans Speaks to Reporters in Chicago,LOW,,,
+Thu Jul 21,13:45,GMT,usd,USD Bloomberg Economic Expectations,Low,-22,,-31
+Thu Jul 21,13:45,GMT,usd,USD Bloomberg Consumer Comfort,Low,-43.3,,-43.9
+Thu Jul 21,14:00,GMT,usd,USD House Price Index (MoM),Medium,0.4,0.1%,0.8%
+Thu Jul 21,14:00,GMT,usd,USD Leading Indicators,Medium,0.3%,0.2%,0.8%
+Thu Jul 21,14:00,GMT,usd,USD Philadelphia Fed.,Medium,3.2,2.0,-7.7
+Thu Jul 21,14:30,GMT,usd,USD EIA Natural Gas Storage Change,Low,60,60,84
+Fri Jul 22,01:30,GMT,aud,AUD Import Price Index (QoQ),Low,0.8%,-1.1%,1.4%
+Fri Jul 22,01:30,GMT,aud,AUD Export Price Index (QoQ),Low,6.0%,4.5%,5.2%
+Fri Jul 22,01:35,GMT,cny,CNY MNI Flash Business Sentiment Survey,Low,0.26%,,-3.46%
+Fri Jul 22,05:00,GMT,jpy,JPY Supermarket Sales (YoY),Low,,,-1.4%
+Fri Jul 22,06:45,GMT,eur,EUR French Own-Company Production Outlook,Low,8,,16
+Fri Jul 22,06:45,GMT,eur,EUR French Business Confidence Indicator,Low,105,107,110
+Fri Jul 22,06:45,GMT,eur,EUR French Production Outlook Indicator,Low,3,,13
+Fri Jul 22,08:00,GMT,eur,EUR German IFO - Current Assessment,Medium,121.4,122.3,123.3
+Fri Jul 22,08:00,GMT,eur,EUR German IFO - Business Climate,Medium,112.9,113.7,114.5
+Fri Jul 22,08:00,GMT,eur,EUR German IFO - Expectations,Medium,105.0,105.0,106.3
+Fri Jul 22,08:00,GMT,eur,EUR Italian Retail Sales s.a. (MoM),Low,-0.1%,-0.1%,0.2%
+Fri Jul 22,08:00,GMT,eur,EUR Italian Retail Sales (YoY),Low,-0.6%,,2.2%
+Fri Jul 22,09:00,GMT,eur,EUR Euro-Zone Industrial New Orders s.a. (MoM),Low,3.6%,0.8%,-0.1%
+Fri Jul 22,09:00,GMT,eur,EUR Euro-Zone Industrial New Orders (YoY),Medium,15.5%,10.1%,10.3%
+Fri Jul 22,11:00,GMT,cad,CAD Consumer Price Index,Medium,119.8,,120.6
+Fri Jul 22,11:00,GMT,cad,CAD Bank Canada Consumer Price Index Core (YoY),High,1.3%,1.9%,1.8%
+Fri Jul 22,11:00,GMT,cad,CAD Consumer Price Index (MoM),Medium,-0.7%,-0.2%,0.7%
+Fri Jul 22,11:00,GMT,cad,CAD Consumer Price Index (YoY),High,3.1%,3.6%,3.7%
+Fri Jul 22,11:00,GMT,cad,CAD Bank Canada Consumer Price Index Core (MoM),Medium,-0.6%,0.0%,0.5%
+Fri Jul 22,12:30,GMT,cad,CAD Retail Sales (MoM),Low,0.1%,-0.3%,0.3%
+Fri Jul 22,12:30,GMT,cad,CAD Retail Sales Less Autos (MoM),Medium,0.5%,0.3%,0.0%

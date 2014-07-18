@@ -1,0 +1,156 @@
+Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Sun Nov 4,,,USD,USD G20 Finance and Central Bank Deputies' Meeting in Mexico,Low,,,
+Sun Nov 4,22:30,GMT,aud,AUD AiG Performance of Service Index,Medium,42.8,,41.9
+Sun Nov 4,23:30,GMT,aud,AUD TD Securities Inflation (MoM),Low,0.1%,,0.2%
+Sun Nov 4,23:30,GMT,aud,AUD TD Securities Inflation (YoY),Medium,2.4%,,2.4%
+Mon Nov 5,,,USD,USD G20 Finance Ministers and Central Bankers Meet in Mexico,Low,,,
+Mon Nov 5,00:01,GMT,gbp,GBP Lloyds Employment Confidence,Low,-35,,-49
+Mon Nov 5,00:30,GMT,aud,AUD Trade Balance (Australian dollar),Medium,-1456M,-1550M,-1876M
+Mon Nov 5,00:30,GMT,aud,AUD Retail Sales s.a. (MoM),Medium,0.5%,0.4%,0.3%
+Mon Nov 5,00:30,GMT,aud,AUD Retail Sales Ex Inflation(QoQ),Medium,-0.1%,-0.2%,1.2%
+Mon Nov 5,00:30,GMT,aud,AUD ANZ Job Advertisements (MoM),Low,-4.6%,,-3.9%
+Mon Nov 5,01:45,GMT,cny,CNY HSBC Services PMI,Medium,53.5,,54.3
+Mon Nov 5,07:00,GMT,chf,CHF UBS Real Estate Bubble Index ,Low,1.02,,0.82
+Mon Nov 5,09:30,GMT,gbp,GBP Purchasing Manager Index Services,Medium,50.6,52.0,52.2
+Mon Nov 5,09:30,GMT,eur,EUR Euro-Zone Sentix Investor Confidence,Medium,-18.8,-21.0,-22.2
+Mon Nov 5,09:30,GMT,gbp,GBP Official Reserves (Changes),Low,$-512M,,$1899M
+Mon Nov 5,13:30,GMT,cad,CAD Building Permits (MoM),Low,-13.2%,-2.8%,9.5%
+Mon Nov 5,15:00,GMT,usd,USD ISM Non-Manufacutring Composite,High,54.2,54.5,55.1
+Mon Nov 5,21:45,GMT,nzd,NZD Private Wages ex Overtime (QoQ),Low,0.5%,0.5%,0.5%
+Mon Nov 5,21:45,GMT,nzd,NZD Labor Cost Private Sector (QoQ),Low,0.5%,0.5%,0.5%
+Mon Nov 5,21:45,GMT,nzd,NZD Average Hourly Earnings (QoQ),Medium,1.4%,1.0%,0.2%
+Tue Nov 6,,,usd,US Presidential Election,High,,,
+Tue Nov 6,00:01,GMT,gbp,GBP BRC Sales Like-For-Like YoY,Low,-0.1%,1.3%,1.5%
+Tue Nov 6,00:30,GMT,aud,AUD House Price Index (QoQ),Medium,0.3%,1.0%,0.6%
+Tue Nov 6,00:30,GMT,aud,AUD House Price Index (YoY),Medium,0.3%,0.8%,-1.9%
+Tue Nov 6,03:30,GMT,aud,AUD Reserve Bank of Australia Rate Decision,High,3.25%,3.00%,3.25%
+Tue Nov 6,05:00,GMT,jpy,JPY Coincident Index,Low,91.2,91.2,93.5
+Tue Nov 6,05:00,GMT,jpy,JPY Leading Index,Medium,91.7,91.8,93.2
+Tue Nov 6,06:45,GMT,chf,CHF SECO Consumer Confidence,Medium,-17,-21,-17
+Tue Nov 6,08:00,GMT,gbp,GBP Halifax Plc House Prices s.a. (MoM),Low,-0.7%,0.4%,-0.4%
+Tue Nov 6,08:00,GMT,gbp,GBP Halifax House Price (3MoY),Low,-1.7%,-1.3%,-1.2%
+Tue Nov 6,08:45,GMT,eur,EUR Italian Purchasing Manager Index Services,Medium,46.0,44.5,44.5
+Tue Nov 6,08:50,GMT,eur,EUR French Purchasing Manager Index Services,Medium,44.6,46.2,46.2
+Tue Nov 6,08:55,GMT,eur,EUR German Purchasing Manager Index Services,Medium,48.4,49.3,49.3
+Tue Nov 6,09:00,GMT,eur,EUR Euro-Zone Purchasing Manager Index Composite,Medium,45.7,45.8,45.8
+Tue Nov 6,09:00,GMT,eur,EUR Euro-Zone Purchasing Manager Index Services,Medium,46.0,46.2,46.2
+Tue Nov 6,09:30,GMT,gbp,GBP Industrial Production (MoM),Low,-1.7%,-0.6%,-0.5%
+Tue Nov 6,09:30,GMT,gbp,GBP Industrial Production (YoY),Medium,-2.6%,-1.6%,-1.0%
+Tue Nov 6,09:30,GMT,gbp,GBP Manufacturing Production (YoY),Low,-1.0%,-0.8%,-1.2%
+Tue Nov 6,09:30,GMT,gbp,GBP Manufacturing Production (MoM),Medium,0.1%,0.4%,-1.2%
+Tue Nov 6,10:00,GMT,eur,EUR Euro-Zone Producer Price Index (MoM),Medium,0.2%,0.2%,0.9%
+Tue Nov 6,10:00,GMT,eur,EUR Euro-Zone Producer Price Index (YoY),High,2.7%,2.6%,2.7%
+Tue Nov 6,11:00,GMT,eur,EUR German Factory Orders s.a. (MoM),Low,-3.3%,-0.4%,-0.8%
+Tue Nov 6,11:00,GMT,eur,EUR German Factory Orders n.s.a. (YoY),Medium,-4.7%,-1.5%,-4.6%
+Tue Nov 6,14:45,GMT,usd,USD ISM New York ,Low,45.9,,52.9
+Tue Nov 6,15:00,GMT,cad,CAD Ivey Purchasing Managers Index SA,Medium,58.3,58.2,60.4
+Tue Nov 6,15:00,GMT,usd,USD JOLTs Job Openings,Low,3561,3653,3661
+Tue Nov 6,15:00,GMT,gbp,GBP NIESR Gross Domestic Product Estimate,Medium,0.5%,,1.0%
+Tue Nov 6,22:30,GMT,aud,AUD AiG Performance of Construction Index,Medium,35.8,,30.9
+Tue Nov 6,23:50,GMT,jpy,JPY Official Reserve Assets,Low,$1274.2B,,$1277.0B
+Wed Nov 7,00:01,GMT,gbp,GBP BRC Shop Price Index YoY,Low,1.5%,,1.0%
+Wed Nov 7,05:30,GMT,aud,AUD Foreign Reserves (Australian dollar),Low,A$44.4B,,A$44.9B
+Wed Nov 7,08:00,GMT,chf,CHF Foreign Currency Reserves,Low,424.4B,432.0B,429.5B
+Wed Nov 7,08:15,GMT,chf,CHF Consumer Price Index (MoM),Medium,0.1%,0.1%,0.3%
+Wed Nov 7,08:15,GMT,chf,CHF CPI - EU Harmonised (YoY),Medium,-0.1%,-0.1%,-0.3%
+Wed Nov 7,08:15,GMT,chf,CHF Consumer Price Index (YoY),Medium,-0.2%,-0.2%,-0.4%
+Wed Nov 7,08:15,GMT,chf,CHF CPI - EU Harmonised (MoM),Medium,0.1%,0.1%,0.7%
+Wed Nov 7,10:00,GMT,eur,EUR Euro-Zone Retail Sales (MoM),Low,-0.2%,-0.1%,0.2%
+Wed Nov 7,10:00,GMT,eur,EUR Euro-Zone Retail Sales (YoY),Medium,-0.8%,-0.8%,-0.9%
+Wed Nov 7,11:00,GMT,eur,EUR German Industrial Production s.a. (MoM),Medium,-1.8%,-0.7%,-0.4%
+Wed Nov 7,11:00,GMT,eur,EUR German Industrial Production n.s.a. and w.d.a. (YoY),Medium,-1.2%,0.1%,-1.3%
+Wed Nov 7,12:00,GMT,usd,USD MBA Mortgage Applications,Low,-5.0%,,-4.8%
+Wed Nov 7,15:30,GMT,usd,DOE U.S. Crude Oil Inventories,Low,,,-2045K
+Wed Nov 7,15:30,GMT,usd,DOE Cushing OK Crude Inventory,Low,,,-671K
+Wed Nov 7,15:30,GMT,usd,DOE U.S. Distillate Inventory,Low,,,-93K
+Wed Nov 7,15:30,GMT,usd,DOE U.S. Gasoline Inventories,Low,,,935K
+Wed Nov 7,20:00,GMT,usd,USD Consumer Credit,Medium,$11.365B,$10.125B,$18.391B
+Wed Nov 7,21:45,GMT,nzd,NZD Unemployment Rate,Medium,7.3%,6.7%,6.8%
+Wed Nov 7,21:45,GMT,nzd,NZD Employment Change (QoQ),Medium,-0.4%,0.3%,-0.1%
+Wed Nov 7,21:45,GMT,nzd,NZD Employment Change (YoY),Medium,0.0%,0.8%,0.6%
+Wed Nov 7,21:45,GMT,nzd,NZD Participation Rate (QoQ),Low,68.4%,68.4%,68.4%
+Wed Nov 7,23:00,GMT,nzd,NZD QV House Prices (YoY),Low,5.7%,,5.3%
+Wed Nov 7,23:50,GMT,jpy,JPY Machine Orders (MoM),Medium,-4.3%,-2.1%,-3.3%
+Wed Nov 7,23:50,GMT,jpy,JPY Machine Orders (YoY),Medium,-7.8%,-4.9%,-6.1%
+Wed Nov 7,23:50,GMT,jpy,JPY Current Account Total (Yen),Low,¥503.6B,¥761.3B,¥454.7B
+Wed Nov 7,23:50,GMT,jpy,JPY Adjusted Current Account Total (Yen),Low,-¥142.0B,¥206.2B,¥722.3B
+Wed Nov 7,23:50,GMT,jpy,JPY Trade Balance - BOP Basis (Yen),Medium,-¥471.3B,-¥413.9B,-¥644.5B
+Wed Nov 7,23:50,GMT,jpy,JPY Current Account Balance (YoY),Low,-68.7%,-52.7%,4.2%
+Wed Nov 7,23:50,GMT,jpy,JPY Bank Lending Banks ex-Trust,Low,1.1%,1.1%,1.2%
+Wed Nov 7,23:50,GMT,jpy,JPY Bank Lending incl Trusts (YoY),Low,0.9%,,0.9%
+Thu Nov 8,00:30,GMT,aud,AUD Employment Change,High,10.7K,0.5K,15.5K
+Thu Nov 8,00:30,GMT,aud,AUD Unemployment Rate,High,5.4%,5.5%,5.4%
+Thu Nov 8,00:30,GMT,aud,AUD Full Time Employment Change,Medium,18.7K,,34.5K
+Thu Nov 8,00:30,GMT,aud,AUD Part Time Employment Change,Medium,-8.0K,,-19.0K
+Thu Nov 8,00:30,GMT,aud,AUD Participation Rate,Low,65.1%,65.2%,65.2%
+Thu Nov 8,02:00,GMT,jpy,JPY Tokyo Average Office Vacancies (%),Low,8.74,,8.90
+Thu Nov 8,04:30,GMT,jpy,JPY Bankruptcies (YoY),Medium,6.0%,,-7.0%
+Thu Nov 8,05:00,GMT,jpy,JPY Eco Watchers Survey: Current,Medium,39.0,40.5,41.2
+Thu Nov 8,05:00,GMT,jpy,JPY Eco Watchers Survey: Outlook,Medium,41.7,42.7,43.5
+Thu Nov 8,06:45,GMT,chf,CHF Unemployment Rate,Medium,2.9%,2.9%,2.8%
+Thu Nov 8,06:45,GMT,chf,CHF Unemployment Rate s.a.,Medium,3.0%,3.0%,2.9%
+Thu Nov 8,07:00,GMT,eur,EUR EU27 New Car Registrations ,Low,,,-10.8%
+Thu Nov 8,07:00,GMT,eur,EUR German Exports s.a. (MoM),Low,-2.5%,-1.5%,2.3%
+Thu Nov 8,07:00,GMT,eur,EUR German Imports s.a. (MoM),Low,-1.6%,-0.4%,0.4%
+Thu Nov 8,07:00,GMT,eur,EUR German Current Account (euros),Low,16.3B,10.8B,12.5B
+Thu Nov 8,07:00,GMT,eur,EUR German Trade Balance (euros),Medium,16.9B,15.5B,16.3B
+Thu Nov 8,07:45,GMT,eur,EUR French Trade Balance (€),Low,-5033M,-5000M,-5259M
+Thu Nov 8,09:00,GMT,eur,EUR Euro-Zone Current Account n.s.a.,Low,,,7.2B
+Thu Nov 8,09:30,GMT,eur,"EUR Spain to Sell 2015, 2018 and 2032 Bonds",Medium,,,
+Thu Nov 8,12:00,GMT,gbp,GBP BOE Asset Purchase Target,High,375B,375B,375B
+Thu Nov 8,12:00,GMT,gbp,GBP Bank of England Rate Decision,High,0.50%,0.50%,0.50%
+Thu Nov 8,12:45,GMT,eur,ECB Deposit Facility Rate,Medium,0.00%,0.00%,0.00%
+Thu Nov 8,12:45,GMT,eur,EUR European Central Bank Rate Decision,High,0.75%,0.75%,0.75%
+Thu Nov 8,13:15,GMT,cad,CAD Housing Starts,Medium,204.1K,210.0K,225.2K
+Thu Nov 8,13:30,GMT,eur,EUR ECB's Draghi Holds Press Conference After Rate Decision,High,,,
+Thu Nov 8,13:30,GMT,cad,CAD New Housing Price Index YoY,Medium,2.4%,2.3%,2.4%
+Thu Nov 8,13:30,GMT,cad,CAD International Merchandise Trade (Canadian dollar),Medium,-0.83B,-1.50B,-1.52B
+Thu Nov 8,13:30,GMT,usd,USD Trade Balance,Medium,-$41.5B,-$45.0B,-$43.8B
+Thu Nov 8,13:30,GMT,usd,USD Initial Jobless Claims,Medium,355K,365K,363K
+Thu Nov 8,13:30,GMT,usd,USD Continuing Claims,Low,3127K,3260K,3262K
+Thu Nov 8,13:30,GMT,cad,CAD New Housing Price Index (MoM),Low,0.2%,0.2%,0.2%
+Thu Nov 8,15:30,GMT,usd,USD EIA Natural Gas Storage Change,Low,21,26,65
+Thu Nov 8,20:00,GMT,nzd,NZD REINZ Housing Price Index (MoM),Low,1.5%,,0.6%
+Thu Nov 8,20:00,GMT,nzd,NZD REINZ House Sales (YoY),Medium,32.6%,,8.0%
+Thu Nov 8,20:00,GMT,nzd,NZD REINZ Housing Price Index ,Low,3495.1,,3442.1
+Thu Nov 8,21:45,GMT,nzd,NZD NZ Card Spending - Retail (MoM),Medium,0.4%,0.3%,-0.6%
+Thu Nov 8,21:45,GMT,nzd,NZD NZ Card Spending (MoM),Medium,0.4%,,-0.6%
+Thu Nov 8,23:50,GMT,jpy,JPY Japan Money Stock M3 (YoY),Low,1.9%,2.0%,2.1%
+Thu Nov 8,23:50,GMT,jpy,JPY Japan Money Stock M2+CD (YoY),Low,2.3%,2.4%,2.4%
+Fri Nov 9,01:00,GMT,USD,USD Fed's Bullard Speaks on Economy in St. Louis,Low,,,
+Fri Nov 9,01:30,GMT,cny,CNY Producer Price Index (YoY),Medium,-2.8%,-2.7%,-3.6%
+Fri Nov 9,01:30,GMT,cny,CNY Consumer Price Index (YoY),High,1.7%,1.9%,1.9%
+Fri Nov 9,05:00,GMT,jpy,JPY Consumer Confidence,Medium,39.7,39.5,40.1
+Fri Nov 9,05:30,GMT,cny,CNY Industrial Production (YoY),Medium,9.6%,9.4%,9.2%
+Fri Nov 9,05:30,GMT,cny,CNY Industrial Production YTD (YoY),Medium,10.0%,9.9%,10.0%
+Fri Nov 9,05:30,GMT,cny,CNY Retail Sales (YoY),Medium,14.5%,14.4%,14.2%
+Fri Nov 9,05:30,GMT,cny,CNY Retail Sales YTD (YoY),Medium,14.1%,14.1%,14.1%
+Fri Nov 9,05:30,GMT,cny,CNY Fixed Assets Inv Excl. Rural YTD YoY,Medium,20.7%,20.6%,20.5%
+Fri Nov 9,07:00,GMT,eur,EUR German Consumer Price Index (MoM),Medium,0.0%,0.0%,0.0%
+Fri Nov 9,07:00,GMT,eur,EUR German Consumer Price Index (YoY),High,2.0%,2.0%,2.0%
+Fri Nov 9,07:00,GMT,eur,EUR German Consumer Price Index - EU Harmonised (MoM),Medium,0.1%,0.1%,0.1%
+Fri Nov 9,07:00,GMT,eur,EUR German Consumer Price Index - EU Harmonised (YoY),High,2.1%,2.1%,2.1%
+Fri Nov 9,07:30,GMT,eur,EUR French Bank of France Business Sentiment (OCT),Low,92,90,92
+Fri Nov 9,07:45,GMT,eur,EUR French Industrial Production (MoM),Medium,-2.7%,-1.0%,1.9%
+Fri Nov 9,07:45,GMT,eur,EUR French Survey of Industrial Investments,Low,,,
+Fri Nov 9,07:45,GMT,eur,EUR France Manufacturing Production (YoY),Low,-2.5%,-0.1%,-0.3%
+Fri Nov 9,07:45,GMT,eur,EUR French Industrial Production (YoY),Medium,-2.5%,-0.1%,-0.9%
+Fri Nov 9,07:45,GMT,eur,EUR French Central Govt. Balance (Euros),Low,-85.0B,,-97.7B
+Fri Nov 9,07:45,GMT,eur,EUR French Manufacturing Production (MoM),Medium,-3.2%,-1.3%,2.1%
+Fri Nov 9,09:00,GMT,eur,EUR Italian Industrial Production wda (YoY),Medium,-4.8%,-4.7%,-5.2%
+Fri Nov 9,09:00,GMT,eur,EUR Italian Industrial Production nsa (YoY),Medium,-10.5%,,-5.1%
+Fri Nov 9,09:00,GMT,eur,EUR Italian Industrial Production sa (MoM),Medium,-1.5%,-1.6%,1.7%
+Fri Nov 9,09:30,GMT,gbp,GBP Visible Trade Balance (Pounds),Medium,-£8368,-£8900,-£9984
+Fri Nov 9,09:30,GMT,gbp,GBP Trade Balance Non EU (Pounds),Low,-£3972,-£4600,-£5004
+Fri Nov 9,09:30,GMT,gbp,GBP Total Trade Balance (Pounds),Low,-£2699,-£3200,-£4309
+Fri Nov 9,13:30,GMT,usd,USD Import Price Index (MoM),Low,0.5%,0.0%,1.1%
+Fri Nov 9,13:30,GMT,usd,USD Import Price Index (YoY),Low,0.4%,-0.5%,-0.5%
+Fri Nov 9,14:55,GMT,usd,USD U. of Michigan Confidence,High,84.9,83.0,82.6
+Fri Nov 9,15:00,GMT,usd,USD Wholesale Inventories,Low,1.1%,0.4%,0.8%
+Sat Nov 10,,,cny,CNY Money Supply - M1 (YoY),Medium,,7.1%,7.3%
+Sat Nov 10,,,cny,CNY Money Supply - M3 (YoY),Medium,,14.5%,14.8%
+Sat Nov 10,,,cny,CNY New Yuan Loans (OCT),Low,,600.0B,623.2B
+Sat Nov 10,,,cny,CNY Money Supply - M0 (YoY),Medium,,12.9%,13.3%
+Sat Nov 10,02:10,GMT,cny,CNY Trade Balance (USD),Medium,31.99B,27.15B,27.67B
+Sat Nov 10,02:10,GMT,cny,CNY Exports (Y/Y),High,11.6%,10.0%,9.9%
+Sat Nov 10,02:10,GMT,cny,CNY Imports (YoY),Medium,2.4%,3.2%,2.4%

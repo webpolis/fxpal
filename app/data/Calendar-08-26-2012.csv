@@ -1,0 +1,149 @@
+Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Sun Aug 26,23:01,GMT,gbp,GBP Hometrack Housing Survey (MoM),Low,-0.1%,,-0.1%
+Sun Aug 26,23:01,GMT,gbp,GBP Hometrack Housing Survey (YoY),Low,-0.5%,,-0.5%
+Mon Aug 27,01:30,GMT,cny,CNY Industrial Profits YTD (YoY),Medium,-2.7%,,-2.2%
+Mon Aug 27,06:00,GMT,eur,EUR German Import Price Index (YoY),Low,1.2%,1.4%,1.3%
+Mon Aug 27,06:00,GMT,eur,EUR German Import Price Index (MoM),Low,0.7%,0.9%,-1.5%
+Mon Aug 27,08:00,GMT,eur,EUR German IFO - Business Climate,Medium,102.3,102.7,103.3
+Mon Aug 27,08:00,GMT,eur,EUR German IFO - Current Assessment,Medium,111.2,110.8,111.5
+Mon Aug 27,08:00,GMT,eur,EUR German IFO - Expectations,Medium,94.2,95,95.5
+Mon Aug 27,10:00,GMT,USD,USD Fed's Evans Speaks in Hong Kong,Low,,,
+Mon Aug 27,10:20,GMT,jpy,JPY Machine Tool Orders (YoY),Medium,-6.7%,,-6.8%
+Mon Aug 27,14:30,GMT,usd,USD Dallas Fed Manufacturing Activity,Low,-1.6,-7.0,-13.2
+Mon Aug 27,16:00,GMT,eur,EUR French Jobseekers - Net Change (JUL),Low,41.3,27.5,23.7
+Mon Aug 27,16:00,GMT,eur,EUR French Total Jobseekers (JUL),Low,2987.1K,2966.7K,2945.8K
+Mon Aug 27,16:15,GMT,usd,USD Fed's Pianalto Speaks on economy in Ohio,Low,,,
+Tue Aug 28,00:00,GMT,jpy,JPY Cabinet Office Monthly Economic Report,High,,,
+Tue Aug 28,01:00,GMT,aud,AUD HIA New Home Sales (MoM),Medium,-5.6%,,2.8%
+Tue Aug 28,05:00,GMT,jpy,JPY Small Business Confidence,Low,44.8,,46.6
+Tue Aug 28,06:00,GMT,eur,EUR German GfK Consumer Confidence Survey,Medium,5.9,5.8,5.9
+Tue Aug 28,06:00,GMT,chf,CHF UBS Consumption Indicator,Medium,1.55,,1.59
+Tue Aug 28,08:00,GMT,eur,EUR Euro-Zone M3 s.a. (3M),Low,3.4%,3.1%,3.0%
+Tue Aug 28,08:00,GMT,eur,EUR Euro-Zone M3 s.a. (YoY),Low,3.8%,3.2%,3.2%
+Tue Aug 28,10:33,GMT,cny,CNY Leading Index,Medium,98.75,,99.19
+Tue Aug 28,13:00,GMT,usd,USD S&P/CS 20 City s.a. (MoM),Low,0.94%,0.45%,0.97%
+Tue Aug 28,13:00,GMT,usd,USD S&P/Case-Shiller Composite-20 (YoY),Low,0.50%,-0.05%,-0.65%
+Tue Aug 28,13:00,GMT,usd,USD S&P/Case-Shiller US Home Price Index (YoY),Low,1.22%,,-1.38%
+Tue Aug 28,13:00,GMT,usd,USD S&P/Case-Shiller Home Price Index,Low,142.21,,138.97
+Tue Aug 28,13:00,GMT,usd,USD S&P/Case-Shiller US Home Price Index,Low,132.54,,123.03
+Tue Aug 28,14:00,GMT,usd,USD Consumer Confidence,Medium,60.6,66.0,65.4
+Tue Aug 28,14:00,GMT,usd,USD Richmond Fed Manufacturing Index,Low,-9,-10,-17
+Wed Aug 29,01:30,GMT,aud,AUD Construction Work Done,Low,-0.2%,0.5%,7.8%
+Wed Aug 29,06:45,GMT,eur,EUR French Business Confidence Indicator (AUG),Low,90,90,89
+Wed Aug 29,06:45,GMT,eur,EUR French Own-Company Production Outlook (AUG),Low,-6,,-9
+Wed Aug 29,06:45,GMT,eur,EUR French Production Outlook Indicator (AUG),Low,-44,,-44
+Wed Aug 29,07:00,GMT,chf,CHF KOF Swiss Leading Indicator,Medium,1.57,1.45,1.41
+Wed Aug 29,08:00,GMT,eur,EUR Italian Retail Sales s.a. (MoM),Low,0.4%,-0.2%,0.1%
+Wed Aug 29,08:00,GMT,eur,EUR Italian Retail Sales (YoY),Low,-0.5%,,-1.7%
+Wed Aug 29,09:00,GMT,eur,EUR Italian Consumer Confidence Ind. s.a. (MoM),Low,86.0,86.0,86.5
+Wed Aug 29,11:00,GMT,usd,USD MBA Mortgage Applications,Low,-4.3%,,-7.4%
+Wed Aug 29,12:00,GMT,eur,EUR German Consumer Price Index (MoM),Medium,0.3%,0.2%,0.4%
+Wed Aug 29,12:00,GMT,eur,EUR German Consumer Price Index (YoY),High,2.0%,1.9%,1.7%
+Wed Aug 29,12:00,GMT,eur,EUR German Consumer Price Index - EU Harmonised (MoM),Medium,0.3%,0.1%,0.4%
+Wed Aug 29,12:00,GMT,eur,EUR German Consumer Price Index - EU Harmonised (YoY),High,2.2%,2.0%,1.9%
+Wed Aug 29,12:30,GMT,cad,CAD Industrial Product Price (MoM),Low,-0.5%,0.2%,-0.3%
+Wed Aug 29,12:30,GMT,cad,CAD Raw Materials Price Index (MoM),Low,0.9%,2.0%,-4.1%
+Wed Aug 29,12:30,GMT,usd,USD Gross Domestic Product (Annualized),High,1.7%,1.7%,1.5%
+Wed Aug 29,12:30,GMT,usd,USD Personal Consumption,Medium,1.7%,1.5%,1.5%
+Wed Aug 29,12:30,GMT,usd,USD Gross Domestic Product Price Index,High,1.6%,1.6%,1.6%
+Wed Aug 29,12:30,GMT,usd,USD Core Personal Consumption Expenditure (QoQ),Medium,1.8%,1.8%,1.8%
+Wed Aug 29,13:00,GMT,cad,CAD Teranet/National Bank HP Index,Low,155.28,,154.21
+Wed Aug 29,13:00,GMT,cad,CAD Teranet/National Bank HPI (MoM),Low,0.7%,0.5%,1.2%
+Wed Aug 29,13:00,GMT,cad,CAD Teranet/National Bank HPI (YoY),Low,4.8%,4.6%,5.4%
+Wed Aug 29,14:00,GMT,usd,USD Pending Home Sales (MoM),Low,2.4%,1.0%,-1.4%
+Wed Aug 29,14:00,GMT,usd,USD Pending Home Sales (YoY),Medium,15.0%,11.1%,8.4%
+Wed Aug 29,14:30,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,3778K,-1750K,-5412K
+Wed Aug 29,14:30,GMT,usd,USD DOE Cushing OK Crude Inventory,Low,-421K,,45K
+Wed Aug 29,14:30,GMT,usd,USD DOE U.S. Distillate Inventory,Low,873K,200K,992K
+Wed Aug 29,14:30,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,-1509K,-1450K,-962K
+Wed Aug 29,18:00,GMT,usd,USD Fed Releases Beige Book Economic Survey,High,,,
+Wed Aug 29,22:45,GMT,nzd,NZD Building Permits (MoM),Low,2.0%,3.0%,5.9%
+Wed Aug 29,23:50,GMT,jpy,JPY Retail Trade (YoY),Medium,-0.8%,-0.1%,0.2%
+Wed Aug 29,23:50,GMT,jpy,JPY Retail Trade s.a. (MoM),Low,-1.5%,-0.5%,-1.2%
+Wed Aug 29,23:50,GMT,jpy,JPY Large Retailers' Sales,Medium,-4.4%,-3.2%,-2.6%
+Wed Aug 29,23:50,GMT,jpy,JPY Japan Buying Foreign Bonds (¥),Low,1047.7B,,-836.9B
+Wed Aug 29,23:50,GMT,jpy,JPY Japan Buying Foreign Stocks (¥),Low,-49.6B,,-43.8B
+Wed Aug 29,23:50,GMT,jpy,JPY Foreign Buying Japan Bonds (¥),Low,215.4B,,-185.1B
+Wed Aug 29,23:50,GMT,jpy,JPY Foreign Buying Japan Stocks (¥),Low,-135.0B,,89.5B
+Wed Aug 29,23:50,GMT,jpy,JPY Loans & Discounts Corp (YoY),Low,-0.34%,,0.12%
+Thu Aug 30,01:00,GMT,nzd,NZD NBNZ Activity Outlook,Medium,26.4,,24
+Thu Aug 30,01:00,GMT,nzd,NZD NBNZ Business Confidence,Medium,19.5,,15.1
+Thu Aug 30,01:30,GMT,aud,AUD Private Capital Expenditure,Medium,3.4%,3.0%,7.7%
+Thu Aug 30,01:30,GMT,aud,AUD Building Approvals (MoM),Low,-17.3%,-5.0%,-1.0%
+Thu Aug 30,01:30,GMT,aud,AUD Building Approvals (YoY),Low,-10.6%,6.0%,13.0%
+Thu Aug 30,07:55,GMT,eur,EUR German Unemployment Change,High,9K,7K,9K
+Thu Aug 30,07:55,GMT,eur,EUR German Unemployment Rate s.a.,Medium,6.8%,6.8%,6.8%
+Thu Aug 30,08:00,GMT,eur,EUR Italian Hourly Wages (YoY),Low,1.5%,,1.5%
+Thu Aug 30,08:00,GMT,eur,EUR Italian Hourly Wages (MoM),Low,0.0%,,0.2%
+Thu Aug 30,08:30,GMT,GBP,GBP Net Consumer Credit,Medium,,0.5B,0.6B
+Thu Aug 30,08:30,GMT,gbp,GBP Net Lending Sec. on Dwellings,Medium,1.1B,0.5B,-0.2B
+Thu Aug 30,08:30,GMT,gbp,GBP Mortgage Approvals,Medium,47.3K,47.0K,44.1K
+Thu Aug 30,08:30,GMT,gbp,GBP M4 Money Supply (MoM),Low,0.5%,,-1.6%
+Thu Aug 30,08:30,GMT,gbp,GBP M4 Money Supply (YoY),Low,-4.6%,,-5.2%
+Thu Aug 30,08:30,GMT,gbp,GBP M4 Ex IOFCs 3M Annualised,Low,5.0%,3.0%,2.9%
+Thu Aug 30,09:00,GMT,eur,EUR Italy to Sell 5-Year and 10-Year Bonds,Medium,,,
+Thu Aug 30,09:00,GMT,eur,EUR Euro-Zone Business Climate Indicator,Low,-1.21,-1.3,-1.27
+Thu Aug 30,09:00,GMT,eur,EUR Euro-Zone Consumer Confidence,Medium,-24.6,-24.6,-24.6
+Thu Aug 30,09:00,GMT,eur,EUR Euro-Zone Economic Confidence,Low,86.1,87.5,87.9
+Thu Aug 30,09:00,GMT,eur,EUR Euro-Zone Industrial Confidence,Low,-15.3,-15.5,-15.1
+Thu Aug 30,09:00,GMT,eur,EUR Euro-Zone Services Confidence,Low,-10.8,-9,-8.5
+Thu Aug 30,09:00,GMT,eur,EUR Italian Business Confidence (AUG),Low,87.2,86.8,87.1
+Thu Aug 30,12:30,GMT,cad,CAD Current Account (BoP) (Canadian dollar),Medium,-$16.0B,-$15.3B,-$10.2B
+Thu Aug 30,12:30,GMT,usd,USD Personal Income,Medium,0.3%,0.3%,0.3%
+Thu Aug 30,12:30,GMT,usd,USD Personal Spending,Medium,0.4%,0.5%,0.0%
+Thu Aug 30,12:30,GMT,usd,USD Personal Consumption Expenditure Deflator (MoM),Low,0.0%,0.1%,0.1%
+Thu Aug 30,12:30,GMT,usd,USD Personal Consumption Expenditure Deflator (YoY),Low,1.3%,1.4%,1.5%
+Thu Aug 30,12:30,GMT,usd,USD Personal Consumption Expenditure Core (MoM),Medium,0.0%,0.1%,0.2%
+Thu Aug 30,12:30,GMT,usd,USD Personal Consumption Expenditure Core (YoY),High,1.6%,1.7%,1.8%
+Thu Aug 30,12:30,GMT,usd,USD Continuing Claims,Low,3316K,3307K,3321K
+Thu Aug 30,12:30,GMT,usd,USD Initial Jobless Claims,Medium,374K,370K,374K
+Thu Aug 30,14:30,GMT,USD,USD EIA Natural Gas Storage Change,Low,,,47
+Thu Aug 30,15:00,GMT,usd,USD Kansas City Fed Manf. Activity,Low,8,3,5
+Thu Aug 30,23:01,GMT,gbp,GBP GfK Consumer Confidence Survey,Medium,-29,-27,-29
+Thu Aug 30,23:15,GMT,jpy,JPY Nomura/JMMA Manufacturing Purchasing Manager Index,Medium,47.7,,47.9
+Thu Aug 30,23:30,GMT,jpy,JPY Job-To-Applicant Ratio,Low,0.83,0.83,0.82
+Thu Aug 30,23:30,GMT,jpy,JPY Household Spending (YoY),Medium,1.7%,1.2%,1.6%
+Thu Aug 30,23:30,GMT,jpy,JPY National Consumer Price Index Ex-Fresh Food (YoY),Medium,-0.3%,-0.3%,-0.2%
+Thu Aug 30,23:30,GMT,jpy,"JPY National Consumer Price Index Ex Food, Energy (YoY)",Medium,-0.6%,-0.6%,-0.6%
+Thu Aug 30,23:30,GMT,jpy,JPY Tokyo Consumer Price Index (YoY),Low,-0.7%,-0.7%,-0.8%
+Thu Aug 30,23:30,GMT,jpy,JPY Tokyo Consumer Price Index Ex-Fresh Food (YoY),Low,-0.5%,-0.6%,-0.6%
+Thu Aug 30,23:30,GMT,jpy,"JPY Tokyo Consumer Price Index Ex Food, Energy (YoY)",Low,-0.8%,-1.0%,-1.0%
+Thu Aug 30,23:30,GMT,jpy,JPY Jobless Rate,Medium,4.3%,4.3%,4.3%
+Thu Aug 30,23:30,GMT,jpy,JPY National Consumer Price Index (YoY),Medium,-0.4%,-0.3%,-0.2%
+Thu Aug 30,23:50,GMT,jpy,JPY Industrial Production (MoM),Low,-1.2%,1.7%,0.4%
+Thu Aug 30,23:50,GMT,jpy,JPY Industrial Production (YoY),Medium,-1.0%,1.8%,-1.5%
+Fri Aug 31,,,USD,USD ICSC Chain Store Sales (YoY),Medium,,,1.9%
+Fri Aug 31,01:30,GMT,aud,AUD Private Sector Credit (MoM),Medium,0.2%,0.4%,0.3%
+Fri Aug 31,01:30,GMT,aud,AUD Private Sector Credit (YoY),Medium,4.2%,4.4%,4.4%
+Fri Aug 31,01:35,GMT,cny,CNY MNI August Business Sentiment Indicator,Low,47.54,,49.73
+Fri Aug 31,03:00,GMT,nzd,NZD Money Supply M3 (YoY),Low,7.2%,,5.7%
+Fri Aug 31,04:00,GMT,jpy,JPY Vehicle Production (YoY),Low,16.7%,,20.3%
+Fri Aug 31,05:00,GMT,jpy,JPY Construction Orders (YoY),Low,8.0%,,4.6%
+Fri Aug 31,05:00,GMT,jpy,JPY Annualized Housing Starts,Medium,0.870M,0.857M,0.837M
+Fri Aug 31,05:00,GMT,jpy,JPY Housing Starts (YoY),Medium,-9.6%,-10.3%,-0.2%
+Fri Aug 31,06:00,GMT,eur,EUR German Retail Sales (MoM),Low,-0.9%,0.2%,0.5%
+Fri Aug 31,06:00,GMT,eur,EUR German Retail Sales (YoY),Medium,-1.0%,0.1%,3.7%
+Fri Aug 31,06:00,GMT,gbp,GBP Nationwide House Prices s.a. (MoM),Low,1.3%,0.1%,-0.8%
+Fri Aug 31,06:00,GMT,gbp,GBP Nationwide House Prices n.s.a. (YoY),Medium,-0.7%,-2.2%,-2.6%
+Fri Aug 31,08:00,GMT,eur,EUR Italian Unemployment Rate s.a.,Medium,10.6%,10.7%,10.1%
+Fri Aug 31,08:00,GMT,eur,EUR Italian Unemployment Rate s.a.,Low,10.7%,10.9%,10.7%
+Fri Aug 31,09:00,GMT,eur,EUR Italian CPI - EU Harmonized (YoY),Low,3.5%,3.6%,3.6%
+Fri Aug 31,09:00,GMT,eur,EUR Italian CPI - EU Harmonized (MoM),Low,0.2%,0.3%,-1.7%
+Fri Aug 31,09:00,GMT,eur,EUR Euro-Zone Consumer Price Index Estimate (YoY),Medium,2.6%,2.5%,2.4%
+Fri Aug 31,09:00,GMT,eur,EUR Euro-Zone Unemployment Rate,Medium,11.3%,11.3%,11.3%
+Fri Aug 31,09:00,GMT,eur,EUR Italian CPI (NIC incl. tobacco) (MoM),Low,0.4%,0.3%,0.1%
+Fri Aug 31,09:00,GMT,eur,EUR Italian CPI (NIC incl. tobacco) (YoY),Low,3.2%,3.1%,3.1%
+Fri Aug 31,10:00,GMT,eur,EUR Italian PPI (MoM),Low,0.4%,0.3%,-0.1%
+Fri Aug 31,10:00,GMT,eur,EUR Italian PPI (YoY),Low,2.4%,,2.2%
+Fri Aug 31,12:00,GMT,usd,USD NAPM-Milwaukee,Low,42.9,49.0,46.7
+Fri Aug 31,12:30,GMT,cad,CAD Gross Domestic Product (MoM),Medium,0.2%,0.1%,0.1%
+Fri Aug 31,12:30,GMT,cad,CAD Gross Domestic Product (YoY),High,2.4%,2.2%,2.4%
+Fri Aug 31,12:30,GMT,cad,CAD Quarterly Gross Domestic Product Annualized,High,1.8%,1.6%,1.8%
+Fri Aug 31,13:45,GMT,usd,USD Chicago Purchasing Manager,Low,53.0,53.5,53.7
+Fri Aug 31,13:55,GMT,usd,USD U. of Michigan Confidence,Medium,74.3,73.6,73.6
+Fri Aug 31,14:00,GMT,USD,USD Fed's Bernanke Speaks at Jackson Hole Economic Policy Symposium,High,,,
+Fri Aug 31,14:00,GMT,usd,USD Factory Orders,Medium,2.8%,2.0%,-0.5%
+Fri Aug 31,15:55,GMT,GBP,GBP BoE's Haldane on Financial Stability at Jackson Hole Economic Policy Symposium,Low,,,
+Fri Aug 31,17:10,GMT,GBP,GBP BOE's Posen Discusses Monetary Policy at Jackson Hole Economic Policy Symposium,Low,,,
+Fri Aug 31,18:30,GMT,EUR,EUR IMF's Lagarde Speaks at Jackson Hole Economic Policy Symposium,High,,,
+Sat Sep 1,01:00,GMT,cny,CNY Manufacturing PMI,High,49.2,50.0,50.1

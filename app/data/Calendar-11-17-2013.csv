@@ -1,0 +1,153 @@
+Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Sun Nov 17,21:30,GMT,nzd,NZD Performance Services Index,Medium,58.2,,56.4
+Sun Nov 17,23:50,GMT,jpy,JPY Housing Loans (YoY),Medium,3.0%,,3.2%
+Mon Nov 18,00:01,GMT,gbp,GBP Rightmove House Prices (MoM),Low,-2.4%,,2.8%
+Mon Nov 18,00:01,GMT,gbp,GBP Rightmove House Prices (YoY),Low,4.0%,,3.8%
+Mon Nov 18,01:30,GMT,CNY,CNY China October Property Prices,Medium,,,
+Mon Nov 18,04:00,GMT,jpy,JPY Tokyo Condominium Sales (YoY),Low,21.4%,,77.3%
+Mon Nov 18,09:00,GMT,eur,EUR Euro-Zone Current Account s.a. (euros),Low,13.7B,,17.9B
+Mon Nov 18,09:00,GMT,eur,EUR Euro-Zone Current Account n.s.a. (euros),Low,14.0B,,12.4B
+Mon Nov 18,10:00,GMT,eur,EUR Euro-Zone Trade Balance s.a. (euros),Low,14.3B,13.0B,12.3B
+Mon Nov 18,10:00,GMT,eur,EUR Euro-Zone Trade Balance (euros),Low,13.1B,14.5B,6.9B
+Mon Nov 18,13:30,GMT,cad,CAD International Securities Transactions (Canadian dollar),Low,8.36B,,2.07B
+Mon Nov 18,14:00,GMT,usd,USD Total Net TIC Flows,Low,-$106.8B,,-$13.8B
+Mon Nov 18,14:00,GMT,usd,USD Net Long-term TIC Flows,Medium,$25.5B,$20.0B,-$9.8B
+Mon Nov 18,15:00,GMT,usd,USD NAHB Housing Market Index,Medium,54,55,54
+Mon Nov 18,17:15,GMT,USD,"USD Fed's Dudley to Speak in Queens, New York",Low,,,
+Mon Nov 18,18:30,GMT,USD,USD Fed's Plosser Speaks on the Economic Outlook in Philadelphia,Low,,,
+Mon Nov 18,20:45,GMT,USD,USD Fed's Dudley to Tour Steinway Factory in Long Island City,Low,,,
+Mon Nov 18,23:00,GMT,aud,AUD Conference Board Leading Index,Medium,0.3%,,-0.2%
+Tue Nov 19,00:30,GMT,AUD,AUD RBA Policy Meeting - November Minutes,Medium,,,
+Tue Nov 19,00:45,GMT,USD,USD Fed's Kocherlakota Speaks on Bank Regulation in Minneapolis,Low,,,
+Tue Nov 19,02:00,GMT,nzd,New Zealand 2-Year Inflation Expectation (4Q),Medium,2.34%,,2.36%
+Tue Nov 19,02:19,GMT,cny,China Foreign Direct Investment (YoY) (OCT),Medium,1.2%,6.1%,4.9%
+Tue Nov 19,05:00,GMT,jpy,JPY Leading Index,Medium,109.2,,109.5
+Tue Nov 19,05:00,GMT,jpy,JPY Coincident Index,Medium,108.4,,108.2
+Tue Nov 19,05:30,GMT,jpy,JPY Tokyo Department Store Sales (YoY),Low,1.2%,,3.6%
+Tue Nov 19,05:30,GMT,jpy,JPY Nationwide Department Store Sales (YoY),Low,-0.6%,,2.8%
+Tue Nov 19,07:00,GMT,eur,EUR EU 27 New Car Registrations,Low,4.7%,,5.4%
+Tue Nov 19,10:00,GMT,eur,EUR Euro-Zone ZEW Survey (Economic Sentiment),Medium,60.2,,59.1
+Tue Nov 19,10:00,GMT,eur,EUR Euro-Zone Construction Output w.d.a. (YoY),Low,-0.2%,,-1.3%
+Tue Nov 19,10:00,GMT,EUR,EUR EC OECD November Economic Outlook,Low,,,
+Tue Nov 19,10:00,GMT,eur,EUR Euro-Zone Construction Output s.a. (MoM),Low,-1.3%,,0.3%
+Tue Nov 19,10:00,GMT,eur,EUR German ZEW Survey (Current Situation),Medium,28.7,31.0,29.7
+Tue Nov 19,10:00,GMT,eur,EUR German ZEW Survey (Economic Sentiment),High,54.6,54.0,52.8
+Tue Nov 19,13:30,GMT,usd,USD Employment Cost Index,Low,0.4%,0.5%,0.5%
+Tue Nov 19,19:15,GMT,USD,USD Fed's Evans Speaks to Illinois Bankers in Chicago,Low,,,
+Tue Nov 19,21:45,GMT,nzd,NZD Producer Prices- Outputs (QoQ),Low,2.4%,,1.0%
+Tue Nov 19,21:45,GMT,nzd,NZD Producer Prices- Inputs (QoQ),Low,2.2%,,0.6%
+Tue Nov 19,23:30,GMT,aud,AUD Westpac Leading Index (MoM),Low,0.1%,,-0.1%
+Tue Nov 19,23:50,GMT,jpy,JPY Merchandise Trade Balance Total (Yen),Medium,-¥1090.7B,-¥854.2B,-¥934.3B
+Tue Nov 19,23:50,GMT,jpy,JPY Adjusted Merchandise Trade Balance (Yen),Low,-¥1072.5B,-¥875.5B,-¥1128.0B
+Tue Nov 19,23:50,GMT,jpy,JPY Merchandise Trade Exports (YoY),Low,18.6,16.2,11.5
+Tue Nov 19,23:50,GMT,jpy,JPY Merchandise Trade Imports (YoY),Low,26.1,19.0,16.5
+Wed Nov 20,00:00,GMT,aud,AUD DEWR Skilled Vacancies (MoM),Low,-0.1%,,-0.3%
+Wed Nov 20,00:00,GMT,USD,USD Fed's Bernanke Speaks to Economists Club in Washington,Low,,,
+Wed Nov 20,01:45,GMT,cny,CNY MNI November Business Indicator,Low,53.3,,55.3
+Wed Nov 20,02:00,GMT,cny,CNY Conference Board China October Leading Economic Index,Low,273.7,,272.1
+Wed Nov 20,04:30,GMT,jpy,JPY All Industry Activity Index (MoM),Medium,0.4%,0.4%,0.3%
+Wed Nov 20,07:00,GMT,eur,EUR German Producer Prices (MoM),Low,-0.2%,0.0%,0.3%
+Wed Nov 20,07:00,GMT,eur,EUR German Producer Prices (YoY),Low,-0.7%,-0.6%,-0.5%
+Wed Nov 20,07:00,GMT,jpy,JPY Convenience Store Sales (YoY),Low,-0.8%,,-1.6%
+Wed Nov 20,09:30,GMT,GBP,GBP Bank of England Minutes,Medium,,,
+Wed Nov 20,10:00,GMT,chf,CHF ZEW Survey (Expectations),Medium,31.6,,24.9
+Wed Nov 20,12:00,GMT,usd,USD MBA Mortgage Applications,Medium,-2.3%,,-1.8%
+Wed Nov 20,13:30,GMT,usd,USD Retail Sales Ex Auto and Gas,Low,0.3%,0.2%,0.3%
+Wed Nov 20,13:30,GMT,usd,USD Consumer Price Index (MoM),Medium,-0.1%,0.0%,0.2%
+Wed Nov 20,13:30,GMT,usd,USD Consumer Price Index Core Index s.a.,Low,234.877,234.929,234.589
+Wed Nov 20,13:30,GMT,usd,USD Consumer Price Index n.s.a.,Low,233.546,233.600,234.149
+Wed Nov 20,13:30,GMT,usd,USD Retail Sales Control Group,Low,0.4%,0.2%,0.3%
+Wed Nov 20,13:30,GMT,usd,USD Consumer Price Index Ex Food & Energy (MoM),Medium,0.1%,0.1%,0.1%
+Wed Nov 20,13:30,GMT,cad,CAD Wholesale Sales (MoM),Low,0.2%,0.3%,0.4%
+Wed Nov 20,13:30,GMT,usd,USD Advance Retail Sales,High,0.4%,0.1%,0.0%
+Wed Nov 20,13:30,GMT,usd,USD Retail Sales Less Autos,Medium,0.2%,0.1%,0.3%
+Wed Nov 20,13:30,GMT,usd,USD Consumer Price Index (YoY),High,1.0%,1.0%,1.2%
+Wed Nov 20,13:30,GMT,usd,USD Consumer Price Index Ex Food & Energy (YoY),High,1.7%,1.7%,1.7%
+Wed Nov 20,15:00,GMT,usd,USD Existing Home Sales (MoM),Medium,-3.2%,-2.9%,-1.9%
+Wed Nov 20,15:00,GMT,usd,USD Existing Home Sales,Low,5.12M,5.14M,5.29M
+Wed Nov 20,15:00,GMT,usd,USD Business Inventories,Medium,0.6%,0.3%,0.4%
+Wed Nov 20,15:00,GMT,usd,USD Fed's Dudley to Speak on Economy in Briefing,Medium,,,
+Wed Nov 20,15:30,GMT,usd,USD DOE Cushing OK Crude Inventory,Low,1736K,,1691K
+Wed Nov 20,15:30,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,-345K,-300K,-838K
+Wed Nov 20,15:30,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,375K,1000K,2640K
+Wed Nov 20,15:30,GMT,usd,USD DOE U.S. Distillate Inventory,Low,-4795K,-280K,-481K
+Wed Nov 20,17:10,GMT,USD,USD Fed's Bullard Speaks on Economy and Monetary Policy in Chicago,Low,,,
+Wed Nov 20,19:00,GMT,USD,USD Fed Releases Minutes from Oct 29-30 FOMC Meeting,High,,,
+Wed Nov 20,21:00,GMT,nzd,NZD ANZ Job Advertisements (MoM),Low,4.5%,,1.3%
+Wed Nov 20,21:15,GMT,CAD,CAD BoC's Poloz and Macklem Speak at a Senate Committee,Medium,,,
+Wed Nov 20,23:50,GMT,jpy,JPY Japan Buying Foreign Bonds (Yen),Medium,¥349.9B,,¥357.8B
+Wed Nov 20,23:50,GMT,jpy,JPY Japan Buying Foreign Stocks (Yen),Medium,-¥89.8B,,-¥98.4B
+Wed Nov 20,23:50,GMT,jpy,JPY Foreign Buying Japan Bonds (Yen),Low,¥25.8B,,-¥322.2B
+Wed Nov 20,23:50,GMT,jpy,JPY Foreign Buying Japan Stocks (Yen),Low,¥1294.9B,,¥274.5B
+Thu Nov 21,,,JPY,JPY Bank of Japan Monetary Policy Statement,Medium,,,
+Thu Nov 21,,,JPY,JPY Bank of Japan Rate Decision,High,,,
+Thu Nov 21,00:30,GMT,aud,AUD RBA FX Transactions Government,Low,-318M,,-698M
+Thu Nov 21,00:30,GMT,aud,AUD RBA Foreign Exchange Transaction (Australian dollar),Low,648M,,663M
+Thu Nov 21,00:30,GMT,aud,AUD RBA FX Transactions Other,Low,39M,,12M
+Thu Nov 21,01:45,GMT,cny,CNY HSBC/Markit Flash Mfg PMI,Medium,50.4,50.8,50.9
+Thu Nov 21,02:00,GMT,nzd,NZD Credit Card Spending (MoM),Low,-0.8%,,-0.1%
+Thu Nov 21,02:00,GMT,nzd,NZD Credit Card Spending (YoY),Medium,3.2%,,5.1%
+Thu Nov 21,03:15,GMT,jpy,JPY BOJ 2014 Monetary Base Target,Medium,¥270T,¥270T,¥270T
+Thu Nov 21,05:00,GMT,jpy,JPY Supermarket Sales (YoY),Low,0.5%,,0.4%
+Thu Nov 21,06:00,GMT,jpy,JPY Machine Tool Orders (YoY),Medium,8.4%,,8.4%
+Thu Nov 21,06:30,GMT,jpy,JPY BoJ Governor Kuroda Press Conference,High,,,
+Thu Nov 21,07:00,GMT,chf,CHF Trade Balance (Swiss franc),Medium,2.43B,2.60B,2.40B
+Thu Nov 21,07:00,GMT,chf,CHF Exports (MoM),Low,-2.6%,,2.0%
+Thu Nov 21,07:00,GMT,chf,CHF Imports (MoM),Low,-2.3%,,2.3%%
+Thu Nov 21,08:00,GMT,eur,EUR French Purchasing Manager Index Manufacturing,Low,47.8,49.5,49.1
+Thu Nov 21,08:00,GMT,eur,EUR French Purchasing Manager Index Services,Low,48.8,51.0,50.9
+Thu Nov 21,08:00,GMT,chf,CHF Money Supply M3 (YoY),Low,9.1%,,9.4%
+Thu Nov 21,08:30,GMT,eur,EUR German Purchasing Manager Index Services,Medium,54.5,53.0,52.9
+Thu Nov 21,08:30,GMT,eur,EUR German Purchasing Manager Index Manufacturing,Medium,52.5,52.0,51.7
+Thu Nov 21,09:00,GMT,eur,EUR Euro-Zone Purchasing Manager Index Composite,Medium,51.5,52.0,51.9
+Thu Nov 21,09:00,GMT,eur,EUR Euro-Zone Purchasing Manager Index Manufacturing,Medium,51.5,51.5,51.3
+Thu Nov 21,09:00,GMT,eur,EUR Euro-Zone Purchasing Manager Index Services,Medium,50.9,51.9,51.6
+Thu Nov 21,09:05,GMT,AUD,AUD RBA Governor Stevens Gives Speech,High,,,
+Thu Nov 21,09:30,GMT,gbp,GBP Public Sector Net Borrowing (Pounds),Medium,6.4B,5.1B,8.6B
+Thu Nov 21,09:30,GMT,gbp,GBP Public Finances (PSNCR) (Pounds),Medium,-16.8B,,-0.5B
+Thu Nov 21,09:30,GMT,gbp,GBP PSNB ex Interventions,Medium,8.1B,7.5B,10.3B
+Thu Nov 21,10:00,GMT,EUR,EUR ECB President Draghi Speaks,Medium,,,
+Thu Nov 21,11:00,GMT,gbp,GBP CBI Trends Selling Prices,Low,5,-3,-2
+Thu Nov 21,11:00,GMT,gbp,GBP CBI Trends Total Orders,Low,11,1,-4
+Thu Nov 21,13:30,GMT,usd,USD Producer Price Index Ex Food & Energy (YoY),Medium,1.4%,1.3%,1.2%
+Thu Nov 21,13:30,GMT,usd,USD Continuing Claims,Low,2876K,2870K,2810K
+Thu Nov 21,13:30,GMT,usd,USD Producer Price Index (MoM),Low,-0.2%,-0.2%,-0.1%
+Thu Nov 21,13:30,GMT,usd,USD Producer Price Index (YoY),Medium,0.3%,0.3%,0.3%
+Thu Nov 21,13:30,GMT,usd,USD Initial Jobless Claims,Medium,323K,335K,344K
+Thu Nov 21,13:30,GMT,usd,USD Producer Price Index Ex Food & Energy (MoM),Low,0.2%,0.1%,0.1%
+Thu Nov 21,13:58,GMT,usd,USD Markit US PMI Preliminary,Medium,54.3,52.3,51.8
+Thu Nov 21,15:00,GMT,usd,USD Philadelphia Fed.  Business Outlook,Medium,6.5,15.0,19.8
+Thu Nov 21,15:00,GMT,USD,USD API Monthly Statistical Report,Low,,,
+Thu Nov 21,15:00,GMT,eur,EUR Euro-Zone Consumer Confidence,Medium,-15.4,-14.0,-14.5
+Thu Nov 21,15:00,GMT,usd,USD Senate Banking Committee Votes on Yellen Nomination,Medium,,,
+Thu Nov 21,15:30,GMT,usd,USD EIA Natural Gas Storage Change,Low,-38,-45,20
+Thu Nov 21,17:30,GMT,USD,"USD Fed's Lacker Speaks on Economy in Asheboro, North Carolina",Low,,,
+Thu Nov 21,18:00,GMT,USD,"USD Fed's Bullard Speaks on Monetary Policy in Rogers, Arkansas",Low,,,
+Thu Nov 21,21:45,GMT,nzd,NZD Net Migration s.a.,Low,3000,,2790
+Fri Nov 22,05:00,GMT,JPY,JPY Bank of Japan's Monthly Economic Report for November,Medium,,,
+Fri Nov 22,07:00,GMT,eur,EUR German Private Consumption  (QoQ),Low,0.1%,0.2%,0.6%
+Fri Nov 22,07:00,GMT,eur,EUR German Government Spending (QoQ),Low,0.5%,0.3%,-0.2%
+Fri Nov 22,07:00,GMT,eur,EUR German Imports (QoQ),Low,0.8%,0.6%,1.9%
+Fri Nov 22,07:00,GMT,eur,EUR German Gross Domestic Product s.a. (QoQ),Medium,0.3%,0.3%,0.3%
+Fri Nov 22,07:00,GMT,eur,EUR German Gross Domestic Product w.d.a. (YoY),Medium,0.6%,0.6%,0.6%
+Fri Nov 22,07:00,GMT,eur,EUR German Capital Investment (QoQ),Low,1.6%,0.7%,1.6%
+Fri Nov 22,07:00,GMT,eur,EUR German Construction Investment (QoQ),Low,2.4%,1.5%,1.9%
+Fri Nov 22,07:00,GMT,eur,EUR German Domestic Demand (QoQ),Low,0.7%,,0.4%
+Fri Nov 22,07:00,GMT,eur,EUR German Exports (QoQ),Low,0.1%,0.3%,2.4%
+Fri Nov 22,07:00,GMT,eur,EUR German Gross Domestic Product n.s.a. (YoY),Medium,1.1%,1.1%,1.1%
+Fri Nov 22,09:00,GMT,eur,EUR German IFO - Expectations,Medium,106.3,104.0,103.7
+Fri Nov 22,09:00,GMT,eur,EUR German IFO - Business Climate,Medium,109.3,107.7,107.4
+Fri Nov 22,09:00,GMT,eur,EUR German IFO - Current Assessment,Medium,112.2,111.5,111.3
+Fri Nov 22,09:40,GMT,jpy,JPY Cabinet Office Monthly Economic Report for November,Medium,,,
+Fri Nov 22,13:30,GMT,cad,CAD Consumer Price Index (YoY),High,0.7%,0.8%,1.1%
+Fri Nov 22,13:30,GMT,cad,CAD Bank Canada Consumer Price Index Core (MoM),Medium,0.2%,0.2%,0.2%
+Fri Nov 22,13:30,GMT,cad,CAD Consumer Price Index n.s.a. (MoM),Medium,-0.2%,-0.1%,0.2%
+Fri Nov 22,13:30,GMT,cad,CAD Bank Canada Consumer Price Index Core (YoY),High,1.2%,1.2%,1.3%
+Fri Nov 22,13:30,GMT,cad,CAD Retail Sales (MoM),Medium,1.0%,0.3%,0.1%
+Fri Nov 22,13:30,GMT,cad,CAD Retail Sales Less Autos (MoM),Low,0.0%,0.2%,0.5%
+Fri Nov 22,13:30,GMT,cad,CAD CPI SA (MoM),Low,-0.1%,,0.1%
+Fri Nov 22,13:30,GMT,cad,CAD CPI Core SA (MoM),Low,0.0%,,0.1%
+Fri Nov 22,13:30,GMT,cad,CAD Consumer Price Index,Low,123.0,123.3,123.3
+Fri Nov 22,13:40,GMT,USD,USD Fed's George Speaks on Banking Supervision in Paris,Low,,,
+Fri Nov 22,15:00,GMT,usd,USD JOLTs Job Openings,Low,3913,3850,3844
+Fri Nov 22,16:00,GMT,usd,USD Kansas City Fed Manf. Activity,Low,7,6,6
