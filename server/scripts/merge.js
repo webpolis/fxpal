@@ -1,5 +1,7 @@
 'use strict';
 var fs = require('fs'),
+    moment = require('../../bower_components/momentjs/moment.js'),
+    csv = require('csv-parse'),
     pathDatasets = __dirname + '/../../app/data/';
 var datasets = fs.readdirSync(pathDatasets),
     calendars = [];
@@ -17,6 +19,7 @@ if (datasets.length > 0) {
 /**
  * merge calendars
  */
+var dataCalendar = [];
 calendars.sort(function(a, b) {
     var dateA = new Date(a.replace(/.*(\d{2}\-\d{2}\-\d{4}).*/, '$1'));
     var dateB = new Date(b.replace(/.*(\d{2}\-\d{2}\-\d{4}).*/, '$1'));
@@ -26,4 +29,26 @@ calendars.sort(function(a, b) {
         return -1;
     }
     return 0;
+});
+calendars.forEach(function(calendar) {
+    var year = calendar.replace(/.*\b(\d{4})\b.*/g, '$1');
+    fs.readFile(calendar, function(err, data) {
+        csv(data, {
+            columns: true
+        }, function(err, out) {
+            if (out) {
+                out.forEach(function(row) {
+                    var o = {};
+                    for (var p in row) {
+                        var pp = p.toLowerCase();
+                        if (/description/i.test(p)) {
+                            p = 'event';
+                        }
+                        o[pp] = row[p];
+                    }
+                    var realDate = moment([o.date, year, o.time, o['time zone']].join(' ')).toDate();
+                });
+            }
+        });
+    });
 });

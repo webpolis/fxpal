@@ -1,5 +1,5 @@
 'use strict';
-var moment = require('../bower_components/momentjs/moment.js'),
+var moment = require('../../bower_components/momentjs/moment.js'),
     sleep = require('sleep');
 var urlDailyFx = 'http://www.dailyfx.com/files/Calendar-{{startWeekDate}}.csv';
 var weeks = 157; // 3 years aprox

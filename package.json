@@ -2,6 +2,7 @@
   "name": "aifx",
   "version": "0.0.0",
   "dependencies": {
+    "csv-parse": "0.0.5",
     "sleep": "^1.1.8"
   },
   "devDependencies": {
