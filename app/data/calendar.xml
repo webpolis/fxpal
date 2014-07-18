@@ -14,7 +14,7 @@
     <parameter key="encoding" value="SYSTEM"/>
     <process expanded="true">
       <operator activated="true" class="loop_files" compatibility="6.0.003" expanded="true" height="76" name="Loop Files" width="90" x="45" y="75">
-        <parameter key="directory" value="/Volumes/KINGSTON/data"/>
+        <parameter key="directory" value="/Users/macbook/workspace/nico/aifx/app/data"/>
         <parameter key="filter" value="Cal.*\.csv"/>
         <parameter key="filtered_string" value="file name (last part of the path)"/>
         <parameter key="file_name_macro" value="file_name"/>
