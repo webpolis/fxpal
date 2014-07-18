@@ -1,5 +1,16 @@
 'use strict';
-angular.module('aifxApp', ['ngAnimate', 'ngCookies', 'ngResource', 'ngRoute', 'ngSanitize', 'ngTouch', 'ionic', 'ngTable', 'highcharts-ng']).config(function($stateProvider, $urlRouterProvider,$httpProvider) {
+// error handling
+window.onerror = function(msg, url, line) {
+    console.log('Caught[via window.onerror]: ' + msg + ' from ' + url + ':' + line);
+    return true;
+};
+window.addEventListener('error', function(evt) {
+    console.log('Caught[via error event]:  ' + evt.message + ' from ' + evt.filename + ':' + evt.lineno);
+    console.log(evt);
+    evt.preventDefault();
+});
+// setup angular
+angular.module('aifxApp', ['ngAnimate', 'ngCookies', 'ngResource', 'ngRoute', 'ngSanitize', 'ngTouch', 'ionic', 'ngTable', 'highcharts-ng']).config(function($stateProvider, $urlRouterProvider, $httpProvider) {
     $stateProvider.state('app', {
         url: '/app',
         templateUrl: 'views/menu.html'
@@ -38,6 +49,9 @@ var PhoneGapInit = function() {
         document.addEventListener('deviceready', function() {
             this.boot();
         });
+        document.addEventListener('offline', function() {
+            alert('Please check your internet connection');
+        }, false);
     } else {
         this.boot();
     }

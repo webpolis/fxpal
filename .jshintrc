@@ -13,7 +13,8 @@
     "$": true,
     "google": true,
     "regression": true,
-    "Highcharts": true
+    "Highcharts": true,
+    "alert": true
   },
   "globalstrict": true,
   "quotmark": true,

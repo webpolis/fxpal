@@ -3,8 +3,10 @@ var fs = require('fs'),
     moment = require('../../bower_components/momentjs/moment.js'),
     csv = require('csv-parse'),
     q = require('q'),
+    opts = require('optimist').usage('Dataset merge utility. Options cannot be combined.\nUsage: $0').alias('c', 'calendar').describe('c', 'Merge historical calendars in one dataset').alias('e', 'events-crosses').describe('e', 'Merge calendar events with currency crosses'),
     pathDatasets = __dirname + '/../../app/data/',
-    outCsv = __dirname + '/../../app/data/calendar.csv';
+    csvCalendarOut = pathDatasets + 'calendar.csv',
+    csvMultisetsInput = pathDatasets + 'multisetsInputs.csv';
 var datasets = fs.readdirSync(pathDatasets),
     calendars = [];
 /**
@@ -22,18 +24,18 @@ if (datasets.length > 0) {
  * merge calendars
  */
 var dataCalendar = [];
-calendars.sort(function(a, b) {
-    var dateA = new Date(a.replace(/.*(\d{2}\-\d{2}\-\d{4}).*/, '$1'));
-    var dateB = new Date(b.replace(/.*(\d{2}\-\d{2}\-\d{4}).*/, '$1'));
-    if (dateA > dateB) {
-        return 1;
-    } else if (dateA < dateB) {
-        return -1;
-    }
-    return 0;
-});
 var mergeCalendars = function() {
     var def = q.defer();
+    calendars.sort(function(a, b) {
+        var dateA = new Date(a.replace(/.*(\d{2}\-\d{2}\-\d{4}).*/, '$1'));
+        var dateB = new Date(b.replace(/.*(\d{2}\-\d{2}\-\d{4}).*/, '$1'));
+        if (dateA > dateB) {
+            return 1;
+        } else if (dateA < dateB) {
+            return -1;
+        }
+        return 0;
+    });
     calendars.forEach(function(calendar) {
         var year = calendar.replace(/.*\b(\d{4})\b.*/g, '$1');
         var data = fs.readFileSync(calendar);
@@ -82,15 +84,20 @@ var mergeCalendars = function() {
     });
     return def.promise;
 };
-// generate historical calendar
-mergeCalendars().then(function() {
-    var cols = Object.keys(dataCalendar[0]);
-    fs.appendFileSync(outCsv, cols.join(',') + '\n');
-    dataCalendar.forEach(function(row) {
-        var data = [];
-        for (var c in row) {
-            data.push(row[c]);
-        }
-        fs.appendFileSync(outCsv, data.join(',') + '\n');
+if (opts.argv.calendar) {
+    // generate historical calendar
+    mergeCalendars().then(function() {
+        var cols = Object.keys(dataCalendar[0]);
+        fs.appendFileSync(csvCalendarOut, cols.join(',') + '\n');
+        dataCalendar.forEach(function(row) {
+            var data = [];
+            for (var c in row) {
+                data.push(row[c]);
+            }
+            fs.appendFileSync(csvCalendarOut, data.join(',') + '\n');
+        });
     });
-});
+} else if (opts.argv.e) {} else {
+    opts.showHelp();
+}
+process.exit(1);
