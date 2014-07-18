@@ -48,7 +48,7 @@ var mergeCalendars = function() {
                     if (/description/i.test(p)) {
                         p = 'event';
                     }
-                    o[pp] = row[p];
+                    o[pp] = row[p].trim();
                 }
                 if (!o.actual ||  o.actual === '') {
                     return;
@@ -59,6 +59,10 @@ var mergeCalendars = function() {
                 o.event = o.event.replace(re, '$1');
                 o.timestamp = date.valueOf();
                 o.date = moment(o.timestamp).toDate();
+                // normalize numbers
+                o.actual = o.actual ? parseFloat(o.actual.replace(/[^\d\%\.\,\-]+/g, '')) : null;
+                o.forecast = o.forecast ? parseFloat(o.forecast.replace(/[^\d\%\.\,\-]+/g, '')) : null;
+                o.previous = o.previous ? parseFloat(o.previous.replace(/[^\d\%\.\,\-]+/g, '')) : null;
                 delete o.time;
                 delete o['time zone'];
                 dataCalendar.push(o);
