@@ -2,6 +2,7 @@
 var fs = require('fs'),
     moment = require('../../bower_components/momentjs/moment.js'),
     csv = require('csv-parse'),
+    q = require('q'),
     pathDatasets = __dirname + '/../../app/data/';
 var datasets = fs.readdirSync(pathDatasets),
     calendars = [];
@@ -30,25 +31,48 @@ calendars.sort(function(a, b) {
     }
     return 0;
 });
-calendars.forEach(function(calendar) {
-    var year = calendar.replace(/.*\b(\d{4})\b.*/g, '$1');
-    fs.readFile(calendar, function(err, data) {
-        csv(data, {
+var mergeCalendars = function() {
+    var def = q.defer();
+    calendars.forEach(function(calendar) {
+        var year = calendar.replace(/.*\b(\d{4})\b.*/g, '$1');
+        var data = fs.readFileSync(calendar);
+        var parser = csv({
             columns: true
-        }, function(err, out) {
-            if (out) {
-                out.forEach(function(row) {
-                    var o = {};
-                    for (var p in row) {
-                        var pp = p.toLowerCase();
-                        if (/description/i.test(p)) {
-                            p = 'event';
-                        }
-                        o[pp] = row[p];
+        });
+        parser.on('readable', function() {
+            var row = null;
+            while (row = parser.read()) {
+                var o = {};
+                for (var p in row) {
+                    var pp = p.toLowerCase();
+                    if (/description/i.test(p)) {
+                        p = 'event';
                     }
-                    var realDate = moment([o.date, year, o.time, o['time zone']].join(' ')).toDate();
-                });
+                    o[pp] = row[p];
+                }
+                if (!o.actual ||  o.actual === '') {
+                    return;
+                }
+                var date = moment([o.date, year, o.time, o['time zone']].join(' '));
+                o.currency = o.currency.toUpperCase();
+                var re = new RegExp('^' + o.currency + '\\s+(.*)$', 'gi');
+                o.event = o.event.replace(re, '$1');
+                o.timestamp = date.valueOf();
+                o.date = moment(o.timestamp).toDate();
+                delete o.time;
+                delete o['time zone'];
+                dataCalendar.push(o);
             }
         });
+        parser.on('error', function(err) {
+            console.log(err.message);
+        });
+        parser.on('finish', function() {
+            console.log(dataCalendar);
+        });
+        parser.write(data);
+        parser.end();
     });
-});
+    return def.promise;
+};
+mergeCalendars();
