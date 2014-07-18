@@ -27,8 +27,14 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         },
         xAxis: {
             type: 'datetime'
-        }
+        },
     };
+    // not supported via highcharts-ng
+    Highcharts.setOptions({
+        global: {
+            useUTC: false
+        }
+    });
     $scope.optsChartPeriods = [{
         label: 'Intraday',
         granularity: 'M15',

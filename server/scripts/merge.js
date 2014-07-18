@@ -3,7 +3,8 @@ var fs = require('fs'),
     moment = require('../../bower_components/momentjs/moment.js'),
     csv = require('csv-parse'),
     q = require('q'),
-    pathDatasets = __dirname + '/../../app/data/';
+    pathDatasets = __dirname + '/../../app/data/',
+    outCsv = __dirname + '/../../app/data/calendar.csv';
 var datasets = fs.readdirSync(pathDatasets),
     calendars = [];
 /**
@@ -43,6 +44,7 @@ var mergeCalendars = function() {
         parser.on('readable', function() {
             var row = null;
             while (row = parser.read()) {
+                // normalize fields
                 var o = {};
                 for (var p in row) {
                     var pp = p.toLowerCase();
@@ -59,7 +61,7 @@ var mergeCalendars = function() {
                 var re = new RegExp('^' + o.currency + '\\s+(.*)$', 'gi');
                 o.event = o.event.replace(re, '$1');
                 o.timestamp = date.valueOf();
-                o.date = moment(o.timestamp).toDate();
+                o.date = moment(o.timestamp).format('YYYY-MM-DD');
                 // normalize numbers
                 o.actual = o.actual ? parseFloat(o.actual.replace(/[^\d\%\.\,\-]+/g, '')) : null;
                 o.forecast = o.forecast ? parseFloat(o.forecast.replace(/[^\d\%\.\,\-]+/g, '')) : null;
@@ -80,9 +82,9 @@ var mergeCalendars = function() {
     });
     return def.promise;
 };
+// generate historical calendar
 mergeCalendars().then(function() {
-    var cols = Object.keys(dataCalendar[0]),
-        outCsv = __dirname + '/../../app/data/calendar.csv';
+    var cols = Object.keys(dataCalendar[0]);
     fs.appendFileSync(outCsv, cols.join(',') + '\n');
     dataCalendar.forEach(function(row) {
         var data = [];

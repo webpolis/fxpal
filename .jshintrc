@@ -12,7 +12,8 @@
     "moment": true,
     "$": true,
     "google": true,
-    "regression": true
+    "regression": true,
+    "Highcharts": true
   },
   "globalstrict": true,
   "quotmark": true,
