@@ -327,7 +327,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         var start = null;
         switch (period.label) {
             case 'Intraday':
-                start = moment().subtract('day', 1).utc().format($scope.utils.rfc3339);
+                start = moment().day() > 5 ? moment().hours(0).subtract('day', moment().day() - 5).utc().format($scope.utils.rfc3339) : moment().subtract('day', 1).utc().format($scope.utils.rfc3339);
                 break;
             case 'Week':
                 start = moment().subtract('week', 1).utc().format($scope.utils.rfc3339);
