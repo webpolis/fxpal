@@ -187,13 +187,37 @@ var getCalendarsValues = function() {
     parser.end();
     return _def.promise;
 };
+var dataEventsCurrencies = [],
+    mapDateCross = {};
 var mergeEventsCurrencies = function() {
     var def = q.defer();
-    getCurrenciesValues().then(function(currencies) {
-        if (currencies.length > 0) {
+    getCurrenciesValues().then(function(crosses) {
+        if (crosses.length > 0) {
+            // for faster access, create a map indexed by date
+            crosses.forEach(function(cross) {
+                var date = cross.date;
+                delete cross.date;
+                mapDateCross[date] = cross;
+            });
             getCalendarsValues().then(function(calendars) {
                 console.log(dataEvents.length + ' events loaded');
-                def.resolve();
+                calendars.forEach(function(cal) {
+                    var o = {};
+                    var cross = mapDateCross[cal.date] || null;
+                    if (cross !== null) {
+                        for (var p in cal) {
+                            o[p] = cal[p];
+                        }
+                        for (var pp in cross) {
+                            if (/date/gi.test(pp)) {
+                                continue;
+                            }
+                            o[pp] = cross[pp];
+                        }
+                        dataEventsCurrencies.push(o);
+                    }
+                });
+                def.resolve(dataEventsCurrencies);
             });
         } else {
             def.reject();
@@ -224,7 +248,9 @@ if (opts.argv.calendar) {
         opts.showHelp();
         process.exit(1);
     } else {
-        mergeEventsCurrencies().then(function() {}, function(err) {
+        mergeEventsCurrencies().then(function(eventsCurrencies) {
+            console.log(eventsCurrencies);
+        }, function(err) {
             console.log(err);
         });
     }
