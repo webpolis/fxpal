@@ -30,6 +30,7 @@ var normalizeEventName = function(event, currency) {
     var reCurrency = new RegExp('[\\b\\s]*' + currency + '[\\b\\s]*(?!o)', 'gi');
     ret = ret.replace(/[\-\_\"\(\)\[\]]{1,}/g, ' ');
     ret = ret.replace(reCurrency, '');
+    ret = ret.replace(/\'s?/gi, '');
     ret = ret.replace(/\s{1,}|millions?|mlns?/gi, ' ');
     ret = ret.replace(/\b(?:€|euros|euro|yen)\b/gi, '').replace(/€|¥/g, '');
     ret = ret.replace(/harmon?i[sz]ed/gi, 'Harmonized');
@@ -206,15 +207,14 @@ if (opts.argv.calendar) {
             return arr.indexOf(ev) == ix;
         });
         dataEvents.sort();
-        //fs.appendFileSync(csvCalendarOut, cols.join(',') + '\n');
+        fs.appendFileSync(csvCalendarOut, cols.join(',') + '\n');
         dataCalendars.forEach(function(row) {
             var data = [];
             for (var c in row) {
                 data.push(row[c]);
             }
-            //fs.appendFileSync(csvCalendarOut, data.join(',') + '\n');
+            fs.appendFileSync(csvCalendarOut, data.join(',') + '\n');
         });
-        console.log(dataEvents);
     });
 } else if (opts.argv.e) {
     if (!fs.existsSync(csvCalendarOut)) {
