@@ -991,21 +991,12 @@
         <parameter key="read_not_matching_values_as_missings" value="true"/>
         <parameter key="datamanagement" value="double_array"/>
       </operator>
-      <operator activated="true" class="remove_correlated_attributes" compatibility="6.0.003" expanded="true" height="76" name="Remove Correlated Attributes" width="90" x="246" y="75">
-        <parameter key="correlation" value="0.55"/>
-        <parameter key="filter_relation" value="less equals"/>
-        <parameter key="attribute_order" value="original"/>
-        <parameter key="use_absolute_correlation" value="true"/>
-        <parameter key="use_local_random_seed" value="false"/>
-        <parameter key="local_random_seed" value="1992"/>
-      </operator>
       <operator activated="true" class="correlation_matrix" compatibility="6.0.003" expanded="true" height="94" name="Correlation Matrix" width="90" x="447" y="75">
         <parameter key="create_weights" value="false"/>
         <parameter key="normalize_weights" value="true"/>
         <parameter key="squared_correlation" value="false"/>
       </operator>
-      <connect from_op="Read CSV" from_port="output" to_op="Remove Correlated Attributes" to_port="example set input"/>
-      <connect from_op="Remove Correlated Attributes" from_port="example set output" to_op="Correlation Matrix" to_port="example set"/>
+      <connect from_op="Read CSV" from_port="output" to_op="Correlation Matrix" to_port="example set"/>
       <connect from_op="Correlation Matrix" from_port="matrix" to_port="result 1"/>
       <portSpacing port="source_input 1" spacing="0"/>
       <portSpacing port="sink_result 1" spacing="0"/>
