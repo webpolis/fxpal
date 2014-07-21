@@ -9,7 +9,7 @@ var fs = require('fs'),
     pathDatasets = __dirname + '/../../app/data/',
     csvCalendarOut = pathDatasets + 'calendar.csv',
     csvMultisetsInput = pathDatasets + 'multisetsInputs.csv',
-    csvEventsCrossesOut = pathDatasets + 'eventsCrossesOutputs.csv';
+    csvEventsCrossesOut = pathDatasets + 'eventsCrossesInputs.csv';
 var datasets = fs.readdirSync(pathDatasets),
     calendars = [];
 /**
