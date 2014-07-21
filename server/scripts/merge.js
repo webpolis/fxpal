@@ -1,6 +1,7 @@
 'use strict';
 var fs = require('fs'),
     moment = require('../../bower_components/momentjs/moment.js'),
+    jsonpath = require('../../bower_components/jsonpath/lib/jsonpath.js'),
     csv = require('csv-parse'),
     q = require('q'),
     opts = require('optimist').usage('Dataset merge utility. Options cannot be combined.\nUsage: $0').alias('c', 'calendar').describe('c', 'Merge historical calendars in one dataset').alias('e', 'events-crosses').describe('e', 'Merge calendar events with currency crosses'),
@@ -44,7 +45,7 @@ var normalizeEventName = function(event, currency) {
     ret = ret.replace(/personal\s*consumption\s*expenditure(\s*)/gi, 'PCE$1');
     ret = ret.replace(/([a-z]{1})(?:roducer|onsumer)\s*price\s*index(\s*)/gi, '$1PI$2');
     ret = ret.replace(/under\s*employment(\s*)/gi, 'unemployment$1');
-    ret = ret.replace(/perf\.?\s*of\.?\s*constr\.?(\s*)/gi, 'performance of construction$1')
+    ret = ret.replace(/perf\.?\s*of\.?\s*constr\.?(\s*)/gi, 'performance of construction$1');
     ret = ret.trim().replace(/[^\w\d]{1,}/g, '_');
     return ret.toUpperCase();
 };
@@ -82,9 +83,6 @@ var mergeCalendars = function() {
                     }
                     o[pp] = /event/i.test(p) ? normalizeEventName(row[p], row.Currency.toUpperCase()) : row[p];
                 }
-                if (!o.actual ||  o.actual === '' ||  /\d{4}\_(?:\d{2}\_){2}/gi.test(o.event)) {
-                    return;
-                }
                 var date = moment([o.date, year, o.time, o['time zone']].join(' '));
                 o.currency = o.currency.toUpperCase();
                 o.timestamp = date.valueOf();
@@ -96,8 +94,12 @@ var mergeCalendars = function() {
                 o.previous = o.previous ? parseFloat(o.previous.replace(/[^\d\%\.\,\-]+/g, '')) : null;
                 delete o.time;
                 delete o['time zone'];
-                dataCalendars.push(o);
-                dataEvents.push(o.currency + '|' + o.event);
+                if (!o.actual ||  o.actual === '' ||  /\d{4}\_(?:\d{2}\_){2}/gi.test(o.event)) {
+                    continue;
+                } else {
+                    dataCalendars.push(o);
+                    dataEvents.push(o.currency + '|' + o.event);
+                }
             }
         });
         parser.on('error', function(err) {
@@ -190,7 +192,7 @@ var mergeEventsCurrencies = function() {
     getCurrenciesValues().then(function(currencies) {
         if (currencies.length > 0) {
             getCalendarsValues().then(function(calendars) {
-                console.log(dataEvents);
+                console.log(dataEvents.length + ' events loaded');
                 def.resolve();
             });
         } else {

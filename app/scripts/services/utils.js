@@ -28,7 +28,7 @@ angular.module('aifxApp').service('utils', function utils() {
             ret = ret.replace(/personal\s*consumption\s*expenditure(\s*)/gi, 'PCE$1');
             ret = ret.replace(/([a-z]{1})(?:roducer|onsumer)\s*price\s*index(\s*)/gi, '$1PI$2');
             ret = ret.replace(/under\s*employment(\s*)/gi, 'unemployment$1');
-            ret = ret.replace(/perf\.?\s*of\.?\s*constr\.?(\s*)/gi, 'performance of construction$1')
+            ret = ret.replace(/perf\.?\s*of\.?\s*constr\.?(\s*)/gi, 'performance of construction$1');
             ret = ret.trim().replace(/[^\w\d]{1,}/g, '_');
             return ret.toUpperCase();
         }
