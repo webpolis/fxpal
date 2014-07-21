@@ -60,6 +60,7 @@ var normalizeEventName = function(event, currency) {
     ret = ret.replace(/.*continuing.*claims.*/gi, 'continuing claims');
     ret = ret.replace(/.*ban[dk].*of.*cand/gi, 'bank of canad');
     ret = ret.replace(/non\s+farm/gi, 'nonfarm');
+    ret = ret.replace(/\bavg\b/gi, 'average');
     ret = ret.replace(/.*fed.*pace.*of.*(?:treasury|mbs).*/gi, 'fed pace purchase of treasury');
     ret = ret.replace(/perf\.?\s*of\.?\s*constr\.?(\s*)/gi, 'performance of construction$1');
     ret = ret.replace(/\b(?:mom|yoy|qoq|ytd)\b/gi, '');
