@@ -46,6 +46,7 @@ var normalizeEventName = function(event, currency) {
     ret = ret.replace(/\(3m[^\)]*\)/gi, '(3M)');
     ret = ret.replace(/[\(\[]*(?:(?:australian dollar|[a-z]+\$|canadian dollar|new zealand dollar)?)?[\)\]]*/gi, '');
     ret = ret.replace(/\./g, '').replace(/\b([a-z]{1})[\b\s]+/gi, '$1').replace(/\//g, ' ').replace(/&/g, 'and');
+    ret = ret.replace(/^(.*)\s+[\w\d]{1}$/gi, '$1');
     ret = ret.replace(/\bn?sa\b|indicator|\bus\b/gi, '');
     ret = ret.replace(/(price|sale|service|order|loan|value|export|import|purchase|balance|condition)s?/gi, '$1');
     ret = ret.replace(/gross\s*domestic\s*products?(\s*)/gi, 'gdp$1');
@@ -59,11 +60,12 @@ var normalizeEventName = function(event, currency) {
     ret = ret.replace(/.*jobless.*claims.*/gi, 'jobless claims');
     ret = ret.replace(/.*continuing.*claims.*/gi, 'continuing claims');
     ret = ret.replace(/.*ban[dk].*of.*cand/gi, 'bank of canad');
+    ret = ret.replace(/.*halifax.*house.*price.*/gi, 'halifax house price index');
     ret = ret.replace(/non\s+farm/gi, 'nonfarm');
     ret = ret.replace(/\bavg\b/gi, 'average');
     ret = ret.replace(/.*fed.*pace.*of.*(?:treasury|mbs).*/gi, 'fed pace purchase of treasury');
     ret = ret.replace(/perf\.?\s*of\.?\s*constr\.?(\s*)/gi, 'performance of construction$1');
-    ret = ret.replace(/\b(?:mom|yoy|qoq|ytd)\b/gi, '');
+    ret = ret.replace(/\b(?:mom|yoy|qoq|ytd|mth)\b/gi, '');
     ret = ret.replace(/\d+|[a-z]+\d+|\b[a-z]\b/gi, '');
     // stem
     natural.PorterStemmer.attach();
@@ -285,7 +287,7 @@ if (opts.argv.calendar) {
                         continue;
                     } else {
                         var dist = natural.JaroWinklerDistance(a.replace(/_/g, ' '), b.replace(/_/g, ' '));
-                        if (dist >= 0.87 && dist < 1) {
+                        if (dist >= 0.88 && dist < 1) {
                             console.log(evName + ' - ' + dataEvents[ev]);
                         }
                     }
