@@ -1,14 +1,15 @@
 'use strict';
 var fs = require('fs'),
+    natural = require('natural'),
     moment = require('../../bower_components/momentjs/moment.js'),
     jsonpath = require('../../bower_components/jsonpath/lib/jsonpath.js'),
     csv = require('csv-parse'),
     q = require('q'),
-    opts = require('optimist').usage('Dataset merge utility. Options cannot be combined.\nUsage: $0').alias('c', 'calendar').describe('c', 'Merge historical calendars in one dataset').alias('e', 'events-crosses').describe('e', 'Merge calendar events with currency crosses'),
+    opts = require('optimist').usage('Dataset merge utility. Options cannot be combined.\nUsage: $0').alias('c', 'calendar').describe('c', 'Merge historical calendars in one dataset').alias('e', 'events-crosses').describe('e', 'Merge calendar events with currency crosses').alias('d', 'debug').describe('d', 'Show debug info only'),
     pathDatasets = __dirname + '/../../app/data/',
     csvCalendarOut = pathDatasets + 'calendar.csv',
     csvMultisetsInput = pathDatasets + 'multisetsInputs.csv',
-    csvEventsCurrenciesOut = pathDatasets + 'eventsCurrenciesOutputs.csv';
+    csvEventsCrossesOut = pathDatasets + 'eventsCrossesOutputs.csv';
 var datasets = fs.readdirSync(pathDatasets),
     calendars = [];
 /**
@@ -27,10 +28,16 @@ if (datasets.length > 0) {
  */
 var dataCalendars = [];
 var normalizeEventName = function(event, currency) {
-    var ret = event.trim();
+    var ret = event.trim(),
+        months = [];
+    for (var m = 0; m < 12; m++) {
+        months.push(moment().month(m).format('MMM'));
+    }
     var reCurrency = new RegExp('[\\b\\s]*' + currency + '[\\b\\s]*(?!o)', 'gi');
-    ret = ret.replace(/[\-\_\"\(\)\[\]]{1,}/g, ' ');
+    var reMonths = new RegExp('[\\b\\s]+' + months.join('|') + '[\\b\\s]+', 'gi');
+    ret = ret.replace(/[\-\_\"\(\)\[\]\%]{1,}/g, ' ');
     ret = ret.replace(reCurrency, '');
+    ret = ret.replace(reMonths, '');
     ret = ret.replace(/\'s?/gi, '');
     ret = ret.replace(/\s{1,}|millions?|mlns?/gi, ' ');
     ret = ret.replace(/\b(?:€|euros|euro|yen)\b/gi, '').replace(/€|¥/g, '');
@@ -39,14 +46,28 @@ var normalizeEventName = function(event, currency) {
     ret = ret.replace(/\(3m[^\)]*\)/gi, '(3M)');
     ret = ret.replace(/[\(\[]*(?:(?:australian dollar|[a-z]+\$|canadian dollar|new zealand dollar)?)?[\)\]]*/gi, '');
     ret = ret.replace(/\./g, '').replace(/\b([a-z]{1})[\b\s]+/gi, '$1').replace(/\//g, ' ').replace(/&/g, 'and');
-    ret = ret.replace(/\bn?sa\b/gi, '');
-    ret = ret.replace(/(price|sale|service|order)s?/gi, '$1');
-    ret = ret.replace(/gross\s*domestic\s*products?(\s*)/gi, 'GDP$1');
-    ret = ret.replace(/personal\s*consumption\s*expenditure(\s*)/gi, 'PCE$1');
-    ret = ret.replace(/([a-z]{1})(?:roducer|onsumer)\s*price\s*index(\s*)/gi, '$1PI$2');
+    ret = ret.replace(/\bn?sa\b|indicator|\bus\b/gi, '');
+    ret = ret.replace(/(price|sale|service|order|loan|value|export|import|purchase|balance|condition)s?/gi, '$1');
+    ret = ret.replace(/gross\s*domestic\s*products?(\s*)/gi, 'gdp$1');
+    ret = ret.replace(/personal\s*consumption\s*expenditure(\s*)/gi, 'pce$1');
+    ret = ret.replace(/([a-z]{1})(?:roducer|onsumer)\s*price\s*index(\s*)/gi, '$1pi$2');
     ret = ret.replace(/under\s*employment(\s*)/gi, 'unemployment$1');
+    ret = ret.replace(/markit\s*.*/gi, 'markit pmi');
+    ret = ret.replace(/manufacturing.*production/gi, 'manufacturing production');
+    ret = ret.replace(/manufacutring/gi, 'manufacturing');
+    ret = ret.replace(/^\bism\b.*/gi, 'ism');
+    ret = ret.replace(/.*jobless.*claims.*/gi, 'jobless claims');
+    ret = ret.replace(/.*continuing.*claims.*/gi, 'continuing claims');
+    ret = ret.replace(/.*ban[dk].*of.*cand/gi, 'bank of canad');
+    ret = ret.replace(/non\s+farm/gi, 'nonfarm');
+    ret = ret.replace(/.*fed.*pace.*of.*(?:treasury|mbs).*/gi, 'fed pace purchase of treasury');
     ret = ret.replace(/perf\.?\s*of\.?\s*constr\.?(\s*)/gi, 'performance of construction$1');
-    ret = ret.trim().replace(/[^\w\d]{1,}/g, '_');
+    ret = ret.replace(/\b(?:mom|yoy|qoq|ytd)\b/gi, '');
+    ret = ret.replace(/\d+|[a-z]+\d+|\b[a-z]\b/gi, '');
+    // stem
+    natural.PorterStemmer.attach();
+    ret = ret.tokenizeAndStem().join(' ');
+    ret = ret.trim().replace(/[^\w\d]{1,}/g, '_').replace(/^(.*)_[\w\d]{1}$/gi, '$1');
     return ret.toUpperCase();
 };
 var mergeCalendars = function() {
@@ -188,7 +209,7 @@ var getCalendarsValues = function() {
     return _def.promise;
 };
 var dataEventsCurrencies = [],
-    mapDateCross = {};
+    mapDateCross = {}, mapDateEvent = {};
 var mergeEventsCurrencies = function() {
     var def = q.defer();
     getCurrenciesValues().then(function(crosses) {
@@ -201,23 +222,43 @@ var mergeEventsCurrencies = function() {
             });
             getCalendarsValues().then(function(calendars) {
                 console.log(dataEvents.length + ' events loaded');
+                // create csv
+                var cols = dataEvents.concat(Object.keys(crosses[0]));
+                fs.appendFileSync(csvEventsCrossesOut, cols.join(',') + '\n');
+                // map events/date
                 calendars.forEach(function(cal) {
-                    var o = {};
-                    var cross = mapDateCross[cal.date] || null;
-                    if (cross !== null) {
-                        for (var p in cal) {
-                            o[p] = cal[p];
-                        }
-                        for (var pp in cross) {
-                            if (/date/gi.test(pp)) {
-                                continue;
-                            }
-                            o[pp] = cross[pp];
-                        }
-                        dataEventsCurrencies.push(o);
+                    var date = cal.date;
+                    if (!mapDateEvent[date]) {
+                        mapDateEvent[date] = {};
+                    }
+                    var prop = cal.currency + '|' + cal.event;
+                    if (!mapDateEvent[date][prop]) {
+                        mapDateEvent[date][prop] = cal.actual ||  null;
                     }
                 });
-                def.resolve(dataEventsCurrencies);
+                // generate row
+                for (var d in mapDateEvent) {
+                    var cross = mapDateCross[d] || null;
+                    var row = {};
+                    cols.forEach(function(col) {
+                        row[col] = null;
+                    });
+                    if (cross !== null) {
+                        for (var c in cross) {
+                            row[c] = cross[c];
+                        }
+                        for (var ev in mapDateEvent[d]) {
+                            row[ev] = mapDateEvent[d][ev];
+                        }
+                    }
+                    // write to csv
+                    var data = [];
+                    for (var p in row) {
+                        data.push(row[p]);
+                    }
+                    fs.appendFileSync(csvEventsCrossesOut, data.join(',') + '\n');
+                }
+                def.resolve();
             });
         } else {
             def.reject();
@@ -233,14 +274,32 @@ if (opts.argv.calendar) {
             return arr.indexOf(ev) == ix;
         });
         dataEvents.sort();
-        fs.appendFileSync(csvCalendarOut, cols.join(',') + '\n');
-        dataCalendars.forEach(function(row) {
-            var data = [];
-            for (var c in row) {
-                data.push(row[c]);
-            }
-            fs.appendFileSync(csvCalendarOut, data.join(',') + '\n');
-        });
+        // calculate distance for each event name
+        if (opts.argv.debug) {
+            dataEvents.forEach(function(evName) {
+                for (var ev in dataEvents) {
+                    var a = evName.split('|')[1],
+                        b = dataEvents[ev].split('|')[1];
+                    if (evName === dataEvents[ev] || evName.split('|')[0] !== dataEvents[ev].split('|')[0]) {
+                        continue;
+                    } else {
+                        var dist = natural.JaroWinklerDistance(a.replace(/_/g, ' '), b.replace(/_/g, ' '));
+                        if (dist >= 0.87 && dist < 1) {
+                            console.log(evName + ' - ' + dataEvents[ev]);
+                        }
+                    }
+                }
+            });
+        } else {
+            fs.appendFileSync(csvCalendarOut, cols.join(',') + '\n');
+            dataCalendars.forEach(function(row) {
+                var data = [];
+                for (var c in row) {
+                    data.push(row[c]);
+                }
+                fs.appendFileSync(csvCalendarOut, data.join(',') + '\n');
+            });
+        }
     });
 } else if (opts.argv.e) {
     if (!fs.existsSync(csvCalendarOut)) {
@@ -248,8 +307,8 @@ if (opts.argv.calendar) {
         opts.showHelp();
         process.exit(1);
     } else {
-        mergeEventsCurrencies().then(function(eventsCurrencies) {
-            console.log(eventsCurrencies);
+        mergeEventsCurrencies().then(function() {
+            console.log('Done');
         }, function(err) {
             console.log(err);
         });

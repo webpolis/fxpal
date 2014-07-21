@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "dependencies": {
     "csv-parse": "0.0.5",
+    "natural": "^0.1.27",
     "optimist": "^0.6.1",
     "q": "^1.0.1",
     "sleep": "^1.1.8",
