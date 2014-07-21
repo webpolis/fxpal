@@ -27,21 +27,24 @@ if (datasets.length > 0) {
 var dataCalendars = [];
 var normalizeEventName = function(event, currency) {
     var ret = event.trim();
-    var reCurrency = new RegExp('[\\b\\s]*' + currency + '[\\b\\s]+', 'gi');
+    var reCurrency = new RegExp('[\\b\\s]*' + currency + '[\\b\\s]*(?!o)', 'gi');
+    ret = ret.replace(/[\-\_\"\(\)\[\]]{1,}/g, ' ');
     ret = ret.replace(reCurrency, '');
     ret = ret.replace(/\s{1,}|millions?|mlns?/gi, ' ');
     ret = ret.replace(/\b(?:€|euros|euro|yen)\b/gi, '').replace(/€|¥/g, '');
     ret = ret.replace(/harmon?i[sz]ed/gi, 'Harmonized');
     ret = ret.replace(/\(([^\)]+)\/([^\)]*)\)/g, '($1o$2)');
     ret = ret.replace(/\(3m[^\)]*\)/gi, '(3M)');
+    ret = ret.replace(/[\(\[]*(?:(?:australian dollar|[a-z]+\$|canadian dollar|new zealand dollar)?)?[\)\]]*/gi, '');
+    ret = ret.replace(/\./g, '').replace(/\b([a-z]{1})[\b\s]+/gi, '$1').replace(/\//g, ' ').replace(/&/g, 'and');
+    ret = ret.replace(/\bn?sa\b/gi, '');
+    ret = ret.replace(/(price|sale|service|order)s?/gi, '$1');
     ret = ret.replace(/gross\s*domestic\s*products?(\s*)/gi, 'GDP$1');
     ret = ret.replace(/personal\s*consumption\s*expenditure(\s*)/gi, 'PCE$1');
-    ret = ret.replace(/producer\s*price\s*index(\s*)/gi, 'PPI$1');
-    ret = ret.replace(/[\(\[]+(?:australian dollar|[a-z]+\$|canadian dollar|new zealand dollars)?[\)\]]+/gi, '');
-    ret = ret.replace(/\./g, '').replace(/[\-\_\"\(\)\[\]]{1,}/g, ' ').replace(/\b([a-z]{1})[\b\s]+/gi, '$1').replace(/\//g, ' ').replace(/&/g, 'and');
-    ret = ret.replace(/\bn?sa\b/gi, '');
+    ret = ret.replace(/([a-z]{1})(?:roducer|onsumer)\s*price\s*index(\s*)/gi, '$1PI$2');
+    ret = ret.replace(/under\s*employment(\s*)/gi, 'unemployment$1');
+    ret = ret.replace(/perf\.?\s*of\.?\s*constr\.?(\s*)/gi, 'performance of construction$1')
     ret = ret.trim().replace(/[^\w\d]{1,}/g, '_');
-    ret = ret.replace(/(price|sale|service|order)s?/gi, '$1');
     return ret.toUpperCase();
 };
 var mergeCalendars = function() {
@@ -78,7 +81,7 @@ var mergeCalendars = function() {
                     }
                     o[pp] = /event/i.test(p) ? normalizeEventName(row[p], row.Currency.toUpperCase()) : row[p];
                 }
-                if (!o.actual ||  o.actual === '') {
+                if (!o.actual ||  o.actual === '' ||  /\d{4}\_(?:\d{2}\_){2}/gi.test(o.event)) {
                     return;
                 }
                 var date = moment([o.date, year, o.time, o['time zone']].join(' '));
