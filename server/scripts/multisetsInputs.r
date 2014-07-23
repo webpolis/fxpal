@@ -16,6 +16,6 @@ for(cross1 in crosses1){
 correlation = as.data.frame(as.table(crosses))
 correlation = na.omit(correlation)
 names(correlation) = c("cross1", "cross2", "rel")
-write.csv(correlation, quote = FALSE, file = "tmp.csv", fileEncoding = "UTF-8")
+write.csv(correlation, quote = FALSE, file = "multisetsOutputs.csv", fileEncoding = "UTF-8")
 
 quit()
