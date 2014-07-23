@@ -45,6 +45,7 @@ angular.module('aifxApp').service('utils', function utils() {
             ret = ret.replace(/.*halifax.*house.*price.*/gi, 'halifax house price index');
             ret = ret.replace(/non\s+farm/gi, 'nonfarm');
             ret = ret.replace(/\bavg\b/gi, 'average');
+            ret = ret.replace(/\bmian\b/gi, 'mean');
             ret = ret.replace(/.*fed.*pace.*of.*(?:treasury|mbs).*/gi, 'fed pace purchase of treasury');
             ret = ret.replace(/perf\.?\s*of\.?\s*constr\.?(\s*)/gi, 'performance of construction$1');
             ret = ret.replace(/\b(?:mom|yoy|qoq|ytd|mth)\b/gi, '');

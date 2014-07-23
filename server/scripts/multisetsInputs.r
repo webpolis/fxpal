@@ -1,7 +1,8 @@
 setwd("app/data/")
-data = read.csv("eventsCrossesInputs.csv", sep = ",", dec = ".", strip.white = TRUE, header=TRUE, fileEncoding = "UTF-8")
+data = read.csv("multisetsInputs.csv", sep = ",", dec = ".", strip.white = TRUE, header=TRUE, fileEncoding = "UTF-8")
 
 crosses1 = colnames(data)
+crosses1 = crosses1[-(match("Date", crosses1))]
 crosses2 = rev(crosses1)
 crosses = matrix(nrow = length(crosses1), ncol = length(crosses2), dimnames = list(crosses1, crosses2))
 
