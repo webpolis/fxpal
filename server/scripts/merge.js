@@ -104,7 +104,7 @@ var mergeCalendars = function() {
                 for (var p in row) {
                     var pp = p.toLowerCase();
                     if (/description/i.test(p)) {
-                        p = 'event';
+                        pp = 'event';
                     }
                     o[pp] = /event/i.test(p) ? normalizeEventName(row[p], row.Currency.toUpperCase()) : row[p];
                 }
