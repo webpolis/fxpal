@@ -8,6 +8,9 @@ crosses = matrix(nrow = length(crosses1), ncol = length(crosses2), dimnames = li
 
 for(cross1 in crosses1){
 	for(cross2 in crosses2){
+		if(cross1 == cross2){
+			next
+		}
 		if(is.na(crosses[cross1,cross2]) && is.na(crosses[cross2,cross1])){
 			corValue = cor(data[,cross1], data[,cross2], use = "pairwise.complete.obs", method = "pearson")
 			crosses[cross1,cross2] = corValue
@@ -18,6 +21,6 @@ for(cross1 in crosses1){
 correlation = as.data.frame(as.table(crosses))
 correlation = na.omit(correlation)
 names(correlation) = c("cross1", "cross2", "rel")
-write.csv(correlation, quote = FALSE, file = "tmp.csv", fileEncoding = "UTF-8")
+write.csv(correlation, quote = FALSE, file = "eventsCrossesOutputs.csv", fileEncoding = "UTF-8")
 
 quit()
