@@ -90,6 +90,10 @@ angular.module('aifxApp').controller('appController', function($scope, $ionicSid
                 quandl: 'OFDP.FUTURE_B1',
                 symbol: 'CLQ14.NYM',
                 name: 'OIL'
+            }, {
+                quandl: 'FED.JRXWTFB_N_B',
+                symbol: 'DX-Y.NYB',
+                name: 'DOLLAR INDEX'
             }]
         }
     };
