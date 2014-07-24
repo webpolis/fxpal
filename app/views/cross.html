@@ -54,7 +54,7 @@
             <div class="row row-top" ng-if="!(!selected.events || selected.events.length == 0)">
                 <div class="col">
                     <table class="table" ng-table="tblEvents">
-                        <tr ng-repeat="event in selected.events">
+                        <tr ng-repeat="event in selected.events | filter:isCurrencyEvent">
                             <td data-title="'Date'">{{event.localDate | date:'short'}}</td>
                             <td data-title="'Currency'">{{event.currency | uppercase}}</td>
                             <td data-title="'Title'">{{event.event}}</td>

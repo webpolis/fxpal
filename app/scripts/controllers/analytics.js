@@ -213,6 +213,10 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         }
         return def.promise;
     };
+    $scope.isCurrencyEvent = function(event) {
+        var re = new RegExp('(' + [$scope.selected.cross1.currCode, $scope.selected.cross2.currCode].join('|') + ')', 'gi');
+        return re.test(event.currency);
+    };
     $scope.processEvents = function() {
         var def = $q.defer();
         $scope.selected.events = [];
@@ -223,9 +227,10 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         var parseCsv = function(csv) {
             var data = [];
             csv2json.csv.parse(csv, function(row) {
-                if (re.test(row.Currency)) {
-                    data.push(row);
-                }
+                //if (re.test(row.Currency)) {
+                row.Currency = angular.uppercase(row.Currency);
+                data.push(row);
+                //}
             });
             return data;
         };
