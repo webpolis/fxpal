@@ -3,7 +3,7 @@ data = read.csv("multisetsInputs.csv", sep = ",", dec = ".", strip.white = TRUE,
 names(data) = toupper(gsub("\\.{3}[\\w]+|QUANDL\\.|\\.Price", "", names(data), perl = TRUE))
 
 crosses1 = colnames(data)
-crosses1 = crosses1[-(match("Date", crosses1))]
+crosses1 = crosses1[-(match("DATE", crosses1))]
 crosses2 = rev(crosses1)
 crosses = matrix(nrow = length(crosses1), ncol = length(crosses2), dimnames = list(crosses1, crosses2))
 
