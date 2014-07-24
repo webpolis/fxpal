@@ -16,6 +16,4 @@ Now, we are going to generate a new correlation matrix between *currencies* and 
 * Retrieve weekly economic calendars: `./server/scripts/calendar.sh`
 * Execute `node ./server/scripts/merge.js -c` to generate the full historical calendar
 * Execute `node ./server/scripts/merge.js -e` to merge events in calendar with crosses values
-* Execute RapidMiner w/process in `./app/data/eventsCrosses.xml`. This will generate a correlation matrix for the above dataset.
-* Copy the **Pairwise Table** in `./app/data/eventsCrossesOutputsRaw.csv`.
 * Execute `./server/scripts/eventsCrossesOut.sh` to generate the final output in `./app/data/eventsCrossesOutputs.csv`

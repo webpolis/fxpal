@@ -12,7 +12,7 @@ for(cross1 in crosses1){
 			next
 		}
 		if(is.na(crosses[cross1,cross2]) && is.na(crosses[cross2,cross1])){
-			corValue = cor(data[,cross1], data[,cross2], use = "pairwise.complete.obs", method = "pearson")
+			corValue = cor(data[,cross1], data[,cross2], use = "pairwise.complete.obs", method = "spearman")
 			crosses[cross1,cross2] = corValue
 		}
 	}
