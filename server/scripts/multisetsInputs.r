@@ -1,6 +1,6 @@
 setwd("app/data/")
 data = read.csv("multisetsInputs.csv", sep = ",", dec = ".", strip.white = TRUE, header=TRUE, fileEncoding = "UTF-8")
-names(data) = gsub("\\.{3}[\\w]+|QUANDL\\.|\\.Price", "", names(data), perl = TRUE)
+names(data) = toupper(gsub("\\.{3}[\\w]+|QUANDL\\.|\\.Price", "", names(data), perl = TRUE))
 
 crosses1 = colnames(data)
 crosses1 = crosses1[-(match("Date", crosses1))]

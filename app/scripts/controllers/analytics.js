@@ -72,8 +72,10 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             }
             $ionicLoading.hide();
             if (!angular.isDefined(loadExtras) || loadExtras) {
-                $scope.correlated();
-                $scope.processEvents();
+                $scope.correlated('markets');
+                $scope.processEvents().then(function() {
+                    $scope.correlated('events');
+                });
             }
             if (loadChart) {
                 $scope.optChartPeriod = $scope.optsChartPeriods[0];
@@ -162,13 +164,13 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                                     if (ticker) {
                                         change[ix] = val;
                                         // set value
-                                        jsonPath.eval($scope.selected.correlation, '$[?(@.cross1 && @.cross1 == "' + ix + '" || @.cross2 && @.cross2 == "' + ix + '")]')[0][type] = val;
+                                        jsonPath.eval($scope.selected.correlation.markets, '$[?(@.cross1 && @.cross1 == "' + ix + '" || @.cross2 && @.cross2 == "' + ix + '")]')[0][type] = val;
                                     } else {
                                         // set currency flag
-                                        jsonPath.eval($scope.selected.correlation, '$[?(@.cross1 && @.cross1 == "' + ix + '" || @.cross2 && @.cross2 == "' + ix + '")]')[0].currency = true;
+                                        jsonPath.eval($scope.selected.correlation.markets, '$[?(@.cross1 && @.cross1 == "' + ix + '" || @.cross2 && @.cross2 == "' + ix + '")]')[0].currency = true;
                                     }
                                     // set label
-                                    jsonPath.eval($scope.selected.correlation, '$[?(@.cross1 && @.cross1 == "' + ix + '" || @.cross2 && @.cross2 == "' + ix + '")]')[0].label = ix;
+                                    jsonPath.eval($scope.selected.correlation.markets, '$[?(@.cross1 && @.cross1 == "' + ix + '" || @.cross2 && @.cross2 == "' + ix + '")]')[0].label = ix;
                                 }
                             });
                         });
@@ -194,9 +196,9 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                                 var ticker = jsonPath.eval($scope.config.maps.tickers, '$.[?(@.symbol=="' + symbol + '")]')[0];
                                 try {
                                     // set value
-                                    jsonPath.eval($scope.selected.correlation, '$[?(@.cross1 && @.cross1 == "' + ticker.quandl + '" || @.cross2 && @.cross2 == "' + ticker.quandl + '")]')[0][type] = parseFloat(quote.Change);
+                                    jsonPath.eval($scope.selected.correlation.markets, '$[?(@.cross1 && @.cross1 == "' + ticker.quandl + '" || @.cross2 && @.cross2 == "' + ticker.quandl + '")]')[0][type] = parseFloat(quote.Change);
                                     // set label
-                                    jsonPath.eval($scope.selected.correlation, '$[?(@.cross1 && @.cross1 == "' + ticker.quandl + '" || @.cross2 && @.cross2 == "' + ticker.quandl + '")]')[0].label = ticker.name;
+                                    jsonPath.eval($scope.selected.correlation.markets, '$[?(@.cross1 && @.cross1 == "' + ticker.quandl + '" || @.cross2 && @.cross2 == "' + ticker.quandl + '")]')[0].label = ticker.name;
                                 } catch (err) {}
                             });
                         }
@@ -212,6 +214,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         return def.promise;
     };
     $scope.processEvents = function() {
+        var def = $q.defer();
         $scope.selected.events = [];
         var maxWeeks = 4,
             all = [];
@@ -231,14 +234,14 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         });
         // retrieve events
         all = Array.apply(null, new Array(maxWeeks)).map(String.valueOf, '').map(function(i, w) {
-            var def = $q.defer();
+            var _def = $q.defer();
             var startWeekDate = moment().subtract('week', w).startOf('week').format('MM-DD-YYYY'),
                 url = $scope.config.urls.events.replace(/\{\{startWeekDate\}\}/gi, startWeekDate);
             var corsForge = 'http://www.corsproxy.com/';
             $http.get(corsForge + url).success(function(ret) {
-                def.resolve(parseCsv(ret));
-            }).error(def.reject);
-            return def.promise;
+                _def.resolve(parseCsv(ret));
+            }).error(_def.reject);
+            return _def.promise;
         });
         $q.all(all).then(function(ret) {
             $ionicLoading.hide();
@@ -268,12 +271,23 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                 }
                 return 0;
             });
-        });
+            def.resolve();
+        }, def.reject);
+        return def.promise;
     };
-    $scope.correlated = function() {
+    $scope.correlated = function(target) {
         var curCross = $scope.selected.cross1.currCode + $scope.selected.cross2.currCode,
             revCurCross = $scope.selected.cross2.currCode + $scope.selected.cross1.currCode;
-        csv2json.csv('data/multisetsOutputs.csv', function(data) {
+        var file = null;
+        switch (target) {
+            case 'markets':
+                file = 'data/multisetsOutputs.csv';
+                break;
+            case 'events':
+                file = 'data/eventsCrossesOutputs.csv';
+                break;
+        }
+        csv2json.csv(file, function(data) {
             var expr = '$[?(@.cross1=="' + curCross + '" || @.cross2=="' + curCross + '" || @.cross1=="' + revCurCross + '" || @.cross2=="' + revCurCross + '")]';
             var correlation = jsonPath.eval(data, expr).map(function(rel) {
                 // if cross is reverted, we should invert correlation value
@@ -293,7 +307,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                 return 0;
             });
             $timeout(function() {
-                $scope.selected.correlation = correlation.map(function(cor) {
+                $scope.selected.correlation[target] = correlation.map(function(cor) {
                     if (cor.cross1 === curCross || cor.cross1 === revCurCross) {
                         delete cor.cross1;
                     } else if (cor.cross2 === curCross || cor.cross2 === revCurCross) {
@@ -303,22 +317,24 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                 }).filter(function(cor) {
                     return ((cor.rel >= $scope.config.correlation.min) || (cor.rel <= -($scope.config.correlation.min)));
                 });
-                // retrieve daily change per correlated item
-                var sets = [];
-                angular.forEach($scope.selected.correlation, function(cor) {
-                    var cross = cor.cross1 || cor.cross2;
-                    if (!(/^[a-z]+\..*$/gi.test(cross))) {
-                        sets.push('QUANDL.' + cross + '.1');
-                    } else {
-                        sets.push(cross + '.1');
+                if (target === 'markets') {
+                    // retrieve daily change per correlated item
+                    var sets = [];
+                    angular.forEach($scope.selected.correlation[target], function(cor) {
+                        var cross = cor.cross1 || cor.cross2;
+                        if (!(/^[a-z]+\..*$/gi.test(cross))) {
+                            sets.push('QUANDL.' + cross + '.1');
+                        } else {
+                            sets.push(cross + '.1');
+                        }
+                    });
+                    if (sets.length === 0) {
+                        return;
                     }
-                });
-                if (sets.length === 0) {
-                    return;
+                    $scope.computeChange(sets, 'weeklyChange').then(function() {
+                        $scope.computeChange(null, 'dailyChange');
+                    });
                 }
-                $scope.computeChange(sets, 'weeklyChange').then(function() {
-                    $scope.computeChange(null, 'dailyChange');
-                });
             }, 150);
         });
     };

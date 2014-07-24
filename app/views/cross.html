@@ -11,8 +11,8 @@
         <span class="maroon pull-left">Correlations</span>
     </div>
     <div class="item item-text-wrap">
-        <span class="energized" ng-if="!selected.correlation || selected.correlation.length == 0">No relevant items found</span>
-        <div class="row row-top" ng-if="!(!selected.correlation || selected.correlation.length == 0)">
+        <span class="energized" ng-if="!selected.correlation.markets || selected.correlation.markets.length == 0">No relevant items found</span>
+        <div class="row row-top" ng-if="!(!selected.correlation.markets || selected.correlation.markets.length == 0)">
             <div class="col">
                 <span class="gray size-13">Market / Index</span>
             </div>
@@ -23,7 +23,7 @@
                 <span class="gray size-13">Weekly change</span>
             </div>
         </div>
-        <div class="row" ng-repeat="corr in selected.correlation">
+        <div class="row" ng-repeat="corr in selected.correlation.markets">
             <div class="col">
                 <span class="size-12" ng-class="{'green':corr.rel>0,'red':corr.rel<0}">
                 <i class="icon" ng-class="{'ion-plus-round':corr.rel>0,'ion-minus-round':corr.rel<0}"></i>
@@ -44,23 +44,31 @@
 <div class="card">
     <div class="item item-divider">
         <span class="maroon pull-left">Events</span>
+        <div class="pull-right">
+            <button ng-class="{'button-calm':optShowCalendar,'button-dark':!optShowCalendar}" ng-click="optShowCalendar = !optShowCalendar" type="button" class="button button-small"><i class="icon ion-calendar"></i> Calendar</button>
+        </div>
     </div>
     <div class="item item-text-wrap">
-        <span class="energized" ng-if="!selected.events || selected.events.length == 0">No relevant events found</span>
-        <div class="row row-top" ng-if="!(!selected.events || selected.events.length == 0)">
-            <div class="col">
-                <table class="table" ng-table="tblEvents">
-                    <tr ng-repeat="event in selected.events">
-                        <td data-title="'Date'">{{event.localDate | date:'short'}}</td>
-                        <td data-title="'Currency'">{{event.currency | uppercase}}</td>
-                        <td data-title="'Title'">{{event.event}}</td>
-                        <td data-title="'Importance'" ng-class="{'red':event.importance == 'High','orange':event.importance == 'Medium','teal':event.importance == 'Low'}">{{event.importance}}</td>
-                        <td data-title="'Actual'">{{event.actual}}</td>
-                        <td data-title="'Forecast'">{{event.forecast}}</td>
-                        <td data-title="'Previous'">{{event.previous}}</td>
-                    </tr>
-                </table>
+        <div ng-show="optShowCalendar">
+            <span class="energized" ng-if="!selected.events || selected.events.length == 0">No relevant events found</span>
+            <div class="row row-top" ng-if="!(!selected.events || selected.events.length == 0)">
+                <div class="col">
+                    <table class="table" ng-table="tblEvents">
+                        <tr ng-repeat="event in selected.events">
+                            <td data-title="'Date'">{{event.localDate | date:'short'}}</td>
+                            <td data-title="'Currency'">{{event.currency | uppercase}}</td>
+                            <td data-title="'Title'">{{event.event}}</td>
+                            <td data-title="'Importance'" ng-class="{'red':event.importance == 'High','orange':event.importance == 'Medium','teal':event.importance == 'Low'}">{{event.importance}}</td>
+                            <td data-title="'Actual'">{{event.actual}}</td>
+                            <td data-title="'Forecast'">{{event.forecast}}</td>
+                            <td data-title="'Previous'">{{event.previous}}</td>
+                        </tr>
+                    </table>
+                </div>
             </div>
+        </div>
+        <div>
+            {{selected.correlation.events}}
         </div>
     </div>
 </div>

@@ -1,6 +1,6 @@
 setwd("app/data/")
 data = read.csv("eventsCrossesInputs.csv", sep = ",", dec = ".", strip.white = TRUE, header=TRUE, fileEncoding = "UTF-8")
-names(data) = gsub("\\.{3}[\\w]+|QUANDL\\.|\\.Price", "", names(data), perl = TRUE)
+names(data) = toupper(gsub("\\.{3}[\\w]+|QUANDL\\.|\\.Price", "", names(data), perl = TRUE))
 
 crosses1 = colnames(data)
 crosses2 = rev(crosses1)
@@ -8,7 +8,7 @@ crosses = matrix(nrow = length(crosses1), ncol = length(crosses2), dimnames = li
 
 for(cross1 in crosses1){
 	for(cross2 in crosses2){
-		if(cross1 == cross2){
+		if(cross1 == cross2 || length(grep("^[^\\.]+\\..*$", c(cross1, cross2), value = TRUE, perl = TRUE)) == 0){
 			next
 		}
 		if(is.na(crosses[cross1,cross2]) && is.na(crosses[cross2,cross1])){

@@ -51,7 +51,7 @@ angular.module('aifxApp').service('utils', function utils() {
             ret = ret.replace(/\b(?:mom|yoy|qoq|ytd|mth)\b/gi, '');
             ret = ret.replace(/\d+|[a-z]+\d+|\b[a-z]\b/gi, '');
             // stem
-            natural.PorterStemmer.attach();
+            //natural.PorterStemmer.attach();
             ret = ret.tokenizeAndStem().join(' ');
             ret = ret.trim().replace(/[^\w\d]{1,}/g, '_').replace(/^(.*)_[\w\d]{1}$/gi, '$1');
             return ret.toUpperCase();
