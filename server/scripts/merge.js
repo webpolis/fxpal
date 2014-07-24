@@ -106,7 +106,7 @@ var mergeCalendars = function() {
                     if (/description/i.test(p)) {
                         pp = 'event';
                     }
-                    o[pp] = /event/i.test(p) ? normalizeEventName(row[p], row.Currency.toUpperCase()) : row[p];
+                    o[pp] = /event/i.test(pp) ? normalizeEventName(row[p], row.Currency.toUpperCase()) : row[p];
                 }
                 var date = moment([o.date, year, o.time, o['time zone']].join(' '));
                 o.currency = o.currency.toUpperCase();
