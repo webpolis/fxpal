@@ -1,4 +1,4 @@
-Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
 Sun Jul 31,23:01,GMT,gbp,GBP Lloyds Business Barometer,Low,19,,36
 Sun Jul 31,23:30,GMT,aud,AUD AiG Performance of Manufacturing Index,Medium,43.4,,52.9
 Mon Aug 01,00:30,GMT,aud,AUD TD Securities Inflation (MoM) ,Low,0.3%,,0.0%

@@ -1,4 +1,4 @@
-Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
 Sun Jan 15,,,nzd,NZD REINZ Housing Price Index (MoM),Low,-0.1%,,1.1%
 Sun Jan 15,,,nzd,NZD REINZ Housing Price Index,Low,3301.4,,3304.3
 Sun Jan 15,,,nzd,NZD REINZ House Sales (YoY),Medium,20.9%,,16.9%

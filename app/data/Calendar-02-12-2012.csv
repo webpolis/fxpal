@@ -1,4 +1,4 @@
-Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
 Sun Feb 12,23:50,GMT,jpy,JPY Gross Domestic Product Deflator (YoY),Low,-1.6%,-1.7%,-2.1%
 Sun Feb 12,23:50,GMT,jpy,JPY Nominal Gross Domestic Product (QoQ),High,-0.8%,-0.7%,1.5%
 Sun Feb 12,23:50,GMT,jpy,JPY Gross Domestic Product Annualized,High,-2.3%,-1.3%,7.0%

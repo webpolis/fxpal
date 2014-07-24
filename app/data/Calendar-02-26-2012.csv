@@ -1,4 +1,4 @@
-Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
 Sun Feb 26,21:45,GMT,nzd,NZD Trade Balance (New Zealand dollars),Medium,-199M,167M,306M
 Sun Feb 26,21:45,GMT,nzd,NZD Exports (New Zealand dollars),Low,3.74B,3.70B,4.29B
 Sun Feb 26,21:45,GMT,nzd,NZD Imports (New Zealand dollars),Low,3.94B,3.51B,3.99B

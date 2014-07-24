@@ -1,4 +1,4 @@
-Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
 Sun Apr 08,23:50,GMT,jpy,JPY Current Account Total (Yen),Low,¥1177.8B,¥1120.0B,-¥437.3B
 Sun Apr 08,23:50,GMT,jpy,JPY Adjusted Current Account Total (Yen),Low,¥854.1B,¥650.0B,¥115.6B
 Sun Apr 08,23:50,GMT,jpy,JPY Current Account Balance (YoY),Low,-30.7%,-34.1%,-180.00%

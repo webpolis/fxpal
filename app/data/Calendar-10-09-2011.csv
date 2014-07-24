@@ -1,4 +1,4 @@
-Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
 Sun Oct 09,23:01,GMT,gbp,GBP Lloyds Employment Confidence,Low,-67,,-66
 Mon Oct 10,00:30,GMT,aud,AUD ANZ Job Advertisements (MoM),Low,-2.1%,,-0.7%
 Mon Oct 10,05:30,GMT,aud,Foreign Reserves (AUD),Low,44.9B,,43.8B

@@ -1,4 +1,4 @@
-Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
 Sun Oct 16,21:30,GMT,nzd,NZD Performance Services Index,Low,53.2,,53.8
 Sun Oct 16,23:01,GMT,gbp,GBP Rightmove House Prices (MoM),Low,2.8%,,0.7%
 Sun Oct 16,23:01,GMT,gbp,GBP Rightmove House Prices (YoY),Medium,1.2%,,1.5%

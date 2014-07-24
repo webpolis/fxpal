@@ -1,4 +1,4 @@
-Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
 Sun Nov 20,23:50,GMT,jpy,JPY Merchandise Trade Balance Total (Yen),Medium,-¥273.8B,¥39.9B,¥296.2B
 Sun Nov 20,23:50,GMT,jpy,JPY Adjusted Merchandise Trade Balance (Yen),Low,-¥457.9B,-¥204.0B,-¥96.7B
 Sun Nov 20,23:50,GMT,jpy,JPY Merchandise Trade Exports (YoY),Low,-3.7,-0.3,2.3

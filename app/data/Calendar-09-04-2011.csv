@@ -1,4 +1,4 @@
-Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
 Sun Sep 04,23:01,GMT,gbp,GBP Lloyds Employment Confidence,Low,-66,,-53
 Sun Sep 04,23:30,GMT,aud,AUD AiG Performance of Service Index,Medium,52.1,,48.8
 Mon Sep 05,00:30,GMT,aud,AUD TD Securities Inflation (MoM),Low,-0.1%,,0.3%

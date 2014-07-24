@@ -1,4 +1,4 @@
-Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
 Sun May 27,01:30,GMT,cny,CNY Industrial Profits YTD (YoY),Low,-1.6%,,-1.3%
 Sun May 27,23:01,GMT,gbp,GBP Hometrack Housing Survey (MoM),Low,0.2%,,0.1%
 Sun May 27,23:01,GMT,gbp,GBP Hometrack Housing Survey (YoY),Low,-0.6%,,-0.9%

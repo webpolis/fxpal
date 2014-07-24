@@ -1,4 +1,4 @@
-Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
 Sun May 06,,,eur,EUR French Presidential Election,High,,,
 Sun May 06,,,eur,EUR Greek Parliamentary Election,High,,,
 Sun May 06,23:30,GMT,aud,AUD AiG Performance of Construction Index,Medium,34.9,,36.2

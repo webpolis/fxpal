@@ -1,4 +1,4 @@
-Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
 Sun Apr 29,22:45,GMT,nzd,NZD Building Permits (MoM),Low,19.8%,6.0%,-6.2%
 Sun Apr 29,22:45,GMT,nzd,NZD Trade Balance (NZ$),Medium,134M,417M,202M
 Sun Apr 29,22:45,GMT,nzd,NZD Exports (NZ$),Low,4.22B,4.37B,3.62B

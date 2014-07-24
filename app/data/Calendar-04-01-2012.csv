@@ -1,4 +1,4 @@
-Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
 Sun Apr 01,01:00,GMT,cny,CNY PMI Manufacturing ,High,53.1,50.8,51.0
 Sun Apr 01,02:30,GMT,cny,CNY HSBC PMI Manufacturing ,Low,48.3,,49.6
 Sun Apr 01,23:01,GMT,gbp,GBP Lloyds Business Barometer,Low,31,,1

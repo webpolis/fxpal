@@ -1,4 +1,4 @@
-Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
 Sun Dec 18,21:00,GMT,nzd,NZD Westpac NZ Consumer Confidence,Medium,101.3,,112.0
 Sun Dec 18,21:30,GMT,nzd,NZD Performance Services Index,Low,56.6,,51.0
 Mon Dec 19,00:00,GMT,nzd,NZD NBNZ Activity Outlook,Medium,25.7,,28.8

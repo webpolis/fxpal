@@ -1,4 +1,4 @@
-Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
 Sun Jan 29,21:30,GMT,nzd,NZD Performance Services Index,Low,50.6,,56.2
 Mon Jan 30,,,eur,EUR German Consumer Price Index EU Harmonized (MoM),Medium,,-0.4%,0.7%
 Mon Jan 30,,,eur,EUR German Consumer Price Index EU Harmonized (YoY),High,,2.4%,2.3%

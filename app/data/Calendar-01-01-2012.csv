@@ -1,4 +1,4 @@
-Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
 Mon Jan 02,,,JPY,JPY Tokyo Avg Office Vacancies (%),LOW,,,8.9
 Mon Jan 02,08:45,GMT,eur,EUR Italian Purchasing Manager Index Manufacturing,Low,44.3,43.8,44
 Mon Jan 02,08:50,GMT,eur,EUR French Purchasing Manager Index Manufacturing,Low,48.9,48.7,48.7

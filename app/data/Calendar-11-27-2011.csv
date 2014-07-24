@@ -1,4 +1,4 @@
-Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
 Sun Nov 27,02:00,GMT,cny,CNY Industrial Profits YTD (YoY),Medium,25.3%,,27.0%
 Mon Nov 28,00:00,GMT,nzd,NZD NBNZ Activity Outlook,Medium,28.8,,26.1
 Mon Nov 28,00:00,GMT,nzd,NZD NBNZ Business Confidence,Medium,18.3,,13.2

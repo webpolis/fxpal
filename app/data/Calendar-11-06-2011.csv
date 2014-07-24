@@ -1,4 +1,4 @@
-Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
 Sun Nov 06,22:30,GMT,aud,AUD AiG Perf of Constr Index,Low,34.7,,30.0
 Mon Nov 07,00:01,GMT,gbp,GBP Lloyds Employment Confidence,Low,-72,,-67
 Mon Nov 07,00:30,GMT,aud,AUD ANZ Job Advertisements (MoM),Medium,-0.7%,,-2.2%

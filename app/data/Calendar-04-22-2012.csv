@@ -1,4 +1,4 @@
-Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
 Sun Apr 22,,,eur,French Presidential Election - 1st Round,High,,,
 Mon Apr 23,01:30,GMT,aud,AUD Producer Price Index (QoQ),Medium,-0.3%,0.4%,0.3%
 Mon Apr 23,01:30,GMT,aud,AUD Producer Price Index (YoY),Medium,1.4%,2.2%,2.9%

@@ -1,4 +1,4 @@
-Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
 Sun Oct 30,21:45,GMT,nzd,NZD Building Permits (MoM),Low,-17.1%,2.0%,16.6%
 Sun Oct 30,23:15,GMT,jpy,JPY Nomura/JMMA Manufacturing Purchasing Manager Index,Medium,50.6,,49.3
 Sun Oct 30,23:30,GMT,aud,AUD RPData-Rismark House Px Raw,Low,-0.2%,,-0.4%

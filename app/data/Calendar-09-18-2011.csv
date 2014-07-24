@@ -1,4 +1,4 @@
-Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
 Sun Sep 18,22:00,GMT,nzd,NZD Westpac NZ Consumer Confidence,Medium,112,,112
 Sun Sep 18,22:30,GMT,nzd,NZD Performance Services Index,Low,53.9,,54.5
 Sun Sep 18,23:01,GMT,gbp,GBP Rightmove House Prices (MoM),Low,0.7%,,-2.1%

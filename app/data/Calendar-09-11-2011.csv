@@ -1,4 +1,4 @@
-Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
 Sun Sep 11,02:00,GMT,cny,CNY Money Supply - M0 (YoY),Low,14.7%,,14.3%
 Sun Sep 11,02:00,GMT,cny,CNY New Yuan Loans,High,548.5B,500.0B,492.6B
 Sun Sep 11,02:00,GMT,cny,CNY Money Supply - M1 (YoY),Low,11.2%,12.0%,11.6%

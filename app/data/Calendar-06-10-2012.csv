@@ -1,4 +1,4 @@
-Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
 Sun Jun 10,02:55,GMT,cny,CNY Exports (YoY),Low,15.3%,7.1%,4.9%
 Sun Jun 10,02:55,GMT,cny,CNY Imports (YoY),Low,12.7%,5.5%,0.3%
 Sun Jun 10,03:00,GMT,cny,CNY Trade Balance (USD),Medium,$18.70B,$16.25B,$18.43B

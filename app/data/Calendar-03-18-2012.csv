@@ -1,4 +1,4 @@
-Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
 Sun Mar 18,01:30,GMT,cny,CNY China Property Prices (New Residential YoY),Low,37,,53
 Sun Mar 18,21:00,GMT,nzd,NZD Westpac NZ Consumer Confidence,Medium,102.4,,101.3
 Sun Mar 18,21:30,GMT,nzd,NZD Performance Services Index,Low,55.5,,53.8

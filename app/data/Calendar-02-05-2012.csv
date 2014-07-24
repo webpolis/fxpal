@@ -1,4 +1,4 @@
-Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
 Sun Feb 05,23:30,GMT,aud,AUD TD Securities Inflation (MoM),Low,0.2%,,0.5%
 Sun Feb 05,23:30,GMT,aud,AUD TD Securities Inflation (YoY),Medium,2.2%,,2.4%
 Mon Feb 06,,,JPY,JPY Machine Tool Orders (YoY),Medium,,,17.4%

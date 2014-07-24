@@ -1,4 +1,4 @@
-Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
 Sun Oct 02,22:30,GMT,aud,AUD AiG Performance of Manufacturing Index,Medium,42.3,,43.3
 Sun Oct 02,23:01,GMT,gbp,GBP Lloyds Business Barometer,Low,7,,-3
 Sun Oct 02,23:01,GMT,gbp,GBP Hometrack Housing Survey (MoM),Low,-0.1%,,-0.1%

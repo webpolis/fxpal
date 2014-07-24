@@ -1,4 +1,4 @@
-Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
 Mon Dec 26,00:01,GMT,gbp,GBP Hometrack Housing Survey (MoM),Low,-0.2%,,-0.2%
 Mon Dec 26,00:01,GMT,gbp,GBP Hometrack Housing Survey (YoY),Low,-2.1%,,-2.3%
 Mon Dec 26,17:00,GMT,eur,EUR French Total Jobseekers Change,Low,29.9K,30.0K,34.4K

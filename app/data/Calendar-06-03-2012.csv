@@ -1,4 +1,4 @@
-Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
 Sun Jun 03,01:00,GMT,cny,CNY China Non-manufacturing PMI,Medium,55.2,,56.1
 Sun Jun 03,18:00,GMT,USD,USD Fed's Kocherlakota Speaks on Economic Theory in Minneapolis,LOW,,,
 Sun Jun 03,23:50,GMT,jpy,JPY Monetary Base (YoY),Low,2.4%,,-0.3%

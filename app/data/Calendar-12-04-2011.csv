@@ -1,4 +1,4 @@
-Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
 Sun Dec 04,21:45,GMT,nzd,NZD Value of All Buildings s.a.,Low,-2.3%,,-6.2%
 Sun Dec 04,22:30,GMT,aud,AUD AiG Performance of Service Index,Medium,47.7,,48.8
 Sun Dec 04,23:30,GMT,aud,AUD TD Securities Inflation (MoM),Low,-0.1%,,0.1%

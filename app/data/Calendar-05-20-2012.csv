@@ -1,4 +1,4 @@
-Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
 Sun May 20,22:45,GMT,nzd,NZD Net Migration s.a,Low,-850,,230
 Sun May 20,23:01,GMT,gbp,GBP Rightmove House Prices (MoM),Medium,0.0%,,2.9%
 Sun May 20,23:01,GMT,gbp,GBP Rightmove House Prices (YoY),Medium,2.0%,,3.4%

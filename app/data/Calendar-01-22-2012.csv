@@ -1,4 +1,4 @@
-Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
 Mon Jan 23,00:30,GMT,aud,AUD Producer Price Index (QoQ),Medium,0.3%,0.4%,0.6%
 Mon Jan 23,00:30,GMT,aud,AUD Producer Price Index (YoY),Medium,2.9%,3.0%,2.7%
 Mon Jan 23,05:00,GMT,jpy,JPY Supermarket Sales (YoY),Low,-0.6%,,-2.3%

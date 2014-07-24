@@ -1,4 +1,4 @@
-Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
 Sun Apr 15,12:00,GMT,nzd,NZD REINZ Housing Price Index,Low,3343.5,,3280.5
 Sun Apr 15,12:00,GMT,nzd,NZD REINZ Housing Price Index (MoM),Low,1.9%,,0.8%
 Sun Apr 15,12:00,GMT,nzd,NZD REINZ House Sales (YoY),Medium,25.3%,,37.0%

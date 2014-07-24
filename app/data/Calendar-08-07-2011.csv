@@ -1,4 +1,4 @@
-Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
 Sun Aug 07,21:00,GMT,eur,EUR ECB Statement on Bond Purchases,Medium,,,
 Sun Aug 07,23:00,GMT,usd,USD G7 Meeting Statements,Medium,,,
 Sun Aug 07,23:01,GMT,gbp,GBP Lloyds Employment Confidence,Low,-53,,-50

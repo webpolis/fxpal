@@ -130,18 +130,18 @@ Thu Jul 17,14:30,GMT,usd,USD EIA Natural Working Gas Implied Flow/U,Low,107,,93
 Thu Jul 17,17:35,GMT,USD,"USD Fed's Bullard Speaks on Monetary Policy in Owensboro, Kentucky",Low,,,
 Thu Jul 17,19:00,GMT,USD,USD API Monthly Statistical Report,Low,,,
 Fri Jul 18,01:30,GMT,CNY,CNY China June Property Prices,Low,,,
-Fri Jul 18,01:45,GMT,CNY,CNY MNI July Business Indicator,Low,,,
-Fri Jul 18,05:30,GMT,jpy,JPY Tokyo Department Store Sales (YoY),Low,,,-4.3%
-Fri Jul 18,05:30,GMT,jpy,JPY Nationwide Department Store Sales (YoY),Low,,,-4.2%
-Fri Jul 18,08:00,GMT,EUR,EUR Euro-Zone Current Account n.s.a. (euros),Low,,,18.7B
-Fri Jul 18,08:00,GMT,EUR,EUR Euro-Zone Current Account s.a. (euros),Low,,,21.5B
-Fri Jul 18,12:30,GMT,CAD,CAD Wholesale Sales (MoM),Low,,0.6%,1.2%
-Fri Jul 18,12:30,GMT,CAD,CAD Consumer Price Index (MoM),Medium,,0.0%,0.5%
-Fri Jul 18,12:30,GMT,CAD,CAD Bank Canada Consumer Price Index Core (YoY),High,,1.7%,1.7%
-Fri Jul 18,12:30,GMT,CAD,CAD Consumer Price Index (YoY),High,,2.3%,2.3%
-Fri Jul 18,12:30,GMT,CAD,CAD Bank Canada Consumer Price Index Core (MoM),Medium,,-0.2%,0.5%
-Fri Jul 18,12:30,GMT,CAD,CAD CPI s.a.(MoM),Low,,0.3%,0.2%
-Fri Jul 18,12:30,GMT,CAD,CAD CPI Core s.a. (MoM),Low,,,0.2%
-Fri Jul 18,12:30,GMT,CAD,CAD Consumer Price Index,Low,,,125.8
-Fri Jul 18,13:55,GMT,USD,USD U. of Michigan Confidence,High,,83,82.5
-Fri Jul 18,14:00,GMT,USD,USD Leading Indicators,Medium,,0.5%,0.5%
+Fri Jul 18,01:45,GMT,cny,CNY MNI July Business Indicator,Low,58.2,,55
+Fri Jul 18,05:30,GMT,jpy,JPY Tokyo Department Store Sales (YoY),Low,-4.1%,,-4.3%
+Fri Jul 18,05:30,GMT,jpy,JPY Nationwide Department Store Sales (YoY),Low,-4.6%,,-4.2%
+Fri Jul 18,08:00,GMT,eur,EUR Euro-Zone Current Account n.s.a. (euros),Low,8.9B,,18.8B
+Fri Jul 18,08:00,GMT,eur,EUR Euro-Zone Current Account s.a. (euros),Low,19.5B,,21.6B
+Fri Jul 18,12:30,GMT,cad,CAD Wholesale Sales (MoM),Low,2.2%,0.6%,1.4%
+Fri Jul 18,12:30,GMT,cad,CAD Consumer Price Index (MoM),Medium,0.1%,0.0%,0.5%
+Fri Jul 18,12:30,GMT,cad,CAD Bank Canada Consumer Price Index Core (YoY),High,1.8%,1.7%,1.7%
+Fri Jul 18,12:30,GMT,cad,CAD Consumer Price Index (YoY),High,2.4%,2.3%,2.3%
+Fri Jul 18,12:30,GMT,cad,CAD Bank Canada Consumer Price Index Core (MoM),Medium,-0.1%,-0.2%,0.5%
+Fri Jul 18,12:30,GMT,cad,CAD CPI s.a.(MoM),Low,0.3%,0.3%,0.2%
+Fri Jul 18,12:30,GMT,cad,CAD CPI Core s.a. (MoM),Low,0.2%,,0.2%
+Fri Jul 18,12:30,GMT,cad,CAD Consumer Price Index,Low,125.9,,125.8
+Fri Jul 18,13:55,GMT,usd,USD U. of Michigan Confidence,High,81.3,83.0,82.5
+Fri Jul 18,14:00,GMT,usd,USD Leading Indicators,Medium,0.3%,0.5%,0.5%

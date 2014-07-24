@@ -1,4 +1,4 @@
-Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
 Mon Aug 22,,,CHF,CHF Real Estate Index Family Homes,Medium,,,392.3
 Mon Aug 22,05:00,GMT,jpy,JPY Supermarket Store Sales (YoY),Low,2.1%,,0.1%
 Mon Aug 22,07:00,GMT,jpy,JPY Convenience Store Sales (YoY),Low,9.5%,,9.0%
