@@ -23,6 +23,7 @@ pf = sort(pf, decreasing = TRUE)
 
 #barplot(pf, cex.names = 0.34)
 out = as.data.frame(pf)
-write.csv(out, quote = FALSE, file = "portfolio.csv", fileEncoding = "UTF-8")
+out = data.frame(cross = names(pf), percentage = pf)
+write.csv(out, quote = FALSE, row.names = FALSE, file = "portfolio.csv", fileEncoding = "UTF-8")
 
 quit()

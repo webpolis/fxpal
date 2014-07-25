@@ -26,14 +26,12 @@ rownames(out) = out[,1]
 out = out[,-1]
 names(out) = c("Open","High","Low","Close","Volume")
 rownames(out) = as.POSIXlt(gsub("T|\\.\\d{6}Z", " ", rownames(out)))
-#out = cbind(out, Cross = sub("_", "", instrument))
-#out = cbind(out, Time = rownames(out))
 out = as.xts(out)
 
 trend = TrendDetectionChannel(out)
 trend$Time = 0
 trend$Time = index(out)
 
-write.csv(trend, quote = FALSE, file = paste(instrument, "-trend-", granularity, ".csv", sep = ""), fileEncoding = "UTF-8")
+write.csv(trend, quote = FALSE, row.names = FALSE, file = paste(instrument, "-trend-", granularity, ".csv", sep = ""), fileEncoding = "UTF-8")
 
 quit()
