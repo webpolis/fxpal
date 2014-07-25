@@ -11,12 +11,15 @@ var fs = require('fs'),
  * @param  {[type]}  date [description]
  * @return {Boolean}          [description]
  */
-var isOutdatedFile = function(fileName, date, sinceMinutes) {
+var isOutdatedFile = function(fileName, sinceMinutes) {
     var ret = true,
         stat = null;
+    if (!sinceMinutes) {
+        return ret;
+    }
     if (fs.existsSync(fileName)) {
         stat = fs.statSync(fileName);
-        ret = moment(date).diff(stat.mtime, 'minutes') > sinceMinutes;
+        ret = moment().diff(stat.mtime, 'minutes') > sinceMinutes;
     }
     return ret;
 };
@@ -25,8 +28,7 @@ var isOutdatedFile = function(fileName, date, sinceMinutes) {
  */
 server.get('/api/portfolio', function respond(req, res, next) {
     res.setHeader('content-type', 'text/csv');
-    var outFile = __dirname + '/../app/data/portfolio.csv',
-        stat = null;
+    var outFile = __dirname + '/../app/data/portfolio.csv';
     // only generate file if it's older than 1 day
     if (isOutdatedFile(outFile, 60 * 24)) {
         sh.run(['Rscript', __dirname + '/scripts/portfolio.r'].join(' '));
@@ -36,8 +38,32 @@ server.get('/api/portfolio', function respond(req, res, next) {
     });
     next();
 });
-server.get('/api/trend/:cross/:start/:granularity', function respond(req, res, next) {
-    res.send('hello ' + req.params.cross);
+server.get('/api/candles/:cross/:type/:start/:granularity', function respond(req, res, next) {
+    res.setHeader('content-type', 'text/csv');
+    var cross = req.params.cross.replace(/([a-z]{3})([a-z]{3})/gi, '$1_$2').toUpperCase();
+    var outFile = [__dirname + '/../app/data/', cross, '-', req.params.type, '-', req.params.granularity, '.csv'].join('');
+    var sinceMinutes = null;
+    switch (req.params.granularity.toUpperCase()) {
+        case 'H1':
+            sinceMinutes = 60;
+            break;
+        case 'D':
+            sinceMinutes = 60 * 24;
+            break;
+        case 'W':
+            sinceMinutes = 10080;
+            break;
+        case 'M':
+            sinceMinutes = 43800;
+            break;
+    }
+    // only generate file if it's older than XX minutes
+    if (isOutdatedFile(outFile, sinceMinutes)) {
+        sh.run(['Rscript', __dirname + '/scripts/candlesticks.r', req.params.start, req.params.cross.toUpperCase(), req.params.granularity.toUpperCase()].join(' '));
+    }
+    fs.readFile(outFile, {}, function(err, data) {
+        res.send(data);
+    });
     next();
 });
 /**
