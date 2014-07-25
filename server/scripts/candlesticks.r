@@ -35,6 +35,21 @@ getCandles <- function(instrument, granularity, startDate){
 	return(out)
 }
 
+getCandlestickPatterns <- function(){
+	ret = xts()
+	cMethods = ls(package:candlesticks)
+	csp = cMethods[grep("^CSP.*", cMethods)]
+	for(c in 1:length(csp)){
+		tryCatch({
+			tmp = eval(parse(text = paste(csp[c], "(out)", sep = "")))
+			ret = merge(tmp, ret)
+		}, error = function(cond){
+			return(NA)
+		})
+	}
+	return(ret)
+}
+
 out = getCandles(instrument, granularity, startDate)
 
 if(type == "trend"){
@@ -46,7 +61,10 @@ if(type == "trend"){
 }
 # match candlesticks patterns
 if(granularity == "D"){
-
+	if(exists("out")){
+		patterns = getCandlestickPatterns()
+		write.csv(patterns, quote = FALSE, row.names = FALSE, file = paste(instrument, "-patterns-", granularity, ".csv", sep = ""), fileEncoding = "UTF-8")
+	}
 }
 
 quit()
