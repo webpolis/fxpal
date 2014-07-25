@@ -65,7 +65,7 @@ server.get('/api/candles/:cross/:type/:start/:granularity', function respond(req
     }
     // only generate file if it's older than XX minutes
     if (isOutdatedFile(outFile, sinceMinutes)) {
-        sh.run(['Rscript', __dirname + '/scripts/candlesticks.r', req.params.start, req.params.cross.toUpperCase(), req.params.granularity.toUpperCase()].join(' '));
+        sh.run(['Rscript', __dirname + '/scripts/candlesticks.r', req.params.start, req.params.cross.toUpperCase(), req.params.granularity.toUpperCase(), req.params.type.toLowerCase()].join(' '));
     }
     fs.readFile(outFile, {}, function(err, data) {
         res.send(data);

@@ -60,9 +60,11 @@ if(type == "trend"){
 	write.csv(trend, quote = FALSE, row.names = FALSE, file = paste(instrument, "-trend-", granularity, ".csv", sep = ""), fileEncoding = "UTF-8")
 }
 # match candlesticks patterns
-if(granularity == "D"){
+if(granularity == "D" && type == "patterns"){
 	if(exists("out")){
 		patterns = getCandlestickPatterns()
+		patterns$Time = 0
+		patterns$Time = index(out)
 		write.csv(patterns, quote = FALSE, row.names = FALSE, file = paste(instrument, "-patterns-", granularity, ".csv", sep = ""), fileEncoding = "UTF-8")
 	}
 }
