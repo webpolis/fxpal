@@ -1,5 +1,7 @@
 setwd("app/data/")
 
+Sys.setenv(TZ="UTC")
+
 library("RCurl")
 library("rjson")
 library("candlesticks")

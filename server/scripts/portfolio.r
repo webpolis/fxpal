@@ -1,5 +1,7 @@
 setwd("app/data/")
 
+Sys.setenv(TZ="UTC")
+
 library("quantmod")
 library("financeR")
 library("tseries")

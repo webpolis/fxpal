@@ -1,4 +1,7 @@
 setwd("app/data/")
+
+Sys.setenv(TZ="UTC")
+
 data = read.csv("eventsCrossesInputs.csv", sep = ",", dec = ".", strip.white = TRUE, header=TRUE, fileEncoding = "UTF-8")
 names(data) = toupper(gsub("\\.{3}[\\w]+|QUANDL\\.|\\.Price", "", names(data), perl = TRUE))
 
