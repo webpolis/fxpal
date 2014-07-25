@@ -9,6 +9,8 @@ oandaToken = 'ce6b72e81af59be0bbc90152cad8d731-03d41860ed7849e3c4555670858df786'
 startDate = ifelse((exists("opts") && !is.na(opts[1])), opts[1], "2014-07-24")
 instrument = sub("(\\w{3})(\\w{3})", "\\1_\\2", ifelse((exists("opts") && !is.na(opts[2])), opts[2], "USDCAD"))
 granularity = ifelse((exists("opts") && !is.na(opts[3])), opts[3], "M")
+type = ifelse((exists("opts") && !is.na(opts[4])), opts[4], "trend")
+
 urlPractice = paste("https://api-fxpractice.oanda.com/v1/candles?instrument=", instrument, "&granularity=", granularity, "&start=", startDate, "&weeklyAlignment=Monday", sep = "")
 
 print(urlPractice)
@@ -28,10 +30,16 @@ names(out) = c("Open","High","Low","Close","Volume")
 rownames(out) = as.POSIXlt(gsub("T|\\.\\d{6}Z", " ", rownames(out)))
 out = as.xts(out)
 
-trend = TrendDetectionChannel(out)
-trend$Time = 0
-trend$Time = index(out)
+if(type == "trend"){
+	trend = TrendDetectionChannel(out)
+	trend$Time = 0
+	trend$Time = index(out)
 
-write.csv(trend, quote = FALSE, row.names = FALSE, file = paste(instrument, "-trend-", granularity, ".csv", sep = ""), fileEncoding = "UTF-8")
+	write.csv(trend, quote = FALSE, row.names = FALSE, file = paste(instrument, "-trend-", granularity, ".csv", sep = ""), fileEncoding = "UTF-8")
+}
+# match candlesticks patterns
+if(granularity == "D"){
+
+}
 
 quit()
