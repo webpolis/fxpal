@@ -56,6 +56,12 @@ server.get('/api/candles/:cross/:type/:start/:granularity', function respond(req
         case 'M':
             sinceMinutes = 43800;
             break;
+        default:
+            var m = req.params.granularity.replace(/\M(\d+)/gi, '$1') || null;
+            if (m !== null) {
+                sinceMinutes = m + 1;
+            }
+            break;
     }
     // only generate file if it's older than XX minutes
     if (isOutdatedFile(outFile, sinceMinutes)) {
