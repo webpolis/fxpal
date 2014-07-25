@@ -31,6 +31,8 @@ rownames(out) = as.POSIXlt(gsub("T|\\.\\d{6}Z", " ", rownames(out)))
 out = as.xts(out)
 
 trend = TrendDetectionChannel(out)
+trend$Time = 0
+trend$Time = index(out)
 
 write.csv(trend, quote = FALSE, file = paste(instrument, "-trend-", granularity, ".csv", sep = ""), fileEncoding = "UTF-8")
 
