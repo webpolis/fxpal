@@ -253,16 +253,15 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             angular.forEach(ret, function(rows) {
                 $scope.selected.events = $scope.selected.events.concat(rows);
             });
-            // convert date to local
             $scope.selected.events = $scope.selected.events.map(function(ev) {
                 var o = {}, reCross = new RegExp('^(' + [$scope.selected.cross1.currCode, $scope.selected.cross2.currCode].join('|') + ')\\s+', 'g');
                 for (var p in ev) {
                     o[angular.lowercase(p)] = ev[p];
                     if (/event/gi.test(p)) {
                         o.event = o.event.replace(reCross, '');
-                        o.code = $scope.utils.normalizeEventName(o.event, o.currency.toUpperCase());
                     }
                 }
+                // convert date to local
                 o.localDate = $scope.utils.parseDate([ev.Date, moment().format('YYYY'), ev.Time, ev['Time Zone']].join(' '));
                 return o;
             }).filter(function(ev) {

@@ -83,10 +83,10 @@ server.post('/api/stemmer/:currency', function respond(req, res, next) {
     var ret = [];
     res.setHeader('content-type', 'application/json');
     if (req.body.length > 0) {
-        console.log(req.params)
         ret = req.body.map(function(txt) {
             return string.normalizeEventName(txt, req.params.currency.toUpperCase());
         });
+        res.send(ret);
     } else {
         res.send(ret);
     }
