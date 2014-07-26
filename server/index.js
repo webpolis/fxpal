@@ -14,12 +14,13 @@ var fs = require('fs'),
 var isOutdatedFile = function(fileName, sinceMinutes) {
     var ret = true,
         stat = null;
+
     if (!sinceMinutes) {
         return ret;
     }
     if (fs.existsSync(fileName)) {
         stat = fs.statSync(fileName);
-        ret = moment().diff(stat.mtime, 'minutes') > sinceMinutes;
+        ret = moment().zone('0000').diff(moment(stat.mtime).zone('0000'), 'minutes') > sinceMinutes;
     }
     return ret;
 };
