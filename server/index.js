@@ -3,7 +3,8 @@ var fs = require('fs'),
     restify = require('restify'),
     moment = require('../bower_components/momentjs/moment.js'),
     server = restify.createServer(),
-    sh = require('execSync');
+    sh = require('execSync'),
+    string = require('./lib/string');
 /**
  * Checks whether a file has been modified until now
  *
@@ -14,7 +15,6 @@ var fs = require('fs'),
 var isOutdatedFile = function(fileName, sinceMinutes) {
     var ret = true,
         stat = null;
-
     if (!sinceMinutes) {
         return ret;
     }
@@ -24,6 +24,12 @@ var isOutdatedFile = function(fileName, sinceMinutes) {
     }
     return ret;
 };
+/**
+ * Init API
+ */
+server.use(restify.bodyParser({
+    mapParams: false
+}));
 /**
  * API methods
  */
@@ -71,6 +77,19 @@ server.get('/api/candles/:cross/:type/:start/:granularity', function respond(req
     fs.readFile(outFile, {}, function(err, data) {
         res.send(data);
     });
+    next();
+});
+server.post('/api/stemmer/:currency', function respond(req, res, next) {
+    var ret = [];
+    res.setHeader('content-type', 'application/json');
+    if (req.body.length > 0) {
+        console.log(req.params)
+        ret = req.body.map(function(txt) {
+            return string.normalizeEventName(txt, req.params.currency.toUpperCase());
+        });
+    } else {
+        res.send(ret);
+    }
     next();
 });
 /**

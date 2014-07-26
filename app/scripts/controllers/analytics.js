@@ -260,6 +260,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                     o[angular.lowercase(p)] = ev[p];
                     if (/event/gi.test(p)) {
                         o.event = o.event.replace(reCross, '');
+                        o.code = $scope.utils.normalizeEventName(o.event, o.currency.toUpperCase());
                     }
                 }
                 o.localDate = $scope.utils.parseDate([ev.Date, moment().format('YYYY'), ev.Time, ev['Time Zone']].join(' '));

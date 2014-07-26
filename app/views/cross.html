@@ -56,6 +56,7 @@
                     <table class="table" ng-table="tblEvents">
                         <tr ng-repeat="event in selected.events | filter:isCurrencyEvent">
                             <td data-title="'Date'">{{event.localDate | date:'short'}}</td>
+                            <td data-title="'Code'">{{event.code}}</td>
                             <td data-title="'Currency'">{{event.currency | uppercase}}</td>
                             <td data-title="'Title'">{{event.event}}</td>
                             <td data-title="'Importance'" ng-class="{'red':event.importance == 'High','orange':event.importance == 'Medium','teal':event.importance == 'Low'}">{{event.importance}}</td>
