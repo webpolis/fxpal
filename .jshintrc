@@ -14,7 +14,8 @@
     "google": true,
     "regression": true,
     "Highcharts": true,
-    "alert": true
+    "alert": true,
+    "stemmer": true
   },
   "globalstrict": true,
   "quotmark": true,
