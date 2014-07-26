@@ -18,30 +18,30 @@ getCandles <- function(instrument, granularity, startDate){
 
 	print(urlPractice)
 
-	ret = fromJSON(getURL(url = urlPractice, httpheader = c(Authorization = paste("Bearer ", oandaToken))))
+	json = fromJSON(getURL(url = urlPractice, httpheader = c(Authorization = paste("Bearer ", oandaToken))))
 
-	out = NULL
-	for(c in 1:length(ret$candles)){
-		candle = as.data.frame(ret$candles[c])
-		rbind(out, candle) -> out
+	ret = NULL
+	for(c in 1:length(json$candles)){
+		candle = as.data.frame(json$candles[c])
+		rbind(ret, candle) -> ret
 	}
 
-	out = out[,-(grep("[a-z]+Bid|complete",names(out)))]
-	rownames(out) = out[,1]
-	out = out[,-1]
-	names(out) = c("Open","High","Low","Close","Volume")
-	rownames(out) = as.POSIXlt(gsub("T|\\.\\d{6}Z", " ", rownames(out)))
-	out = as.xts(out)
-	return(out)
+	ret = ret[,-(grep("[a-z]+Bid|complete",names(ret)))]
+	rownames(ret) = ret[,1]
+	ret = ret[,-1]
+	names(ret) = c("Open","High","Low","Close","Volume")
+	rownames(ret) = as.POSIXlt(gsub("T|\\.\\d{6}Z", " ", rownames(ret)))
+	ret = as.xts(ret)
+	return(ret)
 }
 
-getCandlestickPatterns <- function(){
+getCandlestickPatterns <- function(varName){
 	ret = xts()
 	cMethods = ls(package:candlesticks)
 	csp = cMethods[grep("^CSP.*", cMethods)]
 	for(c in 1:length(csp)){
 		tryCatch({
-			tmp = eval(parse(text = paste(csp[c], "(out)", sep = "")))
+			tmp = eval(parse(text = paste(csp[c], "(", varName, ")", sep = "")))
 			ret = merge(tmp, ret)
 		}, error = function(cond){
 			return(NA)
