@@ -320,7 +320,8 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                     }
                     return cor;
                 }).filter(function(cor) {
-                    return ((cor.rel >= $scope.config.correlation.min) || (cor.rel <= -($scope.config.correlation.min)));
+                    var ret = (cor.rel >= $scope.config.correlation.min) || (cor.rel <= -($scope.config.correlation.min));
+                    return target !== 'events' ? ret : ret && (cor.rel > -1 && cor.rel < 1);
                 });
                 if (target === 'markets') {
                     // retrieve daily change per correlated item
