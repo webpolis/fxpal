@@ -311,23 +311,17 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             var correlation = jsonPath.eval(data, expr).map(function(rel) {
                 // if cross is reverted, we should invert correlation value
                 var corValue = parseFloat(rel.rel);
-                if (rel.cross1 === revCurCross || rel.cross2 === revCurCross) {
-                    corValue = -(corValue);
-                }
                 rel.rel = corValue;
                 return rel;
-            });
-            correlation.sort(function(a, b) {
-                if (a.rel < b.rel) {
-                    return 1;
-                } else if (a.rel > b.rel) {
-                    return -1;
-                }
-                return 0;
             });
             $timeout(function() {
                 var crosses = [];
                 $scope.selected.correlation[target] = correlation.map(function(cor) {
+                    if (target === 'markets' && (cor.cross1 === revCurCross || cor.cross2 === revCurCross)) {
+                        cor.rel = -(cor.rel);
+                    } else if (target === 'events' && (cor.cross1 === curCross || cor.cross2 === curCross)) {
+                        cor.rel = -(cor.rel);
+                    }
                     cor.cross = ((cor.cross1 === curCross && cor.cross2) || (cor.cross1 === revCurCross && cor.cross2)) || ((cor.cross2 === curCross && cor.cross1) || (cor.cross2 === revCurCross && cor.cross1));
                     delete cor.cross1;
                     delete cor.cross2;
@@ -337,6 +331,14 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                     ret = ret && crosses.indexOf(cor.cross) === -1;
                     crosses.push(cor.cross);
                     return target !== 'events' ? ret : ret && (cor.rel > -1 && cor.rel < 1);
+                });
+                $scope.selected.correlation[target].sort(function(a, b) {
+                    if (a.rel < b.rel) {
+                        return 1;
+                    } else if (a.rel > b.rel) {
+                        return -1;
+                    }
+                    return 0;
                 });
                 if (target === 'markets') {
                     // retrieve daily change per correlated item
