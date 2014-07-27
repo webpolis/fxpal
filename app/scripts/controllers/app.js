@@ -16,6 +16,7 @@ angular.module('aifxApp').controller('appController', function($scope, $ionicSid
     $scope.selected = {
         cross1: null,
         cross2: null,
+        portfolio: null,
         correlation: {
             markets: null,
             events: null
