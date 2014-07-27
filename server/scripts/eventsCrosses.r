@@ -9,6 +9,8 @@ data = cor(data, use="pairwise.complete.obs", method="pearson")
 correlation = as.data.frame(as.table(data))
 correlation = na.omit(correlation)
 names(correlation) = c("cross1", "cross2", "rel")
+correlation = correlation[correlation$rel!=1,]
+
 write.csv(correlation, quote = FALSE, file = "eventsCrossesOutputs.csv", fileEncoding = "UTF-8")
 
 quit()
