@@ -33,7 +33,7 @@ tpWeights = getWeights(tp)
 mpWeights = getWeights(mp)
 epWeights = getWeights(ep)
 
-mediumWeights = tpWeights + mpWeights + epWeights
+mediumWeights = (tpWeights + mpWeights + epWeights) / 3 
 names(mediumWeights) = names(tmp)
 mediumWeights = sort(mediumWeights, decreasing = TRUE)
 
