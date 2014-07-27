@@ -71,55 +71,53 @@ Wed Jul 23,23:50,GMT,jpy,JPY Adjusted Merchandise Trade Balance (Yen),Medium,-¥
 Wed Jul 23,23:50,GMT,jpy,JPY Merchandise Trade Balance Total (Yen),Medium,-¥822.2B,-¥642.9B,-¥910.8B
 Thu Jul 24,01:35,GMT,jpy,JPY Markit/JMMA Japan Manufacturing PMI,Medium,50.8,,51.5
 Thu Jul 24,01:45,GMT,cny,CNY HSBC China Manufacturing PMI,Medium,52.0,51.0,50.7
-Thu Jul 24,07:00,GMT,EUR,EUR Markit France Manufacturing PMI,Low,,48,48.2
-Thu Jul 24,07:00,GMT,EUR,EUR Markit France Services PMI,Low,,48.2,48.2
-Thu Jul 24,07:00,GMT,EUR,EUR Markit France Composite PMI,Low,,48.3,48.1
-Thu Jul 24,07:30,GMT,EUR,EUR Markit/BME Germany Manufacturing PMI,Medium,,51.9,52
-Thu Jul 24,07:30,GMT,EUR,EUR Markit Germany Services PMI,Medium,,54.5,54.6
-Thu Jul 24,07:30,GMT,EUR,EUR Markit/BME Germany Composite PMI,Medium,,53.8,54
-Thu Jul 24,08:00,GMT,EUR,EUR Markit Eurozone Services PMI,Medium,,52.7,52.8
-Thu Jul 24,08:00,GMT,EUR,EUR Markit Eurozone Manufacturing PMI,Medium,,51.7,51.8
-Thu Jul 24,08:00,GMT,EUR,EUR Markit Eurozone Composite PMI,Medium,,52.8,52.8
-Thu Jul 24,08:30,GMT,GBP,GBP Retail Sales Incl. Auto (MoM),Low,,0.3%,-0.5%
-Thu Jul 24,08:30,GMT,GBP,GBP Retail Sales (MoM),Low,,0.3%,-0.5%
-Thu Jul 24,08:30,GMT,GBP,GBP Retail Sales (YoY),Medium,,4.6%,4.7%
-Thu Jul 24,08:30,GMT,GBP,GBP Retail Sales Incl. Auto (YoY),Medium,,3.9%,3.9%
-Thu Jul 24,12:30,GMT,USD,USD Initial Jobless Claims,Medium,,310K,302K
-Thu Jul 24,12:30,GMT,USD,USD Continuing Claims,Medium,,2510K,2507K
-Thu Jul 24,13:45,GMT,USD,USD Markit US Manufacturing PMI,Medium,,57.5,57.3
-Thu Jul 24,14:00,GMT,usd,USD New Home Sales,Low,,475K,504K
-Thu Jul 24,14:00,GMT,usd,USD New Home Sales (MoM),Medium,,-5.8%,18.6%
-Thu Jul 24,14:30,GMT,usd,USD EIA Natural Gas Storage Change,Low,,94,107
-Thu Jul 24,14:30,GMT,USD,USD EIA Natural Working Gas Implied Flow/U,Low,,,107
-Thu Jul 24,15:00,GMT,USD,USD Kansas City Fed Manf. Activity,Low,,6,6
-Thu Jul 24,23:01,GMT,GBP,GBP Hometrack Housing Survey (MoM),Low,,,0.3%
-Thu Jul 24,23:01,GMT,GBP,GBP Hometrack Housing Survey (YoY),Low,,,6.0%
-Thu Jul 24,23:30,GMT,JPY,JPY National Consumer Price Index (YoY),High,,3.5%,3.7%
-Thu Jul 24,23:30,GMT,JPY,JPY National Consumer Price Index Ex-Fresh Food (YoY),Medium,,3.3%,3.4%
-Thu Jul 24,23:30,GMT,JPY,JPY Tokyo Consumer Price Index (YoY),Low,,2.8%,3.0%
-Thu Jul 24,23:30,GMT,JPY,JPY Tokyo Consumer Price Index Ex-Fresh Food (YoY),Low,,2.7%,2.8%
-Thu Jul 24,23:30,GMT,JPY,"JPY Tokyo Consumer Price Index Ex Food, Energy (YoY)",Low,,2.0%,2.0%
-Thu Jul 24,23:30,GMT,JPY,"JPY National Consumer Price Index Ex Food, Energy (YoY)",Medium,,2.3%,2.2%
-Thu Jul 24,23:50,GMT,JPY,JPY Foreign Buying Japan Stocks (Yen),Low,,,-¥160.9B 
-Thu Jul 24,23:50,GMT,JPY,JPY Foreign Buying Japan Bonds (Yen),Low,,,-¥2.9B
-Thu Jul 24,23:50,GMT,JPY,JPY Corporate Service Price (YoY),Low,,3.6%,3.6%
-Thu Jul 24,23:50,GMT,JPY,JPY Japan Buying Foreign Bonds (Yen),Medium,,,¥671.5B
-Thu Jul 24,23:50,GMT,jpy,JPY Japan Buying Foreign Stocks (Yen),Medium,,,¥71.9B
-Fri Jul 25,,,EUR,EUR German Import Price Index (MoM),Low,,,0.0%
-Fri Jul 25,,,EUR,EUR German Import Price Index (YoY),Low,,,-2.1%
-Fri Jul 25,01:00,GMT,NZD,NZD ANZ Activity Outlook,Low,,,45.8
-Fri Jul 25,01:00,GMT,NZD,NZD NBNZ Business Confidence,Medium,,,42.8
-Fri Jul 25,06:00,GMT,EUR,EUR German GfK Consumer Confidence Survey,Medium,,8.9,8.9
-Fri Jul 25,08:00,GMT,EUR,EUR German IFO - Current Assessment,Medium,,114.5,114.8
-Fri Jul 25,08:00,GMT,EUR,EUR German IFO - Expectations,Medium,,104.4,104.8
-Fri Jul 25,08:00,GMT,EUR,EUR German IFO - Business Climate,Medium,,109.4,109.7
-Fri Jul 25,08:00,GMT,EUR,EUR Euro-Zone M3 s.a. (YoY),Low,,1.2%,1.0%
-Fri Jul 25,08:00,GMT,EUR,EUR Euro-Zone M3 s.a. (3M),Low,,1.0%,0.9%
-Fri Jul 25,08:30,GMT,GBP,GBP Index of Services (3Mo3M),Low,,1.0%,0.9%
-Fri Jul 25,08:30,GMT,GBP,GBP Gross Domestic Product (YoY),High,,3.1%,3.0%
-Fri Jul 25,08:30,GMT,GBP,GBP Index of Services (MoM),Low,,0.2%,0.3%
-Fri Jul 25,08:30,GMT,GBP,GBP Gross Domestic Product (QoQ),Medium,,0.8%,0.8%
-Fri Jul 25,12:30,GMT,usd,USD Durable Goods Orders,High,,0.4%,-0.9%
-Fri Jul 25,12:30,GMT,usd,USD Durables Ex Transportation,Medium,,0.5%,0.0%
-Fri Jul 25,12:30,GMT,usd,USD Cap Goods Ship Nondef Ex Air,Low,,1.0%,0.5%
-Fri Jul 25,12:30,GMT,USD,USD Cap Goods Orders Nondef Ex Air,Low,,0.4%,0.7%
+Thu Jul 24,07:00,GMT,eur,EUR Markit France Manufacturing PMI,Low,47.6,48,48.2
+Thu Jul 24,07:00,GMT,eur,EUR Markit France Services PMI,Low,50.4,48.2,48.2
+Thu Jul 24,07:00,GMT,eur,EUR Markit France Composite PMI,Low,49.4,48.3,48.1
+Thu Jul 24,07:30,GMT,eur,EUR Markit/BME Germany Manufacturing PMI,Medium,52.9,51.9,52
+Thu Jul 24,07:30,GMT,eur,EUR - Indice PMI des services allemand,Medium,56.6,54.5,54.6
+Thu Jul 24,07:30,GMT,eur,EUR Markit/BME Germany Composite PMI,Medium,55.9,53.8,54
+Thu Jul 24,08:00,GMT,eur,EUR Markit Eurozone Services PMI,Medium,52.4,52.7,52.8
+Thu Jul 24,08:00,GMT,eur,EUR Markit Eurozone Manufacturing PMI,Medium,51.9,51.7,51.8
+Thu Jul 24,08:00,GMT,eur,EUR Markit Eurozone Composite PMI,Medium,54.0,52.8,52.8
+Thu Jul 24,08:30,GMT,gbp,GBP Retail Sales Incl. Auto (MoM),Low,0.1%,0.3%,-0.5%
+Thu Jul 24,08:30,GMT,gbp,GBP Retail Sales (MoM),Low,-0.1%,0.3%,-0.5%
+Thu Jul 24,08:30,GMT,gbp,GBP Retail Sales (YoY),Medium,4.0%,4.6%,4.5%
+Thu Jul 24,08:30,GMT,gbp,GBP Retail Sales Incl. Auto (YoY),Medium,3.6%,3.9%,3.7%
+Thu Jul 24,12:30,GMT,usd,USD Initial Jobless Claims,Medium,284K,310K,303K
+Thu Jul 24,12:30,GMT,usd,USD Continuing Claims,Medium,2500K,2510K,2508K
+Thu Jul 24,13:45,GMT,usd,USD Markit US Manufacturing PMI,Medium,56.3,57.5,57.3
+Thu Jul 24,14:00,GMT,usd,USD New Home Sales,Low,406K,475K,442K
+Thu Jul 24,14:00,GMT,usd,USD New Home Sales (MoM),Medium,-8.1%,-5.8%,8.3%
+Thu Jul 24,14:30,GMT,usd,USD EIA Natural Gas Storage Change,Low,90,96,107
+Thu Jul 24,14:30,GMT,usd,USD EIA Natural Working Gas Implied Flow/U,Low,90,,107
+Thu Jul 24,15:00,GMT,usd,USD Kansas City Fed Manf. Activity,Low,9,6,6
+Thu Jul 24,23:01,GMT,gbp,GBP Hometrack Housing Survey (MoM),Low,0.1%,,0.3%
+Thu Jul 24,23:01,GMT,gbp,GBP Hometrack Housing Survey (YoY),Low,5.8%,,6.0%
+Thu Jul 24,23:30,GMT,jpy,JPY National Consumer Price Index (YoY),High,3.6%,3.5%,3.7%
+Thu Jul 24,23:30,GMT,jpy,JPY National Consumer Price Index Ex-Fresh Food (YoY),Medium,3.3%,3.3%,3.4%
+Thu Jul 24,23:30,GMT,jpy,JPY Tokyo Consumer Price Index (YoY),Low,2.8%,2.8%,3.0%
+Thu Jul 24,23:30,GMT,jpy,JPY Tokyo Consumer Price Index Ex-Fresh Food (YoY),Low,2.8%,2.7%,2.8%
+Thu Jul 24,23:30,GMT,jpy,"JPY Tokyo Consumer Price Index Ex Food, Energy (YoY)",Low,2.1%,2.0%,2.0%
+Thu Jul 24,23:30,GMT,jpy,"JPY National Consumer Price Index Ex Food, Energy (YoY)",Medium,2.3%,2.3%,2.2%
+Thu Jul 24,23:50,GMT,jpy,JPY Foreign Buying Japan Stocks (Yen),Low,¥139.2B,,-¥160.6B 
+Thu Jul 24,23:50,GMT,jpy,JPY Foreign Buying Japan Bonds (Yen),Low,¥450.3B,,-¥1.0B
+Thu Jul 24,23:50,GMT,jpy,JPY PPI Services (YoY),Low,3.6%,3.6%,3.6%
+Thu Jul 24,23:50,GMT,jpy,JPY Japan Buying Foreign Bonds (Yen),Medium,¥116.1B,,¥681.6B
+Thu Jul 24,23:50,GMT,jpy,JPY Japan Buying Foreign Stocks (Yen),Medium,¥163.0B,,¥71.9B
+Fri Jul 25,01:00,GMT,nzd,NZD ANZ Activity Outlook,Low,45.1,,45.8
+Fri Jul 25,01:00,GMT,nzd,NZD NBNZ Business Confidence,Medium,39.7,,42.8
+Fri Jul 25,06:00,GMT,eur,EUR German GfK Consumer Confidence Survey,Medium,9.0,8.9,8.9
+Fri Jul 25,08:00,GMT,eur,EUR German IFO - Current Assessment,Medium,112.9,114.5,114.8
+Fri Jul 25,08:00,GMT,eur,EUR German IFO - Expectations,Medium,103.4,104.4,104.8
+Fri Jul 25,08:00,GMT,eur,EUR German IFO - Business Climate,Medium,108.0,109.4,109.7
+Fri Jul 25,08:00,GMT,eur,EUR Euro-Zone M3 s.a. (YoY),Low,1.5%,1.2%,1.0%
+Fri Jul 25,08:00,GMT,eur,EUR Euro-Zone M3 s.a. (3M),Low,1.1%,1.0%,0.9%
+Fri Jul 25,08:30,GMT,gbp,GBP Index of Services (3Mo3M),Low,1.0%,1.0%,0.9%
+Fri Jul 25,08:30,GMT,gbp,GBP Gross Domestic Product (YoY),High,3.1%,3.1%,3.0%
+Fri Jul 25,08:30,GMT,gbp,GBP Index of Services (MoM),Low,0.3%,0.2%,0.3%
+Fri Jul 25,08:30,GMT,gbp,GBP Gross Domestic Product (QoQ),High,0.8%,0.8%,0.8%
+Fri Jul 25,12:30,GMT,usd,USD Durable Goods Orders,High,0.7%,0.5%,-1.0%
+Fri Jul 25,12:30,GMT,usd,USD Durables Ex Transportation,Medium,0.8%,0.5%,-0.1%
+Fri Jul 25,12:30,GMT,usd,USD Cap Goods Ship Nondef Ex Air,Low,-1.0%,1.3%,-0.1%
+Fri Jul 25,12:30,GMT,usd,USD Cap Goods Orders Nondef Ex Air,Low,1.4%,0.5%,-1.3%
