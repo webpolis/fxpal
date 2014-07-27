@@ -164,13 +164,13 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                                     if (ticker) {
                                         change[ix] = val;
                                         // set value
-                                        jsonPath.eval($scope.selected.correlation.markets, '$[?(@.cross1 && @.cross1 == "' + ix + '" || @.cross2 && @.cross2 == "' + ix + '")]')[0][type] = val;
+                                        jsonPath.eval($scope.selected.correlation.markets, '$[?(@.cross && @.cross == "' + ix + '")]')[0][type] = val;
                                     } else {
                                         // set currency flag
-                                        jsonPath.eval($scope.selected.correlation.markets, '$[?(@.cross1 && @.cross1 == "' + ix + '" || @.cross2 && @.cross2 == "' + ix + '")]')[0].currency = true;
+                                        jsonPath.eval($scope.selected.correlation.markets, '$[?(@.cross && @.cross == "' + ix + '")]')[0].currency = true;
                                     }
                                     // set label
-                                    jsonPath.eval($scope.selected.correlation.markets, '$[?(@.cross1 && @.cross1 == "' + ix + '" || @.cross2 && @.cross2 == "' + ix + '")]')[0].label = ix;
+                                    jsonPath.eval($scope.selected.correlation.markets, '$[?(@.cross && @.cross == "' + ix + '")]')[0].label = ix;
                                 }
                             });
                         });
@@ -196,9 +196,9 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                                 var ticker = jsonPath.eval($scope.config.maps.tickers, '$.[?(@.symbol=="' + symbol + '")]')[0];
                                 try {
                                     // set value
-                                    jsonPath.eval($scope.selected.correlation.markets, '$[?(@.cross1 && @.cross1 == "' + ticker.quandl + '" || @.cross2 && @.cross2 == "' + ticker.quandl + '")]')[0][type] = parseFloat(quote.Change);
+                                    jsonPath.eval($scope.selected.correlation.markets, '$[?(@.cross && @.cross == "' + ticker.quandl + '")]')[0][type] = parseFloat(quote.Change);
                                     // set label
-                                    jsonPath.eval($scope.selected.correlation.markets, '$[?(@.cross1 && @.cross1 == "' + ticker.quandl + '" || @.cross2 && @.cross2 == "' + ticker.quandl + '")]')[0].label = ticker.name;
+                                    jsonPath.eval($scope.selected.correlation.markets, '$[?(@.cross && @.cross == "' + ticker.quandl + '")]')[0].label = ticker.name;
                                 } catch (err) {}
                             });
                         }
@@ -326,26 +326,26 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                 return 0;
             });
             $timeout(function() {
+                var crosses = [];
                 $scope.selected.correlation[target] = correlation.map(function(cor) {
-                    if (cor.cross1 === curCross || cor.cross1 === revCurCross) {
-                        delete cor.cross1;
-                    } else if (cor.cross2 === curCross || cor.cross2 === revCurCross) {
-                        delete cor.cross2;
-                    }
+                    cor.cross = ((cor.cross1 === curCross && cor.cross2) || (cor.cross1 === revCurCross && cor.cross2)) || ((cor.cross2 === curCross && cor.cross1) || (cor.cross2 === revCurCross && cor.cross1));
+                    delete cor.cross1;
+                    delete cor.cross2;
                     return cor;
-                }).filter(function(cor) {
+                }).filter(function(cor, i, arr) {
                     var ret = (cor.rel >= $scope.config.correlation.min) || (cor.rel <= -($scope.config.correlation.min));
+                    ret = ret && crosses.indexOf(cor.cross) === -1;
+                    crosses.push(cor.cross);
                     return target !== 'events' ? ret : ret && (cor.rel > -1 && cor.rel < 1);
                 });
                 if (target === 'markets') {
                     // retrieve daily change per correlated item
                     var sets = [];
                     angular.forEach($scope.selected.correlation[target], function(cor) {
-                        var cross = cor.cross1 || cor.cross2;
-                        if (!(/^[a-z]+\..*$/gi.test(cross))) {
-                            sets.push('QUANDL.' + cross + '.1');
+                        if (!(/^[a-z]+\..*$/gi.test(cor.cross))) {
+                            sets.push('QUANDL.' + cor.cross + '.1');
                         } else {
-                            sets.push(cross + '.1');
+                            sets.push(cor.cross + '.1');
                         }
                     });
                     if (sets.length === 0) {
