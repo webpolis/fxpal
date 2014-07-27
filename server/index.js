@@ -1,5 +1,7 @@
 'use strict';
 var fs = require('fs'),
+    http = require('http'),
+    q = require('q'),
     restify = require('restify'),
     moment = require('../bower_components/momentjs/moment.js'),
     server = restify.createServer(),
@@ -23,6 +25,29 @@ var isOutdatedFile = function(fileName, sinceMinutes) {
         ret = moment().zone('0000').diff(moment(stat.mtime).zone('0000'), 'minutes') > sinceMinutes;
     }
     return ret;
+};
+var requestCalendarCsv = function(url, cross) {
+    var _def = q.defer();
+    http.get(url, function(_res) {
+        var body = '';
+        _res.on('data', function(chunk) {
+            body += chunk;
+        });
+        _res.on('end', function() {
+            var ret = body.split('\n');
+            ret = ret.filter(Boolean).map(function(row, ix) {
+                if (ix === 0) {
+                    return row;
+                }
+                var name = row.replace(/^(?:[^\,]+\,){4}([^\,]+).*$/gi, '$1');
+                var code = string.normalizeEventName(name, cross);
+                row += ',' + code;
+                return row;
+            });
+            _def.resolve(ret);
+        });
+    }).on('error', _def.reject);
+    return _def.promise;
 };
 /**
  * Init API
@@ -81,14 +106,40 @@ server.get('/api/candles/:cross/:type/:start/:granularity', function respond(req
     });
     next();
 });
-server.post('/api/stemmer/:currency', function respond(req, res, next) {
+server.post('/api/stemmer/:cross', function respond(req, res, next) {
     var ret = [];
     res.setHeader('content-type', 'application/json');
     if (req.body.length > 0) {
         ret = req.body.map(function(txt) {
-            return string.normalizeEventName(txt, req.params.currency.toUpperCase());
+            return string.normalizeEventName(txt, req.params.cross.toUpperCase());
         });
         res.send(ret);
+    } else {
+        res.send(ret);
+    }
+    next();
+});
+server.post('/api/calendar/:cross', function respond(req, res, next) {
+    var ret = [],
+        all = [];
+    res.setHeader('content-type', 'text/csv');
+    if (req.body.length > 0) {
+        all = req.body.map(function(url) {
+            return requestCalendarCsv(url, req.params.cross.toUpperCase());
+        });
+        q.all(all).then(function(ret) {
+            var cols = null,
+                arrFinal = [];
+            ret.forEach(function(arr) {
+                if (cols === null) {
+                    cols = arr[0] + ',Code';
+                }
+                arr = arr.splice(1);
+                arrFinal = arrFinal.concat(arr);
+            });
+            arrFinal.unshift(cols);
+            res.send(arrFinal.join('\n').trim());
+        });
     } else {
         res.send(ret);
     }

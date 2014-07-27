@@ -1,5 +1,5 @@
 'use strict';
-angular.module('aifxApp').controller('portfolioController', function($scope, $ionicSideMenuDelegate, $http, $ionicLoading, $stateParams, $timeout, $q) {
+angular.module('aifxApp').controller('portfolioController', function($scope, $ionicSideMenuDelegate, $http, $ionicLoading, $stateParams, $timeout, $q, $location) {
     $scope.optsHighchartsPortfolio = {
         options: {
             chart: {
@@ -22,7 +22,18 @@ angular.module('aifxApp').controller('portfolioController', function($scope, $io
         },
         series: [{
             data: [],
-            name: 'Major Crosses'
+            name: 'Major Crosses',
+            cursor: 'pointer',
+            point: {
+                events: {
+                    click: function() {
+                        var col = this;
+                        $timeout(function() {
+                            $location.url('/app/cross/' + col.name);
+                        }, 50);
+                    }
+                }
+            }
         }],
         exporting: {
             enabled: false

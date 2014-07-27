@@ -220,8 +220,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
     $scope.processEvents = function() {
         var def = $q.defer();
         $scope.selected.events = [];
-        var maxWeeks = 4,
-            all = [];
+        var maxWeeks = 4;
         // match crosses
         var re = new RegExp('(' + [$scope.selected.cross1.currCode, $scope.selected.cross2.currCode].join('|') + ')', 'gi');
         var parseCsv = function(csv) {
@@ -238,21 +237,16 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             template: 'Loading...'
         });
         // retrieve events
-        all = Array.apply(null, new Array(maxWeeks)).map(String.valueOf, '').map(function(i, w) {
-            var _def = $q.defer();
+        var urlsCalendars = Array.apply(null, new Array(maxWeeks)).map(String.valueOf, '').map(function(i, w) {
             var startWeekDate = moment().subtract('week', w).startOf('week').format('MM-DD-YYYY'),
                 url = $scope.config.urls.events.replace(/\{\{startWeekDate\}\}/gi, startWeekDate);
-            var corsForge = 'http://www.corsproxy.com/';
-            $http.get(corsForge + url).success(function(ret) {
-                _def.resolve(parseCsv(ret));
-            }).error(_def.reject);
-            return _def.promise;
+            return 'http://' + url;
         });
-        $q.all(all).then(function(ret) {
+        $http.post($scope.config.urls.api + 'calendar/' + [$scope.selected.cross1.currCode, $scope.selected.cross2.currCode].join(''), urlsCalendars, {
+            cache: true
+        }).success(function(ret) {
             $ionicLoading.hide();
-            angular.forEach(ret, function(rows) {
-                $scope.selected.events = $scope.selected.events.concat(rows);
-            });
+            $scope.selected.events = parseCsv(ret);
             $scope.selected.events = $scope.selected.events.map(function(ev) {
                 var o = {}, reCross = new RegExp('^(' + [$scope.selected.cross1.currCode, $scope.selected.cross2.currCode].join('|') + ')\\s+', 'g');
                 for (var p in ev) {
@@ -276,22 +270,8 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                 }
                 return 0;
             });
-            // retrieve event codes
-            var eventNames = [];
-            angular.forEach($scope.selected.events, function(o) {
-                eventNames.push(o.event);
-            });
-            $http.post($scope.config.urls.api + 'stemmer/' + [$scope.selected.cross1.currCode, $scope.selected.cross2.currCode].join(''), eventNames, {
-                cache: true
-            }).success(function(codes) {
-                if (angular.isArray(codes)) {
-                    angular.forEach(codes, function(code, k) {
-                        $scope.selected.events[k].code = code;
-                    });
-                }
-                def.resolve();
-            });
-        }, def.reject);
+            def.resolve();
+        }).error(def.reject);
         return def.promise;
     };
     $scope.correlated = function(target) {
