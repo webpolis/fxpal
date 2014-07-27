@@ -30,6 +30,8 @@ var isOutdatedFile = function(fileName, sinceMinutes) {
 server.use(restify.bodyParser({
     mapParams: false
 }));
+server.use(restify.CORS());
+server.use(restify.gzipResponse());
 /**
  * API methods
  */

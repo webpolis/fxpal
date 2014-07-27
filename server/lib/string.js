@@ -8,6 +8,7 @@ module.exports = {
         for (var m = 0; m < 12; m++) {
             months.push(moment().month(m).format('MMM'));
         }
+        currency = currency.length === 6 ? '(?:' + [currency.split('').splice(0, 3), currency.split('').splice(3, 4)].join('|') + ')' : currency;
         var reCurrency = new RegExp('[\\b\\s]*' + currency + '[\\b\\s]*(?!o)', 'gi');
         var reMonths = new RegExp('[\\b\\s]+' + months.join('|') + '[\\b\\s]+', 'gi');
         ret = ret.replace(/[\-\_\"\(\)\[\]\%]{1,}/g, ' ');

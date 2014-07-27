@@ -276,7 +276,21 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                 }
                 return 0;
             });
-            def.resolve();
+            // retrieve event codes
+            var eventNames = [];
+            angular.forEach($scope.selected.events, function(o) {
+                eventNames.push(o.event);
+            });
+            $http.post($scope.config.urls.api + 'stemmer/' + [$scope.selected.cross1.currCode, $scope.selected.cross2.currCode].join(''), eventNames, {
+                cache: true
+            }).success(function(codes) {
+                if (angular.isArray(codes)) {
+                    angular.forEach(codes, function(code, k) {
+                        $scope.selected.events[k].code = code;
+                    });
+                }
+                def.resolve();
+            });
         }, def.reject);
         return def.promise;
     };
