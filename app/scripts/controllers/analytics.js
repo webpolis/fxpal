@@ -5,23 +5,19 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
     });
     $scope.optsHighchartsCross = {
         options: {
-            plotOptions: {
-                column: {
-                    dataLabels: {
-                        enabled: true,
-                        useHTML: true
-                    }
-                }
+            scrollbar: {
+                enabled: false
+            },
+            exporting: {
+                enabled: false
+            },
+            navigator: {
+                enabled: true,
+                adaptToUpdatedData: false
             }
-        },
-        exporting: {
-            enabled: false
         },
         title: {
             text: false
-        },
-        rangeSelector: {
-            selected: 1
         },
         'series': [{
             name: 'Average Markets Price',
