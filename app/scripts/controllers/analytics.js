@@ -487,7 +487,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         });
     };
     $scope.showCandlestickPatterns = function(flag) {
-        $scope.selected.patterns = flag.patterns;
+        $scope.selected.flag = flag;
         var scope = $scope.$new();
         var alertPopup = $ionicPopup.alert({
             title: 'Candlestick Patterns',
