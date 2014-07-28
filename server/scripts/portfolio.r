@@ -4,7 +4,7 @@ Sys.setenv(TZ="UTC")
 
 library("xts")
 library("fPortfolio")
-library("financeR")
+#library("financeR")
 library("quantmod")
 
 data = read.csv("multisetsInputs.csv", sep = ",", dec = ".", strip.white = TRUE, header=TRUE, fileEncoding = "UTF-8")
@@ -33,7 +33,7 @@ tpWeights = getWeights(tp)
 mpWeights = getWeights(mp)
 epWeights = getWeights(ep)
 
-mediumWeights = (tpWeights + mpWeights + epWeights) / 3 
+mediumWeights = round((tpWeights + mpWeights + epWeights) / 3, 6)
 names(mediumWeights) = names(tmp)
 mediumWeights = sort(mediumWeights, decreasing = TRUE)
 
