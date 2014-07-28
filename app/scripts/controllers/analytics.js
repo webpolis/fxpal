@@ -14,12 +14,18 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             name: 'Average Markets Price',
             data: null,
             type: 'candlestick',
-            pointInterval: null
+            pointInterval: null,
+            id: 'prices'
         }, {
             name: 'Regression',
             data: null,
             type: 'spline',
             pointInterval: null
+        }, {
+            type: 'flags',
+            data: null,
+            onSeries: 'prices',
+            shape: 'circlepin'
         }],
         useHighStocks: true,
         'credits': {
@@ -389,6 +395,50 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                 var linearRegresssion = regression('exponential', $scope.optsHighchartsCross.series[0].data);
                 $scope.optsHighchartsCross.series[1].pointInterval = period.pointInterval;
                 $scope.optsHighchartsCross.series[1].data = linearRegresssion.points;
+                $scope.trendCandlestickAnalysis(optsOanda);
+            }
+        });
+    };
+    $scope.trendCandlestickAnalysis = function(optsOanda) {
+        $scope.optsHighchartsCross.series[2].data = [];
+        // retrieve trend information
+        csv2json.csv($scope.config.urls.api + ['candles', [$scope.selected.cross1.currCode, $scope.selected.cross2.currCode].join(''), 'trend', optsOanda.start.replace(/^([^T]+).*$/gi, '$1'), optsOanda.granularity].join('/'), function(ret) {
+            if (angular.isArray(ret)) {
+                /**
+                {
+                    type : 'flags',
+                    data : [{
+                        x : 0,      // Point where the flag appears
+                        title : '', // Title of flag displayed on the chart 
+                        text : ''   // Text displayed when the flag are highlighted.
+                    }],
+                    onSeries : '',  // Id of which series it should be placed on. If not defined 
+                                    // the flag series will be put on the X axis
+                    shape : 'flag'  // Defines the shape of the flags.
+                }
+                 */
+                $timeout(function() {
+                    var prev = null;
+                    angular.forEach(ret, function(row, k) {
+                        if (row.Trend === 'NA' ||  row.NoTrend === '1') {
+                            return;
+                        }
+                        var up = row.UpTrend === '1';
+                        if (prev !== null) {
+                            if ((up && prev.title === 'UP') || (!up && prev.title === 'DOWN')) {
+                                return;
+                            }
+                        }
+                        var time = moment.unix(parseInt(row.Time)).utc();
+                        prev = {
+                            title: up ? 'UP' : 'DOWN',
+                            text: up ? 'UP' : 'DOWN',
+                            x: time.valueOf()
+                        };
+                        $scope.optsHighchartsCross.series[2].data.push(prev);
+                    });
+                    console.log($scope.optsHighchartsCross.series[2].data)
+                }, 50);
             }
         });
     };

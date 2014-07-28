@@ -56,6 +56,7 @@ if(type == "trend"){
 	trend = TrendDetectionChannel(out)
 	trend$Time = 0
 	trend$Time = index(out)
+	trend = na.omit(trend)
 
 	write.csv(trend, quote = FALSE, row.names = FALSE, file = paste(instrument, "-trend-", granularity, ".csv", sep = ""), fileEncoding = "UTF-8")
 }
