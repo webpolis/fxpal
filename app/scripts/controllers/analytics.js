@@ -4,11 +4,24 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         counts: []
     });
     $scope.optsHighchartsCross = {
+        options: {
+            plotOptions: {
+                column: {
+                    dataLabels: {
+                        enabled: true,
+                        useHTML: true
+                    }
+                }
+            }
+        },
         exporting: {
             enabled: false
         },
         title: {
             text: false
+        },
+        rangeSelector: {
+            selected: 1
         },
         'series': [{
             name: 'Average Markets Price',
@@ -24,12 +37,12 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         }, {
             type: 'flags',
             data: null,
-            onSeries: 'prices',
             shape: 'circlepin'
         }, {
             type: 'flags',
             data: null,
-            shape: 'squarepin',
+            onSeries: 'prices',
+            shape: 'url(images/icon-question.png)',
             cursor: 'pointer',
             point: {
                 events: {
@@ -46,7 +59,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         },
         xAxis: {
             type: 'datetime'
-        },
+        }
     };
     // not supported via highcharts-ng
     Highcharts.setOptions({
@@ -467,8 +480,9 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                         }
                         var time = moment.unix(row.Time).utc();
                         $scope.optsHighchartsCross.series[3].data.push({
-                            title: 'Patterns',
+                            title: ' ',
                             x: time.valueOf(),
+                            text: 'Patterns detected',
                             patterns: patterns
                         });
                     });
