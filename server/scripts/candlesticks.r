@@ -39,9 +39,11 @@ getCandlestickPatterns <- function(varName){
 	ret = xts()
 	cMethods = ls(package:candlesticks)
 	csp = cMethods[grep("^CSP.*", cMethods)]
+	csp = csp[-(grep('CSP(?:Long|Short)Candle(?:Body)?', csp, ignore.case = TRUE, perl = TRUE))]
 	for(c in 1:length(csp)){
 		tryCatch({
-			tmp = eval(parse(text = paste(csp[c], "(", varName, ")", sep = "")))
+			method = paste(csp[c], "(", varName, ")", sep = "")
+			tmp = eval(parse(text = method))
 			ret = merge(tmp, ret)
 		}, error = function(cond){
 			return(NA)
@@ -53,7 +55,7 @@ getCandlestickPatterns <- function(varName){
 out = getCandles(instrument, granularity, startDate)
 
 if(type == "trend"){
-	trend = TrendDetectionChannel(out)
+	trend = TrendDetectionChannel(out, n = 20, DCSector = .25)
 	trend$Time = 0
 	trend$Time = index(out)
 	trend = na.omit(trend)
@@ -66,6 +68,8 @@ if(type == "patterns"){
 		patterns = getCandlestickPatterns("out")
 		patterns$Time = 0
 		patterns$Time = index(out)
+		patterns = na.omit(patterns)
+
 		write.csv(patterns, quote = FALSE, row.names = FALSE, file = paste(instrument, "-patterns-", granularity, ".csv", sep = ""), fileEncoding = "UTF-8")
 	}
 }

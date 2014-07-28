@@ -1,5 +1,5 @@
 'use strict';
-angular.module('aifxApp').controller('analyticsController', function($scope, $ionicSideMenuDelegate, $http, $ionicLoading, $stateParams, $timeout, $q, ngTableParams) {
+angular.module('aifxApp').controller('analyticsController', function($scope, $ionicSideMenuDelegate, $http, $ionicLoading, $stateParams, $timeout, $q, ngTableParams, $ionicPopup) {
     $scope.tblEvents = new ngTableParams({}, {
         counts: []
     });
@@ -26,6 +26,19 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             data: null,
             onSeries: 'prices',
             shape: 'circlepin'
+        }, {
+            type: 'flags',
+            data: null,
+            shape: 'squarepin',
+            cursor: 'pointer',
+            point: {
+                events: {
+                    click: function() {
+                        var flag = this;
+                        $scope.showCandlestickPatterns(flag);
+                    }
+                }
+            }
         }],
         useHighStocks: true,
         'credits': {
@@ -396,6 +409,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                 $scope.optsHighchartsCross.series[1].pointInterval = period.pointInterval;
                 $scope.optsHighchartsCross.series[1].data = linearRegresssion.points;
                 $scope.trendCandlestickAnalysis(optsOanda);
+                $scope.patternCandlestickAnalysis(optsOanda);
             }
         });
     };
@@ -404,19 +418,6 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         // retrieve trend information
         csv2json.csv($scope.config.urls.api + ['candles', [$scope.selected.cross1.currCode, $scope.selected.cross2.currCode].join(''), 'trend', optsOanda.start.replace(/^([^T]+).*$/gi, '$1'), optsOanda.granularity].join('/'), function(ret) {
             if (angular.isArray(ret)) {
-                /**
-                {
-                    type : 'flags',
-                    data : [{
-                        x : 0,      // Point where the flag appears
-                        title : '', // Title of flag displayed on the chart 
-                        text : ''   // Text displayed when the flag are highlighted.
-                    }],
-                    onSeries : '',  // Id of which series it should be placed on. If not defined 
-                                    // the flag series will be put on the X axis
-                    shape : 'flag'  // Defines the shape of the flags.
-                }
-                 */
                 $timeout(function() {
                     var prev = null;
                     angular.forEach(ret, function(row, k) {
@@ -437,9 +438,52 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                         };
                         $scope.optsHighchartsCross.series[2].data.push(prev);
                     });
-                    console.log($scope.optsHighchartsCross.series[2].data)
                 }, 50);
             }
         });
+    };
+    $scope.patternCandlestickAnalysis = function(optsOanda) {
+        $scope.optsHighchartsCross.series[3].data = [];
+        // retrieve trend information
+        csv2json.csv($scope.config.urls.api + ['candles', [$scope.selected.cross1.currCode, $scope.selected.cross2.currCode].join(''), 'patterns', optsOanda.start.replace(/^([^T]+).*$/gi, '$1'), optsOanda.granularity].join('/'), function(ret) {
+            if (angular.isArray(ret)) {
+                $timeout(function() {
+                    angular.forEach(ret, function(row, k) {
+                        var patterns = [],
+                            hasPattern = false;
+                        for (var p in row) {
+                            row[p] = parseInt(row[p]);
+                            if (!(/time/i.test(p))) {
+                                if (!hasPattern && row[p] === 1) {
+                                    hasPattern = true;
+                                }
+                                if (row[p] === 1) {
+                                    patterns.push(p.replace(/\.\d+/g, '').replace(/([A-Z])|\./g, ' $1').trim());
+                                }
+                            }
+                        }
+                        if (!hasPattern) {
+                            return;
+                        }
+                        var time = moment.unix(row.Time).utc();
+                        $scope.optsHighchartsCross.series[3].data.push({
+                            title: 'Patterns',
+                            x: time.valueOf(),
+                            patterns: patterns
+                        });
+                    });
+                }, 50);
+            }
+        });
+    };
+    $scope.showCandlestickPatterns = function(flag) {
+        $scope.selected.patterns = flag.patterns;
+        var scope = $scope.$new();
+        var alertPopup = $ionicPopup.alert({
+            title: 'Candlestick Patterns',
+            templateUrl: 'views/patterns.html',
+            scope: scope
+        });
+        alertPopup.then(function(res) {});
     };
 });
