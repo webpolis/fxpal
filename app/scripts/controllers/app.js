@@ -44,7 +44,7 @@ angular.module('aifxApp').controller('appController', function($scope, $ionicSid
             yql: 'https://query.yahooapis.com/v1/public/yql?q={{query}}&format=json&diagnostics=false&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys'
         },
         correlation: {
-            min: 0.71
+            min: 0.78
         },
         yqls: {
             quotes: 'select * from yahoo.finance.quote where symbol in ({{sets}})'

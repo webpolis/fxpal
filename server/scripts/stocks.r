@@ -6,9 +6,9 @@ library("xts")
 library("fPortfolio")
 library("quantmod")
 
-stocks = c("AMZN", "DOX", "AXP", "BRK-A", "TSLA", "TEVA", "PG", "AAPL", "CSCO", "CAT", "XOM", "GM", "GOOG", "INTC", "JNJ", "PFE", "BP", "SAP", "GSK", "SIE.DE")
+stocks = c("AMZN", "DOX", "AXP", "BRK-A", "TSLA", "TEVA", "PG", "AAPL", "CSCO", "CAT", "XOM", "GM", "GOOG", "INTC", "JNJ", "PFE", "BP", "SAP", "GSK", "SIE.DE", "VZ", "GS")
 
-tickers = getSymbols(stocks, auto.assign = FALSE)
+tickers = getSymbols(stocks, auto.assign = TRUE)
 
 dataset <- Ad(get(tickers[1]))
 for (i in 2:length(tickers)) {

@@ -37,7 +37,7 @@ getCandles <- function(instrument, granularity, startDate){
 
 getCandlestickPatterns <- function(varName){
 	ret = xts()
-	cMethods = ls(package:candlesticks)
+	cMethods = ls("package:candlesticks")
 	csp = cMethods[grep("^CSP.*", cMethods)]
 	csp = csp[-(grep('CSP(?:Long|Short)Candle(?:Body)?', csp, ignore.case = TRUE, perl = TRUE))]
 	for(c in 1:length(csp)){
@@ -50,6 +50,12 @@ getCandlestickPatterns <- function(varName){
 		})
 	}
 	return(ret)
+}
+
+getVolatility <- function(prices){
+	price = prices$Close
+	chg = exp(ROC(price, type='discrete', na.pad=FALSE))
+	return(mean(na.omit(xts(apply(chg,2,runSD,n=20), index(chg))*sqrt(252))))
 }
 
 out = getCandles(instrument, granularity, startDate)
@@ -71,6 +77,15 @@ if(type == "patterns"){
 		patterns = na.omit(patterns)
 
 		write.csv(patterns, quote = FALSE, row.names = FALSE, file = paste(instrument, "-patterns-", granularity, ".csv", sep = ""), fileEncoding = "UTF-8")
+	}
+}
+if(type == "volatility"){
+	if(exists("crosses") && is.character(crosses)){
+
+	}else if(exists("out")){
+		volatility = getVolatility(out)
+
+
 	}
 }
 
