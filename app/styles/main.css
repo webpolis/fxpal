@@ -10,3 +10,5 @@
 .size-96 { font-size: 96px!important; }
 .pull-right{float: right;}
 .pull-left{float: left;}
+.crosses .row a{text-decoration: none;color:inherit;}
+.popup{width:auto;max-width: 90%;}

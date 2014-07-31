@@ -48,10 +48,13 @@ angular.module('aifxApp').service('api', function api($http, $q) {
             var def = $q.defer();
             var cross1 = options.instrument.split('_')[0],
                 cross2 = options.instrument.split('_')[1];
-            var cross = jsonPath.eval(oandaCurrencies, '$.[?(@.instrument=="' + [cross1, '_', cross2].join('') + '")]')[0] ||  null;
+            var oriCross = [cross1, '_', cross2].join(''),
+                revCross = [cross2, '_', cross1].join('');
+            var cross = jsonPath.eval(oandaCurrencies, '$.[?(@.instrument=="' + oriCross + '" || @.instrument=="' + revCross + '")]')[0] ||  null;
+
             cross1 = cross === null ? options.instrument.split('_')[1] : cross1;
             cross2 = cross === null ? options.instrument.split('_')[0] : cross2;
-            options.instrument = cross1 + '_' + cross2;
+            options.instrument = cross === null ? cross1 + '_' + cross2 : cross.instrument;
             options.candleFormat = angular.isDefined(options.candleFormat) ? options.candleFormat : 'midpoint';
             var params = [];
             for (var p in options) {

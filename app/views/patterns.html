@@ -1,2 +1,14 @@
-<h5>{{selected.flag.x | date:'medium'}}</h5>
-{{selected.flag.patterns}}
+<div class="list card">
+    <div class="item item-divider">
+        {{selected.flag.x | date:'medium'}}
+    </div>
+    <span ng-repeat="pattern in selected.flag.patterns">
+    <div class="item item-avatar">
+        <img ng-src="images/patterns/{{pattern.Image}}">
+        <h2>{{pattern.Name}}</h2>
+    </div>
+    <div class="item item-text-wrap">
+        {{pattern.Description}}
+    </div>
+    </span>
+</div>

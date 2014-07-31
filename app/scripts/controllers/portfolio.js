@@ -2,6 +2,12 @@
 angular.module('aifxApp').controller('portfolioController', function($scope, $ionicSideMenuDelegate, $http, $ionicLoading, $stateParams, $timeout, $q, $location) {
     $scope.optsHighchartsPortfolio = {
         options: {
+            scrollbar: {
+                enabled: false
+            },
+            exporting: {
+                enabled: false
+            },
             chart: {
                 'type': 'column',
                 'zoomType': 'x'
@@ -35,9 +41,6 @@ angular.module('aifxApp').controller('portfolioController', function($scope, $io
                 }
             }
         }],
-        exporting: {
-            enabled: false
-        },
         title: {
             text: false
         }

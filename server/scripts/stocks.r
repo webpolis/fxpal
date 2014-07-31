@@ -15,7 +15,7 @@ for (i in 2:length(tickers)) {
 	dataset <- merge(dataset, Ad(get(tickers[i])))
 }
 
-return_lag <- 5  # (crude) weekly returns
+return_lag <- 5
 data <- na.omit(ROC(na.spline(dataset), return_lag, type = "discrete"))
 names(data) <- stocks
 

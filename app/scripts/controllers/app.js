@@ -11,7 +11,8 @@ angular.module('aifxApp').controller('appController', function($scope, $ionicSid
             columns: null,
             data: null
         },
-        crosses: null
+        crosses: null,
+        patterns: null
     },
     $scope.selected = {
         cross1: null,

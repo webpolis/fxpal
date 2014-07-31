@@ -454,36 +454,49 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
     $scope.patternCandlestickAnalysis = function(optsOanda) {
         $scope.optsHighchartsCross.series[3].data = [];
         // retrieve trend information
-        csv2json.csv($scope.config.urls.api + ['candles', [$scope.selected.cross1.currCode, $scope.selected.cross2.currCode].join(''), 'patterns', optsOanda.start.replace(/^([^T]+).*$/gi, '$1'), optsOanda.granularity].join('/'), function(ret) {
-            if (angular.isArray(ret)) {
-                $timeout(function() {
-                    angular.forEach(ret, function(row, k) {
-                        var patterns = [],
-                            hasPattern = false;
-                        for (var p in row) {
-                            row[p] = parseInt(row[p]);
-                            if (!(/time/i.test(p))) {
-                                if (!hasPattern && row[p] === 1) {
-                                    hasPattern = true;
-                                }
-                                if (row[p] === 1) {
-                                    patterns.push(p.replace(/\.\d+/g, '').replace(/([A-Z])|\./g, ' $1').trim());
+        csv2json.csv('data/candlePatterns.csv', function(patterns) {
+            $scope.data.patterns = patterns.map(function(pat) {
+                pat.Direction = parseInt(pat.Direction);
+                return pat;
+            });
+            csv2json.csv($scope.config.urls.api + ['candles', [$scope.selected.cross1.currCode, $scope.selected.cross2.currCode].join(''), 'patterns', optsOanda.start.replace(/^([^T]+).*$/gi, '$1'), optsOanda.granularity].join('/'), function(ret) {
+                if (angular.isArray(ret)) {
+                    $timeout(function() {
+                        angular.forEach(ret, function(row, k) {
+                            var patterns = [],
+                                hasPattern = false;
+                            for (var p in row) {
+                                row[p] = parseInt(row[p]);
+                                if (!(/time/i.test(p))) {
+                                    if (!hasPattern && row[p] === 1) {
+                                        hasPattern = true;
+                                    }
+                                    if (row[p] === 1) {
+                                        var pat = {};
+                                        var patName = p.replace(/\.\d+/g, '').replace(/([A-Z])|\./g, ' $1').trim().replace(/\s{1,}/g,' ');
+                                        var originalPattern = jsonPath.eval($scope.data.patterns, '$.[?(@.Name == "' + patName + '")]')[0] ||  null;
+                                        if (originalPattern !== null) {
+                                            patterns.push(originalPattern);
+                                        }else{
+                                            console.log(patName);
+                                        }
+                                    }
                                 }
                             }
-                        }
-                        if (!hasPattern) {
-                            return;
-                        }
-                        var time = moment.unix(row.Time).utc();
-                        $scope.optsHighchartsCross.series[3].data.push({
-                            title: ' ',
-                            x: time.valueOf(),
-                            text: 'Patterns detected',
-                            patterns: patterns
+                            if (!hasPattern) {
+                                return;
+                            }
+                            var time = moment.unix(row.Time).utc();
+                            $scope.optsHighchartsCross.series[3].data.push({
+                                title: ' ',
+                                x: time.valueOf(),
+                                text: 'Patterns detected',
+                                patterns: patterns
+                            });
                         });
-                    });
-                }, 50);
-            }
+                    }, 50);
+                }
+            });
         });
     };
     $scope.showCandlestickPatterns = function(flag) {

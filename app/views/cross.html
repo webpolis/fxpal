@@ -6,7 +6,7 @@
 <h4><i class="icon ion-ios7-world"></i> Cross
 <span ng-if="(selected.cross1 && selected.cross2)" class="positive">{{selected.cross1.currCode}}/{{selected.cross2.currCode}}</span>
 </h4>
-<div class="card">
+<div class="card crosses">
     <div class="item item-divider">
         <span class="maroon pull-left">Correlations</span>
     </div>
@@ -27,7 +27,8 @@
             <div class="col">
                 <span class="size-12" ng-class="{'green':corr.rel>0,'red':corr.rel<0}">
                 <i class="icon" ng-class="{'ion-plus-round':corr.rel>0,'ion-minus-round':corr.rel<0}"></i>
-                {{corr.label}}
+                <a ng-if="corr.currency" ng-href="#/app/cross/{{corr.label}}">{{corr.label}}</a>
+                <span ng-if="!corr.currency">{{corr.label}}</span>
                 </span>
             </div>
             <div class="col">
