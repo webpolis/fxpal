@@ -13,6 +13,6 @@ correlation = na.omit(correlation)
 names(correlation) = c("cross1", "cross2", "rel")
 correlation = correlation[correlation$rel!=1,]
 
-write.csv(correlation, quote = FALSE, file = "multisetsOutputs.csv", fileEncoding = "UTF-8")
+write.csv(correlation, quote = FALSE, row.names = FALSE, file = "multisetsOutputs.csv", fileEncoding = "UTF-8")
 
 quit()
