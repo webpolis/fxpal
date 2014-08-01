@@ -1,0 +1,154 @@
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
+Sun Mar 25,21:45,GMT,nzd,NZD Trade Balance (New Zealand dollars),Medium,161M,153M,-159M
+Sun Mar 25,21:45,GMT,nzd,NZD Exports (New Zealand dollars),Low,3.59B,3.93B,3.73B
+Sun Mar 25,21:45,GMT,nzd,NZD Imports (New Zealand dollars),Low,3.43B,3.65B,3.73B
+Sun Mar 25,21:45,GMT,nzd,NZD Balance (YTD) (New Zealand dollars),Medium,621M,712M,644M
+Mon Mar 26,04:40,GMT,EUR,EUR ECB's Coeure Speaks in Tokyo,LOW,,,
+Mon Mar 26,08:00,GMT,eur,EUR Italian Consumer Confidence Ind sa ,Low,96.8,93.5,94.4
+Mon Mar 26,08:00,GMT,eur,EUR German IFO - Business Climate,Medium,109.8,109.6,109.7
+Mon Mar 26,08:00,GMT,eur,EUR German IFO - Current Assessment,Medium,117.4,117.0,117.4
+Mon Mar 26,08:00,GMT,eur,EUR German IFO - Expectations,Medium,102.7,102.6,102.4
+Mon Mar 26,11:00,GMT,usd,USD Fed's Plosser Speaks on Monetary Policy in Paris,Low,,,
+Mon Mar 26,12:00,GMT,usd,USD Fed's Bernanke Speaks to Business Economists,Low,,,
+Mon Mar 26,12:30,GMT,usd,USD Chicago Fed Nat Activity Index,Low,-0.09,0.00,0.33
+Mon Mar 26,14:00,GMT,usd,USD Pending Home Sales (MoM),Low,-0.5%,1.0%,2.0%
+Mon Mar 26,14:00,GMT,usd,USD Pending Home Sales (YoY),Medium,13.9%,9.7%,10.3%
+Mon Mar 26,14:30,GMT,usd,USD Dallas Fed Manufacturing Activity,Low,10.8,17.0,17.8
+Mon Mar 26,16:00,GMT,eur,EUR French Jobseekers - Net Change ,Low,6.2,12.5,13.4
+Mon Mar 26,16:00,GMT,eur,EUR French Total Jobseekers ,Medium,2867.9K,2876.7K,2861.7K
+Mon Mar 26,23:50,GMT,jpy,JPY Corporate Service Price (YoY),Low,-0.6%,-0.4%,-0.4%
+Tue Mar 27,01:30,GMT,cny,CNY Industrial Profits YTD YoY,Medium,-5.2%,,25.4%
+Tue Mar 27,05:00,GMT,jpy,JPY Small Business Confidence,Low,48.7,,45.3
+Tue Mar 27,06:00,GMT,eur,EUR German Import Price Index (MoM),Low,1.0%,0.9%,1.3%
+Tue Mar 27,06:00,GMT,eur,EUR German Import Price Index (YoY),Low,3.5%,3.5%,3.7%
+Tue Mar 27,06:00,GMT,chf,CHF UBS Consumption Indicator,Medium,0.87,,0.93
+Tue Mar 27,06:00,GMT,eur,EUR German GfK Consumer Confidence Survey,Medium,5.9,6.0,6.0
+Tue Mar 27,06:45,GMT,eur,EUR French Consumer Confidence Indicator (FEB),High,87,82,82
+Tue Mar 27,10:00,GMT,gbp,GBP CBI Reported Sales,Low,0,-5,-2
+Tue Mar 27,13:00,GMT,usd,USD S&P/CS 20 City s.a. (MoM),Low,-0.04%,-0.30%,-0.47%
+Tue Mar 27,13:00,GMT,usd,USD S&P/Case-Shiller Composite-20 (YoY),Low,-3.8%,-3.8%,-4.1%
+Tue Mar 27,13:00,GMT,usd,USD S&P/Case-Shiller Home Price Index,Low,135.46,135.80,136.61
+Tue Mar 27,14:00,GMT,usd,USD Fed's Dudley to Speak at Hearing in Washington on Eurozone Aid,Low,,,
+Tue Mar 27,14:00,GMT,USD,USD Fed's Kamin Testifies at Hearing in Washington on Eurozone Aid,LOW,,,
+Tue Mar 27,14:00,GMT,usd,USD Consumer Confidence,Medium,70.2,70.0,71.6
+Tue Mar 27,14:00,GMT,usd,USD Richmond Fed Manufacturing Index,Low,7,18,20
+Tue Mar 27,16:35,GMT,usd,USD Fed's Rosengren Speaks in London,Low,,,
+Tue Mar 27,16:45,GMT,usd,USD Fed's Bernanke Gives Lecture at George Washington U. (3 of 4),Medium,,,
+Tue Mar 27,17:20,GMT,usd,USD Fed's Fisher Speaks in Choudrant, Louisiana,Low,,,
+Tue Mar 27,19:45,GMT,USD,USD Fed's Duke Speaks Via Videoconference on Sustainable Community,LOW,,,
+Wed Mar 28,01:00,GMT,USD,USD Fed's Bullard Speaks at Tsinghua University,LOW,,,
+Wed Mar 28,05:30,GMT,eur,EUR French Gross Domestic Product (QoQ),Medium,0.2%,0.2%,0.2%
+Wed Mar 28,05:30,GMT,eur,EUR French Gross Domestic Product (YoY),Medium,1.3%,1.4%,1.4%
+Wed Mar 28,08:00,GMT,eur,EUR Euro-Zone M3 s.a. (3M),Medium,2,3%,2.2%,2.0%
+Wed Mar 28,08:00,GMT,eur,EUR Euro-Zone M3 s.a. (YoY),Medium,2.8%,2.4%,2.5%
+Wed Mar 28,08:00,GMT,eur,EUR Italian Business Confidence,High,92.1,91.5,91.7
+Wed Mar 28,08:30,GMT,gbp,GBP Gross Domestic Product (QoQ),High,-0.3%,-0.2%,-0.2%
+Wed Mar 28,08:30,GMT,gbp,GBP Gross Domestic Product (YoY),High,0.5%,0.7%,0.7%
+Wed Mar 28,08:30,GMT,gbp,GBP Current Account (Pounds),Medium,-8.5B,-8.4B,-10.5B
+Wed Mar 28,08:30,GMT,gbp,GBP Total Business Investment (QoQ),Low,-3.3%,-5.6%,-5.6%
+Wed Mar 28,08:30,GMT,gbp,GBP Total Business Investment (YoY),Medium,1.6%,-1.9%,-2.0%
+Wed Mar 28,11:00,GMT,usd,USD MBA Mortgage Applications,Low,-2.7%,,-7.4%
+Wed Mar 28,12:00,GMT,eur,EUR German Consumer Price Index (MoM),Medium,0.3%,0.3%,0.7%
+Wed Mar 28,12:00,GMT,eur,EUR German Consumer Price Index - EU Harmonised (YoY),High,2.3%,2.3%,2.5%
+Wed Mar 28,12:00,GMT,eur,EUR German Consumer Price Index (YoY),High,2.1%,2.2%,2.3%
+Wed Mar 28,12:00,GMT,eur,EUR German Consumer Price Index - EU Harmonised (MoM),Medium,0.4%,0.4%,0.9%
+Wed Mar 28,12:30,GMT,usd,USD Durable Goods Orders,High,2.2%,3.0%,-3.6%
+Wed Mar 28,12:30,GMT,usd,USD Cap Goods Ship Nondef Ex Air,Low,1.4%,0.9%,-3.0%
+Wed Mar 28,12:30,GMT,usd,USD Durables Ex Transportation,Medium,1.6%,1.7%,-3.0%
+Wed Mar 28,12:30,GMT,usd,USD Cap Goods Orders Nondef Ex Air,Low,1.2%,1.5%,-3.7%
+Wed Mar 28,13:00,GMT,cad,CAD Teranet/National Bank HPI (MoM),Low,0.1%,,-0.2%
+Wed Mar 28,13:00,GMT,cad,CAD Teranet/National Bank HPI (YoY),Low,6.5%,,6.8%
+Wed Mar 28,13:00,GMT,cad,CAD Teranet/National Bank HP Index,Low,149.02,,148.87
+Wed Mar 28,14:30,GMT,usd,USD DOE U.S. Distillate Inventory,Low,-711K,-500K,1763K
+Wed Mar 28,14:30,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,-3537K,-1550K,-1214K
+Wed Mar 28,14:30,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,7102K,2550K,-1162K
+Wed Mar 28,14:30,GMT,usd,USD DOE Cushing OK Crude Inventory,Low,1043K,,-176K
+Wed Mar 28,23:50,GMT,jpy,JPY Large Retailers' Sales,Medium,0.2%,-0.3%,-1.2%
+Wed Mar 28,23:50,GMT,jpy,JPY Retail Trade s.a. (MoM),Low,2.0%,0.0%,3.1%
+Wed Mar 28,23:50,GMT,jpy,JPY Retail Trade (YoY),Medium,3.5%,1.4%,1.8%
+Thu Mar 29,00:00,GMT,nzd,NZD NBNZ Activity Outlook,Medium,38.8,,31.2
+Thu Mar 29,00:00,GMT,nzd,NZD NBNZ Business Confidence,Medium,33.8,,28.0
+Thu Mar 29,00:30,GMT,aud,AUD Job Vacancies,Low,0.7%,,-3.3%
+Thu Mar 29,06:00,GMT,gbp,GBP Nationwide House Prices s.a. (MoM),Low,-1.0%,0.2%,0.4%
+Thu Mar 29,06:00,GMT,gbp,GBP Nationwide House Prices n.s.a. (YoY),Medium,-0.9%,0.9%,0.9%
+Thu Mar 29,07:55,GMT,eur,EUR German Unemployment Rate s.a.,Medium,6.7%,6.8%,6.8%
+Thu Mar 29,07:55,GMT,eur,EUR German Unemployment Change,High,-18K,-10K,0K
+Thu Mar 29,08:30,GMT,gbp,GBP Net Lending Sec. on Dwellings,Medium,1.2B,1.4B,1.6B
+Thu Mar 29,08:30,GMT,gbp,GBP Mortgage Approvals,Medium,49.0K,57.2K,57.9K
+Thu Mar 29,08:30,GMT,gbp,GBP M4 Money Supply (MoM),Low,-1.9%,,1.5%
+Thu Mar 29,08:30,GMT,gbp,GBP M4 Money Supply (YoY),Low,-3.4%,,-1.8%
+Thu Mar 29,08:30,GMT,gbp,GBP Index of Services (MoM),Low,0.2%,0.2%,0.3%
+Thu Mar 29,08:30,GMT,gbp,GBP Net Consumer Credit,Medium,0.4B,0.2B,0.2B
+Thu Mar 29,08:30,GMT,gbp,GBP M4 Ex IOFCs 3M Annualised,Low,2.5%,,3.9%%
+Thu Mar 29,08:30,GMT,gbp,GBP Index of Services (3Mo3M),Low,0.3%,0.3%,-0.1%
+Thu Mar 29,09:00,GMT,eur,EUR Euro-Zone Business Climate Indicator,Medium,-0.30,-0.16,-0.16
+Thu Mar 29,09:00,GMT,eur,EUR Euro-Zone Consumer Confidence,Medium,-19.1,-19,-19
+Thu Mar 29,09:00,GMT,eur,EUR Euro-Zone Economic Confidence,Medium,94.4,94.5,94.5
+Thu Mar 29,09:00,GMT,eur,EUR Euro-Zone Industrial Confidence,Medium,-7.2,-5.8,-5.7
+Thu Mar 29,09:00,GMT,eur,EUR Euro-Zone Services Confidence,Medium,-0.3,-0.8,-0.9
+Thu Mar 29,12:30,GMT,usd,USD Initial Jobless Claims,Low,359K,350K,364K
+Thu Mar 29,12:30,GMT,usd,USD Continuing Claims,Low,3340K,3350K,3381K
+Thu Mar 29,12:30,GMT,usd,USD Gross Domestic Product Price Index,High,0.9%,0.9%,0.9%
+Thu Mar 29,12:30,GMT,usd,USD Core Personal Consumption Expenditure (QoQ),Medium,1.3%,1.3%,1.3%
+Thu Mar 29,12:30,GMT,cad,CAD Industrial Product Price (MoM),Low,0.2%,0.5%,0.4%
+Thu Mar 29,12:30,GMT,cad,CAD Raw Materials Price Index (MoM),Low,-0.5%,0.5%,0.2%
+Thu Mar 29,12:30,GMT,usd,USD Gross Domestic Product (Annualized),High,3.0%,3.0%,3.0%
+Thu Mar 29,12:30,GMT,usd,USD Personal Consumption,Medium,2.1%,2.1%,2.1%
+Thu Mar 29,14:30,GMT,usd,USD EIA Natural Gas Storage Change,Low,57,48,11
+Thu Mar 29,15:00,GMT,usd,USD Kansas City Fed Manf. Activity,Low,9,13,13
+Thu Mar 29,16:15,GMT,USD,USD Fed's Lockhart Speaks on Global Economy in Atlanta,LOW,,,
+Thu Mar 29,16:45,GMT,usd,USD Fed's Bernanke Gives Lecture at George Washington U. (4 of 4),Medium,,,
+Thu Mar 29,17:00,GMT,usd,USD Fed's Plosser Speaks on Economic Outlook in Wilmington, DE,Low,,,
+Thu Mar 29,20:00,GMT,CAD,CAD Canadian Finance Minister Jim Flaherty Presents Budget,LOW,,,
+Thu Mar 29,21:45,GMT,nzd,NZD Building Permits (MoM),Low,-6.7%,0.0%,8.3%
+Thu Mar 29,22:45,GMT,usd,USD Fed's Lacker Speaks to Bankers in Charlotte, North Carolina,Low,,,
+Thu Mar 29,23:01,GMT,gbp,GBP GfK Consumer Confidence Survey,Medium,-31,-29,-29
+Thu Mar 29,23:15,GMT,jpy,JPY Nomura/JMMA Manufacturing Purchasing Manager Index,Medium,51.1,,50.5
+Thu Mar 29,23:30,GMT,jpy,JPY Tokyo Consumer Price Index (YoY),Low,-0.1%,-0.1%,-0.2%
+Thu Mar 29,23:30,GMT,jpy,JPY Job-To-Applicant Ratio,Low,0.75,0.74,0.73
+Thu Mar 29,23:30,GMT,jpy,JPY Household Spending (YoY),Medium,2.3%,-0.5%,-2.3%
+Thu Mar 29,23:30,GMT,jpy,JPY Tokyo Consumer Price Index Ex-Fresh Food (YoY),Low,-0.3%,-0.3%,-0.3%
+Thu Mar 29,23:30,GMT,jpy,JPY Tokyo Consumer Price Index Ex Food, Energy (YoY),Low,-1.0%,-1.0%,-1.1%
+Thu Mar 29,23:30,GMT,jpy,JPY National Consumer Price Index (YoY),Medium,0.3%,0.0%,0.1%
+Thu Mar 29,23:30,GMT,jpy,JPY National Consumer Price Index Ex-Fresh Food (YoY),Medium,0.1%,-0.1%,-0.1%
+Thu Mar 29,23:30,GMT,jpy,JPY National Consumer Price Index Ex Food, Energy (YoY),Medium,-0.6%,-0.9%,-0.9%
+Thu Mar 29,23:30,GMT,jpy,JPY Jobless Rate,Medium,4.5%,4.6%,4.6%
+Thu Mar 29,23:50,GMT,jpy,JPY Industrial Production (MoM),Low,-1.2%,1.3%,1.9%
+Thu Mar 29,23:50,GMT,jpy,JPY Industrial Production (YoY),Medium,1.5%,3.7%,-1.3%
+Thu Mar 29,23:50,GMT,jpy,JPY Loans & Discounts Corp (YoY),Low,0.2%,,0.0%
+Fri Mar 30,00:00,GMT,aud,AUD HIA New Home Sales (MoM),Medium,3.0%,,-7.3%
+Fri Mar 30,00:30,GMT,aud,AUD Private Sector Credit (MoM),Medium,0.4%,0.3%,0.2%
+Fri Mar 30,00:30,GMT,aud,AUD Private Sector Credit (YoY),Medium,3.5%,3.3%,3.5%
+Fri Mar 30,01:35,GMT,cny,CNY MNI March Business Condition Survey,Low,54.81,56.67,58.87
+Fri Mar 30,02:00,GMT,nzd,NZD Money Supply M3 (YoY),Low,5.2%,,5.4%
+Fri Mar 30,04:00,GMT,jpy,JPY Vehicle Production (YoY),Low,19.7%,,18.6%
+Fri Mar 30,05:00,GMT,jpy,JPY Construction Orders (YoY),Low,-1.8%,,24.6%
+Fri Mar 30,05:00,GMT,jpy,JPY Annualized Housing Starts,Medium,0.917M,0.840M,0.822M
+Fri Mar 30,05:00,GMT,jpy,JPY Housing Starts (YoY),Medium,7.5%,-1.1%,-1.1%
+Fri Mar 30,06:00,GMT,eur,EUR German Retail Sales (YoY),Medium,1.7%,0.1%,1.7%
+Fri Mar 30,06:00,GMT,eur,EUR German Retail Sales (MoM),Low,-1.1%,1.1%,-1.2%
+Fri Mar 30,06:45,GMT,eur,EUR French Producer Prices (YoY) ,Low,4.3%,4.0%,4.3%
+Fri Mar 30,06:45,GMT,eur,EUR French Producer Prices (MoM) ,Low,0.8%,0.4%,0.7%
+Fri Mar 30,07:00,GMT,chf,CHF KOF Swiss Leading Indicator,Medium,0.08,0.07,-0.11
+Fri Mar 30,08:00,GMT,eur,EUR Italian PPI (MoM) ,Low,0.4%,0.6%,0.8%
+Fri Mar 30,08:00,GMT,eur,EUR Italian PPI (YoY) ,Low,3.2%,3.3%,3.5%
+Fri Mar 30,09:00,GMT,eur,EUR Italian CPI EU Harmonized (YoY),Low,3.8%,3.3%,3.4%
+Fri Mar 30,09:00,GMT,eur,EUR Italian CPI EU Harmonized (MoM),Low,2.5%,2.0%,0.2%
+Fri Mar 30,09:00,GMT,eur,EUR Euro-Zone Consumer Price Index Estimate (YoY),High,2.6%,2.5%,2.7%
+Fri Mar 30,09:00,GMT,eur,EUR Italian CPI (NIC Incl. Tobacco) (MoM),Low,0.5%,0.3%,0.4%
+Fri Mar 30,09:00,GMT,eur,EUR Italian CPI (NIC Incl. Tobacco) (YoY),Low,3.3%,3.2%,3.3%
+Fri Mar 30,10:00,GMT,eur,EUR Italian Hourly Wages (MoM) ,Low,0.0%,,0.0%
+Fri Mar 30,10:00,GMT,eur,EUR Italian Hourly Wages (YoY) ,Low,1.4%,,1.4%
+Fri Mar 30,12:30,GMT,cad,CAD Gross Domestic Product (MoM),Medium,0.1%,0.1%,0.5%
+Fri Mar 30,12:30,GMT,cad,CAD Gross Domestic Product (YoY),High,1.7%,1.7%,1.9%
+Fri Mar 30,12:30,GMT,usd,USD Personal Income,Medium,0.2%,0.4%,0.2%
+Fri Mar 30,12:30,GMT,usd,USD Personal Spending,Medium,0.8%,0.6%,0.4%
+Fri Mar 30,12:30,GMT,usd,USD Personal Consumption Expenditure Deflator (YoY),Low,2.3%,2.3%,2.4%
+Fri Mar 30,12:30,GMT,usd,USD Personal Consumption Expenditure Core (MoM),Medium,0.1%,0.1%,0.2%
+Fri Mar 30,12:30,GMT,usd,USD Personal Consumption Expenditure Core (YoY),High,1.9%,1.9%,1.9%
+Fri Mar 30,12:30,GMT,usd,USD Personal Consumption Expenditure Deflator (MoM),Low,0.3%,0.3%,0.2%
+Fri Mar 30,13:45,GMT,usd,USD Chicago Purchasing Manager,Low,62.2,63.0,64.0
+Fri Mar 30,13:55,GMT,usd,USD U. of Michigan Confidence,High,76.2,74.5,74.3
+Fri Mar 30,14:00,GMT,USD,USD Revisions: Wholesale Trade Sales, Inventories,LOW,,,
+Fri Mar 30,14:00,GMT,usd,USD NAPM-Milwaukee,Low,51.8,58,58.6
+Fri Mar 30,16:00,GMT,USD,USD Revisions: Industrial Production,LOW,,,

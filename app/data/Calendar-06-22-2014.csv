@@ -1,0 +1,131 @@
+Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Sun Jun 22,22:45,GMT,nzd,NZD Net Migration SA,Low,3980,,4100
+Mon Jun 23,01:35,GMT,jpy,JPY Markit/JMMA Japan Manufacturing PMI,Medium,51.1,50.1,49.9
+Mon Jun 23,01:45,GMT,cny,CNY HSBC China Manufacturing PMI,Medium,50.8,49.7,49.4
+Mon Jun 23,03:00,GMT,nzd,NZD Credit Card Spending (MoM),Low,3.0%,,-3.0%
+Mon Jun 23,03:00,GMT,nzd,Credit Card Spending (MoM) (MAY),Low,7.5%,,3.2%
+Mon Jun 23,05:00,GMT,jpy,JPY Supermarket Sales (YoY),Low,-2.2%,,-5.4%
+Mon Jun 23,06:00,GMT,JPY,JPY BOJ Governor Kuroda Speaks in Tokyo,Medium,,,
+Mon Jun 23,07:00,GMT,chf,CHF Money Supply M3 (YoY),Low,7.6%,,8.0%
+Mon Jun 23,07:00,GMT,eur,EUR French Markit Composite PMI,Medium,48.0,49.3,49.3
+Mon Jun 23,07:00,GMT,eur,EUR French Markit Services PMI,Medium,48.2,49.4,49.1
+Mon Jun 23,07:00,GMT,eur,EUR French Markit Manufacturing PMI,Medium,47.8,49.5,49.6
+Mon Jun 23,07:30,GMT,eur,EUR German Markit/BME Manufacturing PMI,Medium,52.4,52.5,52.3
+Mon Jun 23,07:30,GMT,eur,EUR German Markit/BME Composite PMI,Medium,54.2,55.5,55.6
+Mon Jun 23,07:30,GMT,eur,EUR German Markit Services PMI,Medium,54.8,55.8,56
+Mon Jun 23,08:00,GMT,eur,EUR Euro-zone Markit Manufacturing PMI,Medium,51.9,52.2,52.2
+Mon Jun 23,08:00,GMT,eur,EUR Euro-zone Markit Services PMI,Medium,52.8,53.3,53.2
+Mon Jun 23,08:00,GMT,eur,EUR Euro-zone Markit Composite PMI,Medium,52.8,53.4,53.5
+Mon Jun 23,12:30,GMT,usd,USD Chicago Fed Nat Activity Index,Low,0.21,0.20,-0.15
+Mon Jun 23,13:45,GMT,usd,USD Markit Manufacturing PMI,Medium,57.5,56.0,56.4
+Mon Jun 23,14:00,GMT,usd,USD Existing Home Sales (MoM),Low,4.9%,1.9%,1.5%
+Mon Jun 23,14:00,GMT,usd,USD Existing Home Sales,Medium,4.89M,4.74M,4.66M
+Mon Jun 23,23:30,GMT,aud,AUD ANZ Roy Morgan Weekly Consumer Confidence Index,Low,105.7,,103.2
+Tue Jun 24,02:00,GMT,cny,CNY Conference Board China May Leading Economic Index,Low,290.2,,288.1
+Tue Jun 24,06:00,GMT,chf,CHF Exports (MoM),Low,-5.0%,,0.8%
+Tue Jun 24,06:00,GMT,chf,CHF Trade Balance (Swiss franc),Low,2.77B,,2.45B
+Tue Jun 24,06:00,GMT,chf,CHF Imports (MoM),Low,-2.5%,,-0.1%
+Tue Jun 24,08:00,GMT,eur,EUR German IFO - Business Climate,Medium,109.7,110.3,110.4
+Tue Jun 24,08:00,GMT,eur,EUR German IFO - Current Assessment,Medium,114.8,115.0,114.8
+Tue Jun 24,08:00,GMT,eur,EUR German IFO - Expectations,Medium,104.8,106.0,106.2
+Tue Jun 24,08:30,GMT,gbp,GBP BBA Loans for House Purchase,Low,41757,41000,41934
+Tue Jun 24,08:30,GMT,gbp,"BOE's Carney, Bean, Miles and McCafferty Speak in London",Medium,,,
+Tue Jun 24,12:05,GMT,USD,USD Fed's Plosser Speaks on Economic Outlook and Monetary Policy,Low,,,
+Tue Jun 24,13:00,GMT,usd,USD House Price Index (MoM),Low,0.0%,0.5%,0.7%
+Tue Jun 24,13:00,GMT,usd,USD S&P/CS 20 City (MoM) s.a.,Low,0.19%,0.80%,1.25%
+Tue Jun 24,13:00,GMT,usd,USD S&P/Case-Shiller Composite-20 (YoY),Low,10.82%,11.50%,12.37%
+Tue Jun 24,13:00,GMT,usd,USD S&P/Case-Shiller Home Price Index,Low,168.71,169.09,166.80
+Tue Jun 24,14:00,GMT,usd,USD Richmond Fed Manufacturing Index,Low,3,7,7
+Tue Jun 24,14:00,GMT,usd,USD New Home Sales,Medium,504K,440K,425K
+Tue Jun 24,14:00,GMT,usd,USD New Home Sales (MoM),Medium,18.6%,1.6%,3.7%
+Tue Jun 24,14:00,GMT,usd,USD Consumer Confidence,Medium,85.2,83.5,82.2
+Tue Jun 24,22:30,GMT,usd,"Fed's Williams Speaks on Panel at Stanford, CA",Low,,,
+Tue Jun 24,23:50,GMT,jpy,JPY PPI Services (YoY),Low,3.6%,3.3%,3.4%
+Wed Jun 25,01:00,GMT,aud,AUD Skilled Vacancies (MoM),Low,-1.3%,,-0.2%
+Wed Jun 25,01:45,GMT,cny,CNY Westpac-MNI Consumer Sentiment,Low,112.6,,121.2
+Wed Jun 25,02:00,GMT,cny,Bloomberg June China Economic Survey,Low,,,
+Wed Jun 25,06:00,GMT,chf,CHF UBS Consumption Indicator,Low,1.77,,1.68
+Wed Jun 25,06:00,GMT,eur,EUR German GfK Consumer Confidence Survey,Low,8.9,8.6,8.6
+Wed Jun 25,10:00,GMT,gbp,GBP CBI Reported Sales,Low,4,23,16
+Wed Jun 25,11:00,GMT,usd,USD MBA Mortgage Applications,Low,-1.0%,,-9.2%
+Wed Jun 25,12:30,GMT,usd,USD Core Personal Consumption Expenditure (QoQ),Medium,1.2%,1.2%,1.2%
+Wed Jun 25,12:30,GMT,usd,USD Personal Consumption,Medium,1.0%,2.4%,3.1%
+Wed Jun 25,12:30,GMT,usd,USD Cap Goods Orders Nondef Ex Air,Low,0.7%,0.5%,-1.1%
+Wed Jun 25,12:30,GMT,usd,USD Gross Domestic Product Price Index,Low,1.3%,1.3%,1.3%
+Wed Jun 25,12:30,GMT,usd,USD Gross Domestic Product (Annualized),High,-2.9%,-1.8%,-1.0%
+Wed Jun 25,12:30,GMT,usd,USD Durables Ex Transportation,Medium,-0.1%,0.3%,0.4%
+Wed Jun 25,12:30,GMT,usd,USD Cap Goods Ship Nondef Ex Air,Low,0.4%,1.0%,-0.4%
+Wed Jun 25,12:30,GMT,usd,USD Durable Goods Orders,Medium,-1.0%,0.0%,0.8%
+Wed Jun 25,13:45,GMT,usd,USD Markit US Services PMI,Medium,61.2,58.0,58.1
+Wed Jun 25,13:45,GMT,usd,USD Markit US Composite PMI,Medium,61.1,,58.4
+Wed Jun 25,14:30,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,1742K,-1700K,-579K
+Wed Jun 25,14:30,GMT,usd,USD DOE Cushing OK Crude Inventory,Low,416K,,247K
+Wed Jun 25,14:30,GMT,usd,USD DOE U.S. Distillate Inventory,Low,1177K,850K,436K
+Wed Jun 25,14:30,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,710K,1450K,785K
+Wed Jun 25,23:50,GMT,jpy,JPY Japan Buying Foreign Bonds (Yen),Low,"¥1,486.5B",,¥638.2B
+Wed Jun 25,23:50,GMT,jpy,JPY Foreign Buying Japan Stocks (Yen),Low,¥295.6B,,¥238.1B
+Wed Jun 25,23:50,GMT,jpy,JPY Foreign Buying Japan Bonds (Yen),Low,-¥475.2B,,¥154.7B
+Wed Jun 25,23:50,GMT,jpy,JPY Japan Buying Foreign Stocks (Yen),Low,¥4.7B,,-¥108.6B
+Thu Jun 26,,,gbp,GBP Bank of England Financial Policy Committee Publishes Recommendations,Medium,,,
+Thu Jun 26,01:30,GMT,aud,AUD Job vacancies,Low,2.5%,,2.8%
+Thu Jun 26,09:30,GMT,gbp,BOE's Carney Speaks in London on Financial Stability Report,Medium,,,
+Thu Jun 26,12:30,GMT,usd,USD Personal Consumption Expenditure Core (MoM),Medium,0.2%,0.2%,0.2%
+Thu Jun 26,12:30,GMT,cad,CAD Average Weekly Earnings (YoY),Medium,3.3%,,2.6%
+Thu Jun 26,12:30,GMT,USD,"USD Fed's Lacker Speaks on Economic Growth in Lynchburg, Virginia",Low,,,
+Thu Jun 26,12:30,GMT,usd,USD Initial Jobless Claims,Medium,312K,311K,314K
+Thu Jun 26,12:30,GMT,usd,USD Continuing Claims,Medium,2571K,2565K,2559K
+Thu Jun 26,12:30,GMT,usd,USD Personal Spending,Medium,0.2%,0.4%,0.0%
+Thu Jun 26,12:30,GMT,usd,USD Personal Consumption Expenditure Deflator (YoY),Low,1.8%,1.8%,1.6%
+Thu Jun 26,12:30,GMT,usd,USD Personal Consumption Expenditure Core (YoY),Medium,1.5%,1.5%,1.4%
+Thu Jun 26,12:30,GMT,usd,USD Personal Income,Medium,0.4%,0.4%,0.3%
+Thu Jun 26,12:30,GMT,usd,USD PCE Deflator (MoM),Low,0.2%,0.3%,0.2%
+Thu Jun 26,14:30,GMT,usd,USD EIA Natural Gas Storage Change,Low,110,105,113
+Thu Jun 26,15:00,GMT,usd,USD Kansas City Fed Manf. Activity,Low,6,10,10
+Thu Jun 26,16:00,GMT,eur,EUR French Total Jobseekers,Medium,3388.9K,3370K,3364.1k
+Thu Jun 26,16:00,GMT,eur,EUR French Total Jobseekers Change,Medium,,6.0,14.8
+Thu Jun 26,17:05,GMT,USD,USD Fed's Bullard Speaks on Monetary Policy in New York,Low,,,
+Thu Jun 26,22:45,GMT,nzd,NZD Trade Balance (New Zealand dollars),Medium,285M,250M,534M
+Thu Jun 26,22:45,GMT,nzd,NZD Exports (New Zealand dollars),Medium,4.60B,4.50B,4.50B
+Thu Jun 26,22:45,GMT,nzd,NZD Balance (YTD) (New Zealand dollars),Medium,1373M,1350M,1191M
+Thu Jun 26,22:45,GMT,nzd,NZD Imports (New Zealand dollars),Medium,4.32B,4.23B,3.96B
+Thu Jun 26,23:01,GMT,gbp,GBP Hometrack Housing Survey (MoM),Low,0.3%,,0.5%
+Thu Jun 26,23:01,GMT,gbp,GBP Hometrack Housing Survey (YoY),Low,6.0%,,6.1%
+Thu Jun 26,23:05,GMT,gbp,GBP GfK Consumer Confidence Survey,Low,1,2,0
+Thu Jun 26,23:30,GMT,jpy,JPY Jobless Rate,Medium,3.5%,3.6%,3.6%
+Thu Jun 26,23:30,GMT,jpy,JPY Tokyo Consumer Price Index (YoY),High,3%,3.1%,3.1%
+Thu Jun 26,23:30,GMT,jpy,JPY Tokyo Consumer Price Index Ex-Fresh Food (YoY),High,2.8%,2.8%,2.8%
+Thu Jun 26,23:30,GMT,jpy,JPY Job-To-Applicant Ratio,Medium,1.1,1.08,1.08
+Thu Jun 26,23:30,GMT,jpy,JPY Household Spending (YoY),Medium,-8%,-2.1%,-4.6%
+Thu Jun 26,23:30,GMT,jpy,JPY National Consumer Price Index (YoY),High,3.7%,3.7%,3.4%
+Thu Jun 26,23:30,GMT,jpy,JPY National Consumer Price Index Ex-Fresh Food (YoY),High,3.4%,3.4%,3.2%
+Thu Jun 26,23:30,GMT,jpy,"JPY National Consumer Price Index Ex Food, Energy (YoY)",High,3.4%,2.2%,2.3%
+Thu Jun 26,23:30,GMT,jpy,"JPY Tokyo Consumer Price Index Ex Food, Energy (YoY)",High,2.0%,1.9%,1.9%
+Thu Jun 26,23:50,GMT,jpy,JPY Retail Trade (YoY),Medium,-0.4%,-2.0%,-4.3%
+Thu Jun 26,23:50,GMT,jpy,JPY Retail Trade s.a. (MoM),Medium,4.6%,2.9%,-13.6%
+Thu Jun 26,23:50,GMT,jpy,JPY Large Retailers' Sales,Medium,-1.2%,-2.5%,-6.7%
+Fri Jun 27,01:30,GMT,cny,CNY Industrial Profits YTD (YoY),Medium,9.8%,,10.0%
+Fri Jun 27,01:30,GMT,cny,CNY Industrial Profits (YoY),Medium,8.9%,,9.6%
+Fri Jun 27,06:00,GMT,eur,EUR German Import Price Index (YoY),Low,-2.1%,-2.2%,-2.4%
+Fri Jun 27,06:00,GMT,eur,EUR German Import Price Index (MoM),Low,0.0%,0.0%,-0.3%
+Fri Jun 27,06:45,GMT,eur,EUR French Gross Domestic Product (YoY),Medium,0.7%,0.8%,0.8%
+Fri Jun 27,06:45,GMT,eur,EUR French Gross Domestic Product (QoQ),Medium,0.0%,0.0%,0.0%
+Fri Jun 27,07:00,GMT,chf,CHF KOF Leading Indicator,Low,100.4,100.0,100.1
+Fri Jun 27,08:30,GMT,gbp,GBP Lloyds Business Barometer,Medium,51,,41
+Fri Jun 27,08:30,GMT,gbp,GBP Total Business Investment (YoY),Medium,10.6%,8.7%,8.7%
+Fri Jun 27,08:30,GMT,gbp,GBP Current Account (Pounds) (1Q),Medium,-18.5B,-17.3B,-23.5B
+Fri Jun 27,08:30,GMT,gbp,GBP Gross Domestic Product (QoQ),High,0.8%,0.8%,0.8%
+Fri Jun 27,08:30,GMT,gbp,GBP Gross Domestic Product (YoY),High,3.0%,3.1%,3.1%
+Fri Jun 27,08:30,GMT,gbp,GBP Index of Services (3Mo3M),Medium,0.9%,0.9%,0.8%
+Fri Jun 27,08:30,GMT,gbp,GBP Total Business Investment (QoQ),Medium,5.0%,2.7%,2.7%
+Fri Jun 27,09:00,GMT,eur,EUR Euro-Zone Consumer Confidence,Medium,-8,,-7.4
+Fri Jun 27,09:00,GMT,eur,EUR Euro-Zone Economic Confidence,Medium,102,103.0,102.6
+Fri Jun 27,09:00,GMT,eur,EUR Euro-Zone Industrial Confidence,Medium,-4,-3.0,-3.1
+Fri Jun 27,09:00,GMT,eur,EUR Euro-Zone Services Confidence,Medium,4,4.0,3.8
+Fri Jun 27,09:00,GMT,eur,EUR Euro-Zone Business Climate Indicator,Medium,0.2,0.40,0.37
+Fri Jun 27,12:00,GMT,eur,EUR German Consumer Price Index (YoY),High,1.0%,1.0%,0.9%
+Fri Jun 27,12:00,GMT,eur,EUR German Consumer Price Index - EU Harmonised (MoM),Medium,0.4%,0.2%,-0.3%
+Fri Jun 27,12:00,GMT,eur,EUR German Consumer Price Index - EU Harmonised (YoY),Medium,1.0%,0.7%,0.6%
+Fri Jun 27,12:00,GMT,eur,EUR German Consumer Price Index (MoM),High,0.3%,0.2%,-0.1%
+Fri Jun 27,12:30,GMT,cad,CAD Industrial Product Price (MoM),Low,-0.5%,0.0%,-0.2%
+Fri Jun 27,12:30,GMT,cad,CAD Raw Materials Price Index (MoM),Low,-0.4%,-0.1%,0.1%
+Fri Jun 27,13:55,GMT,usd,USD U. of Michigan Confidence,Medium,82.5,82.0,81.2

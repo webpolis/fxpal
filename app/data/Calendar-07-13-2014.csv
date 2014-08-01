@@ -1,0 +1,147 @@
+Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Sun Jul 13,21:15,GMT,nzd,NZD REINZ House Price Index (MoM) (JUN),Low,-0.3%,,-1.2%
+Sun Jul 13,21:15,GMT,nzd,NZD REINZ Housing Price Index (JUN),Low,3913.3,,3925.1
+Sun Jul 13,21:15,GMT,nzd,NZD REINZ House Sales (YoY),Low,-6.1%,,-14.8%
+Sun Jul 13,21:20,GMT,nzd,NZD REINZ House Sales (YoY),Low,-6.1%,,-14.8%
+Sun Jul 13,22:30,GMT,NZD,NZD Performance Services Index,Medium,54.7,,54.2
+Mon Jul 14,01:30,GMT,AUD,AUD Credit Card Balances,Low,$A50.0B,,$A49.8B
+Mon Jul 14,01:30,GMT,AUD,AUD Credit Card Purchases,Low,$A22.9B,,$A21.3B
+Mon Jul 14,04:30,GMT,JPY,JPY Industrial Production (MoM),Low,0.7%,,0.5%
+Mon Jul 14,04:30,GMT,JPY,JPY Industrial Production (YoY),Medium,1.0%,,0.8%
+Mon Jul 14,04:30,GMT,JPY,JPY Capacity Utilization (MoM),Low,-0.7%,,-2.2%
+Mon Jul 14,09:00,GMT,EUR,EUR Euro-Zone Industrial Production w.d.a. (YoY),Medium,0.5%,0.5%,1.4%
+Mon Jul 14,09:00,GMT,EUR,EUR Euro-Zone Industrial Production s.a. (MoM),Low,-1.1%,-1.2%,0.8%
+Mon Jul 14,13:00,GMT,CAD,CAD Teranet/National Bank HPI (MoM),Low,0.9%,,0.8%
+Mon Jul 14,13:00,GMT,CAD,CAD Teranet/National Bank HP Index,Low,163.98,,162.5
+Mon Jul 14,13:00,GMT,CAD,CAD Teranet/National Bank HPI (YoY),Low,4.4%,,4.6%
+Mon Jul 14,13:34,GMT,chf,Real Estate Index Family Homes,Medium,437.2,,434.3
+Mon Jul 14,23:01,GMT,gbp,GBP BRC Sales Like-For-Like (YoY),Low,-0.8%,1.0%,0.5%
+Tue Jul 15,01:30,GMT,aud,AUD New Motor Vehicle Sales (MoM),Low,1.7%,,0.4%
+Tue Jul 15,01:30,GMT,AUD,AUD RBA Minutes of July Meeting,Medium,,,
+Tue Jul 15,01:30,GMT,aud,AUD New Motor Vehicle Sales (YoY),Low,-2.2%,,-1.7%
+Tue Jul 15,02:16,GMT,cny,CNY Money Supply M2 (YoY),Low,14.7%,13.6%,13.4%
+Tue Jul 15,02:16,GMT,cny,CNY Foreign Reserves,Low,$3990.0B,$3980.0B,$3948.1B
+Tue Jul 15,02:16,GMT,cny,CNY New Yuan Loans,High,1080.0B,955.0B,870.8B
+Tue Jul 15,02:16,GMT,cny,CNY Money Supply M1 (YoY),Low,8.9%,6.3%,5.7%
+Tue Jul 15,02:16,GMT,cny,CNY Money Supply M0 (YoY),Low,5.3%,7.0%,6.7%
+Tue Jul 15,02:16,GMT,cny,CNY Aggregate Financing RMB,Medium,1970.0B,1425.0B,1404.5B
+Tue Jul 15,02:19,GMT,cny,CNY Foreign Direct Investment (YoY),Medium,0.2%,-7.0%,-6.7%
+Tue Jul 15,02:58,GMT,jpy,JPY BOJ 2014 Monetary Base Target,Medium,¥270T,¥270T,¥270T
+Tue Jul 15,04:00,GMT,jpy,JPY Tokyo Condominium Sales (YoY),Low,-28.3%,,-13.4%
+Tue Jul 15,06:00,GMT,jpy,JPY Machine Tool Orders (YoY),Medium,34.1%,,34.2%
+Tue Jul 15,06:30,GMT,jpy,JPY Bank of Japan Monetary Policy Statement,Medium,,,
+Tue Jul 15,07:15,GMT,chf,CHF Producer & Import Prices (YoY),Low,-0.8%,-0.8%,-0.8%
+Tue Jul 15,07:15,GMT,chf,CHF Producer & Import Prices (MoM),Low,0.0%,0.1%,0.1%
+Tue Jul 15,08:30,GMT,gbp,GBP Consumer Price Index (MoM),Medium,0.2%,-0.1%,-0.1%
+Tue Jul 15,08:30,GMT,gbp,GBP Retail Price Index,Low,256.3,255.9,255.9
+Tue Jul 15,08:30,GMT,gbp,GBP Retail Price Index (YoY),Low,2.6%,2.5%,2.4%
+Tue Jul 15,08:30,GMT,gbp,GBP Producer Price Index Input n.s.a. (MoM),Low,-0.8%,0.1%,0.3%%
+Tue Jul 15,08:30,GMT,gbp,GBP Core Consumer Price Index (YoY),High,2.0%,1.7%,1.6%
+Tue Jul 15,08:30,GMT,gbp,GBP Retail Price Index Ex Mort Int.Payments (YoY),Low,2.7%,2.5%,2.5%
+Tue Jul 15,08:30,GMT,gbp,GBP Producer Price Index Output n.s.a. (YoY),Medium,0.2%,0.5%,0.5%
+Tue Jul 15,08:30,GMT,gbp,GBP Producer Price Index Output Core n.s.a. (MoM),Low,0.0%,0.0%,0.0%
+Tue Jul 15,08:30,GMT,gbp,GBP Producer Price Index Output Core n.s.a. (YoY),Medium,1.0%,1.0%,1.0%
+Tue Jul 15,08:30,GMT,gbp,GBP DCLG UK House Prices (YoY),Low,10.5%,10.1%,9.9%
+Tue Jul 15,08:30,GMT,gbp,GBP Consumer Price Index (YoY),High,1.9%,1.6%,1.5%
+Tue Jul 15,08:30,GMT,gbp,GBP Retail Price Index (MoM),Low,0.2%,0.0%,0.1%
+Tue Jul 15,08:30,GMT,gbp,GBP Producer Price Index Input n.s.a. (YoY),Low,-4.4%,-4.5%,-3.8%
+Tue Jul 15,08:30,GMT,gbp,GBP Producer Price Index Output n.s.a. (MoM),Low,-0.2%,0.1%,-0.1%
+Tue Jul 15,09:00,GMT,eur,EUR German ZEW Survey (Current Situation),Medium,61.8,67.4,67.7
+Tue Jul 15,09:00,GMT,eur,EUR German ZEW Survey (Economic Sentiment),Medium,27.1,28.2,29.8
+Tue Jul 15,09:00,GMT,eur,EUR Euro-Zone ZEW Survey (Economic Sentiment),Medium,48.1,,58.4
+Tue Jul 15,09:00,GMT,gbp,"BOE's Carney, Kohn, Taylor, Bailey Questioned by Lawmakers",High,,,
+Tue Jul 15,12:30,GMT,usd,USD Advance Retail Sales,High,0.2%,0.6%,0.5%
+Tue Jul 15,12:30,GMT,usd,USD Empire Manufacturing,Low,25.60,17.00,19.28
+Tue Jul 15,12:30,GMT,usd,USD Retail Sales Less Autos,Medium,0.4%,0.5%,0.4%
+Tue Jul 15,12:30,GMT,usd,USD Retail Sales Ex Auto and Gas,Low,0.4%,0.5%,0.3%
+Tue Jul 15,12:30,GMT,usd,USD Retail Sales Control Group,Low,0.6%,0.5%,0.2%
+Tue Jul 15,12:30,GMT,usd,USD Import Price Index (MoM),Low,0.1%,0.4%,0.3%
+Tue Jul 15,12:30,GMT,usd,USD Import Price Index (YoY),Low,1.2%,1.1%,0.6%
+Tue Jul 15,13:00,GMT,cad,CAD Existing Home Sales (MoM),Medium,0.8%,,5.9%
+Tue Jul 15,14:00,GMT,usd,Fed's Yellen Gives Semi-Annual Testimony to Senate Committee,High,,,
+Tue Jul 15,14:00,GMT,usd,USD Business Inventories,Low,0.5%,0.6%,0.6%
+Tue Jul 15,22:45,GMT,nzd,NZD Consumer Prices Index (YoY),High,1.6%,1.8%,1.5%
+Tue Jul 15,22:45,GMT,nzd,NZD Consumer Prices Index (QoQ),Medium,0.3%,0.4%,0.3%
+Wed Jul 16,00:30,GMT,aud,AUD Westpac Leading Index (MoM),Low,0.1%,,0.1%
+Wed Jul 16,02:00,GMT,cny,CNY Fixed Assets Ex Rural YTD (YoY),Medium,17.3%,17.2%,17.2%
+Wed Jul 16,02:00,GMT,cny,CNY Industrial Production (YoY),Medium,9.2%,9.0%,8.8%
+Wed Jul 16,02:00,GMT,cny,CNY GDP (YoY),High,7.5%,7.4%,7.4%
+Wed Jul 16,02:00,GMT,cny,CNY Retail Sales YTD (YoY),Medium,12.1%,12.2%,12.1%
+Wed Jul 16,02:00,GMT,cny,CNY Industrial Production YTD (YoY),Medium,8.8%,8.8%,8.7%
+Wed Jul 16,02:00,GMT,cny,CNY Retail Sales (YoY),Medium,12.4%,12.5%,12.5%
+Wed Jul 16,02:00,GMT,cny,CNY GDP YTD (YoY),High,7.4%,7.4%,7.4%
+Wed Jul 16,02:00,GMT,cny,CNY GDP s.a. (QoQ),High,2.0%,1.8%,1.5%
+Wed Jul 16,08:30,GMT,gbp,GBP Average Weekly Earnings (3M/(YoY),Medium,0.3%,0.5%,0.8%
+Wed Jul 16,08:30,GMT,gbp,GBP Weekly Earnings ex Bonus (3M/(YoY),Medium,0.7%,0.8%,0.9%
+Wed Jul 16,08:30,GMT,gbp,GBP Jobless Claims Change,Medium,-36.3K,-27.0K,-32.8K
+Wed Jul 16,08:30,GMT,gbp,GBP ILO Unemployment Rate (3M),Medium,6.5%,6.5%,6.6%
+Wed Jul 16,08:30,GMT,gbp,GBP Claimant Count Rate,Medium,3.1%,3.1%,3.2%
+Wed Jul 16,08:30,GMT,gbp,GBP Employment Change (3M/3M),Medium,254K,243K,345K
+Wed Jul 16,09:00,GMT,eur,EUR Euro-Zone Trade Balance (euros),Low,15.4B,16.5B,15.4B
+Wed Jul 16,09:00,GMT,chf,CHF ZEW Survey (Expectations),Medium,0.1,,4.8
+Wed Jul 16,09:00,GMT,eur,EUR Euro-Zone Trade Balance s.a. (euros),Low,15.3B,16.0B,15.2B
+Wed Jul 16,11:00,GMT,usd,USD MBA Mortgage Applications,Low,-3.6%,,1.9%
+Wed Jul 16,12:30,GMT,usd,USD PPI Final Demand (MoM),Low,0.4%,0.2%,-0.2%
+Wed Jul 16,12:30,GMT,usd,USD PPI Ex Food and Energy (YoY),Low,1.8%,1.7%,2.0%
+Wed Jul 16,12:30,GMT,usd,USD PPI Ex Food and Energy (MoM),Low,0.2%,0.2%,-0.1%
+Wed Jul 16,12:30,GMT,usd,USD PPI Final Demand (YoY),Low,1.9%,1.9%,2.0%
+Wed Jul 16,12:30,GMT,cad,CAD Manufacturing Shipments (MoM),Low,1.6%,1.0%,-0.2%
+Wed Jul 16,13:00,GMT,usd,USD Net Long-term TIC Flows,Medium,$19.4B,$25.0B,-$41.2B
+Wed Jul 16,13:00,GMT,usd,USD Total Net TIC Flows,Medium,$35.5B,,$120.9B
+Wed Jul 16,13:15,GMT,usd,USD Industrial Production,Medium,0.2%,0.3%,0.5%
+Wed Jul 16,13:15,GMT,usd,USD Capacity Utilization,Low,79.1%,79.3%,79.1%
+Wed Jul 16,13:15,GMT,usd,USD Manufacturing (SIC) Production,Medium,0.1%,0.3%,0.4%
+Wed Jul 16,14:00,GMT,usd,Fed Chair Janet Yellen Gives Semi-Annual Testimony to House Committee,High,,,
+Wed Jul 16,14:00,GMT,cad,CAD Bank of Canada Rate Decision,High,1.00%,1.00%,1.0%
+Wed Jul 16,14:00,GMT,usd,USD NAHB Housing Market Index,Medium,53,50,49
+Wed Jul 16,14:30,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,171K,950K,579K
+Wed Jul 16,14:30,GMT,usd,USD DOE U.S. Distillate Inventory,Low,2528K,2000K,227K
+Wed Jul 16,14:30,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,-7525K,-2750K,-2370K
+Wed Jul 16,14:30,GMT,usd,USD DOE Cushing OK Crude Inventory,Low,-650K,,447K
+Wed Jul 16,18:00,GMT,USD,USD U.S. Federal Reserve Releases Beige Book,Medium,,,
+Wed Jul 16,22:00,GMT,nzd,NZD ANZ Job Advertisements (MoM),Low,5.7%,,-4.8%
+Wed Jul 16,23:50,GMT,jpy,JPY Japan Buying Foreign Bonds (Yen),Medium,¥671.5B,,-¥294.1B
+Wed Jul 16,23:50,GMT,jpy,JPY Foreign Buying Japan Bonds (Yen),Low,-¥2.9B,,¥302.1B
+Wed Jul 16,23:50,GMT,jpy,JPY Japan Buying Foreign Stocks (Yen),Medium,¥71.9B,,¥163.8B
+Wed Jul 16,23:50,GMT,jpy,JPY Foreign Buying Japan Stocks (Yen),Low,-¥160.9B,,¥330.9B
+Thu Jul 17,00:00,GMT,aud,AUD Conference Board Leading Index,Low,0.2%,,-0.2%
+Thu Jul 17,01:00,GMT,nzd,NZD ANZ Consumer Confidence (MoM),Low,0.6%,,3.4%
+Thu Jul 17,01:00,GMT,nzd,NZD ANZ Consumer Confidence Index,Low,132.7,,131.9
+Thu Jul 17,01:30,GMT,aud,AUD NAB Business Confidence,Low,6,,7
+Thu Jul 17,01:30,GMT,aud,AUD RBA FX Transactions Government,Low,-1293M,,-524M
+Thu Jul 17,01:30,GMT,aud,AUD RBA FX Transactions Other,Low,39M,,55M
+Thu Jul 17,01:30,GMT,aud,AUD RBA Foreign Exchange Transaction (Australian dollar),Low,1271M,,489M
+Thu Jul 17,06:00,GMT,eur,EUR EU 25 New Car Registrations,Low,4.5%,,4.5%
+Thu Jul 17,09:00,GMT,eur,EUR Euro-Zone Consumer Price Index (YoY),Medium,0.5%,0.5%,0.5%
+Thu Jul 17,09:00,GMT,eur,EUR Euro-Zone Consumer Price Index - Core (YoY),High,0.8%,0.8%,0.8%
+Thu Jul 17,09:00,GMT,eur,EUR Euro-Zone Construction Output s.a. (MoM),Low,-1.5%,,0.4%
+Thu Jul 17,09:00,GMT,eur,EUR Euro-Zone Construction Output w.d.a. (YoY),Low,3.5%,,7.4%
+Thu Jul 17,09:00,GMT,eur,EUR Euro-Zone Consumer Price Index (MoM),Medium,0.1%,0.1%,-0.1%
+Thu Jul 17,12:30,GMT,usd,USD Housing Starts (MoM),Medium,-9.3%,1.9%,-7.3%
+Thu Jul 17,12:30,GMT,usd,USD Building Permits,Low,963K,1037K,1005K
+Thu Jul 17,12:30,GMT,usd,USD Building Permits (MoM),Medium,-4.2%,3.0%,-5.1%
+Thu Jul 17,12:30,GMT,cad,CAD International Securities Transactions (Canadian dollar),Low,21.43B,5.00B,10.20B
+Thu Jul 17,12:30,GMT,usd,USD Housing Starts,Low,893K,1020K,985K
+Thu Jul 17,12:30,GMT,usd,USD Initial Jobless Claims,Medium,302K,310K,305K
+Thu Jul 17,12:30,GMT,usd,USD Continuing Claims,Medium,2507K,2580K,2586K
+Thu Jul 17,14:00,GMT,usd,USD Philadelphia Fed.,Medium,23.9,16,17.8
+Thu Jul 17,14:30,GMT,usd,USD EIA Natural Gas Storage Change,Low,107,100,93
+Thu Jul 17,14:30,GMT,usd,USD EIA Natural Working Gas Implied Flow/U,Low,107,,93
+Thu Jul 17,17:35,GMT,USD,"USD Fed's Bullard Speaks on Monetary Policy in Owensboro, Kentucky",Low,,,
+Thu Jul 17,19:00,GMT,USD,USD API Monthly Statistical Report,Low,,,
+Fri Jul 18,01:30,GMT,CNY,CNY China June Property Prices,Low,,,
+Fri Jul 18,01:45,GMT,cny,CNY MNI July Business Indicator,Low,58.2,,55
+Fri Jul 18,05:30,GMT,jpy,JPY Tokyo Department Store Sales (YoY),Low,-4.1%,,-4.3%
+Fri Jul 18,05:30,GMT,jpy,JPY Nationwide Department Store Sales (YoY),Low,-4.6%,,-4.2%
+Fri Jul 18,08:00,GMT,eur,EUR Euro-Zone Current Account n.s.a. (euros),Low,8.9B,,18.8B
+Fri Jul 18,08:00,GMT,eur,EUR Euro-Zone Current Account s.a. (euros),Low,19.5B,,21.6B
+Fri Jul 18,12:30,GMT,cad,CAD Wholesale Sales (MoM),Low,2.2%,0.6%,1.4%
+Fri Jul 18,12:30,GMT,cad,CAD Consumer Price Index (MoM),Medium,0.1%,0.0%,0.5%
+Fri Jul 18,12:30,GMT,cad,CAD Bank Canada Consumer Price Index Core (YoY),High,1.8%,1.7%,1.7%
+Fri Jul 18,12:30,GMT,cad,CAD Consumer Price Index (YoY),High,2.4%,2.3%,2.3%
+Fri Jul 18,12:30,GMT,cad,CAD Bank Canada Consumer Price Index Core (MoM),Medium,-0.1%,-0.2%,0.5%
+Fri Jul 18,12:30,GMT,cad,CAD CPI s.a.(MoM),Low,0.3%,0.3%,0.2%
+Fri Jul 18,12:30,GMT,cad,CAD CPI Core s.a. (MoM),Low,0.2%,,0.2%
+Fri Jul 18,12:30,GMT,cad,CAD Consumer Price Index,Low,125.9,,125.8
+Fri Jul 18,13:55,GMT,usd,USD U. of Michigan Confidence,High,81.3,83.0,82.5
+Fri Jul 18,14:00,GMT,usd,USD Leading Indicators,Medium,0.3%,0.5%,0.5%

@@ -1,0 +1,131 @@
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
+Mon Jan 23,00:30,GMT,aud,AUD Producer Price Index (QoQ),Medium,0.3%,0.4%,0.6%
+Mon Jan 23,00:30,GMT,aud,AUD Producer Price Index (YoY),Medium,2.9%,3.0%,2.7%
+Mon Jan 23,05:00,GMT,jpy,JPY Supermarket Sales (YoY),Low,-0.6%,,-2.3%
+Mon Jan 23,07:45,GMT,eur,EUR French Own-Company Production Outlook,Low,-6,,-1
+Mon Jan 23,07:45,GMT,eur,EUR French Production Outlook Indicator,Low,-37,-36,-36
+Mon Jan 23,07:45,GMT,eur,EUR French Business Confidence Indicator,Low,91,95,94
+Mon Jan 23,08:00,GMT,chf,CHF Money Supply M3 (YoY),Low,7.7%,,7.3%
+Mon Jan 23,08:00,GMT,chf,CHF Real Estate Index Family Homes,Low,404.6,,398.6
+Mon Jan 23,10:15,GMT,EUR,EUR Germany to Sell EU3 Bln 12-Mth Bills,Medium,,,
+Mon Jan 23,13:30,GMT,cad,CAD Leading Indicators (MoM),Medium,0.8%,0.6%,0.9%
+Mon Jan 23,14:00,GMT,EUR,EUR France to Sell Up to EUR2.2 Bln 350-Day Bills,Medium,,,
+Mon Jan 23,14:00,GMT,EUR,EUR France to Sell Up to EUR1.6 Bln 168-Day Bills,Medium,,,
+Mon Jan 23,14:00,GMT,EUR,EUR France to Sell Up to EUR4.5 Bln 91-Day Bills,Medium,,,
+Mon Jan 23,15:00,GMT,eur,EUR Euro-Zone Consumer Confidence,Medium,-20.6,-21.4,-21.3
+Mon Jan 23,16:00,GMT,eur,EUR Eurozone Finance Ministers Meet in Brussels,High,,,
+Mon Jan 23,23:00,GMT,AUD,AUD Conference Board Leading Index (NOV),Medium,,,0.6%
+Tue Jan 24,03:31,GMT,jpy,JPY Bank of Japan Rate Decision,High,0.10%,0.10%,0.10%
+Tue Jan 24,08:00,GMT,eur,EUR French Purchasing Manager Index Manufacturing,Low,48.5,48.6,48.9
+Tue Jan 24,08:00,GMT,eur,EUR French Purchasing Manager Index Services,Low,51.7,50.0,50.3
+Tue Jan 24,08:30,GMT,eur,EUR German Purchasing Manager Index Manufacturing,Medium,50.9,49.0,48.4
+Tue Jan 24,08:30,GMT,eur,EUR German Purchasing Manager Index Services,Medium,54.5,52.4,52.4
+Tue Jan 24,09:00,GMT,eur,EUR Euro-Zone Purchasing Manager Index Composite,Medium,50.4,48.5,48.3
+Tue Jan 24,09:00,GMT,eur,EUR Euro-Zone Purchasing Manager Index Manufacturing,Medium,48.7,47.3,46.9
+Tue Jan 24,09:00,GMT,eur,EUR Euro-Zone Purchasing Manager Index Services,Medium,50.5,49.0,48.8
+Tue Jan 24,09:00,GMT,EUR,EUR Netherlands to Sell 1.75% 2013 Bonds,Medium,,,
+Tue Jan 24,09:00,GMT,EUR,EUR Netherlands to Sell 3.75% 2042 Bonds,Medium,,,
+Tue Jan 24,09:30,GMT,gbp,GBP Public Finances (PSNCR) (Pounds),Medium,22.9B,19.0B,10.6B
+Tue Jan 24,09:30,GMT,gbp,GBP PSNB ex Interventions,Medium,13.7B,14.9B,17.9B
+Tue Jan 24,09:30,GMT,gbp,GBP Public Sector Net Borrowing (Pounds),Medium,10.8B,12.1B,15.1B
+Tue Jan 24,09:30,GMT,EUR,EUR Spain to Sell 3M and 6M Bills,Medium,,,
+Tue Jan 24,10:00,GMT,eur,EUR Euro-Zone Industrial New Orders (YoY) (NOV),Medium,-2.7%,-2.7%,1.5%
+Tue Jan 24,10:00,GMT,eur,EUR Euro-Zone Industrial New Orders s.a. (MoM) (NOV),Low,-1.3%,-2.2%,1.5%
+Tue Jan 24,13:30,GMT,cad,CAD Retail Sales (MoM) (NOV),Medium,0.3%,0.2%,0.9%
+Tue Jan 24,13:30,GMT,cad,CAD Retail Sales Less Autos (MoM) (NOV),Low,0.3%,0.1%,0.6%
+Tue Jan 24,15:00,GMT,usd,USD Richmond Fed Manufacturing Index,Low,12,6,3
+Tue Jan 24,23:30,GMT,aud,AUD Westpac Leading Index (MoM) (NOV),Low,-0.2%,,0.1%
+Tue Jan 24,23:50,GMT,jpy,JPY Merchandise Trade Balance Total (Yen),Medium,-¥205.1B,-¥170.0B,-¥687.6B
+Tue Jan 24,23:50,GMT,jpy,JPY Adjusted Merchandise Trade Balance (Yen),Low,-¥567.6B,-¥384.9B,-¥534.2B
+Tue Jan 24,23:50,GMT,jpy,JPY Merchandise Trade Exports (YoY),Low,-8.0%,-7.4%,-4.5%
+Tue Jan 24,23:50,GMT,jpy,JPY Merchandise Trade Imports (YoY),Low,8.1%,8.1%,11.4%
+Wed Jan 25,00:00,GMT,aud,AUD DEWR Internet Skilled Vacancies (MoM),Low,-1.1%,,-1.4%
+Wed Jan 25,00:30,GMT,aud,AUD Consumer Prices Index RBA Weighted Median (QoQ),Medium,0.5%,0.5%,0.4%
+Wed Jan 25,00:30,GMT,aud,AUD Consumer Prices Index RBA Weighted Median (YoY),Medium,2.6%,2.4%,2.7%
+Wed Jan 25,00:30,GMT,aud,AUD Consumer Prices Index (QoQ),Medium,0.0%,0.2%,0.6%
+Wed Jan 25,00:30,GMT,aud,AUD Consumer Prices Index (YoY),High,3.1%,3.3%,3.5%
+Wed Jan 25,00:30,GMT,aud,AUD Consumer Prices Index RBA Trimmed Mean (QoQ),Medium,0.6%,0.5%,0.4%
+Wed Jan 25,00:30,GMT,aud,AUD Consumer Prices Index RBA Trimmed Mean (YoY),Medium,2.6%,2.4%,2.4%
+Wed Jan 25,02:00,GMT,USD,USD 2012 State of the Union Address,LOW,,,
+Wed Jan 25,02:00,GMT,nzd,NZD Credit Card Spending s.a. (MoM),Medium,0.9%,,-4.2%
+Wed Jan 25,02:00,GMT,nzd,NZD Credit Card Spending (YoY),Medium,5.9%,,3.0%
+Wed Jan 25,02:00,GMT,nzd,NZD Business NZ Performance of Manufacturing Index,Medium,51.9,,46.0
+Wed Jan 25,09:00,GMT,eur,EUR German IFO - Business Climate,Medium,108.3,107.6,107.3
+Wed Jan 25,09:00,GMT,eur,EUR German IFO - Current Assessment,Medium,116.3,116.8,116.7
+Wed Jan 25,09:00,GMT,eur,EUR German IFO - Expectations,Medium,100.9,99.0,98.6
+Wed Jan 25,09:30,GMT,gbp,GBP Gross Domestic Product (YoY),High,0.8%,0.8%,0.5%
+Wed Jan 25,09:30,GMT,gbp,GBP Index of Services (MoM),Low,0.6%,0.4%,-0.6%
+Wed Jan 25,09:30,GMT,GBP,GBP Bank of England Minutes,HIGH,,,
+Wed Jan 25,09:30,GMT,gbp,GBP BBA Loans for House Purchase,Medium,36171,35000,34809
+Wed Jan 25,09:30,GMT,gbp,GBP Gross Domestic Product (QoQ),High,-0.2%,-0.1%,0.6%
+Wed Jan 25,09:30,GMT,gbp,GBP Index of Services (3Mo3M) (NOV),Low,0.1%,-0.1%,0.2%
+Wed Jan 25,10:15,GMT,EUR,EUR Germany to Sell Add'l EU3 Bln 30-Year Notes,Medium,,,
+Wed Jan 25,11:00,GMT,gbp,GBP CBI Trends Selling Prices,Low,13,3,7
+Wed Jan 25,11:00,GMT,gbp,GBP CBI Trends Total Orders,Low,-16,-23,-23
+Wed Jan 25,11:00,GMT,gbp,GBP CBI Business Optimism,Low,,-25,-30
+Wed Jan 25,12:00,GMT,usd,USD MBA Mortgage Applications,Low,-5.0%,,23.1%
+Wed Jan 25,14:00,GMT,cad,CAD Teranet/National Bank HPI (YoY) (NOV),Low,7.1%,7.3%,7.0%
+Wed Jan 25,14:00,GMT,cad,CAD Teranet/National Bank HPI Index (NOV),Low,149.11,,149.46
+Wed Jan 25,14:00,GMT,cad,CAD Teranet/National Bank HPI (MoM) (NOV),Low,-0.2%,-0.2%,0.0%
+Wed Jan 25,15:00,GMT,usd,USD Pending Home Sales (MoM),Low,-3.5%,-1.0%,7.3%
+Wed Jan 25,15:00,GMT,usd,USD Pending Home Sales (YoY),Medium,4.4%,,6.9%
+Wed Jan 25,15:00,GMT,usd,USD House Price Index (MoM) (NOV),Low,1.0%,0.0%,-0.7%
+Wed Jan 25,15:30,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,3558K,1450K,-3438K
+Wed Jan 25,15:30,GMT,usd,USD DOE Cushing OK Crude Inventory,Low,374K,,-832K
+Wed Jan 25,15:30,GMT,usd,USD DOE U.S. Distillate Inventory,Low,-2456K,-125K,438K
+Wed Jan 25,15:30,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,2000K,-390K,3717K
+Wed Jan 25,17:00,GMT,eur,EUR French Total Jobseekers Change,Low,29.7,25,29.9
+Wed Jan 25,17:00,GMT,eur,EUR French Total Jobseekers,Low,2874.5K,2870.0K,2844.8K
+Wed Jan 25,17:30,GMT,usd,USD Federal Open Market Committee Rate Decision,High,0.25%,0.25%,0.25%
+Wed Jan 25,20:00,GMT,nzd,NZD Reserve Bank of New Zealand Rate Decision,High,2.50%,2.50%,2.50%
+Wed Jan 25,23:50,GMT,jpy,JPY Corporate Service Price (YoY),Low,,0.0%,-0.2%
+Thu Jan 26,07:00,GMT,eur,EUR German GfK Consumer Confidence Survey (FEB),Medium,5.9,5.6,5.7
+Thu Jan 26,07:45,GMT,eur,EUR French Consumer Confidence Indicator,Low,81,80,80
+Thu Jan 26,07:45,GMT,EUR,EUR French Business Survey Overall Demand,LOW,,,2
+Thu Jan 26,09:00,GMT,eur,EUR Italian Consumer Confidence Index s.a.,Low,91.6,92.0,91.6
+Thu Jan 26,10:00,GMT,EUR,EUR Italy to Sell I/L Bonds,Medium,,,
+Thu Jan 26,10:00,GMT,eur,EUR Italian Hourly Wages (MoM),Low,0.0%,,0.0%
+Thu Jan 26,10:00,GMT,EUR,EUR Italy to Sell Zero Coupon Notes (CTZ),Medium,,,
+Thu Jan 26,10:00,GMT,eur,EUR Italian Hourly Wages (YoY),Low,1.4%,,1.5%
+Thu Jan 26,11:00,GMT,gbp,GBP CBI Reported Sales,Low,-22,-6,9
+Thu Jan 26,13:30,GMT,usd,USD Chicago Fed Nat Activity Index,Low,0.17,-0.10,-0.46
+Thu Jan 26,13:30,GMT,usd,USD Durable Goods Orders,High,3.0%,2.0%,4.3%
+Thu Jan 26,13:30,GMT,usd,USD Durables Ex Transportation,Medium,2.1%,0.9%,0.5%
+Thu Jan 26,13:30,GMT,usd,USD Cap Goods Shipments Nondef Ex Air,Medium,2.9%,1.0%,-1.0%
+Thu Jan 26,13:30,GMT,usd,USD Cap Goods Orders Nondef Ex Air,Low,2.9%,1.0%,-1.2%
+Thu Jan 26,13:30,GMT,usd,USD Initial Jobless Claims,Low,377K,370K,356K
+Thu Jan 26,13:30,GMT,usd,USD Continuing Claims,Low,3554K,3500K,3466K
+Thu Jan 26,15:00,GMT,USD,USD Revisions: Leading Indicators,LOW,,,
+Thu Jan 26,15:00,GMT,usd,USD Leading Indicators,Medium,0.4%,0.7%,0.2%
+Thu Jan 26,15:00,GMT,usd,USD New Home Sales (MoM),Low,-2.2%,1.9%,2.3%
+Thu Jan 26,15:00,GMT,usd,USD New Home Sales,Medium,307K,321K,314K
+Thu Jan 26,15:30,GMT,usd,USD EIA Natural Gas Storage Change,Low,-192,-175,-87
+Thu Jan 26,16:00,GMT,usd,USD Kansas City Fed Manf. Activity,Low,7,2,-2
+Thu Jan 26,21:45,GMT,nzd,NZD Trade Balance (New Zealand dollars),Medium,338M,-50M,-307M
+Thu Jan 26,21:45,GMT,nzd,NZD Exports (New Zealand dollars),Low,4.32B,4.11B,3.91B
+Thu Jan 26,21:45,GMT,nzd,NZD Imports (New Zealand dollars),Low,3.98B,4.10B,4.22B
+Thu Jan 26,21:45,GMT,nzd,NZD Balance (YTD) (New Zealand dollars),Medium,1113M,723M,557M
+Thu Jan 26,23:30,GMT,jpy,JPY Tokyo Consumer Price Index (YoY),Low,-0.3%,-0.4%,-0.4%
+Thu Jan 26,23:30,GMT,jpy,JPY Tokyo Consumer Price Index Ex-Fresh Food (YoY),Low,-0.4%,-0.3%,-0.3%
+Thu Jan 26,23:30,GMT,jpy,JPY Tokyo Consumer Price Index Ex Food, Energy (YoY),Low,-1.1%,-1.0%,-1.1%
+Thu Jan 26,23:30,GMT,jpy,JPY National Consumer Price Index (YoY),Medium,-0.2%,-0.2%,-0.5%
+Thu Jan 26,23:30,GMT,jpy,JPY National Consumer Price Index Ex-Fresh Food (YoY),Medium,-0.1%,-0.1%,-0.2%
+Thu Jan 26,23:30,GMT,jpy,JPY National Consumer Price Index Ex Food, Energy (YoY),Medium,-1.1%,-1.1%,-1.1%
+Thu Jan 26,23:50,GMT,jpy,JPY Retail Trade (YoY),Medium,2.5%,2.1%,-2.2%
+Thu Jan 26,23:50,GMT,JPY,JPY BOJ to Publish Minutes of December 20-21 Board Meeting,HIGH,,,
+Thu Jan 26,23:50,GMT,jpy,JPY Retail Trade s.a. (MoM),Low,0.3%,0.4%,-2.0%
+Thu Jan 26,23:50,GMT,jpy,JPY Large Retailers' Sales,Medium,-0.4%,-0.6%,-2.5%
+Fri Jan 27,,,GBP,GBP Nationwide House Prices s.a. (MoM),LOW,,,-0.2%
+Fri Jan 27,,,GBP,GBP Nationwide House Prices n.s.a. (YoY),Medium,,,1.0%
+Fri Jan 27,01:35,GMT,cny,CNY MNI January Business Condition Survey,Low,55.95,,52.78
+Fri Jan 27,07:00,GMT,eur,EUR German Import Price Index (MoM),Low,0.3%,0.3%,0.4%
+Fri Jan 27,07:00,GMT,eur,EUR German Import Price Index (YoY),Low,3.9%,3.8%,6.0%
+Fri Jan 27,08:00,GMT,chf,CHF KOF Swiss Leading Indicator,Medium,-0.17,-0.1,0.01
+Fri Jan 27,09:00,GMT,eur,EUR Euro-Zone M3 s.a. (3M),Low,2.1%,2.3%,2.5%
+Fri Jan 27,09:00,GMT,eur,EUR Euro-Zone M3 s.a. (YoY),Low,1.6%,2.1%,2.0%
+Fri Jan 27,10:00,GMT,EUR,EUR Italy to Sell Bills,Medium,,,
+Fri Jan 27,13:30,GMT,usd,USD Gross Domestic Product (Annualized),High,2.8%,3.0%,1.8%
+Fri Jan 27,13:30,GMT,usd,USD Gross Domestic Product Price Index,High,0.4%,1.9%,2.6%
+Fri Jan 27,13:30,GMT,usd,USD Core Personal Consumption Expenditure (QoQ),Medium,1.1%,0.9%,2.1%
+Fri Jan 27,13:30,GMT,usd,USD Personal Consumption,Medium,2.0%,2.4%,1.7%
+Fri Jan 27,14:55,GMT,usd,USD U. of Michigan Confidence,High,75.0,74.0,74.0

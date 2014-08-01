@@ -1,0 +1,123 @@
+Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Sun Jul 20,22:45,GMT,nzd,NZD Net Migration s.a.,Low,4270,,4020
+Sun Jul 20,23:01,GMT,gbp,GBP Rightmove House Prices (MoM),Low,-0.8%,,0.1%
+Sun Jul 20,23:01,GMT,gbp,GBP Rightmove House Prices (YoY),Low,6.5%,,7.7%
+Mon Jul 21,03:00,GMT,nzd,NZD Credit Card Spending (MoM),Low,0.7%,,3.2%
+Mon Jul 21,03:00,GMT,nzd,NZD Credit Card Spending (YoY),Low,7.0%,,7.6%
+Mon Jul 21,06:00,GMT,eur,EUR German Producer Prices (MoM),Low,0.0%,0.0%,-0.2%
+Mon Jul 21,06:00,GMT,eur,EUR German Producer Prices (YoY),Low,-0.7%,-0.7%,-0.8%
+Mon Jul 21,07:00,GMT,chf,CHF Money Supply M3 (YoY),Low,4.0%,,8.1%
+Mon Jul 21,12:30,GMT,usd,USD Chicago Fed Nat Activity Index,Low,0.12,0.18,0.16
+Mon Jul 21,23:25,GMT,aud,RBA's Debelle Speaks on panel in Sydney,Medium,,,
+Mon Jul 21,23:30,GMT,aud,AUD ANZ Roy Morgan Weekly Consumer Confidence Index,Medium,113.5,,108.7
+Tue Jul 22,02:00,GMT,cny,CNY Conference Board China June Leading Economic Index,Low,294.0,,290.3
+Tue Jul 22,03:00,GMT,aud,RBA's Stevens speaks in Sydney,High,,,
+Tue Jul 22,04:30,GMT,jpy,JPY All Industry Activity Index (MoM),Medium,0.6%,0.6%,-4.6%
+Tue Jul 22,05:00,GMT,jpy,JPY Supermarket Sales (YoY),Low,-2.8%,,-2.2%
+Tue Jul 22,05:00,GMT,jpy,JPY Leading Index,Medium,104.8,,105.7
+Tue Jul 22,05:00,GMT,jpy,JPY Coincident Index,Medium,111.3,,111.1
+Tue Jul 22,05:00,GMT,nzd,RBNZ Deputy Governor Grant Spencer Speaks,Medium,,,
+Tue Jul 22,06:00,GMT,chf,CHF Trade Balance (Swiss franc),Medium,1.38B,2.78B,2.85B
+Tue Jul 22,06:00,GMT,chf,CHF Exports (MoM),Low,5.6%,,-6.4%
+Tue Jul 22,06:00,GMT,chf,CHF Imports (MoM),Low,10.8%,,-1.6%
+Tue Jul 22,07:00,GMT,jpy,JPY Convenience Store Sales (YoY),Low,-1.9%,,-0.8%
+Tue Jul 22,08:30,GMT,gbp,GBP Public Finances (PSNCR) (Pounds),Medium,11.8B,,8.4B
+Tue Jul 22,08:30,GMT,gbp,GBP Central Government NCR,Low,18.1B,,12.3B
+Tue Jul 22,08:30,GMT,gbp,GBP Public Sector Net Borrowing (Pounds),Medium,9.5B,9.4B,11.9B
+Tue Jul 22,08:30,GMT,gbp,GBP PSNB ex Interventions,Low,11.4B,10.5B,13.7B
+Tue Jul 22,08:30,GMT,gbp,"GBP PSNB ex Royal Mail, APF",Low,11.4B,11.1B,13.7B
+Tue Jul 22,09:00,GMT,EUR,EUR Euro Area First Quarter Government Debt,Low,,,
+Tue Jul 22,10:00,GMT,gbp,GBP CBI Trends Total Orders,Low,2,8,11
+Tue Jul 22,10:00,GMT,gbp,GBP CBI Business Optimism,Low,19,30,33
+Tue Jul 22,10:00,GMT,gbp,GBP CBI Trends Selling Prices,Low,-4,4,3
+Tue Jul 22,12:30,GMT,usd,USD Consumer Price Index (MoM),Medium,0.3%,0.3%,0.4%
+Tue Jul 22,12:30,GMT,usd,USD Consumer Price Index Ex Food & Energy (MoM),Medium,0.1%,0.2%,0.3%
+Tue Jul 22,12:30,GMT,usd,USD Consumer Price Index (YoY),High,2.1%,2.1%,2.1%
+Tue Jul 22,12:30,GMT,usd,USD Consumer Price Index Ex Food & Energy (YoY),High,1.9%,2.0%,2.0%
+Tue Jul 22,12:30,GMT,usd,USD Consumer Price Index Core Index s.a.,Low,238.083,238.227,237.776
+Tue Jul 22,12:30,GMT,usd,USD Consumer Price Index n.s.a.,Low,238.343,238.535,237.9
+Tue Jul 22,13:00,GMT,usd,USD House Price Index (MoM),Medium,0.4%,0.2%,0.1%
+Tue Jul 22,14:00,GMT,usd,USD Richmond Fed Manufacturing Index,Low,7,5,3
+Tue Jul 22,14:00,GMT,usd,USD Existing Home Sales,Low,5.04M,4.99M,4.89M
+Tue Jul 22,14:00,GMT,usd,USD Existing Home Sales (MoM),Medium,2.6%,2.0%,4.9%
+Wed Jul 23,01:00,GMT,aud,AUD Skilled Vacancies,Low,1.6%,,1.8%
+Wed Jul 23,01:30,GMT,aud,AUD Consumer Prices Index RBA Weighted Median (YoY),Low,2.7%,2.7%,2.7%
+Wed Jul 23,01:30,GMT,JPY,JPY BOJ Deputy Governor Nakaso Speaks with Business Leaders,Low,,,
+Wed Jul 23,01:30,GMT,aud,AUD Consumer Prices Index (YoY),High,3.0%,3.0%,2.9%
+Wed Jul 23,01:30,GMT,aud,AUD Consumer Prices Index (QoQ),Medium,0.5%,0.5%,0.6%
+Wed Jul 23,01:30,GMT,aud,AUD Consumer Prices Index RBA Trimmed Mean (QoQ),Low,0.8%,0.6%,0.6%
+Wed Jul 23,01:30,GMT,aud,AUD Consumer Prices Index RBA Trimmed Mean (YoY),Low,2.9%,2.7%,2.6%
+Wed Jul 23,01:30,GMT,aud,AUD Consumer Prices Index RBA Weighted Median (QoQ),Low,0.6%,0.7%,0.6%
+Wed Jul 23,08:30,GMT,gbp,GBP BBA Loans for House Purchase,Low,43265,41375,41881
+Wed Jul 23,08:30,GMT,GBP,GBP Bank of England Minutes,Medium,,,
+Wed Jul 23,09:00,GMT,EUR,EUR Euro Area First Quarter Government Deficit,Low,,,
+Wed Jul 23,10:00,GMT,gbp,GBP CBI Reported Sales,Low,21,15,4
+Wed Jul 23,11:00,GMT,usd,USD MBA Mortgage Applications,Low,2.4%,,-3.6%
+Wed Jul 23,12:30,GMT,cad,CAD Retail Sales (MoM),Medium,0.7%,0.6%,1.3%
+Wed Jul 23,12:30,GMT,cad,CAD Retail Sales Less Autos (MoM),Low,0.1%,0.3%,0.8%
+Wed Jul 23,14:00,GMT,eur,EUR Euro-Zone Consumer Confidence,Medium,-8.4,-7.5,-7.5
+Wed Jul 23,14:30,GMT,usd,USD DOE Cushing OK Crude Inventory,Low,-1450K,,-650K
+Wed Jul 23,14:30,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,3379K,1000K,171K
+Wed Jul 23,14:30,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,-3969K,-2900K,-7525K
+Wed Jul 23,14:30,GMT,usd,USD DOE U.S. Distillate Inventory,Low,1636K,2000K,2528K
+Wed Jul 23,21:00,GMT,nzd,NZD Reserve Bank of New Zealand Rate Decision,High,3.50%,3.50%,3.25%
+Wed Jul 23,22:45,GMT,nzd,NZD Trade Balance (New Zealand dollars),Medium,247M,100M,270M
+Wed Jul 23,22:45,GMT,nzd,NZD Exports (New Zealand dollars),Low,4.20B,4.25B,4.58B
+Wed Jul 23,22:45,GMT,nzd,NZD Imports (New Zealand dollars),Low,3.95B,4.10B,4.31B
+Wed Jul 23,22:45,GMT,nzd,NZD Balance (YTD) (New Zealand dollars),Medium,1201M,1100M,1325M
+Wed Jul 23,23:50,GMT,jpy,JPY Merchandise Trade Exports (YoY),Low,-2.0,1,-2.7
+Wed Jul 23,23:50,GMT,jpy,JPY Merchandise Trade Imports (YoY),Low,8.4,8.3,-3.5
+Wed Jul 23,23:50,GMT,jpy,JPY Adjusted Merchandise Trade Balance (Yen),Medium,-¥1080.8B,-¥1119.9B,-¥862.2B
+Wed Jul 23,23:50,GMT,jpy,JPY Merchandise Trade Balance Total (Yen),Medium,-¥822.2B,-¥642.9B,-¥910.8B
+Thu Jul 24,01:35,GMT,jpy,JPY Markit/JMMA Japan Manufacturing PMI,Medium,50.8,,51.5
+Thu Jul 24,01:45,GMT,cny,CNY HSBC China Manufacturing PMI,Medium,52.0,51.0,50.7
+Thu Jul 24,07:00,GMT,eur,EUR Markit France Manufacturing PMI,Low,47.6,48,48.2
+Thu Jul 24,07:00,GMT,eur,EUR Markit France Services PMI,Low,50.4,48.2,48.2
+Thu Jul 24,07:00,GMT,eur,EUR Markit France Composite PMI,Low,49.4,48.3,48.1
+Thu Jul 24,07:30,GMT,eur,EUR Markit/BME Germany Manufacturing PMI,Medium,52.9,51.9,52
+Thu Jul 24,07:30,GMT,eur,EUR - Indice PMI des services allemand,Medium,56.6,54.5,54.6
+Thu Jul 24,07:30,GMT,eur,EUR Markit/BME Germany Composite PMI,Medium,55.9,53.8,54
+Thu Jul 24,08:00,GMT,eur,EUR Markit Eurozone Services PMI,Medium,52.4,52.7,52.8
+Thu Jul 24,08:00,GMT,eur,EUR Markit Eurozone Manufacturing PMI,Medium,51.9,51.7,51.8
+Thu Jul 24,08:00,GMT,eur,EUR Markit Eurozone Composite PMI,Medium,54.0,52.8,52.8
+Thu Jul 24,08:30,GMT,gbp,GBP Retail Sales Incl. Auto (MoM),Low,0.1%,0.3%,-0.5%
+Thu Jul 24,08:30,GMT,gbp,GBP Retail Sales (MoM),Low,-0.1%,0.3%,-0.5%
+Thu Jul 24,08:30,GMT,gbp,GBP Retail Sales (YoY),Medium,4.0%,4.6%,4.5%
+Thu Jul 24,08:30,GMT,gbp,GBP Retail Sales Incl. Auto (YoY),Medium,3.6%,3.9%,3.7%
+Thu Jul 24,12:30,GMT,usd,USD Initial Jobless Claims,Medium,284K,310K,303K
+Thu Jul 24,12:30,GMT,usd,USD Continuing Claims,Medium,2500K,2510K,2508K
+Thu Jul 24,13:45,GMT,usd,USD Markit US Manufacturing PMI,Medium,56.3,57.5,57.3
+Thu Jul 24,14:00,GMT,usd,USD New Home Sales,Low,406K,475K,442K
+Thu Jul 24,14:00,GMT,usd,USD New Home Sales (MoM),Medium,-8.1%,-5.8%,8.3%
+Thu Jul 24,14:30,GMT,usd,USD EIA Natural Gas Storage Change,Low,90,96,107
+Thu Jul 24,14:30,GMT,usd,USD EIA Natural Working Gas Implied Flow/U,Low,90,,107
+Thu Jul 24,15:00,GMT,usd,USD Kansas City Fed Manf. Activity,Low,9,6,6
+Thu Jul 24,23:01,GMT,gbp,GBP Hometrack Housing Survey (MoM),Low,0.1%,,0.3%
+Thu Jul 24,23:01,GMT,gbp,GBP Hometrack Housing Survey (YoY),Low,5.8%,,6.0%
+Thu Jul 24,23:30,GMT,jpy,JPY National Consumer Price Index (YoY),High,3.6%,3.5%,3.7%
+Thu Jul 24,23:30,GMT,jpy,JPY National Consumer Price Index Ex-Fresh Food (YoY),Medium,3.3%,3.3%,3.4%
+Thu Jul 24,23:30,GMT,jpy,JPY Tokyo Consumer Price Index (YoY),Low,2.8%,2.8%,3.0%
+Thu Jul 24,23:30,GMT,jpy,JPY Tokyo Consumer Price Index Ex-Fresh Food (YoY),Low,2.8%,2.7%,2.8%
+Thu Jul 24,23:30,GMT,jpy,"JPY Tokyo Consumer Price Index Ex Food, Energy (YoY)",Low,2.1%,2.0%,2.0%
+Thu Jul 24,23:30,GMT,jpy,"JPY National Consumer Price Index Ex Food, Energy (YoY)",Medium,2.3%,2.3%,2.2%
+Thu Jul 24,23:50,GMT,jpy,JPY Foreign Buying Japan Stocks (Yen),Low,¥139.2B,,-¥160.6B 
+Thu Jul 24,23:50,GMT,jpy,JPY Foreign Buying Japan Bonds (Yen),Low,¥450.3B,,-¥1.0B
+Thu Jul 24,23:50,GMT,jpy,JPY PPI Services (YoY),Low,3.6%,3.6%,3.6%
+Thu Jul 24,23:50,GMT,jpy,JPY Japan Buying Foreign Bonds (Yen),Medium,¥116.1B,,¥681.6B
+Thu Jul 24,23:50,GMT,jpy,JPY Japan Buying Foreign Stocks (Yen),Medium,¥163.0B,,¥71.9B
+Fri Jul 25,01:00,GMT,nzd,NZD ANZ Activity Outlook,Low,45.1,,45.8
+Fri Jul 25,01:00,GMT,nzd,NZD NBNZ Business Confidence,Medium,39.7,,42.8
+Fri Jul 25,06:00,GMT,eur,EUR German GfK Consumer Confidence Survey,Medium,9.0,8.9,8.9
+Fri Jul 25,08:00,GMT,eur,EUR German IFO - Current Assessment,Medium,112.9,114.5,114.8
+Fri Jul 25,08:00,GMT,eur,EUR German IFO - Expectations,Medium,103.4,104.4,104.8
+Fri Jul 25,08:00,GMT,eur,EUR German IFO - Business Climate,Medium,108.0,109.4,109.7
+Fri Jul 25,08:00,GMT,eur,EUR Euro-Zone M3 s.a. (YoY),Low,1.5%,1.2%,1.0%
+Fri Jul 25,08:00,GMT,eur,EUR Euro-Zone M3 s.a. (3M),Low,1.1%,1.0%,0.9%
+Fri Jul 25,08:30,GMT,gbp,GBP Index of Services (3Mo3M),Low,1.0%,1.0%,0.9%
+Fri Jul 25,08:30,GMT,gbp,GBP Gross Domestic Product (YoY),High,3.1%,3.1%,3.0%
+Fri Jul 25,08:30,GMT,gbp,GBP Index of Services (MoM),Low,0.3%,0.2%,0.3%
+Fri Jul 25,08:30,GMT,gbp,GBP Gross Domestic Product (QoQ),High,0.8%,0.8%,0.8%
+Fri Jul 25,12:30,GMT,usd,USD Durable Goods Orders,High,0.7%,0.5%,-1.0%
+Fri Jul 25,12:30,GMT,usd,USD Durables Ex Transportation,Medium,0.8%,0.5%,-0.1%
+Fri Jul 25,12:30,GMT,usd,USD Cap Goods Ship Nondef Ex Air,Low,-1.0%,1.3%,-0.1%
+Fri Jul 25,12:30,GMT,usd,USD Cap Goods Orders Nondef Ex Air,Low,1.4%,0.5%,-1.3%

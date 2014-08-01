@@ -1,0 +1,147 @@
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
+Sun Sep 25,21:45,GMT,nzd,NZD Trade Balance (New Zealand dollars),Medium,-641M,-321M,111M
+Sun Sep 25,21:45,GMT,nzd,NZD Exports (New Zealand dollars),Low,3.44B,3.44B,3.72B
+Sun Sep 25,21:45,GMT,nzd,NZD Imports (New Zealand dollars),Low,4.08B,3.78B,3.61B
+Sun Sep 25,21:45,GMT,nzd,NZD Balance (YTD) (New Zealand dollars),Medium,1084,1400,1295
+Mon Sep 26,08:00,GMT,eur,EUR German IFO - Business Climate,Medium,107.5,106.5,108.7
+Mon Sep 26,08:00,GMT,eur,EUR German IFO - Current Assessment,Medium,117.9,115.7,118.1
+Mon Sep 26,08:00,GMT,eur,EUR German IFO - Expectations,Medium,98.0,97.3,100.1
+Mon Sep 26,08:00,GMT,eur,EUR Italian Consumer Confidence Index s.a.,Low,98.5,98.5,100.3
+Mon Sep 26,12:30,GMT,USD,USD Fed's Raskin Speaks on Loan Servicing in Washington,LOW,,,
+Mon Sep 26,12:30,GMT,usd,USD Chicago Fed Nat Activity Index,Medium,-0.43,-0.37,-0.06
+Mon Sep 26,13:30,GMT,USD,USD Fed's Bullard Speaks in New York,LOW,,,
+Mon Sep 26,14:00,GMT,usd,USD New Home Sales,Medium,295K,293K,302K
+Mon Sep 26,14:00,GMT,usd,USD New Home Sales (MoM),Medium,-2.3%,-1.7%,-0.3%
+Mon Sep 26,14:30,GMT,usd,USD Dallas Fed Manufacturing Activity,Low,-14.4,-8,-11.4
+Mon Sep 26,16:00,GMT,eur,EUR French Total Jobseekers Change,Low,-2,33.3,36.1
+Mon Sep 26,16:00,GMT,eur,EUR French Total Jobseekers,Low,2754.5,2900.0,2756.5
+Mon Sep 26,23:50,GMT,jpy,JPY Corporate Service Price (YoY),Low,-0.4%,-0.4%,-0.3%
+Tue Sep 27,,,cny,CNY Leading Index,Low,,,102.25
+Tue Sep 27,02:00,GMT,cny,CNY Industrial Profits YTD (YoY),Medium,28.2%,,28.3%
+Tue Sep 27,05:05,GMT,jpy,JPY Small Business Confidence,Low,47.2,,46.4
+Tue Sep 27,06:00,GMT,chf,CHF UBS Consumption Indicator,Medium,0.79,,1.28
+Tue Sep 27,06:00,GMT,eur,EUR German GfK Consumer Confidence Survey (OCT),Medium,5.2,5.0,5.2
+Tue Sep 27,08:00,GMT,eur,EUR Euro-Zone M3 s.a. (3M),Low,2.3%,2.0%,2.1%
+Tue Sep 27,08:00,GMT,eur,EUR Euro-Zone M3 s.a. (YoY),Low,2.8%,2.0%,2.0%
+Tue Sep 27,08:00,GMT,eur,EUR Italian Hourly Wages (MoM),Low,0.0%,0.1%,0.0%
+Tue Sep 27,08:00,GMT,eur,EUR Italian Hourly Wages (YoY),Low,1.7%,,1.7%
+Tue Sep 27,09:30,GMT,CHF,CHF KOF Institute September Economic Forecast,Medium,,,
+Tue Sep 27,10:00,GMT,gbp,GBP CBI Reported Sales,Medium,-15,-15,-14
+Tue Sep 27,13:00,GMT,usd,USD S&P/CS 20 City s.a. (MoM),Low,0.05%,0.1%,-0.0%
+Tue Sep 27,13:00,GMT,usd,USD S&P/Case-Shiller Composite-20 (YoY) (JUL),Low,-4.11%,-4.40%,-4.40%
+Tue Sep 27,13:00,GMT,usd,USD S&P/Case-Shiller Home Price Index (JUL),Low,142.77,,141.48
+Tue Sep 27,14:00,GMT,usd,USD Consumer Confidence,High,45.4,46.0,45.2
+Tue Sep 27,14:00,GMT,usd,USD Richmond Fed Manufacturing Index,Low,-6,-12,-10
+Tue Sep 27,16:30,GMT,USD,USD Fed's Lockhart Speaks on Economy in Jacksonville, Florida,LOW,,,
+Wed Sep 28,,,eur,EUR German Consumer Price Index (MoM),Medium,0.1%,-0.1%,0.0%
+Wed Sep 28,,,eur,EUR German Consumer Price Index (YoY),High,2.6%,2.4%,2.4%
+Wed Sep 28,01:00,GMT,aud,AUD HIA New Home Sales (MoM),Medium,1.1%,,-8.0%
+Wed Sep 28,05:30,GMT,eur,EUR French Gross Domestic Product (QoQ),Low,0.0%,0.0%,0.0%
+Wed Sep 28,05:30,GMT,eur,EUR French Gross Domestic Product (YoY),Low,1.7%,1.6%,1.6%
+Wed Sep 28,06:00,GMT,eur,EUR German Import Price Index (MoM),Low,-0.7%,-0.3%,0.8%
+Wed Sep 28,06:00,GMT,eur,EUR German Import Price Index (YoY),Low,6.6%,6.7%,7.5%
+Wed Sep 28,08:00,GMT,eur,EUR Italian Business Confidence,Low,94.5,98.1,99.9
+Wed Sep 28,11:00,GMT,usd,USD MBA Mortgage Applications,Low,9.3%,,0.6%
+Wed Sep 28,12:30,GMT,usd,USD Durable Goods Orders,High,-0.1%,-0.2%,4.1%
+Wed Sep 28,12:30,GMT,usd,USD Durables Ex Transportation,Medium,-0.1%,-0.2%,0.7%
+Wed Sep 28,12:30,GMT,usd,USD Cap Goods Orders Nondef Ex Air,Low,1.1%,0.4%,-0.2%
+Wed Sep 28,12:30,GMT,usd,USD Cap Goods Ship Nondef Ex Air,Low,2.8%,,0.4%
+Wed Sep 28,13:00,GMT,cad,CAD Teranet/National Bank HPI (MoM),Low,1.3%,,1.7%
+Wed Sep 28,13:00,GMT,cad,CAD Teranet/National Bank HPI (YoY),Low,5.3%,,4.5%
+Wed Sep 28,13:00,GMT,cad,CAD Teranet/National Bank HP Index,Low,146.51,,144.67
+Wed Sep 28,14:30,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,1915K,2050K,-7336K
+Wed Sep 28,14:30,GMT,usd,USD DOE Cushing OK Crude Inventory,Low,-1078K,,-231K
+Wed Sep 28,14:30,GMT,usd,USD DOE U.S. Distillate Inventory,Low,72K,-400K,-874K
+Wed Sep 28,14:30,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,791K,1000K,3295K
+Wed Sep 28,23:50,GMT,jpy,JPY Retail Trade (YoY),Medium,-2.6%,-0.8%,0.6%
+Wed Sep 28,23:50,GMT,jpy,JPY Retail Trade s.a. (MoM),Low,-1.7%,0.2%,-0.3%
+Wed Sep 28,23:50,GMT,jpy,JPY Large Retailers' Sales,Medium,-2.6%,-0.6%,0.8%
+Thu Sep 29,01:30,GMT,aud,AUD Job Vacancies,Low,3.2%,,-4.5%
+Thu Sep 29,06:00,GMT,gbp,GBP Nationwide House Prices s.a. (MoM),Low,0.1%,0.0%,-0.6%
+Thu Sep 29,06:00,GMT,gbp,GBP Nationwide House Prices n.s.a. (YoY),Medium,-0.3%,-0.5%,-0.4%
+Thu Sep 29,06:50,GMT,USD,USD Fed's Rosengren Speaks on Bank Regulation in Stockholm,LOW,,,
+Thu Sep 29,07:55,GMT,eur,EUR German Unemployment Change,High,-26K,-8K,-9K
+Thu Sep 29,07:55,GMT,eur,EUR German Unemployment Rate,Medium,6.9%,7.0%,7.0%
+Thu Sep 29,08:00,GMT,eur,EUR Italian Deficit to GDP (YTD),Low,5.3%,,7.6%
+Thu Sep 29,08:30,GMT,gbp,GBP Net Consumer Credit,Medium,0.5B,0.2B,0.3B
+Thu Sep 29,08:30,GMT,gbp,GBP Net Lending Sec. on Dwellings,Medium,0.6B,0.8B,0.7B
+Thu Sep 29,08:30,GMT,gbp,GBP Mortgage Approvals,Medium,52.4K,49.7K,49.6K
+Thu Sep 29,08:30,GMT,gbp,GBP M4 Money Supply (MoM),Low,-0.2%,,0.0%
+Thu Sep 29,08:30,GMT,gbp,GBP M4 Money Supply (YoY),Low,-0.6%,,-1.1%
+Thu Sep 29,08:30,GMT,gbp,GBP M4 Ex OFCs 3M Annualised,Low,2.3%,,3.7%
+Thu Sep 29,09:00,GMT,eur,EUR Euro-Zone Business Climate Indicator,Medium,-0.06,-0.12,0.06
+Thu Sep 29,09:00,GMT,eur,EUR Euro-Zone Consumer Confidence,Medium,-19.1,-18.9,-18.9
+Thu Sep 29,09:00,GMT,eur,EUR Euro-Zone Economic Confidence,Medium,95.0,96.0,98.4
+Thu Sep 29,09:00,GMT,eur,EUR Euro-Zone Industrial Confidence,Medium,-5.9,-5.0,-2.7
+Thu Sep 29,09:00,GMT,eur,EUR Euro-Zone Services Confidence,Medium,0.0,2.0,3.7
+Thu Sep 29,12:30,GMT,USD,USD Fed's Plosser Speaks on Economy in Radnor, Pennsylvania,LOW,,,
+Thu Sep 29,12:30,GMT,cad,CAD Industrial Product Price (MoM),Low,0.5%,-0.5%,-0.4%
+Thu Sep 29,12:30,GMT,cad,CAD Raw Materials Price Index (MoM),Low,-3.2%,-2.5%,-1.1%
+Thu Sep 29,12:30,GMT,usd,USD Gross Domestic Product (Annualized),High,1.3%,1.2%,1.0%
+Thu Sep 29,12:30,GMT,usd,USD Personal Consumption,High,0.7%,0.4%,0.4%
+Thu Sep 29,12:30,GMT,usd,USD Gross Domestic Product Price Index,High,2.5%,2.4%,2.4%
+Thu Sep 29,12:30,GMT,usd,USD Core Personal Consumption Expenditure (QoQ),Medium,2.3%,2.2%,2.2%
+Thu Sep 29,12:30,GMT,usd,USD Initial Jobless Claims,Low,391K,420K,423K
+Thu Sep 29,12:30,GMT,usd,USD Continuing Claims,Low,3729K,3730K,3749K
+Thu Sep 29,13:45,GMT,usd,USD Bloomberg Consumer Comfort,Low,-53.0,-51.0,-52.1
+Thu Sep 29,14:00,GMT,usd,USD Pending Home Sales (MoM),Medium,-1.2%,-2.0%,-1.3%
+Thu Sep 29,14:00,GMT,usd,USD Pending Home Sales (YoY),Medium,13.1%,6.4%,10.1%
+Thu Sep 29,14:30,GMT,usd,USD EIA Natural Gas Storage Change,Low,111,103,89
+Thu Sep 29,15:00,GMT,usd,USD Kansas City Fed Manf. Activity,Low,6.0,3.0,3.00
+Thu Sep 29,17:00,GMT,USD,USD Fed's Lockhart Speaks in Atlanta,LOW,,,
+Thu Sep 29,21:45,GMT,nzd,NZD Building Permits (MoM),Medium,12.5%,-1.5%,14.3%
+Thu Sep 29,23:01,GMT,gbp,GBP GfK Consumer Confidence Survey,Medium,-30,-33,-31
+Thu Sep 29,23:15,GMT,jpy,JPY Nomura/JMMA Manufacturing Purchasing Manager Index,Medium,49.3,,51.9
+Thu Sep 29,23:30,GMT,jpy,JPY Job-To-Applicant Ratio,Low,0.66,0.65,0.64
+Thu Sep 29,23:30,GMT,jpy,JPY Household Spending (YoY),Medium,-4.1%,-2.8%,-2.1%
+Thu Sep 29,23:30,GMT,jpy,JPY Jobless Rate,Medium,4.3%,4.7%,4.7%
+Thu Sep 29,23:30,GMT,jpy,JPY Tokyo Consumer Price Index (YoY),Low,-0.2%,-0.2%,-0.2%
+Thu Sep 29,23:30,GMT,jpy,JPY Tokyo Consumer Price Index Ex-Fresh Food (YoY),Low,-0.1%,-0.1%,-0.2%
+Thu Sep 29,23:30,GMT,jpy,JPY Tokyo Consumer Price Index Ex Food, Energy (YoY),Low,-0.4%,-0.5%,-0.6%
+Thu Sep 29,23:30,GMT,jpy,JPY National Consumer Price Index (YoY),Medium,0.2%,0.1%,0.2%
+Thu Sep 29,23:30,GMT,jpy,JPY National Consumer Price Index Ex-Fresh Food (YoY),Medium,0.2%,0.1%,0.1%
+Thu Sep 29,23:30,GMT,jpy,JPY National Consumer Price Index Ex Food, Energy (YoY),Medium,-0.5%,-0.6%,-0.5%
+Thu Sep 29,23:50,GMT,jpy,JPY Industrial Production (MoM),Low,0.8%,1.5%,0.4%
+Thu Sep 29,23:50,GMT,jpy,JPY Industrial Production (YoY),Medium,0.6%,1.1%,-3.0%
+Fri Sep 30,00:30,GMT,aud,AUD RPData-Rismark House Px Raw,Low,-0.1%,,-0.8%
+Fri Sep 30,00:30,GMT,aud,AUD RPData-Rismark House Px s.a.,Low,-0.4%,,-0.6%
+Fri Sep 30,01:00,GMT,nzd,NZD NBNZ Activity Outlook,Medium,35.4,,43.3
+Fri Sep 30,01:00,GMT,nzd,NZD NBNZ Business Confidence,Medium,30.3,,34.4
+Fri Sep 30,01:30,GMT,aud,AUD Private Sector Credit (MoM),Medium,0.2%,0.2%,0.3%
+Fri Sep 30,01:30,GMT,aud,AUD Private Sector Credit (YoY),Medium,3.0%,2.8%,2.9%
+Fri Sep 30,01:35,GMT,cny,CNY MNI September Business Condition Survey,Low,59.84,,55.37
+Fri Sep 30,02:00,GMT,nzd,NZD Money Supply M3 (YoY),Low,5.5%,,6.3%
+Fri Sep 30,02:30,GMT,cny,CNY HSBC Flash China Manufacturing PMI,Low,49.9,,49.9
+Fri Sep 30,04:00,GMT,jpy,JPY Vehicle Production (YoY),Low,1.8%,,-8.9%
+Fri Sep 30,05:00,GMT,jpy,JPY Construction Orders (YoY),Low,9.3%,,5.7%
+Fri Sep 30,05:00,GMT,jpy,JPY Annualized Housing Starts,Medium,0.934M,0.860M,0.955M
+Fri Sep 30,05:00,GMT,jpy,JPY Housing Starts (YoY),Medium,14.0%,4.5%,21.2%
+Fri Sep 30,06:00,GMT,eur,EUR German Retail Sales (MoM),Low,2.9%,-0.5%,0.0%
+Fri Sep 30,06:00,GMT,eur,EUR German Retail Sales (YoY),Medium,2.2%,-1.0%,-1.6%
+Fri Sep 30,06:45,GMT,eur,EUR French Producer Prices (MoM),Low,0.0%,0.0%,-0.1%
+Fri Sep 30,06:45,GMT,eur,EUR French Producer Prices (YoY),Low,6.3%,5.9%,6.1%
+Fri Sep 30,06:45,GMT,eur,EUR French Consumer Spending (MoM),Low,0.2%,0.1%,1.2%
+Fri Sep 30,06:45,GMT,eur,EUR French Consumer Spending (YoY),Low,0.3%,1.3%,1.8%
+Fri Sep 30,08:00,GMT,eur,EUR Italian Unemployment Rate s.a.,Low,8.0%,8.0%,8.2%
+Fri Sep 30,08:00,GMT,eur,EUR Italian Unemployment Rate s.a.,Low,7.9%,8.0%,8.0%
+Fri Sep 30,09:00,GMT,eur,EUR Euro-Zone Consumer Price Index Estimate (YoY),Medium,3.0%,2.5%,2.5%
+Fri Sep 30,09:00,GMT,eur,EUR Euro-Zone Unemployment Rate,Medium,10.0%,10.0%,10.0%
+Fri Sep 30,09:00,GMT,eur,EUR Italian Consumer Price Index (NIC incl. tobacco) (MoM),Low,0.1%,-0.1%,0.3%
+Fri Sep 30,09:00,GMT,eur,EUR Italian Consumer Price Index (NIC incl. tobacco) (YoY),Low,3.1%,2.9%,2.8%
+Fri Sep 30,09:00,GMT,eur,EUR Italian Consumer Price Index - EU Harmonized (MoM),Low,1.9%,1.0%,0.4%
+Fri Sep 30,09:00,GMT,eur,EUR Italian Consumer Price Index - EU Harmonized (YoY),Low,3.5%,2.7%,2.3%
+Fri Sep 30,09:30,GMT,chf,CHF KOF Swiss Leading Indicator,Medium,1.21,1.30,1.61
+Fri Sep 30,10:00,GMT,eur,EUR Italian Producer Price Index (MoM),Low,0.1%,0.1%,0.3%
+Fri Sep 30,10:00,GMT,eur,EUR Italian Producer Price Index (YoY),Low,4.8%,4.5%,4.9%
+Fri Sep 30,12:30,GMT,usd,USD Personal Income,Medium,-0.1%,0.1%,0.3%
+Fri Sep 30,12:30,GMT,cad,CAD Gross Domestic Product (MoM) (JUL),High,0.3%,0.3%,0.2%
+Fri Sep 30,12:30,GMT,usd,USD Personal Spending,Medium,0.2%,0.2%,0.8%
+Fri Sep 30,12:30,GMT,cad,CAD Gross Domestic Product (YoY),High,2.3%,2.3%,2.1%
+Fri Sep 30,12:30,GMT,usd,USD Personal Consumption Expenditure Deflator (YoY),Low,2.9%,2.9%,2.8%
+Fri Sep 30,12:30,GMT,usd,USD Personal Consumption Expenditure Core (MoM),Medium,0.1%,0.2%,0.2%
+Fri Sep 30,12:30,GMT,usd,USD Personal Consumption Expenditure Core (YoY),Low,1.6%,1.7%,1.6%
+Fri Sep 30,13:45,GMT,usd,USD Chicago Purchasing Manager,Low,60.4,55.0,56.5
+Fri Sep 30,13:55,GMT,usd,USD U. of Michigan Confidence,High,59.4,57.8,57.8
+Fri Sep 30,14:00,GMT,usd,USD NAPM-Milwaukee,Low,55.4,57.2,58.3
+Fri Sep 30,15:00,GMT,USD,USD Fed's Bullard to Speak in San Diego,LOW,,,
+Sat Oct 01,01:00,GMT,cny,CNY PMI Manufacturing,High,51.2,51.1,50.9

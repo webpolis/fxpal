@@ -1,0 +1,134 @@
+Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Sun Jul 6,23:30,GMT,jpy,JPY Official Reserve Assets,Low,$1283.9B,,$1283.9B
+Sun Jul 6,23:30,GMT,aud,AUD AiG Performance of Construction Index,Medium,51.8,,46.7
+Mon Jul 7,00:00,GMT,nzd,NZD QV House Prices (YoY),Low,8.0%,,8.2%
+Mon Jul 7,01:30,GMT,aud,AUD ANZ Job Advertisements (MoM),Low,4.3%,,-5.7%
+Mon Jul 7,05:00,GMT,jpy,JPY Leading Index,Medium,105.7,105.9,106.5
+Mon Jul 7,05:00,GMT,jpy,JPY Coincident Index,Medium,111.1,111,111.1
+Mon Jul 7,05:45,GMT,chf,CHF Unemployment Rate s.a.,Medium,3.2%,3.2%,3.2%
+Mon Jul 7,05:45,GMT,chf,CHF Unemployment Rate,Medium,2.9%,2.9%,3.0%
+Mon Jul 7,06:00,GMT,eur,EUR German Industrial Production n.s.a. and w.d.a. (YoY),Medium,1.3%,3.6%,1.3%
+Mon Jul 7,06:00,GMT,eur,EUR German Industrial Production s.a. (MoM),Low,-1.8%,0.0%,-0.3%
+Mon Jul 7,06:30,GMT,aud,AUD Foreign Reserves (Australian dollar),Low,A$62.9B,,A$65.1B
+Mon Jul 7,07:00,GMT,chf,CHF Foreign Currency Reserves,Low,449.6B,445.0B,444.4B
+Mon Jul 7,08:30,GMT,gbp,GBP Lloyds Employment Confidence,Low,1,,4
+Mon Jul 7,08:30,GMT,eur,EUR Euro-Zone Sentix Investor Confidence,Low,10.1,7.8,8.5
+Mon Jul 7,09:00,GMT,EUR,EUR Bank of Italy Report on Balance-Sheet Aggregates,Low,,,
+Mon Jul 7,12:30,GMT,cad,CAD Building Permits (MoM),Low,13.8%,2.0%,2.2%
+Mon Jul 7,14:00,GMT,cad,CAD Ivey Purchasing Managers Index s.a.,Medium,46.9,52.0,48.2
+Mon Jul 7,14:30,GMT,cad,CAD Business Outlook Future Sales,Low,24,30,27
+Mon Jul 7,14:30,GMT,cad,CAD Band of Canda Senior Loan Officer Survey,Low,-12.8,,-10.9
+Mon Jul 7,22:00,GMT,nzd,NZD NZIER Business Opinion Survey,Low,32,,52
+Mon Jul 7,23:30,GMT,aud,AUD ANZ Roy Morgan Weekly Consumer Confidence Index,Low,105.1,,105.4
+Mon Jul 7,23:50,GMT,jpy,JPY Trade Balance - BOP Basis (Yen),Medium,-¥675.9B,-¥822.5B,-¥780.4B
+Mon Jul 7,23:50,GMT,jpy,JPY Bank Lending incl Trusts (YoY),Medium,2.3%,2.2%,2.2%
+Mon Jul 7,23:50,GMT,jpy,JPY Current Account Total (Yen),Low,¥522.8B,¥417.5B,¥187.4B
+Mon Jul 7,23:50,GMT,jpy,JPY Adjusted Current Account Total (Yen),Low,¥384.6B,¥158.1B,¥130.5B
+Mon Jul 7,23:50,GMT,jpy,JPY Bank Lending Banks ex-Trust,Low,2.5%,,2.4%
+Tue Jul 8,01:30,GMT,aud,AUD NAB Business Confidence,Medium,8,,7
+Tue Jul 8,01:30,GMT,aud,AUD NAB Business Conditions,Low,2,,-1
+Tue Jul 8,03:45,GMT,JPY,JPY BOJ Deputy Governor Nakaso Speaks in Tokyo,Low,,,
+Tue Jul 8,05:00,GMT,jpy,JPY Eco Watchers Survey: Outlook,Medium,53.3,54.5,53.8
+Tue Jul 8,05:00,GMT,jpy,JPY Eco Watchers Survey: Current,Medium,47.7,48.9,45.1
+Tue Jul 8,06:00,GMT,eur,EUR German Trade Balance (euros),Medium,18.8B,16.2B,17.2B
+Tue Jul 8,06:00,GMT,eur,EUR German Current Account (euros),Low,13.2B,14.5B,16.9B
+Tue Jul 8,06:00,GMT,eur,EUR German Exports s.a. (MoM),Low,-1.1%,-0.4%,2.6%
+Tue Jul 8,06:00,GMT,eur,EUR German Imports s.a. (MoM),Low,-3.4%,0.5%,0.2%
+Tue Jul 8,06:00,GMT,jpy,JPY Bankruptcies (YoY),Medium,-3.56%,,-20.2%
+Tue Jul 8,07:15,GMT,chf,CHF Consumer Price Index (MoM),Low,-0.1%,0.1%,0.3%
+Tue Jul 8,07:15,GMT,chf,CHF Consumer Price Index (YoY),Medium,0.0%,0.2%,0.2%
+Tue Jul 8,07:15,GMT,chf,CHF CPI EU Harmonized (MoM),Low,-0.1%,0.0%,0.1%
+Tue Jul 8,07:15,GMT,chf,CHF CPI EU Harmonized (YoY),Medium,-0.1%,0.0%,0.2%
+Tue Jul 8,07:15,GMT,chf,CHF Retail Sales (Real) (YoY),Medium,-0.6%,,0.8%
+Tue Jul 8,08:30,GMT,gbp,GBP Manufacturing Production (MoM),Low,-1.3%,0.4%,0.3%
+Tue Jul 8,08:30,GMT,gbp,GBP Manufacturing Production (YoY),Medium,3.7%,5.6%,4.3%
+Tue Jul 8,08:30,GMT,gbp,GBP Industrial Production (MoM),Low,-0.7%,0.3%,0.8%
+Tue Jul 8,08:30,GMT,gbp,GBP Industrial Production (YoY),Medium,2.3%,3.2%,2.9%
+Tue Jul 8,11:30,GMT,gbp,GBP NFIB Small Business Optimism,Low,95.0,97.0,96.6
+Tue Jul 8,14:00,GMT,usd,USD JOLTS Job Openings,Low,4635,4350,4464
+Tue Jul 8,14:00,GMT,gbp,GBP NIESR Gross Domestic Product Estimate,Medium,0.9%,,0.7%
+Tue Jul 8,17:45,GMT,USD,USD Fed's Kocherlakota Speaks on Monetary Policy in Minneapolis,Low,,,
+Tue Jul 8,19:00,GMT,usd,USD Consumer Credit,Medium,$19.6B,$20.000B,$26.115B
+Tue Jul 8,22:45,GMT,nzd,NZD NZ Card Spending (MoM),Low,0.5%,,1.8%
+Tue Jul 8,22:45,GMT,nzd,NZD Card Spending Retail (MoM),Low,0.0%,0.2%,1.2%
+Tue Jul 8,23:00,GMT,AUD,AUD RBA's Manning Speech in Sydney,Low,,,
+Tue Jul 8,23:01,GMT,gbp,GBP BRC Shop Price Index (YoY),Low,-1.8%,,-1.4%
+Tue Jul 8,23:50,GMT,jpy,JPY Japan Money Stock M3 (YoY),Low,2.4%,2.5%,2.6%
+Tue Jul 8,23:50,GMT,jpy,JPY Japan Money Stock M2+CD (YoY),Low,3.0%,3.0%,3.3%
+Wed Jul 9,00:30,GMT,aud,AUD Westpac Consumer Conf Index,Medium,94.9,,93.2
+Wed Jul 9,00:30,GMT,aud,AUD Westpac Consumer Confidence,Medium,1.9%,,0.2%
+Wed Jul 9,01:30,GMT,cny,CNY Producer Price Index (YoY),High,-1.1%,-1.0%,-1.4%
+Wed Jul 9,01:30,GMT,cny,CNY Consumer Price Index (YoY),High,2.3%,2.4%,2.5%
+Wed Jul 9,06:00,GMT,jpy,JPY Machine Tool Orders (YoY),Medium,34.2%,,24.1%
+Wed Jul 9,07:00,GMT,gbp,Halifax House Price 3 Month (YoY) ,Low,8.8%,8.9%,8.7%
+Wed Jul 9,07:00,GMT,gbp,Halifax House Prices (MoM) (Jun),Low,-0.6%,-0.3%,4.0%
+Wed Jul 9,11:00,GMT,usd,USD MBA Mortgage Applications,Medium,1.9%,,-0.2%
+Wed Jul 9,12:15,GMT,cad,CAD Housing Starts,Medium,198.2K,190.0K,198.3K
+Wed Jul 9,14:30,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,-2370K,-2500K,-3155K
+Wed Jul 9,14:30,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,579k,-400K,-1235K
+Wed Jul 9,14:30,GMT,usd,USD DOE Cushing OK Crude Inventory,Low,447K,,-1359K
+Wed Jul 9,14:30,GMT,usd,USD DOE U.S. Distillate Inventory,Low,227K,1400K,975K
+Wed Jul 9,18:00,GMT,USD,USD Fed Releases Minutes from June 17-18 FOMC Meeting,High,,,
+Wed Jul 9,22:00,GMT,nzd,NZD ANZ Truckometer Heavy (MoM),Low,-0.8%,,-2.0%
+Wed Jul 9,22:30,GMT,nzd,NZD Business NZ Performance of Manufacturing Index,Medium,53.3,,52.6
+Wed Jul 9,23:01,GMT,gbp,GBP RICS House Price Balance,Low,53%,55%,56%
+Wed Jul 9,23:50,GMT,JPY,JPY Domestic Corporate Goods Price Index (MoM),Low,0.2%,0.1%,0.3%
+Wed Jul 9,23:50,GMT,JPY,JPY Domestic Corporate Goods Price Index (YoY),Low,4.6%,4.5%,4.4%
+Wed Jul 9,23:50,GMT,jpy,JPY Machine Orders (MoM),Low,-19.5%,0.7%,-9.1%
+Wed Jul 9,23:50,GMT,jpy,JPY Japan Buying Foreign Stocks (Yen),Medium,¥163.8B,,¥96.4B
+Wed Jul 9,23:50,GMT,jpy,JPY Foreign Buying Japan Bonds (Yen),Low,¥301.8B,,-¥117.7B
+Wed Jul 9,23:50,GMT,jpy,JPY Tertiary Industry Index (MoM),Medium,0.9%,1.7%,-5.7%
+Wed Jul 9,23:50,GMT,jpy,JPY Machine Orders (YoY),Medium,-14.3%,10.1%,17.6%
+Wed Jul 9,23:50,GMT,jpy,JPY Japan Buying Foreign Bonds (Yen),Medium,-¥287.1B,,-¥1046.1B
+Wed Jul 9,23:50,GMT,jpy,JPY Foreign Buying Japan Stocks (Yen),Low,¥330.9B,,-¥32.5B
+Thu Jul 10,01:30,GMT,aud,AUD Employment Change,High,15.9K,12.0K,-5.1K
+Thu Jul 10,01:30,GMT,aud,AUD Unemployment Rate,High,6%,5.9%,5.9%
+Thu Jul 10,01:30,GMT,aud,AUD Full Time Employment Change,Medium,-3800,,22.2K
+Thu Jul 10,01:30,GMT,AUD,AUD Participation Rate,Low,64.7%,64.6%,64.6%
+Thu Jul 10,01:30,GMT,aud,AUD Part Time Employment Change,Low,19.7K,,-27.2K
+Thu Jul 10,02:00,GMT,cny,CNY Exports (YoY),Low,7.2%,10.4%,7.0%
+Thu Jul 10,02:00,GMT,cny,CNY Imports (YoY),Low,5.5%,6.0%,-1.6%
+Thu Jul 10,02:00,GMT,jpy,JPY Tokyo Avg Office Vacancies,Low,6.45,,6.52
+Thu Jul 10,02:00,GMT,cny,CNY Trade Balance,Medium,$31.60B,$36.95B,$35.92B
+Thu Jul 10,05:00,GMT,jpy,JPY Consumer Confidence Index,Medium,41.1,40.0,39.3
+Thu Jul 10,08:00,GMT,EUR,EUR ECB Publishes Monthly Report,High,,,
+Thu Jul 10,08:30,GMT,gbp,GBP Total Trade Balance (Pounds),Medium,-£9.2B,-£1600,-£2052
+Thu Jul 10,08:30,GMT,gbp,GBP Visible Trade Balance (Pounds),Medium,-£9204,-£8750,-£8812
+Thu Jul 10,08:30,GMT,gbp,GBP Trade Balance Non EU (Pounds),Medium,-£4B,-£3500,-£3876
+Thu Jul 10,11:00,GMT,gbp,GBP BOE Asset Purchase Target,High,375B,375B,375B
+Thu Jul 10,11:00,GMT,gbp,GBP Bank of England Rate Decision,High,0.5%,0.50%,0.50%
+Thu Jul 10,12:30,GMT,cad,CAD New Housing Price Index (YoY),Medium,1.5%,,1.6%
+Thu Jul 10,12:30,GMT,usd,USD Continuing Claims,Low,2584K,2565K,2574K
+Thu Jul 10,12:30,GMT,cad,CAD New Housing Price Index (MoM),Low,0.1%,0.2%,0.2%
+Thu Jul 10,12:30,GMT,usd,USD Initial Jobless Claims,Medium,304K,315K,315K
+Thu Jul 10,14:00,GMT,usd,USD Wholesale Inventories,Low,0.5%,0.6%,1.0%
+Thu Jul 10,14:00,GMT,usd,USD Wholesale Trade Sales (MoM),Low,0.7%,0.9%,1.3%
+Thu Jul 10,14:30,GMT,usd,USD EIA Natural Gas Storage Change,Low,93,89,100
+Thu Jul 10,14:30,GMT,usd,USD EIA Natural Working Gas Implied Flow,Low,93,,100
+Thu Jul 10,17:15,GMT,USD,"USD Fed's George Speaks on U.S. Economy in Shawnee, Oklahoma",Low,,,
+Thu Jul 10,22:45,GMT,NZD,NZD Food Prices (MoM),Low,1.4%,,0.6%
+Fri Jul 11,,,nzd,NZD REINZ Housing Price Index,Low,,,3925.1
+Fri Jul 11,,,cny,CNY Money Supply M1 (YoY),Low,,6.2%,5.7%
+Fri Jul 11,,,cny,CNY Money Supply M2 (YoY),Low,,13.5%,13.4%
+Fri Jul 11,,,cny,CNY New Yuan Loans,High,,950.0B,870.8B
+Fri Jul 11,,,cny,CNY Aggregate Financing RMB,Medium,,1400.0B,1404.5B
+Fri Jul 11,,,cny,CNY Foreign Reserves,Low,,$3980.0B,$3948.1B
+Fri Jul 11,,,cny,CNY Money Supply M0 (YoY),Low,,7.0%,6.7%
+Fri Jul 11,,,nzd,NZD REINZ House Price Index (MoM),Low,,,-1.2%
+Fri Jul 11,01:30,GMT,aud,AUD Home Loans,Medium,0.0%,-0.5%,-0.2%
+Fri Jul 11,01:30,GMT,aud,AUD Investment Lending,Low,-0.9%,,1.3%
+Fri Jul 11,01:30,GMT,aud,AUD Value of Loans (MoM),Low,-0.7%,,1.3%
+Fri Jul 11,03:00,GMT,nzd,NZD Non Resident Bond Holdings,Low,64.2%,,64.6%
+Fri Jul 11,06:00,GMT,eur,EUR German Consumer Price Index (YoY),Medium,1.0%,1.0%,1.0%
+Fri Jul 11,06:00,GMT,eur,EUR German Consumer Price Index - EU Harmonised (YoY),Medium,1.0%,1.0%,1.0%
+Fri Jul 11,06:00,GMT,eur,EUR German Consumer Price Index (MoM),Low,0.3%,0.3%,0.3%
+Fri Jul 11,06:00,GMT,eur,EUR German Consumer Price Index - EU Harmonised (MoM),Low,0.4%,0.4%,0.4%
+Fri Jul 11,08:30,GMT,gbp,GBP Construction Output s.a. (MoM),Low,-1.1%,0.9%,1.2%
+Fri Jul 11,08:30,GMT,gbp,GBP Construction Output s.a. (YoY),Medium,3.5%,5.6%,4.6%
+Fri Jul 11,12:30,GMT,cad,CAD Net Change in Employment,High,-9.4K,20.0K,25.8K
+Fri Jul 11,12:30,GMT,cad,CAD Full Time Employment Change,Medium,33.5,,-29.1
+Fri Jul 11,12:30,GMT,cad,CAD Part Time Employment Change,Low,-43.0,,54.9
+Fri Jul 11,12:30,GMT,cad,CAD Unemployment Rate,High,7.1%,7.0%,7.0%
+Fri Jul 11,12:30,GMT,cad,CAD Participation Rate,Low,66.1,,66.1
+Fri Jul 11,18:00,GMT,USD,USD Monthly Budget Statement,Medium,$71.0B,$79.0B,
+Fri Jul 11,18:45,GMT,USD,"USD Fed's Lockhart, Evans to Speak on U.S. Economy in Jackson Hole",Low,,,

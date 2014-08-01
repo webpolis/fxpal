@@ -52,36 +52,60 @@ var mergeCalendars = function() {
         });
         parser.on('readable', function() {
             var row = null;
-            while (row = parser.read()) {
-                // normalize fields
-                var o = {};
-                for (var p in row) {
-                    var pp = p.toLowerCase();
-                    if (/description/i.test(p)) {
-                        pp = 'event';
+            try {
+                while (row = parser.read()) {
+                    // normalize fields
+                    var o = {}, lastP = null,
+                        keys = Object.keys(row),
+                        ix = keys.indexOf('undefined');
+                    if (ix !== -1) {
+                        row[keys[ix - 1]] = row[keys[ix - 1]] + '.' + row[keys[ix]];
+                        delete row[keys[ix]];
                     }
-                    o[pp] = /event/i.test(pp) ? string.normalizeEventName(row[p], row.Currency.toUpperCase()) : row[p];
+                    if (Object.keys(row).length > 9) {
+                        continue;
+                    }
+                    for (var p in row) {
+                        try {
+                            var pp = p.toLowerCase();
+                            if (/description/i.test(p)) {
+                                pp = 'event';
+                            } else if (/actual|forecast|previous/gi.test(p)) {
+                                // normalize numbers
+                                row[p] = row[p] ? parseFloat(row[p].replace(/[^\d\.\,\-\+]+/g, '').replace(/\,/g, '.')) : null;
+                            }
+                            var curr = row.Currency || row.currency;
+                            o[pp] = /event/i.test(pp) ? string.normalizeEventName(row[p], curr.toUpperCase()) : row[p];
+                        } catch (err) {
+                            console.log('a: ' + err);
+                        }
+                    }
+                    try {
+                        var date = moment([o.date, year, o.time, o['time zone']].join(' '));
+                        o.currency = o.currency.toUpperCase();
+                        o.timestamp = date.valueOf();
+                        o.date = moment(o.timestamp).format('YYYY-MM-DD');
+                        o.event = o.event ? o.event : null;
+                    } catch (err) {
+                        console.log('b: ' + err);
+                    }
+                    delete o.time;
+                    delete o['time zone'];
+                    if (!o.actual ||  o.actual === '' || /\d{4}\_(?:\d{2}\_){2}/gi.test(o.event)) {
+                        continue;
+                    } else if (!(/low|medium|high/gi.test(o.importance)) || !(/[\d\.\-\+]+/g.test(o.actual))) {
+                        continue;
+                    } else {
+                        dataCalendars.push(o);
+                        dataEvents.push(o.currency + '|' + o.event);
+                    }
                 }
-                var date = moment([o.date, year, o.time, o['time zone']].join(' '));
-                o.currency = o.currency.toUpperCase();
-                o.timestamp = date.valueOf();
-                o.date = moment(o.timestamp).format('YYYY-MM-DD');
-                o.event = o.event ? o.event : null;
-                // normalize numbers
-                o.actual = o.actual ? parseFloat(o.actual.replace(/[^\d\%\.\,\-]+/g, '')) : null;
-                o.forecast = o.forecast ? parseFloat(o.forecast.replace(/[^\d\%\.\,\-]+/g, '')) : null;
-                o.previous = o.previous ? parseFloat(o.previous.replace(/[^\d\%\.\,\-]+/g, '')) : null;
-                delete o.time;
-                delete o['time zone'];
-                if (!o.actual ||  o.actual === '' ||  /\d{4}\_(?:\d{2}\_){2}/gi.test(o.event)) {
-                    continue;
-                } else {
-                    dataCalendars.push(o);
-                    dataEvents.push(o.currency + '|' + o.event);
-                }
+            } catch (err) {
+                console.log('c: ' + err);
             }
         });
         parser.on('error', function(err) {
+            console.log(calendar);
             console.log(err.message);
         });
         parser.on('finish', function() {

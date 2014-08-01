@@ -1,0 +1,148 @@
+Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Sun Feb 2,22:30,GMT,aud,AUD AiG Performance of Manufacturing Index,Medium,46.7,,47.6
+Sun Feb 2,23:00,GMT,aud,AUD RPData/Rismark House Px (MoM),Low,1.2%,,1.4%
+Sun Feb 2,23:30,GMT,aud,AUD TD Securities Inflation (MoM),Low,0.1%,,0.7%
+Sun Feb 2,23:30,GMT,aud,AUD TD Securities Inflation (YoY),Low,2.5%,,2.7%
+Mon Feb 3,00:01,GMT,gbp,GBP Hometrack Housing Survey (MoM),Low,0.3%,,0.5%
+Mon Feb 3,00:01,GMT,gbp,GBP Hometrack Housing Survey (YoY),Low,4.8%,,4.4%
+Mon Feb 3,00:30,GMT,aud,AUD Building Approvals (MoM),Low,-2.9%,-0.5%,-0.3%
+Mon Feb 3,00:30,GMT,aud,AUD Building Approvals (YoY),Low,21.8%,23.4%,23.6%
+Mon Feb 3,00:30,GMT,aud,AUD ANZ Job Advertisements (MoM),Low,-0.3%,,-0.8%
+Mon Feb 3,01:00,GMT,cny,CNY Non-manufacturing PMI,Medium,53.4,,54.6
+Mon Feb 3,05:00,GMT,jpy,JPY Vehicle Sales (YoY),Low,27.5%,,18.7%
+Mon Feb 3,05:30,GMT,aud,AUD RBA Commodity Index SDR (YoY),Low,-9.9%,,-3.6%
+Mon Feb 3,05:30,GMT,aud,AUD Commodity Index AUD,Low,91.5,,92.5
+Mon Feb 3,08:30,GMT,chf,CHF procure.ch Purchasing Managers Index,Medium,56.1,55.0,55.0
+Mon Feb 3,08:45,GMT,eur,EUR Italian Purchasing Manager Index Manufacturing,Low,53.1,53.2,53.3
+Mon Feb 3,08:50,GMT,eur,EUR French Purchasing Manager Index Manufacturing,Low,49.3,48.8,48.8
+Mon Feb 3,08:55,GMT,eur,EUR German Purchasing Manager Index Manufacturing,Medium,56.5,56.3,56.3
+Mon Feb 3,09:00,GMT,eur,EUR Euro-Zone Purchasing Manager Index Manufacturing,Medium,54.0,53.9,53.9
+Mon Feb 3,09:30,GMT,gbp,GBP Purchasing Manager Index Manufacturing,Medium,56.7,57.3,57.2
+Mon Feb 3,13:30,GMT,cad,CAD Industrial Product Price (MoM),Low,0.7%,0.3%,0.2%
+Mon Feb 3,13:30,GMT,cad,CAD Raw Materials Price Index (MoM),Low,1.9%,2.0%,-4.2%
+Mon Feb 3,13:58,GMT,usd,USD Markit US PMI Final,Low,53.7,53.9,53.7
+Mon Feb 3,15:00,GMT,usd,USD ISM Manufacturing,High,51.3,56.0,56.5
+Mon Feb 3,15:00,GMT,usd,USD Construction Spending (MoM),Medium,0.1%,0.0%,0.8%
+Mon Feb 3,15:00,GMT,usd,USD ISM Prices Paid,Medium,60.5,54.0,53.5
+Mon Feb 3,20:34,GMT,usd,USD Domestic Vehicle Sales,Low,11.94M,11.90M,11.65M
+Mon Feb 3,20:35,GMT,usd,USD Total Vehicle Sales,Low,15.16M,15.70M,15.30M
+Mon Feb 3,23:50,GMT,jpy,JPY Monetary Base End of period,Medium,¥200.9T,,¥201.8T
+Mon Feb 3,23:50,GMT,jpy,JPY Monetary Base (YoY),Low,51.9%,,46.6%
+Tue Feb 4,00:00,GMT,nzd,NZD ANZ Commodity Price,Low,1.2%,,1.0%
+Tue Feb 4,03:30,GMT,aud,AUD Reserve Bank of Australia Rate Decision,High,2.50%,2.50%,2.50%
+Tue Feb 4,09:30,GMT,gbp,GBP Purchasing Manager Index Construction,Medium,64.6,61.5,62.1
+Tue Feb 4,10:00,GMT,eur,EUR Euro-Zone Producer Price Index (YoY),Low,-0.8%,-0.8%,-1.2%
+Tue Feb 4,10:00,GMT,eur,EUR Euro-Zone Producer Price Index (MoM),Low,0.2%,0.2%,-0.1%
+Tue Feb 4,13:30,GMT,USD,"USD Fed's Lacker Speaks on the Economy in Winchester, Virginia",Low,,,
+Tue Feb 4,14:45,GMT,usd,USD ISM New York,Low,64.4,,63.8
+Tue Feb 4,15:00,GMT,usd,USD Factory Orders,Medium,-1.5%,-1.8%,1.5%
+Tue Feb 4,15:00,GMT,usd,USD IBD/TIPP Economic Optimism,Low,44.9,44.5,45.2
+Tue Feb 4,17:30,GMT,USD,USD Fed's Evans Speaks on Monetary Policy in Detroit,Low,,,
+Tue Feb 4,21:30,GMT,USD,USD API Weekly Statistical Bulletin,Low,,,
+Tue Feb 4,21:45,GMT,nzd,NZD Unemployment Rate,High,6.0%,6.0%,6.2%
+Tue Feb 4,21:45,GMT,nzd,NZD Average Hourly Earnings (QoQ),Low,0.3%,0.1%,1.6%
+Tue Feb 4,21:45,GMT,nzd,NZD Private Wages ex Overtime (QoQ),Low,0.6%,0.5%,0.4%
+Tue Feb 4,21:45,GMT,nzd,NZD Labor Cost Private Sector (QoQ),Low,0.6%,0.5%,0.4%
+Tue Feb 4,21:45,GMT,nzd,NZD Employment Change (QoQ),Medium,1.1%,0.6%,1.2%
+Tue Feb 4,21:45,GMT,nzd,NZD Employment Change (YoY),Medium,3.0%,2.4%,2.4%
+Tue Feb 4,21:45,GMT,nzd,NZD Participation Rate (QoQ),Low,68.9%,68.6%,68.6%
+Tue Feb 4,22:30,GMT,aud,AUD AiG Performance of Service Index,Medium,49.3,,46.1
+Wed Feb 5,00:01,GMT,gbp,GBP BRC Shop Price Index (YoY),Low,-1.0%,-0.7%,-0.8%
+Wed Feb 5,01:30,GMT,jpy,JPY Labor Cash Earnings (YoY),Low,0.8%,,0.6%
+Wed Feb 5,07:00,GMT,chf,CHF UBS Real Estate Bubble Index,Medium,1.23,,1.20
+Wed Feb 5,08:45,GMT,eur,EUR Italian Purchasing Manager Index Services,Low,49.4,48.9,47.9
+Wed Feb 5,08:50,GMT,eur,EUR French Purchasing Manager Index Services,Low,48.9,48.6,47.8
+Wed Feb 5,08:55,GMT,eur,EUR German Purchasing Manager Index Services,Medium,53.1,53.6,53.5
+Wed Feb 5,09:00,GMT,eur,EUR Euro-Zone Purchasing Manager Index Services,Medium,51.6,51.9,51.0
+Wed Feb 5,09:00,GMT,eur,EUR Euro-Zone Purchasing Manager Index Composite,Medium,52.9,53.2,52.1
+Wed Feb 5,09:30,GMT,gbp,GBP Purchasing Manager Index Services,Medium,58.3,59.0,58.8
+Wed Feb 5,09:30,GMT,gbp,GBP Official Reserves (Changes),Low,$431M,,-$536M
+Wed Feb 5,10:00,GMT,eur,EUR Euro-Zone Retail Sales (MoM),Low,-1.6%,-0.7%,0.9%
+Wed Feb 5,10:00,GMT,eur,EUR Euro-Zone Retail Sales (YoY),Medium,-1.0%,1.5%,1.3%
+Wed Feb 5,12:00,GMT,usd,USD MBA Mortgage Applications,Low,0.4%,,-0.2%
+Wed Feb 5,13:15,GMT,usd,USD ADP Employment Change,Medium,175K,185K,227K
+Wed Feb 5,13:30,GMT,cad,CAD Building Permits (MoM),Low,-4.1%,1.5%,-6.6%
+Wed Feb 5,15:00,GMT,usd,USD ISM Non-Manufacutring Composite,Medium,54.0,53.7,53.0
+Wed Feb 5,15:30,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,440K,2550K,6421K
+Wed Feb 5,15:30,GMT,usd,USD DOE Cushing OK Crude Inventory,Low,-1553K,,237K
+Wed Feb 5,15:30,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,505K,1150K,-819K
+Wed Feb 5,15:30,GMT,usd,USD DOE U.S. Distillate Inventory,Low,-2360K,-2500K,-4584K
+Wed Feb 5,17:30,GMT,USD,"USD Fed's Plosser Speaks on Economic Outlook in Rochester, NY",Low,,,
+Wed Feb 5,18:40,GMT,USD,"USD Fed's Lockhart Speaks on Economy in Birmingham, Alabama",Low,,,
+Wed Feb 5,23:50,GMT,jpy,JPY Japan Buying Foreign Bonds (Yen),Medium,-¥1815.8B,,-¥357.0B
+Wed Feb 5,23:50,GMT,jpy,JPY Japan Buying Foreign Stocks (Yen),Medium,-¥107.1B,,-¥152.6B
+Wed Feb 5,23:50,GMT,jpy,JPY Foreign Buying Japan Bonds (Yen),Low,¥155.8B,,¥623.3B
+Wed Feb 5,23:50,GMT,jpy,JPY Foreign Buying Japan Stocks (Yen),Low,-¥751.9B,,-¥154.6B
+Thu Feb 6,00:30,GMT,aud,AUD Trade Balance (Australian dollar),Medium,468M,-200M,83M
+Thu Feb 6,00:30,GMT,aud,AUD Retail Sales s.a. (MoM),Medium,0.5%,0.5%,0.7%
+Thu Feb 6,00:30,GMT,aud,AUD Retail Sales Ex Inflation(QoQ),Low,0.9%,1.2%,0.8%
+Thu Feb 6,00:30,GMT,aud,AUD NAB Business Confidence,Medium,8,,5
+Thu Feb 6,01:30,GMT,jpy,JPY BoJ Deputy Governor Iwata Speech & Press Conference,Low,,,
+Thu Feb 6,02:00,GMT,jpy,JPY Tokyo Avg Office Vacancies,Low,7.18,,7.34
+Thu Feb 6,06:45,GMT,chf,CHF SECO Consumer Confidence,Medium,2,-1,-5
+Thu Feb 6,07:00,GMT,chf,CHF Trade Balance (Swiss franc),Medium,0.50B,,2.03B
+Thu Feb 6,07:00,GMT,chf,CHF Exports (MoM),Low,0.9%,,3.0%
+Thu Feb 6,07:00,GMT,chf,CHF Imports (MoM),Low,1.2%,,6.5%
+Thu Feb 6,08:00,GMT,gbp,GBP Halifax Plc House Prices s.a. (MoM),Low,1.1%,1.0%,-0.5%
+Thu Feb 6,08:00,GMT,gbp,GBP Halifax House Price (3MoY),Low,7.3%,7.2%,7.5%
+Thu Feb 6,09:00,GMT,gbp,GBP New Car Registrations (YoY),Low,7.6%,,23.8%
+Thu Feb 6,11:00,GMT,eur,EUR German Factory Orders s.a. (MoM),Low,-0.5%,0.2%,2.4%
+Thu Feb 6,11:00,GMT,eur,EUR German Factory Orders n.s.a. (YoY),Medium,6.0%,6.3%,7.2%
+Thu Feb 6,12:00,GMT,gbp,GBP Bank of England Rate Decision,High,0.50%,0.50%,0.50%
+Thu Feb 6,12:00,GMT,gbp,GBP BOE Asset Purchase Target,High,375B,375B,375B
+Thu Feb 6,12:30,GMT,usd,USD Challenger Job Cuts (YoY),Low,11.6%,,-5.9%
+Thu Feb 6,12:30,GMT,usd,USD RBC Consumer Outlook Index,Low,50.4,,51.5
+Thu Feb 6,12:45,GMT,eur,EUR ECB Deposit Facility Rate,Medium,0.00%,0.00%,0.00%
+Thu Feb 6,12:45,GMT,eur,EUR European Central Bank Rate Decision,High,0.25%,0.25%,0.25%
+Thu Feb 6,12:45,GMT,eur,EUR ECB Marginal Lending Facility,Medium,0.75%,0.75%,0.75%
+Thu Feb 6,13:30,GMT,cad,CAD International Merchandise Trade (Canadian dollar),Low,-1.66B,-0.65B,-1.53B
+Thu Feb 6,13:30,GMT,usd,USD Non-Farm Productivity,Low,3.2%,2.8%,3.6%
+Thu Feb 6,13:30,GMT,usd,USD Initial Jobless Claims,Medium,331K,335K,351K
+Thu Feb 6,13:30,GMT,usd,USD Trade Balance,Medium,-$38.7B,-$36.0B,-$34.6B
+Thu Feb 6,13:30,GMT,usd,USD Unit Labor Costs,Low,-1.6%,-0.7%,-2.0%
+Thu Feb 6,13:30,GMT,usd,USD Continuing Claims,Medium,2964K,2998K,2949K
+Thu Feb 6,13:30,GMT,eur,EUR ECB's Draghi Holds Press Conference,High,,,
+Thu Feb 6,15:00,GMT,cad,CAD Ivey Purchasing Managers Index SA,Medium,56.8,51.0,46.3
+Thu Feb 6,15:30,GMT,usd,USD EIA Natural Gas Storage Change,Low,-262,-273,-238
+Thu Feb 6,22:30,GMT,aud,AUD AiG Performance of Construction Index,Medium,48.2,,50.8
+Thu Feb 6,22:30,GMT,USD,"USD Fed's Rosengren Speaks at New College in Sarasota, Florida",Low,,,
+Thu Feb 6,23:50,GMT,jpy,JPY Official Reserve Assets,Low,$1277.1B,,$1266.8B
+Fri Feb 7,00:30,GMT,AUD,AUD RBA Statement on Monetary Policy,Medium,,,
+Fri Feb 7,01:45,GMT,cny,CNY HSBC/Markit Services PMI,Medium,50.7,,50.9
+Fri Feb 7,05:00,GMT,jpy,JPY Coincident Index,Medium,111.7,111.5,110.7
+Fri Feb 7,05:00,GMT,jpy,JPY Leading Index,Medium,112.1,111.9,111.0
+Fri Feb 7,05:30,GMT,aud,AUD Foreign Reserves (Australian dollar),Low,A$53.3B,,A$59.5B
+Fri Feb 7,07:00,GMT,eur,EUR German Trade Balance (euros),Medium,14.2B,17.3B,19.1B
+Fri Feb 7,07:00,GMT,eur,EUR German Current Account (euros),Low,23.5B,21.5B,23.3B
+Fri Feb 7,07:00,GMT,eur,EUR German Exports s.a. (MoM),Low,-0.9%,0.8%,0.7%
+Fri Feb 7,07:00,GMT,eur,EUR German Imports s.a. (MoM),Low,-0.6%,0.9%,-2.3%
+Fri Feb 7,08:00,GMT,chf,CHF Foreign Currency Reserves,Low,437.7B,435.8B,435.2B
+Fri Feb 7,08:15,GMT,chf,CHF Retail Sales (Real) (YoY),Medium,2.3%,,4.2%
+Fri Feb 7,09:30,GMT,gbp,GBP Total Trade Balance (Pounds),Medium,-£1026,-£3000,-£3582
+Fri Feb 7,09:30,GMT,gbp,GBP Industrial Production (MoM),Low,0.4%,0.6%,-0.1%
+Fri Feb 7,09:30,GMT,gbp,GBP Industrial Production (YoY),Medium,1.8%,2.3%,2.1%
+Fri Feb 7,09:30,GMT,gbp,GBP Visible Trade Balance (Pounds),Medium,-£7717,-£9300,-£9783
+Fri Feb 7,09:30,GMT,gbp,GBP Trade Balance Non EU (Pounds),Low,-£2198,-£3100,-£3048
+Fri Feb 7,09:30,GMT,gbp,GBP Manufacturing Production (MoM),Low,0.3%,0.6%,-0.1%
+Fri Feb 7,09:30,GMT,gbp,GBP Manufacturing Production (YoY),Medium,1.5%,2.3%,2.2%
+Fri Feb 7,11:00,GMT,eur,EUR German Industrial Production s.a. (MoM),Low,-0.6%,0.3%,2.4%
+Fri Feb 7,11:00,GMT,eur,EUR German Industrial Production n.s.a. and w.d.a. (YoY),Medium,2.6%,3.5%,3.8%
+Fri Feb 7,13:30,GMT,usd,USD Change in Non-farm Payrolls,High,113K,180K,75K
+Fri Feb 7,13:30,GMT,usd,USD Change in Manufacturing Payrolls,Low,21K,10K,8K
+Fri Feb 7,13:30,GMT,usd,USD Average Hourly Earnings (YoY),Medium,1.9%,1.8%,1.9%
+Fri Feb 7,13:30,GMT,usd,USD Underemployment Rate,Medium,12.7%,,13.1%
+Fri Feb 7,13:30,GMT,USD,USD U.S. DOL Establishment Employment Survey Annual Revisions,Medium,,,
+Fri Feb 7,13:30,GMT,usd,USD Two-Month Payroll Net Revision,Medium,34K,,
+Fri Feb 7,13:30,GMT,usd,USD Change in Private Payrolls,Medium,142K,185K,89K
+Fri Feb 7,13:30,GMT,usd,USD Unemployment Rate,High,6.6%,6.7%,6.7%
+Fri Feb 7,13:30,GMT,usd,USD Average Hourly Earnings (MoM),Medium,0.2%,0.2%,0.0%
+Fri Feb 7,13:30,GMT,usd,USD Average Weekly Hours All Employees,Medium,34.4,34.4,34.4
+Fri Feb 7,13:30,GMT,usd,USD Change in Household Employment,Medium,638,,143
+Fri Feb 7,13:30,GMT,usd,USD Labor Force Participation Rate,Medium,63.0%,,62.8%
+Fri Feb 7,13:30,GMT,cad,CAD Unemployment Rate,High,7.0%,7.1%,7.2%
+Fri Feb 7,13:30,GMT,cad,CAD Net Change in Employment,High,29.4K,20.0K,-44.0K
+Fri Feb 7,13:30,GMT,cad,CAD Full Time Employment Change,Medium,50.5,,-56
+Fri Feb 7,13:30,GMT,cad,CAD Part Time Employment Change,Low,-21.1,,12.1
+Fri Feb 7,13:30,GMT,cad,CAD Participation Rate,Low,66.3,66.4,66.4
+Fri Feb 7,15:00,GMT,gbp,GBP NIESR Gross Domestic Product Estimate,High,0.8%,,0.7%
+Fri Feb 7,20:00,GMT,usd,USD Consumer Credit,Medium,$18.756B,$12.000B,$12.396B

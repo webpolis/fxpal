@@ -1,0 +1,145 @@
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
+Sun Oct 09,23:01,GMT,gbp,GBP Lloyds Employment Confidence,Low,-67,,-66
+Mon Oct 10,00:30,GMT,aud,AUD ANZ Job Advertisements (MoM),Low,-2.1%,,-0.7%
+Mon Oct 10,05:30,GMT,aud,Foreign Reserves (AUD),Low,44.9B,,43.8B
+Mon Oct 10,06:00,GMT,eur,EUR German Exports s.a. (MoM),Low,3.5%,1.1%,-1.2%
+Mon Oct 10,06:00,GMT,eur,EUR German Imports s.a. (MoM),Low,0.0%,0.6%,0.5%
+Mon Oct 10,06:00,GMT,eur,EUR German Trade Balance (euros),Medium,11.8B,9.0B,10.5B
+Mon Oct 10,06:00,GMT,eur,EUR German Current Account (euros),Low,7.0B,5.0B,7.8B
+Mon Oct 10,06:30,GMT,eur,EUR Bank of France Business Sentiment,Low,97,,98
+Mon Oct 10,06:45,GMT,eur,EUR French Industrial Production (MoM),Low,0.5%,-0.5%,1.8%
+Mon Oct 10,06:45,GMT,eur,EUR French Industrial Production (YoY),Low,4.4%,2.3%,3.7%
+Mon Oct 10,06:45,GMT,eur,EUR French Manufacturing Production (MoM),Low,0.7%,0.2%,1.8%
+Mon Oct 10,06:45,GMT,eur,EUR French Manufacturing Production (YoY),Low,5.1%,3.7%,4.3%
+Mon Oct 10,08:00,GMT,eur,EUR Italian Industrial Production s.a. (MoM),Low,4.3%,0.2%,-0.3%
+Mon Oct 10,08:00,GMT,eur,EUR Italian Industrial Production w.d.a. (YoY),Low,4.7%,-2.7%,-1.1%
+Mon Oct 10,08:00,GMT,eur,EUR Italian Industrial Production n.s.a. (YoY),Low,4.6%,,-4.2%
+Mon Oct 10,08:30,GMT,eur,EUR Euro-Zone Sentix Investor Confidence,Medium,-18.5,-18.0,-15.4
+Mon Oct 10,21:45,GMT,nzd,NZD NZ Card Spending (MoM),Medium,0.2%,,-0.5%
+Mon Oct 10,21:45,GMT,nzd,NZD NZ Card Spending - Retail (MoM),Medium,0.4%,1.1%,-0.5%
+Mon Oct 10,23:01,GMT,gbp,GBP RICS House Price Balance,Medium,-23%,-24%,-23%
+Mon Oct 10,23:01,GMT,gbp,GBP BRC Sales Like-For-Like (YoY),Low,0.3%,-0.9%,-0.6%
+Mon Oct 10,23:50,GMT,jpy,JPY Adjusted Current Account Total (Yen),Low,¥652.6B,¥509.9B,¥752.5B
+Mon Oct 10,23:50,GMT,jpy,JPY Current Account Total (Yen),¥Low,407.5B,¥453.6B,¥990.2B
+Mon Oct 10,23:50,GMT,jpy,JPY Current Account Balance (YoY),Low,-64.3%,-63.6%,-42.40%
+Mon Oct 10,23:50,GMT,jpy,JPY Trade Balance - BOP Basis (Yen),Medium,-¥694.7B,-¥692.3B,¥123.3B
+Tue Oct 11,00:30,GMT,aud,AUD NAB Business Confidence,Medium,-2,,-9
+Tue Oct 11,00:30,GMT,aud,AUD NAB Business Conditions,Low,2,,-3
+Tue Oct 11,04:30,GMT,jpy,JPY Bankruptcies (YoY),Medium,-9.2%,,-3.6%
+Tue Oct 11,05:00,GMT,jpy,JPY Consumer Confidence,Medium,38.6,37.2,37
+Tue Oct 11,05:00,GMT,JPY,JPY Bank of Japan Monthly Economic Report,HIGH,,,
+Tue Oct 11,06:00,GMT,jpy,JPY Eco Watchers Survey: Current,Medium,45.3,46.5,47.3
+Tue Oct 11,06:00,GMT,jpy,JPY Eco Watchers Survey: Outlook,Medium,46.4,,47.1
+Tue Oct 11,08:30,GMT,gbp,GBP Industrial Production (YoY),Medium,-1.0%,-1.1%,-0.9%
+Tue Oct 11,08:30,GMT,gbp,GBP Manufacturing Production (MoM),Low,-0.3%,-0.2%,0.2%
+Tue Oct 11,08:30,GMT,gbp,GBP DCLG UK House Prices (YoY),Low,-1.3%,,-1.5%
+Tue Oct 11,08:30,GMT,gbp,GBP Industrial Production (MoM),Low,0.2%,-0.2%,-0.4%
+Tue Oct 11,08:30,GMT,gbp,GBP Manufacturing Production (YoY),Medium,1.5%,1.6%,2.6%
+Tue Oct 11,11:30,GMT,usd,USD NFIB Small Business Optimism,Low,88.9,88.8,88.1
+Tue Oct 11,12:15,GMT,cad,CAD Housing Starts,Medium,205.9K,190.0K,191.9K
+Tue Oct 11,14:00,GMT,usd,USD IBD/TIPP Economic Optimism,Low,40.3,39.4,39.9
+Tue Oct 11,14:00,GMT,gbp,GBP NIESR Gross Domestic Product Estimate,Medium,0.5%,,0.2%
+Tue Oct 11,22:00,GMT,nzd,NZD REINZ Housing Price Index,Low,3279.2,,3223.7
+Tue Oct 11,22:00,GMT,nzd,NZD REINZ Housing Price Index (MoM),Low,1.7%,,0.5%
+Tue Oct 11,22:00,GMT,nzd,NZD REINZ House Sales (YoY),Medium,21.1%,,21.1%
+Tue Oct 11,23:00,GMT,nzd,NZD QV House Prices (YoY),Low,0.7%,,0.1%
+Tue Oct 11,23:30,GMT,aud,AUD Westpac Consumer Confidence,Medium,0.4%,,8.1%
+Tue Oct 11,23:30,GMT,aud,AUD Westpac Consumer Confidence s.a. (MoM),Low,97.2,,96.9
+Tue Oct 11,23:50,GMT,jpy,JPY Machine Orders (MoM),Medium,11.0%,3.9%,-8.2%
+Tue Oct 11,23:50,GMT,jpy,JPY Machine Orders (YoY),Medium,2.1%,-3.6%,4.0%
+Wed Oct 12,,,usd,USD Monthly Budget Statement,Medium,-$64.6B,-$64.0B,-$34.6B
+Wed Oct 12,00:30,GMT,aud,AUD Investment Lending,Low,1.8%,,1.9%
+Wed Oct 12,00:30,GMT,aud,AUD Home Loans,Medium,1.2%,1.0%,1.9%
+Wed Oct 12,00:30,GMT,aud,AUD Owner-Occupied Home Loans - Value (MoM),Low,0.6%,,1.8%
+Wed Oct 12,02:00,GMT,eur,EUR German Wholesale Price Index (YoY),Low,5.7%,,6.5%
+Wed Oct 12,02:00,GMT,eur,EUR German Wholesale Price Index (MoM),Low,0.3%,,0.1%
+Wed Oct 12,05:30,GMT,eur,EUR French Consumer Price Index (YoY),Low,2.2%,2.5%,2.2%
+Wed Oct 12,05:30,GMT,eur,EUR French Consumer Price Index Ex Tobacco Index,Low,122.49,122.91,122.59
+Wed Oct 12,05:30,GMT,eur,EUR French Consumer Price Index - EU Harmonised (MoM),Low,0.0%,0.1%,0.6%
+Wed Oct 12,05:30,GMT,eur,EUR French Consumer Price Index - EU Harmonised (YoY),Low,2.4%,2.6%,2.4%
+Wed Oct 12,05:30,GMT,eur,EUR French Consumer Price Index (MoM),Low,-0.1%,0.1%,0.5%
+Wed Oct 12,06:00,GMT,jpy,JPY Machine Tool Orders (YoY),Medium,20.3%,,15.2%
+Wed Oct 12,08:30,GMT,gbp,GBP Claimant Count Rate,Medium,5.0%,5.0%,4.9%
+Wed Oct 12,08:30,GMT,gbp,GBP Jobless Claims Change,High,17.5K,24.0K,19.1K
+Wed Oct 12,08:30,GMT,gbp,GBP ILO Unemployment Rate (3M),Medium,8.1%,8.0%,7.9%
+Wed Oct 12,08:30,GMT,gbp,GBP Average Weekly Earnings (3M/YoY),Medium,2.8%,2.8%,2.9%
+Wed Oct 12,08:30,GMT,gbp,GBP Weekly Earnings exBonus (3M/YoY),Low,1.8%,1.9%,2.1%
+Wed Oct 12,09:00,GMT,eur,EUR Euro-Zone Industrial Production w.d.a. (YoY),Medium,5.3%,2.1%,4.4%
+Wed Oct 12,09:00,GMT,eur,EUR Euro-Zone Industrial Production s.a. (MoM),Low,1.2%,-0.8%,1.1%
+Wed Oct 12,11:00,GMT,usd,USD MBA Mortgage Applications,Low,1.3%,,-4.3%
+Wed Oct 12,12:30,GMT,cad,CAD New Housing Price Index (MoM),Low,0.1%,0.1%,0.1%
+Wed Oct 12,12:30,GMT,cad,CAD New Housing Price Index (YoY),Low,2.3%,2.3%,2.3%
+Wed Oct 12,14:00,GMT,usd,USD JOLTs Job Openings,Low,3056,,3213
+Wed Oct 12,17:15,GMT,USD,USD Fed's Pianalto Speaks at University of Akron,LOW,,,
+Wed Oct 12,17:30,GMT,USD,USD Fed's Plosser Speaks on Economy in Philadelphia,LOW,,,
+Wed Oct 12,18:00,GMT,usd,USD Fed Releases Minutes of Sep. 20 FOMC Meeting,High,,,
+Wed Oct 12,21:30,GMT,nzd,NZD Business NZ Performance of Manufacturing Index,Medium,50.8,,52.7
+Wed Oct 12,21:45,GMT,nzd,NZD Food Prices (MoM),Low,-1.0%,,-1.3%
+Wed Oct 12,23:50,GMT,jpy,JPY Tertiary Industry Index (MoM),Medium,-0.2%,-0.3%,-0.1%
+Wed Oct 12,23:50,GMT,JPY,JPY BOJ to Publish Minutes of Sept. 6-7 Board Meeting,HIGH,,,
+Wed Oct 12,23:50,GMT,jpy,JPY Bank Lending Banks ex-Trust,Low,-0.3%,-0.5%,-0.5%
+Wed Oct 12,23:50,GMT,jpy,JPY Bank Lending incl Trusts (YoY),Low,-0.3%,,-0.5%
+Thu Oct 13,00:30,GMT,aud,AUD Employment Change,High,20.4K,10.0K,-10.5K
+Thu Oct 13,00:30,GMT,aud,AUD Unemployment Rate,High,5.2%,5.3%,5.3%
+Thu Oct 13,00:30,GMT,aud,AUD Full Time Employment Change,Medium,10.8K,,-13.5K
+Thu Oct 13,00:30,GMT,aud,AUD Part Time Employment Change,Medium,9.6K,,3.0K
+Thu Oct 13,00:30,GMT,aud,AUD Participation Rate,Low,65.6%,65.6%,65.6%
+Thu Oct 13,02:00,GMT,cny,CNY Trade Balance (USD),Medium,$14.51B,$16.30B,$17.76B
+Thu Oct 13,02:00,GMT,cny,CNY Exports (YoY),Medium,17.1%,20.5%,24.5%
+Thu Oct 13,02:00,GMT,cny,CNY Imports (YoY),Medium,20.9%,24.2%,30.2%
+Thu Oct 13,02:00,GMT,cny,CNY Business Climate Index,Low,133.4,,135.6
+Thu Oct 13,02:00,GMT,cny,CNY Entrepreneur Confidence Index,Low,129.4,,132.4
+Thu Oct 13,06:00,GMT,eur,EUR German Consumer Price Index (MoM),Medium,0.1%,0.1%,0.1%
+Thu Oct 13,06:00,GMT,eur,EUR German Consumer Price Index (YoY),High,2.6%,2.6%,2.6%
+Thu Oct 13,06:00,GMT,eur,EUR German Consumer Price Index - EU Harmonised (MoM),Medium,0.2%,0.1%,0.1%
+Thu Oct 13,06:00,GMT,eur,EUR German Consumer Price Index - EU Harmonised (YoY),High,2.9%,2.8%,2.8%
+Thu Oct 13,07:15,GMT,chf,CHF Producer & Import Prices (YoY),Low,-2.0%,-1.9%,-1.9%
+Thu Oct 13,07:15,GMT,chf,CHF Producer & Import Prices (MoM),Low,-0.1%,-0.1%,-1.2%
+Thu Oct 13,08:00,GMT,EUR,EUR ECB Publishes Oct. Monthly Report,HIGH,,,
+Thu Oct 13,08:30,GMT,gbp,GBP Visible Trade Balance (Pounds),Medium,-£7768,-£8800,-£8154
+Thu Oct 13,08:30,GMT,gbp,GBP Trade Balance Non EU (Pounds),Low,-£4867,-£5350,-£4651
+Thu Oct 13,08:30,GMT,gbp,GBP Total Trade Balance (Pounds),Low,-£1877,-£4250,-£2273
+Thu Oct 13,12:30,GMT,usd,USD Continuing Claims,Low,3670K,3710K,3725K
+Thu Oct 13,12:30,GMT,cad,CAD International Merchandise Trade (Canadian dollar),Low,-0.62B,-1.00B,-0.54B
+Thu Oct 13,12:30,GMT,usd,USD Trade Balance,Medium,-$45.6B,-$45.8B,-$45.6B
+Thu Oct 13,12:30,GMT,usd,USD Initial Jobless Claims,Low,404K,405K,405K
+Thu Oct 13,13:45,GMT,usd,USD Bloomberg Consumer Comfort,Low,-50.8,,-50.2
+Thu Oct 13,14:30,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,1344K,800K,-4679K
+Thu Oct 13,14:30,GMT,usd,USD DOE Cushing OK Crude Inventory,Low,532K,,-831K
+Thu Oct 13,14:30,GMT,usd,USD DOE U.S. Distillate Inventory,Low,-2929K,-500K,-744K
+Thu Oct 13,14:30,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,-4134K,250K,-1137K
+Thu Oct 13,18:30,GMT,USD,Fed's Kocherlakota Speaks in Sidney, Montana,LOW,,,
+Thu Oct 13,23:50,GMT,jpy,JPY Japan Money Stock M3 (YoY),Low,2.3%,2.2%,2.2%
+Thu Oct 13,23:50,GMT,jpy,JPY Domestic Corporate Goods Price Index (YoY),Low,2.5%,2.5%,2.6%
+Thu Oct 13,23:50,GMT,jpy,JPY Japan Money Stock M2+CD (YoY),Low,2.7%,2.7%,2.7%
+Thu Oct 13,23:50,GMT,jpy,JPY Domestic Corporate Goods Price Index (MoM),Low,-0.1%,-0.2%,-0.2%
+Fri Oct 14,00:00,GMT,nzd,NZD ANZ Consumer Confidence Index,Medium,112.2,,112.6
+Fri Oct 14,00:00,GMT,nzd,NZD ANZ Consumer Confidence MoM,Medium,-0.4%,,-0.6%
+Fri Oct 14,01:30,GMT,cny,CNY Consumer Price Index (YoY),High,6.1%,6.1%,6.2%
+Fri Oct 14,01:30,GMT,cny,CNY Producer Price Index (YoY),Medium,6.5%,6.9%,7.3%
+Fri Oct 14,02:00,GMT,nzd,NZD Non Resident Bond Holdings,Low,62.9%,,62.5%
+Fri Oct 14,07:00,GMT,cny,CNY New Yuan Loans,High,470.0B,550.0B,548.5B
+Fri Oct 14,07:00,GMT,cny,CNY Money Supply - M1 (YoY),Low,8.9%,12.0%,11.2%
+Fri Oct 14,07:00,GMT,cny,CNY Foreign Exchange Reserves,Medium,$3201.7B,$3327.5B,$3197.5B
+Fri Oct 14,07:00,GMT,cny,CNY Money Supply - M0 (YoY),Low,12.7%,,14.7%
+Fri Oct 14,07:00,GMT,cny,CNY Money Supply - M2 (YoY),Low,13.0%,14.0%,13.5%
+Fri Oct 14,08:00,GMT,eur,EUR Italian Trade Balance (Total) (euros),Low,-3132M,,1435M
+Fri Oct 14,08:00,GMT,eur,EUR Italian Trade Balance EU Countries (euros),Low,-766M,,1771M
+Fri Oct 14,09:00,GMT,eur,EUR Euro-Zone Consumer Price Index (MoM),Medium,0.8%,0.8%,0.2%
+Fri Oct 14,09:00,GMT,eur,EUR Euro-Zone Trade Balance s.a. (euros),Low,-1.0B,,-3.7B
+Fri Oct 14,09:00,GMT,eur,EUR Italian Consumer Price Index (NIC incl. tobacco) (MoM),Low,0.0%,0.1%,0.1%
+Fri Oct 14,09:00,GMT,eur,EUR Italian Consumer Price Index (NIC incl. tobacco) (YoY),Low,3.0%,3.1%,3.1%
+Fri Oct 14,09:00,GMT,eur,EUR Italian Consumer Price Index - EU Harmonized (MoM),Low,2.0%,1.9%,1.9%
+Fri Oct 14,09:00,GMT,eur,EUR Euro-Zone Consumer Price Index - Core (YoY),High,1.6%,1.5%,1.2%
+Fri Oct 14,09:00,GMT,eur,EUR Euro-Zone Consumer Price Index (YoY),High,3.0%,3.0%,2.5%
+Fri Oct 14,09:00,GMT,eur,EUR Euro-Zone Trade Balance (euros),Low,-3.4B,-4.0B,2.5B
+Fri Oct 14,09:00,GMT,eur,EUR Italian Consumer Price Index - EU Harmonized (YoY),Low,3.6%,3.5%,3.5%
+Fri Oct 14,12:30,GMT,cad,CAD Manufacturing Shipments (MoM),Low,1.4%,0.5%,3.0%
+Fri Oct 14,12:30,GMT,usd,USD Import Price Index (MoM),Low,0.3%,-0.4%,-0.2%
+Fri Oct 14,12:30,GMT,usd,USD Import Price Index (YoY),Low,13.4%,12.4%,13.0%
+Fri Oct 14,12:30,GMT,usd,USD Advance Retail Sales,High,1.1%,0.7%,0.3%
+Fri Oct 14,12:30,GMT,usd,USD Retail Sales Less Autos,Medium,0.6%,0.3%,0.5%
+Fri Oct 14,12:30,GMT,usd,USD Retail Sales Ex Auto & Gas,Medium,0.5%,0.4%,0.5%
+Fri Oct 14,13:55,GMT,usd,USD U. of Michigan Confidence,High,57.5,60.2,59.4
+Fri Oct 14,14:00,GMT,usd,USD Business Inventories,Medium,0.5%,0.4%,0.4%
+Sat Oct 15,,,cny,CNY Actual FDI (YoY),Medium,,,11.1%

@@ -1,0 +1,107 @@
+Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Sun Apr 21,22:45,GMT,nzd,NZD Net Migration s.a.,Low,1220,,720
+Mon Apr 22,03:00,GMT,nzd,NZD Credit Card Spending s.a. (MoM),Medium,-0.3%,,3.3%
+Mon Apr 22,03:00,GMT,nzd,NZD Credit Card Spending (YoY),Medium,3.6%,,4.7%
+Mon Apr 22,05:00,GMT,jpy,JPY Supermarket Sales (YoY),Low,1.7%,,-5.5%
+Mon Apr 22,07:00,GMT,chf,CHF Money Supply M3 (YoY),Low,9.9%,,9.8%
+Mon Apr 22,07:00,GMT,jpy,JPY Convenience Store Sales (YoY),Low,-0.4%,,-4.7%
+Mon Apr 22,09:00,GMT,eur,EUR Euro-Zone Government Debt-GDP Ratio,Low,90.6%,,87.3%
+Mon Apr 22,12:30,GMT,usd,"USD Fed's Dudley, EU's Rehn Speak at Transatlantic Conference",Low,,,
+Mon Apr 22,12:30,GMT,usd,USD Chicago Fed Nat Activity Index,Medium,-0.23,0.35,0.76
+Mon Apr 22,14:00,GMT,eur,EUR Euro-Zone Consumer Confidence,Medium,-22.3,-24.0,-23.5
+Mon Apr 22,14:00,GMT,usd,USD Existing Home Sales,Low,4.92M,5.00M,4.95M
+Mon Apr 22,14:00,GMT,usd,USD Existing Home Sales (MoM),Medium,-0.6%,0.4%,0.2%
+Mon Apr 22,17:00,GMT,EUR,EUR ECB's Noyer speaks in New York,Low,,,
+Mon Apr 22,18:30,GMT,GBP,GBP BoE's Tucker speaks in New York,Low,,,
+Tue Apr 23,00:00,GMT,aud,AUD Conference Board Leading Index,Medium,0.3%,,0.1%
+Tue Apr 23,01:45,GMT,cny,CNY HSBC Flash Manufacturing PMI,Medium,50.5,51.5,51.6
+Tue Apr 23,05:00,GMT,jpy,JPY Small Business Confidence,Low,49.4,,49.7
+Tue Apr 23,06:00,GMT,chf,CHF Trade Balance (Swiss franc),Medium,1.90B,1.80B,2.00B
+Tue Apr 23,06:00,GMT,chf,CHF Exports (MoM),Low,5.1%,,-0.7%
+Tue Apr 23,06:00,GMT,chf,CHF Imports (MoM),Low,2.0%,,-5.0%
+Tue Apr 23,07:00,GMT,eur,EUR French Purchasing Manager Index Manufacturing,Medium,44.4,44.1,44
+Tue Apr 23,07:00,GMT,eur,EUR French Purchasing Manager Index Services,Medium,44.1,42,41.3
+Tue Apr 23,07:30,GMT,eur,EUR German Purchasing Manager Index Manufacturing,Medium,47.9,49,49
+Tue Apr 23,07:30,GMT,eur,EUR German Purchasing Manager Index Services,Medium,49.2,51,50.9
+Tue Apr 23,08:00,GMT,eur,EUR Euro-Zone Purchasing Manager Index Manufacturing,Medium,46.5,46.7,46.8
+Tue Apr 23,08:00,GMT,eur,EUR Euro-Zone Purchasing Manager Index Services,Medium,46.6,46.5,46.4
+Tue Apr 23,08:00,GMT,eur,EUR Euro-Zone Purchasing Manager Index Composite,Medium,46.5,46.5,46.5
+Tue Apr 23,08:30,GMT,gbp,GBP Public Finances (PSNCR) (Pounds),Medium,31.3B,18.0B,-1.6B
+Tue Apr 23,08:30,GMT,gbp,GBP PSNB ex Interventions,Low,15.1B,15.5B,5.6B
+Tue Apr 23,08:30,GMT,gbp,GBP Public Sector Net Borrowing (Pounds),Low,16.7B,13.8B,7.2B
+Tue Apr 23,10:00,GMT,gbp,GBP CBI Trends Total Orders,Low,-25,-13,-15
+Tue Apr 23,10:00,GMT,gbp,GBP CBI Trends Selling Prices,Low,8,5,5
+Tue Apr 23,10:00,GMT,gbp,GBP CBI Business Optimism,Medium,5,2,0
+Tue Apr 23,12:30,GMT,cad,CAD Retail Sales (MoM),Medium,0.8%,0.3%,0.9%
+Tue Apr 23,12:30,GMT,cad,CAD Retail Sales Less Autos (MoM),Low,0.7%,0.5%,0.4%
+Tue Apr 23,12:58,GMT,usd,USD Markit US PMI Preliminary,Medium,52.0,53.5,
+Tue Apr 23,13:00,GMT,usd,USD House Price Index (MoM),Medium,0.7%,0.7%,0.6%
+Tue Apr 23,14:00,GMT,usd,USD Richmond Fed Manufacturing Index,Low,-6,2,3
+Tue Apr 23,14:00,GMT,usd,USD New Home Sales,Low,417K,416K,411K
+Tue Apr 23,14:00,GMT,usd,USD New Home Sales (MoM),Medium,1.5%,1.9%,-7.6%
+Tue Apr 23,21:00,GMT,nzd,NZD Reserve Bank of New Zealand Rate Decision,High,2.50%,2.50%,2.50%
+Tue Apr 23,23:50,GMT,jpy,JPY Corporate Service Price (YoY),Low,-0.2%,-0.3%,0.0%
+Wed Apr 24,01:00,GMT,aud,AUD DEWR Internet Skilled Vacancies (MoM),Low,0.1%,,-0.5%
+Wed Apr 24,01:30,GMT,aud,AUD Consumer Prices Index (QoQ),Medium,0.4%,0.7%,0.2%
+Wed Apr 24,01:30,GMT,aud,AUD Consumer Prices Index (YoY),High,2.5%,2.8%,2.2%
+Wed Apr 24,01:30,GMT,aud,AUD Consumer Prices Index RBA Trimmed Mean (QoQ),Medium,0.3%,0.5%,0.6%
+Wed Apr 24,01:30,GMT,aud,AUD Consumer Prices Index RBA Trimmed Mean (YoY),Medium,2.2%,2.4%,2.3%
+Wed Apr 24,01:30,GMT,aud,AUD Consumer Prices Index RBA Weighted Median (QoQ),Medium,0.5%,0.5%,0.6%
+Wed Apr 24,01:30,GMT,aud,AUD Consumer Prices Index RBA Weighted Median (YoY),Medium,2.6%,2.4%,2.5%
+Wed Apr 24,06:00,GMT,chf,CHF UBS Consumption Indicator,Medium,1.25,,1.24
+Wed Apr 24,08:00,GMT,eur,EUR German IFO - Business Climate,Medium,104.4,106.2,106.7
+Wed Apr 24,08:00,GMT,eur,EUR German IFO - Current Assessment,Medium,107.2,109.5,109.9
+Wed Apr 24,08:00,GMT,eur,EUR German IFO - Expectations,Medium,101.6,103,103.6
+Wed Apr 24,08:30,GMT,gbp,GBP BBA Loans for House Purchase,Medium,31227,31400,30579
+Wed Apr 24,10:00,GMT,gbp,GBP CBI Reported Sales,Low,-1,8,0
+Wed Apr 24,11:00,GMT,usd,USD MBA Mortgage Applications,Low,0.2%,,4.8%
+Wed Apr 24,12:30,GMT,usd,USD Cap Goods Orders Nondef Ex Air,Low,0.2%,0.3%,-4.8%
+Wed Apr 24,12:30,GMT,usd,USD Cap Goods Ship Nondef Ex Air,Low,0.3%,0.8%,1.2%
+Wed Apr 24,12:30,GMT,usd,USD Durable Goods Orders  (MoM),High,-5.7%,-3.0%,4.3%
+Wed Apr 24,12:30,GMT,usd,USD Durables Ex Transportation  (MoM),Medium,-1.4%,0.5%,-1.7%
+Wed Apr 24,13:00,GMT,eur,EUR ECB's Constancio Presents ECB's 2012 Report to EU Parliament,Low,,,
+Wed Apr 24,14:30,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,947K,2000K,-1233K
+Wed Apr 24,14:30,GMT,usd,USD DOE Cushing OK Crude Inventory,Low,35K,,1078K
+Wed Apr 24,14:30,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,-3928K,-600K,-633K
+Wed Apr 24,14:30,GMT,usd,USD DOE U.S. Distillate Inventory,Low,97K,500K,2364K
+Wed Apr 24,23:50,GMT,jpy,JPY Japan Buying Foreign Bonds (Yen),Low,-¥862.6B,,-¥332.8B
+Wed Apr 24,23:50,GMT,jpy,JPY Japan Buying Foreign Stocks (Yen),Low,-¥27.8B,,-¥157.7B
+Wed Apr 24,23:50,GMT,jpy,JPY Foreign Buying Japan Stocks (Yen),Low,-¥27.9B,,¥1568.9B
+Wed Apr 24,23:50,GMT,jpy,JPY Foreign Buying Japan Bonds (Yen),Low,-¥199.3B,,-¥176.3B
+Thu Apr 25,08:30,GMT,gbp,GBP Index of Services (MoM),Low,0.8%,0.2%,0.3%
+Thu Apr 25,08:30,GMT,gbp,GBP Index of Services (3Mo3M),Low,0.1%,-0.1%,-0.3%
+Thu Apr 25,08:30,GMT,gbp,GBP Gross Domestic Product (QoQ),High,0.3%,0.1%,-0.3%
+Thu Apr 25,08:30,GMT,gbp,GBP Gross Domestic Product (YoY),High,0.6%,0.4%,0.2%
+Thu Apr 25,10:00,GMT,eur,EUR German Government Releases New Macroeconomic Forecast,Medium,,,
+Thu Apr 25,12:30,GMT,cad,CAD Average Weekly Earnings (YoY),Low,3.1%,3.0%,1.9%
+Thu Apr 25,12:30,GMT,usd,USD Initial Jobless Claims,Medium,339K,350K,355K
+Thu Apr 25,12:30,GMT,usd,USD Continuing Claims,Low,3000K,3055K,3093K
+Thu Apr 25,14:30,GMT,usd,USD EIA Natural Gas Storage Change,Low,30,33,31
+Thu Apr 25,15:00,GMT,usd,USD Kansas City Fed Manf. Activity,Low,-5,-1,-5
+Thu Apr 25,22:45,GMT,nzd,NZD Trade Balance (New Zealand dollars),Medium,718M,470M,441M
+Thu Apr 25,22:45,GMT,nzd,NZD Exports (New Zealand dollars),Low,4.42B,4.28B,3.90B
+Thu Apr 25,22:45,GMT,nzd,NZD Imports (New Zealand dollars),Low,3.70B,3.82B,3.46B
+Thu Apr 25,22:45,GMT,nzd,NZD Balance (YTD) (New Zealand dollars),Medium,-525M,-883M,-1057M
+Thu Apr 25,23:30,GMT,jpy,"JPY Tokyo Consumer Price Index Ex Food, Energy (YoY)",Low,-0.7%,-0.7%,-0.8%
+Thu Apr 25,23:30,GMT,jpy,"JPY National Consumer Price Index Ex Food, Energy (YoY)",Medium,-0.8%,-0.8%,-0.9%
+Thu Apr 25,23:30,GMT,jpy,JPY Tokyo Consumer Price Index (YoY),Low,-0.7%,-0.8%,-1.0%
+Thu Apr 25,23:30,GMT,jpy,JPY Tokyo Consumer Price Index Ex-Fresh Food (YoY),Low,-0.3%,-0.4%,-0.5%
+Thu Apr 25,23:30,GMT,jpy,JPY National Consumer Price Index Ex-Fresh Food (YoY),Medium,-0.5%,-0.4%,-0.3%
+Thu Apr 25,23:30,GMT,jpy,JPY National Consumer Price Index (YoY),Medium,-0.9%,-0.8%,-0.7%
+Fri Apr 26,01:35,GMT,cny,CNY MNI April Business Sentiment Indicator,Medium,58.5,,58.2
+Fri Apr 26,04:45,GMT,jpy,JPY Bank of Japan Rate Decision,High,0.10%,,0.10%
+Fri Apr 26,04:45,GMT,jpy,JPY Bank of Japan Monetary Policy Statement,Medium,,,
+Fri Apr 26,06:00,GMT,eur,EUR German Import Price Index (MoM),Low,-0.1%,-0.1%,0.3%
+Fri Apr 26,06:00,GMT,eur,EUR German Import Price Index (YoY),Low,-2.3%,-2.3%,-1.6%
+Fri Apr 26,06:30,GMT,JPY,JPY Bank of Japan Governor Kuroda Holds Post-Meeting Press Conference,High,,,
+Fri Apr 26,07:00,GMT,chf,CHF KOF Swiss Leading Indicator,Medium,1.02,0.98,1.00
+Fri Apr 26,08:00,GMT,eur,EUR Euro-Zone M3 s.a. (YoY),Low,2.6%,3.0%,3.1%
+Fri Apr 26,08:00,GMT,eur,EUR Euro-Zone M3 s.a. (3M),Low,3.0%,3.2%,3.4%
+Fri Apr 26,10:00,GMT,eur,EUR ECB Announces 3-Year LTRO Repayment,Medium,2.28B,,11.0B
+Fri Apr 26,11:30,GMT,eur,EUR Spain presents Medium-Term Fiscal Plan,Medium,,,
+Fri Apr 26,12:30,GMT,usd,USD Gross Domestic Product (Annualized),High,2.5%,3.0%,0.4%
+Fri Apr 26,12:30,GMT,usd,USD Personal Consumption,Medium,3.2%,2.8%,1.8%
+Fri Apr 26,12:30,GMT,usd,USD Gross Domestic Product Price Index,High,1.2%,1.3%,1.0%
+Fri Apr 26,12:30,GMT,usd,USD Core Personal Consumption Expenditure (QoQ),Medium,1.2%,1.1%,1.0%
+Fri Apr 26,13:55,GMT,usd,USD U. of Michigan Confidence,Medium,76.4,73.5,72.3
+Sat Apr 27,01:30,GMT,cny,CNY Industrial Profits (YTD) (YoY),Low,12.1%,,17.2%

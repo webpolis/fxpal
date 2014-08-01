@@ -1,0 +1,143 @@
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
+Sun Jan 08,09:11,GMT,cny,CNY New Yuan Loans,High,640.5B,575.0B,562.2B
+Sun Jan 08,09:11,GMT,cny,CNY Money Supply - M0 (YoY),Low,13.8%,,12.0%
+Sun Jan 08,09:11,GMT,cny,CNY Money Supply - M1 (YoY),Low,7.9%,7.9%,7.8%
+Sun Jan 08,09:11,GMT,cny,CNY Money Supply - M2 (YoY),Low,13.6%,12.9%,12.7%
+Sun Jan 08,21:45,GMT,nzd,NZD Trade Balance (New Zealand dollars),Medium,-308M,-300M,-228M
+Sun Jan 08,21:45,GMT,nzd,NZD Exports (New Zealand dollars),Low,3.91B,3.90B,3.89B
+Sun Jan 08,21:45,GMT,nzd,NZD Imports (New Zealand dollars),Low,4.22B,4.20B,4.11B
+Sun Jan 08,21:45,GMT,nzd,NZD Balance (YTD) (New Zealand dollars),Medium,555,539,681
+Sun Jan 08,22:30,GMT,aud,AUD AiG Performance of Construction Index,Low,41.0,,39.6
+Sun Jan 08,23:40,GMT,aud,AUD HIA New Home Sales (MoM),Medium,6.8%,,5.5%
+Mon Jan 09,00:01,GMT,gbp,GBP Lloyds Employment Confidence,Low,-75,,-75
+Mon Jan 09,00:30,GMT,aud,AUD Retail Sales s.a. (MoM),Medium,0.0%,0.4%,0.2%
+Mon Jan 09,05:30,GMT,aud,AUD Foreign Reserves (A$),Low,A$46.1B,,A$44.8B
+Mon Jan 09,06:45,GMT,chf,CHF Unemployment Rate,Medium,3.3%,3.2%,3.1%
+Mon Jan 09,06:45,GMT,chf,CHF Unemployment Rate s.a.,Medium,3.1%,3.1%,3.0%
+Mon Jan 09,07:00,GMT,eur,EUR German Imports s.a. (MoM),Low,-0.4%,0.5%,0.1%
+Mon Jan 09,07:00,GMT,eur,EUR German Current Account (euros),Low,14.3B,11.5B,10.0B
+Mon Jan 09,07:00,GMT,eur,EUR German Trade Balance (euros),Medium,16.2B,12.0B,11.5B
+Mon Jan 09,07:00,GMT,eur,EUR German Exports s.a. (MoM),Low,2.5%,0.5%,-2.9%
+Mon Jan 09,07:45,GMT,eur,EUR French Trade Balance (euros),Low,-4412M,-6000M,-6248M
+Mon Jan 09,08:15,GMT,chf,CHF Retail Sales (Real) (YoY),Medium,1.8%,0.2%,0.1%
+Mon Jan 09,09:30,GMT,eur,EUR Euro-Zone Sentix Investor Confidence,Medium,-21.1,,-24
+Mon Jan 09,11:00,GMT,eur,EUR German Industrial Production n.s.a. and w.d.a. (YoY),Medium,3.6%,3.9%,4.2%
+Mon Jan 09,11:00,GMT,eur,EUR German Industrial Production s.a. (MoM),Low,-0.6%,-0.5%,0.8%
+Mon Jan 09,13:30,GMT,cad,CAD Building Permits (MoM),Low,-3.6%,-5.0%,11.6%
+Mon Jan 09,15:30,GMT,cad,CAD Business Outlook Future Sales,Medium,-4,10,6
+Mon Jan 09,15:30,GMT,cad,CAD Bank of Canada Senior Loan Officer Survey,Medium,-6.3,,-26.9
+Mon Jan 09,17:40,GMT,USD,USD Fed's Lockhart to Speak on Economy in Atlanta,LOW,,,
+Mon Jan 09,20:00,GMT,usd,USD Consumer Credit,Medium,$20.374B,$7.000B,$6.022B
+Mon Jan 09,21:45,GMT,nzd,NZD Building Permits (MoM),Low,-6.4%,3.3%,10.7%
+Mon Jan 09,23:00,GMT,nzd,NZD QV House Prices (YoY),Low,2.4%,,1.7%
+Tue Jan 10,00:01,GMT,gbp,GBP RICS House Price Balance,Low,-16%,-19.0%,-17.0%
+Tue Jan 10,00:01,GMT,gbp,GBP BRC Sales Like-For-Like (YoY),Low,2.2%,0.5%,-1.6%
+Tue Jan 10,00:30,GMT,aud,AUD Building Approvals (MoM),Low,8.4%,6.0%,-10.0%
+Tue Jan 10,00:30,GMT,aud,AUD Building Approvals (YoY),Low,-18.9%,-19.8%,-29.9%
+Tue Jan 10,03:00,GMT,cny,CNY Imports (YoY),Low,11.8%,18.0%,22.1%
+Tue Jan 10,03:00,GMT,cny,CNY Trade Balance (USD),Medium,$16.52B,$8.80B,$14.53B
+Tue Jan 10,03:00,GMT,cny,CNY Exports (YoY),Low,13.4%,13.4%,13.8%
+Tue Jan 10,07:30,GMT,eur,EUR Bank of France Business Sentiment,Low,96,95,95.0
+Tue Jan 10,07:45,GMT,eur,EUR French Manufacturing Production (YoY),Low,2.2%,-0.1%,2.6%
+Tue Jan 10,07:45,GMT,eur,EUR French Industrial Production (MoM),Low,1.3%,-0.2%,0.1%
+Tue Jan 10,07:45,GMT,eur,EUR French Industrial Production (YoY),Low,0.9%,-0.4%,1.7%
+Tue Jan 10,07:45,GMT,eur,EUR French Manufacturing Production (MoM),Low,1.3%,-0.4%,0.2%
+Tue Jan 10,12:30,GMT,usd,USD NFIB Small Business Optimism,Low,93.8,93.8,92
+Tue Jan 10,13:15,GMT,cad,CAD Housing Starts,Medium,200.2K,185.5K,185.6K
+Tue Jan 10,15:00,GMT,usd,USD IBD/TIPP Economic Optimism,Low,47.5,45.0,42.8
+Tue Jan 10,15:00,GMT,usd,USD JOLTs Job Openings,Low,3161,,3224
+Tue Jan 10,15:00,GMT,usd,USD Wholesale Inventories,Low,0.1%,0.5%,1.2%
+Tue Jan 10,15:30,GMT,USD,USD Fed's Williams to Speak on Economy in Vancouver, Washington,LOW,,,
+Tue Jan 10,16:10,GMT,USD,USD Fed's Pianalto Speaks on Labor Markets in Ohio,LOW,,,
+Tue Jan 10,18:00,GMT,USD,USD Fed's George Speaks on Economic Outlook in Kansas City,LOW,,,
+Tue Jan 10,23:50,GMT,jpy,JPY Official Reserve Assets,Low,$1295.8B,,$1304.8B
+Wed Jan 11,00:01,GMT,gbp,GBP BRC Shop Price Index (YoY),Low,1.7%,,2.0%
+Wed Jan 11,00:30,GMT,aud,AUD Job Vacancies (QoQ),Low,-3.3%,,3.2%
+Wed Jan 11,05:00,GMT,jpy,JPY Coincident Index,Low,90.3,90.3,91.4
+Wed Jan 11,05:00,GMT,jpy,JPY Leading Index,Medium,92.9,92.9,92
+Wed Jan 11,08:00,GMT,eur,EUR German Public Finances Balance-GDP Ratio,Low,-1.0%,,-4.3%
+Wed Jan 11,08:00,GMT,eur,EUR German Real GDP Growth,High,3.0%,3.0%,3.7%
+Wed Jan 11,09:00,GMT,eur,EUR Italian Deficit to GDP (YTD),Low,2.7%,,5.3%
+Wed Jan 11,09:30,GMT,gbp,GBP Visible Trade Balance (Pounds),Medium,-£8644,-£8400,-£7868
+Wed Jan 11,09:30,GMT,gbp,GBP Trade Balance Non EU (Pounds),Low,-£5021,-£5000,-£4556
+Wed Jan 11,09:30,GMT,gbp,GBP Total Trade Balance (Pounds),Low,-£2566,-£2400,-£1861
+Wed Jan 11,12:00,GMT,usd,USD MBA Mortgage Applications,Low,4.5%,,-4.10%
+Wed Jan 11,13:40,GMT,USD,USD Fed's Evans Speaks in Lake Forest, Illinois,LOW,,,
+Wed Jan 11,14:00,GMT,USD,USD Fed's Lockhart to Speak on Economy in Atlanta,LOW,,,
+Wed Jan 11,15:30,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,4958K,1000K,2209K
+Wed Jan 11,15:30,GMT,usd,USD DOE Cushing OK Crude Inventory,Low,-191K,,-613K
+Wed Jan 11,15:30,GMT,usd,USD DOE U.S. Distillate Inventory,Low,3985K,2250K,3224K
+Wed Jan 11,15:30,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,3610K,2250K,2479K
+Wed Jan 11,17:30,GMT,USD,USD Fed's Plosser Speaks on Economy in Rochester, NY,LOW,,,
+Wed Jan 11,19:00,GMT,USD,USD Fed's Beige Book,HIGH,,,
+Wed Jan 11,23:50,GMT,jpy,JPY Bank Lending Banks ex-Trust,Low,0.5%,,0.2%
+Wed Jan 11,23:50,GMT,jpy,JPY Bank Lending incl Trusts (YoY),Low,0.4%,,0.2%
+Wed Jan 11,23:50,GMT,jpy,JPY Current Account Total (Yen),Low,¥138.5B,¥248.4B,¥562.4B
+Wed Jan 11,23:50,GMT,jpy,JPY Adjusted Current Account Total (Yen),Low,¥480.4B,¥446.0B,¥518.6B
+Wed Jan 11,23:50,GMT,jpy,JPY Current Account Total (YoY),Low,-85.5%,-74.2%,-62.4%
+Wed Jan 11,23:50,GMT,jpy,JPY Trade Balance - BOP Basis (Yen),Medium,-¥585.1B,-¥599.4B,-¥206.1B
+Thu Jan 12,00:00,GMT,nzd,NZD ANZ Commodity Price,Low,-0.8%,,-1.1%
+Thu Jan 12,,,nzd,NZD REINZ Housing Price Index,Low,,,3304.3
+Thu Jan 12,,,nzd,NZD REINZ House Sales (YoY),Medium,,,16.9%
+Thu Jan 12,,,nzd,NZD REINZ Housing Price Index (MoM),Low,,,1.1%
+Thu Jan 12,01:30,GMT,cny,CNY Producer Price Index (YoY),Medium,1.7%,1.7%,2.7%
+Thu Jan 12,01:30,GMT,cny,CNY Consumer Price Index (YoY),High,4.1%,4.0%,4.2%
+Thu Jan 12,01:50,GMT,jpy,JPY Tokyo Avg Office Vacancies (%),Low,9.0,,8.9
+Thu Jan 12,05:00,GMT,jpy,JPY Eco Watchers Survey: Current,Low,47.0,,45.0
+Thu Jan 12,05:00,GMT,jpy,JPY Eco Watchers Survey: Outlook,Low,44.4,,44.7
+Thu Jan 12,06:00,GMT,JPY,JPY Machine Tool Orders (YoY),Medium,,,15.8%
+Thu Jan 12,06:30,GMT,eur,EUR French Consumer Price Index - EU Harmonised (MoM),Low,0.4%,0.3%,0.3%
+Thu Jan 12,06:30,GMT,eur,EUR French Consumer Price Index - EU Harmonised (YoY),Low,2.7%,2.5%,2.7%
+Thu Jan 12,06:30,GMT,eur,EUR French Consumer Price Index (MoM),Low,0.4%,0.2%,0.3%
+Thu Jan 12,06:30,GMT,eur,EUR French Consumer Price Index (YoY),Low,1.5%,2.3%,2.5%
+Thu Jan 12,06:30,GMT,eur,EUR French Consumer Price Index Ex Tobacco Index,Low,123.51,123.31,123
+Thu Jan 12,07:00,GMT,eur,EUR German Consumer Price Index (MoM),Medium,0.7%,0.7%,0.7%
+Thu Jan 12,07:00,GMT,eur,EUR German Consumer Price Index (YoY),High,2.1%,2.1%,2.1%
+Thu Jan 12,07:00,GMT,eur,EUR German Consumer Price Index - EU Harmonised (MoM),Medium,0.7%,0.8%,0.8%
+Thu Jan 12,07:00,GMT,eur,EUR German Consumer Price Index - EU Harmonised (YoY),High,2.3%,2.4%,2.4%
+Thu Jan 12,07:45,GMT,eur,EUR French Current Account (euros),Low,-2.3B,,-4.2B
+Thu Jan 12,07:45,GMT,eur,EUR French Central Government Balance (euros),Low,-97.2B,,-99.4B
+Thu Jan 12,09:00,GMT,eur,EUR Italian Industrial Production s.a. (MoM),Low,0.3%,-0.2%,-0.9%
+Thu Jan 12,09:00,GMT,eur,EUR Italian Industrial Production w.d.a. (YoY),Low,-4.1%,-2.9%,-4.1%
+Thu Jan 12,09:00,GMT,eur,EUR Italian Industrial Production n.s.a. (YoY),Low,-4.1%,,-4.%
+Thu Jan 12,09:30,GMT,gbp,GBP Industrial Production (MoM),Low,-0.6%,-0.1%,-1.0%
+Thu Jan 12,09:30,GMT,gbp,GBP Industrial Production (YoY),Medium,-3.1%,-2.2%,-2.1%
+Thu Jan 12,09:30,GMT,gbp,GBP Manufacturing Production (MoM),Low,-0.2%,-0.2%,-0.9%
+Thu Jan 12,09:30,GMT,gbp,GBP Manufacturing Production (YoY),Medium,-0.6%,-0.5%,0.1%
+Thu Jan 12,10:00,GMT,eur,EUR Euro-Zone Industrial Production w.d.a. (YoY),Medium,-0.3%,0.2%,1.0%
+Thu Jan 12,10:00,GMT,eur,EUR Euro-Zone Industrial Production s.a. (MoM),Low,-0.1%,-0.3%,-0.3%
+Thu Jan 12,12:00,GMT,gbp,GBP BOE Asset Purchase Target,High,275B,275B,275B
+Thu Jan 12,12:00,GMT,gbp,GBP Bank of England Rate Decision,High,0.50%,0.50%,0.50%
+Thu Jan 12,12:45,GMT,eur,EUR European Central Bank Rate Decision,High,1.00%,1.00%,1.00%
+Thu Jan 12,13:30,GMT,cad,CAD New Housing Price Index (MoM),Low,0.3%,0.2%,0.2%
+Thu Jan 12,13:30,GMT,cad,CAD New Housing Price Index (YoY),Low,2.5%,2.4%,2.5%
+Thu Jan 12,13:30,GMT,usd,USD Advance Retail Sales,High,0.1%,0.3%,0.4%
+Thu Jan 12,13:30,GMT,usd,USD Retail Sales Less Autos,Medium,-0.2%,0.3%,0.3%
+Thu Jan 12,13:30,GMT,usd,USD Retail Sales Ex Auto & Gas,Medium,0.0%,0.4%,0.2%
+Thu Jan 12,13:30,GMT,usd,USD Retail Sales "Control Group",Low,-0.2%,0.3%,0.3%
+Thu Jan 12,13:30,GMT,usd,USD Initial Jobless Claims,Low,399K,375K,375K
+Thu Jan 12,13:30,GMT,usd,USD Continuing Claims,Low,3628K,3595K,3609K
+Thu Jan 12,15:00,GMT,USD,USD Revisions: Philadelphia Fed Business Outlook Survey,LOW,,,
+Thu Jan 12,15:00,GMT,usd,USD Business Inventories,Medium,0.3%,0.4%,0.8%
+Thu Jan 12,15:00,GMT,gbp,GBP NIESR Gross Domestic Product Estimate,High,0.1%,,0.3%
+Thu Jan 12,15:30,GMT,usd,USD EIA Natural Gas Storage Change,Low,-95,-89,-76
+Thu Jan 12,19:00,GMT,usd,USD Monthly Budget Statement,Medium,-$86.0B,-$83.7B,-$78.1B
+Thu Jan 12,23:50,GMT,jpy,JPY Japan Money Stock M2+CD (YoY),Low,3.1%,3.0%,3.0%
+Thu Jan 12,23:50,GMT,jpy,JPY Japan Money Stock M3 (YoY),Low,2.6%,2.5%,2.5%
+Fri Jan 13,03:00,GMT,cny,CNY Foreign Exchange Reserves,Medium,$3181.1B,$3200.0B,$3201.7B
+Fri Jan 13,04:00,GMT,jpy,JPY Bankruptcies (YoY),Medium,-6.4%,,3.2%
+Fri Jan 13,09:30,GMT,gbp,GBP Producer Price Index Input n.s.a. (MoM),Low,-0.6%,-0.2%,0.3%
+Fri Jan 13,09:30,GMT,gbp,GBP Producer Price Index Input n.s.a. (YoY),Medium,8.7%,9.1%,13.6%
+Fri Jan 13,09:30,GMT,gbp,GBP Producer Price Index Output n.s.a. (MoM),Low,-0.2%,0.1%,0.2%
+Fri Jan 13,09:30,GMT,gbp,GBP Producer Price Index Output n.s.a. (YoY),Medium,4.8%,5.0%,5.4%
+Fri Jan 13,09:30,GMT,gbp,GBP Producer Price Index Output Core n.s.a. (MoM),Low,-0.1%,0.0%,-0.1%
+Fri Jan 13,09:30,GMT,gbp,GBP Producer Price Index Output Core n.s.a. (YoY),Medium,3.0%,3.2%,3.1%
+Fri Jan 13,10:00,GMT,eur,EUR Euro-Zone Trade Balance s.a. (euros),Medium,6.1B,0.5B,0.5B
+Fri Jan 13,10:00,GMT,eur,EUR Euro-Zone Trade Balance (euros),Medium,6.9B,,1.0B
+Fri Jan 13,13:30,GMT,cad,CAD International Merchandise Trade (Canadian dollar),Low,1.07B,-0.5B,-0.89B
+Fri Jan 13,13:30,GMT,usd,USD Import Price Index (MoM),Low,-0.1%,-0.1%,0.7%
+Fri Jan 13,13:30,GMT,usd,USD Import Price Index (YoY),Low,8.5%,8.4%,9.9%
+Fri Jan 13,13:30,GMT,usd,USD Trade Balance,Medium,-$47.8B,-$45.0B,-$43.5B
+Fri Jan 13,14:55,GMT,usd,USD U. of Michigan Confidence,High,74.0,71.5,69.9
+Fri Jan 13,17:45,GMT,USD,USD Fed's Lacker Speaks on Economy in Richmond,LOW,,,
+Fri Jan 13,18:00,GMT,USD,USD Chicago Fed President Charles Evans speaks in Indianapolis,LOW,,,

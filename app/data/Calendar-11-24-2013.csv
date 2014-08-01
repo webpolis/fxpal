@@ -1,0 +1,136 @@
+Date,Time,Time Zone,Currency,Event,Importance,Actual,Forecast,Previous
+Mon Nov 25,00:15,GMT,EUR,EUR ECB's Coeure Speaks at Conference in Tokyo,Low,,,
+Mon Nov 25,04:00,GMT,JPY,JPY BOJ Governor Kuroda to Host Lunchon With Noyer,Medium,,,
+Mon Nov 25,04:00,GMT,EUR,EUR ECB's Noyer Attends Europlace Event in Tokyo,Medium,,,
+Mon Nov 25,09:30,GMT,gbp,GBP BBA Loans for House Purchase,Medium,42808,45000,43182
+Mon Nov 25,15:00,GMT,usd,USD Pending Home Sales (MoM),Low,-0.6%,1.0%,-4.6%
+Mon Nov 25,15:00,GMT,usd,USD Pending Home Sales (YoY),Medium,-2.2%,-1.0%,2.0%
+Mon Nov 25,15:30,GMT,usd,USD Dallas Fed Manufacturing Activity,Medium,1.9,5.0,3.6
+Mon Nov 25,21:15,GMT,EUR,EUR Bundesbank President Weidmann Speaks at Harvard University,Low,,,
+Mon Nov 25,23:50,GMT,jpy,JPY Corporate Service Price (YoY),Low,0.8%,0.9%,0.7%
+Mon Nov 25,23:50,GMT,JPY,JPY Bank of Japan October 31 meeting minutes,Medium,,,
+Tue Nov 26,05:00,GMT,jpy,JPY Small Business Confidence,Medium,51.1,,50.8
+Tue Nov 26,13:30,GMT,usd,USD Building Permits,Low,1034K,930K,974K
+Tue Nov 26,13:30,GMT,usd,USD Building Permits (MoM),Medium,6.2%,,5.2%
+Tue Nov 26,13:30,GMT,usd,USD Building Permits (MoM),Low,5.2%,,-2.9%
+Tue Nov 26,13:30,GMT,usd,USD Building Permits,Low,974K,935K,926K
+Tue Nov 26,14:00,GMT,usd,USD S&P/CS 20 City s.a (MoM),Low,1.03%,0.90%,0.90%
+Tue Nov 26,14:00,GMT,usd,USD S&P/Case-Shiller Home Price Index,Low,165.66,165.00,164.50
+Tue Nov 26,14:00,GMT,usd,USD S&P/Case-Shiller US Home Price Index,Low,150.92,,146.29
+Tue Nov 26,14:00,GMT,usd,USD House Price Purchase Index (QoQ),Low,1.96%,2.00%,2.33%
+Tue Nov 26,14:00,GMT,usd,USD S&P/Case-Shiller Composite-20 (YoY),Medium,13.29%,13.00%,12.80%
+Tue Nov 26,14:00,GMT,usd,USD S&P/Case-Shiller US Home Price Index (YoY),Low,11.18%,,9.93%
+Tue Nov 26,14:00,GMT,usd,USD House Price Index (MoM),Low,0.3%,0.4%,0.4%
+Tue Nov 26,15:00,GMT,usd,USD Consumer Confidence,High,70.4,72.6,72.4
+Tue Nov 26,15:00,GMT,usd,USD Richmond Fed Manufacturing Index,Low,13,4,1
+Tue Nov 26,21:45,GMT,nzd,NZD Trade Balance (New Zealand dollars),Medium,-168M,-350M,-216M
+Tue Nov 26,21:45,GMT,nzd,NZD Exports (New Zealand dollars),Low,4.25B,4.00B,3.82B
+Tue Nov 26,21:45,GMT,nzd,NZD Imports (New Zealand dollars),Low,4.42B,4.32B,4.04B
+Tue Nov 26,21:45,GMT,nzd,NZD Balance (YTD) (New Zealand dollars),Medium,-1005M,-1120M,-1550M
+Wed Nov 27,00:00,GMT,aud,AUD CBAHIA House Affordability,Low,75.1,,72.8
+Wed Nov 27,00:30,GMT,aud,AUD Construction Work Done,Low,2.7%,0.5%,0.1%
+Wed Nov 27,01:30,GMT,JPY,JPY BOJ Board Member Shirai Speech & Press Conference,Low,,,
+Wed Nov 27,07:00,GMT,chf,CHF UBS Consumption Indicator,Medium,1.28,,1.56
+Wed Nov 27,09:00,GMT,eur,EUR German GfK Consumer Confidence Survey,Medium,7.4,7.1,7.1
+Wed Nov 27,09:30,GMT,gbp,GBP Gross Domestic Product (YoY),High,1.5%,1.5%,1.5%
+Wed Nov 27,09:30,GMT,gbp,GBP Private Consumption,Low,0.8%,0.6%,0.3%
+Wed Nov 27,09:30,GMT,gbp,GBP Government Spending,Low,0.5%,0.5%,0.5%
+Wed Nov 27,09:30,GMT,gbp,GBP Gross Fixed Capital Formation,Low,1.4%,1.3%,0.8%
+Wed Nov 27,09:30,GMT,gbp,GBP Exports,Low,-2.4%,-1.0%,3.0%
+Wed Nov 27,09:30,GMT,gbp,GBP Imports,Low,0.4%,1.3%,2.9%
+Wed Nov 27,09:30,GMT,gbp,GBP Gross Domestic Product (QoQ),Medium,0.8%,0.8%,0.8%
+Wed Nov 27,09:30,GMT,gbp,GBP Index of Services (MoM),Low,0.2%,0.4%,0.4%
+Wed Nov 27,09:30,GMT,gbp,GBP Index of Services (3Mo3M),Low,0.7%,0.7%,0.6%
+Wed Nov 27,09:30,GMT,gbp,GBP Total Business Investment (QoQ),Low,1.4%,2.0%,-2.7%
+Wed Nov 27,09:30,GMT,gbp,GBP Total Business Investment (YoY),Low,-6.3%,,-8.5%
+Wed Nov 27,11:00,GMT,gbp,GBP CBI Reported Sales,Low,1,10,2
+Wed Nov 27,12:00,GMT,usd,USD MBA Mortgage Applications,Medium,-0.3%,,-2.3%
+Wed Nov 27,13:30,GMT,cad,CAD Average Weekly Earnings (YoY),Medium,1.9%,,1.0%
+Wed Nov 27,13:30,GMT,usd,USD Initial Jobless Claims,Medium,316K,330K,326K
+Wed Nov 27,13:30,GMT,usd,USD Continuing Claims,Low,2776K,2850K,2867K
+Wed Nov 27,13:30,GMT,usd,USD Durable Goods Orders,High,-2.0%,-2.0%,4.1%
+Wed Nov 27,13:30,GMT,usd,USD Durables Ex Transportation,Medium,-0.1%,0.5%,0.2%
+Wed Nov 27,13:30,GMT,usd,USD Cap Goods Orders Nondef Ex Air,Low,-1.2%,0.8%,-1.4%
+Wed Nov 27,13:30,GMT,usd,USD Cap Goods Ship Nondef Ex Air,Low,-0.2%,-0.2%,-0.2%
+Wed Nov 27,13:30,GMT,usd,USD Chicago Fed Nat Activity Index,Low,-0.18,0.10,0.18
+Wed Nov 27,14:45,GMT,usd,USD Chicago Purchasing Manager,Medium,63.0,60,65.9
+Wed Nov 27,14:55,GMT,usd,USD U. of Michigan Confidence,Medium,75.1,73,72
+Wed Nov 27,15:00,GMT,usd,USD Leading Indicators,Medium,0.2%,0.0%,0.9%
+Wed Nov 27,15:30,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,2953K,750K,375K
+Wed Nov 27,15:30,GMT,usd,USD DOE Cushing OK Crude Inventory,Low,676K,,1736K
+Wed Nov 27,15:30,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,1751K,500K,-345K
+Wed Nov 27,15:30,GMT,usd,USD DOE U.S. Distillate Inventory,Low,-1666K,,-4795K
+Wed Nov 27,17:00,GMT,usd,USD EIA Natural Gas Storage Change,Low,-13,-13,-45
+Wed Nov 27,23:50,GMT,jpy,JPY Retail Trade (YoY),Low,2.3%,2.1%,3.0%
+Wed Nov 27,23:50,GMT,jpy,JPY Retail Trade s.a. (MoM),Low,-1.0%,-0.8%,1.7%
+Wed Nov 27,23:50,GMT,jpy,JPY Foreign Buying Japan Bonds (Yen),Low,-¥209.3B,,¥25.8B
+Wed Nov 27,23:50,GMT,jpy,JPY Foreign Buying Japan Stocks (Yen),Low,¥707.5B,,¥1295.1B
+Wed Nov 27,23:50,GMT,jpy,JPY Large Retailers' Sales,Medium,-0.4%,-0.1%,0.7%
+Wed Nov 27,23:50,GMT,jpy,JPY Japan Buying Foreign Bonds (Yen),Medium,¥1405.6B,,¥351.5B
+Wed Nov 27,23:50,GMT,jpy,JPY Japan Buying Foreign Stocks (Yen),Medium,-¥91.6B,,-¥89.9B
+Thu Nov 28,00:00,GMT,nzd,NZD NBNZ Activity Outlook,Low,47.1,,47.1
+Thu Nov 28,00:00,GMT,nzd,NZD NBNZ Business Confidence,Medium,60.5,,53.2
+Thu Nov 28,,,CNY,CNY Leading Index,Medium,,,99.64
+Thu Nov 28,00:00,GMT,aud,AUD HIA New Home Sales MoM,Medium,-3.8%,,6.4%
+Thu Nov 28,00:30,GMT,aud,AUD Private Capital Expenditure,Low,3.6%,-1.2%,1.6%
+Thu Nov 28,01:30,GMT,cny,CNY Industrial Profits YTD (YoY),Low,13.7%,,13.5%
+Thu Nov 28,06:45,GMT,chf,CHF Gross Domestic Product (YoY),Medium,1.9%,1.8%,2.5%
+Thu Nov 28,06:45,GMT,chf,CHF Gross Domestic Product (QoQ),Medium,0.5%,0.4%,0.5%
+Thu Nov 28,07:00,GMT,eur,EUR German Import Price Index (MoM),Low,-0.7%,-0.3%,0.0%
+Thu Nov 28,07:00,GMT,eur,EUR German Import Price Index (YoY),Low,-3.0%,-2.6%,-2.8%
+Thu Nov 28,08:55,GMT,eur,EUR German Unemployment Rate s.a.,High,6.9%,6.9%,6.9%
+Thu Nov 28,08:55,GMT,eur,EUR German Unemployment Change,High,10K,0K,3K
+Thu Nov 28,09:00,GMT,eur,EUR Euro-Zone M3 s.a. (YoY),Low,1.4%,1.7%,2.0%
+Thu Nov 28,09:00,GMT,eur,EUR Euro-Zone M3 s.a. (3M),Low,1.9%,2.0%,2.2%
+Thu Nov 28,09:30,GMT,gbp,GBP Lloyds Business Barometer,Low,50,,63
+Thu Nov 28,10:00,GMT,eur,EUR Euro-Zone Economic Confidence,Medium,98.5,98.0,97.7
+Thu Nov 28,10:00,GMT,eur,EUR Euro-Zone Industrial Confidence,Low,-3.9,-4.4,-5.0
+Thu Nov 28,10:00,GMT,eur,EUR Euro-Zone Consumer Confidence,Medium,-15.4,-15.4,-15.4
+Thu Nov 28,10:00,GMT,eur,EUR Euro-Zone Services Confidence,Low,-0.8,-3.5,-3.7
+Thu Nov 28,10:00,GMT,eur,EUR Euro-Zone Business Climate Indicator,Low,0.18,0.05,-0.08
+Thu Nov 28,13:00,GMT,eur,EUR German Consumer Price Index (MoM),Medium,0.2%,0.1%,-0.2%
+Thu Nov 28,13:00,GMT,eur,EUR German Consumer Price Index (YoY),High,1.3%,1.2%,1.2%
+Thu Nov 28,13:00,GMT,eur,EUR German Consumer Price Index - EU Harmonised (MoM),Medium,0.2%,-0.1%,-0.3%
+Thu Nov 28,13:00,GMT,eur,EUR German Consumer Price Index - EU Harmonised (YoY),High,1.6%,1.3%,1.2%
+Thu Nov 28,13:30,GMT,cad,CAD Industrial Product Price (MoM),Low,-0.3%,-0.5%,-0.2%
+Thu Nov 28,13:30,GMT,cad,CAD Raw Materials Price Index (MoM),Low,-2.3%,-2.0%,-1.2%
+Thu Nov 28,13:30,GMT,cad,CAD Current Account (BoP) (Canadian dollar),Low,-$15.5B,-$14.4B,-$15.9B
+Thu Nov 28,21:45,GMT,nzd,NZD Building Permits (MoM),Low,-0.6%,1.7%,1.4%
+Thu Nov 28,23:15,GMT,jpy,JPY Nomura/JMMA Manufacturing Purchasing Manager Index,Medium,55.1,,54.2
+Thu Nov 28,23:30,GMT,jpy,JPY Job-To-Applicant Ratio,Low,0.98,0.96,0.95
+Thu Nov 28,23:30,GMT,jpy,JPY Tokyo Consumer Price Index (YoY),Low,0.9%,0.7%,0.6%
+Thu Nov 28,23:30,GMT,jpy,"JPY Tokyo Consumer Price Index Ex Food, Energy (YoY)",Low,0.2%,-0.1%,-0.2%
+Thu Nov 28,23:30,GMT,jpy,JPY National Consumer Price Index (YoY),High,1.1%,1.1%,1.1%
+Thu Nov 28,23:30,GMT,jpy,"JPY National Consumer Price Index Ex Food, Energy (YoY)",Low,0.3%,0.2%,0.0%
+Thu Nov 28,23:30,GMT,jpy,JPY Household Spending (YoY),Medium,0.9%,1.0%,3.7%
+Thu Nov 28,23:30,GMT,jpy,JPY Jobless Rate,Medium,4.0%,3.9%,4.0%
+Thu Nov 28,23:30,GMT,jpy,JPY National Consumer Price Index Ex-Fresh Food (YoY),Medium,0.9%,0.9%,0.7%
+Thu Nov 28,23:30,GMT,jpy,JPY Tokyo Consumer Price Index Ex-Fresh Food (YoY),Low,0.6%,0.4%,0.3%
+Thu Nov 28,23:50,GMT,jpy,JPY Industrial Production (MoM),Medium,0.5%,2.0%,1.3%
+Thu Nov 28,23:50,GMT,jpy,JPY Industrial Production (YoY),Medium,4.7%,6.3%,5.1%
+Fri Nov 29,00:05,GMT,gbp,GBP GfK Consumer Confidence Survey,Medium,-12,-10,-11
+Fri Nov 29,00:30,GMT,aud,AUD Private Sector Credit (MoM),Low,0.3%,0.4%,0.3%
+Fri Nov 29,00:30,GMT,aud,AUD Private Sector Credit (YoY),Medium,3.5%,3.5%,3.3%
+Fri Nov 29,02:00,GMT,nzd,NZD Money Supply M3 (YoY),Low,6.6%,,7.3%
+Fri Nov 29,04:00,GMT,jpy,JPY Vehicle Production (YoY),Low,10.1%,,13.0%
+Fri Nov 29,05:00,GMT,jpy,JPY Housing Starts (YoY),Medium,7.1%,5.0%,19.4%
+Fri Nov 29,05:00,GMT,jpy,JPY Annualized Housing Starts,Medium,1.037M,0.999M,1.044M
+Fri Nov 29,05:00,GMT,jpy,JPY Construction Orders (YoY),Low,61.1%,,89.8%
+Fri Nov 29,07:00,GMT,eur,EUR German Retail Sales (YoY),Medium,-0.2%,1.4%,0.3%
+Fri Nov 29,07:00,GMT,eur,EUR German Retail Sales (MoM),Low,-0.8%,0.5%,-0.2%
+Fri Nov 29,07:00,GMT,gbp,GBP Nationwide House Prices s.a. (MoM),Low,0.6%,0.6%,1.0%
+Fri Nov 29,07:00,GMT,gbp,GBP Nationwide House Prices n.s.a. (YoY),Low,6.5%,6.2%,5.8%
+Fri Nov 29,08:00,GMT,chf,CHF KOF Swiss Leading Indicator,Medium,1.85,1.81,1.71
+Fri Nov 29,09:30,GMT,gbp,GBP Net Consumer Credit,Medium,0.5B,0.7B,1.1B
+Fri Nov 29,09:30,GMT,gbp,GBP M4 Money Supply (MoM),Low,0.1%,,0.5%
+Fri Nov 29,09:30,GMT,gbp,GBP Net Lending Sec. on Dwellings,Low,1.2B,1.3B,1.1B
+Fri Nov 29,09:30,GMT,gbp,GBP Mortgage Approvals,Medium,67.7K,68.5K,66.9K
+Fri Nov 29,09:30,GMT,gbp,GBP M4 Money Supply (YoY),Low,2.4%,2.7%,2.5%
+Fri Nov 29,09:30,GMT,gbp,GBP M4 Ex IOFCs 3M Annualised,Low,4.5%,5.0%,3.5%
+Fri Nov 29,10:00,GMT,eur,EUR Euro-Zone Unemployment Rate,Low,12.1%,12.2%,12.2%
+Fri Nov 29,10:00,GMT,eur,EUR Euro-Zone Consumer Price Index Estimate (YoY),Medium,0.9%,0.8%,0.7%
+Fri Nov 29,10:00,GMT,eur,EUR Euro-Zone Consumer Price Index - Core (YoY),High,1.0%,0.9%,0.8%
+Fri Nov 29,13:30,GMT,cad,CAD Quarterly Gross Domestic Product Annualized,High,2.7%,2.5%,1.6%
+Fri Nov 29,13:30,GMT,cad,CAD Gross Domestic Product (MoM),Medium,0.3%,0.2%,0.3%
+Fri Nov 29,13:30,GMT,cad,CAD Gross Domestic Product (YoY),High,2.3%,2.1%,2.0%
+Sat Nov 30,13:00,GMT,usd,USD NAPM-Milwaukee,Low,52.1,55.0,57.1

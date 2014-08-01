@@ -1,0 +1,134 @@
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
+Sun Nov 13,21:30,GMT,nzd,NZD Performance Services Index,Low,50.6,,52.9
+Sun Nov 13,21:45,GMT,nzd,NZD Retail Sales Ex Inflation (QoQ),Medium,2.2%,0.6%,1.0%
+Sun Nov 13,23:50,GMT,jpy,JPY Gross Domestic Product Deflator (YoY),Low,-1.9%,-2.2%,-2.2%
+Sun Nov 13,23:50,GMT,jpy,JPY Nominal Gross Domestic Product (QoQ),High,1.4%,1.4%,-1.5%
+Sun Nov 13,23:50,GMT,jpy,JPY Gross Domestic Product Annualized,High,6.0%,5.9%,-2.1%
+Sun Nov 13,23:50,GMT,jpy,JPY Gross Domestic Product (QoQ),High,1.5%,1.5%,-0.5%
+Mon Nov 14,04:30,GMT,jpy,JPY Industrial Production (MoM),Low,-3.3%,,-4.0%
+Mon Nov 14,04:30,GMT,jpy,JPY Industrial Production (YoY),Medium,-3.3%,,-4.0%
+Mon Nov 14,04:30,GMT,jpy,JPY Capacity Utilization (MoM),Low,-3.6%,,2.4%
+Mon Nov 14,07:45,GMT,eur,EUR French Current Account (euros),Low,-4.0B,,-2.4B
+Mon Nov 14,08:15,GMT,chf,CHF Producer & Import Prices (MoM),Low,-0.2%,-0.3%,-0.10%
+Mon Nov 14,08:15,GMT,chf,CHF Producer & Import Prices (YoY),Low,-1.8%,-1.9%,-2.0%
+Mon Nov 14,10:00,GMT,eur,EUR Euro-Zone Industrial Production w.d.a. (YoY),Medium,2.2%,3.5%,6.0%
+Mon Nov 14,10:00,GMT,eur,EUR Euro-Zone Industrial Production s.a. (MoM),Low,-2.0%,-2.3%,1.4%
+Tue Nov 15,00:30,GMT,AUD,AUD Reserve Bank's Board November Minutes,HIGH,,,
+Tue Nov 15,00:30,GMT,aud,AUD New Motor Vehicle Sales (MoM),Low,1.1%,,-1.4%
+Tue Nov 15,00:30,GMT,aud,AUD New Motor Vehicle Sales (YoY),Low,4.4%,,1.4%
+Tue Nov 15,04:00,GMT,jpy,JPY Tokyo Condominium Sales (YoY),Low,-9.3%,,16.7%
+Tue Nov 15,06:30,GMT,eur,EUR French Gross Domestic Product (QoQ),Low,0.4%,0.4%,-0.1%
+Tue Nov 15,06:30,GMT,eur,EUR French Gross Domestic Product (YoY),Low,1.6%,1.6%,1.6%
+Tue Nov 15,07:00,GMT,eur,EUR German Gross Domestic Product n.s.a. (YoY),High,2.5%,2.4%,3.0%
+Tue Nov 15,07:00,GMT,eur,EUR German Gross Domestic Product w.d.a. (YoY),High,2.6%,2.5%,2.9%
+Tue Nov 15,07:00,GMT,eur,EUR German Gross Domestic Product s.a. (QoQ),Medium,0.5%,0.5%,0.3%
+Tue Nov 15,07:45,GMT,eur,EUR French Wages (QoQ),Low,0.4%,,0.6%
+Tue Nov 15,07:45,GMT,eur,EUR French Non-Farm Payrolls (QoQ),Low,0.0%,0.3%,0.2%
+Tue Nov 15,09:00,GMT,eur,EUR Italian Trade Balance (Total) (euros),Low,-1840,,-2905M
+Tue Nov 15,09:00,GMT,eur,EUR Italian Trade Balance EU (euros),Low,-8M,,-402M
+Tue Nov 15,09:30,GMT,gbp,GBP Consumer Price Index (MoM),Medium,0.1%,0.2%,0.6%
+Tue Nov 15,09:30,GMT,gbp,GBP Consumer Price Index (YoY),High,5.0%,5.1%,5.2%
+Tue Nov 15,09:30,GMT,gbp,GBP Retail Price Index (MoM),Low,0.0%,0.1%,0.8%
+Tue Nov 15,09:30,GMT,gbp,GBP Retail Price Index (YoY),Low,5.4%,5.5%,5.6%
+Tue Nov 15,09:30,GMT,gbp,GBP Retail Price Index Ex Mort Int.Payments (YoY),Low,5.6%,5.7%,5.7%
+Tue Nov 15,09:30,GMT,gbp,GBP Core Consumer Price Index (YoY),High,3.4%,3.2%,3.3%
+Tue Nov 15,09:30,GMT,gbp,GBP Retail Price Index,Low,238.0,238.3,237.9
+Tue Nov 15,10:00,GMT,eur,EUR Euro-Zone Gross Domestic Product s.a. (QoQ),Medium,0.2%,0.2%,0.2%
+Tue Nov 15,10:00,GMT,eur,EUR Euro-Zone Gross Domestic Product s.a. (YoY),High,1.4%,1.4%,1.6%
+Tue Nov 15,10:00,GMT,eur,EUR German ZEW Survey (Current Situation),Medium,34.2,32.0,38.4
+Tue Nov 15,10:00,GMT,eur,EUR Euro-Zone ZEW Survey (Economic Sentiment),High,-59.1,-55.3,-51.2
+Tue Nov 15,10:00,GMT,eur,EUR German ZEW Survey (Economic Sentiment),High,-55.2,-52.5,-48.3
+Tue Nov 15,10:00,GMT,eur,EUR Euro-Zone Trade Balance s.a. (euros),Low,2.1B,-1.5B,-1.2B
+Tue Nov 15,10:00,GMT,eur,EUR Euro-Zone Trade Balance (euros),Low,2.1B,2.9B,-4.4B
+Tue Nov 15,13:30,GMT,cad,CAD Manufacturing Sales (MoM),Low,2.6%,1.3%,1.4%
+Tue Nov 15,13:30,GMT,usd,USD Producer Price Index (MoM),Low,-0.3%,-0.1%,0.8%
+Tue Nov 15,13:30,GMT,usd,USD Producer Price Index Ex Food & Energy (MoM),Low,0.0%,0.1%,0.2%
+Tue Nov 15,13:30,GMT,usd,USD Producer Price Index (YoY),Medium,5.9%,6.3%,6.9%
+Tue Nov 15,13:30,GMT,usd,USD Producer Price Index Ex Food & Energy (YoY),Medium,2.8%,2.8%,2.5%
+Tue Nov 15,13:30,GMT,usd,USD Advance Retail Sales,High,0.5%,0.3%,1.1%
+Tue Nov 15,13:30,GMT,usd,USD Retail Sales Less Autos,Medium,0.6%,0.2%,0.5%
+Tue Nov 15,13:30,GMT,usd,USD Retail Sales Ex Auto & Gas,Medium,0.7%,0.2%,0.5%
+Tue Nov 15,13:30,GMT,usd,USD Empire Manufacturing,Low,0.61,-2.00,-8.48
+Tue Nov 15,15:00,GMT,usd,USD Business Inventories,Medium,0.0%,0.1%,0.4%
+Tue Nov 15,15:05,GMT,usd,USD Fed's Williams Speaks in Scottsdale, Arizona,Low,,,
+Tue Nov 15,23:30,GMT,aud,AUD Westpac Leading Index (MoM),Low,-0.3%,,0.7%
+Tue Nov 15,23:50,GMT,jpy,JPY Housing Loans (YoY),Low,2.1%,,2.4%
+Wed Nov 16,00:00,GMT,aud,AUD DEWR Internet Skilled Vacancies (MoM),Low,-1.9%,,-2.1%
+Wed Nov 16,00:30,GMT,aud,AUD Wage Cost Index (QoQ),Low,0.7%,0.9%,0.9%
+Wed Nov 16,00:30,GMT,aud,AUD Wage Cost Index (YoY),Low,3.6%,3.8%,3.8%
+Wed Nov 16,01:45,GMT,cny,CNY Actual FDI (YoY),Medium,8.8%,,7.9%
+Wed Nov 16,03:50,GMT,jpy,JPY Bank of Japan Rate Decision,High,0.10%,0.10%,0.10%
+Wed Nov 16,05:00,GMT,USD,USD New York Fed's Dahlgren to Speak on Panel in Washington, DC,LOW,,,
+Wed Nov 16,07:00,GMT,eur,EUR EU 25 New Car Registrations,Low,-1.8%,,0.7%
+Wed Nov 16,09:00,GMT,eur,EUR Italian Consumer Price Index (NIC incl. tobacco) (MoM),Low,0.6%,0.6%,0.6%
+Wed Nov 16,09:00,GMT,eur,EUR Italian Consumer Price Index (NIC incl. tobacco) (YoY),Low,3.4%,3.4%,3.4%
+Wed Nov 16,09:00,GMT,eur,EUR Italian Consumer Price Index - EU Harmonized (MoM),Low,0.9%,0.9%,0.9%
+Wed Nov 16,09:00,GMT,eur,EUR Italian Consumer Price Index - EU Harmonized (YoY),Low,3.8%,3.8%,3.8%
+Wed Nov 16,09:30,GMT,gbp,GBP Claimant Count Rate,Medium,5.0%,5.1%,5.0%
+Wed Nov 16,09:30,GMT,gbp,GBP Jobless Claims Change,High,5.3K,21.0K,13.4K
+Wed Nov 16,09:30,GMT,gbp,GBP Average Weekly Earnings (3M/YoY),Medium,2.3%,2.5%,2.7%
+Wed Nov 16,09:30,GMT,gbp,GBP Weekly Earnings exBonus (3M/YoY),Low,1.7%,1.6%,1.8%
+Wed Nov 16,09:30,GMT,gbp,GBP ILO Unemployment Rate (3M),Medium,8.3%,8.2%,8.1%
+Wed Nov 16,10:00,GMT,eur,EUR Euro-Zone Consumer Price Index - Core (YoY),High,1.6%,1.6%,1.6%
+Wed Nov 16,10:00,GMT,eur,EUR Euro-Zone Consumer Price Index (MoM),Medium,0.3%,0.3%,0.8%
+Wed Nov 16,10:00,GMT,eur,EUR Euro-Zone Consumer Price Index (YoY),High,3.0%,3.0%,3.0%
+Wed Nov 16,10:30,GMT,gbp,GBP Bank of England Inflation Report,High,,,
+Wed Nov 16,12:00,GMT,usd,USD MBA Mortgage Applications,Low,-10.0%,,10.3%
+Wed Nov 16,13:30,GMT,usd,USD Consumer Price Index (MoM),Medium,-0.08%,0.0%,0.3%
+Wed Nov 16,13:30,GMT,usd,USD Consumer Price Index Ex Food & Energy (MoM),Medium,0.14%,0.1%,0.05%
+Wed Nov 16,13:30,GMT,usd,USD Consumer Price Index (YoY),High,3.5%,3.7%,3.9%
+Wed Nov 16,13:30,GMT,usd,USD Consumer Price Index Ex Food & Energy (YoY),High,2.1%,2.1%,2.0%
+Wed Nov 16,13:30,GMT,usd,USD Consumer Price Index n.s.a.,Low,226.621,226.421,226.889
+Wed Nov 16,13:30,GMT,usd,USD Consumer Price Index Core Index s.a.,Low,226.444,,226.137
+Wed Nov 16,14:00,GMT,usd,USD Net Long-term TIC Flows,Medium,$68.6B,$57.9B,$58.0B
+Wed Nov 16,14:00,GMT,usd,USD Total Net TIC Flows,Low,$57.4,,$89.3B
+Wed Nov 16,14:15,GMT,usd,USD Industrial Production,Medium,0.7%,0.4%,-0.1%
+Wed Nov 16,14:15,GMT,usd,USD Capacity Utilization,Low,77.8%,77.6%,77.3%
+Wed Nov 16,15:00,GMT,usd,USD NAHB Housing Market Index,Low,20,18,17
+Wed Nov 16,15:30,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,-1056K,-1200K,-1370K
+Wed Nov 16,15:30,GMT,usd,USD DOE Cushing OK Crude Inventory,Low,890K,,-932K
+Wed Nov 16,15:30,GMT,usd,USD DOE U.S. Distillate Inventory,Low,-2136K,-2350K,-6020K
+Wed Nov 16,15:30,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,992K,-1000K,-2107K
+Wed Nov 16,21:45,GMT,nzd,NZD Producer Prices- Inputs (QoQ),Low,0.6%,,0.9%
+Wed Nov 16,21:45,GMT,nzd,NZD Producer Prices- Outputs (QoQ),Low,0.2%,,1.4%
+Thu Nov 17,,,usd,USD MBA Mortgage Foreclosures,Low,4.43%,,4.43%
+Thu Nov 17,,,usd,USD Mortgage Delinquencies,Low,7.99%,,8.44%
+Thu Nov 17,00:01,GMT,gbp,GBP Nationwide Consumer Confidence,Low,36,43,45
+Thu Nov 17,00:30,GMT,aud,AUD Average Weekly Wages (QoQ),Medium,1.2%,1.1%,1.2%
+Thu Nov 17,00:30,GMT,aud,AUD Average Weekly Wages (YoY),Medium,5.3%,4.8%,4.4%
+Thu Nov 17,00:30,GMT,aud,AUD RBA Foreign Exchange Transaction (Australian dollar),Low,401M,,641M
+Thu Nov 17,02:00,GMT,cny,CNY Conference Board China September Leading Economic Index,Low,160.2,,159.5
+Thu Nov 17,06:00,GMT,jpy,JPY Machine Tool Orders (YoY),Medium,26.0%,,25.9%
+Thu Nov 17,09:30,GMT,gbp,GBP Retail Sales (MoM),Low,0.6%,-0.3%,0.6%
+Thu Nov 17,09:30,GMT,gbp,GBP Retail Sales (YoY),Medium,0.9%,-0.2%,0.3%
+Thu Nov 17,09:30,GMT,gbp,GBP Retail Sales w/Auto Fuel (MoM),Low,0.6%,-0.2%,0.5%
+Thu Nov 17,09:30,GMT,gbp,GBP Retail Sales w/Auto Fuel (YoY),Medium,0.9%,-0.1%,0.5%
+Thu Nov 17,10:00,GMT,eur,EUR Euro-Zone Construction Output s.a. (MoM),Low,-1.3%,,0.2%
+Thu Nov 17,10:00,GMT,eur,EUR Euro-Zone Construction Output w.d.a. (YoY),Low,0.4%,,2.5%
+Thu Nov 17,10:00,GMT,chf,CHF ZEW Survey (Expectations),Medium,-64.3,,-54.4
+Thu Nov 17,13:30,GMT,cad,CAD International Securities Transactions (Canadian dollar),Low,7.35B,4.00B,8.22B
+Thu Nov 17,13:30,GMT,usd,USD Housing Starts,Medium,628K,610K,630K
+Thu Nov 17,13:30,GMT,usd,USD Housing Starts (MoM),Low,-0.3%,-7.3%,7.7%
+Thu Nov 17,13:30,GMT,usd,USD Building Permits,Medium,653K,603K,589K
+Thu Nov 17,13:30,GMT,usd,USD Initial Jobless Claims,Low,388K,395K,393K
+Thu Nov 17,13:30,GMT,usd,USD Building Permits (MoM),Low,10.9%,2.4%,-5.8%
+Thu Nov 17,13:30,GMT,usd,USD Continuing Claims,Low,3608K,3635K,3665K
+Thu Nov 17,15:00,GMT,usd,USD Philadelphia Fed.,Low,3.6,9.0,8.7
+Thu Nov 17,15:30,GMT,usd,USD EIA Natural Gas Storage Change,Low,19,27,37
+Fri Nov 18,01:35,GMT,cny,CNY MNI November Flash Business Sentiment Survey,Low,55.5,,58.5
+Fri Nov 18,05:30,GMT,jpy,JPY Nationwide Department Store Sales (YoY),Low,-0.5%,,-2.4%
+Fri Nov 18,05:30,GMT,jpy,JPY Tokyo Department Store Sales (YoY),Low,-1.9%,,-3.6%
+Fri Nov 18,07:00,GMT,eur,EUR German Producer Prices (MoM),Medium,0.2%,0.1%,0.3%
+Fri Nov 18,07:00,GMT,eur,EUR German Producer Prices (YoY),High,5.3%,5.3%,5.5%
+Fri Nov 18,09:00,GMT,eur,EUR Italian Industrial Orders s.a. (MoM),Low,-8.3%,-6.0%,4.2%
+Fri Nov 18,09:00,GMT,eur,EUR Italian Industrial Orders n.s.a. (YoY),Low,-3.6%,,7.8%
+Fri Nov 18,09:00,GMT,eur,EUR Italian Industrial Sales s.a. (MoM),Low,-5.4%,,3.8%
+Fri Nov 18,09:00,GMT,eur,EUR Italian Industrial Sales n.s.a. (YoY),Low,1.9%,,11.6%
+Fri Nov 18,10:00,GMT,eur,EUR Italian Current Account (euros),Low,-3530M,,-5393M
+Fri Nov 18,12:00,GMT,cad,CAD Consumer Price Index (MoM),Medium,0.2%,0.1%,0.2%
+Fri Nov 18,12:00,GMT,cad,CAD Consumer Price Index (YoY),High,2.9%,2.8%,3.2%
+Fri Nov 18,12:00,GMT,cad,CAD Bank Canada Consumer Price Index Core (MoM),Medium,0.3%,0.1%,0.5%
+Fri Nov 18,12:00,GMT,cad,CAD Bank Canada Consumer Price Index Core (YoY),High,2.1%,1.9%,2.2%
+Fri Nov 18,12:00,GMT,cad,CAD Consumer Price Index,Medium,120.8,,120.6
+Fri Nov 18,13:30,GMT,cad,CAD Leading Indicators (MoM),Medium,0.2%,0.1%,0.1%
+Fri Nov 18,15:00,GMT,usd,USD Leading Indicators,Medium,0.9%,0.6%,0.1%

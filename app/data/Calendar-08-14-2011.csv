@@ -1,0 +1,126 @@
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
+Sun Aug 14,22:30,GMT,nzd,NZD Performance Services Index,Low,54.5,,54.7
+Sun Aug 14,23:01,GMT,gbp,GBP Rightmove House Prices (YoY) ,Low,-0.3%,,0.1%
+Sun Aug 14,23:01,GMT,gbp,GBP Rightmove House Prices (MoM) ,Low,-2.1%,,-1.6%
+Sun Aug 14,23:50,GMT,jpy,JPY Gross Domestic Product Annualized,High,-1.3%,-2.5%,-3.6%
+Sun Aug 14,23:50,GMT,jpy,JPY Gross Domestic Product (QoQ),High,-0.3%,-0.6%,-0.9%
+Sun Aug 14,23:50,GMT,jpy,JPY Gross Domestic Product Deflator (YoY),Low,-2.2%,-1.7%,-1.9%
+Sun Aug 14,23:50,GMT,jpy,JPY Nominal Gross Domestic Product (QoQ),High,-1.4%,-1.4%,-1.5%
+Mon Aug 15,01:30,GMT,aud,AUD New Motor Vehicle Sales (MoM),Low,8.6%,,1.9%
+Mon Aug 15,01:30,GMT,aud,AUD New Motor Vehicle Sales (YoY),Low,0.9%,,-11.2%
+Mon Aug 15,07:15,GMT,chf,CHF Producer & Import Prices (MoM),Low,-0.7%,-0.6%,-0.5%
+Mon Aug 15,07:15,GMT,chf,CHF Producer & Import Prices (YoY),Low,-0.6%,-0.6%,-0.4%
+Mon Aug 15,12:30,GMT,usd,USD Empire Manufacturing,Low,-7.72,0.00,-3.76
+Mon Aug 15,13:00,GMT,usd,USD Net Long-term TIC Flows,Medium,$3.7B,$35.0B,$24.2B
+Mon Aug 15,13:00,GMT,usd,USD Total Net TIC Flows,Low,-$29.5B,,-$48.8B
+Mon Aug 15,14:00,GMT,usd,USD NAHB Housing Market Index,Low,15,15,15
+Mon Aug 15,17:25,GMT,USD,USD Fed's Lockhart Speaks on Economy in Florence, Alabama,LOW,,,
+Tue Aug 16,01:30,GMT,aud,AUD Reserve Bank's Board August Minutes,High,,,
+Tue Aug 16,02:00,GMT,cny,CNY Conference Board China June Leading Economic Index,Low,158.9,,157.4
+Tue Aug 16,02:30,GMT,cny,CNY Actual FDI YoY,Low,19.8%,,2.8%
+Tue Aug 16,06:00,GMT,eur,EUR German Gross Domestic Product n.s.a. (YoY),High,2.8%,3.2%,5.0%
+Tue Aug 16,06:00,GMT,eur,EUR German Gross Domestic Product s.a. (QoQ),Medium,0.1%,0.5%,1.3%
+Tue Aug 16,06:00,GMT,eur,EUR German Gross Domestic Product w.d.a. (YoY),High,2.7%,3.1%,4.7%
+Tue Aug 16,08:30,GMT,gbp,GBP DCLG UK House Prices (YoY),Low,-2.0%,,-1.6%
+Tue Aug 16,08:30,GMT,gbp,GBP Consumer Price Index (MoM),Medium,0.0%,-0.1%,-0.1%
+Tue Aug 16,08:30,GMT,gbp,GBP Consumer Price Index (YoY),High,4.4%,4.3%,4.2%
+Tue Aug 16,08:30,GMT,gbp,GBP Core Consumer Price Index (YoY),Medium,3.1%,3.0%,2.8%
+Tue Aug 16,08:30,GMT,gbp,GBP Retail Price Index,Medium,234.7,234.7,235.2
+Tue Aug 16,08:30,GMT,gbp,GBP Retail Price Index (YoY),Medium,5.0%,5.0%,5.0%
+Tue Aug 16,08:30,GMT,gbp,GBP Retail Price Index (MoM),Low,-0.2%,-0.2%,0.0%
+Tue Aug 16,08:30,GMT,gbp,GBP Retail Price Index Ex Mort Int.Payments (YoY),Low,5.0%,5.1%,5.0%
+Tue Aug 16,09:00,GMT,eur,EUR Euro-Zone Gross Domestic Product s.a. (QoQ),Medium,0.2%,0.3%,0.8%
+Tue Aug 16,09:00,GMT,eur,EUR Euro-Zone Gross Domestic Product s.a. (YoY),High,1.7%,1.8%,2.5%
+Tue Aug 16,09:00,GMT,eur,EUR Euro-Zone Trade Balance s.a. (euros),Low,-1.6B,0.0B,-0.8B
+Tue Aug 16,09:00,GMT,eur,EUR Euro-Zone Trade Balance (euros),Low,0.9B,1.1B,0.2B
+Tue Aug 16,12:30,GMT,usd,USD Import Price Index (MoM),Low,0.3%,-0.1%,-0.6%
+Tue Aug 16,12:30,GMT,usd,USD Building Permits (MoM),Low,-3.2%,-1.9%,1.3%
+Tue Aug 16,12:30,GMT,cad,CAD Manufacturing Shipments (MoM),Low,-1.5%,-0.7%,-0.7%
+Tue Aug 16,12:30,GMT,usd,USD Import Price Index (YoY),Low,14.0%,13.4%,13.7%
+Tue Aug 16,12:30,GMT,usd,USD Housing Starts,Medium,604K,600K,613K
+Tue Aug 16,12:30,GMT,usd,USD Housing Starts (MoM),Low,1.5%,-4.6%,10.8%
+Tue Aug 16,12:30,GMT,usd,USD Building Permits,Medium,597K,605K,617K
+Tue Aug 16,13:15,GMT,usd,USD Capacity Utilization,Low,77.5%,76.9%,76.9%
+Tue Aug 16,13:15,GMT,usd,USD Industrial Production,Medium,0.9%,0.5%,0.4%
+Tue Aug 16,22:45,GMT,nzd,NZD Producer Prices- Inputs (QoQ),Low,0.9%,1.1%,2.2%
+Tue Aug 16,22:45,GMT,nzd,NZD Producer Prices- Outputs (QoQ),Low,1.4%,0.8%,1.7%
+Wed Aug 17,00:30,GMT,aud,AUD Westpac Leading Index (MoM),Low,0.1%,,-0.1%
+Wed Aug 17,01:00,GMT,aud,AUD DEWR Internet Skilled Vacancies (MoM),Low,-0.8%,,-0.7%
+Wed Aug 17,01:30,GMT,aud,AUD Wage Cost Index (QoQ),Low,0.9%,0.9%,0.8%
+Wed Aug 17,01:30,GMT,aud,AUD Wage Cost Index (YoY),Low,3.8%,4.0%,3.9%
+Wed Aug 17,08:00,GMT,eur,EUR Euro-Zone Current Account n.s.a. (euros),Low,-3.3B,,-18.7B
+Wed Aug 17,08:00,GMT,eur,EUR Euro-Zone Current Account s.a. (euros),Low,-7.4B,,-5.6B
+Wed Aug 17,08:30,GMT,gbp,GBP Bank of England Minutes,High,,,
+Wed Aug 17,08:30,GMT,gbp,GBP Jobless Claims Change,High,37.1K,20.0K,31.3K
+Wed Aug 17,08:30,GMT,gbp,GBP Weekly Earnings exBonus 3M/YoY,Medium,2.2%,2.3%,2.1%
+Wed Aug 17,08:30,GMT,gbp,GBP Claimant Count Rate,Medium,4.9%,4.7%,4.8%
+Wed Aug 17,08:30,GMT,gbp,GBP Average Weekly Earnings 3M/YoY,Low,2.6%,2.3%,2.3%
+Wed Aug 17,08:30,GMT,gbp,GBP ILO Unemployment Rate (3M),Medium,7.9%,7.7%,7.7%
+Wed Aug 17,09:00,GMT,eur,EUR Euro-Zone Consumer Price Index (MoM),Low,-0.6%,-0.6%,0.0%
+Wed Aug 17,09:00,GMT,eur,EUR Euro-Zone Consumer Price Index (YoY),Medium,2.5%,2.5%,2.5%
+Wed Aug 17,09:00,GMT,eur,EUR Italian Current Account (euros),Low,-4252M,,-5094M
+Wed Aug 17,09:00,GMT,eur,EUR Euro-Zone Consumer Price Index - Core (YoY),Medium,1.2%,1.6%,1.6%
+Wed Aug 17,11:00,GMT,usd,USD MBA Mortgage Applications,Low,4.1%,,21.7%
+Wed Aug 17,12:30,GMT,cad,CAD International Securities Transactions (Canadian dollar),Low,-3.5B,10.0B,15.3B
+Wed Aug 17,12:30,GMT,usd,USD Producer Price Index (MoM),Low,0.2%,0.1%,-0.4%
+Wed Aug 17,12:30,GMT,usd,USD Producer Price Index Ex Food & Energy (MoM),Low,0.4%,0.2%,0.3%
+Wed Aug 17,12:30,GMT,usd,USD Producer Price Index (YoY),Medium,7.2%,7.0%,7.0%
+Wed Aug 17,12:30,GMT,usd,USD Producer Price Index Ex Food & Energy (YoY),Medium,2.5%,2.3%,2.4%
+Wed Aug 17,14:30,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,4233K,-500K,-5225K
+Wed Aug 17,14:30,GMT,usd,USD DOE U.S. Distillate Inventory,Low,2449K,550K,-737K
+Wed Aug 17,14:30,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,-3510K,-1175K,-1588K
+Wed Aug 17,14:30,GMT,usd,USD DOE U.S. Refinery Utilization,Low,-0.9%,-0.3%,0.7%
+Wed Aug 17,23:01,GMT,gbp,GBP Nationwide Consumer Confidence ,Low,,,51
+Wed Aug 17,23:50,GMT,jpy,JPY Merchandise Trade Balance Total (Yen),Low,¥72.5B,¥69.3B,¥68.6B
+Wed Aug 17,23:50,GMT,jpy,JPY Adjusted Merchandise Trade Balance (Yen),Low,-¥130.5B,-¥131.9B,-¥196.5B
+Wed Aug 17,23:50,GMT,jpy,JPY Merchandise Trade Exports (YoY),Low,-3.3%,-2.6%,-1.6%
+Wed Aug 17,23:50,GMT,jpy,JPY Merchandise Trade Imports (YoY),Low,9.9%,11.0%,9.8%
+Thu Aug 18,01:30,GMT,aud,AUD Average Weekly Wages (QoQ),Medium,1.2%,1.0%,1.0%
+Thu Aug 18,01:30,GMT,aud,AUD Average Weekly Wages (YoY),Medium,4.4%,4.0%,3.8%
+Thu Aug 18,01:30,GMT,aud,AUD RBA Foreign Exchange Transaction (Australian dollar),Low,605M,,1280M
+Thu Aug 18,04:00,GMT,USD,USD Fed's Dudley to Speak in Newark, NJ,LOW,,,
+Thu Aug 18,05:00,GMT,jpy,JPY Coincident Index (JUN F),Low,108.8,,108.6
+Thu Aug 18,05:00,GMT,jpy,JPY Leading Index (JUN F),,103.2,,103.2
+Thu Aug 18,05:30,GMT,jpy,JPY Nationwide Department Store Sales (YoY),Low,,,0.3%
+Thu Aug 18,05:30,GMT,jpy,JPY Tokyo Department Store Sales (YoY),Low,,,0.4%
+Thu Aug 18,08:30,GMT,gbp,GBP Retail Sales (MoM),Low,0.2%,0.4%,1.0%
+Thu Aug 18,08:30,GMT,gbp,GBP Retail Sales (YoY),Medium,-0.2%,0.1%,0.2%
+Thu Aug 18,08:30,GMT,gbp,GBP Retail Sales w/Auto Fuel (MoM),Low,0.2%,0.3%,0.8%
+Thu Aug 18,08:30,GMT,gbp,GBP Retail Sales w/Auto Fuel (YoY),Medium,0.0%,0.3%,0.4%
+Thu Aug 18,09:00,GMT,eur,EUR Euro-Zone Construction Output w.d.a. (YoY),Low,-11.3%,,0.0%
+Thu Aug 18,09:00,GMT,eur,EUR Euro-Zone Construction Output s.a. (MoM),Low,-1.8%,,0.1%
+Thu Aug 18,12:30,GMT,usd,USD Consumer Price Index (MoM),Medium,0.5%,0.2%,-0.2%
+Thu Aug 18,12:30,GMT,usd,USD Consumer Price Index Ex Food & Energy (MoM),Medium,0.2%,0.2%,0.3%
+Thu Aug 18,12:30,GMT,usd,USD Consumer Price Index Core Index s.a.,Low,225.463,,224.958
+Thu Aug 18,12:30,GMT,usd,USD Consumer Price Index n.s.a.,Low,225.922,225.850,225.722
+Thu Aug 18,12:30,GMT,cad,CAD Leading Indicators (MoM),Medium,0.2%,0.2%,0.1%
+Thu Aug 18,12:30,GMT,cad,CAD Wholesale Sales (MoM),Low,0.2%,-0.5%,2.0%
+Thu Aug 18,12:30,GMT,usd,USD Consumer Price Index (YoY),High,3.6%,3.3%,3.6%
+Thu Aug 18,12:30,GMT,usd,USD Consumer Price Index Ex Food & Energy (YoY),High,1.8%,1.7%,1.6%
+Thu Aug 18,12:30,GMT,usd,USD Initial Jobless Claims,Low,408K,400K,399K
+Thu Aug 18,12:30,GMT,usd,USD Continuing Claims,Low,3702K,3700K,3695K
+Thu Aug 18,12:35,GMT,usd,USD Fed's Dudley to Speak in Newark, NJ,Low,,,
+Thu Aug 18,13:45,GMT,usd,USD Bloomberg Economic Expectations,Low,-34,,-22
+Thu Aug 18,13:45,GMT,usd,USD Bloomberg Consumer Comfort,Low,-48.3,,-49.1
+Thu Aug 18,14:00,GMT,usd,USD Existing Home Sales,Medium,4.67M,4.90M,4.84M
+Thu Aug 18,14:00,GMT,usd,USD Leading Indicators,Medium,0.5%,0.2%,0.3%
+Thu Aug 18,14:00,GMT,usd,USD Philadelphia Fed.,Medium,-30.7,2.0,3.2
+Thu Aug 18,14:00,GMT,usd,USD Existing Home Sales (MoM),Medium,-3.5%,2.7%,0.6%
+Thu Aug 18,14:30,GMT,usd,USD EIA Natural Gas Storage Change,Low,,,25
+Thu Aug 18,22:45,GMT,nzd,NZD Visitor Arrivals,Low,2.0%,,-4.4%
+Thu Aug 18,22:45,GMT,nzd,NZD Net Migration s.a.,Low,-220,,-290
+Fri Aug 19,01:35,GMT,cny,CNY MNI Flash Business Sentiment Survey (AUG),Low,55.38,,57.19
+Fri Aug 19,03:00,GMT,nzd,NZD Credit Card Spending s.a. (MoM),Medium,1.0%,,0.5%
+Fri Aug 19,03:00,GMT,nzd,NZD Credit Card Spending (YoY),Medium,7.3%,,4.6%
+Fri Aug 19,04:30,GMT,jpy,JPY All Industry Activity Index (MoM),Medium,2.3%,2.2%,1.8%
+Fri Aug 19,06:00,GMT,eur,EUR German Producer Prices (MoM),Medium,0.7%,0.1%,0.1%
+Fri Aug 19,06:00,GMT,eur,EUR German Producer Prices (YoY),High,5.8%,5.3%,5.6%
+Fri Aug 19,08:30,GMT,gbp,GBP Public Finances (PSNCR) (Pounds),Medium,-5.6B,-8.0B,20.4B
+Fri Aug 19,08:30,GMT,gbp,GBP PSNB ex Interventions,Medium,0.0B,2.4B,14.3B
+Fri Aug 19,08:30,GMT,gbp,GBP Public Sector Net Borrowing (Pounds),Medium,-2.0B,0.2B,12.4B
+Fri Aug 19,11:00,GMT,cad,CAD Consumer Price Index (MoM),Medium,0.2%,0.2%,-0.7%
+Fri Aug 19,11:00,GMT,cad,CAD Consumer Price Index (YoY),High,2.7%,2.8%,3.1%
+Fri Aug 19,11:00,GMT,cad,CAD Bank Canada Consumer Price Index Core (MoM),Low,0.2%,0.2%,-0.6%
+Fri Aug 19,11:00,GMT,cad,CAD Bank Canada Consumer Price Index Core (YoY),Medium,1.6%,1.6%,1.3%
+Fri Aug 19,11:00,GMT,cad,CAD Consumer Price Index,Medium,120.0,,119.8
+Fri Aug 19,17:45,GMT,USD,USD Fed's Pianalto speaks on economy in Columbus, Ohio,LOW,,,

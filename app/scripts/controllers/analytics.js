@@ -248,7 +248,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
     $scope.processEvents = function() {
         var def = $q.defer();
         $scope.selected.events = [];
-        var maxWeeks = 4;
+        var maxWeeks = 1;
         // match crosses
         var re = new RegExp('(' + [$scope.selected.cross1.currCode, $scope.selected.cross2.currCode].join('|') + ')', 'gi');
         var parseCsv = function(csv) {
@@ -473,11 +473,11 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                                     }
                                     if (row[p] === 1) {
                                         var pat = {};
-                                        var patName = p.replace(/\.\d+/g, '').replace(/([A-Z])|\./g, ' $1').trim().replace(/\s{1,}/g,' ');
+                                        var patName = p.replace(/\.\d+/g, '').replace(/([A-Z])|\./g, ' $1').trim().replace(/\s{1,}/g, ' ');
                                         var originalPattern = jsonPath.eval($scope.data.patterns, '$.[?(@.Name == "' + patName + '")]')[0] ||  null;
                                         if (originalPattern !== null) {
                                             patterns.push(originalPattern);
-                                        }else{
+                                        } else {
                                             console.log(patName);
                                         }
                                     }

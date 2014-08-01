@@ -1,0 +1,163 @@
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
+Sun May 27,01:30,GMT,cny,CNY Industrial Profits YTD (YoY),Low,-1.6%,,-1.3%
+Sun May 27,23:01,GMT,gbp,GBP Hometrack Housing Survey (MoM),Low,0.2%,,0.1%
+Sun May 27,23:01,GMT,gbp,GBP Hometrack Housing Survey (YoY),Low,-0.6%,,-0.9%
+Sun May 27,23:50,GMT,jpy,JPY Corporate Service Price (YoY),Low,0.2%,-0.2%,-0.2%
+Mon May 28,,,CNY,CNY Leading Index,Medium,,,100.52
+Mon May 28,08:00,GMT,eur,EUR Italian Business Confidence,Low,86.2,88.6,89.1
+Mon May 28,23:30,GMT,jpy,JPY Job-To-Applicant Ratio,Low,0.79,0.77,0.76
+Mon May 28,23:30,GMT,jpy,JPY Jobless Rate,Medium,4.6%,4.5%,4.5%
+Mon May 28,23:30,GMT,jpy,JPY Household Spending (YoY),Medium,2.6%,2.5%,3.4%
+Mon May 28,23:50,GMT,jpy,JPY Retail Trade (YoY),Medium,5.8%,6.0%,10.3%
+Mon May 28,23:50,GMT,jpy,JPY Retail Trade s.a. (MoM),Low,-0.3%,0.1%,-1.2%
+Mon May 28,23:50,GMT,jpy,JPY Large Retailers' Sales,Medium,-0.5%,-0.3%,5.1%
+Tue May 29,01:00,GMT,aud,AUD HIA New Home Sales (MoM),Medium,6.9%,,-9.4%
+Tue May 29,01:00,GMT,jpy,JPY Small Business Confidence,Low,47.2,,47.6
+Tue May 29,06:00,GMT,eur,EUR German Import Price Index (MoM),Low,-0.5%,-0.3%,0.7%
+Tue May 29,06:00,GMT,eur,EUR German Import Price Index (YoY),Low,2.3%,2.6%,3.1%
+Tue May 29,06:00,GMT,chf,CHF UBS Consumption Indicator,Medium,1.41,,1.20
+Tue May 29,10:00,GMT,gbp,GBP CBI Reported Sales,Low,21,-8,-6
+Tue May 29,12:00,GMT,eur,EUR German Consumer Price Index (MoM),Medium,-0.2%,-0.1%,0.2%
+Tue May 29,12:00,GMT,eur,EUR German Consumer Price Index (YoY),High,1.9%,2.1%,2.1%
+Tue May 29,12:00,GMT,eur,EUR German Consumer Price Index - EU Harmonised (MoM),Medium,-0.3%,0.0%,0.1%
+Tue May 29,12:00,GMT,eur,EUR German Consumer Price Index - EU Harmonised (YoY),High,2.1%,2.2%,2.2%
+Tue May 29,13:00,GMT,usd,USD S&P/CS 20 City s.a. (MoM),Low,0.09%,0.20%,0.15%
+Tue May 29,13:00,GMT,usd,USD S&P/Case-Shiller Composite-20 (YoY),Low,-2.57%,-2.60%,-3.54%
+Tue May 29,13:00,GMT,usd,USD S&P/Case-Shiller US Home Price Index (YoY),Low,-1.92%,-3.05%,-3.9%
+Tue May 29,13:00,GMT,usd,USD S&P/Case-Shiller Home Price Index,Low,134.1,134.4,134.14
+Tue May 29,13:00,GMT,usd,USD S&P/Case-Shiller US Home Price Index,Low,123.33,,125.87
+Tue May 29,14:00,GMT,usd,USD Consumer Confidence,Medium,64.9,69.6,68.7
+Tue May 29,14:30,GMT,usd,USD Dallas Fed Manufacturing Activity,Low,-5.1,3.0,-3.4
+Tue May 29,22:45,GMT,nzd,NZD Building Permits (MoM),Low,-7.2%,-10.0%,19.6%
+Tue May 29,23:15,GMT,jpy,JPY Markit/JMMA Manufacturing Purchasing Manager Index,Medium,50.7,,50.7
+Wed May 30,01:30,GMT,aud,AUD Retail Sales s.a. (MoM),Medium,-0.2%,0.2%,1.1
+Wed May 30,01:30,GMT,aud,AUD Construction Work Done,Low,5.5%,3.0%,-3.4%
+Wed May 30,04:00,GMT,USD,USD US Dept of Commerce Decision on Level of Tariffs,Medium,,,
+Wed May 30,07:00,GMT,chf,CHF KOF Swiss Leading Indicator,Medium,0.81,0.40,0.43
+Wed May 30,08:00,GMT,eur,EUR Italian Producer Price Index (MoM),Low,0.3%,0.3%,0.4%
+Wed May 30,08:00,GMT,eur,EUR Euro-Zone M3 s.a. (YoY),Low,2.5%,3.4%,3.1%
+Wed May 30,08:00,GMT,eur,EUR Euro-Zone M3 s.a. (3M),Low,2.7%,3.1%,2.7%
+Wed May 30,08:00,GMT,eur,EUR Italian Producer Price Index (YoY),Low,2.5%,2.3%,2.8%
+Wed May 30,08:30,GMT,gbp,GBP Net Lending Sec. on Dwellings,Medium,1.1B,1.0B,1.0B
+Wed May 30,08:30,GMT,gbp,GBP M4 Money Supply (MoM),Low,1.1%,,-0.7%
+Wed May 30,08:30,GMT,gbp,GBP M4 Money Supply (YoY),Low,-3.8%,,-4.8%
+Wed May 30,08:30,GMT,gbp,GBP Mortgage Approvals,Medium,51.8K,50.1K,51.1K
+Wed May 30,08:30,GMT,gbp,GBP Net Consumer Credit,Medium,0.3B,0.2B,0.7B
+Wed May 30,08:30,GMT,gbp,GBP M4 Ex IOFCs 3M Annualised,Low,3.8%,,7.1%
+Wed May 30,09:00,GMT,eur,EUR Euro-Zone Services Confidence,Low,-4.9,-2.8,-2.4
+Wed May 30,09:00,GMT,eur,EUR Euro-Zone Business Climate Indicator,Low,-0.77,-0.67,-0.51
+Wed May 30,09:00,GMT,eur,EUR Euro-Zone Consumer Confidence,Medium,-19.3,-19.3,-19.3
+Wed May 30,09:00,GMT,eur,EUR Euro-Zone Economic Confidence,Low,90.6,91.9,92.9
+Wed May 30,09:00,GMT,eur,EUR Euro-Zone Industrial Confidence,Low,-11.3,-10.2,-9
+Wed May 30,11:00,GMT,usd,USD MBA Mortgage Applications,Low,-1.3%,,3.8%
+Wed May 30,12:30,GMT,cad,CAD Industrial Product Price (MoM),Low,0.0%,0.1%,0.2%
+Wed May 30,12:30,GMT,cad,CAD Raw Materials Price Index (MoM),Low,-2.0%,-2.0%,-1.7%
+Wed May 30,13:00,GMT,CAD,CAD Teranet/National Bank Upgrade the Canadian House Price Index,LOW,,,
+Wed May 30,13:01,GMT,cad,CAD Teranet/National Bank HP Index,Low,150.61,,149.43
+Wed May 30,13:01,GMT,cad,CAD Teranet/National Bank HPI (MoM),Low,0.8%,,0.5%
+Wed May 30,13:01,GMT,cad,CAD Teranet/National Bank HPI (YoY),Low,5.9%,,6.0%
+Wed May 30,14:00,GMT,usd,USD Pending Home Sales (MoM),Low,-5.5%,0.0%,3.8%
+Wed May 30,14:00,GMT,usd,USD Pending Home Sales (YoY),Medium,14.7%,22.0%,10.5%
+Wed May 30,17:20,GMT,usd,USD Fed's Fisher Speaks on Economy in San Antonio,Low,,,
+Wed May 30,17:30,GMT,usd,USD Fed's Dudley to Speak on Regional Economy in New York,Low,,,
+Wed May 30,20:30,GMT,usd,USD Fed's Rosengren Speaks in Worcester,Low,,,
+Wed May 30,23:01,GMT,gbp,GBP GfK Consumer Confidence Survey,Medium,-29,-32,-31
+Wed May 30,23:50,GMT,jpy,JPY Industrial Production (YoY),Medium,13.4%,13.7%,14.2%
+Wed May 30,23:50,GMT,jpy,JPY Industrial Production (MoM),Low,0.2%,0.5%,1.3%
+Thu May 31,01:00,GMT,nzd,NZD NBNZ Activity Outlook,Medium,34.9,,36.1
+Thu May 31,01:00,GMT,nzd,NZD NBNZ Business Confidence,Medium,27.1,,35.8
+Thu May 31,01:30,GMT,aud,AUD Private Capital Expenditure,Medium,6.1%,4.0%,-0.7%
+Thu May 31,01:30,GMT,jpy,JPY Labor Cash Earnings (YoY),Low,0.8%,1.1%,0.9%
+Thu May 31,01:30,GMT,aud,AUD Building Approvals (MoM),Low,-8.7%,0.3%,6.0%
+Thu May 31,01:30,GMT,aud,AUD Private Sector Credit (MoM),Low,0.4%,0.3%,0.5%
+Thu May 31,01:30,GMT,aud,AUD Private Sector Credit (YoY),Medium,3.8%,3.6%,3.4%
+Thu May 31,01:30,GMT,aud,AUD Building Approvals (YoY),Low,-24.1%,-13.8%,-15.8%
+Thu May 31,03:00,GMT,nzd,NZD Money Supply M3 (YoY),Low,5.5%,,5.0%
+Thu May 31,04:00,GMT,jpy,JPY Vehicle Production (YoY),Low,173.8%,,143.7%
+Thu May 31,05:00,GMT,jpy,JPY Construction Orders (YoY),Low,16.2%,,-0.3%
+Thu May 31,05:00,GMT,jpy,JPY Annualized Housing Starts,Medium,0.896M,0.838M,0.848M
+Thu May 31,05:00,GMT,jpy,JPY Housing Starts (YoY),Medium,10.3%,3.2%,5.0%
+Thu May 31,05:45,GMT,chf,CHF Gross Domestic Product (QoQ),Medium,0.7%,0.0%,0.5%
+Thu May 31,05:45,GMT,chf,CHF Gross Domestic Product (YoY),High,2.0%,0.7%,2.0%
+Thu May 31,06:00,GMT,eur,EUR German Retail Sales (YoY),Medium,-3.8%,0.3%,3.2%
+Thu May 31,06:00,GMT,gbp,GBP Nationwide House Prices s.a. (MoM),Low,0.3%,0.1%,-0.3%
+Thu May 31,06:00,GMT,eur,EUR German Retail Sales (MoM),Low,0.6%,0.2%,1.6%
+Thu May 31,06:00,GMT,gbp,GBP Nationwide House Prices n.s.a. (YoY),Medium,-0.7%,-1.1%,-0.9%
+Thu May 31,06:45,GMT,eur,EUR French Consumer Spending (YoY),Low,0.4%,0.0%,-1.7%
+Thu May 31,06:45,GMT,eur,EUR French Producer Prices (MoM),Low,0.0%,0.2%,0.5%
+Thu May 31,06:45,GMT,eur,EUR French Consumer Spending (MoM),Low,0.6%,0.3%,-2.6%
+Thu May 31,06:45,GMT,eur,EUR French Producer Prices (YoY),Medium,2.7%,2.9%,3.7%
+Thu May 31,07:55,GMT,EUR,EUR German May Unemployment Data Released by Federal Labor Agency,HIGH,,,
+Thu May 31,07:55,GMT,eur,EUR German Unemployment Rate s.a.,Medium,6.7%,6.8%,6.8%
+Thu May 31,07:55,GMT,eur,EUR German Unemployment Change,High,0k,-7K,18K
+Thu May 31,09:00,GMT,eur,EUR Italian Consumer Price Index (NIC incl. tobacco) (MoM) ,Medium,0.0%,0.1%,0.5%
+Thu May 31,09:00,GMT,eur,EUR Italian Consumer Price Index - EU Harmonized (YoY) ,High,3.5%,3.6%,3.7%
+Thu May 31,09:00,GMT,eur,EUR Euro-Zone Consumer Price Index Estimate (YoY),Medium,2.4%,2.5%,2.6%
+Thu May 31,09:00,GMT,eur,EUR Italian Consumer Price Index (NIC incl. tobacco) (YoY) ,Medium,3.2%,3.3%,3.3%
+Thu May 31,09:00,GMT,eur,EUR Italian Consumer Price Index - EU Harmonized (MoM) ,High,0.0%,0.1%,0.9%
+Thu May 31,11:30,GMT,usd,USD Challenger Job Cuts (YoY),Low,66.7%,,11.2%
+Thu May 31,12:00,GMT,usd,USD Fed's Pianalto Speaks on Monetary Policy in Cleveland,Low,,,
+Thu May 31,12:00,GMT,USD,USD RBC Consumer Outlook Index,LOW,,,47.6
+Thu May 31,12:15,GMT,usd,USD ADP Employment Change,Medium,133K,150K,113K
+Thu May 31,12:30,GMT,cad,CAD Current Account (BoP) (Canadian dollar),Medium,-$10.3B,-$10.9B,-$9.7B
+Thu May 31,12:30,GMT,usd,USD Gross Domestic Product (Annualized),High,1.9%,1.9%,2.2%
+Thu May 31,12:30,GMT,usd,USD Gross Domestic Product Price Index,High,1.7%,1.5%,1.5%
+Thu May 31,12:30,GMT,usd,USD Core Personal Consumption Expenditure (QoQ),Medium,2.1%,2.1%,2.1%
+Thu May 31,12:30,GMT,usd,USD Initial Jobless Claims,Low,383K,370K,373K
+Thu May 31,12:30,GMT,usd,USD Continuing Claims,Low,3242K,3250K,3278K
+Thu May 31,12:30,GMT,usd,USD Personal Consumption,Medium,2.7%,2.9%,2.9%
+Thu May 31,13:45,GMT,usd,USD Chicago Purchasing Manager,Low,52.7,56.8,56.2
+Thu May 31,14:00,GMT,usd,USD ICSC Chain Store Sales ex Drug Stores (YoY),Low,4.0%,,2.4%
+Thu May 31,14:00,GMT,usd,USD NAPM-Milwaukee,Low,57.7,53.4,52.9
+Thu May 31,14:30,GMT,usd,USD EIA Natural Gas Storage Change,Low,71,71,77
+Thu May 31,15:00,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,2213K,1000K,883K
+Thu May 31,15:00,GMT,usd,USD DOE Cushing OK Crude Inventory,Low,54K,,1668K
+Thu May 31,15:00,GMT,usd,USD DOE U.S. Distillate Inventory,Low,-1709K,0K,-309K
+Thu May 31,15:00,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,-833K,-1000K,-3299K
+Thu May 31,22:45,GMT,nzd,NZD Terms of Trade Index (QoQ),Medium,-2.3%,-2.8%,-1.4%
+Thu May 31,23:30,GMT,aud,AUD AiG Performance of Manufacturing Index,Medium,42.4,,43.9
+Thu May 31,23:50,GMT,jpy,JPY Capital Spending (YoY),Medium,3.3%,1.0%,7.6%
+Thu May 31,23:50,GMT,jpy,JPY Capital Spending excl Software (YoY),Medium,3.5%,-0.1%,4.9%
+Fri Jun 01,00:30,GMT,aud,AUD RPData-Rismark House PX Actual,Low,-1.4%,,-0.8%
+Fri Jun 01,01:00,GMT,nzd,NZD ANZ Commodity Price,Low,-4.2%,,-4.5%
+Fri Jun 01,01:00,GMT,cny,CNY PMI Manufacturing,High,50.4,52.0,53.3
+Fri Jun 01,02:30,GMT,cny,CNY HSBC Manufacturing PMI,Medium,48.4,,49.3
+Fri Jun 01,05:00,GMT,jpy,JPY Vehicle Sales (YoY),Low,66.3%,,92.0%
+Fri Jun 01,06:30,GMT,aud,AUD RBA Commodity Price Index,Low,99.5,,98.6
+Fri Jun 01,06:30,GMT,aud,AUD RBA Commodity Index SDR (YoY),Low,-9.9%,,-5.0%
+Fri Jun 01,07:15,GMT,chf,CHF Retail Sales (Real) (YoY),Medium,0.1%,,4.7%
+Fri Jun 01,07:30,GMT,chf,CHF SVME-Purchasing Managers Index,Medium,45.4,47.4,46.9
+Fri Jun 01,07:45,GMT,eur,EUR Italian Purchasing Manager Index Manufacturing,Low,44.8,43.4,43.8
+Fri Jun 01,07:50,GMT,eur,EUR French Purchasing Manager Index Manufacturing,Low,44.7,44.4,44.4
+Fri Jun 01,07:55,GMT,eur,EUR German Purchasing Manager Index Manufacturing,Medium,45.2,45.0,45.0
+Fri Jun 01,08:00,GMT,eur,EUR Euro-Zone Purchasing Manager Index Manufacturing,Medium,45.1,45,45
+Fri Jun 01,08:00,GMT,eur,EUR Italian Unemployment Rate s.a.,Low,9.8%,9.6%,9.1%
+Fri Jun 01,08:00,GMT,eur,EUR Italian Unemployment Rate,Low,10.2%,9.9%,10.1%
+Fri Jun 01,08:30,GMT,gbp,GBP Purchasing Manager Index Manufacturing,Medium,45.9,49.7,50.2
+Fri Jun 01,09:00,GMT,eur,EUR Euro-Zone Unemployment Rate,Medium,11.0%,11.0%,11.0%
+Fri Jun 01,12:30,GMT,usd,USD Underemployment Rate (U6),Medium,14.8%,,14.5%
+Fri Jun 01,12:30,GMT,usd,USD Personal Spending,Medium,0.3%,0.3%,0.2%
+Fri Jun 01,12:30,GMT,cad,CAD Quarterly Gross Domestic Product Annualized,High,1.9%,1.9%,1.9%
+Fri Jun 01,12:30,GMT,usd,USD Change in Non-farm Payrolls,High,69K,150K,77K
+Fri Jun 01,12:30,GMT,usd,USD Change in Private Payrolls,Medium,82K,164K,87K
+Fri Jun 01,12:30,GMT,usd,USD Change in Manufacturing Payrolls,Medium,12K,15K,9K
+Fri Jun 01,12:30,GMT,usd,USD Average Hourly Earning All Employees (MoM),Medium,0.1%,0.2%,0.1%
+Fri Jun 01,12:30,GMT,usd,USD Average Weekly Hours All Employees,Low,34.4,34.5,34.5
+Fri Jun 01,12:30,GMT,usd,USD Personal Consumption Expenditure Deflator (YoY),Low,1.8%,1.9%,2.1%
+Fri Jun 01,12:30,GMT,usd,USD Personal Consumption Expenditure Core (YoY),High,1.9%,1.9%,2.0%
+Fri Jun 01,12:30,GMT,cad,CAD Gross Domestic Product (MoM),Medium,0.1%,0.3%,-0.2%
+Fri Jun 01,12:30,GMT,cad,CAD Gross Domestic Product (YoY),High,1.6%,1.9%,1.7%
+Fri Jun 01,12:30,GMT,usd,USD Unemployment Rate,High,8.2%,8.1%,8.1%
+Fri Jun 01,12:30,GMT,usd,USD Average Hourly Earning All Employees (YoY),Medium,1.7%,1.8%,1.8%
+Fri Jun 01,12:30,GMT,usd,USD Change in Household Employment,Low,422,,-169
+Fri Jun 01,12:30,GMT,usd,USD Personal Income,Medium,0.2%,0.3%,0.4%
+Fri Jun 01,12:30,GMT,usd,USD Personal Consumption Expenditure Deflator (MoM),Low,0.0%,0.1%,0.2%
+Fri Jun 01,12:30,GMT,usd,USD Personal Consumption Expenditure Core (MoM),Medium,0.1%,0.2%,0.2%
+Fri Jun 01,12:58,GMT,usd,USD Markit US PMI Final,Low,54.0,,53.9
+Fri Jun 01,14:00,GMT,usd,USD ISM Prices Paid,Medium,47.5,57,61
+Fri Jun 01,14:00,GMT,usd,USD ISM Manufacturing,High,53.5,53.8,54.8
+Fri Jun 01,14:00,GMT,usd,USD Construction Spending (MoM),Medium,0.3%,0.4%,0.3%
+Fri Jun 01,17:00,GMT,eur,EUR Italian Budget Balance (euros) (YTD),Low,-35.1B,,-30.5B
+Fri Jun 01,17:00,GMT,eur,EUR Italian Budget Balance (euros),Low,-4.3B,,-2.3B
+Fri Jun 01,21:00,GMT,usd,USD Domestic Vehicle Sales,Low,11.20M,10.75M,11.12M
+Fri Jun 01,21:00,GMT,usd,USD Total Vehicle Sales,Low,14.50M,13.73M,14.38M

@@ -1,0 +1,109 @@
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
+Mon Jan 02,,,JPY,JPY Tokyo Avg Office Vacancies (%),LOW,,,8.9
+Mon Jan 02,08:45,GMT,eur,EUR Italian Purchasing Manager Index Manufacturing,Low,44.3,43.8,44
+Mon Jan 02,08:50,GMT,eur,EUR French Purchasing Manager Index Manufacturing,Low,48.9,48.7,48.7
+Mon Jan 02,08:55,GMT,eur,EUR German Purchasing Manager Index Manufacturing,Medium,48.4,48.1,48.1
+Mon Jan 02,09:00,GMT,EUR,EUR Euro-Zone Purchasing Manager Index Manufacturing,Medium,46.9,46.9,46.9
+Mon Jan 02,17:00,GMT,EUR,EUR Italian New Car Registrations (YoY),LOW,-15.3%,,-9.3%
+Mon Jan 02,18:00,GMT,EUR,EUR Italian Budget Balance (euros) (YTD),LOW,-61.5B,,-69.3B
+Mon Jan 02,18:00,GMT,EUR,EUR Italian Budget Balance (euros),LOW,8.0B,,-8.5B
+Mon Jan 02,22:30,GMT,AUD,AUD AiG Performance of Manufacturing Index,Medium,50.2,,47.8
+Tue Jan 03,00:01,GMT,GBP,GBP Lloyds Business Barometer,LOW,-23,,-20
+Tue Jan 03,01:00,GMT,CNY,CNY China Non-manufacturing PMI,Medium,56,,49.7
+Tue Jan 03,05:30,GMT,AUD,AUD RBA Commodity Price Index Au,LOW,104.5,,107.7
+Tue Jan 03,05:30,GMT,AUD,AUD RBA Commodity Index SDR (YoY),LOW,10.9%,,18.1%
+Tue Jan 03,08:30,GMT,chf,CHF SVME-Purchasing Managers Index,Medium,50.7,45.4,44.8
+Tue Jan 03,08:55,GMT,eur,EUR German Unemployment Change,High,-22K,-10K,-20K
+Tue Jan 03,08:55,GMT,eur,EUR German Unemployment Rate s.a.,Medium,6.8%,6.9%,6.9%
+Tue Jan 03,09:30,GMT,gbp,GBP Purchasing Manager Index Manufacturing,Medium,49.6,47.3,47.6
+Tue Jan 03,15:00,GMT,usd,USD ISM Manufacturing,High,53.9,53.2,52.7
+Tue Jan 03,15:00,GMT,usd,USD ISM Prices Paid,Medium,47.5,47.9,45
+Tue Jan 03,15:00,GMT,usd,USD Construction Spending (MoM),Medium,1.2%,0.5%,0.8%
+Tue Jan 03,19:00,GMT,USD,USD Fed Releases Minutes From Dec. 13 FOMC Meeting,HIGH,,,
+Tue Jan 03,23:50,GMT,jpy,JPY Loans & Discounts Corp (YoY),Low,-0.4%,,-0.8%
+Wed Jan 04,07:45,GMT,eur,EUR French Consumer Spending (MoM),Low,-0.1%,0.3%,0.1%
+Wed Jan 04,07:45,GMT,eur,EUR French Consumer Spending (YoY),Low,-2.1%,-1.8%,-1.0%
+Wed Jan 04,08:45,GMT,eur,EUR Italian Purchasing Manager Index Services,Low,44.5,45.3,45.8
+Wed Jan 04,08:50,GMT,eur,EUR French Purchasing Manager Index Services,Low,50.3,50.2,50.2
+Wed Jan 04,08:55,GMT,eur,EUR German Purchasing Manager Index Services,Medium,52.4,52.7,52.7
+Wed Jan 04,09:00,GMT,eur,EUR Euro-Zone Purchasing Manager Index Composite,Medium,48.3,47.9,47.9
+Wed Jan 04,09:00,GMT,eur,EUR Euro-Zone Purchasing Manager Index Services,Medium,48.8,48.3,48.3
+Wed Jan 04,09:30,GMT,gbp,GBP Net Lending Sec. on Dwellings,Medium,0.6B,0.9B,1.2B
+Wed Jan 04,09:30,GMT,gbp,GBP M4 Ex OFCs 3M Annualised,Low,3.7%,,5.1%
+Wed Jan 04,09:30,GMT,gbp,GBP Purchasing Manager Index Construction,Medium,53.2,51.5,52.3
+Wed Jan 04,09:30,GMT,gbp,GBP Net Consumer Credit,Medium,0.4B,0.3B,0.1B
+Wed Jan 04,09:30,GMT,gbp,GBP Mortgage Approvals,Medium,52.9K,52.8K,52.8K
+Wed Jan 04,09:30,GMT,gbp,GBP M4 Money Supply (MoM),Low,-0.6%,,-0.3%
+Wed Jan 04,09:30,GMT,gbp,GBP M4 Money Supply (YoY),Low,-2.6%,,-2.7%
+Wed Jan 04,10:00,GMT,eur,EUR Euro-Zone Consumer Price Index Estimate (YoY),Medium,2.8%,2.8%,3.0%
+Wed Jan 04,10:00,GMT,eur,EUR Italian Consumer Price Index (NIC incl. tobacco) (MoM),Low,0.4%,0.3%,-0.1%
+Wed Jan 04,10:00,GMT,eur,EUR Italian Consumer Price Index (NIC incl. tobacco) (YoY),Low,3.3%,3.2%,3.3%
+Wed Jan 04,10:00,GMT,eur,EUR Italian Consumer Price Index - EU Harmonized (MoM),Low,0.3%,0.2%,-0.1%
+Wed Jan 04,10:00,GMT,eur,EUR Italian Consumer Price Index - EU Harmonized (YoY),Low,3.7%,3.5%,3.7%
+Wed Jan 04,12:00,GMT,usd,USD MBA Mortgage Applications,Low,-4.1%,,0.3%
+Wed Jan 04,15:00,GMT,usd,USD Factory Orders,Medium,1.8%,2.0%,-0.2%
+Wed Jan 04,22:30,GMT,aud,AUD AiG Performance of Service Index,Medium,49.0,,47.7
+Wed Jan 04,23:50,GMT,jpy,JPY Monetary Base (YoY),Low,13.5%,,19.5%
+Thu Jan 05,00:11,GMT,usd,USD Total Vehicle Sales,Low,13.52M,13.50M,13.59M
+Thu Jan 05,00:11,GMT,usd,USD Domestic Vehicle Sales,Low,10.45M,10.42M,10.53M
+Thu Jan 05,00:30,GMT,aud,AUD Trade Balance (A$),Medium,1380M,1650M,1418M
+Thu Jan 05,02:30,GMT,cny,CNY China HSBC Services PMI,Low,52.5,,52.5
+Thu Jan 05,05:00,GMT,JPY,JPY Vehicle Sales (YoY),LOW,,,24.1%
+Thu Jan 05,07:00,GMT,eur,EUR German Retail Sales (MoM),Low,-0.9%,0.2%,-0.2%
+Thu Jan 05,07:00,GMT,eur,EUR German Retail Sales (YoY),Medium,0.8%,0.7%,-0.6%
+Thu Jan 05,07:45,GMT,eur,EUR French Consumer Confidence Indicator,Low,80,80,80
+Thu Jan 05,09:00,GMT,eur,EUR Italian Unemployment Rate s.a.,Low,8.1%,8.1%,8.0%
+Thu Jan 05,09:00,GMT,eur,EUR Italian Unemployment Rate (SA),Low,8.6%,8.5%,8.5%
+Thu Jan 05,09:30,GMT,gbp,GBP Purchasing Manager Index Services,Medium,54.0,51.5,52.1
+Thu Jan 05,09:30,GMT,gbp,GBP Official Reserves (Changes),Low,-1943M,,-$249M
+Thu Jan 05,10:00,GMT,eur,EUR Euro-Zone Industrial New Orders (YoY),Low,1.6%,3.3%,1.6%
+Thu Jan 05,10:00,GMT,eur,EUR Euro-Zone Industrial New Orders s.a. (MoM),Medium,1.8%,2.5%,-6.4%
+Thu Jan 05,10:00,GMT,eur,EUR Euro-Zone Producer Price Index (MoM),Low,0.2%,0.1%,0.1%
+Thu Jan 05,10:00,GMT,eur,EUR Euro-Zone Producer Price Index (YoY),Medium,5.3%,5.2%,5.5%
+Thu Jan 05,12:30,GMT,usd,USD Challenger Job Cuts (YoY),Low,30.6,,-12.8%
+Thu Jan 05,13:00,GMT,usd,USD RBC Consumer Outlook Index,Low,45.8,,40.3
+Thu Jan 05,13:15,GMT,usd,USD ADP Employment Change,Medium,325K,175K,204K
+Thu Jan 05,13:30,GMT,cad,CAD Industrial Product Price (MoM),Low,0.2%,-0.1%,-0.1%
+Thu Jan 05,13:30,GMT,cad,CAD Raw Materials Price Index (MoM),Low,3.8%,0.5%,-1.0%
+Thu Jan 05,13:30,GMT,usd,USD Initial Jobless Claims,Low,372K,375K,381K
+Thu Jan 05,13:30,GMT,usd,USD Continuing Claims,Low,3595K,3570K,3617K
+Thu Jan 05,15:00,GMT,cad,CAD Ivey Purchasing Managers Index s.a.,Medium,63.5,58,59.9
+Thu Jan 05,15:00,GMT,usd,USD ISM Non-Manufacutring Composite,Medium,52.6,53,52
+Thu Jan 05,15:30,GMT,usd,USD EIA Natural Gas Storage Change,Low,-76,-78,-81
+Thu Jan 05,16:00,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,2209K,-1000K,3899K
+Thu Jan 05,16:00,GMT,usd,USD DOE Cushing OK Crude Inventory,Low,-613K,,-289K
+Thu Jan 05,16:00,GMT,usd,USD DOE U.S. Distillate Inventory,Low,3224K,1000K,1205K
+Thu Jan 05,16:00,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,2479K,1000K,-692K
+Thu Jan 05,16:35,GMT,usd,USD ICSC Chain Store Sales (YoY),Medium,3.5%,4.0%,2.8%
+Fri Jan 06,,,GBP,GBP New Car Registrations (YoY),LOW,,,-4.2%
+Fri Jan 06,07:10,GMT,cny,CNY Entrepreneur Confidence Index,Low,122.0,,129.4
+Fri Jan 06,07:10,GMT,cny,CNY Business Climate Index,Low,128.2,,133.4
+Fri Jan 06,08:15,GMT,chf,CHF Consumer Price Index (MoM),Medium,-0.2%,-0.1%,-0.2%
+Fri Jan 06,08:15,GMT,chf,CHF Consumer Price Index (YoY),Medium,-0.7%,-0.6%,-0.5%
+Fri Jan 06,08:15,GMT,chf,CHF CPI - EU Harmonised (MoM),Medium,0.3%,,-0.4%
+Fri Jan 06,08:15,GMT,chf,CHF CPI - EU Harmonised (YoY),Medium,-0.4%,,-0.8%
+Fri Jan 06,10:00,GMT,eur,EUR Euro-Zone Business Climate Indicator,Medium,-0.31,-0.46,-0.42
+Fri Jan 06,10:00,GMT,eur,EUR Euro-Zone Consumer Confidence,Medium,-21.1,-21.2,-21.2
+Fri Jan 06,10:00,GMT,eur,EUR Euro-Zone Economic Confidence,Low,93.3,93.3,93.8
+Fri Jan 06,10:00,GMT,eur,EUR Euro-Zone Industrial Confidence,Low,-7.1,-7.5,-7.1
+Fri Jan 06,10:00,GMT,eur,EUR Euro-Zone Services Confidence,Low,-2.1,-2.1,-1.6
+Fri Jan 06,10:00,GMT,eur,EUR Euro-Zone Retail Sales (MoM),Medium,-0.8%,-0.4%,0.1%
+Fri Jan 06,10:00,GMT,eur,EUR Euro-Zone Retail Sales (YoY),High,-2.5%,-0.9%,-0.7%
+Fri Jan 06,10:00,GMT,eur,EUR Euro-Zone Unemployment Rate,Medium,10.3%,10.3%,10.3%
+Fri Jan 06,11:00,GMT,eur,EUR German Factory Orders s.a. (MoM),Medium,-4.8%,-1.6%,5.0%
+Fri Jan 06,11:00,GMT,eur,EUR German Factory Orders n.s.a. (YoY),Medium,-4.3%,-1.2%,5.2%
+Fri Jan 06,12:00,GMT,cad,CAD Unemployment Rate,High,7.5%,7.4%,7.4%
+Fri Jan 06,12:00,GMT,cad,CAD Net Change in Employment,High,17.5K,14.3K,-18.6K
+Fri Jan 06,12:00,GMT,cad,CAD Full Time Employment Change,Medium,-25.5,,34.6
+Fri Jan 06,12:00,GMT,cad,CAD Part Time Employment Change,Medium,43.1,,-53.3
+Fri Jan 06,12:00,GMT,cad,CAD Participation Rate,Medium,66.6,,66.6
+Fri Jan 06,13:30,GMT,usd,USD Change in Private Payrolls,Medium,212K,178K,120K
+Fri Jan 06,13:30,GMT,usd,USD Unemployment Rate,High,8.5%,8.7%,8.7%
+Fri Jan 06,13:30,GMT,usd,USD Underemployment Rate (U6),Medium,15.2%,,15.6%
+Fri Jan 06,13:30,GMT,usd,USD Avg Hourly Earning MOM All Emp,Medium,0.2%,0.2%,0.0%
+Fri Jan 06,13:30,GMT,usd,USD Change in Non-farm Payrolls,High,200K,150K,100K
+Fri Jan 06,13:30,GMT,usd,USD Change in Manufacturing Payrolls,Medium,23K,6K,1K
+Fri Jan 06,13:30,GMT,usd,USD Avg Hourly Earning YOY All Emp,Medium,2.1%,2.1%,1.9%
+Fri Jan 06,13:30,GMT,usd,USD Avg Weekly Hours All Employees,Low,34.4,34.3,34.3
+Fri Jan 06,13:30,GMT,usd,USD Chg in Household Survey Emply,Low,176,,317
+Fri Jan 06,15:20,GMT,USD,USD Fed's Rosengren Speaks on Economy in Connecticut,LOW,,,

@@ -1,0 +1,176 @@
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
+Sun Mar 04,21:45,GMT,nzd,NZD Net Migration s.a.,Low,-650,,-530
+Sun Mar 04,21:45,GMT,nzd,NZD Value of All Buildings ,Low,2.9%,2.0%,-1.6%
+Sun Mar 04,22:30,GMT,aud,AUD AiG Performance of Service Index,Medium,46.7,,51.9
+Sun Mar 04,23:30,GMT,aud,AUD TD Securities Inflation (MoM),Low,0.1%,,0.2%
+Sun Mar 04,23:30,GMT,aud,AUD TD Securities Inflation (YoY),Medium,2.0%,,2.2%
+Mon Mar 05,00:01,GMT,gbp,GBP Lloyds Business Barometer,Low,1,,-11
+Mon Mar 05,00:30,GMT,aud,AUD Company Operating Profit (QoQ),Low,-6.5%,0.0%,4.8%
+Mon Mar 05,00:30,GMT,aud,AUD Inventories,Low,1.4%,0.3%,-1.1%
+Mon Mar 05,00:30,GMT,aud,AUD ANZ Job Advertisements (MoM),Low,3.3%,,7.5%
+Mon Mar 05,02:30,GMT,cny,CNY China HSBC Services PMI,Low,53.9,,52.5
+Mon Mar 05,08:15,GMT,chf,CHF Retail Sales (Real) (YoY),Medium,4.4%,,1.7%
+Mon Mar 05,08:45,GMT,eur,EUR Italian Purchasing Manager Index Services,Low,44.1,45.2,44.8
+Mon Mar 05,08:50,GMT,eur,EUR French Purchasing Manager Index Services,Low,50.0,50.3,50.3
+Mon Mar 05,08:55,GMT,eur,EUR German Purchasing Manager Index Services,Medium,52.8,52.6,52.6
+Mon Mar 05,09:00,GMT,eur,EUR Euro-Zone Purchasing Manager Index Composite,Medium,49.3,49.7,49.7
+Mon Mar 05,09:00,GMT,eur,EUR Euro-Zone Purchasing Manager Index Services,Medium,48.8,49.4,49.4
+Mon Mar 05,09:00,GMT,eur,EUR Italy PPI YoY,Medium,3.4%,3.4%,3.9%
+Mon Mar 05,09:00,GMT,eur,EUR Italy PPI MoM,Low,0.7%,0.6%,0.0%
+Mon Mar 05,09:30,GMT,gbp,GBP Purchasing Manager Index Services,Medium,53.8,54.9,56
+Mon Mar 05,09:30,GMT,eur,EUR Euro-Zone Sentix Investor Confidence,Medium,-8.2,-5,-11.1
+Mon Mar 05,09:30,GMT,gbp,GBP Official Reserves (Changes),Low,$746M,,$2477M
+Mon Mar 05,10:00,GMT,eur,EUR Euro-Zone Retail Sales (MoM),Low,0.3%,-0.1%,-0.5%
+Mon Mar 05,10:00,GMT,eur,EUR Euro-Zone Retail Sales (YoY),Medium,0.0%,-1.5%,-1.3%
+Mon Mar 05,15:00,GMT,usd,USD ISM Non-Manufacturing Composite,Medium,57.3,56.0,56.8
+Mon Mar 05,15:00,GMT,usd,USD Factory Orders,Medium,-1.0%,-1.5%,1.4%
+Tue Mar 06,,,gbp,GBP New Car Registrations (YoY),Low,-2.5%,,0.0%
+Tue Mar 06,00:01,GMT,gbp,GBP BRC Sales Like for Like (YoY),Low,-0.3%,,-0.3%
+Tue Mar 06,00:30,GMT,aud,AUD Current Account Balance (Australian Dollar),Medium,-8374M,-8050M,-5637M
+Tue Mar 06,00:30,GMT,aud,AUD Australia Net Exports of GDP,Low,0.3,0,-0.6
+Tue Mar 06,01:30,GMT,jpy,JPY Labor Cash Earnings (YoY),Medium,0.0%,-0.3%,0.1%
+Tue Mar 06,03:30,GMT,aud,AUD Reserve Bank of Australia Rate Decision,High,4.25%,4.25%,4.25%
+Tue Mar 06,08:00,GMT,gbp,GBP Halifax House Price (3MoY),Low,-1.9%,-1.6%,-1.8%
+Tue Mar 06,08:00,GMT,gbp,GBP Halifax Plc House Prices s.a. (MoM),Low,-0.5%,0.3%,0.6%
+Tue Mar 06,10:00,GMT,eur,EUR Euro-Zone Government Expenditure (QoQ),Low,-0.2%,0.0%,-0.2%
+Tue Mar 06,10:00,GMT,eur,EUR Euro-Zone Gross Domestic Product s.a. (QoQ),High,-0.3%,-0.3%,-0.3%
+Tue Mar 06,10:00,GMT,eur,EUR Euro-Zone Gross Domestic Product s.a. (YoY),High,0.7%,0.7%,0.7%
+Tue Mar 06,10:00,GMT,eur,EUR Euro-Zone Household Consumption (QoQ),Medium,-0.4%,-0.2%,0.3%
+Tue Mar 06,10:00,GMT,eur,EUR Euro-Zone Gross Fixed Capital (QoQ),Medium,-0.7%,-0.4%,-0.3%
+Tue Mar 06,15:00,GMT,cad,CAD Ivey Purchasing Managers Index s.a.,Medium,66.5,62.0,64.1
+Tue Mar 06,22:30,GMT,aud,AUD AiG Performance of Construction Index,Medium,35.6,,39.8
+Tue Mar 06,23:50,GMT,jpy,JPY Official Reserve Assets,Low,$1302.9B,,$1306.7B
+Wed Mar 07,,,usd,USD Revisions: ADP national Employment Report,Low,,,
+Wed Mar 07,00:01,GMT,gbp,GBP BRC Shop Price Index (YoY),Low,1.2%,,1.4%
+Wed Mar 07,00:30,GMT,aud,AUD Gross Domestic Product (QoQ),High,0.4%,0.8%,0.8%
+Wed Mar 07,00:30,GMT,aud,AUD Gross Domestic Product (YoY),High,2.3%,2.4%,2.6%
+Wed Mar 07,05:00,GMT,jpy,JPY Coincident Index,Low,93.1,93.4,93.6
+Wed Mar 07,05:00,GMT,jpy,JPY Leading Index,Medium,94.9,95.0,93.8
+Wed Mar 07,05:30,GMT,aud,AUD Foreign Reserves (Australian dollar),Low,A$49.1B,,A$46.8B
+Wed Mar 07,06:45,GMT,chf,CHF Unemployment Rate s.a.,Medium,3.1%,3.1%,3.1%
+Wed Mar 07,06:45,GMT,chf,CHF Unemployment Rate,Medium,3.4%,3.4%,3.4%
+Wed Mar 07,08:00,GMT,chf,CHF Foreign Currency Reserves,Low,225.0,,227.2B
+Wed Mar 07,11:00,GMT,eur,EUR German Factory Orders s.a. (MoM),Medium,-2.7%,0.6%,1.6%
+Wed Mar 07,11:00,GMT,eur,EUR German Factory Orders n.s.a. (YoY),Medium,-4.9%,-1.7%,0.0%
+Wed Mar 07,12:00,GMT,usd,USD MBA Mortgage Applications,Low,-1.2%,,-0.3%
+Wed Mar 07,13:15,GMT,usd,USD ADP Employment Change,Medium,216K,215K,173K
+Wed Mar 07,13:30,GMT,usd,USD Non-Farm Productivity,Low,0.9%,0.8%,0.7%
+Wed Mar 07,13:30,GMT,usd,USD Unit Labor Costs,Low,2.8%,1.2%,1.2%
+Wed Mar 07,13:30,GMT,cad,CAD Building Permits (MoM),Low,-12.3%,-3.2%,10.5%
+Wed Mar 07,15:30,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,832K,,4160K
+Wed Mar 07,15:30,GMT,usd,USD DOE Cushing OK Crude Inventory,Low,2370K,,1648K
+Wed Mar 07,15:30,GMT,usd,USD DOE U.S. Distillate Inventory,Low,-1940K,,-2069K
+Wed Mar 07,15:30,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,-396K,,-1600K
+Wed Mar 07,20:00,GMT,usd,USD Consumer Credit,Medium,$17.776B,$10.450B,$16.268B
+Wed Mar 07,20:00,GMT,nzd,NZD Reserve Bank of New Zealand Rate Decision,High,2.50%,2.50%,2.50%
+Wed Mar 07,21:45,GMT,nzd,NZD Manufacturing Activity,Medium,1.2%,,0.2%
+Wed Mar 07,21:45,GMT,nzd,NZD Manufacturing Activity Volume s.a. (QoQ),Low,1.3%,,-1.7%
+Wed Mar 07,23:50,GMT,jpy,JPY Gross Domestic Product Deflator (YoY),Low,-1.8%,-1.6%,-1.6%
+Wed Mar 07,23:50,GMT,jpy,JPY Nominal Gross Domestic Product (QoQ),High,-0.5%,-0.3%,-0.8%
+Wed Mar 07,23:50,GMT,jpy,JPY Gross Domestic Product (QoQ),High,-0.2%,-0.2%,-0.6%
+Wed Mar 07,23:50,GMT,jpy,JPY Bank Lending Banks ex-Trust,Low,0.8%,,0.7%
+Wed Mar 07,23:50,GMT,jpy,JPY Bank Lending incl Trusts (YoY),Low,0.6%,,0.6%
+Wed Mar 07,23:50,GMT,jpy,JPY Current Account Total (Yen),Low,-¥437.3B,-¥320.0B,¥303.5B
+Wed Mar 07,23:50,GMT,jpy,JPY Adjusted Current Account Total (Yen),Low,¥115.6B,¥322.3B,¥776.2B
+Wed Mar 07,23:50,GMT,jpy,JPY Current Account Balance (YoY),Low,-171.9%,-151.3%,-74.7%
+Wed Mar 07,23:50,GMT,jpy,JPY Trade Balance - BOP Basis (Yen),Medium,-¥1381.6B,-¥1370.3B,-¥145.8B
+Wed Mar 07,23:50,GMT,jpy,JPY Gross Domestic Product Annualized,High,-0.7%,-0.6%,-2.3%
+Thu Mar 08,00:30,GMT,aud,AUD Full Time Employment Change,Medium,0.0K,,15.3K
+Thu Mar 08,00:30,GMT,aud,AUD Part Time Employment Change,Medium,-15.4K,,30.9K
+Thu Mar 08,00:30,GMT,aud,AUD Employment Change,High,-15.4K,5.0K,46.3K
+Thu Mar 08,00:30,GMT,aud,AUD Unemployment Rate,High,5.2%,5.2%,5.1%
+Thu Mar 08,00:30,GMT,aud,AUD Participation Rate,Low,65.2%,65.3%,65.3%
+Thu Mar 08,02:00,GMT,jpy,JPY Tokyo Avg Office Vacancies (%),Low,9.15%,,9.23
+Thu Mar 08,04:30,GMT,jpy,JPY Bankruptcies (YoY),Medium,5.2%,,-5.4%
+Thu Mar 08,05:00,GMT,jpy,JPY Eco Watchers Survey: Current,Medium,45.9,46,44.1
+Thu Mar 08,05:00,GMT,jpy,JPY Eco Watchers Survey: Outlook,Medium,50.1,,47.1
+Thu Mar 08,06:00,GMT,jpy,JPY Machine Tool Orders (YoY) (FEB P),Medium,-8.6%,,-6.9%
+Thu Mar 08,06:30,GMT,eur,EUR French Non-Farm Payrolls (QoQ) ,Low,-0.1%,-0.2%,-0.2%
+Thu Mar 08,07:30,GMT,eur,EUR French Bank of France Business Sentiment,Low,95,96,96
+Thu Mar 08,07:45,GMT,eur,EUR French Trade Balance,Low,-5324M,-5150M,-5052M
+Thu Mar 08,08:15,GMT,chf,CHF Consumer Price Index (MoM),Medium,0.3%,0.2%,-0.40%
+Thu Mar 08,08:15,GMT,chf,CHF Consumer Price Index (YoY),Medium,-0.9%,-1.0%,-0.8%
+Thu Mar 08,08:15,GMT,chf,CHF CPI - EU Harmonised (MoM),Medium,0.1%,0.1%,-0.7%
+Thu Mar 08,08:15,GMT,chf,CHF CPI - EU Harmonised (YoY),Medium,-1.2%,-0.7%,-0.9%
+Thu Mar 08,11:00,GMT,eur,EUR German Industrial Production s.a. (MoM),Low,1.6%,1.1%,-2.6%
+Thu Mar 08,11:00,GMT,eur,EUR German Industrial Production n.s.a. and w.d.a. (YoY),Medium,1.8%,1.1%,1.3%
+Thu Mar 08,12:00,GMT,gbp,GBP BOE Asset Purchase Target,High,325B,325B,325B
+Thu Mar 08,12:00,GMT,gbp,GBP Bank of England Rate Decision,High,0.50%,0.50%,0.50%
+Thu Mar 08,12:30,GMT,usd,USD Challenger Job Cuts (YoY),Low,2.0%,,38.9%
+Thu Mar 08,12:45,GMT,eur,EUR European Central Bank Rate Decision,High,1.00%,1.00%,1.00%
+Thu Mar 08,13:00,GMT,usd,USD RBC Consumer Outlook Index ,Low,47.5,,45.1
+Thu Mar 08,13:15,GMT,cad,CAD Housing Starts,Medium,201.1K,200.0K,198.1K
+Thu Mar 08,13:30,GMT,cad,CAD New Housing Price Index (MoM),Low,0.1%,0.1%,0.1%
+Thu Mar 08,13:30,GMT,cad,CAD New Housing Price Index (YoY),Low,2.4%,2.5%,2.5%
+Thu Mar 08,13:30,GMT,usd,USD Continuing Claims,Low,3416K,3400K,3406K
+Thu Mar 08,13:30,GMT,usd,USD Initial Jobless Claims,Low,362K,352K,354K
+Thu Mar 08,14:00,GMT,cad,CAD Bank of Canada Rate Decision,High,1.00%,1.00%,1.00%
+Thu Mar 08,15:30,GMT,usd,USD EIA Natural Gas Storage Change,Low,-80,,-82
+Thu Mar 08,21:45,GMT,nzd,NZD NZ Card Spending - Retail (MoM),Medium,-0.7%,0.1%,1.1%
+Thu Mar 08,21:45,GMT,nzd,NZD NZ Card Spending (MoM),Medium,-0.3%,0.1%,0.9%
+Thu Mar 08,23:50,GMT,jpy,JPY Japan Money Stock M2+CD (YoY),Low,2.9%,3.0%,3.0%
+Thu Mar 08,23:50,GMT,jpy,JPY Japan Money Stock M3 (YoY),Low,2.5%,2.6%,2.6%
+Fri Mar 09,00:30,GMT,aud,AUD Trade Balance (Australian dollar),Medium,-673M,1500M,1325M
+Fri Mar 09,01:30,GMT,cny,CNY Producer Price Index (YoY),Medium,0.0%,0.1%,0.7%
+Fri Mar 09,01:30,GMT,cny,CNY Consumer Price Index (YoY),High,3.2%,3.4%,4.5%
+Fri Mar 09,05:30,GMT,cny,CNY Industrial Production YTD YoY,Medium,11.4%,12.3%,13.9%
+Fri Mar 09,05:30,GMT,CNY,CNY Industrial Production (YoY),Medium,,12.4%,12.8%
+Fri Mar 09,05:30,GMT,cny,CNY Fixed Assets Inv Excl. Rural YTD YoY,Medium,21.5%,20.5%,23.8%
+Fri Mar 09,05:30,GMT,cny,CNY Retail Sales YTD YoY,Medium,14.7%,17.6%,17.1%
+Fri Mar 09,05:30,GMT,CNY,CNY Retail Sales (YoY),Medium,,17.3%,18.1%
+Fri Mar 09,07:00,GMT,eur,EUR German Consumer Price Index (MoM),Medium,0.7%,0.7%,0.7%
+Fri Mar 09,07:00,GMT,eur,EUR German Consumer Price Index (YoY),High,2.3%,2.3%,2.3%
+Fri Mar 09,07:00,GMT,eur,EUR German Consumer Price Index - EU Harmonised (MoM),Medium,0.9%,0.9%,0.9%
+Fri Mar 09,07:00,GMT,eur,EUR German Consumer Price Index - EU Harmonised (YoY),High,2.5%,2.5%,2.5%
+Fri Mar 09,07:45,GMT,eur,EUR French Manufacturing Production (YoY),Low,-1.2%,-0.5%,0.8%
+Fri Mar 09,07:45,GMT,eur,EUR French Industrial Production (YoY),Low,-1.5%,-1.2%,-1.2%
+Fri Mar 09,07:45,GMT,eur,EUR French Industrial Production (MoM),Low,0.3%,0.5%,-1.3%
+Fri Mar 09,07:45,GMT,eur,EUR French Manufacturing Production (MoM),Low,0.2%,0.5%,-1.3%
+Fri Mar 09,08:00,GMT,cny,CNY Money Supply - M0 (YoY),Low,8.8%,13.5%,3.0%
+Fri Mar 09,08:00,GMT,cny,CNY Money Supply - M2 (YoY),Low,13.0%,12.9%,12.4%
+Fri Mar 09,08:00,GMT,cny,CNY New Yuan Loans,High,710.7B,750.0B,738.1B
+Fri Mar 09,08:00,GMT,cny,CNY New Yuan Loans,High,710.7B,750.0B,738.1B
+Fri Mar 09,08:00,GMT,cny,CNY Money Supply - M2 (YoY),Low,13.0%,12.9%,12.4%
+Fri Mar 09,08:00,GMT,cny,CNY Money Supply - M1 (YoY),Low,4.3%,6.1%,3.1%
+Fri Mar 09,08:00,GMT,cny,CNY Money Supply - M1 (YoY),Low,4.3%,6.1%,3.1%
+Fri Mar 09,08:00,GMT,eur,EUR German Exports s.a. (MoM),Low,2.3%,2.0%,-4.4%
+Fri Mar 09,08:00,GMT,eur,EUR German Imports s.a. (MoM),Low,2.4%,1.5%,-3.9%
+Fri Mar 09,08:00,GMT,eur,EUR German Current Account (euros),Low,8.0B,10.4B,21.2B
+Fri Mar 09,08:00,GMT,eur,EUR German Labor Costs Workday Adj (YoY),Low,3.3%,,2.9%
+Fri Mar 09,08:00,GMT,eur,EUR German Labor Costs Seas. Adj. (QoQ),Low,1.1%,,-1.0%
+Fri Mar 09,08:00,GMT,eur,EUR German Trade Balance (euros),Medium,13.1B,13.0B,12.9B
+Fri Mar 09,09:30,GMT,gbp,GBP Industrial Production (MoM),Low,-0.4%,0.3%,0.4%
+Fri Mar 09,09:30,GMT,gbp,GBP Industrial Production (YoY),Medium,-3.8%,-3.1%,-3.1%
+Fri Mar 09,09:30,GMT,gbp,GBP Manufacturing Production (MoM),Low,0.1%,0.3%,1.1%
+Fri Mar 09,09:30,GMT,gbp,GBP Manufacturing Production (YoY),Medium,0.3%,0.2%,0.9%
+Fri Mar 09,09:30,GMT,gbp,GBP Producer Price Index Input n.s.a. (MoM),Low,2.1%,1.0%,0.1%
+Fri Mar 09,09:30,GMT,gbp,GBP Producer Price Index Input n.s.a. (YoY),Medium,7.3%,7.1%,6.6%
+Fri Mar 09,09:30,GMT,gbp,GBP Producer Price Index Output n.s.a. (MoM),Low,0.6%,0.3%,0.4%
+Fri Mar 09,09:30,GMT,gbp,GBP Producer Price Index Output n.s.a. (YoY),Medium,4.1%,3.9%,4.0%
+Fri Mar 09,09:30,GMT,gbp,GBP Producer Price Index Output Core n.s.a. (MoM),Low,0.5%,0.1%,0.3%
+Fri Mar 09,09:30,GMT,gbp,GBP Producer Price Index Output Core n.s.a. (YoY),Medium,3.0%,2.5%,2.4%
+Fri Mar 09,09:30,GMT,GBP,GBP Visible Trade Balance (Pounds),Medium,,,-£7111
+Fri Mar 09,09:30,GMT,GBP,GBP Trade Balance Non EU (Pounds),LOW,,,-£3748
+Fri Mar 09,09:30,GMT,GBP,GBP Total Trade Balance (Pounds),LOW,,,-£1109
+Fri Mar 09,12:00,GMT,cad,CAD Net Change in Employment,High,-2.8K,14.5K,2.3K
+Fri Mar 09,12:00,GMT,cad,CAD Full Time Employment Change,Medium,9.1,,-3.6
+Fri Mar 09,12:00,GMT,cad,CAD Part Time Employment Change,Medium,-12.0,,5.9
+Fri Mar 09,12:00,GMT,cad,CAD Participation Rate,Medium,66.5,,66.7
+Fri Mar 09,12:00,GMT,cad,CAD Unemployment Rate,High,7.4%,7.6%,7.6%
+Fri Mar 09,13:30,GMT,cad,CAD Labor Productivity (QoQ),Low,0.7%,0.6%,0.6%
+Fri Mar 09,13:30,GMT,cad,CAD International Merchandise Trade (Canadian dollar),Low,2.10B,2.00B,2.86B
+Fri Mar 09,13:30,GMT,usd,USD Trade Balance,Medium,-$52.6B,-$49.0B,-$50.4B
+Fri Mar 09,13:30,GMT,usd,USD Change in Non-farm Payrolls,High,227K,210K,284K
+Fri Mar 09,13:30,GMT,usd,USD Change in Private Payrolls,Medium,233K,220K,285K
+Fri Mar 09,13:30,GMT,usd,USD Change in Manufacturing Payrolls,Medium,31K,22K,52K
+Fri Mar 09,13:30,GMT,usd,USD Unemployment Rate,High,8.3%,8.3%,8.3%
+Fri Mar 09,13:30,GMT,usd,USD Average Hourly Earnings All Employees (MoM),Medium,0.1%,0.2%,0.1%
+Fri Mar 09,13:30,GMT,usd,USD Average Hourly Earnings All Employees (YoY),Medium,1.9%,2.0%,1.8%
+Fri Mar 09,13:30,GMT,usd,USD Average Weekly Hours All Employees,Medium,34.5,34.5,34.5
+Fri Mar 09,13:30,GMT,usd,USD Change in Household Employment,Medium,428,,847
+Fri Mar 09,13:30,GMT,usd,USD Underemployment Rate (U6),Medium,14.9%,,15.1%
+Fri Mar 09,15:00,GMT,usd,USD Wholesale Inventories,Low,0.4%,0.6%,1.1%
+Fri Mar 09,15:00,GMT,gbp,GBP NIESR Gross Domestic Product Estimate,High,0.1%,,-0.2%
+Sat Mar 10,02:55,GMT,cny,CNY Imports (YoY),Medium,39.6%,31.8%,-15.3%
+Sat Mar 10,02:55,GMT,cny,CNY Trade Balance (USD),High,-31.48B,-5.35B,27.28B
+Sat Mar 10,02:55,GMT,cny,CNY Exports (YoY),Medium,18.4%,31.1%,-0.5%

@@ -1,0 +1,140 @@
+Date,Time,Time Zone,Currency,Description,Importance,Actual,Forecast,Previous
+Sun Sep 11,02:00,GMT,cny,CNY Money Supply - M0 (YoY),Low,14.7%,,14.3%
+Sun Sep 11,02:00,GMT,cny,CNY New Yuan Loans,High,548.5B,500.0B,492.6B
+Sun Sep 11,02:00,GMT,cny,CNY Money Supply - M1 (YoY),Low,11.2%,12.0%,11.6%
+Sun Sep 11,02:00,GMT,cny,CNY Money Supply - M2 (YoY),Low,13.5%,14.2%,14.7%
+Sun Sep 11,23:50,GMT,jpy,JPY BOJ to Publish Minutes of Aug. 4-5 Board Meeting,High,,,
+Sun Sep 11,23:50,GMT,jpy,JPY BSI Large All Industry (QoQ),Medium,6.6,,-22
+Sun Sep 11,23:50,GMT,jpy,JPY BSI Large Manufacturing (QoQ),Medium,10.3,,-23.3
+Sun Sep 11,23:50,GMT,jpy,JPY Tertiary Industry Index (MoM),Medium,-0.1%,0.2%,1.8%
+Sun Sep 11,23:50,GMT,jpy,JPY Domestic Corporate Goods Price Index (MoM),Low,-0.2%,-0.2%,0.3%
+Sun Sep 11,23:50,GMT,jpy,JPY Domestic Corporate Goods Price Index (YoY),Low,2.6%,2.7%,2.9%
+Mon Sep 12,,,jpy,JPY Nationwide Department Store Sales (YoY),Low,,,-0.1%
+Mon Sep 12,,,jpy,JPY Tokyo Department Store Sales (YoY),Low,,,-1.3%
+Mon Sep 12,01:30,GMT,aud,AUD Trade Balance (Australian dollar),Medium,1826M,1900M,1817M
+Mon Sep 12,08:00,GMT,eur,EUR Italian Industrial Production s.a. (MoM),Low,-0.7%,0.1%,-0.8%
+Mon Sep 12,08:00,GMT,eur,EUR Italian Industrial Production w.d.a. (YoY),Low,-1.6%,0.2%,0.1%
+Mon Sep 12,08:00,GMT,eur,EUR Italian Industrial Production n.s.a. (YoY),Low,-4.6%,1.0%,0.1%
+Mon Sep 12,20:00,GMT,USD,USD Fed's Fisher Speaks on Monetary Policy in Dallas,LOW,,,
+Mon Sep 12,22:01,GMT,eur,EUR Germany Fourth Quarter Manpower Employment Outlook,Low,,,
+Mon Sep 12,22:45,GMT,nzd,NZD Manufacturing Activity ,Medium,2.1%,,2.7%
+Mon Sep 12,22:45,GMT,nzd,NZD Manufacturing Activity Volume SA QoQ,Medium,-0.7%,1.0%,1.4%
+Mon Sep 12,22:45,GMT,nzd,NZD Food Prices (MoM),Low,-1.3%,,2.0%
+Mon Sep 12,23:01,GMT,gbp,GBP RICS House Price Balance,Medium,-23.0%,-23.0%,-22.0%
+Mon Sep 12,23:01,GMT,aud,AUD Australia Manpower Survey,Low,16%,,17%
+Mon Sep 12,23:01,GMT,nzd,NZD New Zealand Manpower Survey,Low,23%,,17%
+Tue Sep 13,00:00,GMT,nzd,NZD QV House Prices (YoY) ,Low,0.1%,,-0.4%
+Tue Sep 13,00:00,GMT,nzd,NZD REINZ Housing Price Index,Low,3223.7,,3208.7
+Tue Sep 13,00:00,GMT,nzd,NZD REINZ House Sales (YoY),Low,21.1%,,11.7%
+Tue Sep 13,00:00,GMT,nzd,NZD REINZ Housing Price Index (MoM),Low,0.5%,,-0.6%
+Tue Sep 13,01:00,GMT,jpy,JPY Japan Manpower Survey,Low,10%,,8%
+Tue Sep 13,01:30,GMT,aud,AUD NAB Business Confidence,Medium,-8,,2
+Tue Sep 13,01:30,GMT,aud,AUD NAB Business Conditions,Low,-3,,-1
+Tue Sep 13,05:30,GMT,eur,EUR French Consumer Price Index - EU Harmonised (MoM),Low,0.6%,0.3%,-0.5%
+Tue Sep 13,05:30,GMT,eur,EUR French Consumer Price Index - EU Harmonised (YoY),Low,2.4%,2.2%,2.1%
+Tue Sep 13,05:30,GMT,eur,EUR French Consumer Price Index (MoM),Low,0.5%,0.3%,-0.4%
+Tue Sep 13,05:30,GMT,eur,EUR French Consumer Price Index (YoY),Low,2.2%,2.0%,1.9%
+Tue Sep 13,05:30,GMT,eur,EUR French Consumer Price Index Ex Tobacco Index,Low,122.59,,121.94
+Tue Sep 13,06:45,GMT,eur,EUR French Current Account (euros),Low,-4.5B,,-3.4B
+Tue Sep 13,08:30,GMT,gbp,GBP Visible Trade Balance Non EU GBP Millions,Medium,-5505,-5450,-5718
+Tue Sep 13,08:30,GMT,gbp,GBP Visible Trade Balance GBP Millions,Medium,-8922,-8500,-8873
+Tue Sep 13,08:30,GMT,gbp,GBP Visible Trade Balance Total GBP Millions ,Medium,-4450,-4200,-4496
+Tue Sep 13,08:30,GMT,gbp,GBP DCLG UK House Prices (YoY),Low,-1.5%,-1.2%,-2.0%
+Tue Sep 13,08:30,GMT,gbp,GBP Consumer Price Index (MoM),Medium,0.6%,0.6%,0.0%
+Tue Sep 13,08:30,GMT,gbp,GBP Consumer Price Index (YoY),High,4.5%,4.5%,4.4%
+Tue Sep 13,08:30,GMT,gbp,GBP Core Consumer Price Index (YoY),High,3.1%,3.0%,3.1%
+Tue Sep 13,08:30,GMT,gbp,GBP Retail Price Index,Low,236.1,235.9,234.7
+Tue Sep 13,08:30,GMT,gbp,GBP Retail Price Index (MoM),Low,0.6%,0.6%,-0.2%
+Tue Sep 13,08:30,GMT,gbp,GBP Retail Price Index (YoY),Low,5.2%,5.1%,5.0%
+Tue Sep 13,08:30,GMT,gbp,GBP Retail Price Index Ex Mort Int.Payments (YoY),Low,5.3%,5.2%,5.0%
+Tue Sep 13,11:30,GMT,usd,USD NFIB Small Business Optimism,Low,88.1,88.0,89.9
+Tue Sep 13,12:30,GMT,usd,USD Import Price Index (MoM),Low,-0.4%,-0.8%,0.3%
+Tue Sep 13,12:30,GMT,usd,USD Import Price Index (YoY),Low,13.0%,12.5%,13.8%
+Tue Sep 13,14:00,GMT,usd,USD IBD/TIPP Economic Optimism,Low,39.9,38.0,35.8
+Tue Sep 13,18:00,GMT,usd,USD Monthly Budget Statement,Medium,-$134.2B,-$132.0B,-$90.5B
+Wed Sep 14,00:30,GMT,aud,AUD Westpac Consumer Confidence,Medium,8.1%,,-3.5%
+Wed Sep 14,00:30,GMT,aud,AUD Westpac Consumer Confidence Index,Low,96.9,,89.6
+Wed Sep 14,01:30,GMT,aud,AUD Dwelling Starts ,Medium,-4.7%,2.0%,3.3%
+Wed Sep 14,03:00,GMT,nzd,NZD Non Resident Bond Holdings,Low,62.5%,,60.1%
+Wed Sep 14,04:00,GMT,jpy,JPY Tokyo Condominium Sales (YoY),Low,1.7%,,-1.3%
+Wed Sep 14,04:30,GMT,jpy,JPY Industrial Production (MoM),Low,0.4%,,0.6%
+Wed Sep 14,04:30,GMT,jpy,JPY Industrial Production (YoY),Medium,-3.0%,,-2.8%
+Wed Sep 14,04:30,GMT,jpy,JPY Capacity Utilization (MoM),Low,0.6%,,5.2%
+Wed Sep 14,06:00,GMT,jpy,JPY Machine Tool Orders (YoY),Medium,15.2%,,15.3%
+Wed Sep 14,07:15,GMT,chf,CHF Producer & Import Prices (MoM),Low,-1.2%,-0.4%,-0.7%
+Wed Sep 14,07:15,GMT,chf,CHF Producer & Import Prices (YoY),Low,-1.9%,-1.1%,-0.6%
+Wed Sep 14,08:30,GMT,gbp,GBP Claimant Count Rate,Medium,4.9%,5.0%,4.9%
+Wed Sep 14,08:30,GMT,gbp,GBP Jobless Claims Change,High,20.3K,35.0K,33.7K
+Wed Sep 14,08:30,GMT,gbp,GBP Average Weekly Earnings (3M/YoY),Medium,2.8%,2.7%,2.7%
+Wed Sep 14,08:30,GMT,gbp,GBP Weekly Earnings exBonus (3M/YoY),Low,2.1%,2.1%,2.3%
+Wed Sep 14,08:30,GMT,gbp,GBP ILO Unemployment Rate (3M),Medium,7.9%,7.9%,7.9%
+Wed Sep 14,09:00,GMT,eur,EUR Euro-Zone Industrial Production w.d.a. (YoY),Medium,4.2%,4.6%,2.6%
+Wed Sep 14,09:00,GMT,eur,EUR Euro-Zone Industrial Production s.a. (MoM),Low,1.0%,1.5%,-0.8%
+Wed Sep 14,11:00,GMT,usd,USD MBA Mortgage Applications,Low,6.3%,,-4.9%
+Wed Sep 14,12:30,GMT,cad,CAD Capacity Utilization Rate,Low,78.4%,78.0%,79.0%
+Wed Sep 14,12:30,GMT,usd,USD Producer Price Index (MoM),Low,0.0%,0.0%,0.2%
+Wed Sep 14,12:30,GMT,usd,USD Producer Price Index Ex Food & Energy (MoM),Low,0.1%,0.2%,0.4%
+Wed Sep 14,12:30,GMT,usd,USD Producer Price Index (YoY),Medium,6.5%,6.5%,7.2%
+Wed Sep 14,12:30,GMT,usd,USD Producer Price Index Ex Food & Energy (YoY),Medium,2.5%,2.6%,2.5%
+Wed Sep 14,12:30,GMT,usd,USD Advance Retail Sales,High,0.0%,0.2%,0.5%
+Wed Sep 14,12:30,GMT,usd,USD Retail Sales Less Autos,Medium,0.1%,0.2%,0.5%
+Wed Sep 14,14:00,GMT,usd,USD Business Inventories,Medium,0.4%,0.5%,0.3%
+Wed Sep 14,14:30,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,-6704K,-3000K,-3963K
+Wed Sep 14,14:30,GMT,usd,USD DOE Cushing OK Crude Inventory,Low,-460K,,-396K
+Wed Sep 14,14:30,GMT,usd,USD DOE U.S. Distillate Inventory,Low,1711K,700K,709K
+Wed Sep 14,14:30,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,1940K,-500K,199K
+Wed Sep 14,21:00,GMT,nzd,NZD Reserve Bank of New Zealand Rate Decision,High,2.50%,2.50%,2.50%
+Wed Sep 14,22:30,GMT,nzd,NZD Business NZ Performance of Manufacturing Index,Medium,52.9,,53.2
+Thu Sep 15,01:00,GMT,aud,AUD Consumer Inflation Expectation,Low,2.8%,,2.7%
+Thu Sep 15,01:30,GMT,aud,AUD New Motor Vehicle Sales (MoM),Low,3.3%,,9.0%
+Thu Sep 15,01:30,GMT,aud,AUD New Motor Vehicle Sales (YoY),Low,4.4%,,0.9%
+Thu Sep 15,01:30,GMT,aud,AUD RBA Foreign Exchange Transaction (Australian dollar),Low,367M,,605M
+Thu Sep 15,07:15,GMT,chf,CHF Industrial Production (QoQ),Medium,3.6%,3.0%,-9.6%
+Thu Sep 15,07:15,GMT,chf,CHF Industrial Production (YoY),Medium,2.3%,2.7%,4.5%
+Thu Sep 15,07:30,GMT,chf,CHF Swiss National Bank Rate Decision,High,0.00%,0.0%,0.00%
+Thu Sep 15,08:00,GMT,EUR,EUR ECB Publishes Sept. Monthly Report,HIGH,,,
+Thu Sep 15,08:00,GMT,eur,EUR Italian Consumer Price Index (NIC incl. tobacco) (MoM),Low,0.3%,0.3%,0.3%
+Thu Sep 15,08:00,GMT,eur,EUR Italian Consumer Price Index (NIC incl. tobacco) (YoY),Low,2.8%,2.8%,2.8%
+Thu Sep 15,08:00,GMT,eur,EUR Italian Consumer Price Index - EU Harmonized (MoM),Low,0.4%,0.3%,0.3%
+Thu Sep 15,08:00,GMT,eur,EUR Italian Consumer Price Index - EU Harmonized (YoY),Low,2.3%,2.2%,2.2%
+Thu Sep 15,08:30,GMT,gbp,GBP Retail Sales (MoM),Low,-0.1%,-0.2%,0.2%
+Thu Sep 15,08:30,GMT,gbp,GBP Retail Sales (YoY),Medium,-0.1%,-0.2%,0.0%
+Thu Sep 15,08:30,GMT,gbp,GBP Retail Sales w/Auto Fuel (MoM),Low,-0.2%,-0.3%,0.2%
+Thu Sep 15,08:30,GMT,gbp,GBP Retail Sales w/Auto Fuel (YoY),Medium,0.0%,-0.1%,0.2%
+Thu Sep 15,09:00,GMT,eur,EUR Euro-Zone Consumer Price Index - Core (YoY),High,1.2%,1.2%,1.2%
+Thu Sep 15,09:00,GMT,eur,EUR Euro-Zone Consumer Price Index (MoM),Medium,0.2%,0.2%,-0.6%
+Thu Sep 15,09:00,GMT,eur,EUR Euro-Zone Consumer Price Index (YoY),High,2.5%,2.5%,2.5%
+Thu Sep 15,09:00,GMT,eur,EUR Euro-Zone Employment (QoQ),Low,0.3%,,0.1%
+Thu Sep 15,09:00,GMT,eur,EUR Euro-Zone Employment (YoY),Low,2.5%,,0.1%
+Thu Sep 15,09:00,GMT,eur,EUR Italian Current Account (euros),Low,1663M,,-4252M
+Thu Sep 15,10:40,GMT,cny,CNY Actual FDI,Medium,11.1%,,19.8%
+Thu Sep 15,12:30,GMT,cad,CAD Manufacturing Shipments (MoM),Low,2.7%,1.4%,-1.5%
+Thu Sep 15,12:30,GMT,usd,USD Consumer Price Index (MoM),Medium,0.4%,0.2%,0.5%
+Thu Sep 15,12:30,GMT,usd,USD Consumer Price Index Ex Food & Energy (MoM),Medium,0.2%,0.2%,0.2%
+Thu Sep 15,12:30,GMT,usd,USD Current Account Balance,Low,-$118.0B,-$122.9B,-$119.3B
+Thu Sep 15,12:30,GMT,usd,USD Consumer Price Index (YoY),High,3.8%,3.6%,3.6%
+Thu Sep 15,12:30,GMT,usd,USD Consumer Price Index Ex Food & Energy (YoY),High,2.0%,1.9%,1.8%
+Thu Sep 15,12:30,GMT,usd,USD Consumer Price Index Core Index s.a.,Medium,226.014,,225.463
+Thu Sep 15,12:30,GMT,usd,USD Consumer Price Index n.s.a.,Medium,226.545,226.243,225.922
+Thu Sep 15,12:30,GMT,usd,USD Empire Manufacturing,Low,-8.82,-4.00,-7.72
+Thu Sep 15,12:30,GMT,usd,USD Initial Jobless Claims,Low,428K,411K,414K
+Thu Sep 15,12:30,GMT,usd,USD Continuing Claims,Low,3726K,3710K,3717K
+Thu Sep 15,13:15,GMT,usd,USD Industrial Production,Medium,0.2%,0.0%,0.9%
+Thu Sep 15,13:15,GMT,usd,USD Capacity Utilization,Low,77.4%,77.5%,77.5%
+Thu Sep 15,13:45,GMT,usd,USD Bloomberg Consumer Comfort,Low,-49,-49.3,-49.3
+Thu Sep 15,14:00,GMT,usd,USD Philadelphia Fed.,Medium,-17.5,-15.0,-30.7
+Thu Sep 15,14:30,GMT,usd,USD EIA Natural Gas Storage Change,Low,87,82,64
+Fri Sep 16,01:00,GMT,nzd,NZD ANZ Consumer Confidence Index,Low,112.6,,113.3
+Fri Sep 16,01:00,GMT,nzd,NZD ANZ Consumer Confidence (MoM),Low,-0.6%,,3.6%
+Fri Sep 16,06:00,GMT,eur,EUR EU 25 New Car Registrations,Low,7.7%,,-8.1%
+Fri Sep 16,08:00,GMT,eur,EUR Euro-Zone Current Account n.s.a. (euros),Low,-3.2B,,-3.1B
+Fri Sep 16,08:00,GMT,eur,EUR Euro-Zone Current Account s.a. (euros),Low,-12.9B,,-7.1B
+Fri Sep 16,08:00,GMT,eur,EUR Italian Trade Balance (Total) (euros),Low,1438M,,-1749M
+Fri Sep 16,08:00,GMT,eur,EUR Italian Trade Balance EU (euros),Low,1773M,,-213M
+Fri Sep 16,09:00,GMT,eur,EUR Euro-Zone Labor Costs (YoY),Low,3.6%,,2.7%
+Fri Sep 16,09:00,GMT,eur,EUR Euro-Zone Trade Balance s.a. (euros),Low,-2.5B,,-2.5B
+Fri Sep 16,09:00,GMT,eur,EUR Euro-Zone Trade Balance (euros),Low,4.3B,2.0B,0.1B
+Fri Sep 16,12:30,GMT,cad,CAD International Securities Transactions (Canadian dollar),Low,11.78B,2.00B,-3.45B
+Fri Sep 16,13:00,GMT,usd,USD Net Long-term TIC Flows,Medium,$9.5B,$30.0B,$3.4B
+Fri Sep 16,13:00,GMT,usd,USD Total Net TIC Flows,Low,-51.8B,,-$29.4B
+Fri Sep 16,13:55,GMT,usd,USD U. of Michigan Confidence,High,57.8,56.6,55.7
