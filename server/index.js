@@ -145,6 +145,19 @@ server.post('/api/calendar/:cross', function respond(req, res, next) {
     }
     next();
 });
+server.get('/api/calendar/strength/:weeks', function respond(req, res, next) {
+    res.setHeader('content-type', 'text/csv');
+    var cross = req.params.cross.replace(/([a-z]{3})([a-z]{3})/gi, '$1_$2').toUpperCase();
+    var outFile = [__dirname + '/../app/data/', 'calendar', '-', req.params.weeks, '-', 'weeks-strength', '.csv'].join('');
+    // only generate file if it's older than XX minutes
+    if (isOutdatedFile(outFile, 5) {
+        sh.run(['Rscript', __dirname + '/scripts/eventsStrength.r', req.params.start, req.params.cross.toUpperCase(), req.params.granularity.toUpperCase(), req.params.type.toLowerCase()].join(' '));
+    }
+    fs.readFile(outFile, {}, function(err, data) {
+        res.send(data);
+    });
+    next();
+});
 /**
  * Init API server
  */
