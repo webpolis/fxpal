@@ -146,14 +146,21 @@ server.post('/api/calendar/:cross', function respond(req, res, next) {
     }
     next();
 });
-server.get('/api/calendar/strength/:weeks', function respond(req, res, next) {
+server.get('/api/calendar/strength/:weeks/:cross', function respond(req, res, next) {
     res.setHeader('content-type', 'text/csv');
-    var outFile = [__dirname + '/../app/data/', 'calendar', '-', req.params.weeks, '-', 'weeks-strength', '.csv'].join('');
+    var cross = req.params.cross && req.params.cross.match(/[a-z]{3}/gi) || [];
+    var outFile = [__dirname + '/../app/data/', 'calendar', '-', req.params.weeks];
     // only generate file if it's older than XX minutes
     if (isOutdatedFile(outFile, 5)) {
-        sh.run(['Rscript', __dirname + '/scripts/eventsStrength.r', req.params.weeks].join(' '));
+        var cmd = ['Rscript', __dirname + '/scripts/eventsStrength.r', req.params.weeks];
+        if (cross.length > 0) {
+            cmd = cmd.concat(cross[0] + cross[1]);
+            outFile = outFile.concat(cross[0] + cross[1]);
+        }
+        sh.run(cmd.join(' '));
     }
-    fs.readFile(outFile, {}, function(err, data) {
+    outFile = outFile.concat(['-', 'weeks-strength', '.csv']);
+    fs.readFile(outFile.join(''), {}, function(err, data) {
         res.send(data);
     });
     next();
