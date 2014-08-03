@@ -16,9 +16,15 @@ oandaCurrencies = read.csv("oandaCurrencies.csv", sep = ",", dec = ".", strip.wh
 isReverted = nrow(oandaCurrencies[oandaCurrencies$instrument == instrument,]) <= 0
 instrument = ifelse(isReverted,sub("([a-z]{3})_([a-z]{3})", "\\2_\\1",instrument,ignore.case=TRUE),instrument)
 
-getCandles <- function(instrument, granularity, startDate){
+getCandles <- function(instrument, granularity, startDate = NA, count = NA){
 	oandaToken = 'ce6b72e81af59be0bbc90152cad8d731-03d41860ed7849e3c4555670858df786'
-	urlPractice = paste("https://api-fxpractice.oanda.com/v1/candles?instrument=", instrument, "&granularity=", granularity, "&start=", startDate, "&weeklyAlignment=Monday", sep = "")
+	urlPractice = paste("https://api-fxpractice.oanda.com/v1/candles?instrument=", instrument, "&granularity=", granularity, "&weeklyAlignment=Monday", sep = "")
+	if(!is.na(startDate)){
+		urlPractice = paste(urlPractice,"&start=", startDate,sep="")
+	}
+	if(!is.na(count)){
+		urlPractice = paste(urlPractice,"&count=", count,sep="")
+	}
 
 	print(paste("requesting ",urlPractice))
 
@@ -64,10 +70,15 @@ getCandlestickPatterns <- function(varName){
 	return(ret)
 }
 
-getVolatility <- function(prices){
-	price = prices$Close
-	chg = exp(ROC(price, type='discrete', na.pad=FALSE))
-	return(mean(na.omit(xts(apply(chg,2,runSD,n=20), index(chg))*sqrt(252))))
+getVolatility <- function(crosses){
+	ret = xts()
+	for(cross in crosses){
+		tmp = getCandles(cross,"H1",count = 14)
+		vol = volatility(n=12,calc="garman.klass",tmp[,c("Open","High","Low","Close")])
+		names(vol) = c(cross)
+		ret = merge(vol,ret)
+	}
+	return(na.omit(ret))
 }
 
 out = getCandles(instrument, granularity, startDate)
@@ -104,10 +115,6 @@ if(type == "patterns"){
 }
 if(type == "volatility"){
 	if(exists("crosses") && is.character(crosses)){
-
-	}else if(exists("out")){
-		volatility = getVolatility(out)
-
 
 	}
 }
