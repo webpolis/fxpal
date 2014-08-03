@@ -16,13 +16,14 @@ angular.module('aifxApp').directive('rateChange', function($interval, $http, api
                 granularity: scope.period,
                 count: scope.count
             }).then(function(ret) {
-                var diffLast2 = ret.data.candles[0].closeMid - ret.data.candles[1].closeMid;
+                var isRevertedCross = api.isRevertedCross(cross1, cross2);
+                var diffLast2 = ret.data.candles[1].closeMid - ret.data.candles[0].closeMid;
                 switch (scope.period) {
                     case 'D':
-                        scope.symbol.dailyChange = ret.isRevertedCross ? -(diffLast2) : diffLast2;
+                        scope.symbol.dailyChange = isRevertedCross ? -(diffLast2) : diffLast2;
                         break;
                     case 'W':
-                        scope.symbol.weeklyChange = ret.isRevertedCross ? -(diffLast2) : diffLast2;
+                        scope.symbol.weeklyChange = isRevertedCross ? -(diffLast2) : diffLast2;
                         break;
                 }
             });
