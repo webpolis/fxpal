@@ -38,6 +38,7 @@ angular.module('aifxApp').controller('appController', function($scope, $ionicSid
             candlestick: 'http://api-sandbox.oanda.com/v1/candles?instrument={{cross1}}_{{cross2}}&count={{count}}&candleFormat=midpoint&granularity={{period}}&weeklyAlignment=Monday',
             dailyChange: 'http://www.quandl.com/api/v1/multisets.json?columns={{sets}}&collapse=daily&auth_token={{token}}&rows=1&transformation=rdiff&rows=4',
             weeklyChange: 'http://www.quandl.com/api/v1/multisets.json?columns={{sets}}&collapse=weekly&auth_token={{token}}&rows=1&transformation=rdiff&rows=4',
+            monthlyChange: 'http://www.quandl.com/api/v1/multisets.json?columns={{sets}}&collapse=monthly&auth_token={{token}}&rows=1&transformation=rdiff&rows=4',
             yahooIndex: 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quoteslist%20where%20symbol%20in%20({{quotes}})&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=',
             /* events: 'http://calendar.fxstreet.com/eventdate/mini?f=json&culture=en-US&rows=165&pastevents=100&hoursbefore=240&timezone=Argentina+Standard+Time&columns=date%2Ctime%2Cevent%2Cconsensus%2Cprevious%2Cactual&showcountryname=false&countrycode=AU%2CCA%2CJP%3AEMU%2CNZ%2CCH%2CUK%2CUS&isfree=true'*/
             // strip protocol for corsproxy
@@ -111,6 +112,7 @@ angular.module('aifxApp').controller('appController', function($scope, $ionicSid
         $scope.config.urls.multiset = $scope.config.urls.multiset.replace(/\{\{token\}\}/gi, $scope.config.token);
         $scope.config.urls.dailyChange = $scope.config.urls.dailyChange.replace(/\{\{token\}\}/gi, $scope.config.token);
         $scope.config.urls.weeklyChange = $scope.config.urls.weeklyChange.replace(/\{\{token\}\}/gi, $scope.config.token);
+        $scope.config.urls.monthlyChange = $scope.config.urls.monthlyChange.replace(/\{\{token\}\}/gi, $scope.config.token);
         // initialize crosses
         csv2json.csv('data/currencies.csv', function(data) {
             $scope.data.currencies = data;

@@ -17,13 +17,26 @@ angular.module('aifxApp').directive('rateChange', function($interval, $http, api
                 count: scope.count
             }).then(function(ret) {
                 var isRevertedCross = api.isRevertedCross(cross1, cross2);
-                var diffLast2 = ret.data.candles[1].closeMid - ret.data.candles[0].closeMid;
+                ret.data.candles.sort(function(a, b) {
+                    var da = new Date(a.time);
+                    var db = new Date(b.time);
+                    if (da > db) {
+                        return -1;
+                    } else if (da < db) {
+                        return 1;
+                    }
+                    return 0;
+                });
+                var diffLast2 = ret.data.candles[0].closeMid - ret.data.candles[1].closeMid;
                 switch (scope.period) {
                     case 'D':
                         scope.symbol.dailyChange = isRevertedCross ? -(diffLast2) : diffLast2;
                         break;
                     case 'W':
                         scope.symbol.weeklyChange = isRevertedCross ? -(diffLast2) : diffLast2;
+                        break;
+                    case 'M':
+                        scope.symbol.monthlyChange = isRevertedCross ? -(diffLast2) : diffLast2;
                         break;
                 }
             });

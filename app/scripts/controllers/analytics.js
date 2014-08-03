@@ -158,6 +158,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         });
         switch (type) {
             case 'weeklyChange':
+            case 'monthlyChange':
                 $http.get($scope.config.urls[type].replace(/\{\{sets\}\}/gi, sets.join(','))).success(function(ret) {
                     // update correlated items and set change
                     var change = {};
@@ -352,8 +353,10 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                     if (sets.length === 0) {
                         return;
                     }
-                    $scope.computeChange(sets, 'weeklyChange').then(function() {
-                        $scope.computeChange(null, 'dailyChange');
+                    $scope.computeChange(sets, 'monthlyChange').then(function() {
+                        $scope.computeChange(sets, 'weeklyChange').then(function() {
+                            $scope.computeChange(null, 'dailyChange');
+                        });
                     });
                 }
             }, 150);
@@ -397,10 +400,10 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             if (angular.isDefined(ret.data) && angular.isArray(ret.data.candles)) {
                 angular.forEach(ret.data.candles, function(candle) {
                     var time = moment(candle.time).valueOf();
-                    var open = parseFloat(ret.isRevertedCross ? (1 / candle.openAsk) : candle.openAsk.toFixed(4));
-                    var close = parseFloat(ret.isRevertedCross ? (1 / candle.closeAsk) : candle.closeAsk.toFixed(4));
-                    var high = parseFloat(ret.isRevertedCross ? (1 / candle.lowAsk) : candle.highAsk.toFixed(4));
-                    var low = parseFloat(ret.isRevertedCross ? (1 / candle.highAsk) : candle.lowAsk.toFixed(4));
+                    var open = parseFloat(ret.isRevertedCross ? (1 / candle.openBid) : candle.openBid.toFixed(6));
+                    var close = parseFloat(ret.isRevertedCross ? (1 / candle.closeBid) : candle.closeBid.toFixed(6));
+                    var high = parseFloat(ret.isRevertedCross ? (1 / candle.lowBid) : candle.highBid.toFixed(6));
+                    var low = parseFloat(ret.isRevertedCross ? (1 / candle.highBid) : candle.lowBid.toFixed(6));
                     var c = new Array(time, open, high, low, close);
                     $scope.optsHighchartsCross.series[0].data.push(c);
                 });
