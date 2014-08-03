@@ -57,6 +57,7 @@ server.use(restify.bodyParser({
 }));
 server.use(restify.CORS());
 server.use(restify.gzipResponse());
+server.pre(restify.pre.sanitizePath());
 /**
  * API methods
  */
@@ -146,15 +147,16 @@ server.post('/api/calendar/:cross', function respond(req, res, next) {
     }
     next();
 });
-server.get('/api/calendar/strength/:weeks/:cross', function respond(req, res, next) {
+var resCalendarStrength = function respond(req, res, next) {
     res.setHeader('content-type', 'text/csv');
     var cross = req.params.cross && req.params.cross.match(/[a-z]{3}/gi) || [];
-    var outFile = [__dirname + '/../app/data/', 'calendar', '-', req.params.weeks];
+    var weeks = req.params.weeks ||  52;
+    var outFile = [__dirname + '/../app/data/', 'calendar', '-', weeks];
     // only generate file if it's older than XX minutes
     if (isOutdatedFile(outFile, 5)) {
         var cmd = ['Rscript', __dirname + '/scripts/eventsStrength.r', req.params.weeks];
         if (cross.length > 0) {
-            cmd = cmd.concat(cross[0] + cross[1]);
+            cmd = cmd.concat(cross);
             outFile = outFile.concat(cross[0] + cross[1]);
         }
         sh.run(cmd.join(' '));
@@ -164,7 +166,10 @@ server.get('/api/calendar/strength/:weeks/:cross', function respond(req, res, ne
         res.send(data);
     });
     next();
-});
+};
+server.get('/api/calendar/strength/:weeks/:cross', resCalendarStrength);
+server.get('/api/calendar/strength/:weeks', resCalendarStrength);
+server.get('/api/calendar/strength', resCalendarStrength);
 /**
  * Init API server
  */

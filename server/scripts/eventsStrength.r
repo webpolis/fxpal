@@ -3,9 +3,9 @@ setwd("app/data/")
 Sys.setenv(TZ="UTC")
 
 opts = commandArgs(trailingOnly = TRUE)
-weeks = ifelse((exists("opts") && !is.na(opts[1])), opts[1], 52)
-cross1 = ifelse((exists("opts") && !is.na(opts[1])), opts[1], NA)
-cross2 = ifelse((exists("opts") && !is.na(opts[1])), opts[1], NA)
+weeks = ifelse((exists("opts") && !is.na(opts[1])), as.integer(opts[1]), 52)
+cross1 = ifelse((exists("opts") && !is.na(opts[2])), opts[2], NA)
+cross2 = ifelse((exists("opts") && !is.na(opts[3])), opts[3], NA)
 
 data = read.csv("calendar.csv", sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
 data = na.omit(data)
