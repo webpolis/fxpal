@@ -39,3 +39,11 @@ getCurrenciesStrength <- function(w = 52, curr1=NA, curr2=NA){
 }
 
 strength = getCurrenciesStrength(weeks, cross1, cross2)
+outFile = paste('calendar',weeks,sep = '-')
+if(!is.na(cross1) && !is.na(cross2)){
+	outFile = paste(outFile,cross1,cross2, sep = '-')
+}
+outFile = paste(outFile,'strength', sep = '-')
+write.csv(strength, quote = FALSE, row.names = FALSE, file = paste(outFile,'.csv',sep=''), fileEncoding = "UTF-8")
+
+quit()

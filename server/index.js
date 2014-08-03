@@ -157,11 +157,11 @@ var resCalendarStrength = function respond(req, res, next) {
         var cmd = ['Rscript', __dirname + '/scripts/eventsStrength.r', req.params.weeks];
         if (cross.length > 0) {
             cmd = cmd.concat(cross);
-            outFile = outFile.concat(cross[0] + cross[1]);
+            outFile = outFile.concat('-' + [cross[0], cross[1]].join('-'));
         }
         sh.run(cmd.join(' '));
     }
-    outFile = outFile.concat(['-', 'weeks-strength', '.csv']);
+    outFile = outFile.concat(['-', 'strength', '.csv']);
     fs.readFile(outFile.join(''), {}, function(err, data) {
         res.send(data);
     });
