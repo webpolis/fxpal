@@ -12,11 +12,15 @@ instrument = sub("(\\w{3})(\\w{3})", "\\1_\\2", ifelse((exists("opts") && !is.na
 granularity = ifelse((exists("opts") && !is.na(opts[3])), opts[3], "M")
 type = ifelse((exists("opts") && !is.na(opts[4])), opts[4], "trend")
 
+oandaCurrencies = read.csv("oandaCurrencies.csv", sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
+isReverted = nrow(oandaCurrencies[oandaCurrencies$instrument == instrument,]) <= 0
+instrument = ifelse(isReverted,sub("([a-z]{3})_([a-z]{3})", "\\2_\\1",instrument,ignore.case=TRUE),instrument)
+
 getCandles <- function(instrument, granularity, startDate){
 	oandaToken = 'ce6b72e81af59be0bbc90152cad8d731-03d41860ed7849e3c4555670858df786'
 	urlPractice = paste("https://api-fxpractice.oanda.com/v1/candles?instrument=", instrument, "&granularity=", granularity, "&start=", startDate, "&weeklyAlignment=Monday", sep = "")
 
-	print(urlPractice)
+	print(paste("requesting ",urlPractice))
 
 	json = fromJSON(getURL(url = urlPractice, httpheader = c(Authorization = paste("Bearer ", oandaToken))))
 
@@ -32,6 +36,14 @@ getCandles <- function(instrument, granularity, startDate){
 	names(ret) = c("Open","High","Low","Close","Volume")
 	rownames(ret) = as.POSIXlt(gsub("T|\\.\\d{6}Z", " ", rownames(ret)))
 	ret = as.xts(ret)
+
+	if(isReverted){
+		ret[,1:4] = 1/ret[,1:4]
+		l = ret$Low
+		h = ret$High
+		ret$High = l
+		ret$Low = h
+	}
 	return(ret)
 }
 
@@ -66,7 +78,13 @@ if(type == "trend"){
 	trend$Time = index(out)
 	trend = na.omit(trend)
 
-	write.csv(trend, quote = FALSE, row.names = FALSE, file = paste(instrument, "-trend-", granularity, ".csv", sep = ""), fileEncoding = "UTF-8")
+	cross = instrument
+
+	if(isReverted){
+		cross = ifelse(isReverted,sub("([a-z]{3})_([a-z]{3})", "\\2_\\1",cross,ignore.case=TRUE),cross)
+	}
+
+	write.csv(trend, quote = FALSE, row.names = FALSE, file = paste(cross, "-trend-", granularity, ".csv", sep = ""), fileEncoding = "UTF-8")
 }
 # match candlesticks patterns
 if(type == "patterns"){
@@ -75,8 +93,13 @@ if(type == "patterns"){
 		patterns$Time = 0
 		patterns$Time = index(out)
 		patterns = na.omit(patterns)
+		cross = instrument
 
-		write.csv(patterns, quote = FALSE, row.names = FALSE, file = paste(instrument, "-patterns-", granularity, ".csv", sep = ""), fileEncoding = "UTF-8")
+		if(isReverted){
+			cross = ifelse(isReverted,sub("([a-z]{3})_([a-z]{3})", "\\2_\\1",cross,ignore.case=TRUE),cross)
+		}
+
+		write.csv(patterns, quote = FALSE, row.names = FALSE, file = paste(cross, "-patterns-", granularity, ".csv", sep = ""), fileEncoding = "UTF-8")
 	}
 }
 if(type == "volatility"){
