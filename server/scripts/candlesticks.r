@@ -73,17 +73,17 @@ getCandlestickPatterns <- function(varName){
 getVolatility <- function(crosses){
 	ret = xts()
 	for(cross in crosses){
-		tmp = getCandles(cross,"H1",count = 14)
-		vol = volatility(n=12,calc="garman.klass",tmp[,c("Open","High","Low","Close")])
+		tmp = getCandles(cross,"H1",count = 8)
+		vol = volatility(n=6,calc="garman.klass",tmp[,c("Open","High","Low","Close")])
 		names(vol) = c(cross)
 		ret = merge(vol,ret)
 	}
-	return(na.omit(ret))
+	ret = na.omit(ret)
+	return(ret[nrow(ret),])
 }
 
-out = getCandles(instrument, granularity, startDate)
-
 if(type == "trend"){
+	out = getCandles(instrument, granularity, startDate)
 	trend = TrendDetectionChannel(out, n = 20, DCSector = .25)
 	trend$Time = 0
 	trend$Time = index(out)
@@ -99,24 +99,30 @@ if(type == "trend"){
 }
 # match candlesticks patterns
 if(type == "patterns"){
-	if(exists("out")){
-		patterns = getCandlestickPatterns("out")
-		patterns$Time = 0
-		patterns$Time = index(out)
-		patterns = na.omit(patterns)
-		cross = instrument
+	out = getCandles(instrument, granularity, startDate)
 
-		if(isReverted){
-			cross = ifelse(isReverted,sub("([a-z]{3})_([a-z]{3})", "\\2_\\1",cross,ignore.case=TRUE),cross)
-		}
+	patterns = getCandlestickPatterns("out")
+	patterns$Time = 0
+	patterns$Time = index(out)
+	patterns = na.omit(patterns)
+	cross = instrument
 
-		write.csv(patterns, quote = FALSE, row.names = FALSE, file = paste(cross, "-patterns-", granularity, ".csv", sep = ""), fileEncoding = "UTF-8")
+	if(isReverted){
+		cross = ifelse(isReverted,sub("([a-z]{3})_([a-z]{3})", "\\2_\\1",cross,ignore.case=TRUE),cross)
 	}
+
+	write.csv(patterns, quote = FALSE, row.names = FALSE, file = paste(cross, "-patterns-", granularity, ".csv", sep = ""), fileEncoding = "UTF-8")
 }
 if(type == "volatility"){
-	if(exists("crosses") && is.character(crosses)){
+	crosses = read.csv("availableCrosses.csv", sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
+	crosses = as.character(crosses$instrument)
+	vol = getVolatility(crosses)
+	vol = vol[,vol>=0.008]
+	vol = matrix(as.list(vol))
+	vol = cbind(names(vol),vol)
+	colnames(vol) = c("cross","volatility")
 
-	}
+	write.csv(vol, quote = FALSE, row.names = FALSE, file = "volatility.csv", fileEncoding = "UTF-8")
 }
 
 quit()
