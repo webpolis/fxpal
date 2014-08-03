@@ -93,26 +93,17 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         var cross = $scope.selected.cross1.currCode + $scope.selected.cross2.currCode,
             startDate = moment().subtract('years', 4).format('YYYY-MM-DD'),
             endDate = moment().format('YYYY-MM-DD');
-        $http.get($scope.config.urls.cross.replace(/\{\{cross\}\}/gi, cross).replace(/\{\{startDate\}\}/gi, startDate).replace(/\{\{endDate\}\}/gi, endDate)).success(function(ret) {
-            if (angular.isArray(ret.column_names) && angular.isArray(ret.data)) {
-                $scope.data.cross.columns = ret.column_names;
-                $scope.data.cross.data = ret.data;
-            }
-            $ionicLoading.hide();
-            if (!angular.isDefined(loadExtras) || loadExtras) {
-                $scope.correlated('markets');
-                $scope.processEvents().then(function() {
-                    //$scope.correlated('events');
-                });
-            }
-            if (loadChart) {
-                $scope.optChartPeriod = $scope.optsChartPeriods[0];
-                $scope.chart($scope.optChartPeriod);
-            }
-            //$scope.multiset();
-        }).error(function(err) {
-            $ionicLoading.hide();
-        });
+        $ionicLoading.hide();
+        if (!angular.isDefined(loadExtras) || loadExtras) {
+            $scope.correlated('markets');
+            $scope.processEvents().then(function() {
+                //$scope.correlated('events');
+            });
+        }
+        if (loadChart) {
+            $scope.optChartPeriod = $scope.optsChartPeriods[0];
+            $scope.chart($scope.optChartPeriod);
+        }
     };
     $scope.multiset = function() {
         $ionicLoading.show({
@@ -408,8 +399,8 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                     var time = moment(candle.time).valueOf();
                     var open = parseFloat(ret.isRevertedCross ? (1 / candle.openAsk) : candle.openAsk.toFixed(4));
                     var close = parseFloat(ret.isRevertedCross ? (1 / candle.closeAsk) : candle.closeAsk.toFixed(4));
-                    var high = parseFloat(ret.isRevertedCross ? (1 / candle.highAsk) : candle.highAsk.toFixed(4));
-                    var low = parseFloat(ret.isRevertedCross ? (1 / candle.lowAsk) : candle.lowAsk.toFixed(4));
+                    var high = parseFloat(ret.isRevertedCross ? (1 / candle.lowAsk) : candle.highAsk.toFixed(4));
+                    var low = parseFloat(ret.isRevertedCross ? (1 / candle.highAsk) : candle.lowAsk.toFixed(4));
                     var c = new Array(time, open, high, low, close);
                     $scope.optsHighchartsCross.series[0].data.push(c);
                 });

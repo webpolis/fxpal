@@ -44,14 +44,17 @@ angular.module('aifxApp').service('api', function api($http, $q) {
     var apiUrl = sandbox ? 'http://api-sandbox.oanda.com' : 'https://api-fxpractice.oanda.com';
     var urlRate = apiUrl + '/v1/candles?{{params}}&weeklyAlignment=Monday';
     return {
+        getOandaCross: function(cross1, cross2) {
+            var oriCross = [cross1, '_', cross2].join(''),
+                revCross = [cross2, '_', cross1].join('');
+            var cross = jsonPath.eval(oandaCurrencies, '$.[?(@.instrument=="' + oriCross + '" || @.instrument=="' + revCross + '")]')[0] ||  null;
+            return cross;
+        },
         getCandlesticks: function(options) {
             var def = $q.defer();
             var cross1 = options.instrument.split('_')[0],
                 cross2 = options.instrument.split('_')[1];
-            var oriCross = [cross1, '_', cross2].join(''),
-                revCross = [cross2, '_', cross1].join('');
-            var cross = jsonPath.eval(oandaCurrencies, '$.[?(@.instrument=="' + oriCross + '" || @.instrument=="' + revCross + '")]')[0] ||  null;
-
+            var cross = this.getOandaCross(cross1, cross2);
             cross1 = cross === null ? options.instrument.split('_')[1] : cross1;
             cross2 = cross === null ? options.instrument.split('_')[0] : cross2;
             options.instrument = cross === null ? cross1 + '_' + cross2 : cross.instrument;
@@ -71,7 +74,7 @@ angular.module('aifxApp').service('api', function api($http, $q) {
             }).success(function(data) {
                 def.resolve({
                     data: data,
-                    isRevertedCross: (cross === null)
+                    isRevertedCross: (jsonPath.eval(oandaCurrencies, '$.[?(@.instrument=="' + [cross1, cross2].join('_') + '")]').length === 0)
                 });
             }).error(def.reject);
             return def.promise;
