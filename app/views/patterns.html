@@ -6,8 +6,8 @@
     <div class="item item-avatar">
         <img ng-src="images/patterns/{{pattern.Image}}">
         <h2>{{pattern.Name}}</h2>
-        <p ng-if="pattern.Direction == 0 || pattern.Direction == 1">
-        Direction: <i class="icon" ng-class="{'ion-arrow-down-a red':pattern.Direction == 0,'ion-arrow-up-a green':pattern.Direction == 1}"></i>
+        <p ng-if="pattern.Direction == 0 || pattern.Direction == 1 || pattern.Direction == 2">
+        Direction: <i class="icon" ng-class="{'ion-arrow-down-a red':pattern.Direction == 0,'ion-arrow-up-a green':pattern.Direction == 1 || pattern.Direction == 2}"></i><i ng-if="pattern.Direction == 2" class="icon" ng-class="{'ion-arrow-down-a red':pattern.Direction == 2}"></i>
         </p>
     </div>
     <div class="item item-text-wrap">

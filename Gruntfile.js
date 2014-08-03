@@ -128,7 +128,8 @@ module.exports = function(grunt) {
             },
             app: {
                 src: ['<%= yeoman.app %>/index.html'],
-                ignorePath: /\.\.\//
+                ignorePath: /\.\.\//,
+                exclude: ['bower_components/bootstrap/dist/css/bootstrap.css']
             }
         },
         // Renames files for browser caching purposes

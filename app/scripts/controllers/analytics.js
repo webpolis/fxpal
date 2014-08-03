@@ -102,7 +102,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             if (!angular.isDefined(loadExtras) || loadExtras) {
                 $scope.correlated('markets');
                 $scope.processEvents().then(function() {
-                    $scope.correlated('events');
+                    //$scope.correlated('events');
                 });
             }
             if (loadChart) {
