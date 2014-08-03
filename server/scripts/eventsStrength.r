@@ -2,24 +2,24 @@ setwd("app/data/")
 
 Sys.setenv(TZ="UTC")
 
-opts = commandArgs(trailingOnly = TRUE)
-cross1 = ifelse((exists("opts") && !is.na(opts[1])), opts[1], NA)
-cross2 = ifelse((exists("opts") && !is.na(opts[1])), opts[1], NA)
-
 data = read.csv("calendar.csv", sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
 data = na.omit(data)
 
-if(!is.na(cross1) && !is.na(cross2)){
-	data = data[grep(paste(cross1,'|',cross2, sep = ''),data$currency,ignore.case=TRUE),]
+getCurrenciesStrength <- function(tmp){
+	allValues = grep('actual|previous',names(tmp))
+
+	# invert value for unemployment
+	tmp[grep('continu_claim|jobless_claim|unempl',tmp$event, ignore.case=TRUE),allValues] = transform(tmp[grep('continu_claim|jobless_claim|unempl',tmp$event, ignore.case=TRUE),allValues],actual=-actual,previous=-previous)
+
+	tmp = aggregate(tmp$actual, by=list(currency=tmp$currency,event=tmp$event),FUN=diff)
+	tmp[,3] = sapply(tmp[,3],simplify=T,FUN=function(x) round(sum(x),6))
+	names(tmp) = c("currency","event","value")
+	tmp$scale = round(scale(tmp[,3], scale = TRUE, center = TRUE), 6)
+
+	scaled = aggregate(tmp$value, by=list(currency=tmp$currency),FUN=mean)
+	scaled = scaled[order(-scaled[,2]),]
+	scaled[,2] = round(scale(scaled[,2], scale = TRUE, center = FALSE), 6)
+	names(scaled) <- c("currency","strength")
+	return(scaled)
 }
 
-allValues = grep('actual|forecast|previous',names(data))
-actualValues = grep('actual',names(data))
-
-# invert value for unemployment
-data[grep('unempl',data$event, ignore.case=TRUE),allValues] <- -(data[grep('unempl',data$event, ignore.case=TRUE),allValues])
-
-data[,actualValues] <- round(scale(data[,actualValues], scale = TRUE, center = FALSE), 6)
-scaled = aggregate(data$actual, by=list(currency=data$currency),FUN=sum)
-scaled = scaled[order(-scaled[,2]),]
-names(scaled) <- c("currency","strength")
