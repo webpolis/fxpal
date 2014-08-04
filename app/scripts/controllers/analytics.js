@@ -388,6 +388,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
     };
     $scope.chart = function(period) {
         $scope.optsHighchartsCross.series[0].data = [];
+        $scope.optsHighchartsCross.series[1].data = [];
         var start = null;
         switch (period.label) {
             case 'Intraday':
@@ -421,6 +422,8 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             end: moment().utc().format($scope.utils.rfc3339)
         };
         $scope.api.getCandlesticks(optsOanda).then(function(ret) {
+            $scope.optsHighchartsCross.series[0].data = [];
+            $scope.optsHighchartsCross.series[1].data = [];
             if (angular.isDefined(ret.data) && angular.isArray(ret.data.candles)) {
                 angular.forEach(ret.data.candles, function(candle) {
                     var time = moment(candle.time).valueOf();
@@ -446,6 +449,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         csv2json.csv($scope.config.urls.api + ['candles', [$scope.selected.cross1, $scope.selected.cross2].join(''), 'trend', optsOanda.start.replace(/^([^T]+).*$/gi, '$1'), optsOanda.granularity].join('/'), function(ret) {
             if (angular.isArray(ret)) {
                 $timeout(function() {
+                    $scope.optsHighchartsCross.series[2].data = [];
                     var prev = null;
                     angular.forEach(ret, function(row, k) {
                         if (row.Trend === 'NA' ||  row.NoTrend === '1') {
@@ -480,6 +484,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             csv2json.csv($scope.config.urls.api + ['candles', [$scope.selected.cross1, $scope.selected.cross2].join(''), 'patterns', optsOanda.start.replace(/^([^T]+).*$/gi, '$1'), optsOanda.granularity].join('/'), function(ret) {
                 if (angular.isArray(ret)) {
                     $timeout(function() {
+                        $scope.optsHighchartsCross.series[3].data = [];
                         angular.forEach(ret, function(row, k) {
                             var patterns = [],
                                 hasPattern = false;

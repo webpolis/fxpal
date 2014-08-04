@@ -6,7 +6,8 @@ var fs = require('fs'),
     moment = require('../bower_components/momentjs/moment.js'),
     server = restify.createServer(),
     sh = require('execSync'),
-    string = require('./lib/string');
+    string = require('./lib/string'),
+    cron = require('cronzitto');
 /**
  * Checks whether a file has been modified until now
  *
