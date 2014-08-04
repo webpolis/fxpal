@@ -24,7 +24,7 @@ getCurrenciesStrength <- function(w = 52, curr1=NA, curr2=NA){
 
 	# invert value for unemployment
 	tmp[grep('continu_claim|jobless_claim|unempl',tmp$event, ignore.case=TRUE),allValues] = transform(tmp[grep('continu_claim|jobless_claim|unempl',tmp$event, ignore.case=TRUE),allValues],actual=-actual,previous=-previous)
-
+	
 	tmp = aggregate(tmp$actual, by=list(currency=tmp$currency,event=tmp$event),FUN=diff)
 	tmp[,3] = sapply(tmp[,3],simplify=T,FUN=function(x) round(sum(x),6))
 	names(tmp) = c("currency","event","value")

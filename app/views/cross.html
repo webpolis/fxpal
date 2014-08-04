@@ -3,9 +3,29 @@
 <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
 </ion-nav-buttons>
 <ion-content has-header="true" padding="true" ng-init="start()">
-<h4><i class="icon ion-ios7-world"></i> Cross
-<span ng-if="(selected.cross1 && selected.cross2)" class="positive">{{selected.cross1}}/{{selected.cross2}}</span>
-</h4>
+<div class="row">
+    <div class="col">
+        <h4><i class="icon ion-ios7-world"></i> Cross
+        <span ng-if="(selected.cross1 && selected.cross2)" class="positive">{{selected.cross1}}/{{selected.cross2}}</span>
+        </h4>
+    </div>
+    <div class="col col-75" ng-if="(selected.cross1 && selected.cross2)" ng-init="curr = {label: selected.cross1+selected.cross2}">
+        <div class="row">
+            <div class="col">
+                <rate-change period="D" count="2" symbol="curr"></rate-change>
+                <span class="gray">Daily:</span> <i class="icon size-16" ng-class="{'ion-android-arrow-up-right green':curr.dailyChange>0,'ion-android-arrow-down-right red':curr.dailyChange<0,'ion-android-remove':curr.dailyChange==0}"></i>
+            </div>
+            <div class="col">
+                <rate-change period="W" count="2" symbol="curr"></rate-change>
+                <span class="gray">Weekly:</span> <i class="icon size-16" ng-class="{'ion-android-arrow-up-right green':curr.weeklyChange>0,'ion-android-arrow-down-right red':curr.weeklyChange<0,'ion-android-remove':curr.weeklyChange==0}"></i>
+            </div>
+            <div class="col">
+                <rate-change period="M" count="2" symbol="curr"></rate-change>
+                <span class="gray">Monthly:</span> <i class="icon size-16" ng-class="{'ion-android-arrow-up-right green':curr.monthlyChange>0,'ion-android-arrow-down-right red':selected.cross.monthlyChange<0,'ion-android-remove':selected.cross.monthlyChange==0}"></i>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="card crosses">
     <div class="item item-divider">
         <span class="maroon pull-left">Correlations</span>

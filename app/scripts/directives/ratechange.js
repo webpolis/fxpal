@@ -9,8 +9,9 @@ angular.module('aifxApp').directive('rateChange', function($interval, $http, api
             count: '='
         },
         link: function postLink(scope, element, attrs) {
-            var cross1 = scope.symbol.label.split('').splice(0, 3).join(''),
-                cross2 = scope.symbol.label.split('').splice(3, 3).join('');
+            var lbl = angular.isObject(scope.symbol) ? scope.symbol.label : scope.symbol;
+            var cross1 = lbl.split('').splice(0, 3).join(''),
+                cross2 = lbl.split('').splice(3, 3).join('');
             api.getCandlesticks({
                 instrument: cross1 + '_' + cross2,
                 granularity: scope.period,
