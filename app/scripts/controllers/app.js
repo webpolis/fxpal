@@ -28,7 +28,7 @@ angular.module('aifxApp').controller('appController', function($scope, $ionicSid
         events: null
     }, $scope.rootScope = $rootScope;
     $scope.config = {
-        appName: 'FXPAL',
+        appName: 'cella.in',
         token: 'pWGUEdRoPxqEdp66WRYv',
         urls: {
             //api: 'http://54.209.188.176:9999/api/',

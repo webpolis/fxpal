@@ -21,7 +21,7 @@
             </div>
             <div class="col">
                 <rate-change period="M" count="2" symbol="curr"></rate-change>
-                <span class="gray">Monthly:</span> <i class="icon size-16" ng-class="{'ion-android-arrow-up-right green':curr.monthlyChange>0,'ion-android-arrow-down-right red':selected.cross.monthlyChange<0,'ion-android-remove':selected.cross.monthlyChange==0}"></i>
+                <span class="gray">Monthly:</span> <i class="icon size-16" ng-class="{'ion-android-arrow-up-right green':curr.monthlyChange>0,'ion-android-arrow-down-right red':curr.monthlyChange<0,'ion-android-remove':curr.monthlyChange==0}"></i>
             </div>
         </div>
     </div>
