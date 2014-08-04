@@ -18,7 +18,7 @@ instrument = ifelse(isReverted,sub("([a-z]{3})_([a-z]{3})", "\\2_\\1",instrument
 
 getCandles <- function(instrument, granularity, startDate = NA, count = NA){
 	oandaToken = 'ce6b72e81af59be0bbc90152cad8d731-03d41860ed7849e3c4555670858df786'
-	urlPractice = paste("https://api-fxpractice.oanda.com/v1/candles?instrument=", instrument, "&granularity=", granularity, "&weeklyAlignment=Monday", sep = "")
+	urlPractice = paste("https://api-fxpractice.oanda.com/v1/candles?instrument=", instrument, "&granularity=", granularity, "&weeklyAlignment=Monday", "&candleFormat=bidask", sep = "")
 	if(!is.na(startDate)){
 		urlPractice = paste(urlPractice,"&start=", startDate,sep="")
 	}
@@ -36,7 +36,7 @@ getCandles <- function(instrument, granularity, startDate = NA, count = NA){
 		rbind(ret, candle) -> ret
 	}
 
-	ret = ret[,-(grep("[a-z]+Bid|complete",names(ret)))]
+	ret = ret[,-(grep("[a-z]+Ask|complete",names(ret)))]
 	rownames(ret) = ret[,1]
 	ret = ret[,-1]
 	names(ret) = c("Open","High","Low","Close","Volume")
@@ -100,29 +100,32 @@ if(type == "trend"){
 # match candlesticks patterns
 if(type == "patterns"){
 	out = getCandles(instrument, granularity, startDate)
+	
+	if(exists("out")){
+		patterns = getCandlestickPatterns("out")
+		patterns$Time = 0
+		patterns$Time = index(out)
+		patterns = na.omit(patterns)
+		cross = instrument
 
-	patterns = getCandlestickPatterns("out")
-	patterns$Time = 0
-	patterns$Time = index(out)
-	patterns = na.omit(patterns)
-	cross = instrument
+		if(isReverted){
+			cross = ifelse(isReverted,sub("([a-z]{3})_([a-z]{3})", "\\2_\\1",cross,ignore.case=TRUE),cross)
+		}
 
-	if(isReverted){
-		cross = ifelse(isReverted,sub("([a-z]{3})_([a-z]{3})", "\\2_\\1",cross,ignore.case=TRUE),cross)
+		write.csv(patterns, quote = FALSE, row.names = FALSE, file = paste(cross, "-patterns-", granularity, ".csv", sep = ""), fileEncoding = "UTF-8")
 	}
-
-	write.csv(patterns, quote = FALSE, row.names = FALSE, file = paste(cross, "-patterns-", granularity, ".csv", sep = ""), fileEncoding = "UTF-8")
 }
 if(type == "volatility"){
 	crosses = read.csv("availableCrosses.csv", sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
 	crosses = as.character(crosses$instrument)
 	vol = getVolatility(crosses)
 	vol = vol[,vol>=0.008]
-	vol = matrix(as.list(vol))
-	vol = cbind(names(vol),vol)
-	colnames(vol) = c("cross","volatility")
+	tmp = matrix(as.list(vol))
+	tmp = cbind(names(vol),tmp)
+	colnames(tmp) = c("cross","volatility")
+	vol = as.data.frame(tmp)
 
-	write.csv(vol, quote = FALSE, row.names = FALSE, file = "volatility.csv", fileEncoding = "UTF-8")
+	write.csv(as.matrix(vol), quote = FALSE, row.names = FALSE, file = "volatility.csv", fileEncoding = "UTF-8")
 }
 
 quit()

@@ -17,8 +17,10 @@ angular.module('aifxApp').controller('appController', function($scope, $ionicSid
     $scope.selected = {
         cross1: null,
         cross2: null,
+        cross: null,
         portfolio: null,
         patterns: null,
+        volatility: null,
         correlation: {
             markets: null,
             events: null
@@ -103,6 +105,15 @@ angular.module('aifxApp').controller('appController', function($scope, $ionicSid
             }]
         }
     };
+    $scope.$watch('selected.cross', function(n, o) {
+        if (angular.isDefined(n) && n !== null) {
+            var crosses = n.displayName.split('/');
+            $scope.selected.cross1 = crosses[0];
+            $scope.selected.cross2 = crosses[1];
+        } else {
+            $scope.selected.cross1 = $scope.selected.cross2 = null;
+        }
+    });
     $scope.toggleLeft = function() {
         $ionicSideMenuDelegate.$getByHandle('menuLeft').toggleLeft();
     };
@@ -114,7 +125,7 @@ angular.module('aifxApp').controller('appController', function($scope, $ionicSid
         $scope.config.urls.weeklyChange = $scope.config.urls.weeklyChange.replace(/\{\{token\}\}/gi, $scope.config.token);
         $scope.config.urls.monthlyChange = $scope.config.urls.monthlyChange.replace(/\{\{token\}\}/gi, $scope.config.token);
         // initialize crosses
-        csv2json.csv('data/currencies.csv', function(data) {
+        csv2json.csv('data/availableCrosses.csv', function(data) {
             $scope.data.currencies = data;
         });
     };

@@ -1,5 +1,5 @@
 'use strict';
-angular.module('aifxApp').controller('analyticsController', function($scope, $ionicSideMenuDelegate, $http, $ionicLoading, $stateParams, $timeout, $q, ngTableParams, $ionicPopup) {
+angular.module('aifxApp').controller('analyticsController', function($scope, $ionicSideMenuDelegate, $http, $ionicLoading, $stateParams, $timeout, $q, ngTableParams, $ionicPopup, $location) {
     $scope.tblEvents = new ngTableParams({}, {
         counts: []
     });
@@ -57,6 +57,51 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             type: 'datetime'
         }
     };
+    $scope.optsHighchartsVolatility = {
+        options: {
+            scrollbar: {
+                enabled: false
+            },
+            exporting: {
+                enabled: false
+            },
+            chart: {
+                'type': 'column',
+                'zoomType': 'x'
+            },
+            'plotOptions': {
+                'series': {
+                    'stacking': ''
+                }
+            }
+        },
+        xAxis: {
+            categories: []
+        },
+        yAxis: {
+            title: {
+                text: 'Volatility'
+            }
+        },
+        series: [{
+            data: [],
+            name: 'Major Crosses',
+            cursor: 'pointer',
+            point: {
+                events: {
+                    click: function() {
+                        var col = this;
+                        $timeout(function() {
+                            $location.url('/app/cross/' + col.name.replace(/[^a-z]+/gi, ''));
+                        }, 50);
+                    }
+                }
+            }
+        }],
+        title: {
+            text: false
+        }
+    };
     // not supported via highcharts-ng
     Highcharts.setOptions({
         global: {
@@ -87,10 +132,10 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         });
         // set cross via param
         if (angular.isDefined($stateParams.cross)) {
-            $scope.selected.cross1 = jsonPath.eval($scope.data.currencies, '$[?(@.currCode=="' + $stateParams.cross.split('').splice(0, 3).join('') + '")]')[0];
-            $scope.selected.cross2 = jsonPath.eval($scope.data.currencies, '$[?(@.currCode=="' + $stateParams.cross.split('').splice(3, 3).join('') + '")]')[0];
+            $scope.selected.cross1 = $stateParams.cross.split('').splice(0, 3).join('');
+            $scope.selected.cross2 = $stateParams.cross.split('').splice(3, 3).join('');
         }
-        var cross = $scope.selected.cross1.currCode + $scope.selected.cross2.currCode,
+        var cross = $scope.selected.cross1 + $scope.selected.cross2,
             startDate = moment().subtract('years', 4).format('YYYY-MM-DD'),
             endDate = moment().format('YYYY-MM-DD');
         $ionicLoading.hide();
@@ -105,42 +150,19 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             $scope.chart($scope.optChartPeriod);
         }
     };
-    $scope.multiset = function() {
+    $scope.computeVolatility = function() {
         $ionicLoading.show({
             template: 'Loading...'
         });
-        var startDate = moment().subtract('years', 4).format('YYYY-MM-DD');
-        // build crosses
-        var crosses = [],
-            i = 0,
-            finalCrosses = [];
-        angular.forEach($scope.data.currencies, function(cur) {
-            crosses.push(cur.currCode);
-        });
-        crosses.sort();
-        var crossesRev = angular.copy(crosses);
-        crossesRev.reverse();
-        angular.forEach(crosses, function(c, k) {
-            angular.forEach(crossesRev, function(cc, kk) {
-                var ccc = c + cc;
-                if (c !== cc && finalCrosses.indexOf(cc + c) === -1) {
-                    finalCrosses.push(ccc);
-                }
+        csv2json.csv($scope.config.urls.api + 'candles/volatility', function(data) {
+            $scope.selected.volatility = data;
+            angular.forEach($scope.selected.volatility, function(cross) {
+                $scope.optsHighchartsVolatility.series[0].data.push({
+                    name: cross.cross.replace(/_/g, '/'),
+                    color: $scope.utils.getRandomColorCode(),
+                    y: parseFloat(cross.volatility)
+                });
             });
-        });
-        $scope.data.crosses = finalCrosses;
-        // build multiset url
-        var sets = $scope.data.crosses.map(function(cross) {
-            return ['QUANDL.' + cross + '.1'].join(',');
-        }).concat($scope.config.maps.tickers.map(function(ticker) {
-            return ticker.quandl;
-        })).join(',');
-        // retrieve multiset
-        $http.get($scope.config.urls.multiset.replace(/\{\{sets\}\}/gi, sets).replace(/\{\{startDate\}\}/gi, startDate)).success(function(ret) {
-            if (angular.isArray(ret.column_names) && angular.isArray(ret.data)) {
-                $scope.data.multiset.columns = ret.column_names;
-                $scope.data.multiset.data = ret.data;
-            }
             $ionicLoading.hide();
         });
     };
@@ -234,7 +256,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         return def.promise;
     };
     $scope.isCurrencyEvent = function(event) {
-        var re = new RegExp('(' + [$scope.selected.cross1.currCode, $scope.selected.cross2.currCode].join('|') + ')', 'gi');
+        var re = new RegExp('(' + [$scope.selected.cross1, $scope.selected.cross2].join('|') + ')', 'gi');
         return re.test(event.currency);
     };
     $scope.processEvents = function() {
@@ -242,7 +264,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         $scope.selected.events = [];
         var maxWeeks = 1;
         // match crosses
-        var re = new RegExp('(' + [$scope.selected.cross1.currCode, $scope.selected.cross2.currCode].join('|') + ')', 'gi');
+        var re = new RegExp('(' + [$scope.selected.cross1, $scope.selected.cross2].join('|') + ')', 'gi');
         var parseCsv = function(csv) {
             var data = [];
             csv2json.csv.parse(csv, function(row) {
@@ -262,13 +284,13 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                 url = $scope.config.urls.events.replace(/\{\{startWeekDate\}\}/gi, startWeekDate);
             return 'http://' + url;
         });
-        $http.post($scope.config.urls.api + 'calendar/' + [$scope.selected.cross1.currCode, $scope.selected.cross2.currCode].join(''), urlsCalendars, {
+        $http.post($scope.config.urls.api + 'calendar/' + [$scope.selected.cross1, $scope.selected.cross2].join(''), urlsCalendars, {
             cache: true
         }).success(function(ret) {
             $ionicLoading.hide();
             $scope.selected.events = parseCsv(ret);
             $scope.selected.events = $scope.selected.events.map(function(ev) {
-                var o = {}, reCross = new RegExp('^(' + [$scope.selected.cross1.currCode, $scope.selected.cross2.currCode].join('|') + ')\\s+', 'g');
+                var o = {}, reCross = new RegExp('^(' + [$scope.selected.cross1, $scope.selected.cross2].join('|') + ')\\s+', 'g');
                 for (var p in ev) {
                     o[angular.lowercase(p)] = ev[p];
                     if (/event/gi.test(p)) {
@@ -295,8 +317,8 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         return def.promise;
     };
     $scope.correlated = function(target) {
-        var curCross = $scope.selected.cross1.currCode + $scope.selected.cross2.currCode,
-            revCurCross = $scope.selected.cross2.currCode + $scope.selected.cross1.currCode;
+        var curCross = $scope.selected.cross1 + $scope.selected.cross2,
+            revCurCross = $scope.selected.cross2 + $scope.selected.cross1;
         var file = null;
         switch (target) {
             case 'markets':
@@ -341,11 +363,13 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                     return 0;
                 });
                 if (target === 'markets') {
-                    // retrieve daily change per correlated item
+                    // retrieve change per correlated item
                     var sets = [];
-                    angular.forEach($scope.selected.correlation[target], function(cor) {
+                    angular.forEach($scope.selected.correlation[target], function(cor, k) {
                         if (!(/^[a-z]+\..*$/gi.test(cor.cross))) {
-                            sets.push('QUANDL.' + cor.cross + '.1');
+                            //sets.push('QUANDL.' + cor.cross + '.1');
+                            $scope.selected.correlation[target][k].currency = true;
+                            $scope.selected.correlation[target][k].label = cor.cross;
                         } else {
                             sets.push(cor.cross + '.1');
                         }
@@ -390,7 +414,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                 break;
         }
         var optsOanda = {
-            instrument: [$scope.selected.cross1.currCode, $scope.selected.cross2.currCode].join('_'),
+            instrument: [$scope.selected.cross1, $scope.selected.cross2].join('_'),
             granularity: period.granularity,
             candleFormat: 'bidask',
             start: start,
@@ -419,7 +443,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
     $scope.trendCandlestickAnalysis = function(optsOanda) {
         $scope.optsHighchartsCross.series[2].data = [];
         // retrieve trend information
-        csv2json.csv($scope.config.urls.api + ['candles', [$scope.selected.cross1.currCode, $scope.selected.cross2.currCode].join(''), 'trend', optsOanda.start.replace(/^([^T]+).*$/gi, '$1'), optsOanda.granularity].join('/'), function(ret) {
+        csv2json.csv($scope.config.urls.api + ['candles', [$scope.selected.cross1, $scope.selected.cross2].join(''), 'trend', optsOanda.start.replace(/^([^T]+).*$/gi, '$1'), optsOanda.granularity].join('/'), function(ret) {
             if (angular.isArray(ret)) {
                 $timeout(function() {
                     var prev = null;
@@ -453,7 +477,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                 pat.Direction = parseInt(pat.Direction);
                 return pat;
             });
-            csv2json.csv($scope.config.urls.api + ['candles', [$scope.selected.cross1.currCode, $scope.selected.cross2.currCode].join(''), 'patterns', optsOanda.start.replace(/^([^T]+).*$/gi, '$1'), optsOanda.granularity].join('/'), function(ret) {
+            csv2json.csv($scope.config.urls.api + ['candles', [$scope.selected.cross1, $scope.selected.cross2].join(''), 'patterns', optsOanda.start.replace(/^([^T]+).*$/gi, '$1'), optsOanda.granularity].join('/'), function(ret) {
                 if (angular.isArray(ret)) {
                     $timeout(function() {
                         angular.forEach(ret, function(row, k) {
