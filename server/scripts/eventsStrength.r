@@ -35,7 +35,7 @@ getCurrenciesStrength <- function(w = 52, curr1=NA, curr2=NA){
 	scaled[,2] = round(scale(scaled[,2], scale = TRUE, center = FALSE), 6)
 	names(scaled) <- c("currency","strength")
 	scaled$sd = sd(scaled$strength)
-	scaled$strength = scaled$strength+scaled$sd
+	scaled$strength = scale(scaled$strength+scaled$sd,center=F)
 	return(scaled)
 }
 
