@@ -102,6 +102,40 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             text: false
         }
     };
+    $scope.optsHighchartsStrength = {
+        options: {
+            scrollbar: {
+                enabled: false
+            },
+            exporting: {
+                enabled: false
+            },
+            chart: {
+                'type': 'column',
+                'zoomType': 'x'
+            },
+            'plotOptions': {
+                'series': {
+                    'stacking': ''
+                }
+            }
+        },
+        xAxis: {
+            categories: []
+        },
+        yAxis: {
+            title: {
+                text: 'Strength'
+            }
+        },
+        series: [{
+            data: [],
+            name: 'Major Crosses',
+        }],
+        title: {
+            text: false
+        }
+    };
     // not supported via highcharts-ng
     Highcharts.setOptions({
         global: {
@@ -161,6 +195,22 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                     name: cross.cross.replace(/_/g, '/'),
                     color: $scope.utils.getRandomColorCode(),
                     y: parseFloat(cross.volatility)
+                });
+            });
+            $ionicLoading.hide();
+        });
+    };
+    $scope.computeStrength = function() {
+        $ionicLoading.show({
+            template: 'Loading...'
+        });
+        csv2json.csv($scope.config.urls.api + ['calendar', 'strength', 52].join('/'), function(data) {
+            $scope.selected.strength = data;
+            angular.forEach($scope.selected.strength, function(row) {
+                $scope.optsHighchartsStrength.series[0].data.push({
+                    name: row.currency,
+                    color: $scope.utils.getRandomColorCode(),
+                    y: parseFloat(row.strength)
                 });
             });
             $ionicLoading.hide();

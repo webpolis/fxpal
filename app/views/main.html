@@ -2,7 +2,7 @@
 <ion-nav-buttons side="left">
 <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
 </ion-nav-buttons>
-<ion-content has-header="true" padding="true" ng-init="selected.correlation.markets = null; selected.correlation.events = null; selected.events = null;computeVolatility()">
+<ion-content has-header="true" padding="true" ng-init="selected.correlation.markets = null; selected.correlation.events = null; selected.events = null;computeVolatility();computeStrength()">
 <h4><i class="icon ion-ios7-world"></i> Analysis
 <span ng-if="(selected.cross1 && selected.cross2)" class="positive">{{selected.cross1}}/{{selected.cross2}}</span>
 </h4>
@@ -21,6 +21,15 @@
     <div class="item item-text-wrap">
         <p>Garman and Klass estimator for volatility applied during the last 1 hour.</p>
         <highchart config="optsHighchartsVolatility"></highchart>
+    </div>
+</div>
+<div class="card" ng-if="selected.strength">
+    <div class="item item-divider">
+        <span class="maroon pull-left">Economic Strength</span>
+    </div>
+    <div class="item item-text-wrap">
+        <p>Propietary algorithm which measures currency strength according to recent Economic Calendar results, since the last 52 weeks (1 yr approx.).</p>
+        <highchart config="optsHighchartsStrength"></highchart>
     </div>
 </div>
 </ion-content>
