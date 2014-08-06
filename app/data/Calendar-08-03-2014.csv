@@ -13,48 +13,48 @@ Mon Aug 4,08:30,GMT,gbp,GBP Markit/CIPS UK Construction PMI,Medium,62.4,62.0,62.
 Mon Aug 4,08:30,GMT,eur,EUR Euro-Zone Sentix Investor Confidence,Low,2.7,9.0,10.1
 Mon Aug 4,09:00,GMT,eur,EUR Euro-Zone Producer Price Index (YoY),Low,-0.8%,-1.0%,-1.0%
 Mon Aug 4,09:00,GMT,eur,EUR Euro-Zone Producer Price Index (MoM),Low,0.1%,0.0%,-0.1%
-Mon Aug 4,13:45,GMT,USD,USD ISM New York,Low,,,60.5
-Mon Aug 4,23:30,GMT,AUD,AUD AiG Performance of Service Index,Medium,,,47.6
-Mon Aug 4,23:30,GMT,AUD,AUD ANZ Roy Morgan Weekly Consumer Confidence Index,Low,,,
-Tue Aug 5,,,gbp,GBP Halifax Plc House Prices s.a. (MoM),Low,,0.4%,-0.6%
-Tue Aug 5,,,gbp,GBP Halifax House Price (3MoY),Low,,9.6%,8.8%
-Tue Aug 5,01:30,GMT,aud,AUD Trade Balance (Australian dollar),Medium,,-2000M,-1911M
-Tue Aug 5,01:35,GMT,JPY,JPY Markit Japan Services PMI,Medium,,,49
-Tue Aug 5,01:35,GMT,JPY,JPY Markit/JMMA Japan Composite PMI,Medium,,,50
-Tue Aug 5,01:45,GMT,CNY,CNY HSBC China Services PMI,Medium,,,53.1
-Tue Aug 5,01:45,GMT,CNY,CNY HSBC China Composite PMI,Medium,,,52.4
-Tue Aug 5,04:30,GMT,aud,AUD Reserve Bank of Australia Rate Decision,High,,2.50%,2.50%
-Tue Aug 5,06:00,GMT,CHF,CHF UBS Real Estate Bubble Index,Low,,,1.22
-Tue Aug 5,07:45,GMT,EUR,EUR Markit/ADACI Italy Composite PMI,Low,,,54.2
-Tue Aug 5,07:45,GMT,eur,EUR Markit/ADACI Italy Services PMI,Low,,53.6,53.9
-Tue Aug 5,07:50,GMT,eur,EUR Markit France Services PMI,Low,,50.4,50.4
-Tue Aug 5,07:50,GMT,eur,EUR Markit France Composite PMI,Low,,49.4,49.4
-Tue Aug 5,07:55,GMT,eur,EUR Markit/BME Germany Composite PMI,Low,,55.9,55.9
-Tue Aug 5,07:55,GMT,eur,EUR - Indice PMI des services allemand,Low,,56.6,56.6
-Tue Aug 5,08:00,GMT,eur,EUR Markit Eurozone Services PMI,Low,,54.4,54.4
-Tue Aug 5,08:00,GMT,eur,EUR Markit Eurozone Composite PMI,Low,,54,54
-Tue Aug 5,08:30,GMT,GBP,GBP Official Reserves (Changes),Low,,,$994M
-Tue Aug 5,08:30,GMT,gbp,GBP Markit/CIPS UK Composite PMI,Medium,,58,58
-Tue Aug 5,08:30,GMT,gbp,GBP Markit/CIPS UK Services PMI,Medium,,58.0,57.7
-Tue Aug 5,09:00,GMT,eur,EUR Euro-Zone Retail Sales (MoM),Low,,0.5%,0.0%
-Tue Aug 5,09:00,GMT,eur,EUR Euro-Zone Retail Sales (YoY),Medium,,1.4%,0.7%
-Tue Aug 5,13:45,GMT,usd,USD Markit US Services PMI,Low,,60.8,61.0
-Tue Aug 5,13:45,GMT,usd,USD Markit US Composite PMI,Low,,,60.9
-Tue Aug 5,14:00,GMT,usd,USD ISM Non-Manufacutring Composite,High,,56.5,56.0
-Tue Aug 5,14:00,GMT,usd,USD Factory Orders,Medium,,0.6%,-0.5%
-Tue Aug 5,14:00,GMT,usd,USD IBD/TIPP Economic Optimism,Low,,47.3,45.6
-Tue Aug 5,22:45,GMT,nzd,NZD Labor Cost Private Sector (QoQ),Low,,0.5%,0.3%
-Tue Aug 5,22:45,GMT,nzd,NZD Unemployment Rate,High,,5.8%,6.0%
-Tue Aug 5,22:45,GMT,nzd,NZD Employment Change (QoQ),Medium,,0.7%,0.9%
-Tue Aug 5,22:45,GMT,nzd,NZD Employment Change (YoY),High,,4.0%,3.7%
-Tue Aug 5,22:45,GMT,nzd,NZD Participation Rate (QoQ),Low,,69.3%,69.3%
-Tue Aug 5,22:45,GMT,nzd,NZD Private Wages ex Overtime (QoQ),Low,,0.5%,0.3%
-Tue Aug 5,22:45,GMT,nzd,NZD Average Hourly Earnings (QoQ),Low,,0.6%,0.7%
-Tue Aug 5,23:01,GMT,gbp,GBP BRC Shop Price Index (YoY),Low,,-1.6%,-1.8%
+Mon Aug 4,13:45,GMT,usd,USD ISM New York,Low,68.1,,60.5
+Mon Aug 4,23:30,GMT,aud,AUD AiG Performance of Service Index,Medium,49.3,,47.6
+Mon Aug 4,23:30,GMT,aud,AUD ANZ Roy Morgan Weekly Consumer Confidence Index,Low,115.0,,116.2
+Tue Aug 5,01:30,GMT,aud,AUD Trade Balance (Australian dollar),Medium,-1683M,-2000M,-2043M
+Tue Aug 5,01:35,GMT,jpy,JPY Markit Japan Services PMI,Medium,50.4,,49
+Tue Aug 5,01:35,GMT,jpy,JPY Markit/JMMA Japan Composite PMI,Medium,50.2,,50
+Tue Aug 5,01:45,GMT,cny,CNY HSBC China Services PMI,Medium,50.0,,53.1
+Tue Aug 5,01:45,GMT,cny,CNY HSBC China Composite PMI,Medium,51.6,,52.4
+Tue Aug 5,04:30,GMT,aud,AUD Reserve Bank of Australia Rate Decision,High,2.50%,2.50%,2.50%
+Tue Aug 5,06:00,GMT,chf,CHF UBS Real Estate Bubble Index,Low,1.24,,1.22
+Tue Aug 5,07:45,GMT,eur,EUR Markit/ADACI Italy Composite PMI,Low,53.1,,54.2
+Tue Aug 5,07:45,GMT,eur,EUR Markit/ADACI Italy Services PMI,Low,52.8,53.8,53.9
+Tue Aug 5,07:50,GMT,eur,EUR Markit France Services PMI,Low,50.4,50.4,50.4
+Tue Aug 5,07:50,GMT,eur,EUR Markit France Composite PMI,Low,49.4,49.4,49.4
+Tue Aug 5,07:55,GMT,eur,EUR Markit/BME Germany Composite PMI,Low,55.7,55.9,55.9
+Tue Aug 5,07:55,GMT,eur,EUR - Indice PMI des services allemand,Low,56.7,56.6,56.6
+Tue Aug 5,08:00,GMT,eur,EUR Markit Eurozone Services PMI,Low,54.2,54.4,54.4
+Tue Aug 5,08:00,GMT,eur,EUR Markit Eurozone Composite PMI,Low,53.8,54.0,54.0
+Tue Aug 5,08:30,GMT,gbp,GBP Official Reserves (Changes),Low,-$616M,,$994M
+Tue Aug 5,08:30,GMT,gbp,GBP Markit/CIPS UK Composite PMI,Medium,58.8,58,57.9
+Tue Aug 5,08:30,GMT,gbp,GBP Markit/CIPS UK Services PMI,Medium,59.1,58.0,57.7
+Tue Aug 5,09:00,GMT,eur,EUR Euro-Zone Retail Sales (MoM),Low,0.4%,0.5%,0.3%
+Tue Aug 5,09:00,GMT,eur,EUR Euro-Zone Retail Sales (YoY),Medium,2.4%,1.4%,0.6%
+Tue Aug 5,13:45,GMT,usd,USD Markit US Services PMI,Low,60.8,60.8,61.0
+Tue Aug 5,13:45,GMT,usd,USD Markit US Composite PMI,Low,60.6,,60.9
+Tue Aug 5,14:00,GMT,usd,USD ISM Non-Manufacturing Composite,High,58.7,56.5,56.0
+Tue Aug 5,14:00,GMT,usd,USD Factory Orders,Medium,+1.1%,0.6%,-0.6%
+Tue Aug 5,14:00,GMT,usd,USD IBD/TIPP Economic Optimism,Low,44.5,47.3,45.6
+Tue Aug 5,22:45,GMT,nzd,NZD Labor Cost Private Sector (QoQ),Low,0.6%,0.5%,0.3%
+Tue Aug 5,22:45,GMT,nzd,NZD Unemployment Rate,High,5.6%,5.8%,5.9%
+Tue Aug 5,22:45,GMT,nzd,NZD Employment Change (QoQ),Medium,0.4%,0.7%,0.9%
+Tue Aug 5,22:45,GMT,nzd,NZD Employment Change (YoY),High,3.7%,4.0%,3.7%
+Tue Aug 5,22:45,GMT,nzd,NZD Participation Rate (QoQ),Low,68.9%,69.3%,69.2%
+Tue Aug 5,22:45,GMT,nzd,NZD Private Wages ex Overtime (QoQ),Low,0.6%,0.5%,0.3%
+Tue Aug 5,22:45,GMT,nzd,NZD Average Hourly Earnings (QoQ),Low,0.5%,0.6%,0.7%
+Tue Aug 5,23:01,GMT,gbp,GBP BRC Shop Price Index (YoY),Low,-1.9%,-1.6%,-1.8%
 Wed Aug 6,05:00,GMT,jpy,JPY Coincident Index,Medium,,109.6,111.3
 Wed Aug 6,05:00,GMT,jpy,JPY Leading Index,Medium,,105.4,104.8
 Wed Aug 6,06:00,GMT,eur,EUR German Factory Orders s.a. (MoM),Low,,0.9%,-1.7%
 Wed Aug 6,06:00,GMT,eur,EUR German Factory Orders n.s.a. (YoY),Medium,,1.1%,5.5%
+Wed Aug 6,07:00,GMT,gbp,GBP Halifax Plc House Prices s.a. (MoM),Low,,0.4%,-0.6%
+Wed Aug 6,07:00,GMT,gbp,GBP Halifax House Price (3MoY),Low,,9.6%,8.8%
 Wed Aug 6,07:15,GMT,chf,CHF Consumer Price Index (MoM),Low,,-0.4%,-0.1%
 Wed Aug 6,07:15,GMT,chf,CHF Consumer Price Index (YoY),Medium,,0.0%,0.0%
 Wed Aug 6,07:15,GMT,chf,CHF CPI EU Harmonized (MoM),Low,,-0.2%,-0.1%
@@ -67,16 +67,16 @@ Wed Aug 6,08:10,GMT,EUR,EUR Markit Germany Retail PMI,Medium,,,56.2
 Wed Aug 6,08:10,GMT,EUR,EUR Markit Eurozone Retail PMI,Medium,,,50
 Wed Aug 6,08:30,GMT,gbp,GBP Manufacturing Production (MoM),Low,,0.6%,-1.3%
 Wed Aug 6,08:30,GMT,gbp,GBP Manufacturing Production (YoY),Medium,,2.1%,3.7%
-Wed Aug 6,08:30,GMT,GBP,GBP Industrial Production (MoM),Low,,,-0.7%
-Wed Aug 6,08:30,GMT,GBP,GBP Industrial Production (YoY),Medium,,,2.3%
+Wed Aug 6,08:30,GMT,gbp,GBP Industrial Production (MoM),Low,0.8%,,-0.7%
+Wed Aug 6,08:30,GMT,gbp,GBP Industrial Production (YoY),Medium,-1.1%,,2.3%
 Wed Aug 6,09:00,GMT,eur,EUR Italian Gross Domestic Product s.a. and w.d.a. (YoY),Medium,,0.1%,-0.5%
 Wed Aug 6,09:00,GMT,eur,EUR Italian Gross Domestic Product s.a. and w.d.a. (QoQ),Low,,0.1%,-0.1%
 Wed Aug 6,11:00,GMT,usd,USD MBA Mortgage Applications,Low,,,-2.2%
 Wed Aug 6,12:30,GMT,cad,CAD International Merchandise Trade (Canadian dollar),Low,,0.00B,-0.15B
 Wed Aug 6,12:30,GMT,usd,USD Trade Balance,Medium,,-$44.9B,-$44.4B
 Wed Aug 6,14:00,GMT,GBP,GBP NIESR Gross Domestic Product Estimate,Medium,,,0.9%
-Wed Aug 6,14:30,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,,,-3697K
-Wed Aug 6,14:30,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,,,365K
+Wed Aug 6,14:30,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,,-1500K,-3697K
+Wed Aug 6,14:30,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,,-300K,365K
 Wed Aug 6,14:30,GMT,usd,USD DOE Cushing OK Crude Inventory,Low,,,-924K
 Wed Aug 6,14:30,GMT,usd,USD DOE U.S. Distillate Inventory,Low,,,789K
 Wed Aug 6,23:30,GMT,AUD,AUD AiG Performance of Construction Index,Medium,,,51.8

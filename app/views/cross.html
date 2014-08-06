@@ -77,6 +77,12 @@
         </div>
     </div>
     <div class="item item-text-wrap">
+        <div ng-if="nextEvents" ng-init="nxtEventTime = nextEvents[0].timestamp" class="row">
+            <div class="col">
+                <b><i class="icon ion-clock"></i> Next event on</b>
+                <timer class="maroon" end-time="nxtEventTime">{{hhours}} hours, {{mminutes}} minutes, {{sseconds}} seconds.</timer>
+            </div>
+        </div>
         <div ng-show="optShowCalendar">
             <span class="energized" ng-if="!selected.events || selected.events.length == 0">No relevant events found</span>
             <div class="row row-top" ng-if="!(!selected.events || selected.events.length == 0)">

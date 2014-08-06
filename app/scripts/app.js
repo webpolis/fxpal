@@ -10,7 +10,7 @@ window.addEventListener('error', function(evt) {
     evt.preventDefault();
 });
 // setup angular
-angular.module('aifxApp', ['ngAnimate', 'ngCookies', 'ngResource', 'ngRoute', 'ngSanitize', 'ngTouch', 'ionic', 'ngTable', 'highcharts-ng']).config(function($stateProvider, $urlRouterProvider, $httpProvider) {
+angular.module('aifxApp', ['ngAnimate', 'ngCookies', 'ngResource', 'ngRoute', 'ngSanitize', 'ngTouch', 'ionic', 'ngTable', 'highcharts-ng', 'timer']).config(function($stateProvider, $urlRouterProvider, $httpProvider) {
     $stateProvider.state('app', {
         url: '/app',
         templateUrl: 'views/menu.html'

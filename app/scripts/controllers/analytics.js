@@ -3,6 +3,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
     $scope.tblEvents = new ngTableParams({}, {
         counts: []
     });
+    $scope.nextEvents = null;
     $scope.optsHighchartsCross = {
         options: {
             scrollbar: {
@@ -349,6 +350,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                 }
                 // convert date to local
                 o.localDate = $scope.utils.parseDate([ev.Date, moment().format('YYYY'), ev.Time, ev['Time Zone']].join(' '));
+                o.timestamp = moment(o.localDate).valueOf();
                 return o;
             }).filter(function(ev) {
                 return ev.actual !== '' ||  ev.forecast !== '' ||  ev.previous !== '';
@@ -362,6 +364,8 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                 }
                 return 0;
             });
+            // point to next event
+            $scope.nextEvents = jsonPath.eval($scope.selected.events, '$[?(@.actual=="" && (@.currency=="' + $scope.selected.cross1 + '" || @.currency=="' + $scope.selected.cross2 + '"))]') ||  null;
             def.resolve();
         }).error(def.reject);
         return def.promise;
