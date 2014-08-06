@@ -82,7 +82,7 @@ var mergeCalendars = function() {
                     }
                     try {
                         var date = moment([o.date, year, o.time, o['time zone']].join(' '));
-                        o.currency = o.currency.toUpperCase();
+                        o.currency = o.currency.replace(/isd/gi, 'usd').toUpperCase();
                         o.timestamp = date.valueOf();
                         o.date = moment(o.timestamp).format('YYYY-MM-DD');
                         o.event = o.event ? o.event : null;
