@@ -4,6 +4,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         counts: []
     });
     $scope.nextEvents = null;
+    $scope.nxtEvent = null;
     $scope.optsHighchartsCross = {
         options: {
             scrollbar: {
