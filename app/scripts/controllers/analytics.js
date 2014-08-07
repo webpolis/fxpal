@@ -367,6 +367,11 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             });
             // point to next event
             $scope.nextEvents = jsonPath.eval($scope.selected.events, '$[?(@.actual=="" && (@.currency=="' + $scope.selected.cross1 + '" || @.currency=="' + $scope.selected.cross2 + '"))]') ||  null;
+            if ($scope.nextEvents !== null) {
+                $scope.nextEvents = $scope.nextEvents.filter(function(ev) {
+                    return ev.timestamp >= moment().valueOf();
+                });
+            }
             def.resolve();
         }).error(def.reject);
         return def.promise;

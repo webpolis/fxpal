@@ -31,6 +31,7 @@ var requestCalendarCsv = function(url, cross) {
     var _def = q.defer();
     http.get(url, function(_res) {
         var body = '';
+        console.log('requesting calendar ' + url);
         _res.on('data', function(chunk) {
             body += chunk;
         });

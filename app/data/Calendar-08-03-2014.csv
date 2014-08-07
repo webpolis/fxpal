@@ -49,48 +49,49 @@ Tue Aug 5,22:45,GMT,nzd,NZD Participation Rate (QoQ),Low,68.9%,69.3%,69.2%
 Tue Aug 5,22:45,GMT,nzd,NZD Private Wages ex Overtime (QoQ),Low,0.6%,0.5%,0.3%
 Tue Aug 5,22:45,GMT,nzd,NZD Average Hourly Earnings (QoQ),Low,0.5%,0.6%,0.7%
 Tue Aug 5,23:01,GMT,gbp,GBP BRC Shop Price Index (YoY),Low,-1.9%,-1.6%,-1.8%
-Wed Aug 6,05:00,GMT,jpy,JPY Coincident Index,Medium,,109.6,111.3
-Wed Aug 6,05:00,GMT,jpy,JPY Leading Index,Medium,,105.4,104.8
-Wed Aug 6,06:00,GMT,eur,EUR German Factory Orders s.a. (MoM),Low,,0.9%,-1.7%
-Wed Aug 6,06:00,GMT,eur,EUR German Factory Orders n.s.a. (YoY),Medium,,1.1%,5.5%
+Wed Aug 6,05:00,GMT,jpy,JPY Coincident Index,Medium,109.4,109.6,111.3
+Wed Aug 6,05:00,GMT,jpy,JPY Leading Index,Medium,105.5,105.5,104.8
+Wed Aug 6,06:00,GMT,eur,EUR German Factory Orders s.a. (MoM),Low,-3.2%,0.9%,-1.6%
+Wed Aug 6,06:00,GMT,eur,EUR German Factory Orders n.s.a. (YoY),Medium,-4.3%,1.1%,7.7%
 Wed Aug 6,07:00,GMT,gbp,GBP Halifax Plc House Prices s.a. (MoM),Low,,0.4%,-0.6%
 Wed Aug 6,07:00,GMT,gbp,GBP Halifax House Price (3MoY),Low,,9.6%,8.8%
-Wed Aug 6,07:15,GMT,chf,CHF Consumer Price Index (MoM),Low,,-0.4%,-0.1%
-Wed Aug 6,07:15,GMT,chf,CHF Consumer Price Index (YoY),Medium,,0.0%,0.0%
-Wed Aug 6,07:15,GMT,chf,CHF CPI EU Harmonized (MoM),Low,,-0.2%,-0.1%
-Wed Aug 6,07:15,GMT,chf,CHF CPI EU Harmonized (YoY),Medium,,-0.3%,-0.1%
-Wed Aug 6,07:30,GMT,EUR,EUR Markit Germany Construction PMI,Medium,,,45.5
-Wed Aug 6,08:00,GMT,GBP,GBP New Car Registrations (YoY),Low,,,6.2%
-Wed Aug 6,08:10,GMT,EUR,EUR Markit France Retail PMI,Low,,,47.6
-Wed Aug 6,08:10,GMT,EUR,EUR Markit Italy Retail PMI,Low,,,43.8
-Wed Aug 6,08:10,GMT,EUR,EUR Markit Germany Retail PMI,Medium,,,56.2
-Wed Aug 6,08:10,GMT,EUR,EUR Markit Eurozone Retail PMI,Medium,,,50
-Wed Aug 6,08:30,GMT,gbp,GBP Manufacturing Production (MoM),Low,,0.6%,-1.3%
-Wed Aug 6,08:30,GMT,gbp,GBP Manufacturing Production (YoY),Medium,,2.1%,3.7%
-Wed Aug 6,08:30,GMT,gbp,GBP Industrial Production (MoM),Low,0.8%,,-0.7%
-Wed Aug 6,08:30,GMT,gbp,GBP Industrial Production (YoY),Medium,-1.1%,,2.3%
-Wed Aug 6,09:00,GMT,eur,EUR Italian Gross Domestic Product s.a. and w.d.a. (YoY),Medium,,0.1%,-0.5%
-Wed Aug 6,09:00,GMT,eur,EUR Italian Gross Domestic Product s.a. and w.d.a. (QoQ),Low,,0.1%,-0.1%
-Wed Aug 6,11:00,GMT,usd,USD MBA Mortgage Applications,Low,,,-2.2%
-Wed Aug 6,12:30,GMT,cad,CAD International Merchandise Trade (Canadian dollar),Low,,0.00B,-0.15B
-Wed Aug 6,12:30,GMT,usd,USD Trade Balance,Medium,,-$44.9B,-$44.4B
-Wed Aug 6,14:00,GMT,GBP,GBP NIESR Gross Domestic Product Estimate,Medium,,,0.9%
-Wed Aug 6,14:30,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,,-1500K,-3697K
-Wed Aug 6,14:30,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,,-300K,365K
-Wed Aug 6,14:30,GMT,usd,USD DOE Cushing OK Crude Inventory,Low,,,-924K
-Wed Aug 6,14:30,GMT,usd,USD DOE U.S. Distillate Inventory,Low,,,789K
-Wed Aug 6,23:30,GMT,AUD,AUD AiG Performance of Construction Index,Medium,,,51.8
-Wed Aug 6,23:50,GMT,jpy,JPY Foreign Buying Japan Bonds (Yen),Low,,,¥164.7B
-Wed Aug 6,23:50,GMT,jpy,JPY Japan Buying Foreign Bonds (Yen),Medium,,,¥-302.0B
-Wed Aug 6,23:50,GMT,jpy,JPY Japan Buying Foreign Stocks (Yen),Medium,,,¥24.3B
-Wed Aug 6,23:50,GMT,jpy,JPY Foreign Buying Japan Stocks (Yen),Low,,,¥204.5B
-Thu Aug 7,00:00,GMT,NZD,NZD QV House Prices (YoY),Low,,,8.0%
-Thu Aug 7,01:30,GMT,AUD,AUD Full Time Employment Change,Medium,,,-3.8K
-Thu Aug 7,01:30,GMT,aud,AUD Participation Rate,Low,,64.7%,64.7%
-Thu Aug 7,01:30,GMT,aud,AUD Employment Change,High,,13.2K,15.9K
-Thu Aug 7,01:30,GMT,aud,AUD Unemployment Rate,High,,6.0%,6.0%
-Thu Aug 7,01:30,GMT,AUD,AUD Part Time Employment Change,Low,,,19.7K
-Thu Aug 7,02:00,GMT,JPY,JPY Tokyo Avg Office Vacancies,Low,,,6.45
+Wed Aug 6,07:15,GMT,chf,CHF Consumer Price Index (MoM),Low,-0.4%,-0.4%,-0.1%
+Wed Aug 6,07:15,GMT,chf,CHF Consumer Price Index (YoY),Medium,0.0%,0.0%,0.0%
+Wed Aug 6,07:15,GMT,chf,CHF CPI EU Harmonized (MoM),Low,0.0%,-0.2%,-0.1%
+Wed Aug 6,07:15,GMT,chf,CHF CPI EU Harmonized (YoY),Medium,-0.1%,-0.3%,-0.1%
+Wed Aug 6,07:30,GMT,eur,EUR Markit Germany Construction PMI,Medium,48.2,,45.5
+Wed Aug 6,08:00,GMT,gbp,GBP New Car Registrations (YoY),Low,6.6%,,6.2%
+Wed Aug 6,08:10,GMT,eur,EUR Markit France Retail PMI,Low,45.6,,47.6
+Wed Aug 6,08:10,GMT,eur,EUR Markit Italy Retail PMI,Low,43.4,,43.8
+Wed Aug 6,08:10,GMT,eur,EUR Markit Germany Retail PMI,Medium,52.1,,56.2
+Wed Aug 6,08:10,GMT,eur,EUR Markit Eurozone Retail PMI,Medium,47.6,,50
+Wed Aug 6,08:30,GMT,gbp,GBP Manufacturing Production (MoM),Low,0.3%,0.6%,-1.3%
+Wed Aug 6,08:30,GMT,gbp,GBP Manufacturing Production (YoY),Medium,1.9%,2.1%,3.7%
+Wed Aug 6,08:30,GMT,gbp,GBP Industrial Production (MoM),Low,0.3%,0.6%,-0.6%
+Wed Aug 6,08:30,GMT,gbp,GBP Industrial Production (YoY),Medium,1.2%,1.5%,2.3%
+Wed Aug 6,09:00,GMT,eur,EUR Italian Gross Domestic Product s.a. and w.d.a. (YoY),Medium,-0.3%,0.1%,-0.4%
+Wed Aug 6,09:00,GMT,eur,EUR Italian Gross Domestic Product s.a. and w.d.a. (QoQ),Low,-0.2%,0.1%,-0.1%
+Wed Aug 6,11:00,GMT,usd,USD MBA Mortgage Applications,Low,1.6%,,-2.2%
+Wed Aug 6,12:30,GMT,cad,CAD International Merchandise Trade (Canadian dollar),Low,1.86B,0.00B,.58B
+Wed Aug 6,12:30,GMT,usd,USD Trade Balance,Medium,-$41.5B,-$44.9B,-$44.7B
+Wed Aug 6,14:00,GMT,gbp,GBP NIESR Gross Domestic Product Estimate,Medium,0.6%,,0.8%
+Wed Aug 6,14:30,GMT,usd,USD DOE U.S. Crude Oil Inventories,Low,-1756K,-1500K,-3697K
+Wed Aug 6,14:30,GMT,usd,USD DOE U.S. Gasoline Inventories,Low,-4387K,-300K,365K
+Wed Aug 6,14:30,GMT,usd,USD DOE Cushing OK Crude Inventory,Low,83K ,,-924K
+Wed Aug 6,14:30,GMT,usd,USD DOE U.S. Distillate Inventory,Low,-1798K,850k,789K
+Wed Aug 6,23:30,GMT,aud,AUD AiG Performance of Construction Index,Medium,52.6,,51.8
+Wed Aug 6,23:50,GMT,jpy,JPY Official Reserve Assets,Low,$1276.0B,,$1283.9B
+Wed Aug 6,23:50,GMT,jpy,JPY Foreign Buying Japan Bonds (Yen),Low,¥367.5B,,¥164.7B
+Wed Aug 6,23:50,GMT,jpy,JPY Japan Buying Foreign Bonds (Yen),Medium,¥897.4B,,¥-301.6B
+Wed Aug 6,23:50,GMT,jpy,JPY Japan Buying Foreign Stocks (Yen),Medium,¥246.2B,,¥24.3B
+Wed Aug 6,23:50,GMT,jpy,JPY Foreign Buying Japan Stocks (Yen),Low,¥94.9B,,¥203.3B
+Thu Aug 7,00:00,GMT,nzd,NZD QV House Prices (YoY),Low,7.6%,,8.0%
+Thu Aug 7,01:30,GMT,aud,AUD Full Time Employment Change,Medium,14500,,-3.9K
+Thu Aug 7,01:30,GMT,aud,AUD Participation Rate,Low,64.8%,64.7%,64.7%
+Thu Aug 7,01:30,GMT,aud,AUD Employment Change,High,-0.3K,13.2K,14.9K
+Thu Aug 7,01:30,GMT,aud,AUD Unemployment Rate,High,6.4%,6.0%,6.0%
+Thu Aug 7,01:30,GMT,aud,AUD Part Time Employment Change,Low,-14.8K,,18.8K
+Thu Aug 7,02:00,GMT,jpy,JPY Tokyo Avg Office Vacancies,Low,6.20,,6.45
 Thu Aug 7,05:45,GMT,chf,CHF SECO Consumer Confidence,Low,,3,1
 Thu Aug 7,06:00,GMT,eur,EUR German Industrial Production s.a. (MoM),Low,,1.2%,-1.8%
 Thu Aug 7,06:00,GMT,eur,EUR German Industrial Production n.s.a. and w.d.a. (YoY),Medium,,0.3%,1.3%
@@ -118,12 +119,13 @@ Fri Aug 8,,,cny,CNY Trade Balance,Medium,,$26.00B,$31.56B
 Fri Aug 8,,,cny,CNY Imports (YoY),Low,,3.0%,5.5%
 Fri Aug 8,,,JPY,JPY Bank of Japan Monetary Policy Statement,Medium,,,
 Fri Aug 8,,,JPY,JPY BOJ 2014 Monetary Base Target,Medium,,,¥270T
-Fri Aug 8,,,jpy,JPY Eco Watchers Survey: Current,Medium,,48.5,47.7
-Fri Aug 8,,,JPY,JPY Eco Watchers Survey: Outlook,Medium,,,53.3
 Fri Aug 8,01:30,GMT,aud,AUD Home Loans,Medium,,0.6%,0.0%
 Fri Aug 8,01:30,GMT,AUD,AUD Investment Lending,Low,,,-0.9%
 Fri Aug 8,01:30,GMT,AUD,AUD Value of Loans (MoM),Low,,,-0.7%
+Fri Aug 8,01:30,GMT,aud,RBA Quarterly Statement On Monetary Policy,Low,,,
 Fri Aug 8,04:30,GMT,JPY,JPY Bankruptcies (YoY),Medium,,,-3.6%
+Fri Aug 8,05:00,GMT,jpy,JPY Eco Watchers Survey: Current,Medium,,48.5,47.7
+Fri Aug 8,05:00,GMT,jpy,JPY Eco Watchers Survey: Outlook,Medium,,,53.3
 Fri Aug 8,05:45,GMT,chf,CHF Unemployment Rate,Medium,,3.0%,2.9%
 Fri Aug 8,05:45,GMT,chf,CHF Unemployment Rate s.a.,Medium,,3.2%,3.2%
 Fri Aug 8,06:00,GMT,eur,EUR German Trade Balance (euros),Medium,,18.9B,17.8B
