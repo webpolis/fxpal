@@ -12,7 +12,7 @@ instrument = sub("(\\w{3})(\\w{3})", "\\1_\\2", ifelse((exists("opts") && !is.na
 granularity = ifelse((exists("opts") && !is.na(opts[3])), opts[3], "M")
 type = ifelse((exists("opts") && !is.na(opts[4])), opts[4], "trend")
 
-oandaCurrencies = read.csv("oandaCurrencies.csv", sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
+oandaCurrencies = read.table("oandaCurrencies.csv", sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
 isReverted = nrow(oandaCurrencies[oandaCurrencies$instrument == instrument,]) <= 0
 instrument = ifelse(isReverted,sub("([a-z]{3})_([a-z]{3})", "\\2_\\1",instrument,ignore.case=TRUE),instrument)
 

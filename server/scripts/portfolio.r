@@ -7,7 +7,7 @@ library("fPortfolio")
 #library("financeR")
 library("quantmod")
 
-data = read.csv("multisetsInputs.csv", sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
+data = read.table("multisetsInputs.csv", sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
 data = data[-c(1, 30:41)]
 crosses = toupper(gsub("\\.{3}[\\w]+|QUANDL\\.|\\.Price", "", names(data), perl = TRUE))
 names(data) = crosses
