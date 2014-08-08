@@ -17,12 +17,17 @@ diffWeeks = as.integer(difftime(as.Date(endDate,format="%m/%d/%Y"),as.Date(lastD
 startWeek = as.Date(format(Sys.Date(),format="%Y-%m-%d")) - as.difftime(diffWeeks,units="weeks")
 startDate = format(startWeek,format="%m/%d/%Y")
 
-
-
 url = "http://www.forex.com/UIService.asmx/getEconomicCalendarForPeriod"
 params = toJSON(list(aStratDate=startDate,aEndDate=endDate))
 headers = list('Accept' = 'application/json', 'Content-Type' = 'application/json')
-ret = postForm(url, .opts=list(postfields=params, httpheader=headers))
+ret = fromJSON(postForm(url, .opts=list(postfields=params, httpheader=headers)))
+
+df = data.frame()
+for(i in 1:length(ret$d)){
+	
+} 
+
+
 
 getCurrenciesStrength <- function(w = 52, curr1=NA, curr2=NA){
 	tmp = data

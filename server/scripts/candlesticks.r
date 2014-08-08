@@ -95,7 +95,7 @@ if(type == "trend"){
 		cross = ifelse(isReverted,sub("([a-z]{3})_([a-z]{3})", "\\2_\\1",cross,ignore.case=TRUE),cross)
 	}
 
-	write.csv(trend, quote = FALSE, row.names = FALSE, file = paste(cross, "-trend-", granularity, ".csv", sep = ""), fileEncoding = "UTF-8")
+	write.csv(trend, quote = FALSE, row.names = FALSE, file = paste("candles/", cross, "-trend-", granularity, ".csv", sep = ""), fileEncoding = "UTF-8")
 }
 # match candlesticks patterns
 if(type == "patterns"){
@@ -112,7 +112,7 @@ if(type == "patterns"){
 			cross = ifelse(isReverted,sub("([a-z]{3})_([a-z]{3})", "\\2_\\1",cross,ignore.case=TRUE),cross)
 		}
 
-		write.csv(patterns, quote = FALSE, row.names = FALSE, file = paste(cross, "-patterns-", granularity, ".csv", sep = ""), fileEncoding = "UTF-8")
+		write.csv(patterns, quote = FALSE, row.names = FALSE, file = paste("candles/", cross, "-patterns-", granularity, ".csv", sep = ""), fileEncoding = "UTF-8")
 	}
 }
 if(type == "volatility"){
