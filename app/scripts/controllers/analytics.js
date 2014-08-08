@@ -210,7 +210,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             $scope.selected.strength = data;
             angular.forEach($scope.selected.strength, function(row) {
                 $scope.optsHighchartsStrength.series[0].data.push({
-                    name: row.currency,
+                    name: row.country,
                     color: $scope.utils.getRandomColorCode(),
                     y: parseFloat(row.strength)
                 });

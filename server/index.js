@@ -167,17 +167,17 @@ var resCalendarStrength = function respond(req, res, next) {
     var cross = req.params.cross && req.params.cross.match(/[a-z]{3}/gi) || [];
     var weeks = req.params.weeks ||  52;
     var outFile = [__dirname + '/../app/data/', 'calendar', '-', weeks];
+    var cmd = ['Rscript', __dirname + '/scripts/eventsStrength.r', req.params.weeks];
+    if (cross.length > 0) {
+        cmd = cmd.concat(cross);
+        outFile = outFile.concat('-' + [cross[0], cross[1]].join('-'));
+    }
+    outFile = outFile.concat(['-', 'strength', '.csv']).join('');
     // only generate file if it's older than XX minutes
     if (isOutdatedFile(outFile, 5)) {
-        var cmd = ['Rscript', __dirname + '/scripts/eventsStrength.r', req.params.weeks];
-        if (cross.length > 0) {
-            cmd = cmd.concat(cross);
-            outFile = outFile.concat('-' + [cross[0], cross[1]].join('-'));
-        }
         sh.run(cmd.join(' '));
     }
-    outFile = outFile.concat(['-', 'strength', '.csv']);
-    fs.readFile(outFile.join(''), {}, function(err, data) {
+    fs.readFile(outFile, {}, function(err, data) {
         res.send(data);
     });
     next();
