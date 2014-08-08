@@ -7,10 +7,22 @@ weeks = ifelse((exists("opts") && !is.na(opts[1])), as.integer(opts[1]), 52)
 cross1 = ifelse((exists("opts") && !is.na(opts[2])), opts[2], NA)
 cross2 = ifelse((exists("opts") && !is.na(opts[3])), opts[3], NA)
 
-data = read.table("calendar.csv", sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
-data = data[,c("date","currency","event","actual")]
-data = na.omit(data)
-data[,"date"] = as.Date(data[,"date"])
+calendar = fromJSON(file="calendar.json")
+total = length(calendar$d)
+last = calendar$d[[total]]
+lastDate = gsub("([^\\s]+)(?:\\s+[^\\s]+){1,}","\\1",last$Released,perl=T)
+endDate = format(Sys.Date(),format="%m/%d/%Y")
+
+diffWeeks = as.integer(difftime(as.Date(endDate,format="%m/%d/%Y"),as.Date(lastDate,format="%m/%d/%Y"),units="weeks"))
+startWeek = as.Date(format(Sys.Date(),format="%Y-%m-%d")) - as.difftime(diffWeeks,units="weeks")
+startDate = format(startWeek,format="%m/%d/%Y")
+
+
+
+url = "http://www.forex.com/UIService.asmx/getEconomicCalendarForPeriod"
+params = toJSON(list(aStratDate=startDate,aEndDate=endDate))
+headers = list('Accept' = 'application/json', 'Content-Type' = 'application/json')
+ret = postForm(url, .opts=list(postfields=params, httpheader=headers))
 
 getCurrenciesStrength <- function(w = 52, curr1=NA, curr2=NA){
 	tmp = data
