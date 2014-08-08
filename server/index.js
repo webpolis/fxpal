@@ -174,7 +174,7 @@ var resCalendarStrength = function respond(req, res, next) {
     }
     outFile = outFile.concat(['-', 'strength', '.csv']).join('');
     // only generate file if it's older than XX minutes
-    if (isOutdatedFile(outFile, 5)) {
+    if (isOutdatedFile(outFile, 15)) {
         sh.run(cmd.join(' '));
     }
     fs.readFile(outFile, {}, function(err, data) {

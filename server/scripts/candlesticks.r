@@ -119,7 +119,7 @@ if(type == "volatility"){
 	crosses = read.csv("availableCrosses.csv", sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
 	crosses = as.character(crosses$instrument)
 	vol = getVolatility(crosses)
-	vol = vol[,vol>=0.0075]
+	vol = vol[,vol>=0.0078]
 	tmp = matrix(as.list(vol))
 	tmp = cbind(names(vol),tmp)
 	colnames(tmp) = c("cross","volatility")
