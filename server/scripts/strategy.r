@@ -49,7 +49,7 @@ getCandles <- function(instrument, granularity, startDate = NA, count = NA){
   return(ret)
 }
 
-TradingStrategy <- function(strategy, mktdata,param1,param2){
+TradingStrategy <- function(strategy, mktdata,param1,param2,param3){
   tradingreturns = NULL
 
   switch(strategy, CCI={
@@ -58,9 +58,20 @@ TradingStrategy <- function(strategy, mktdata,param1,param2){
     #Calculate the Open Close return
     returns <- (Cl(mktdata)/Op(mktdata))-1
     #Calculate the moving averages
-    cci <- CCI(Cl(mktdata),n=param1)
+    cci <- CCI(HLC(mktdata),n=param1)
     #If mavga > mavgb go long
     signal <- apply(cci,1,function (x) { if(is.na(x)){ return (0) } else { if(x>100){return (1)} else if(x<-100) {return (-1)}else{ return(0)}}})
+    tradingreturns <- signal * returns
+    colnames(tradingreturns) <- runName
+  }, MACD={
+    runName <- paste(strategy,param1,param2,param3,sep=",")
+    print(paste("Running Strategy: ",runName))
+    #Calculate the Open Close return
+    returns <- (Cl(mktdata)/Op(mktdata))-1
+    #Calculate the moving averages
+    macd <- MACD(Cl(mktdata),param1,param2,param3,maType=list(list(EMA),list(EMA),list(SMA)))
+    #If mavga > mavgb go long
+    signal <- apply(macd,1,function (x) { if(is.na(x["macd"]) | is.na(x["signal"])){ return (0) } else { if(x["macd"]>0 & x["signal"]>0){return (1)} else if(x["macd"]<0 & x["signal"]<0) {return (-1)}else{ return(0)}}})
     tradingreturns <- signal * returns
     colnames(tradingreturns) <- runName
   })
@@ -83,6 +94,20 @@ RunIterativeStrategy <- function(mktdata, strategy = NA){
         results <- runResult
       } else {
         results <- cbind(results,runResult)
+      }
+    }
+  }, MACD={
+    for(paramA in 4:12) {
+      for(paramB in 4:20) {
+        for(paramC in 4:20) {
+          runResult <- TradingStrategy(strategy, mktdata,paramA,paramB,paramC)
+          if(firstRun){
+            firstRun <- FALSE
+            results <- runResult
+          } else {
+            results <- cbind(results,runResult)
+          }
+        }
       }
     }
   })
@@ -144,7 +169,7 @@ out = getCandles(instrument,granularity,count=600)
 startDate = index(out[1,])
 endDate = index(out[ceiling(nrow(out)/2),])
 sampleStartDate = index(out[ceiling(nrow(out)/2)+1,])
-nameOfStrategy <- "Strategy tester: CCI"
+nameOfStrategy <- "Strategy tester"
 #Specify dates for downloading data, training models and running simulation
 trainingData <- window(out, start =startDate, end = endDate)
 testData <- window(out, start = sampleStartDate)
