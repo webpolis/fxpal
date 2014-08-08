@@ -22,10 +22,32 @@ params = toJSON(list(aStratDate=startDate,aEndDate=endDate))
 headers = list('Accept' = 'application/json', 'Content-Type' = 'application/json')
 ret = fromJSON(postForm(url, .opts=list(postfields=params, httpheader=headers)))
 
+calendar = append(calendar$d, ret$d)
+
 df = data.frame()
-for(i in 1:length(ret$d)){
-	
-} 
+for(i in 1:length(calendar)){
+	cal = calendar[[i]]
+	if(length(cal$Data)==0){
+		next
+	}
+	rowData = sapply(cal$Data,unlist)
+	actual = rowData["Actual",]
+	actual = actual[actual!="" && !is.na(actual)]
+
+	if(length(actual)==0){
+		next
+	}
+
+	tmpDf = data.frame()
+	actual = as.numeric(na.omit(actual))
+	avg = mean(actual)
+	tmpDf[1,"name"] = cal$Name
+	tmpDf[1,"code"] = cal$EventCode
+	tmpDf[1,"country"] = cal$Country
+	tmpDf[1,"released"] = cal$Released
+	tmpDf[1,"actual"] = avg
+	df = rbind(tmpDf,df)
+}
 
 
 
