@@ -2,15 +2,19 @@ setwd("app/data/")
 
 Sys.setenv(TZ="UTC")
 
+library(RCurl)
+library(rjson)
+
 opts = commandArgs(trailingOnly = TRUE)
 weeks = ifelse((exists("opts") && !is.na(opts[1])), as.integer(opts[1]), 52)
 cross1 = ifelse((exists("opts") && !is.na(opts[2])), opts[2], NA)
 cross2 = ifelse((exists("opts") && !is.na(opts[3])), opts[3], NA)
+reDate = "([^\\s]+)(?:\\s+[^\\s]+){1,}"
 
 calendar = fromJSON(file="calendar.json")
 total = length(calendar$d)
 last = calendar$d[[total]]
-lastDate = gsub("([^\\s]+)(?:\\s+[^\\s]+){1,}","\\1",last$Released,perl=T)
+lastDate = gsub(reDate,"\\1",last$Released,perl=T)
 endDate = format(Sys.Date(),format="%m/%d/%Y")
 
 diffWeeks = as.integer(difftime(as.Date(endDate,format="%m/%d/%Y"),as.Date(lastDate,format="%m/%d/%Y"),units="weeks"))
@@ -44,37 +48,37 @@ for(i in 1:length(calendar)){
 	tmpDf[1,"name"] = cal$Name
 	tmpDf[1,"code"] = cal$EventCode
 	tmpDf[1,"country"] = cal$Country
-	tmpDf[1,"released"] = cal$Released
+	tmpDf[1,"date"] = cal$Released
 	tmpDf[1,"actual"] = avg
 	df = rbind(tmpDf,df)
 }
 
-
+df$date = gsub(reDate,"\\1",df$date,perl=T)
+df$date = as.Date(df$date,format="%m/%d/%Y")
+df = df[order(df$date),]
 
 getCurrenciesStrength <- function(w = 52, curr1=NA, curr2=NA){
-	tmp = data
+	tmp = df
 	startWeek = as.Date(format(Sys.Date(),format="%Y-%m-%d")) - as.difftime(w,units="weeks")
 	tmp = tmp[tmp$date>=startWeek,]
 
 	if(!is.na(curr1) && !is.na(curr2)){
-		tmp = tmp[grep(paste(curr1,curr2,sep="|"), tmp$currency, ignore.case=TRUE),]
+		tmp = tmp[grep(paste(curr1,curr2,sep="|"), tmp$country, ignore.case=TRUE),]
 	}
 
-	allValues = grep('actual',names(tmp))
-
 	# invert value for unemployment
-	inv = 'continu_claim|jobless_claim|unempl'
-	tmp[grep(inv,tmp$event, ignore.case=TRUE),allValues] = transform(tmp[grep(inv,tmp$event, ignore.case=TRUE),allValues],actual=-actual)
+	inv = 'unempl|jobless'
+	tmp[grep(inv,tmp$name, ignore.case=TRUE),"actual"] = -(tmp[grep(inv,tmp$name, ignore.case=TRUE),"actual"])
 	
-	tmp = aggregate(tmp$actual, by=list(currency=tmp$currency,event=tmp$event),FUN=diff)
-	tmp[,3] = sapply(tmp[,3],simplify=T,FUN=function(x) round(sum(x),6))
-	names(tmp) = c("currency","event","value")
-	tmp$scale = round(scale(tmp[,3], scale = TRUE, center = TRUE), 6)
+	tmp = aggregate(tmp$actual, by=list(code=tmp$code,country=tmp$country),FUN=diff)
+	tmp[,"x"] = sapply(tmp[,"x"],simplify=T,FUN=function(n) round(sum(n),6))
+	tmp$scale = round(scale(tmp[,"x"], scale = TRUE, center = FALSE), 6)
+	tmp = tmp[!is.na(tmp$scale),]
 
-	scaled = aggregate(tmp$value, by=list(currency=tmp$currency),FUN=mean)
-	scaled = scaled[order(-scaled[,2]),]
-	scaled[,2] = round(scale(scaled[,2], scale = TRUE, center = FALSE), 6)
-	names(scaled) <- c("currency","strength")
+	scaled = aggregate(tmp$scale, by=list(country=tmp$country),FUN=mean)
+	names(scaled) <- c("country","strength")
+	scaled = scaled[order(-scaled[,"strength"]),]
+	scaled[,"strength"] = round(scale(scaled[,"strength"], scale = TRUE, center = FALSE), 6)
 	scaled$sd = sd(scaled$strength)
 	scaled$strength = scale(scaled$strength+scaled$sd,center=F)
 	return(scaled)
