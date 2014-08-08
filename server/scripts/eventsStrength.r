@@ -8,8 +8,9 @@ cross1 = ifelse((exists("opts") && !is.na(opts[2])), opts[2], NA)
 cross2 = ifelse((exists("opts") && !is.na(opts[3])), opts[3], NA)
 
 data = read.table("calendar.csv", sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
-#data = na.omit(data)
-data[,1] = as.Date(data[,1])
+data = data[,c("date","currency","event","actual")]
+data = na.omit(data)
+data[,"date"] = as.Date(data[,"date"])
 
 getCurrenciesStrength <- function(w = 52, curr1=NA, curr2=NA){
 	tmp = data
@@ -20,10 +21,11 @@ getCurrenciesStrength <- function(w = 52, curr1=NA, curr2=NA){
 		tmp = tmp[grep(paste(curr1,curr2,sep="|"), tmp$currency, ignore.case=TRUE),]
 	}
 
-	allValues = grep('actual|previous',names(tmp))
+	allValues = grep('actual',names(tmp))
 
 	# invert value for unemployment
-	tmp[grep('continu_claim|jobless_claim|unempl',tmp$event, ignore.case=TRUE),allValues] = transform(tmp[grep('continu_claim|jobless_claim|unempl',tmp$event, ignore.case=TRUE),allValues],actual=-actual,previous=-previous)
+	inv = 'continu_claim|jobless_claim|unempl'
+	tmp[grep(inv,tmp$event, ignore.case=TRUE),allValues] = transform(tmp[grep(inv,tmp$event, ignore.case=TRUE),allValues],actual=-actual)
 	
 	tmp = aggregate(tmp$actual, by=list(currency=tmp$currency,event=tmp$event),FUN=diff)
 	tmp[,3] = sapply(tmp[,3],simplify=T,FUN=function(x) round(sum(x),6))

@@ -72,7 +72,20 @@ var mergeCalendars = function() {
                                 pp = 'event';
                             } else if (/actual|forecast|previous/gi.test(p)) {
                                 // normalize numbers
-                                row[p] = row[p] ? parseFloat(row[p].replace(/[^\d\.\,\-\+]+/g, '').replace(/\,/g, '.')) : null;
+                                if (/\d+(?:\.?\d+)?[kmb]/gi.test(row[p])) {
+                                    var k = 1000,
+                                        m = 1000000,
+                                        b = 1000000000;
+                                    if (/\d+(?:\.?\d+)?k/gi.test(row[p])) {
+                                        row[p] = parseFloat(row[p].replace(/[^\d\.\-\+]+/, '')) * k;
+                                    } else if (/\d+(?:\.?\d+)m/gi.test(row[p])) {
+                                        row[p] = parseFloat(row[p].replace(/[^\d\.\-\+]+/, '')) * m;
+                                    } else if (/\d+(?:\.?\d+)b/gi.test(row[p])) {
+                                        row[p] = parseFloat(row[p].replace(/[^\d\.\-\+]+/, '')) * b;
+                                    } else {
+                                        row[p] = row[p] ? parseFloat(row[p].replace(/[^\d\.\,\-\+]+/g, '').replace(/\,/g, '.')) : null;
+                                    }
+                                }
                             }
                             var curr = row.Currency || row.currency;
                             o[pp] = /event/i.test(pp) ? string.normalizeEventName(row[p], curr.toUpperCase()) : row[p];
@@ -91,6 +104,13 @@ var mergeCalendars = function() {
                     }
                     delete o.time;
                     delete o['time zone'];
+                    if(o.date==='2013-08-23' && o.event==='GERMAN_CONSTRUCT_INVEST'){
+                        console.log(o)
+                        console.log(row)
+                    }
+                    if (Object.keys(o).length !== 8) {
+                        continue;
+                    }
                     if (!o.actual ||  o.actual === '' || /\d{4}\_(?:\d{2}\_){2}/gi.test(o.event)) {
                         continue;
                     } else if (!(/low|medium|high/gi.test(o.importance)) || !(/[\d\.\-\+]+/g.test(o.actual))) {
