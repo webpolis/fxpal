@@ -104,13 +104,6 @@ var mergeCalendars = function() {
                     }
                     delete o.time;
                     delete o['time zone'];
-                    if(o.date==='2013-08-23' && o.event==='GERMAN_CONSTRUCT_INVEST'){
-                        console.log(o)
-                        console.log(row)
-                    }
-                    if (Object.keys(o).length !== 8) {
-                        continue;
-                    }
                     if (!o.actual ||  o.actual === '' || /\d{4}\_(?:\d{2}\_){2}/gi.test(o.event)) {
                         continue;
                     } else if (!(/low|medium|high/gi.test(o.importance)) || !(/[\d\.\-\+]+/g.test(o.actual))) {
