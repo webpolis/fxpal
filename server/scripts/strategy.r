@@ -57,9 +57,7 @@ TradingStrategy <- function(strategy, mktdata,param1,param2,param3){
     print(paste("Running Strategy: ",runName))
     #Calculate the Open Close return
     returns <- (Cl(mktdata)/Op(mktdata))-1
-    #Calculate the moving averages
     cci <- CCI(HLC(mktdata),n=param1)
-    #If mavga > mavgb go long
     signal <- apply(cci,1,function (x) { if(is.na(x)){ return (0) } else { if(x>100){return (1)} else if(x<-100) {return (-1)}else{ return(0)}}})
     tradingreturns <- signal * returns
     colnames(tradingreturns) <- runName
@@ -68,9 +66,7 @@ TradingStrategy <- function(strategy, mktdata,param1,param2,param3){
     print(paste("Running Strategy: ",runName))
     #Calculate the Open Close return
     returns <- (Cl(mktdata)/Op(mktdata))-1
-    #Calculate the moving averages
     macd <- MACD(Cl(mktdata),param1,param2,param3,maType=list(list(EMA),list(EMA),list(SMA)))
-    #If mavga > mavgb go long
     signal <- apply(macd,1,function (x) { if(is.na(x["macd"]) | is.na(x["signal"])){ return (0) } else { if(x["macd"]>0 & x["signal"]>0){return (1)} else if(x["macd"]<0 & x["signal"]<0) {return (-1)}else{ return(0)}}})
     tradingreturns <- signal * returns
     colnames(tradingreturns) <- runName
@@ -120,7 +116,26 @@ CalculatePerformanceMetric <- function(returns,metric){
   #Apply the function metric to the data
   print (paste("Calculating Performance Metric:",metric))
   metricFunction <- match.fun(metric)
-  metricData <- as.matrix(metricFunction(returns))
+  if(length(grep("sharperatio",metric,ignore.case=T))>0){
+    periods = 252
+
+    if(length(grep("[a-z]\\d+",metric,ignore.case=T))>0){
+      unit = gsub("([a-z])(\\d+)","\\1","H1",ignore.case=T)
+      num = as.integer(gsub("([a-z])(\\d+)","\\1","H1",ignore.case=T))
+      switch(unit, H={
+          periods=8760/num
+      }, M={
+          periods=525600/num  
+      })
+      if(unit=="M" & (is.na(num)|is.null(num))){
+        periods = 12
+      }
+    }
+
+    metricData <- as.matrix(metricFunction(returns,scale=periods))
+  }else{
+    metricData <- as.matrix(metricFunction(returns))
+  }
   #Some functions return the data the wrong way round
   #Hence cant label columns to need to check and transpose it
   if(nrow(metricData) == 1){
@@ -161,26 +176,27 @@ FindOptimumStrategy <- function(trainingData, strategy = NA){
   trainingReturns <- RunIterativeStrategy(trainingData, strategy)
   pTab <- PerformanceTable(trainingReturns)
   toptrainingReturns <- SelectTopNStrategies(trainingReturns,pTab,"SharpeRatio",5)
-  charts.PerformanceSummary(toptrainingReturns,main=paste(nameOfStrategy,"- Training"),geometric=FALSE)
+  charts.PerformanceSummary(toptrainingReturns,main=paste(strategy,"- Training"),geometric=FALSE)
   return (pTab)
 }
 
-out = getCandles(instrument,granularity,count=600)
-startDate = index(out[1,])
-endDate = index(out[ceiling(nrow(out)/2),])
-sampleStartDate = index(out[ceiling(nrow(out)/2)+1,])
-nameOfStrategy <- "Strategy tester"
-#Specify dates for downloading data, training models and running simulation
-trainingData <- window(out, start =startDate, end = endDate)
-testData <- window(out, start = sampleStartDate)
-indexReturns <- Delt(Cl(window(out, start = sampleStartDate)))
-colnames(indexReturns) <- paste(instrument, "Buy&Hold",sep=" ")
+runStrategy <- function(instrument,granularity,strategy){
+  out = getCandles(instrument,granularity,count=600)
+  startDate = index(out[1,])
+  endDate = index(out[ceiling(nrow(out)/2),])
+  sampleStartDate = index(out[ceiling(nrow(out)/2)+1,])
+  trainingData <- window(out, start =startDate, end = endDate)
+  testData <- window(out, start = sampleStartDate)
+  indexReturns <- Delt(Cl(window(out, start = sampleStartDate)))
+  colnames(indexReturns) <- paste(instrument, "Buy&Hold",sep=" ")
+  pTab <- FindOptimumStrategy(trainingData,strategy) #pTab is the performance table of the various parameters tested
+}
 
-pTab <- FindOptimumStrategy(trainingData,"CCI") #pTab is the performance table of the various parameters tested
-#Test out of sample
-dev.new()
-#Manually specify the parameter that we want to trade here, just because a strategy is at the top of
-#pTab it might not be good (maybe due to overfit)
-outOfSampleReturns <- TradingStrategy("CCI",testData,param1=30)
-finalReturns <- cbind(outOfSampleReturns,indexReturns)
-charts.PerformanceSummary(finalReturns,main=paste(nameOfStrategy,"- Out of Sample"),geometric=FALSE)
+runSample <- function(){
+  dev.new()
+  #Manually specify the parameter that we want to trade here, just because a strategy is at the top of
+  #pTab it might not be good (maybe due to overfit)
+  outOfSampleReturns <- TradingStrategy(strategy,testData,param1=30)
+  finalReturns <- cbind(outOfSampleReturns,indexReturns)
+  charts.PerformanceSummary(finalReturns,main=paste(strategy,"- Out of Sample"),geometric=FALSE)
+}
