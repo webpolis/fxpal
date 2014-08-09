@@ -331,9 +331,17 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             template: 'Loading...'
         });
         // retrieve events
+        var startWeekDate = null;
+        switch (moment().day()) {
+            case 6:
+                startWeekDate = moment().add('week', maxWeeks).startOf('week').format('MM-DD-YYYY');
+                break;
+            default:
+                startWeekDate = moment().subtract('week', maxWeeks).startOf('week').format('MM-DD-YYYY');
+                break;
+        }
         var urlsCalendars = Array.apply(null, new Array(maxWeeks)).map(String.valueOf, '').map(function(i, w) {
-            var startWeekDate = moment().subtract('week', w).startOf('week').format('MM-DD-YYYY'),
-                url = $scope.config.urls.events.replace(/\{\{startWeekDate\}\}/gi, startWeekDate);
+            var url = $scope.config.urls.events.replace(/\{\{startWeekDate\}\}/gi, startWeekDate);
             return 'http://' + url;
         });
         $http.post($scope.config.urls.api + 'calendar/' + [$scope.selected.cross1, $scope.selected.cross2].join(''), urlsCalendars, {

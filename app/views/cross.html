@@ -80,7 +80,9 @@
         <div ng-if="nextEvents" ng-init="nxtEventTime = nextEvents[0].timestamp" class="row">
             <div class="col">
                 <b><i class="icon ion-clock"></i> Next event in</b>
-                <timer class="maroon" end-time="nxtEventTime">{{hhours}} hours, {{mminutes}} minutes, {{sseconds}} seconds.</timer>
+                <timer class="maroon" end-time="nxtEventTime" max-time-unit="'hour'">
+                {{hhours}} hour{{hoursS}}, {{mminutes}} minute{{minutesS}}, {{sseconds}} second{{secondsS}}.
+                </timer>
             </div>
         </div>
         <div>
