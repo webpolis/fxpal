@@ -49,28 +49,24 @@ getCandles <- function(instrument, granularity, startDate = NA, count = NA){
   return(ret)
 }
 
-TradingStrategy <- function(strategy, mktdata,param1,param2,param3){
+TradingStrategy <- function(strategy, mktdata,param1=NA,param2=NA,param3=NA){
   tradingreturns = NULL
+  returns = CalculateReturns(Cl(mktdata))
+  runName = NULL
+  signal = 0
 
   switch(strategy, CCI={
-    runName <- paste(strategy,"(",param1,")",sep="")
-    print(paste("Running Strategy: ",runName))
-    #Calculate the Open Close return
-    returns <- (Cl(mktdata)/Op(mktdata))-1
     cci <- CCI(HLC(mktdata),n=param1)
-    signal <- apply(cci,1,function (x) { if(is.na(x)){ return (0) } else { if(x>100){return (1)} else if(x<-100) {return (-1)}else{ return(0)}}})
-    tradingreturns <- signal * returns
-    colnames(tradingreturns) <- runName
+    signal <- apply(cci,1,function (x) {if(is.na(x["cci"])){ return (0) } else { if(x["cci"]>100){return (1)} else if(x["cci"]<-100) {return (-1)}else{ return(0)}}})
   }, MACD={
-    runName <- paste(strategy,param1,param2,param3,sep=",")
-    print(paste("Running Strategy: ",runName))
-    #Calculate the Open Close return
-    returns <- (Cl(mktdata)/Op(mktdata))-1
     macd <- MACD(Cl(mktdata),param1,param2,param3,maType=list(list(EMA),list(EMA),list(SMA)))
     signal <- apply(macd,1,function (x) { if(is.na(x["macd"]) | is.na(x["signal"])){ return (0) } else { if(x["macd"]>0 & x["signal"]>0){return (1)} else if(x["macd"]<0 & x["signal"]<0) {return (-1)}else{ return(0)}}})
-    tradingreturns <- signal * returns
-    colnames(tradingreturns) <- runName
   })
+
+  runName <- paste(strategy,param1,param2,param3,sep=",")
+  tradingreturns = signal * returns
+  colnames(tradingreturns) <- runName
+  print(paste("Running Strategy: ",runName))
 
   return (tradingreturns)
 }
@@ -176,27 +172,31 @@ FindOptimumStrategy <- function(trainingData, strategy = NA){
   trainingReturns <- RunIterativeStrategy(trainingData, strategy)
   pTab <- PerformanceTable(trainingReturns)
   toptrainingReturns <- SelectTopNStrategies(trainingReturns,pTab,"SharpeRatio",5)
+
+  dev.new()
   charts.PerformanceSummary(toptrainingReturns,main=paste(strategy,"- Training"),geometric=FALSE)
   return (pTab)
 }
-
-runStrategy <- function(instrument,granularity,strategy){
+#1
+trainStrategy <- function(instrument,granularity,strategy){
   out = getCandles(instrument,granularity,count=600)
   startDate = index(out[1,])
-  endDate = index(out[ceiling(nrow(out)/2),])
-  sampleStartDate = index(out[ceiling(nrow(out)/2)+1,])
+  ##endDate = index(out[ceiling(nrow(out)/2),])
+  endDate = index(out[nrow(out),])
   trainingData <- window(out, start =startDate, end = endDate)
+  pTab <- FindOptimumStrategy(trainingData,strategy) #pTab is the performance table of the various parameters tested
+}
+#2
+testStrategy <- function(instrument,granularity,count,strategy,param1=NA,param2=NA,param3=NA){
+  out = getCandles(instrument,granularity,count=count)
+  #sampleStartDate = index(out[ceiling(nrow(out)/2)+1,])
+  sampleStartDate = index(out[1,])
   testData <- window(out, start = sampleStartDate)
   indexReturns <- Delt(Cl(window(out, start = sampleStartDate)))
   colnames(indexReturns) <- paste(instrument, "Buy&Hold",sep=" ")
-  pTab <- FindOptimumStrategy(trainingData,strategy) #pTab is the performance table of the various parameters tested
-}
-
-runSample <- function(){
-  dev.new()
-  #Manually specify the parameter that we want to trade here, just because a strategy is at the top of
-  #pTab it might not be good (maybe due to overfit)
-  outOfSampleReturns <- TradingStrategy(strategy,testData,param1=30)
+  outOfSampleReturns <- TradingStrategy(strategy,testData,param1=param1,param2=param2,param3=param3)
   finalReturns <- cbind(outOfSampleReturns,indexReturns)
+
+  dev.new()
   charts.PerformanceSummary(finalReturns,main=paste(strategy,"- Out of Sample"),geometric=FALSE)
 }
