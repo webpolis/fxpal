@@ -1,5 +1,8 @@
 Sys.setenv(TZ="UTC")
 
+pwd = ifelse(is.null(sys.frames()),paste(getwd(),"/server/scripts",sep=""),dirname(sys.frame(1)$ofile))
+dataPath = paste(pwd,"/../../app/data/",sep="")
+
 library("RCurl")
 library("rjson")
 library("candlesticks")
@@ -10,7 +13,7 @@ instrument = sub("(\\w{3})(\\w{3})", "\\1_\\2", ifelse((exists("opts") && !is.na
 granularity = ifelse((exists("opts") && !is.na(opts[3])), opts[3], "D")
 type = ifelse((exists("opts") && !is.na(opts[4])), opts[4], "analysis")
 
-oandaCurrencies = read.table("app/data/oandaCurrencies.csv", sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
+oandaCurrencies = read.table(paste(dataPath,"oandaCurrencies.csv",sep=""), sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
 isReverted = nrow(oandaCurrencies[oandaCurrencies$instrument == instrument,]) <= 0
 instrument = ifelse(isReverted,sub("([a-z]{3})_([a-z]{3})", "\\2_\\1",instrument,ignore.case=TRUE),instrument)
 
@@ -96,10 +99,10 @@ if(type == "analysis"){
 	patterns$Time = 0
 	patterns$Time = out$Time
 
-	write.csv(cbind(out,trend,patterns), quote = FALSE, row.names = FALSE, file = paste("app/data/candles/", cross, "-", granularity, ".csv", sep = ""), fileEncoding = "UTF-8")
+	write.csv(cbind(out,trend,patterns), quote = FALSE, row.names = FALSE, file = paste(dataPath,"candles/", cross, "-", granularity, ".csv", sep = ""), fileEncoding = "UTF-8")
 }
 if(type == "volatility"){
-	crosses = read.csv("availableCrosses.csv", sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
+	crosses = read.csv(paste(dataPath,"availableCrosses.csv",sep=""), sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
 	crosses = as.character(crosses$instrument)
 	vol = getVolatility(crosses)
 	vol = vol[,vol>=0.0078]
@@ -108,7 +111,7 @@ if(type == "volatility"){
 	colnames(tmp) = c("cross","volatility")
 	vol = as.data.frame(tmp)
 
-	write.csv(as.matrix(vol), quote = FALSE, row.names = FALSE, file = "app/data/volatility.csv", fileEncoding = "UTF-8")
+	write.csv(as.matrix(vol), quote = FALSE, row.names = FALSE, file = paste(dataPath,"volatility.csv",sep=""), fileEncoding = "UTF-8")
 }
 
 if(length(opts)>0){

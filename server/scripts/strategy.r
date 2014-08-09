@@ -1,20 +1,22 @@
 Sys.setenv(TZ="UTC")
 
-source("server/scripts/candlesticks.r")
+pwd = dirname(sys.frame(1)$ofile)
+
+source(paste(pwd,"/candlesticks.r",sep=""))
 library("quantmod")
 library("PerformanceAnalytics")
 
-TradingStrategy <- function(strategy, mktdata,param1=NA,param2=NA,param3=NA){
+TradingStrategy <- function(strategy, data,param1=NA,param2=NA,param3=NA){
   tradingreturns = NULL
-  returns = CalculateReturns(Cl(mktdata))
+  returns = CalculateReturns(Cl(data))
   runName = NULL
   signal = 0
 
   switch(strategy, CCI={
-    cci <- CCI(HLC(mktdata),n=param1)
+    cci <- CCI(HLC(data),n=param1)
     signal <- apply(cci,1,function (x) {if(is.na(x["cci"])){ return (0) } else { if(x["cci"]>100){return (1)} else if(x["cci"]<(-100)) {return (-1)}else{ return(0)}}})
   }, MACD={
-    macd <- MACD(Cl(mktdata),param1,param2,param3,maType=list(list(EMA),list(EMA),list(SMA)))
+    macd <- MACD(Cl(data),param1,param2,param3,maType=list(list(EMA),list(EMA),list(SMA)))
     signal <- apply(macd,1,function (x) { if(is.na(x["macd"]) | is.na(x["signal"])){ return (0) } else { if(x["macd"]>0 & x["signal"]>0){return (1)} else if(x["macd"]<0 & x["signal"]<0) {return (-1)}else{ return(0)}}})
   })
 
@@ -26,7 +28,7 @@ TradingStrategy <- function(strategy, mktdata,param1=NA,param2=NA,param3=NA){
   return (tradingreturns)
 }
 
-RunIterativeStrategy <- function(mktdata, strategy = NA){
+RunIterativeStrategy <- function(data, strategy = NA){
   #This function will run the TradingStrategy
   #It will iterate over a given set of input variables
   #In this case we try lots of different periods for the moving average
@@ -35,7 +37,7 @@ RunIterativeStrategy <- function(mktdata, strategy = NA){
 
   switch(strategy, CCI={
     for(paramA in 7:20) {
-      runResult <- TradingStrategy(strategy, mktdata,paramA)
+      runResult <- TradingStrategy(strategy, data,paramA)
       if(firstRun){
         firstRun <- FALSE
         results <- runResult
@@ -47,7 +49,7 @@ RunIterativeStrategy <- function(mktdata, strategy = NA){
     for(paramA in 4:12) {
       for(paramB in 4:20) {
         for(paramC in 4:20) {
-          runResult <- TradingStrategy(strategy, mktdata,paramA,paramB,paramC)
+          runResult <- TradingStrategy(strategy, data,paramA,paramB,paramC)
           if(firstRun){
             firstRun <- FALSE
             results <- runResult
@@ -134,33 +136,35 @@ FindOptimumStrategy <- function(trainingData, strategy = NA){
 }
 #1
 trainStrategy <- function(instrument,granularity,strategy){
-  out = getCandles(instrument,granularity,count=600)
-  startDate = index(out[1,])
-  ##endDate = index(out[ceiling(nrow(out)/2),])
-  endDate = index(out[nrow(out),])
-  trainingData <- window(out, start =startDate, end = endDate)
+  data = getCandles(instrument,granularity,count=600)
+  startDate = index(data[1,])
+  ##endDate = index(data[ceiling(nrow(data)/2),])
+  endDate = index(data[nrow(data),])
+  trainingData <- window(data, start =startDate, end = endDate)
   pTab <- FindOptimumStrategy(trainingData,strategy) #pTab is the performance table of the various parameters tested
 }
 #2
 testStrategy <- function(instrument,granularity,count,strategy,param1=NA,param2=NA,param3=NA){
-  out = getCandles(instrument,granularity,count=count)
-  #sampleStartDate = index(out[ceiling(nrow(out)/2)+1,])
-  sampleStartDate = index(out[1,])
-  testData <- window(out, start = sampleStartDate)
-  indexReturns <- Delt(Cl(window(out, start = sampleStartDate)))
+  data = getCandles(instrument,granularity,count=count)
+  #sampleStartDate = index(data[ceiling(nrow(data)/2)+1,])
+  sampleStartDate = index(data[1,])
+  testData <- window(data, start = sampleStartDate)
+  indexReturns <- Delt(Cl(window(data, start = sampleStartDate)))
   colnames(indexReturns) <- paste(instrument, "Buy&Hold",sep=" ")
-  outOfSampleReturns <- TradingStrategy(strategy,testData,param1=param1,param2=param2,param3=param3)
-  finalReturns <- cbind(outOfSampleReturns,indexReturns)
+  dataOfSampleReturns <- TradingStrategy(strategy,testData,param1=param1,param2=param2,param3=param3)
+  finalReturns <- cbind(dataOfSampleReturns,indexReturns)
 
   dev.new()
-  charts.PerformanceSummary(finalReturns,main=paste(strategy,"- Out of Sample"),geometric=FALSE)
+  charts.PerformanceSummary(finalReturns,main=paste(strategy,"- data of Sample"),geometric=FALSE)
 }
 
-getSignals <- function(){
+getSignals <- function(data=NA){
   # CCI+MACD
-  tmp = cbind(out, CCI(HLC(out),n=7))
+  tmp = cbind(data, CCI(HLC(data),n=7))
   tmp = cbind(tmp, MACD(Cl(tmp),4,5,5,maType=list(list(EMA),list(EMA),list(SMA))))
   buysell = apply(tmp, 1, function(x){if(is.na(x["cci"])|is.na(x["macd"])|is.na(x["signal"])){x["buysell"]=0}else if(x["cci"]>100 & x["macd"]>0 & x["signal"]>0){x["buysell"]=1}else if(x["cci"]<(-100) & x["macd"]<0 & x["signal"]<0){x["buysell"]=-1}else{x["buysell"]=0}})
 
   ret = cbind(tmp,buysell)
+
+  return(ret)
 }

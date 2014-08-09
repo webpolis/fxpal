@@ -1,5 +1,5 @@
 'use strict';
-angular.module('aifxApp').controller('appController', function($scope, $ionicSideMenuDelegate, $rootScope, utils, $state, api) {
+angular.module('aifxApp').controller('appController', function($scope, $ionicSideMenuDelegate, $rootScope, utils, $state, api, $location) {
     $scope.utils = utils, $scope.state = $state, $scope.api = api;
     $scope.data = {
         currencies: null,
@@ -111,6 +111,7 @@ angular.module('aifxApp').controller('appController', function($scope, $ionicSid
             var crosses = n.displayName.split('/');
             $scope.selected.cross1 = crosses[0];
             $scope.selected.cross2 = crosses[1];
+            $location.url('/app/cross/' + $scope.selected.cross1 + $scope.selected.cross2);
         } else {
             $scope.selected.cross1 = $scope.selected.cross2 = null;
         }
