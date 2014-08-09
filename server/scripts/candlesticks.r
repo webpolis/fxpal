@@ -1,5 +1,3 @@
-setwd("app/data/")
-
 Sys.setenv(TZ="UTC")
 
 library("RCurl")
@@ -7,12 +5,12 @@ library("rjson")
 library("candlesticks")
 
 opts = commandArgs(trailingOnly = TRUE)
-startDate = ifelse((exists("opts") && !is.na(opts[1])), opts[1], "2014-07-24")
-instrument = sub("(\\w{3})(\\w{3})", "\\1_\\2", ifelse((exists("opts") && !is.na(opts[2])), opts[2], "USDCAD"))
-granularity = ifelse((exists("opts") && !is.na(opts[3])), opts[3], "M")
+startDate = ifelse((exists("opts") && !is.na(opts[1])), opts[1], "2014-01-01")
+instrument = sub("(\\w{3})(\\w{3})", "\\1_\\2", ifelse((exists("opts") && !is.na(opts[2])), opts[2], "EURUSD"))
+granularity = ifelse((exists("opts") && !is.na(opts[3])), opts[3], "D")
 type = ifelse((exists("opts") && !is.na(opts[4])), opts[4], "analysis")
 
-oandaCurrencies = read.table("oandaCurrencies.csv", sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
+oandaCurrencies = read.table("app/data/oandaCurrencies.csv", sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
 isReverted = nrow(oandaCurrencies[oandaCurrencies$instrument == instrument,]) <= 0
 instrument = ifelse(isReverted,sub("([a-z]{3})_([a-z]{3})", "\\2_\\1",instrument,ignore.case=TRUE),instrument)
 
@@ -98,7 +96,7 @@ if(type == "analysis"){
 	patterns$Time = 0
 	patterns$Time = out$Time
 
-	write.csv(cbind(out,trend,patterns), quote = FALSE, row.names = FALSE, file = paste("candles/", cross, "-", granularity, ".csv", sep = ""), fileEncoding = "UTF-8")
+	write.csv(cbind(out,trend,patterns), quote = FALSE, row.names = FALSE, file = paste("app/data/candles/", cross, "-", granularity, ".csv", sep = ""), fileEncoding = "UTF-8")
 }
 if(type == "volatility"){
 	crosses = read.csv("availableCrosses.csv", sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
@@ -110,7 +108,9 @@ if(type == "volatility"){
 	colnames(tmp) = c("cross","volatility")
 	vol = as.data.frame(tmp)
 
-	write.csv(as.matrix(vol), quote = FALSE, row.names = FALSE, file = "volatility.csv", fileEncoding = "UTF-8")
+	write.csv(as.matrix(vol), quote = FALSE, row.names = FALSE, file = "app/data/volatility.csv", fileEncoding = "UTF-8")
 }
 
-quit()
+if(length(opts)>0){
+	quit()
+}

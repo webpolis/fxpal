@@ -10,3 +10,4 @@ app/data/candles/**
 !app/data/candles/.empty
 !www/config.xml
 !www/res
+server/scripts/.Rapp.history
