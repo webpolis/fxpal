@@ -57,7 +57,7 @@ TradingStrategy <- function(strategy, mktdata,param1=NA,param2=NA,param3=NA){
 
   switch(strategy, CCI={
     cci <- CCI(HLC(mktdata),n=param1)
-    signal <- apply(cci,1,function (x) {if(is.na(x["cci"])){ return (0) } else { if(x["cci"]>100){return (1)} else if(x["cci"]<-100) {return (-1)}else{ return(0)}}})
+    signal <- apply(cci,1,function (x) {if(is.na(x["cci"])){ return (0) } else { if(x["cci"]>100){return (1)} else if(x["cci"]<(-100)) {return (-1)}else{ return(0)}}})
   }, MACD={
     macd <- MACD(Cl(mktdata),param1,param2,param3,maType=list(list(EMA),list(EMA),list(SMA)))
     signal <- apply(macd,1,function (x) { if(is.na(x["macd"]) | is.na(x["signal"])){ return (0) } else { if(x["macd"]>0 & x["signal"]>0){return (1)} else if(x["macd"]<0 & x["signal"]<0) {return (-1)}else{ return(0)}}})
@@ -199,4 +199,13 @@ testStrategy <- function(instrument,granularity,count,strategy,param1=NA,param2=
 
   dev.new()
   charts.PerformanceSummary(finalReturns,main=paste(strategy,"- Out of Sample"),geometric=FALSE)
+}
+
+getSignals <- function(){
+  # CCI+MACD
+  tmp = cbind(out, CCI(HLC(out),n=7))
+  tmp = cbind(tmp, MACD(Cl(tmp),4,5,5,maType=list(list(EMA),list(EMA),list(SMA))))
+  buysell = apply(tmp, 1, function(x){if(is.na(x["cci"])|is.na(x["macd"])|is.na(x["signal"])){x["buysell"]=0}else if(x["cci"]>100 & x["macd"]>0 & x["signal"]>0){x["buysell"]=1}else if(x["cci"]<(-100) & x["macd"]<0 & x["signal"]<0){x["buysell"]=-1}else{x["buysell"]=0}})
+  
+  ret = cbind(tmp,buysell)
 }

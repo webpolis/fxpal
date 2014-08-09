@@ -75,10 +75,10 @@ server.get('/api/portfolio', function respond(req, res, next) {
     });
     next();
 });
-server.get('/api/candles/:cross/:type/:start/:granularity', function respond(req, res, next) {
+server.get('/api/candles/:cross/:start/:granularity', function respond(req, res, next) {
     res.setHeader('content-type', 'text/csv');
     var cross = req.params.cross.replace(/([a-z]{3})([a-z]{3})/gi, '$1_$2').toUpperCase();
-    var outFile = [__dirname + '/../app/data/candles/', cross, '-', req.params.type, '-', req.params.granularity, '.csv'].join('');
+    var outFile = [__dirname + '/../app/data/candles/', cross, '-', req.params.granularity, '.csv'].join('');
     var sinceMinutes = null;
     switch (req.params.granularity.toUpperCase()) {
         case 'H1':
@@ -102,7 +102,7 @@ server.get('/api/candles/:cross/:type/:start/:granularity', function respond(req
     }
     // only generate file if it's older than XX minutes
     if (isOutdatedFile(outFile, sinceMinutes)) {
-        sh.run(['Rscript', __dirname + '/scripts/candlesticks.r', req.params.start, req.params.cross.toUpperCase(), req.params.granularity.toUpperCase(), req.params.type.toLowerCase()].join(' '));
+        sh.run(['Rscript', __dirname + '/scripts/candlesticks.r', req.params.start, req.params.cross.toUpperCase(), req.params.granularity.toUpperCase(), 'analysis'].join(' '));
     }
     fs.readFile(outFile, {}, function(err, data) {
         res.send(data);

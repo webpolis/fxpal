@@ -10,7 +10,7 @@ opts = commandArgs(trailingOnly = TRUE)
 startDate = ifelse((exists("opts") && !is.na(opts[1])), opts[1], "2014-07-24")
 instrument = sub("(\\w{3})(\\w{3})", "\\1_\\2", ifelse((exists("opts") && !is.na(opts[2])), opts[2], "USDCAD"))
 granularity = ifelse((exists("opts") && !is.na(opts[3])), opts[3], "M")
-type = ifelse((exists("opts") && !is.na(opts[4])), opts[4], "trend")
+type = ifelse((exists("opts") && !is.na(opts[4])), opts[4], "analysis")
 
 oandaCurrencies = read.table("oandaCurrencies.csv", sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
 isReverted = nrow(oandaCurrencies[oandaCurrencies$instrument == instrument,]) <= 0
@@ -74,46 +74,31 @@ getVolatility <- function(crosses){
 	ret = xts()
 	for(cross in crosses){
 		tmp = getCandles(cross,"H1",count = 8)
-		vol = volatility(n=6,calc="garman.klass",tmp[,c("Open","High","Low","Close")])
+		vol = volatility(n=6,calc="garman.klass",OHLC(tmp))
 		names(vol) = c(cross)
 		ret = merge(vol,ret)
 	}
 	ret = na.omit(ret)
 	return(ret[nrow(ret),])
 }
-
-if(type == "trend"){
-	out = getCandles(instrument, granularity, startDate)
-	trend = TrendDetectionChannel(out, n = 20, DCSector = .25)
-	trend$Time = 0
-	trend$Time = index(out)
-	trend = na.omit(trend)
-
+if(type == "analysis"){
 	cross = instrument
 
 	if(isReverted){
 		cross = ifelse(isReverted,sub("([a-z]{3})_([a-z]{3})", "\\2_\\1",cross,ignore.case=TRUE),cross)
 	}
-
-	write.csv(trend, quote = FALSE, row.names = FALSE, file = paste("candles/", cross, "-trend-", granularity, ".csv", sep = ""), fileEncoding = "UTF-8")
-}
-# match candlesticks patterns
-if(type == "patterns"){
 	out = getCandles(instrument, granularity, startDate)
+	ohlc = OHLC(out)
+
+	trend = TrendDetectionChannel(ohlc, n = 20, DCSector = .25)
+	trend$Time = 0
+	trend$Time = index(out)
 	
-	if(exists("out")){
-		patterns = getCandlestickPatterns("out")
-		patterns$Time = 0
-		patterns$Time = index(out)
-		patterns = na.omit(patterns)
-		cross = instrument
+	patterns = getCandlestickPatterns("ohlc")
+	patterns$Time = 0
+	patterns$Time = out$Time
 
-		if(isReverted){
-			cross = ifelse(isReverted,sub("([a-z]{3})_([a-z]{3})", "\\2_\\1",cross,ignore.case=TRUE),cross)
-		}
-
-		write.csv(patterns, quote = FALSE, row.names = FALSE, file = paste("candles/", cross, "-patterns-", granularity, ".csv", sep = ""), fileEncoding = "UTF-8")
-	}
+	write.csv(cbind(out,trend,patterns), quote = FALSE, row.names = FALSE, file = paste("candles/", cross, "-", granularity, ".csv", sep = ""), fileEncoding = "UTF-8")
 }
 if(type == "volatility"){
 	crosses = read.csv("availableCrosses.csv", sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")

@@ -498,54 +498,47 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                 var linearRegresssion = regression('exponential', $scope.optsHighchartsCross.series[0].data);
                 $scope.optsHighchartsCross.series[1].pointInterval = period.pointInterval;
                 $scope.optsHighchartsCross.series[1].data = linearRegresssion.points;
-                $scope.trendCandlestickAnalysis(optsOanda);
-                $scope.patternCandlestickAnalysis(optsOanda);
+                $scope.candlesticksAnalysis(optsOanda);
             }
         });
     };
-    $scope.trendCandlestickAnalysis = function(optsOanda) {
+    $scope.candlesticksAnalysis = function(optsOanda) {
         $scope.optsHighchartsCross.series[2].data = [];
-        // retrieve trend information
-        csv2json.csv($scope.config.urls.api + ['candles', [$scope.selected.cross1, $scope.selected.cross2].join(''), 'trend', optsOanda.start.replace(/^([^T]+).*$/gi, '$1'), optsOanda.granularity].join('/'), function(ret) {
-            if (angular.isArray(ret)) {
-                $timeout(function() {
-                    $scope.optsHighchartsCross.series[2].data = [];
-                    var prev = null;
-                    angular.forEach(ret, function(row, k) {
-                        if (row.Trend === 'NA' ||  row.NoTrend === '1') {
-                            return;
-                        }
-                        var up = row.UpTrend === '1';
-                        if (prev !== null) {
-                            if ((up && prev.title === 'UP') || (!up && prev.title === 'DOWN')) {
-                                return;
-                            }
-                        }
-                        var time = moment.unix(parseInt(row.Time)).utc();
-                        prev = {
-                            title: up ? 'UP' : 'DOWN',
-                            text: up ? 'UP' : 'DOWN',
-                            x: time.valueOf()
-                        };
-                        $scope.optsHighchartsCross.series[2].data.push(prev);
-                    });
-                }, 50);
-            }
-        });
-    };
-    $scope.patternCandlestickAnalysis = function(optsOanda) {
         $scope.optsHighchartsCross.series[3].data = [];
-        // retrieve trend information
+        // retrieve candles information
         csv2json.csv('data/candlePatterns.csv', function(patterns) {
             $scope.data.patterns = patterns.map(function(pat) {
                 pat.Direction = parseInt(pat.Direction);
                 return pat;
             });
-            csv2json.csv($scope.config.urls.api + ['candles', [$scope.selected.cross1, $scope.selected.cross2].join(''), 'patterns', optsOanda.start.replace(/^([^T]+).*$/gi, '$1'), optsOanda.granularity].join('/'), function(ret) {
+            csv2json.csv($scope.config.urls.api + ['candles', [$scope.selected.cross1, $scope.selected.cross2].join(''), optsOanda.start.replace(/^([^T]+).*$/gi, '$1'), optsOanda.granularity].join('/'), function(ret) {
                 if (angular.isArray(ret)) {
                     $timeout(function() {
+                        $scope.optsHighchartsCross.series[2].data = [];
                         $scope.optsHighchartsCross.series[3].data = [];
                         angular.forEach(ret, function(row, k) {
+                            var time = moment.unix(parseInt(row.Time)).utc();
+                            // render trend signal
+                            var prevTrendSignal = null,
+                                renderTrendSignal = true;
+                            if (row.Trend === 'NA' ||  row.NoTrend === '1') {
+                                renderTrendSignal = false;
+                            }
+                            var up = row.UpTrend === '1';
+                            if (prevTrendSignal !== null) {
+                                if ((up && prevTrendSignal.title === 'UP') || (!up && prevTrendSignal.title === 'DOWN')) {
+                                    renderTrendSignal = false;
+                                }
+                            }
+                            if (renderTrendSignal) {
+                                prevTrendSignal = {
+                                    title: up ? 'UP' : 'DOWN',
+                                    text: up ? 'UP' : 'DOWN',
+                                    x: time.valueOf()
+                                };
+                                $scope.optsHighchartsCross.series[2].data.push(prevTrendSignal);
+                            }
+                            // render patterns
                             var patterns = [],
                                 hasPattern = false;
                             for (var p in row) {
@@ -566,16 +559,14 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                                     }
                                 }
                             }
-                            if (!hasPattern) {
-                                return;
+                            if (hasPattern) {
+                                $scope.optsHighchartsCross.series[3].data.push({
+                                    title: ' ',
+                                    x: time.valueOf(),
+                                    text: 'Patterns detected',
+                                    patterns: patterns
+                                });
                             }
-                            var time = moment.unix(row.Time).utc();
-                            $scope.optsHighchartsCross.series[3].data.push({
-                                title: ' ',
-                                x: time.valueOf(),
-                                text: 'Patterns detected',
-                                patterns: patterns
-                            });
                         });
                     }, 50);
                 }
