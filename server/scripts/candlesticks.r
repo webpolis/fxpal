@@ -17,7 +17,7 @@ oandaCurrencies = read.table(paste(dataPath,"oandaCurrencies.csv",sep=""), sep =
 isReverted = nrow(oandaCurrencies[oandaCurrencies$instrument == instrument,]) <= 0
 instrument = ifelse(isReverted,sub("([a-z]{3})_([a-z]{3})", "\\2_\\1",instrument,ignore.case=TRUE),instrument)
 
-getCandles <- function(instrument, granularity, startDate = NA, count = 500){
+getCandles <- function(instrument, granularity, startDate = NA, count = 600){
 	oandaToken = 'ce6b72e81af59be0bbc90152cad8d731-03d41860ed7849e3c4555670858df786'
 	urlPractice = paste("https://api-fxpractice.oanda.com/v1/candles?instrument=", instrument, "&granularity=", granularity, "&weeklyAlignment=Monday", "&candleFormat=bidask", sep = "")
 
@@ -29,7 +29,7 @@ getCandles <- function(instrument, granularity, startDate = NA, count = 500){
 
 	print(paste("requesting ",urlPractice))
 
-	json = fromJSON(getURL(url = urlPractice, httpheader = c(Authorization = paste("Bearer ", oandaToken))))
+	json = fromJSON(getURL(url = urlPractice, httpheader = c("User-Agent" = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:31.0) Gecko/20100101 Firefox/31.0", Authorization = paste("Bearer ", oandaToken))))
 
 	ret = NULL
 	for(c in 1:length(json$candles)){

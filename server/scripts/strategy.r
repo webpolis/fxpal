@@ -18,6 +18,11 @@ TradingStrategy <- function(strategy, data,param1=NA,param2=NA,param3=NA){
   }, MACD={
     macd <- MACD(Cl(data),param1,param2,param3,maType=list(list(EMA),list(EMA),list(SMA)))
     signal <- apply(macd,1,function (x) { if(is.na(x["macd"]) | is.na(x["signal"])){ return (0) } else { if(x["macd"]>0 & x["signal"]>0){return (1)} else if(x["macd"]<0 & x["signal"]<0) {return (-1)}else{ return(0)}}})
+  }, EMA={
+    ema1 <- EMA(Cl(data),param1)
+    ema2 <- EMA(Cl(data),param2)
+    emas <- ema1 / ema2
+    signal <- apply(emas,1,function (x) { if(is.na(x)){ return (0) } else { if(x>1){return (1)} else {return (-1)}}})
   })
 
   runName <- paste(strategy,param1,param2,param3,sep=",")
@@ -59,6 +64,18 @@ RunIterativeStrategy <- function(data, strategy = NA){
         }
       }
     }
+  }, EMA={
+    for(paramA in 1:12) {
+      for(paramB in 1:12) {
+        runResult <- TradingStrategy(strategy, data,paramA,paramB)
+        if(firstRun){
+          firstRun <- FALSE
+          results <- runResult
+        } else {
+          results <- cbind(results,runResult)
+        }
+      }
+    }
   })
 
   return(results)
@@ -72,19 +89,18 @@ CalculatePerformanceMetric <- function(returns,metric){
   if(length(grep("sharperatio",metric,ignore.case=T))>0){
     periods = 252
 
-    if(length(grep("[a-z]\\d+",metric,ignore.case=T))>0){
-      unit = gsub("([a-z])(\\d+)","\\1","H1",ignore.case=T)
-      num = as.integer(gsub("([a-z])(\\d+)","\\1","H1",ignore.case=T))
+    if(length(grep("[a-z]\\d+",granularity,ignore.case=T))>0){
+      unit = gsub("([a-z])(\\d+)","\\1",granularity,ignore.case=T)
+      num = as.integer(gsub("([a-z])(\\d+)","\\2",granularity,ignore.case=T))
       switch(unit, H={
           periods=8760/num
       }, M={
-          periods=525600/num  
+          periods=525600/num
       })
       if(unit=="M" & (is.na(num)|is.null(num))){
         periods = 12
       }
     }
-
     metricData <- as.matrix(metricFunction(returns,scale=periods))
   }else{
     metricData <- as.matrix(metricFunction(returns))
@@ -135,8 +151,7 @@ FindOptimumStrategy <- function(trainingData, strategy = NA){
   return (pTab)
 }
 #1
-trainStrategy <- function(instrument,granularity,strategy){
-  data = getCandles(instrument,granularity,count=600)
+trainStrategy <- function(data, instrument,granularity,strategy){
   startDate = index(data[1,])
   ##endDate = index(data[ceiling(nrow(data)/2),])
   endDate = index(data[nrow(data),])
@@ -144,8 +159,7 @@ trainStrategy <- function(instrument,granularity,strategy){
   pTab <- FindOptimumStrategy(trainingData,strategy) #pTab is the performance table of the various parameters tested
 }
 #2
-testStrategy <- function(instrument,granularity,count,strategy,param1=NA,param2=NA,param3=NA){
-  data = getCandles(instrument,granularity,count=count)
+testStrategy <- function(data, instrument,granularity,count,strategy,param1=NA,param2=NA,param3=NA){
   #sampleStartDate = index(data[ceiling(nrow(data)/2)+1,])
   sampleStartDate = index(data[1,])
   testData <- window(data, start = sampleStartDate)
@@ -158,7 +172,7 @@ testStrategy <- function(instrument,granularity,count,strategy,param1=NA,param2=
   charts.PerformanceSummary(finalReturns,main=paste(strategy,"- data of Sample"),geometric=FALSE)
 }
 
-getSignals <- function(data=NA){
+getSignals <- function(data){
   # CCI+MACD
   tmp = cbind(data, CCI(HLC(data),n=7))
   tmp = cbind(tmp, MACD(Cl(tmp),4,5,5,maType=list(list(EMA),list(EMA),list(SMA))))
