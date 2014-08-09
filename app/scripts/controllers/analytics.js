@@ -516,16 +516,15 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                     $timeout(function() {
                         $scope.optsHighchartsCross.series[2].data = [];
                         $scope.optsHighchartsCross.series[3].data = [];
+                        var prevTrendSignal = null;
                         angular.forEach(ret, function(row, k) {
                             var time = moment.unix(parseInt(row.Time)).utc();
                             // render trend signal
-                            var prevTrendSignal = null,
-                                renderTrendSignal = true;
+                            var renderTrendSignal = true,
+                                up = row.UpTrend === '1';
                             if (row.Trend === 'NA' ||  row.NoTrend === '1') {
                                 renderTrendSignal = false;
-                            }
-                            var up = row.UpTrend === '1';
-                            if (prevTrendSignal !== null) {
+                            } else if (prevTrendSignal !== null) {
                                 if ((up && prevTrendSignal.title === 'UP') || (!up && prevTrendSignal.title === 'DOWN')) {
                                     renderTrendSignal = false;
                                 }
@@ -543,7 +542,8 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                                 hasPattern = false;
                             for (var p in row) {
                                 row[p] = parseInt(row[p]);
-                                if (!(/time/i.test(p))) {
+                                var reCol = new RegExp('Open|High|Low|Close|Volume|UpTrend|NoTrend|DownTrend|Trend|Time', 'i');
+                                if (!(reCol.test(p))) {
                                     if (!hasPattern && row[p] === 1) {
                                         hasPattern = true;
                                     }
