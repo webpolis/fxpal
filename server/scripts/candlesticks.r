@@ -8,22 +8,22 @@ library("rjson")
 library("candlesticks")
 
 opts = commandArgs(trailingOnly = TRUE)
-startDate = ifelse((exists("opts") && !is.na(opts[1])), opts[1], "2014-01-01")
-instrument = sub("(\\w{3})(\\w{3})", "\\1_\\2", ifelse((exists("opts") && !is.na(opts[2])), opts[2], "EURUSD"))
-granularity = ifelse((exists("opts") && !is.na(opts[3])), opts[3], "D")
-type = ifelse((exists("opts") && !is.na(opts[4])), opts[4], "analysis")
+startDate = ifelse((length(opts)>0 && !is.na(opts[1])), opts[1], NA)
+instrument = sub("(\\w{3})(\\w{3})", "\\1_\\2", ifelse((length(opts)>0 && !is.na(opts[2])), opts[2], "EURUSD"))
+granularity = ifelse((length(opts)>0 && !is.na(opts[3])), opts[3], "H1")
+type = ifelse((length(opts)>0 && !is.na(opts[4])), opts[4], "analysis")
 
 oandaCurrencies = read.table(paste(dataPath,"oandaCurrencies.csv",sep=""), sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
 isReverted = nrow(oandaCurrencies[oandaCurrencies$instrument == instrument,]) <= 0
 instrument = ifelse(isReverted,sub("([a-z]{3})_([a-z]{3})", "\\2_\\1",instrument,ignore.case=TRUE),instrument)
 
-getCandles <- function(instrument, granularity, startDate = NA, count = NA){
+getCandles <- function(instrument, granularity, startDate = NA, count = 500){
 	oandaToken = 'ce6b72e81af59be0bbc90152cad8d731-03d41860ed7849e3c4555670858df786'
 	urlPractice = paste("https://api-fxpractice.oanda.com/v1/candles?instrument=", instrument, "&granularity=", granularity, "&weeklyAlignment=Monday", "&candleFormat=bidask", sep = "")
+
 	if(!is.na(startDate)){
 		urlPractice = paste(urlPractice,"&start=", startDate,sep="")
-	}
-	if(!is.na(count)){
+	}else if(!is.na(count)){
 		urlPractice = paste(urlPractice,"&count=", count,sep="")
 	}
 
