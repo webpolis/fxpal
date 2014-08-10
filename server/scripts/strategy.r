@@ -8,21 +8,21 @@ library("PerformanceAnalytics")
 
 TradingStrategy <- function(strategy, data,param1=NA,param2=NA,param3=NA){
   tradingreturns = NULL
-  returns = CalculateReturns(Cl(data))
+  returns = (Cl(data)/Op(data))-1
   runName = NULL
   signal = 0
 
   switch(strategy, CCI={
-    cci <- CCI(HLC(data),n=param1)
+    cci <- CCI(Op(data),n=param1)
     signal <- apply(cci,1,function (x) {if(is.na(x["cci"])){ return (0) } else { if(x["cci"]>100){return (1)} else if(x["cci"]<(-100)) {return (-1)}else{ return(0)}}})
   }, MACD={
-    macd <- MACD(Cl(data),param1,param2,param3,maType=list(list(EMA),list(EMA),list(SMA)))
+    macd <- MACD(Op(data),nFast=param1,nSlow=param2,nSig=param3,maType=list(list(EMA),list(EMA),list(SMA)))
     signal <- apply(macd,1,function (x) { if(is.na(x["macd"]) | is.na(x["signal"])){ return (0) } else { if(x["macd"]>0 & x["signal"]>0){return (1)} else if(x["macd"]<0 & x["signal"]<0) {return (-1)}else{ return(0)}}})
   }, EMA={
-    ema1 <- EMA(Cl(data),param1)
-    ema2 <- EMA(Cl(data),param2)
+    ema1 <- EMA(Op(data),n=param1)
+    ema2 <- EMA(Op(data),n=param2)
     emas <- ema1 / ema2
-    signal <- apply(emas,1,function (x) { if(is.na(x)){ return (0) } else { if(x>1){return (1)} else {return (-1)}}})
+    signal <- apply(emas,1,function (x) {if(is.na(x)){ return (0) } else { if(x>1){return (1)} else {return (-1)}}})
   })
 
   runName <- paste(strategy,param1,param2,param3,sep=",")
@@ -175,7 +175,7 @@ testStrategy <- function(data, instrument,granularity,count,strategy,param1=NA,p
 getSignals <- function(data){
   # CCI+MACD
   tmp = cbind(data, CCI(HLC(data),n=7))
-  tmp = cbind(tmp, MACD(Cl(tmp),4,5,5,maType=list(list(EMA),list(EMA),list(SMA))))
+  tmp = cbind(tmp, MACD(Op(tmp),nFast=12,nSlow=4,nSig=7,maType=list(list(EMA),list(EMA),list(SMA))))
   buysell = as.xts(apply(tmp, 1, function(x){if(is.na(x["cci"])|is.na(x["macd"])|is.na(x["signal"])){x["buysell"]=0}else if(x["cci"]>100 & x["macd"]>0 & x["signal"]>0){x["buysell"]=1}else if(x["cci"]<(-100) & x["macd"]<0 & x["signal"]<0){x["buysell"]=-1}else{x["buysell"]=0}}))
   names(buysell) = c("CCI+MACD")
 
