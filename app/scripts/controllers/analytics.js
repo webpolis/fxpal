@@ -336,6 +336,9 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             case 6:
                 startWeekDate = moment().add('week', maxWeeks).startOf('week').format('MM-DD-YYYY');
                 break;
+            case 0:
+                startWeekDate = moment().add('week', 0).startOf('week').format('MM-DD-YYYY');
+                break;
             default:
                 startWeekDate = moment().subtract('week', maxWeeks).startOf('week').format('MM-DD-YYYY');
                 break;

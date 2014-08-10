@@ -159,7 +159,7 @@ trainStrategy <- function(data, instrument,granularity,strategy){
   pTab <- FindOptimumStrategy(trainingData,strategy) #pTab is the performance table of the various parameters tested
 }
 #2
-testStrategy <- function(data, instrument,granularity,count,strategy,param1=NA,param2=NA,param3=NA){
+testStrategy <- function(data, instrument,strategy,param1=NA,param2=NA,param3=NA){
   #sampleStartDate = index(data[ceiling(nrow(data)/2)+1,])
   sampleStartDate = index(data[1,])
   testData <- window(data, start = sampleStartDate)
