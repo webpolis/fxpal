@@ -46,6 +46,13 @@ angular.module('aifxApp', ['ngAnimate', 'ngCookies', 'ngResource', 'ngRoute', 'n
                 controller: 'portfolioController'
             }
         }
+    }).state('app.about', {
+        url: '/about',
+        views: {
+            'menuContent': {
+                templateUrl: 'views/about.html'
+            }
+        }
     });
     $urlRouterProvider.otherwise('/app/main');
 });
