@@ -337,6 +337,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                 startWeekDate = moment().add('week', maxWeeks).startOf('week').format('MM-DD-YYYY');
                 break;
             case 0:
+            case 1:
                 startWeekDate = moment().add('week', 0).startOf('week').format('MM-DD-YYYY');
                 break;
             default:
@@ -458,8 +459,6 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         });
     };
     $scope.chart = function(period) {
-        $scope.optsHighchartsCross.series[0].data = [];
-        $scope.optsHighchartsCross.series[1].data = [];
         var start = null;
         switch (period.label) {
             case 'Intraday':
@@ -492,30 +491,20 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             start: start,
             end: moment().utc().format($scope.utils.rfc3339)
         };
-        $scope.api.getCandlesticks(optsOanda).then(function(ret) {
-            $scope.optsHighchartsCross.series[0].data = [];
-            $scope.optsHighchartsCross.series[1].data = [];
-            if (angular.isDefined(ret.data) && angular.isArray(ret.data.candles)) {
-                angular.forEach(ret.data.candles, function(candle) {
-                    var time = moment(candle.time).valueOf();
-                    var open = parseFloat(ret.isRevertedCross ? parseFloat(1 / candle.openBid).toFixed(6) : candle.openBid.toFixed(6));
-                    var close = parseFloat(ret.isRevertedCross ? parseFloat(1 / candle.closeBid).toFixed(6) : candle.closeBid.toFixed(6));
-                    var high = parseFloat(ret.isRevertedCross ? parseFloat(1 / candle.lowBid).toFixed(6) : candle.highBid.toFixed(6));
-                    var low = parseFloat(ret.isRevertedCross ? parseFloat(1 / candle.highBid).toFixed(6) : candle.lowBid.toFixed(6));
-                    var c = new Array(time, open, high, low, close);
-                    $scope.optsHighchartsCross.series[0].data.push(c);
-                });
-                $scope.optsHighchartsCross.series[0].pointInterval = period.pointInterval;
-                var linearRegresssion = regression('exponential', $scope.optsHighchartsCross.series[0].data);
-                $scope.optsHighchartsCross.series[1].pointInterval = period.pointInterval;
-                $scope.optsHighchartsCross.series[1].data = linearRegresssion.points;
-                $scope.candlesticksAnalysis(optsOanda);
-            }
-        });
+        $scope.candlesticksAnalysis(optsOanda, period);
     };
-    $scope.candlesticksAnalysis = function(optsOanda) {
+    $scope.resetChart = function() {
+        $scope.optsHighchartsCross.series[0].data = [];
+        $scope.optsHighchartsCross.series[1].data = [];
         $scope.optsHighchartsCross.series[2].data = [];
         $scope.optsHighchartsCross.series[3].data = [];
+    };
+    $scope.candlesticksAnalysis = function(optsOanda, period) {
+        $ionicLoading.show({
+            template: 'Loading...'
+        });
+        $scope.resetChart();
+        var isRevertedCross = $scope.api.isRevertedCross($scope.selected.cross1, $scope.selected.cross2);
         // retrieve candles information
         csv2json.csv('data/candlePatterns.csv', function(patterns) {
             $scope.data.patterns = patterns.map(function(pat) {
@@ -524,62 +513,78 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             });
             csv2json.csv($scope.config.urls.api + ['candles', [$scope.selected.cross1, $scope.selected.cross2].join(''), optsOanda.start.replace(/^([^T]+).*$/gi, '$1'), optsOanda.granularity].join('/'), function(ret) {
                 if (angular.isArray(ret)) {
-                    $timeout(function() {
-                        $scope.optsHighchartsCross.series[2].data = [];
-                        $scope.optsHighchartsCross.series[3].data = [];
-                        var prevTrendSignal = null;
-                        angular.forEach(ret, function(row, k) {
-                            var time = moment.unix(parseInt(row.Time)).utc();
-                            // render trend signal
-                            var renderTrendSignal = true,
-                                up = row.UpTrend === '1';
-                            if (row.Trend === 'NA' ||  row.NoTrend === '1') {
+                    var prevTrendSignal = null,
+                        candles = [],
+                        trends = [],
+                        detectedPatterns = [];
+                    angular.forEach(ret, function(row, k) {
+                        var time = moment.unix(parseInt(row.Time)).valueOf();
+                        // render candles
+                        var open = parseFloat(isRevertedCross ? parseFloat(1 / row.Open).toFixed(6) : parseFloat(row.Open).toFixed(6));
+                        var close = parseFloat(isRevertedCross ? parseFloat(1 / row.Close).toFixed(6) : parseFloat(row.Close).toFixed(6));
+                        var high = parseFloat(isRevertedCross ? parseFloat(1 / row.Low).toFixed(6) : parseFloat(row.High).toFixed(6));
+                        var low = parseFloat(isRevertedCross ? parseFloat(1 / row.High).toFixed(6) : parseFloat(row.Low).toFixed(6));
+                        var c = new Array(time, open, high, low, close);
+                        candles.push(c);
+                        // render trend signal
+                        var renderTrendSignal = true,
+                            up = row.UpTrend === '1';
+                        if (row.Trend === 'NA' ||  row.NoTrend === '1') {
+                            renderTrendSignal = false;
+                        } else if (prevTrendSignal !== null) {
+                            if ((up && prevTrendSignal.title === 'UP') || (!up && prevTrendSignal.title === 'DOWN')) {
                                 renderTrendSignal = false;
-                            } else if (prevTrendSignal !== null) {
-                                if ((up && prevTrendSignal.title === 'UP') || (!up && prevTrendSignal.title === 'DOWN')) {
-                                    renderTrendSignal = false;
+                            }
+                        }
+                        if (renderTrendSignal) {
+                            prevTrendSignal = {
+                                title: up ? 'UP' : 'DOWN',
+                                text: up ? 'UP' : 'DOWN',
+                                x: time.valueOf()
+                            };
+                            trends.push(prevTrendSignal);
+                        }
+                        // render patterns
+                        var patterns = [],
+                            hasPattern = false;
+                        for (var p in row) {
+                            row[p] = parseInt(row[p]);
+                            var reCol = new RegExp('Open|High|Low|Close|Volume|UpTrend|NoTrend|DownTrend|Trend|Time', 'i');
+                            if (!(reCol.test(p))) {
+                                if (!hasPattern && row[p] === 1) {
+                                    hasPattern = true;
                                 }
-                            }
-                            if (renderTrendSignal) {
-                                prevTrendSignal = {
-                                    title: up ? 'UP' : 'DOWN',
-                                    text: up ? 'UP' : 'DOWN',
-                                    x: time.valueOf()
-                                };
-                                $scope.optsHighchartsCross.series[2].data.push(prevTrendSignal);
-                            }
-                            // render patterns
-                            var patterns = [],
-                                hasPattern = false;
-                            for (var p in row) {
-                                row[p] = parseInt(row[p]);
-                                var reCol = new RegExp('Open|High|Low|Close|Volume|UpTrend|NoTrend|DownTrend|Trend|Time', 'i');
-                                if (!(reCol.test(p))) {
-                                    if (!hasPattern && row[p] === 1) {
-                                        hasPattern = true;
-                                    }
-                                    if (row[p] === 1) {
-                                        var pat = {};
-                                        var patName = p.replace(/\.\d+/g, '').replace(/([A-Z])|\./g, ' $1').trim().replace(/\s{1,}/g, ' ');
-                                        var originalPattern = jsonPath.eval($scope.data.patterns, '$.[?(@.Name == "' + patName + '")]')[0] ||  null;
-                                        if (originalPattern !== null) {
-                                            patterns.push(originalPattern);
-                                        } else {
-                                            console.log(patName);
-                                        }
+                                if (row[p] === 1) {
+                                    var pat = {};
+                                    var patName = p.replace(/\.\d+/g, '').replace(/([A-Z])|\./g, ' $1').trim().replace(/\s{1,}/g, ' ');
+                                    var originalPattern = jsonPath.eval($scope.data.patterns, '$.[?(@.Name == "' + patName + '")]')[0] ||  null;
+                                    if (originalPattern !== null) {
+                                        patterns.push(originalPattern);
+                                    } else {
+                                        console.log(patName);
                                     }
                                 }
                             }
-                            if (hasPattern) {
-                                $scope.optsHighchartsCross.series[3].data.push({
-                                    title: ' ',
-                                    x: time.valueOf(),
-                                    text: 'Patterns detected',
-                                    patterns: patterns
-                                });
-                            }
-                        });
-                    }, 50);
+                        }
+                        if (hasPattern) {
+                            detectedPatterns.push({
+                                title: ' ',
+                                x: time.valueOf(),
+                                text: 'Patterns detected',
+                                patterns: patterns
+                            });
+                        }
+                    });
+                    $scope.$apply(function() {
+                        $scope.optsHighchartsCross.series[0].data = candles;
+                        $scope.optsHighchartsCross.series[0].pointInterval = period.pointInterval;
+                        var linearRegresssion = regression('exponential', $scope.optsHighchartsCross.series[0].data);
+                        $scope.optsHighchartsCross.series[1].pointInterval = period.pointInterval;
+                        $scope.optsHighchartsCross.series[1].data = linearRegresssion.points;
+                        $scope.optsHighchartsCross.series[2].data = trends;
+                        $scope.optsHighchartsCross.series[3].data = detectedPatterns;
+                        $ionicLoading.hide();
+                    });
                 }
             });
         });
