@@ -72,7 +72,8 @@ angular.module('aifxApp').service('api', function api($http, $q) {
             var url = urlRate.replace(/\{\{params\}\}/gi, params.join('&'));
             $http.get(url, {
                 headers: {
-                    'Authorization': 'Bearer ' + oandaToken
+                    'Authorization': 'Bearer ' + oandaToken,
+                    'Accept': 'application/json'
                 },
                 cache: true
             }).success(function(data) {

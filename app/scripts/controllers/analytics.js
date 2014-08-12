@@ -187,33 +187,43 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         }
     };
     $scope.computeVolatility = function() {
+        $scope.optsHighchartsVolatility.series[0].data = [];
+        var tmp = [];
         $ionicLoading.show({
             template: 'Loading...'
         });
         csv2json.csv($scope.config.urls.api + 'candles/volatility', function(data) {
             $scope.selected.volatility = data;
             angular.forEach($scope.selected.volatility, function(cross) {
-                $scope.optsHighchartsVolatility.series[0].data.push({
+                tmp.push({
                     name: cross.cross.replace(/_/g, '/'),
                     color: $scope.utils.getRandomColorCode(),
                     y: parseFloat(cross.volatility)
                 });
             });
+            $scope.$apply(function() {
+                $scope.optsHighchartsVolatility.series[0].data = tmp;
+            });
             $ionicLoading.hide();
         });
     };
     $scope.computeStrength = function() {
+        $scope.optsHighchartsStrength.series[0].data = [];
+        var tmp = [];
         $ionicLoading.show({
             template: 'Loading...'
         });
         csv2json.csv($scope.config.urls.api + ['calendar', 'strength', 52].join('/'), function(data) {
             $scope.selected.strength = data;
             angular.forEach($scope.selected.strength, function(row) {
-                $scope.optsHighchartsStrength.series[0].data.push({
+                tmp.push({
                     name: row.country,
                     color: $scope.utils.getRandomColorCode(),
                     y: parseFloat(row.strength)
                 });
+            });
+            $scope.$apply(function() {
+                $scope.optsHighchartsStrength.series[0].data = tmp;
             });
             $ionicLoading.hide();
         });
