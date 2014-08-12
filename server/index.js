@@ -81,6 +81,9 @@ server.get('/api/candles/:cross/:start/:granularity', function respond(req, res,
     var outFile = [__dirname + '/../app/data/candles/', cross, '-', req.params.granularity, '.csv'].join('');
     var sinceMinutes = null;
     switch (req.params.granularity.toUpperCase()) {
+        case 'M15':
+            sinceMinutes = 15;
+            break;
         case 'H1':
             sinceMinutes = 60;
             break;

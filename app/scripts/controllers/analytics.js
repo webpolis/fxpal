@@ -341,7 +341,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                 startWeekDate = moment().add('week', 0).startOf('week').format('MM-DD-YYYY');
                 break;
             default:
-                startWeekDate = moment().subtract('week', maxWeeks).startOf('week').format('MM-DD-YYYY');
+                startWeekDate = moment().startOf('week').format('MM-DD-YYYY');
                 break;
         }
         var urlsCalendars = Array.apply(null, new Array(maxWeeks)).map(String.valueOf, '').map(function(i, w) {

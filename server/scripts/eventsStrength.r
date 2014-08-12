@@ -1,4 +1,5 @@
-setwd("app/data/")
+pwd = ifelse(is.null(sys.frames()),paste(getwd(),"/server/scripts",sep=""),dirname(sys.frame(1)$ofile))
+dataPath = paste(pwd,"/../../app/data/",sep="")
 
 Sys.setenv(TZ="UTC")
 
@@ -11,7 +12,7 @@ cross1 = ifelse((exists("opts") && !is.na(opts[2])), opts[2], NA)
 cross2 = ifelse((exists("opts") && !is.na(opts[3])), opts[3], NA)
 reDate = "([^\\s]+)(?:\\s+[^\\s]+){1,}"
 
-calendar = fromJSON(file="calendar.json")
+calendar = fromJSON(file=paste(dataPath,"calendar.json",sep=""))
 total = length(calendar$d)
 last = calendar$d[[total]]
 lastDate = gsub(reDate,"\\1",last$Released,perl=T)
@@ -90,6 +91,6 @@ if(!is.na(cross1) && !is.na(cross2)){
 	outFile = paste(outFile,cross1,cross2, sep = '-')
 }
 outFile = paste(outFile,'strength', sep = '-')
-write.csv(strength, quote = FALSE, row.names = FALSE, file = paste(outFile,'.csv',sep=''), fileEncoding = "UTF-8")
+write.csv(strength, quote = FALSE, row.names = FALSE, file =  paste(dataPath, paste(outFile,'.csv',sep=''),sep=""), fileEncoding = "UTF-8")
 
 quit()

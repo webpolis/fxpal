@@ -1,0 +1,482 @@
+setwd("/Users/macbook/workspace/nico/aifx")
+source("server/scripts/strategy.r")
+ls()
+out
+ls()
+diff(c(1,2,3))/diff(c(1.5,1.56,1.58))
+diff(c(1,2,3))*%*diff(c(1.5,1.56,1.58))
+diff(c(1,2,3))%/%diff(c(1.5,1.56,1.58))
+lm(c(1.5,1.6,1.7)~c(1,2,3))
+lm(c(1.5,1.6,1.7)~c(1,2,3))$coeff[2]
+lm(c(1.5,1.6,1.3)~c(1,2,3))$coeff[2]
+diff(c(1.5,1.6,1.3))/diff(c(1,2,3))
+?lm
+lm(c(1.5,1.6,1.3)~c(1,2,3))$coeff[2]
+lm(c(1.3,1.6,1.3)~c(1,2,3))$coeff[2]
+lm(c(1.2,1.6,1.3)~c(1,2,3))$coeff[2]
+lm(c(1.7,1.6,1.3)~c(1,2,3))$coeff[2]
+lm(c(1.7,1.6,1)~c(1,2,3))$coeff[2]
+out
+lm(out$Close~index(out))
+lm(out$Close~index(out))$coeff[2]
+getSignals(out)
+search("stochastics")
+help("stochastics")
+stoch(HLC(out),11,3,3)
+cbind(getSignals(out),stoch(HLC(out),11,3,3))
+cbind(getSignals(out),stoch(HLC(out),11,3,3))
+args(stoch)
+cbind(getSignals(out),stoch(RSI(HLC(out),12),11,3,3))
+cbind(getSignals(out),stoch(RSI(HLC(out),12),11,3,3))
+stoch(RSI(out))
+stoch(RSI(HLC(out)))
+stoch(RSI(Cl(out)))
+stoch(RSI(Op(out)))
+stoch(RSI(Op(out)))
+round(stoch(RSI(Op(out))),6)
+SMI(HLC(out))
+SMI(HLC(out))
+SMI(HLC(out),maType=list(list(SMA), list(EMA, wilder=TRUE), list(SMA)))
+SMI(HLC(out),maType=list(list(SMA), list(EMA, wilder=TRUE), list(SMA)))
+SMI(HLC(out),maType=list(list(SMA), list(EMA, wilder=TRUE), list(SMA)))
+RSI(HLC(out))
+RSI(Op(out))
+cbind(SMI(HLC(out)),RSI(Op(out)))
+rsi = RSI(Op(out))
+smi = SMI(HLC(out))
+rsi
+smi
+cbind(rsi,smi)
+summary(cbind(rsi,smi))
+rsi+smi
+cbind(rsi,smi)
+st = stoch(HLC(out))
+cbind(rsi,st)
+?RSI
+cbind(rsi,smi)
+lm(rsi$EMA ~ smi$SMI)
+lm(rsi$EMA ~ smi$SMI)$intercept
+attributes(lm(rsi$EMA ~ smi$SMI))
+lm(rsi$EMA ~ smi$SMI)$coefficients
+lm(rsi$EMA ~ smi$SMI)$coefficients[1]
+lm(rsi$EMA ~ smi$SMI)$model
+attributes(lm(rsi$EMA ~ smi$SMI))
+lm(rsi$EMA ~ smi$SMI)$effects
+lm(rsi$EMA ~ smi$SMI)$rank
+lm(rsi$EMA ~ smi$SMI)$terms
+lm(rsi$EMA ~ smi$SMI)$xlevels
+lm(rsi$EMA ~ smi$SMI)$xlevels
+lm(rsi$EMA ~ smi$SMI)$qr
+rsi$EMA ~ smi$SMI
+apply(rsi$EMA ~ smi$SMI,function(x){print(x)})
+apply(rsi$EMA ~ smi$SMI,FUN=function(x){print(x)})
+cbind(rsi,smi)
+cbind(rsi,smi)
+?SMI
+candleChart(out)
+addTA(smi)
+addTA(rsi)
+apply(cbind(rsi,smi),1,function (x) {print(x)})
+rm(list=ls())
+getwd()
+source("server/scripts/strategy.r")
+trainStrategy(out,instrument,granularity,"SMIRSI")
+RunIterativeStrategy <- function(data, strategy = NA){#
+  #This function will run the TradingStrategy#
+  #It will iterate over a given set of input variables#
+  #In this case we try lots of different periods for the moving average#
+  firstRun <- TRUE#
+  results = NULL#
+#
+  switch(strategy, CCI={#
+    for(paramA in 7:20) {#
+      runResult <- TradingStrategy(strategy, data,paramA)#
+      if(firstRun){#
+        firstRun <- FALSE#
+        results <- runResult#
+      } else {#
+        results <- cbind(results,runResult)#
+      }#
+    }#
+  }, MACD={#
+    for(paramA in 4:12) {#
+      for(paramB in 4:20) {#
+        for(paramC in 4:20) {#
+          runResult <- TradingStrategy(strategy, data,paramA,paramB,paramC)#
+          if(firstRun){#
+            firstRun <- FALSE#
+            results <- runResult#
+          } else {#
+            results <- cbind(results,runResult)#
+          }#
+        }#
+      }#
+    }#
+  }, EMA={#
+    for(paramA in 1:12) {#
+      for(paramB in 1:12) {#
+        runResult <- TradingStrategy(strategy, data,paramA,paramB)#
+        if(firstRun){#
+          firstRun <- FALSE#
+          results <- runResult#
+        } else {#
+          results <- cbind(results,runResult)#
+        }#
+      }#
+    }#
+  }, SMIRSI={#
+    for(paramA in 1:20) {#
+      for(paramB in 1:20) {#
+        for(paramC in 1:20) {#
+          runResult <- TradingStrategy(strategy, data,paramA,paramB,paramC)#
+          if(firstRun){#
+            firstRun <- FALSE#
+            results <- runResult#
+          } else {#
+            results <- cbind(results,runResult)#
+          }#
+        }#
+      }#
+    }#
+  })#
+#
+  return(results)#
+}
+trainStrategy(out,instrument,granularity,"SMIRSI")
+warnings()
+is.na("")
+rsi = RSI(Op(out))
+smi = SMI(HLC(out))
+cbind(rsi,smi)
+apply(cbind(rsi,smi),1,function(x){print(x)})
+apply(cbind(rsi,smi),1,function(x){print(length(is.na(x)))})
+apply(cbind(rsi,smi),1,function(x){print(is.na(x))})
+apply(cbind(rsi,smi),1,function(x){print(is.na(x["EMA"]))})
+apply(cbind(rsi,smi),1,function(x){print(is.na(x["EMA"])==FALSE)})
+TradingStrategy <- function(strategy, data,param1=NA,param2=NA,param3=NA){#
+  tradingreturns = NULL#
+  returns = (Cl(data)/Op(data))-1#
+  runName = NULL#
+  signal = 0#
+#
+  switch(strategy, CCI={#
+    cci <- CCI(Op(data),n=param1)#
+    signal <- apply(cci,1,function (x) {if(is.na(x["cci"])){ return (0) } else { if(x["cci"]>100){return (1)} else if(x["cci"]<(-100)) {return (-1)}else{ return(0)}}})#
+  }, MACD={#
+    macd <- MACD(Op(data),nFast=param1,nSlow=param2,nSig=param3,maType=list(list(EMA),list(EMA),list(SMA)))#
+    signal <- apply(macd,1,function (x) { if(is.na(x["macd"]) | is.na(x["signal"])){ return (0) } else { if(x["macd"]>0 & x["signal"]>0){return (1)} else if(x["macd"]<0 & x["signal"]<0) {return (-1)}else{ return(0)}}})#
+  }, EMA={#
+    ema1 <- EMA(Op(data),n=param1)#
+    ema2 <- EMA(Op(data),n=param2)#
+    emas <- ema1 / ema2#
+    signal <- apply(emas,1,function (x) {if(is.na(x)){ return (0) } else { if(x>1){return (1)} else {return (-1)}}})#
+  }, SMIRSI={#
+    smi <- SMI(HLC(data),nFast=param1,nSlow=param2,nSig=param3,maType=list(list(SMA), list(EMA, wilder=TRUE), list(SMA)))#
+    rsi <- RSI(Op(data),n=param1)#
+    signal <- apply(cbind(rsi,smi),1,function (x) {if(is.na(x["EMA"])&is.na(x["SMI"])){ return (0) } else { if(x["EMA"]>=60&x["SMI"]>20){return (-1)} else if(x["EMA"]<40&x["SMI"]<(-40)){return (1)}else{return(0)}}})#
+  })#
+#
+  runName <- paste(strategy,param1,param2,param3,sep=",")#
+  tradingreturns = signal * returns#
+  colnames(tradingreturns) <- runName#
+  print(paste("Running Strategy: ",runName))#
+#
+  return (tradingreturns)#
+}
+trainStrategy(out,instrument,granularity,"SMIRSI")
+out
+trainStrategy(out,instrument,granularity,"SMIRSI")
+TradingStrategy <- function(strategy, data,param1=NA,param2=NA,param3=NA){#
+  tradingreturns = NULL#
+  returns = (Cl(data)/Op(data))-1#
+  runName = NULL#
+  signal = 0#
+#
+  switch(strategy, CCI={#
+    cci <- CCI(Op(data),n=param1)#
+    signal <- apply(cci,1,function (x) {if(is.na(x["cci"])){ return (0) } else { if(x["cci"]>100){return (1)} else if(x["cci"]<(-100)) {return (-1)}else{ return(0)}}})#
+  }, MACD={#
+    macd <- MACD(Op(data),nFast=param1,nSlow=param2,nSig=param3,maType=list(list(EMA),list(EMA),list(SMA)))#
+    signal <- apply(macd,1,function (x) { if(is.na(x["macd"]) | is.na(x["signal"])){ return (0) } else { if(x["macd"]>0 & x["signal"]>0){return (1)} else if(x["macd"]<0 & x["signal"]<0) {return (-1)}else{ return(0)}}})#
+  }, EMA={#
+    ema1 <- EMA(Op(data),n=param1)#
+    ema2 <- EMA(Op(data),n=param2)#
+    emas <- ema1 / ema2#
+    signal <- apply(emas,1,function (x) {if(is.na(x)){ return (0) } else { if(x>1){return (1)} else {return (-1)}}})#
+  }, SMIRSI={#
+    smi <- SMI(HLC(data),nFast=param1,nSlow=param2,nSig=param3,maType=list(list(SMA), list(EMA, wilder=TRUE), list(SMA)))#
+    rsi <- RSI(Op(data),n=param1)#
+    signal <- apply(cbind(rsi,smi),1,function (x) {if(is.na(x["EMA"])|is.na(x["SMI"])){ return (0) } else { if(x["EMA"]>=60&x["SMI"]>20){return (-1)} else if(x["EMA"]<40&x["SMI"]<(-40)){return (1)}else{return(0)}}})#
+  })#
+#
+  runName <- paste(strategy,param1,param2,param3,sep=",")#
+  tradingreturns = signal * returns#
+  colnames(tradingreturns) <- runName#
+  print(paste("Running Strategy: ",runName))#
+#
+  return (tradingreturns)#
+}
+trainStrategy(out,instrument,granularity,"SMIRSI")
+?addPoints
+getSignals(out)
+addPoints(getSignals(out)$CCI.MACD)
+addTA(getSignals(out)$CCI.MACD)
+dev.list
+dev.list()
+?addTA
+addTA(getSignals(out)$CCI.MACD,on=2)
+addTA(getSignals(out)$CCI.MACD,on="2")
+dev.cur
+dev.cur()
+dev.cur()
+addTA(getSignals(out)$CCI.MACD,on=2)
+TradingStrategy("SMIRSI",out,3,18,1)
+plot(TradingStrategy("SMIRSI",out,3,18,1))
+addTA(getSignals(out)$CCI.MACD)
+TradingStrategy("CCIMACD",out,3,18,1)
+TradingStrategy("SMIRSI",out,3,18,1)
+testStrategy(out,instrument,"SMIRSI",13,18,1)
+testStrategy(out,instrument,"SMIRSI",3,18,1)
+testStrategy(out,instrument,"SMIRSI",11,3,3)
+testStrategy(out,instrument,"SMIRSI",11,12,3)
+testStrategy(out,instrument,"SMIRSI",3,18,3)
+testStrategy(out,instrument,"SMIRSI",3,18,1)
+rm(list=ls())
+source("server/scripts/strategy.r")
+ls()
+trainStrategy(out,instrument,granularity,"RSI")
+trainStrategy(out,instrument,granularity,"SMI")
+?SMI
+getSignals <- function(data){#
+  # CCI+MACD#
+  tmp = cbind(data, CCI(HLC(data),n=7))#
+  tmp = cbind(tmp, MACD(Op(tmp),nFast=5,nSlow=12,nSig=6,maType=list(list(EMA),list(EMA),list(SMA))))#
+  buysell = as.xts(apply(tmp, 1, function(x){if(is.na(x["cci"])|is.na(x["macd"])|is.na(x["signal"])){x["buysell"]=0}else if(x["cci"]>100 & x["macd"]>0 & x["signal"]>0){x["buysell"]=1}else if(x["cci"]<(-100) & x["macd"]<0 & x["signal"]<0){x["buysell"]=-1}else{x["buysell"]=0}}))#
+  names(buysell) = c("CCI+MACD")#
+  ret = cbind(data,buysell)#
+  # RSI+MSI#
+  tmp = cbind(data, RSI(HLC(data),n=17))#
+  tmp = cbind(tmp, SMI(Op(tmp),nFast=4,nSlow=9,nSig=3,maType=list(list(EMA),list(EMA),list(SMA))))#
+  buysell = as.xts(apply(tmp, 1, function(x){if(is.na(x["cci"])|is.na(x["macd"])|is.na(x["signal"])){x["buysell"]=0}else if(x["cci"]>100 & x["macd"]>0 & x["signal"]>0){x["buysell"]=1}else if(x["cci"]<(-100) & x["macd"]<0 & x["signal"]<0){x["buysell"]=-1}else{x["buysell"]=0}}))#
+  names(buysell) = c("CCI+MACD")#
+  ret = cbind(data,buysell)#
+#
+  return(ret)#
+}
+getsi
+getSignals(out)
+testStrategy(out,instrument,"SMI",4,9,3)
+testStrategy(out,instrument,"SMI",9,4,3)
+?SMI
+getSignals <- function(data){#
+  # CCI+MACD#
+  tmp = cbind(data, CCI(HLC(data),n=7))#
+  tmp = cbind(tmp, MACD(Op(tmp),nFast=12,nSlow=5,nSig=6,maType=list(list(EMA),list(EMA),list(SMA))))#
+  buysell = as.xts(apply(tmp, 1, function(x){if(is.na(x["cci"])|is.na(x["macd"])|is.na(x["signal"])){x["buysell"]=0}else if(x["cci"]>100 & x["macd"]>0 & x["signal"]>0){x["buysell"]=1}else if(x["cci"]<(-100) & x["macd"]<0 & x["signal"]<0){x["buysell"]=-1}else{x["buysell"]=0}}))#
+  names(buysell) = c("CCI+MACD")#
+  ret = cbind(data,buysell)#
+  # RSI+MSI#
+  tmp = cbind(data, RSI(HLC(data),n=17))#
+  tmp = cbind(tmp, SMI(Op(tmp),nFast=9,nSlow=4,nSig=3,maType=list(list(EMA),list(EMA),list(SMA))))#
+  buysell = as.xts(apply(tmp, 1, function(x){if(is.na(x["cci"])|is.na(x["macd"])|is.na(x["signal"])){x["buysell"]=0}else if(x["cci"]>100 & x["macd"]>0 & x["signal"]>0){x["buysell"]=1}else if(x["cci"]<(-100) & x["macd"]<0 & x["signal"]<0){x["buysell"]=-1}else{x["buysell"]=0}}))#
+  names(buysell) = c("CCI+MACD")#
+  ret = cbind(data,buysell)#
+#
+  return(ret)#
+}
+getSignals(out)
+getSignals <- function(data){#
+  # CCI+MACD#
+  tmp = cbind(data, CCI(HLC(data),n=7))#
+  tmp = cbind(tmp, MACD(Op(tmp),nFast=12,nSlow=5,nSig=6,maType=list(list(EMA),list(EMA),list(SMA))))#
+  buysell = as.xts(apply(tmp, 1, function(x){if(is.na(x["cci"])|is.na(x["macd"])|is.na(x["signal"])){x["buysell"]=0}else if(x["cci"]>100 & x["macd"]>0 & x["signal"]>0){x["buysell"]=1}else if(x["cci"]<(-100) & x["macd"]<0 & x["signal"]<0){x["buysell"]=-1}else{x["buysell"]=0}}))#
+  names(buysell) = c("CCI+MACD")#
+  ccimacd = cbind(data,buysell)#
+  # RSI+MSI#
+  tmp = cbind(data, RSI(HLC(data),n=17))#
+  tmp = cbind(tmp, SMI(Op(tmp),nFast=9,nSlow=4,nSig=3,maType=list(list(EMA),list(EMA),list(SMA))))#
+  buysell = as.xts(apply(tmp, 1, function(x){if(is.na(x["cci"])|is.na(x["macd"])|is.na(x["signal"])){x["buysell"]=0}else if(x["cci"]>100 & x["macd"]>0 & x["signal"]>0){x["buysell"]=1}else if(x["cci"]<(-100) & x["macd"]<0 & x["signal"]<0){x["buysell"]=-1}else{x["buysell"]=0}}))#
+  names(buysell) = c("CCI+MACD")#
+  rsimsi = cbind(data,buysell)#
+#
+  return(rsimsi)#
+}
+getSignals(out)
+getSignals <- function(data){#
+  # CCI+MACD#
+  tmp = cbind(data, CCI(HLC(data),n=7))#
+  tmp = cbind(tmp, MACD(Op(tmp),nFast=12,nSlow=5,nSig=6,maType=list(list(EMA),list(EMA),list(SMA))))#
+  buysell = as.xts(apply(tmp, 1, function(x){if(is.na(x["cci"])|is.na(x["macd"])|is.na(x["signal"])){x["buysell"]=0}else if(x["cci"]>100 & x["macd"]>0 & x["signal"]>0){x["buysell"]=1}else if(x["cci"]<(-100) & x["macd"]<0 & x["signal"]<0){x["buysell"]=-1}else{x["buysell"]=0}}))#
+  names(buysell) = c("CCI+MACD")#
+  ccimacd = cbind(data,buysell)#
+  # RSI+SMI#
+  tmp = cbind(data, RSI(HLC(data),n=17))#
+  tmp = cbind(tmp, SMI(Op(tmp),nFast=9,nSlow=4,nSig=3,maType=list(list(EMA),list(EMA),list(SMA))))#
+  buysell = as.xts(apply(tmp, 1, function(x){if(is.na(x["cci"])|is.na(x["macd"])|is.na(x["signal"])){x["buysell"]=0}else if(x["cci"]>100 & x["macd"]>0 & x["signal"]>0){x["buysell"]=1}else if(x["cci"]<(-100) & x["macd"]<0 & x["signal"]<0){x["buysell"]=-1}else{x["buysell"]=0}}))#
+  names(buysell) = c("RSI+SMI")#
+  rsismi = cbind(data,buysell)#
+#
+  return(rsismi)#
+}
+getSignals(out)
+TradingStrategy("SMI",out,9,4,3)
+cbind(TradingStrategy("SMI",out,9,4,3),TradingStrategy("RSI",out,17))
+cbind(TradingStrategy("SMI",out,9,4,3),TradingStrategy("RSI",out,17))
+rsimsi = cbind(TradingStrategy("SMI",out,9,4,3),TradingStrategy("RSI",out,17))
+TradingStrategy("CCI",out,7)
+cbind(TradingStrategy("CCI",out,7),TradingStrategy("MACD",out,12,5,6))
+cbind(TradingStrategy("CCI",out,7),TradingStrategy("MACD",out,12,5,6))
+getSignals <- function(data){#
+  # CCI+MACD#
+  tmp = cbind(data, CCI(HLC(data),n=7))#
+  tmp = cbind(tmp, MACD(Op(tmp),nFast=12,nSlow=5,nSig=6,maType=list(list(EMA),list(EMA),list(SMA))))#
+  buysell = as.xts(apply(tmp, 1, function(x){if(is.na(x["cci"])|is.na(x["macd"])|is.na(x["signal"])){x["buysell"]=0}else if(x["cci"]>100 & x["macd"]>0 & x["signal"]>0){x["buysell"]=1}else if(x["cci"]<(-100) & x["macd"]<0 & x["signal"]<0){x["buysell"]=-1}else{x["buysell"]=0}}))#
+  names(buysell) = c("CCI+MACD")#
+  ccimacd = cbind(data,buysell)#
+  # RSI+SMI#
+  # tmp = cbind(data, RSI(HLC(data),n=17))#
+  # tmp = cbind(tmp, SMI(Op(tmp),nFast=9,nSlow=4,nSig=3,maType=list(list(EMA),list(EMA),list(SMA))))#
+  # buysell = as.xts(apply(tmp, 1, function(x){if(is.na(x["cci"])|is.na(x["macd"])|is.na(x["signal"])){x["buysell"]=0}else if(x["cci"]>100 & x["macd"]>0 & x["signal"]>0){x["buysell"]=1}else if(x["cci"]<(-100) & x["macd"]<0 & x["signal"]<0){x["buysell"]=-1}else{x["buysell"]=0}}))#
+  # names(buysell) = c("RSI+SMI")#
+  # rsismi = cbind(data,buysell)#
+#
+  return(ccimacd)#
+}
+getSignals(out)
+rsimsi = cbind(TradingStrategy("SMI",out,9,4,3),TradingStrategy("RSI",out,17))
+rsimsi
+rsimsi[ifelse(rsimsi>0,1,-1)]
+rsimsi
+rsimsi>0
+ifelse(rsimsi>0,1,ifelse(rsimsi<0,-1,0))
+rsimsi
+ifelse(rsimsi>0,1,ifelse(rsimsi<0,-1,0))
+rsimsi
+ifelse(rsimsi>0,1,ifelse(rsimsi<0,-1,0))
+rsimsi = ifelse(rsimsi>0,1,ifelse(rsimsi<0,-1,0))
+rsimsi
+rsimsi
+rsimsi[,1]==rsimsi[,2]
+rsimsi[,1]==rsimsi[,2]&rsimsi!=0
+rsimsi[,1]==rsimsi[,2]
+rsimsi
+getSignals <- function(data){#
+  # CCI+MACD#
+  tmp = cbind(data, CCI(HLC(data),n=7))#
+  tmp = cbind(tmp, MACD(Op(tmp),nFast=12,nSlow=5,nSig=6,maType=list(list(EMA),list(EMA),list(SMA))))#
+  buysell = as.xts(apply(tmp, 1, function(x){if(is.na(x["cci"])|is.na(x["macd"])|is.na(x["signal"])){x["buysell"]=0}else if(x["cci"]>100 & x["macd"]>0 & x["signal"]>0){x["buysell"]=1}else if(x["cci"]<(-100) & x["macd"]<0 & x["signal"]<0){x["buysell"]=-1}else{x["buysell"]=0}}))#
+  names(buysell) = c("CCI+MACD")#
+  ccimacd = cbind(data,buysell)#
+  # RSI+SMI#
+  rsimsi = cbind(TradingStrategy("SMI",out,9,4,3),TradingStrategy("RSI",out,17))#
+  rsimsi = ifelse(rsimsi>0,1,ifelse(rsimsi<0,-1,0))#
+  return(cbind(ccimacd,rsimsi))#
+}
+getSignals(out)
+getSignals <- function(data){#
+  # CCI+MACD#
+  tmp = cbind(data, CCI(HLC(data),n=7))#
+  tmp = cbind(tmp, MACD(Op(tmp),nFast=12,nSlow=5,nSig=6,maType=list(list(EMA),list(EMA),list(SMA))))#
+  buysell = as.xts(apply(tmp, 1, function(x){if(is.na(x["cci"])|is.na(x["macd"])|is.na(x["signal"])){x["buysell"]=0}else if(x["cci"]>100 & x["macd"]>0 & x["signal"]>0){x["buysell"]=1}else if(x["cci"]<(-100) & x["macd"]<0 & x["signal"]<0){x["buysell"]=-1}else{x["buysell"]=0}}))#
+  names(buysell) = c("CCI+MACD")#
+  ccimacd = cbind(data,buysell)#
+  # RSI+SMI#
+  rsimsi = cbind(TradingStrategy("SMI",out,9,4,3),TradingStrategy("RSI",out,17))#
+  rsimsi = ifelse(rsimsi>0,1,ifelse(rsimsi<0,-1,0))#
+  names(rsimsi) = c("SMI","RSI")#
+#
+  return(cbind(ccimacd,rsimsi))#
+}
+getSignals(out)
+rm(list=ls())
+source("server/scripts/strategy.r")
+getSignals(out)
+SMI(Op(out))
+rm(list=ls())
+source("server/scripts/strategy.r")
+trainStrategy(out,instrument,granularity,"SMI")
+getSignals(out)
+getSignals <- function(data){#
+  # CCI+MACD#
+  tmp = cbind(data, CCI(Op(data),n=7))#
+  tmp = cbind(tmp, MACD(Op(tmp),nFast=12,nSlow=5,nSig=6,maType=list(list(EMA),list(EMA),list(SMA))))#
+  buysell = as.xts(apply(tmp, 1, function(x){if(is.na(x["cci"])|is.na(x["macd"])|is.na(x["signal"])){x["buysell"]=0}else if(x["cci"]>100 & x["macd"]>0 & x["signal"]>0){x["buysell"]=1}else if(x["cci"]<(-100) & x["macd"]<0 & x["signal"]<0){x["buysell"]=-1}else{x["buysell"]=0}}))#
+  names(buysell) = c("CCI+MACD")#
+  ccimacd = cbind(data,buysell)#
+  # RSI+SMI#
+  rsimsi = cbind(TradingStrategy("SMI",out,3,3,6),TradingStrategy("RSI",out,17))#
+  rsimsi = ifelse(rsimsi>0,1,ifelse(rsimsi<0,-1,0))#
+  names(rsimsi) = c("SMI","RSI")#
+#
+  return(cbind(ccimacd,rsimsi))#
+}
+getSignals(out)
+out = getCandles(instrument,"M15",count=600)
+getSignals(out)
+getSignals <- function(data){#
+  # CCI+MACD#
+  tmp = cbind(data, CCI(Op(data),n=7))#
+  tmp = cbind(tmp, MACD(Op(tmp),nFast=5,nSlow=12,nSig=6,maType=list(list(EMA),list(EMA),list(SMA))))#
+  buysell = as.xts(apply(tmp, 1, function(x){if(is.na(x["cci"])|is.na(x["macd"])|is.na(x["signal"])){x["buysell"]=0}else if(x["cci"]>100 & x["macd"]>0 & x["signal"]>0){x["buysell"]=1}else if(x["cci"]<(-100) & x["macd"]<0 & x["signal"]<0){x["buysell"]=-1}else{x["buysell"]=0}}))#
+  names(buysell) = c("CCI+MACD")#
+  ccimacd = cbind(data,buysell)#
+  # RSI+SMI#
+  rsimsi = cbind(TradingStrategy("SMI",out,3,3,6),TradingStrategy("RSI",out,17))#
+  rsimsi = ifelse(rsimsi>0,1,ifelse(rsimsi<0,-1,0))#
+  names(rsimsi) = c("SMI","RSI")#
+#
+  return(cbind(ccimacd,rsimsi))#
+}
+getSignals(out)
+getwd()
+out = read.table(paste("app/data/","EUR_USD-M15.csv",sep=""), sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
+out = read.table(paste("app/data/candles/","EUR_USD-M15.csv",sep=""), sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
+out
+getSignals(out)
+index(out)
+out
+names(out)
+as.xts(out)
+as.Date(out$Time)
+as.Date(out$Time,format="%Y-%m-%d")
+out
+out
+as.POSIXct(out$Time, origin="1970-01-01")
+out$Time = as.POSIXct(out$Time, origin="1970-01-01")
+out$Date = out$Time
+rm(out$Time)
+out[,-"Time"]
+out[,-(out$Time)]
+out[,-("Time")]
+out[,-(grep("Time",names(out)))]
+out[,-(grep("Time",names(out)))]
+out = out[,-(grep("Time",names(out)))]
+as.xts(out)
+read.zoo(out)
+out
+index(out) = out$Date
+rownames(out)<-out$Date
+out
+as.xts(out)
+as.xts(out)
+as.zoo(out)
+as.zoo(out)
+out
+getSignals(out)
+out
+out$Date=NULL
+out
+out
+getSignals(out)
+HLC(out)
+HLC(out)
+getSignals(out[,c("Open","High","Low","Close")])
+out[,c("Open","High","Low","Close")]
+as.zoo(out[,c("Open","High","Low","Close")])
+class(out)
+as.xts(out[,c("Open","High","Low","Close")])
+out = as.xts(out[,c("Open","High","Low","Close")])
+out
+out
+getSignals(out)
+getSignals(out)
