@@ -287,12 +287,14 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                         if (angular.isArray(ret.query.results.quote)) {
                             angular.forEach(ret.query.results.quote, function(quote) {
                                 var symbol = quote.Symbol.replace(/\^/g, '');
-                                var ticker = jsonPath.eval($scope.config.maps.tickers, '$.[?(@.symbol=="' + symbol + '")]')[0];
+                                var ticker = jsonPath.eval($scope.config.maps.tickers, '$.[?(@.symbol=="' + symbol + '")]')[0] ||  null;
                                 try {
-                                    // set value
-                                    jsonPath.eval($scope.selected.correlation.markets, '$[?(@.cross && @.cross == "' + ticker.quandl + '")]')[0][type] = parseFloat(quote.Change);
-                                    // set label
-                                    jsonPath.eval($scope.selected.correlation.markets, '$[?(@.cross && @.cross == "' + ticker.quandl + '")]')[0].label = ticker.name;
+                                    if (ticker !== null) {
+                                        // set value
+                                        jsonPath.eval($scope.selected.correlation.markets, '$[?(@.cross && @.cross == "' + ticker.quandl + '")]')[0][type] = parseFloat(quote.Change);
+                                        // set label
+                                        jsonPath.eval($scope.selected.correlation.markets, '$[?(@.cross && @.cross == "' + ticker.quandl + '")]')[0].label = ticker.name;
+                                    }
                                 } catch (err) {}
                             });
                         }
@@ -408,7 +410,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                 rel.rel = corValue;
                 return rel;
             });
-            $timeout(function() {
+            $scope.$apply(function() {
                 var crosses = [];
                 $scope.selected.correlation[target] = correlation.map(function(cor) {
                     if (target === 'markets' && (cor.cross1 === revCurCross || cor.cross2 === revCurCross)) {
@@ -455,7 +457,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                         });
                     });
                 }
-            }, 150);
+            });
         });
     };
     $scope.chart = function(period) {

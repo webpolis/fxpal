@@ -11,3 +11,4 @@ app/data/candles/**
 !www/config.xml
 !www/res
 **/*/.Rapp.history
+.Rapp.history
