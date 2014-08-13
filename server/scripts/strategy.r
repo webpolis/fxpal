@@ -30,11 +30,18 @@ TradingStrategy <- function(strategy, data,param1=NA,param2=NA,param3=NA){
     rsi = RSI(Op(data),n=param1)
     signal = apply(rsi,1,function (x) {if(is.na(x["EMA"])){ return (0) } else { if(x["EMA"]>=60){return (-1)} else if(x["EMA"]<40){return (1)}else{return(0)}}})
   }, STOCH={
-    stch = stoch(HLC(data),nFastK=param1,nFastD=param1,nSlowD=param1,maType=list(list(SMA), list(EMA, wilder=TRUE), list(SMA)))
+    stch = stoch(Op(data),nFastK=param1,nFastD=param1,nSlowD=param1,maType=list(list(SMA), list(EMA, wilder=TRUE), list(SMA)))
     stch = stch*100
     stch = as.xts(apply(stch,1,mean))
     names(stch) = c("stoch")
-    signal = apply(stch,1,function (x) {if(is.na(x["stoch"])){ return (0) } else { if(x["stoch"]>=70){return (-1)} else if(x["stoch"]<30){return (1)}else{return(0)}}})
+    signal = apply(stch,1,function (x) {if(is.na(x["stoch"])){ return (0) } else { if(x["stoch"]>=70){return (-1)} else if(x["stoch"]<=30){return (1)}else{return(0)}}})
+  }, ADX={
+    adx = ADX(HLC(data),n=param1)
+    signal = apply(adx,1,function (x) {if(is.na(x["ADX"])|is.na(x["DIn"])|is.na(x["DIp"])){ return(0) } else { if(x["ADX"]>13&x["DIp"]>x["DIn"]){return(1)} else if(x["ADX"]>13&x["DIp"]<x["DIn"]){return(-1)}else{return(0)}}})
+  }, SAR={
+    sar = SAR(data[,c("High","Low")])
+    names(sar) = c("sar")
+    signal = apply(cbind(data[,c("High","Low")],sar),1,function (x) {if(is.na(x["sar"])|is.na(x["High"])|is.na(x["Low"])){ return (0) } else { if(x["sar"]<x["High"]&x["sar"]<x["Low"]){return (1)} else if(x["sar"]>x["High"]&x["sar"]>x["Low"]) {return (-1)}else{ return(0)}}})
   })
 
   runName = paste(strategy,param1,param2,param3,sep=",")
@@ -124,6 +131,16 @@ RunIterativeStrategy <- function(data, strategy = NA){
             results <- cbind(results,runResult)
           }
         }
+      }
+    }
+  }, ADX={
+    for(paramA in 3:20) {
+      runResult <- TradingStrategy(strategy, data,paramA)
+      if(firstRun){
+        firstRun <- FALSE
+        results <- runResult
+      } else {
+        results <- cbind(results,runResult)
       }
     }
   })
@@ -224,13 +241,21 @@ testStrategy <- function(data, instrument,strategy,param1=NA,param2=NA,param3=NA
 
 getSignals <- function(data){
   # CCI+MACD
-  ccimacd = cbind(TradingStrategy("CCI",out,7),TradingStrategy("MACD",out,5,12,6))
+  ccimacd = cbind(TradingStrategy("CCI",data,7),TradingStrategy("MACD",data,5,12,6))
   ccimacd = ifelse(ccimacd>0,1,ifelse(ccimacd<0,-1,0))
   names(ccimacd) = c("CCI","MACD")
   # RSI+SMI
-  rsimsi = cbind(TradingStrategy("SMI",out,3,3,6),TradingStrategy("RSI",out,17))
+  rsimsi = cbind(TradingStrategy("SMI",data,3,3,6),TradingStrategy("RSI",data,17))
   rsimsi = ifelse(rsimsi>0,1,ifelse(rsimsi<0,-1,0))
   names(rsimsi) = c("SMI","RSI")
+  # RSI+STOCH
+  stochrsi = cbind(TradingStrategy("RSI",data,17),TradingStrategy("STOCH",data,3,3,3))
+  stochrsi = ifelse(stochrsi>0,1,ifelse(stochrsi<0,-1,0))
+  names(stochrsi) = c("RSI","STOCH")
+  # ADX+SAR
+  adxsar = cbind(TradingStrategy("ADX",data,5),TradingStrategy("SAR",data))
+  adxsar = ifelse(adxsar>0,1,ifelse(adxsar<0,-1,0))
+  names(adxsar) = c("ADX","SAR")
 
-  return(cbind(ccimacd,rsimsi))
+  return(cbind(ccimacd,rsimsi,stochrsi,adxsar))
 }
