@@ -8,5 +8,4 @@
 Datasets included in this software are crucial. To generate and optimize datasets, follow these guidelines:
 
 * Retrieve multisets (currencies + indexes + commodities historical data): `./server/scripts/multiset.sh`
-* Execute `./server/scripts/multisetsOut.sh` to generate the final output in `./app/data/multisetsOutputs.csv`
 * Execute `./server/scripts/eventsCrossesOut.sh` to generate the final output in `./app/data/eventsCrossesOutputs.csv`

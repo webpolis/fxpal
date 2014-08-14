@@ -524,7 +524,9 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                 return pat;
             });
             csv2json.csv($scope.config.urls.api + ['candles', [$scope.selected.cross1, $scope.selected.cross2].join(''), optsOanda.start.replace(/^([^T]+).*$/gi, '$1'), optsOanda.granularity].join('/'), function(ret) {
-                $scope.resetChart();
+                $scope.$apply(function() {
+                    $scope.resetChart();
+                });
                 if (angular.isArray(ret)) {
                     var prevTrendSignal = null,
                         candles = [],

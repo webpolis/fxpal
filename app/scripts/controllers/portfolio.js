@@ -53,17 +53,22 @@ angular.module('aifxApp').controller('portfolioController', function($scope, $io
     });
     $scope.optChartPeriod = null;
     $scope.start = function() {
+        $scope.optsHighchartsPortfolio.series[0].data = [];
+        var tmp = [];
         $ionicLoading.show({
             template: 'Loading...'
         });
         csv2json.csv($scope.config.urls.api + 'portfolio', function(data) {
             $scope.selected.portfolio = data;
             angular.forEach($scope.selected.portfolio, function(cross) {
-                $scope.optsHighchartsPortfolio.series[0].data.push({
+                tmp.push({
                     name: cross.cross,
                     color: $scope.utils.getRandomColorCode(),
                     y: parseFloat(cross.percentage)
                 });
+            });
+            $scope.$apply(function() {
+                $scope.optsHighchartsPortfolio.series[0].data = tmp;
             });
             $ionicLoading.hide();
         });

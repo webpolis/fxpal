@@ -21,8 +21,10 @@ TradingStrategy <- function(strategy, data,param1=NA,param2=NA,param3=NA){
   }, EMA={
     ema1 = EMA(Op(data),n=param1)
     ema2 = EMA(Op(data),n=param2)
-    emas = ema1 / ema2
-    signal = apply(emas,1,function (x) {if(is.na(x)){ return (0) } else { if(x>1){return (1)} else {return (-1)}}})
+    ema3 = EMA(Op(data),n=param3)
+    emas = cbind(ema1,ema2,ema3)
+    names(emas) = c("ema1","ema2","ema3")
+    signal = apply(emas,1,function (x) {if(is.na(x["ema1"])|is.na(x["ema2"])|is.na(x["ema3"])){ return (0) } else { if(x["ema1"]>x["ema2"]&x["ema2"]>x["ema3"]){return (1)} else if(x["ema1"]<x["ema2"]&x["ema2"]<x["ema3"]){return (-1)}else{return(0)}}})
   }, SMI={
     smi = SMI(Op(data),nFast=param1,nSlow=param2,nSig=param3,maType=list(list(SMA), list(EMA, wilder=TRUE), list(SMA)))
     signal = apply(smi,1,function (x) {if(is.na(x["SMI"])){ return (0) } else { if(x["SMI"]>20){return (-1)} else if(x["SMI"]<(-40)){return (1)}else{return(0)}}})
@@ -84,14 +86,16 @@ RunIterativeStrategy <- function(data, strategy = NA){
       }
     }
   }, EMA={
-    for(paramA in 1:12) {
-      for(paramB in 1:12) {
-        runResult <- TradingStrategy(strategy, data,paramA,paramB)
-        if(firstRun){
-          firstRun <- FALSE
-          results <- runResult
-        } else {
-          results <- cbind(results,runResult)
+    for(paramA in 3:16) {
+      for(paramB in 3:16) {
+        for(paramC in 3:16) {
+          runResult <- TradingStrategy(strategy, data,paramA,paramB,paramC)
+          if(firstRun){
+            firstRun <- FALSE
+            results <- runResult
+          } else {
+            results <- cbind(results,runResult)
+          }
         }
       }
     }
@@ -243,19 +247,23 @@ getSignals <- function(data){
   # CCI+MACD
   ccimacd = cbind(TradingStrategy("CCI",data,7),TradingStrategy("MACD",data,5,12,6))
   ccimacd = ifelse(ccimacd>0,1,ifelse(ccimacd<0,-1,0))
-  names(ccimacd) = c("CCI","MACD")
+  names(ccimacd) = c("A.CCI","A.MACD")
   # RSI+SMI
   rsimsi = cbind(TradingStrategy("SMI",data,3,3,6),TradingStrategy("RSI",data,17))
   rsimsi = ifelse(rsimsi>0,1,ifelse(rsimsi<0,-1,0))
-  names(rsimsi) = c("SMI","RSI")
+  names(rsimsi) = c("B.SMI","B.RSI")
   # RSI+STOCH
   stochrsi = cbind(TradingStrategy("RSI",data,17),TradingStrategy("STOCH",data,3,3,3))
   stochrsi = ifelse(stochrsi>0,1,ifelse(stochrsi<0,-1,0))
-  names(stochrsi) = c("RSI","STOCH")
+  names(stochrsi) = c("C.RSI","C.STOCH")
   # ADX+SAR
   adxsar = cbind(TradingStrategy("ADX",data,5),TradingStrategy("SAR",data))
   adxsar = ifelse(adxsar>0,1,ifelse(adxsar<0,-1,0))
-  names(adxsar) = c("ADX","SAR")
+  names(adxsar) = c("D.ADX","D.SAR")
+  # EMA+STOCH
+  stochema = cbind(TradingStrategy("EMA",data,12,4,7),TradingStrategy("STOCH",data,3,3,3))
+  stochema = ifelse(stochema>0,1,ifelse(stochema<0,-1,0))
+  names(stochema) = c("E.EMA","E.STOCH")
 
-  return(cbind(ccimacd,rsimsi,stochrsi,adxsar))
+  return(cbind(ccimacd,rsimsi,stochrsi,adxsar,stochema))
 }
