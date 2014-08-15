@@ -111,7 +111,7 @@ if(type == "volatility"){
 	colnames(tmp) = c("cross","volatility")
 	vol = as.data.frame(tmp)
 
-	write.csv(as.matrix(vol), quote = FALSE, row.names = FALSE, file = paste(dataPath,"volatility.csv",sep=""), fileEncoding = "UTF-8")
+	write.csv(as.matrix(vol), append = FALSE, quote = FALSE, row.names = FALSE, file = paste(dataPath,"volatility.csv",sep=""), fileEncoding = "UTF-8")
 }
 
 if(length(opts)>0){
