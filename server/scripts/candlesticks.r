@@ -1,6 +1,6 @@
 Sys.setenv(TZ="UTC")
 
-pwd = ifelse(is.null(sys.frames()),paste(getwd(),"/server/scripts",sep=""),dirname(sys.frame(1)$ofile))
+pwd = ifelse(is.null(sys.frames()),getwd(),dirname(sys.frame(1)$ofile))
 dataPath = paste(pwd,"/../../app/data/",sep="")
 
 library("RCurl")
