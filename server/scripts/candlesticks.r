@@ -1,7 +1,7 @@
 Sys.setenv(TZ="UTC")
 
-pwd = ifelse(is.null(sys.frames()),getwd(),paste(dirname(sys.frame(1)$ofile),"/../../",sep=""))
-dataPath = paste(pwd,"/app/data/",sep="")
+pwd = ifelse(is.null(sys.frames()),getwd(),dirname(sys.frame(1)$ofile))
+dataPath = paste(pwd,"/../../app/data/",sep="")
 
 library("RCurl")
 library("rjson")
