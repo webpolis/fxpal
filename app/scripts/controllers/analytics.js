@@ -415,7 +415,6 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         csv2json.csv(file, function(data) {
             var expr = '$[?(@.cross1=="' + curCross + '" || @.cross2=="' + curCross + '" || @.cross1=="' + revCurCross + '" || @.cross2=="' + revCurCross + '")]';
             var correlation = jsonPath.eval(data, expr).map(function(rel) {
-                // if cross is reverted, we should invert correlation value
                 var corValue = parseFloat(rel.rel);
                 rel.rel = corValue;
                 return rel;
@@ -423,6 +422,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             $scope.$apply(function() {
                 var crosses = [];
                 $scope.selected.correlation[target] = correlation.map(function(cor) {
+                    // if cross is reverted, we should invert correlation value
                     if (target === 'markets' && (cor.cross1 === revCurCross || cor.cross2 === revCurCross)) {
                         cor.rel = -(cor.rel);
                     } else if (target === 'events' && (cor.cross1 === curCross || cor.cross2 === curCross)) {
@@ -431,6 +431,17 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                     cor.cross = ((cor.cross1 === curCross && cor.cross2) || (cor.cross1 === revCurCross && cor.cross2)) || ((cor.cross2 === curCross && cor.cross1) || (cor.cross2 === revCurCross && cor.cross1));
                     delete cor.cross1;
                     delete cor.cross2;
+                    var curr1 = cor.cross.split('').splice(0, 3).join('');
+                    var curr2 = cor.cross.split('').splice(3, 3).join('');
+                    // normalize cross
+                    var oandaCross = $scope.api.getOandaCross(curr1, curr2) && $scope.api.getOandaCross(curr1, curr2).instrument || null;
+                    if (oandaCross !== null) {
+                        if (oandaCross.replace(/[^a-z]+/gi, '') !== cor.cross) {
+                            // revert rel
+                            cor.cross = oandaCross.replace(/[^a-z]+/gi, '');
+                            cor.rel = -(cor.rel);
+                        }
+                    }
                     return cor;
                 }).filter(function(cor, i, arr) {
                     var ret = (cor.rel >= $scope.config.correlation.min) || (cor.rel <= -($scope.config.correlation.min));
