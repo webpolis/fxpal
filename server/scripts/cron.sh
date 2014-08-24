@@ -6,4 +6,6 @@ curl -G -A "Mozilla/5.0 (Windows NT 6.1; rv:19.0) Gecko/20100101 Firefox/19.0" -
 cd $CURDIR
 Rscript $CURDIR/multisets.r
 
-Rscript $CURDIR/candlesticks.r 1 2 3 volatility
+# to properly set pwd inside R script
+cd $CURDIR/../../
+Rscript server/scripts/candlesticks.r 1 2 3 volatility
