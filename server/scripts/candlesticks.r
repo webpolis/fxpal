@@ -110,6 +110,7 @@ if(type == "volatility"){
 	tmp = cbind(names(vol),tmp)
 	colnames(tmp) = c("cross","volatility")
 	vol = as.data.frame(tmp)
+	vol = vol[with(vol, order(-(as.numeric(volatility)), cross)), ]
 
 	write.csv(as.matrix(vol), append = FALSE, quote = FALSE, row.names = FALSE, file = paste(dataPath,"volatility.csv",sep=""), fileEncoding = "UTF-8")
 }
