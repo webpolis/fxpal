@@ -1,4 +1,8 @@
-tmp = read.table("/Volumes/KINGSTON/annualof.txt", sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
+library(TTR)
+
+url = "http://www.cftc.gov/files/dea/history/deahistfo{{year}}.zip"
+reportName = "annualof.txt"
+tmp = read.table("/Volumes/KINGSTON/data/annualof.txt", sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
 tmp = subset(tmp,CFTC.Market.Code.in.Initials=="CME")
 tmp[,1] = gsub("(.*)\\s+\\-\\s+.*","\\1",tmp[,1],ignore.case=T,perl=T)
 
@@ -13,3 +17,5 @@ getPosition <- function(currency){
 }
 
 currencies = c("CANADIAN DOLLAR","SWISS FRANC","BRITISH POUND STERLING","JAPANESE YEN","EURO FX","BRAZILIAN REAL","NEW ZEALAND DOLLAR","AUSTRALIAN DOLLAR")
+
+stats = Reduce(rbind,lapply(currencies,getPosition))
