@@ -1,7 +1,7 @@
-pwd = ifelse(is.null(sys.frames()),getwd(),dirname(sys.frame(1)$ofile))
-dataPath = paste(pwd,"/../../app/data/",sep="")
-
 Sys.setenv(TZ="UTC")
+
+pwd = ifelse(is.null(sys.frames()),getwd(),paste(dirname(sys.frame(1)$ofile),"/../..",sep=""))
+dataPath = paste(pwd,"/app/data/",sep="")
 
 data = read.table(paste(dataPath,"multisetsInputs.csv",sep=""), sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
 names(data) = toupper(gsub("\\.{3}[\\w]+|QUANDL\\.|\\.Price", "", names(data), perl = TRUE))
