@@ -265,5 +265,8 @@ getSignals <- function(data){
   stochema = ifelse(stochema>0,1,ifelse(stochema<0,-1,0))
   names(stochema) = c("E.EMA","E.STOCH")
 
-  return(cbind(ccimacd,rsimsi,stochrsi,adxsar,stochema))
+  stats = cbind(ccimacd,rsimsi,stochrsi,adxsar,stochema)
+  stats$avg = rowMeans(stats[,1:ncol(stats)])
+
+  return(stats)
 }
