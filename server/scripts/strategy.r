@@ -57,7 +57,6 @@ TradingStrategy <- function(strategy, data,param1=NA,param2=NA,param3=NA){
 RunIterativeStrategy <- function(data, strategy = NA){
   #This function will run the TradingStrategy
   #It will iterate over a given set of input variables
-  #In this case we try lots of different periods for the moving average
   firstRun <- TRUE
   results = NULL
 
@@ -222,7 +221,7 @@ FindOptimumStrategy <- function(trainingData, strategy = NA){
   return (pTab)
 }
 #1
-trainStrategy <- function(data, instrument,granularity,strategy){
+trainStrategy <- function(data,granularity,strategy){
   startDate = index(data[1,])
   ##endDate = index(data[ceiling(nrow(data)/2),])
   endDate = index(data[nrow(data),])
@@ -245,23 +244,23 @@ testStrategy <- function(data, instrument,strategy,param1=NA,param2=NA,param3=NA
 
 getSignals <- function(data){
   # CCI+MACD
-  ccimacd = cbind(TradingStrategy("CCI",data,7),TradingStrategy("MACD",data,5,12,6))
+  ccimacd = cbind(TradingStrategy("CCI",data,18),TradingStrategy("MACD",data,7,10,4))
   ccimacd = ifelse(ccimacd>0,1,ifelse(ccimacd<0,-1,0))
   names(ccimacd) = c("A.CCI","A.MACD")
   # RSI+SMI
-  rsimsi = cbind(TradingStrategy("SMI",data,3,3,6),TradingStrategy("RSI",data,17))
+  rsimsi = cbind(TradingStrategy("SMI",data,8,19,3),TradingStrategy("RSI",data,13))
   rsimsi = ifelse(rsimsi>0,1,ifelse(rsimsi<0,-1,0))
   names(rsimsi) = c("B.SMI","B.RSI")
   # RSI+STOCH
-  stochrsi = cbind(TradingStrategy("RSI",data,17),TradingStrategy("STOCH",data,3,3,3))
+  stochrsi = cbind(TradingStrategy("RSI",data,13),TradingStrategy("STOCH",data,3,3,3))
   stochrsi = ifelse(stochrsi>0,1,ifelse(stochrsi<0,-1,0))
   names(stochrsi) = c("C.RSI","C.STOCH")
   # ADX+SAR
-  adxsar = cbind(TradingStrategy("ADX",data,5),TradingStrategy("SAR",data))
-  adxsar = ifelse(adxsar>0,1,ifelse(adxsar<0,-1,0))
+  adxsar = cbind(TradingStrategy("ADX",data,3),TradingStrategy("SAR",data))
+  adxsar = ifelse(adxsar>0,1,ifelse(adxsar<0  ,-1,0))
   names(adxsar) = c("D.ADX","D.SAR")
   # EMA+STOCH
-  stochema = cbind(TradingStrategy("EMA",data,12,4,7),TradingStrategy("STOCH",data,3,3,3))
+  stochema = cbind(TradingStrategy("EMA",data,6,11,5),TradingStrategy("STOCH",data,3,3,3))
   stochema = ifelse(stochema>0,1,ifelse(stochema<0,-1,0))
   names(stochema) = c("E.EMA","E.STOCH")
 
