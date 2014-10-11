@@ -257,7 +257,7 @@ getSignals <- function(data){
   names(stochrsi) = c("C.RSI","C.STOCH")
   # ADX+SAR
   adxsar = cbind(TradingStrategy("ADX",data,3),TradingStrategy("SAR",data))
-  adxsar = ifelse(adxsar>0,1,ifelse(adxsar<0  ,-1,0))
+  adxsar = ifelse(adxsar>0,1,ifelse(adxsar<0,-1,0))
   names(adxsar) = c("D.ADX","D.SAR")
   # EMA+STOCH
   stochema = cbind(TradingStrategy("EMA",data,6,11,5),TradingStrategy("STOCH",data,3,3,3))

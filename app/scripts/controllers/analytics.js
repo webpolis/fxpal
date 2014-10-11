@@ -301,7 +301,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                                 try {
                                     if (ticker !== null) {
                                         // set value
-                                        jsonPath.eval($scope.selected.correlation.markets, '$[?(@.cross && @.cross == "' + ticker.quandl + '")]')[0][type] = parseFloat(quote.Change);
+                                        jsonPath.eval($scope.selected.correlation.markets, '$[?(@.cross && @.cross == "' + ticker.quandl + '")]')[0][type] = quote.Change && parseFloat(quote.Change) ||  0.0;
                                         // set label
                                         jsonPath.eval($scope.selected.correlation.markets, '$[?(@.cross && @.cross == "' + ticker.quandl + '")]')[0].label = ticker.name;
                                     }
