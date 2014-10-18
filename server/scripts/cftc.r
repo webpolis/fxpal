@@ -22,15 +22,16 @@ getPosition <- function(currency){
 	return(ret)
 }
 
-currencies = c("CANADIAN DOLLAR","SWISS FRANC","BRITISH POUND STERLING","JAPANESE YEN","EURO FX","BRAZILIAN REAL","NEW ZEALAND DOLLAR","AUSTRALIAN DOLLAR", "U.S. DOLLAR INDEX")
+currencies = c("CANADIAN DOLLAR","SWISS FRANC","BRITISH POUND STERLING","JAPANESE YEN","EURO FX","BRAZILIAN REAL","NEW ZEALAND DOLLAR","AUSTRALIAN DOLLAR","U.S. DOLLAR INDEX","NIKKEI STOCK AVERAGE")
 
 stats = Reduce(rbind,lapply(currencies,getPosition))
 
 unlink(tmp)
 unlink(reportName)
 
-plot.ts(as.data.frame(stats),plot.type=c("single"),col=c("green","red","black"),axes=F,xlab="currency",ylab="positioning")
-axis(1,at=1:9,labels=index(stats),cex.axis=0.5)
+plot.ts(as.data.frame(stats),plot.type=c("single"),type="p",col=c("green","red","black"),axes=F,xlab="currency",ylab="positioning")
+axis(1,at=1:10,labels=index(stats),cex.axis=0.35)
 axis(2,cex.axis=0.5,at=seq(min(stats),max(stats),by=0.05))
-legend("topright", c("long","short","interest"), cex=0.8,col=c("green","red","black"), lty=c(1,1,1))
+legend("bottomright", c("long","short","interest"), cex=0.8,col=c("green","red","black"), lty=c(1,1,1))
 abline(h=0,lty=c(3))
+grid()
