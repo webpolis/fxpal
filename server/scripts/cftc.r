@@ -1,9 +1,9 @@
 library(TTR)
 
 year = format(Sys.time(),"%Y")
-url = "http://www.cftc.gov/files/dea/history/deahistfo{{year}}.zip"
+url = "http://www.cftc.gov/files/dea/history/deacot{{year}}.zip"
 urlFinal = gsub("\\{\\{year\\}\\}",year,url)
-reportName = "annualof.txt"
+reportName = "annual.txt"
 tmp = tempfile()
 download.file(urlFinal,tmp)
 unzip(tmp,files=c(reportName))
@@ -13,13 +13,12 @@ data[,1] = gsub("(.*)\\s+\\-\\s+.*","\\1",data[,1],ignore.case=T,perl=T)
 
 getPosition <- function(currency){
 	curr = subset(data,Market.and.Exchange.Names==currency)
-	oInterest = diff(rev(curr$Open.Interest..All.))
-	longNC = diff(rev(curr$Noncommercial.Positions.Long..All.))
-	shortNC = diff(rev(curr$Noncommercial.Positions.Short..All.))
-	ret = as.data.frame(merge(last(longNC),last(shortNC)))
-	ret = merge(ret,as.data.frame(last(oInterest)))
-	rownames(ret) = c(currency)
-	names(ret) = c("long","short","interest")
+	cl = ROC(rev(curr$Noncommercial.Positions.Long..All.))
+	cs = ROC(rev(curr$Noncommercial.Positions.Short..All.))
+	ci = ROC(rev(curr$Open.Interest..All.))
+	pos = matrix(c(cl,cs,ci),ncol=3,dimnames=list(NULL,c("long","short","interest")))
+	ret = last(zoo(pos))
+	index(ret) = c(currency)
 	return(ret)
 }
 
@@ -30,8 +29,8 @@ stats = Reduce(rbind,lapply(currencies,getPosition))
 unlink(tmp)
 unlink(reportName)
 
-plot.ts(stats,plot.type=c("single"),col=c("green","red","black"),axes=F,xlab="currency")
-axis(1,at=1:9,labels=row.names(stats),cex.axis=0.5)
-axis(2,cex.axis=0.5,at=seq(min(stats),max(stats),by=5000))
+plot.ts(as.data.frame(stats),plot.type=c("single"),col=c("green","red","black"),axes=F,xlab="currency",ylab="positioning")
+axis(1,at=1:9,labels=index(stats),cex.axis=0.5)
+axis(2,cex.axis=0.5,at=seq(min(stats),max(stats),by=0.05))
 legend("topright", c("long","short","interest"), cex=0.8,col=c("green","red","black"), lty=c(1,1,1))
 abline(h=0,lty=c(3))
