@@ -77,7 +77,7 @@ getVolatility <- function(crosses){
 		tmp = getCandles(cross,"H1",count = 8)
 		vol = volatility(n=6,calc="garman.klass",OHLC(tmp))
 		names(vol) = c(cross)
-		ret = merge(vol,ret)
+		ret = cbind(vol,ret)
 	}
 	ret = na.omit(ret)
 	return(ret[nrow(ret),])
@@ -105,7 +105,7 @@ if(type == "volatility"){
 	crosses = read.csv(paste(dataPath,"availableCrosses.csv",sep=""), sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
 	crosses = as.character(crosses$instrument)
 	vol = getVolatility(crosses)
-	vol = vol[,vol>=0.0081]
+	vol = vol[,vol>=0.011]
 	tmp = matrix(as.list(vol))
 	tmp = cbind(names(vol),tmp)
 	colnames(tmp) = c("cross","volatility")

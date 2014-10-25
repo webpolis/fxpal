@@ -29,6 +29,6 @@ stats = Reduce(rbind,lapply(currencies,getPosition))
 unlink(tmp)
 unlink(reportName)
 
-barplot(as.matrix(t(stats)),main="COT - Rate of Change",ylab="Positioning",beside=T,col=c("green","red","blue"),cex.names=0.4)
+barplot(as.matrix(t(stats)),main="COT - Rate of Change",ylab="Positioning",beside=T,col=c("green","red","blue"),cex.names=0.35)
 legend("bottomright", c("long","short","interest"), cex=0.8,col=c("green","red","blue"), lty=c(1,1,1))
 grid()

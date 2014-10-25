@@ -1,4 +1,5 @@
-setwd("app/data/")
+pwd = ifelse(is.null(sys.frames()),paste(getwd(),"/server/scripts",sep=""),dirname(sys.frame(1)$ofile))
+dataPath = paste(pwd,"/../../app/data/",sep="")
 
 Sys.setenv(TZ="UTC")
 
@@ -39,7 +40,8 @@ mediumWeights = sort(mediumWeights, decreasing = TRUE)
 
 out = as.data.frame(mediumWeights)
 out = data.frame(cross = names(mediumWeights), percentage = mediumWeights)
+outFile = "stocksPortfolio"
 
-write.csv(out, quote = FALSE, row.names = FALSE, file = "stocksPortfolio.csv", fileEncoding = "UTF-8")
+write.csv(out, quote = FALSE, row.names = FALSE, file = paste(dataPath, paste(outFile,'.csv',sep=''),sep=""), fileEncoding = "UTF-8")
 
 quit()

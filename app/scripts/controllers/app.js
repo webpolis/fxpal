@@ -32,13 +32,13 @@ angular.module('aifxApp').controller('appController', function($scope, $ionicSid
         appName: 'cella.in FX',
         token: 'pWGUEdRoPxqEdp66WRYv',
         urls: {
-            api: 'http://cella.in:9999/api/',
-            //api: 'http://localhost:9999/api/',
+            //api: 'http://cella.in:9999/api/',
+            api: 'http://localhost:9999/api/',
             cross: 'http://www.quandl.com/api/v1/datasets/QUANDL/{{cross}}.json?trim_start={{startDate}}&trim_end={{endDate}}&collapse=daily&auth_token={{token}}',
             multiset: 'http://quandl.com/api/v1/multisets.json?columns={{sets}}&collapse=daily&trim_start={{startDate}}&auth_token={{token}}',
             cpi: 'http://quandl.com/api/v1/multisets.json?columns=&rows=10',
             rate: 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.xchange%20where%20pair%20%3D%20%22{{cross}}%22&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=',
-            candlestick: 'http://api-sandbox.oanda.com/v1/candles?instrument={{cross1}}_{{cross2}}&count={{count}}&candleFormat=midpoint&granularity={{period}}&weeklyAlignment=Monday',
+            candlestick: 'http://api-fxpractice.oanda.com/v1/candles?instrument={{cross1}}_{{cross2}}&count={{count}}&candleFormat=midpoint&granularity={{period}}&weeklyAlignment=Monday',
             dailyChange: 'http://www.quandl.com/api/v1/multisets.json?columns={{sets}}&collapse=daily&auth_token={{token}}&rows=1&transformation=rdiff&rows=4',
             weeklyChange: 'http://www.quandl.com/api/v1/multisets.json?columns={{sets}}&collapse=weekly&auth_token={{token}}&rows=1&transformation=rdiff&rows=4',
             monthlyChange: 'http://www.quandl.com/api/v1/multisets.json?columns={{sets}}&collapse=monthly&auth_token={{token}}&rows=1&transformation=rdiff&rows=4',
@@ -120,12 +120,10 @@ angular.module('aifxApp').controller('appController', function($scope, $ionicSid
         $ionicSideMenuDelegate.$getByHandle('menuLeft').toggleLeft();
     };
     $scope.init = function() {
-        // set token
-        $scope.config.urls.cross = $scope.config.urls.cross.replace(/\{\{token\}\}/gi, $scope.config.token);
-        $scope.config.urls.multiset = $scope.config.urls.multiset.replace(/\{\{token\}\}/gi, $scope.config.token);
-        $scope.config.urls.dailyChange = $scope.config.urls.dailyChange.replace(/\{\{token\}\}/gi, $scope.config.token);
-        $scope.config.urls.weeklyChange = $scope.config.urls.weeklyChange.replace(/\{\{token\}\}/gi, $scope.config.token);
-        $scope.config.urls.monthlyChange = $scope.config.urls.monthlyChange.replace(/\{\{token\}\}/gi, $scope.config.token);
+        // set token for quandl
+        for (var p in $scope.config.urls) {
+            $scope.config.urls[p] = $scope.config.urls[p].replace(/\{\{token\}\}/gi, $scope.config.token);
+        }
         // initialize crosses
         csv2json.csv('data/availableCrosses.csv', function(data) {
             $scope.data.currencies = data;
