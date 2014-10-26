@@ -1,6 +1,7 @@
 Sys.setenv(TZ="UTC")
 
-pwd = dirname(sys.frame(1)$ofile)
+pwd = ifelse(is.null(sys.frames()),getwd(),paste(dirname(sys.frame(1)$ofile),"/../..",sep=""))
+dataPath = paste(pwd,"/app/data/",sep="")
 
 source(paste(pwd,"/candlesticks.r",sep=""))
 library("quantmod")

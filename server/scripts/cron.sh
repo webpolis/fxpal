@@ -10,3 +10,4 @@ rm app/data/multisetsOutputs.csv
 
 Rscript server/scripts/multisets.r
 Rscript server/scripts/candlesticks.r 1 2 3 volatility
+Rscript server/scripts/candlesticks.r 1 2 3 force
