@@ -138,6 +138,40 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             text: false
         }
     };
+    $scope.optsHighchartsCurrencyForce = {
+        options: {
+            scrollbar: {
+                enabled: false
+            },
+            exporting: {
+                enabled: false
+            },
+            chart: {
+                'type': 'column',
+                'zoomType': 'x'
+            },
+            'plotOptions': {
+                'series': {
+                    'stacking': ''
+                }
+            }
+        },
+        xAxis: {
+            categories: []
+        },
+        yAxis: {
+            title: {
+                text: 'Currency Force'
+            }
+        },
+        series: [{
+            data: [],
+            name: 'Major Currencies',
+        }],
+        title: {
+            text: false
+        }
+    };
     // not supported via highcharts-ng
     Highcharts.setOptions({
         global: {
@@ -203,6 +237,48 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             });
             $scope.$apply(function() {
                 $scope.optsHighchartsVolatility.series[0].data = tmp;
+            });
+            $ionicLoading.hide();
+        });
+    };
+    $scope.computeCurrencyForce = function() {
+        $scope.optsHighchartsCurrencyForce.series[0].data = [];
+        var tmp = [];
+        var currencies = {};
+        $ionicLoading.show({
+            template: 'Loading...'
+        });
+        csv2json.csv($scope.config.urls.api + 'currencyForce', function(data) {
+            $scope.selected.currencyForce = data;
+            // initialize currencies
+            Object.keys(data[0]).map(function(cur) {
+                if (cur === 'period') return;
+                currencies[cur] = [];
+            });
+            // fetch period data
+            angular.forEach($scope.selected.currencyForce, function(periodData) {
+                var period = periodData.period || null;
+                if (period === null) return;
+                Object.keys(currencies).map(function(cur) {
+                    currencies[cur].push(parseFloat(periodData[cur]));
+                });
+            });
+            // build chart
+            Object.keys(currencies).map(function(cur) {
+                var mean = math.mean(currencies[cur]);
+                tmp.push({
+                    name: cur,
+                    color: $scope.utils.getRandomColorCode(),
+                    y: mean
+                });
+            });
+            tmp.sort(function(a, b) {
+                if (a.y > b.y) return -1;
+                if (a.y < b.y) return 1;
+                return 0;
+            });
+            $scope.$apply(function() {
+                $scope.optsHighchartsCurrencyForce.series[0].data = tmp;
             });
             $ionicLoading.hide();
         });

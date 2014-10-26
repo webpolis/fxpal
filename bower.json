@@ -21,7 +21,8 @@
     "regression-js": "*",
     "highstock-release": "~2.0.3",
     "highcharts-ng": "~0.0.6",
-    "angular-timer": "~1.1.6"
+    "angular-timer": "~1.1.6",
+    "mathjs": "~1.0.1"
   },
   "devDependencies": {
     "angular-mocks": "~1.2.20",

@@ -198,7 +198,8 @@ if(!is.na(type)){
 		write.csv(as.matrix(vol), append = FALSE, quote = FALSE, row.names = FALSE, file = paste(dataPath,"volatility.csv",sep=""), fileEncoding = "UTF-8")
 	}
 	if(type == "force"){
-		table = getCrossesStrengthPerPeriod(crosses)
+		table = round(getCrossesStrengthPerPeriod(crosses)
+		table = round(table,6)
 		strengths = getCurrencyStrengthPerPeriod(table)
 		strengths$period = rownames(strengths)
 		

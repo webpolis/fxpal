@@ -125,6 +125,19 @@ server.get('/api/candles/volatility', function respond(req, res, next) {
     });
     next();
 });
+server.get('/api/currencyForce', function respond(req, res, next) {
+    res.setHeader('content-type', 'text/csv');
+    var outFile = [__dirname + '/../app/data/', 'force', '.csv'].join('');
+    var sinceMinutes = 60;
+    // only generate file if it's older than XX minutes
+    if (isOutdatedFile(outFile, sinceMinutes)) {
+        sh.run(['Rscript', __dirname + '/scripts/candlesticks.r', 0, 0, 0, 'force'].join(' '));
+    }
+    fs.readFile(outFile, {}, function(err, data) {
+        res.send(data);
+    });
+    next();
+});
 server.post('/api/stemmer/:cross', function respond(req, res, next) {
     var ret = [];
     res.setHeader('content-type', 'application/json');

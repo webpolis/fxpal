@@ -15,7 +15,8 @@
     "regression": true,
     "Highcharts": true,
     "alert": true,
-    "stemmer": true
+    "stemmer": true,
+    "math": true
   },
   "globalstrict": true,
   "quotmark": true,
