@@ -199,10 +199,12 @@ if(!is.na(type)){
 	}
 	if(type == "force"){
 		table = round(getCrossesStrengthPerPeriod(crosses),6)
-		strengths = getCurrencyStrengthPerPeriod(table)
+		table$period = rownames(table)
+		strengths = getCurrencyStrengthPerPeriod(table[-(grep("period",colnames(table)))])
 		strengths$period = rownames(strengths)
 		
 		write.csv(as.matrix(strengths), append = FALSE, quote = FALSE, row.names = FALSE, file = paste(dataPath,"force.csv",sep=""), fileEncoding = "UTF-8")
+		write.csv(as.matrix(strengths), append = FALSE, quote = FALSE, row.names = FALSE, file = paste(dataPath,"forceCrosses.csv",sep=""), fileEncoding = "UTF-8")
 	}
 }
 

@@ -132,7 +132,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         },
         series: [{
             data: [],
-            name: 'Major Crosses',
+            name: 'Major Economies',
         }],
         title: {
             text: false
