@@ -30,6 +30,6 @@ unlink(tmp)
 unlink(reportName)
 
 dev.new()
-barplot(as.matrix(t(stats)),main="COT - Rate of Change",ylab="Positioning",beside=T,col=c("green","red","blue"),cex.names=0.35)
+barplot(as.matrix(t(stats)),main="COT - Rate of Change",ylab="Positioning",beside=T,col=c("green","red","blue"),cex.names=0.35,width=0.75)
 legend("bottomright", c("long","short","interest"), cex=0.8,col=c("green","red","blue"), lty=c(1,1,1))
 grid()
