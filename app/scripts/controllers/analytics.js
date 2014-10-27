@@ -178,6 +178,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             useUTC: false
         }
     });
+    Highcharts.setTheme('steel');
     $scope.optsChartPeriods = [{
         label: 'Intraday',
         granularity: 'M15',
