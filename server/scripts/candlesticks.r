@@ -213,7 +213,7 @@ getSupportsAndResistances <- function(candles, showGraph = F, fillCongested=F,dr
 	ret = list("resistances"=resistances,"supports"=supports)
 
 	if(showGraph){
-		lineChart(Cl(prices))
+		lineChart(Cl(prices),name=paste(instrument,granularity,sep=" - "))
 
 		if(drawLines){
 			for(r in ret$resistances){addLines(h=r,on=1,col="blue")}
