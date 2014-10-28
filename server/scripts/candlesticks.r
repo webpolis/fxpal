@@ -166,7 +166,7 @@ getCurrencyStrengthPerPeriod <- function(table){
 	return(df)
 }
 
-getSupportsAndResistances <- function(candles, showGraph = F, fillCongested=F,drawLines=T){
+getSupportsAndResistances <- function(candles){
 	prices = HLC(candles)
 	dc = lag(DonchianChannel(Cl(prices),n=20),-2)
 	dc$count = 1
@@ -212,15 +212,30 @@ getSupportsAndResistances <- function(candles, showGraph = F, fillCongested=F,dr
 
 	ret = list("resistances"=resistances,"supports"=supports)
 
-	if(showGraph){
-		lineChart(Cl(prices),name=paste(instrument,granularity,sep=" - "))
+	return(ret)
+}
+
+graphBreakoutArea <- function(instrument="EUR_USD",granularity="D",bars=600,save=T,showGraph=F,fillCongested=T,drawLines=F){
+	candles = getCandles(instrument,granularity,count=bars)
+	prices = HLC(candles)
+	ret = getSupportsAndResistances(candles)
+
+	if(!is.null(ret$resistances)&!is.null(ret$supports)){
+		if(showGraph){
+			dev.new()
+			lineChart(Cl(candles),name=paste(instrument,granularity,sep=" - "))
+		}
+		if(save){
+			jpeg(paste(dataPath,"breakout/", instrument, "-", granularity, ".jpg", sep = ""),width=1440,height=860,quality=100)
+			lineChart(Cl(candles),name=paste(instrument,granularity,sep=" - "))
+		}
 
 		if(drawLines){
 			for(r in ret$resistances){addLines(h=r,on=1,col="blue")}
 			for(r in ret$supports){addLines(h=r,on=1,col="red")}
 		}
 
-		axis(2,at=round(c(ret$resistances,ret$supports),3),cex.axis=0.5,col.axis="white")
+		axis(2,at=round(c(ret$resistances,ret$supports),3),cex.axis=0.9,col.axis="white")
 
 		# fill areas
 		if(fillCongested){
@@ -242,9 +257,12 @@ getSupportsAndResistances <- function(candles, showGraph = F, fillCongested=F,dr
 				}
 			})
 		}
+
+		if(save){
+			dev.off()
+		}
 	}
 
-	return(ret)
 }
 
 if(!is.na(type)){
@@ -287,8 +305,8 @@ if(!is.na(type)){
 		write.csv(as.matrix(strengths), append = FALSE, quote = FALSE, row.names = FALSE, file = paste(dataPath,"force.csv",sep=""), fileEncoding = "UTF-8")
 		write.csv(as.matrix(table), append = FALSE, quote = FALSE, row.names = FALSE, file = paste(dataPath,"forceCrosses.csv",sep=""), fileEncoding = "UTF-8")
 	}
-	if(type == "pivots"){
-
+	if(type == "breakout"){
+		graphBreakoutArea(instrument,granularity)
 	}
 }
 
