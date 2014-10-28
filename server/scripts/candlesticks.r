@@ -185,7 +185,9 @@ getSupportsAndResistances <- function(candles, showGraph = F, fillCongested=F,dr
 	resLessDistances = sort(resdist[resdist<sd(resdist)&resdist>0])
 	supLessDistances = sort(supdist[supdist<sd(supdist)&supdist>0])
 	resMinDistance = max(resLessDistances[1:ceiling(10*length(resLessDistances)/100)])
+	resMinDistance = ifelse(resMinDistance<0.0005,max(resLessDistances),resMinDistance)
 	supMinDistance = max(supLessDistances[1:ceiling(10*length(supLessDistances)/100)])
+	supMinDistance = ifelse(supMinDistance<0.0005,max(supLessDistances),supMinDistance)
 
 	resmerge = which(resdist<0.0005&resdist>0,arr.ind=T)
 	supmerge = which(supdist<0.0005&supdist>0,arr.ind=T)
