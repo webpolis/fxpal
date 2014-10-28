@@ -271,6 +271,12 @@ module.exports = function(grunt) {
                 cwd: '<%= yeoman.app %>/styles',
                 dest: '.tmp/styles/',
                 src: '{,*/}*.css'
+            },
+            flags: {
+                expand: true,
+                cwd: 'bower_components/famfamfam-flags/img',
+                dest: '<%= yeoman.app %>/images/flags',
+                src: '{,*/}*.png'
             }
         },
         // Run some tasks in parallel to speed up the build process

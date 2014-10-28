@@ -6,17 +6,15 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
     $scope.nextEvents = null;
     $scope.nxtEvent = null;
     $scope.optsHighchartsCross = {
-        options: {
-            scrollbar: {
-                enabled: false
-            },
-            exporting: {
-                enabled: false
-            },
-            navigator: {
-                enabled: true,
-                adaptToUpdatedData: false
-            }
+        scrollbar: {
+            enabled: false
+        },
+        exporting: {
+            enabled: false
+        },
+        navigator: {
+            enabled: true,
+            adaptToUpdatedData: false
         },
         title: {
             text: false
@@ -60,21 +58,19 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         }
     };
     $scope.optsHighchartsVolatility = {
-        options: {
-            scrollbar: {
-                enabled: false
-            },
-            exporting: {
-                enabled: false
-            },
-            chart: {
-                'type': 'column',
-                'zoomType': 'x'
-            },
-            'plotOptions': {
-                'series': {
-                    'stacking': ''
-                }
+        scrollbar: {
+            enabled: false
+        },
+        exporting: {
+            enabled: false
+        },
+        chart: {
+            'type': 'column',
+            'zoomType': 'x'
+        },
+        'plotOptions': {
+            'series': {
+                'stacking': ''
             }
         },
         xAxis: {
@@ -89,6 +85,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             data: [],
             name: 'Major Crosses',
             cursor: 'pointer',
+            type: 'column',
             point: {
                 events: {
                     click: function() {
@@ -105,22 +102,15 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         }
     };
     $scope.optsHighchartsStrength = {
-        options: {
-            scrollbar: {
-                enabled: false
-            },
-            exporting: {
-                enabled: false
-            },
-            chart: {
-                'type': 'column',
-                'zoomType': 'x'
-            },
-            'plotOptions': {
-                'series': {
-                    'stacking': ''
-                }
-            }
+        scrollbar: {
+            enabled: false
+        },
+        exporting: {
+            enabled: false
+        },
+        chart: {
+            'type': 'column',
+            'zoomType': 'x'
         },
         xAxis: {
             categories: []
@@ -136,24 +126,22 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         }],
         title: {
             text: false
-        }
+        },
     };
     $scope.optsHighchartsCurrencyForce = {
-        options: {
-            scrollbar: {
-                enabled: false
-            },
-            exporting: {
-                enabled: false
-            },
-            chart: {
-                'type': 'column',
-                'zoomType': 'x'
-            },
-            'plotOptions': {
-                'series': {
-                    'stacking': ''
-                }
+        scrollbar: {
+            enabled: false
+        },
+        exporting: {
+            enabled: false
+        },
+        chart: {
+            'type': 'column',
+            'zoomType': 'x'
+        },
+        'plotOptions': {
+            'series': {
+                'stacking': ''
             }
         },
         xAxis: {
@@ -166,6 +154,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         },
         series: [{
             data: [],
+            type: 'column',
             name: 'Major Currencies',
         }],
         title: {
@@ -296,7 +285,10 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                 tmp.push({
                     name: row.country,
                     color: $scope.utils.getRandomColorCode(),
-                    y: parseFloat(row.strength)
+                    y: parseFloat(row.strength),
+                    marker: {
+                        symbol: 'url(images/flags/' + [angular.lowercase((/em/i.test(row.country) ? 'europeanunion' : row.country)), 'png'].join('.') + ')'
+                    }
                 });
             });
             $scope.$apply(function() {
