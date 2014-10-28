@@ -1,0 +1,250 @@
+aggregate(count~.,dc,FUN=sum)
+agg = aggregate(count~.,dc,FUN=sum)
+agg[which(agg$count>5)]
+agg[which(agg$count>5),]
+lag(agg[which(agg$count>5),],20)
+lag(agg[which(agg$count>5),],2)
+agg[which(agg$count>5),]
+agg[which(agg$count>5),]
+agg
+dc
+agg = aggregate(count~.,dc,by=list(dc$high),FUN=sum)
+agg = aggregate(count~.,x=dc,by=list(dc$high),FUN=sum)
+agg = aggregate(x=dc,by=list(dc$high),FUN=sum)
+agg
+agg
+dc
+dc[,-1]
+dc[,+1]
+dc[,+2]
+dc
+dc[,-("count")]
+dc[,-"count"]
+dc[,-(grep("count",colnames(dc))]
+dc[,-(grep("count",colnames(dc)))]
+dc = dc[,-(grep("count",colnames(dc)))]
+dc
+agg = aggregate(x=dc,by=list(dc$high),FUN=sum)
+agg
+agg = aggregate(count~.,dc,by=list(dc$high),FUN=sum)
+dc$count = 1
+dc
+agg = aggregate(count~.,dc,by=list(dc$high),FUN=sum)
+agg = aggregate(x=dc,by=list(dc$high),FUN=sum)
+agg
+dc
+dc
+agg = aggregate(x=dc,by=list(dc$high),FUN=sum)
+agg
+agg2 = aggregate(x=dc,by=list(dc$low),FUN=sum)
+agg2
+dc
+agg2
+agg2[,1]
+agg2
+summary(agg2)
+agg2
+agg2 = aggregate(x=dc,by=list(dc$low),FUN=sum,simplify=T)
+agg2
+agg2
+agg2 = aggregate(x=dc,by=list(dc$low),FUN=sum,simplify=T,formula=count~.)
+agg2 = aggregate(x=dc,by=list(dc$low),FUN=sum)
+agg2
+agg2
+nrow(agg2)
+agg2[1]
+agg2[,1]
+index(agg2)
+as.numeric(index(agg2))
+agg2
+as.numeric(index(agg2[which(agg2$count>5)]))
+as.numeric(index(agg2[which(agg2$count>3)]))
+as.numeric(index(agg[which(agg$count>3)]))
+as.numeric(index(agg2[which(agg2$count>3)]))
+as.numeric(index(agg[which(agg$count>3)]))
+agg
+agg[agg$count>5]
+?count
+na.spline(agg)
+agg = aggregate(x=dc,by=list(dc$high),FUN=sum,na.action=spline)
+agg = aggregate(x=dc,by=list(dc$high),FUN=sum,na.action="spline")
+agg = aggregate(x=dc,by=list(dc$high),FUN=sum,na.action="spline")
+agg = aggregate(x=dc,by=list(dc$high),FUN=sum)
+agg
+agg = na.spline(aggregate(x=dc,by=list(dc$high),FUN=sum))
+agg
+agg = aggregate(x=dc,by=list(dc$high),FUN=sum)
+agg
+agg = aggregate(x=dc,by=list(dc$high),FUN=sum,na.action=na.spline)
+agg = aggregate(x=dc,by=list(dc$high),FUN=sum)
+agg
+cbind(index(agg),agg$count)
+agg[,-(c("high","mid","low"))]
+agg[c("high")]
+agg[,c("high")]
+agg[,c("high","mid")]
+agg[,c("count")]
+agg[,c("count")]
+agg
+na.omit(agg)
+dc
+agg
+addLines(h=1.26925,col="blue")
+index(agg[agg$count>5])
+agg[agg$count>5]
+agg
+class(agg)
+as.matrix(agg)
+agg
+agg$resistance = index(agg)
+agg
+agg
+agg[which(agg$count>5)]
+agg[agg$count>5]
+agg
+class(agg)
+agg
+agg$count>5
+agg["count"]>5
+agg[,"count"]>5
+agg[agg[,"count"]>5]
+agg[,agg[,"count"]>5]
+agg[agg[,"count"]>5,]
+agg[agg[,"count"]>5,]$resistance
+agg[agg[,"count"]>5,][,"resistance"]
+agg
+agg[agg[,"count"]>10,][,"resistance"]
+resistances = agg[agg[,"count"]>10,][,"resistance"]
+class(resistances)
+resistances
+lapply(resistances,FUN=function(r){print(r)})
+lapply(resistances,FUN=function(r){addLines(h=r,col="blue")})
+resistances
+lapply(resistances,FUN=function(r){print(r)})
+agg
+lag(agg)
+lag(agg,2)
+resistances
+agg
+lineChart(Cl(prices))
+resistances = agg[agg[,"count"]>12,][,"resistance"]
+resistances
+lapply(resistances,FUN=function(r){addLines(h=r,col="blue")})
+addTA(dc$high,on=1)
+addTA(dc$low,on=1,col="red")
+lineChart(Cl(prices))
+agg2
+class(agg2)
+as.matrix(agg2)
+class(agg2)
+supports = agg2[agg2[,"count"]>12,][,"supports"]
+agg2
+agg2$support = index(agg2)
+agg2
+class(agg2)
+supports = agg2[agg2[,"count"]>12,][,"support"]
+supports
+lapply(supports,FUN=function(r){addLines(h=r,col="red")})
+addTA(dc$high,on=1)
+addTA(dc$low,on=1,col="pink")
+cumsum(supports)/seq_along(supports)
+agg2
+dc = lag(DonchianChannel(Cl(prices),n=20),-2)
+dc
+dc$count = 1
+agg = aggregate(x=dc,by=list(dc$high),FUN=sum)
+agg
+agg2 = aggregate(x=dc,by=list(dc$low),FUN=sum)
+dc
+agg
+agg2
+dc
+lineChart(Cl(prices))
+addTA(dc$high,on=1)
+addTA(dc$low,on=1,col="red")
+agg
+data.frame(index(agg))
+data.frame(index(agg),agg$count)
+data.frame(index(agg),agg$count,index(agg2),agg2$count)
+data.frame(cbind(index(agg),agg$count,index(agg2),agg2$count))
+cbind(index(agg))
+cbind(index(agg),agg$count)
+c(cbind(index(agg),agg$count))
+cbind(index(agg),agg$count)
+cbind(index(agg),agg$count,index(agg2))
+agg2
+index(agg2)
+agg
+agg
+agg2
+?data.frame
+data.frame(support=index(agg2))
+index(agg2)
+cbind(index(agg2),agg2$count)
+cbind(index(agg2),agg2$count)
+agg2
+cbind(index(agg2),agg2$count)
+agg2
+agg2$support = index(agg2)
+agg2
+?reset
+agg$resistance = index(agg)
+agg
+agg2
+supports = agg2[agg2[,"count"]>12,][,"support"]
+supports
+?sapply
+sapply(supports,print)
+sapply(supports,NA)
+sapply(supports,NULL)
+sapply(supports,FUN=function(s){addLines(h=s,col="pink")})
+resistances = agg[agg[,"count"]>12,][,"resistance"]
+resistances
+sapply(resistances,FUN=function(r){addLines(h=r,col="blue")})
+lineChart(Cl(prices))
+addTA(dc$high,on=1)
+addTA(dc$low,on=1,col="red")
+agg
+dc
+colMeans(dc$high)
+colMeans(dc)
+supports
+resistances
+rownames(supports)<-NULL
+supports
+class(supports)
+as.list(supports)
+supports
+lapply(supports,print)
+sapply(supports,print,simplify=T)
+sapply(supports,print,simplify=F)
+sapply(supports,print,simplify=T)
+for(r in resistances){print(r)}
+for(r in resistances){addLines(h=r,on=1,col="blue")}
+dc
+dc$high
+dc$high
+resistances
+aggr
+agg
+dc
+class(dc)
+table(dc)
+table(dc$high)
+table(dc$high)
+table(dc$high)>10
+table(dc$high)
+class(table(dc$high))
+t = table(dc$high)
+t[t>10]
+names(t[t>10])
+as.double(names(t[t>10]))
+lineChart(Cl(prices))
+addTA(dc$high,on=1)
+addTA(dc$low,on=1,col="red")
+resistances = as.double(names(t[t>10]))
+t2 = table(dc$low)
+supports = as.double(names(t2[t2>10]))
+resistances
+supports
+for(r in resistances){addLines(h=r,on=1,col="blue")}

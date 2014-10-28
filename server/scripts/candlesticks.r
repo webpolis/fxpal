@@ -166,6 +166,35 @@ getCurrencyStrengthPerPeriod <- function(table){
 	return(df)
 }
 
+getSupportsAndResistances <- function(candles){
+	prices = HLC(candles)
+	dc = lag(DonchianChannel(Cl(prices),n=20),-2)
+	dc$count = 1
+	minDistance = 0.00050
+
+	t = table(dc$high)
+	t2 = table(dc$low)
+	resistances = as.double(names(t[t>10]))
+	supports = as.double(names(t2[t2>10]))
+	resdis = as.matrix(dist(resistances,method="manhattan"))
+	colnames(resdis) <- resistances
+	rownames(resdis) <- resistances
+	supdis = as.matrix(dist(supports,method="manhattan"))
+	colnames(supdis) <- supports
+	rownames(supdis) <- supports
+
+	resmerge = which(resdis<minDistance&resdis>0,arr.ind=T)
+	supmerge = which(supdis<minDistance&supdis>0,arr.ind=T)
+	resavg = unique(sapply(rownames(resmerge),FUN=function(rn){price = mean(c(as.double(rn),as.double(colnames(resdis)[resmerge[rn,"col"]])))}))
+	supavg = unique(sapply(rownames(supmerge),FUN=function(sn){price = mean(c(as.double(sn),as.double(colnames(supdis)[supmerge[sn,"col"]])))}))
+
+	resdif = setdiff(resistances,as.double(rownames(resmerge)))
+	supdif = setdiff(supports,as.double(rownames(supmerge)))
+
+	resistances = sort(c(resavg,resdif))
+	supports = sort(c(supavg,supdif))
+}
+
 if(!is.na(type)){
 	if(type == "analysis"){
 		cross = instrument
@@ -205,6 +234,9 @@ if(!is.na(type)){
 		
 		write.csv(as.matrix(strengths), append = FALSE, quote = FALSE, row.names = FALSE, file = paste(dataPath,"force.csv",sep=""), fileEncoding = "UTF-8")
 		write.csv(as.matrix(table), append = FALSE, quote = FALSE, row.names = FALSE, file = paste(dataPath,"forceCrosses.csv",sep=""), fileEncoding = "UTF-8")
+	}
+	if(type == "pivots"){
+
 	}
 }
 
