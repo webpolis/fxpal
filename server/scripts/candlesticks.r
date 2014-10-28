@@ -166,7 +166,7 @@ getCurrencyStrengthPerPeriod <- function(table){
 	return(df)
 }
 
-getSupportsAndResistances <- function(candles, minDistance = 0.0005){
+getSupportsAndResistances <- function(candles, showGraph = F, fillCongested=F,drawLines=T){
 	prices = HLC(candles)
 	dc = lag(DonchianChannel(Cl(prices),n=20),-2)
 	dc$count = 1
@@ -175,24 +175,73 @@ getSupportsAndResistances <- function(candles, minDistance = 0.0005){
 	t2 = table(dc$low)
 	resistances = as.double(names(t[t>10]))
 	supports = as.double(names(t2[t2>10]))
-	resdis = as.matrix(dist(resistances,method="manhattan"))
-	colnames(resdis) <- resistances
-	rownames(resdis) <- resistances
-	supdis = as.matrix(dist(supports,method="manhattan"))
-	colnames(supdis) <- supports
-	rownames(supdis) <- supports
+	resdist = as.matrix(dist(resistances,method="manhattan"))
+	colnames(resdist) <- resistances
+	rownames(resdist) <- resistances
+	supdist = as.matrix(dist(supports,method="manhattan"))
+	colnames(supdist) <- supports
+	rownames(supdist) <- supports
 
-	resmerge = which(resdis<minDistance&resdis>0,arr.ind=T)
-	supmerge = which(supdis<minDistance&supdis>0,arr.ind=T)
-	resavg = unique(sapply(rownames(resmerge),FUN=function(rn){price = mean(c(as.double(rn),as.double(colnames(resdis)[resmerge[rn,"col"]])))}))
-	supavg = unique(sapply(rownames(supmerge),FUN=function(sn){price = mean(c(as.double(sn),as.double(colnames(supdis)[supmerge[sn,"col"]])))}))
+	resLessDistances = sort(resdist[resdist<sd(resdist)&resdist>0])
+	supLessDistances = sort(supdist[supdist<sd(supdist)&supdist>0])
+	resMinDistance = max(resLessDistances[1:ceiling(10*length(resLessDistances)/100)])
+	supMinDistance = max(supLessDistances[1:ceiling(10*length(supLessDistances)/100)])
+
+	resmerge = which(resdist<0.0005&resdist>0,arr.ind=T)
+	supmerge = which(supdist<0.0005&supdist>0,arr.ind=T)
+
+	resavg = unique(sapply(rownames(resmerge),FUN=function(rn){price = mean(c(as.double(rn),as.double(colnames(resdist)[resmerge[rn,"col"]])))}))
+	supavg = unique(sapply(rownames(supmerge),FUN=function(sn){price = mean(c(as.double(sn),as.double(colnames(supdist)[supmerge[sn,"col"]])))}))
 
 	resdif = setdiff(resistances,as.double(rownames(resmerge)))
 	supdif = setdiff(supports,as.double(rownames(supmerge)))
 
-	resistances = sort(c(resavg,resdif))
-	supports = sort(c(supavg,supdif))
+	if(length(resavg)==0){
+		resistances = sort(resdif)
+	}else{
+		resistances = sort(c(resavg,resdif))		
+	}
+
+	if(length(supavg)==0){
+		supports = sort(supdif)
+	}else{
+		supports = sort(c(supavg,supdif))		
+	}
+
 	ret = list("resistances"=resistances,"supports"=supports)
+
+	if(showGraph){
+		lineChart(Cl(prices))
+
+		if(drawLines){
+			for(r in ret$resistances){addLines(h=r,on=1,col="blue")}
+			for(r in ret$supports){addLines(h=r,on=1,col="red")}
+		}
+
+		axis(2,at=round(c(ret$resistances,ret$supports),3),cex.axis=0.5,col.axis="white")
+
+		# fill areas
+		if(fillCongested){
+			resdif = diff(ret$resistances)
+			supdif = diff(ret$supports)
+
+			lapply(seq_along(resdif),FUN=function(x){
+				if(resdif[x]>sd(resdif)){
+					fp=ret$resistances[x]
+					lp=ret$resistances[x+1]
+					rect(0,fp,length(index(prices)),lp,col=rgb(0.955,0.955,0.855,0.25),border="blue");
+				}
+			})
+			lapply(seq_along(supdif),FUN=function(x){
+				if(supdif[x]>sd(supdif)){
+					fp=ret$supports[x]
+					lp=ret$supports[x+1]
+					rect(0,fp,length(index(prices)),lp,col=rgb(0.955,0.955,0.855,0.25),border="red");
+				}
+			})
+		}
+	}
+
 	return(ret)
 }
 
