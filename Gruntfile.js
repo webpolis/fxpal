@@ -253,7 +253,7 @@ module.exports = function(grunt) {
                     dot: true,
                     cwd: '<%= yeoman.app %>',
                     dest: '<%= yeoman.dist %>',
-                    src: ['*.{ico,png,txt}', '.htaccess', '*.html', 'views/{,*/}*.html', 'images/{,*/}*.{webp}', 'fonts/*', 'config.xml', 'res/**/*.*', 'data/**/*.*', '!data/**/Calendar*.csv', '!data/**/*.xml', '!data/multisetsOutputsRaw.csv', '!data/multisetsInputs.csv', '!data/calendar.csv']
+                    src: ['*.{ico,png,txt}', '.htaccess', '*.html', 'views/{,*/}*.html', 'images/{,*/}*.{webp}', 'fonts/*', 'config.xml', 'res/**/*.*']
                 }, {
                     expand: true,
                     cwd: '.tmp/images',
@@ -265,6 +265,12 @@ module.exports = function(grunt) {
                     src: 'fonts/*',
                     dest: '<%= yeoman.dist %>'
                 }]
+            },
+            data: {
+                expand: true,
+                cwd: '<%= yeoman.app %>/data',
+                dest: '<%= yeoman.dist %>/data',
+                src: ['data/**/*.*', '!data/**/Calendar*.csv', '!data/**/*.xml', '!data/multisetsOutputsRaw.csv', '!data/multisetsInputs.csv', '!data/calendar.csv']
             },
             styles: {
                 expand: true,
@@ -304,6 +310,6 @@ module.exports = function(grunt) {
         grunt.task.run(['serve:' + target]);
     });
     grunt.registerTask('test', ['clean:server', 'concurrent:test', 'autoprefixer', 'connect:test', 'karma']);
-    grunt.registerTask('build', ['clean:dist', 'wiredep', 'useminPrepare', 'concurrent:dist', 'autoprefixer', 'concat', 'ngmin', 'copy:flags', 'copy:dist', 'cdnify', 'cssmin', 'uglify', 'filerev', 'usemin', 'htmlmin']);
+    grunt.registerTask('build', ['clean:dist', 'wiredep', 'useminPrepare', 'concurrent:dist', 'autoprefixer', 'concat', 'ngmin', 'copy:flags', 'copy:data', 'copy:dist', 'cdnify', 'cssmin', 'uglify', 'filerev', 'usemin', 'htmlmin']);
     grunt.registerTask('default', ['newer:jshint', 'test', 'build']);
 };
