@@ -243,14 +243,20 @@ graphBreakoutArea <- function(instrument="EUR_USD",granularity="D",bars=600,save
 			supdif = diff(ret$supports)
 
 			lapply(seq_along(resdif),FUN=function(x){
-				if(resdif[x]>sd(resdif)){
+				if(length(resdif) == 0) return
+				sdDif = ifelse(length(resdif)==1,resdif[1],sd(resdif))
+
+				if(resdif[x]>sdDif){
 					fp=ret$resistances[x]
 					lp=ret$resistances[x+1]
 					rect(0,fp,length(index(prices)),lp,col=rgb(0.955,0.955,0.855,0.25),border="blue");
 				}
 			})
 			lapply(seq_along(supdif),FUN=function(x){
-				if(supdif[x]>sd(supdif)){
+				if(length(supdif) == 0) return
+				sdDif = ifelse(length(supdif)==1,supdif[1],sd(supdif))
+
+				if(supdif[x]>sdDif){
 					fp=ret$supports[x]
 					lp=ret$supports[x+1]
 					rect(0,fp,length(index(prices)),lp,col=rgb(0.955,0.955,0.855,0.25),border="red");
