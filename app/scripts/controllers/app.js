@@ -31,6 +31,7 @@ angular.module('aifxApp').controller('appController', function($scope, $ionicSid
     }, $scope.rootScope = $rootScope;
     $scope.config = {
         appName: 'qfx.club',
+        logoSmall: '<img src="images/logo-s.png" />',
         token: 'pWGUEdRoPxqEdp66WRYv',
         urls: {
             api: 'http://qfx.club:9999/api/',
