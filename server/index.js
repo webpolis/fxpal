@@ -79,6 +79,7 @@ server.get('/api/candles/:cross/:start/:granularity', function respond(req, res,
     res.setHeader('content-type', 'text/csv');
     var cross = req.params.cross.replace(/([a-z]{3})([a-z]{3})/gi, '$1_$2').toUpperCase();
     var outFile = [__dirname + '/../app/data/candles/', cross, '-', req.params.granularity, '.csv'].join('');
+    var bImgFile = [__dirname + '/../app/data/breakout/', cross, '-', req.params.granularity, '.jpg'].join('');
     var sinceMinutes = null;
     switch (req.params.granularity.toUpperCase()) {
         case 'M15':
@@ -106,6 +107,9 @@ server.get('/api/candles/:cross/:start/:granularity', function respond(req, res,
     // only generate file if it's older than XX minutes
     if (isOutdatedFile(outFile, sinceMinutes)) {
         sh.run(['Rscript', __dirname + '/scripts/candlesticks.r', req.params.start, req.params.cross.toUpperCase(), req.params.granularity.toUpperCase(), 'analysis'].join(' '));
+        // copy on deploy folder
+        sh.run(['cp', outFile, outFile.replace(/\/app\//g, '/www/')].join(' '));
+        sh.run(['cp', bImgFile, bImgFile.replace(/\/app\//g, '/www/')].join(' '));
     }
     fs.readFile(outFile, {}, function(err, data) {
         res.send(data);
