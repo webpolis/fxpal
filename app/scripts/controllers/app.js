@@ -56,6 +56,31 @@ angular.module('aifxApp').controller('appController', function($scope, $ionicSid
             quotes: 'select * from yahoo.finance.quote where symbol in ({{sets}})'
         },
         maps: {
+            currency: [{
+                country: 'us',
+                code: 'USD'
+            }, {
+                country: 'nz',
+                code: 'NZD'
+            }, {
+                country: 'au',
+                code: 'AUD'
+            }, {
+                country: 'ca',
+                code: 'CAD'
+            }, {
+                country: 'ch',
+                code: 'CHF'
+            }, {
+                country: 'jp',
+                code: 'JPY'
+            }, {
+                country: 'gb',
+                code: 'GBP'
+            }, {
+                country: 'em',
+                code: 'EUR'
+            }],
             tickers: [{
                 quandl: 'YAHOO.INDEX_GDAXI',
                 symbol: 'GDAXI',

@@ -154,7 +154,6 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         },
         series: [{
             data: [],
-            type: 'column',
             name: 'Major Currencies',
         }],
         title: {
@@ -256,10 +255,14 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             // build chart
             Object.keys(currencies).map(function(cur) {
                 var mean = math.mean(currencies[cur]);
+                var mc = jsonPath.eval($scope.maps.currency, '$[?(@.code == "' + cur + '")]')[0];
                 tmp.push({
                     name: cur,
                     color: $scope.utils.getRandomColorCode(),
-                    y: mean
+                    y: mean,
+                    marker: {
+                        symbol: 'url(images/flags/' + [angular.lowercase((/em/i.test(mc.country) ? 'europeanunion' : mc.country)), 'png'].join('.') + ')'
+                    }
                 });
             });
             tmp.sort(function(a, b) {
