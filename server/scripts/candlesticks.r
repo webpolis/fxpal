@@ -215,8 +215,8 @@ getSupportsAndResistances <- function(candles){
 	return(ret)
 }
 
-graphBreakoutArea <- function(instrument="EUR_USD",granularity="D",bars=600,save=T,showGraph=F,fillCongested=T,drawLines=F){
-	candles = getCandles(instrument,granularity,count=bars)
+graphBreakoutArea <- function(instrument="EUR_USD",granularity="D",candles=NA,bars=600,save=T,showGraph=F,fillCongested=T,drawLines=F){
+	candles = ifelse(is.na(candles),getCandles(instrument,granularity,count=bars),candles)
 	prices = HLC(candles)
 	ret = getSupportsAndResistances(candles)
 
@@ -288,6 +288,8 @@ if(!is.na(type)){
 		patterns = getCandlestickPatterns("ohlc")
 		patterns$Time = 0
 		patterns$Time = out$Time
+
+		graphBreakoutArea(instrument,granularity,candles=out)
 
 		write.csv(cbind(out,trend,patterns), quote = FALSE, row.names = FALSE, file = paste(dataPath,"candles/", cross, "-", granularity, ".csv", sep = ""), fileEncoding = "UTF-8")
 	}
