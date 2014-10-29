@@ -270,7 +270,7 @@ module.exports = function(grunt) {
                 expand: true,
                 cwd: '<%= yeoman.app %>/data',
                 dest: '<%= yeoman.dist %>/data',
-                src: ['data/**/*.*', '!data/**/Calendar*.csv', '!data/**/*.xml', '!data/multisetsOutputsRaw.csv', '!data/multisetsInputs.csv', '!data/calendar.csv']
+                src: ['**/*.*', '!**/Calendar*.csv', '!**/*.xml', '!multisetsOutputsRaw.csv', '!multisetsInputs.csv', '!calendar.csv']
             },
             styles: {
                 expand: true,
