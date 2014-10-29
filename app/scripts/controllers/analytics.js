@@ -255,7 +255,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             // build chart
             Object.keys(currencies).map(function(cur) {
                 var mean = math.mean(currencies[cur]);
-                var mc = jsonPath.eval($scope.maps.currency, '$[?(@.code == "' + cur + '")]')[0];
+                var mc = jsonPath.eval($scope.config.maps.currency, '$[?(@.code == "' + cur + '")]')[0];
                 tmp.push({
                     name: cur,
                     color: $scope.utils.getRandomColorCode(),
