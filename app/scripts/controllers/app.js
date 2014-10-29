@@ -19,7 +19,7 @@ angular.module('aifxApp').controller('appController', function($scope, $ionicSid
         cross2: null,
         cross: null,
         portfolio: null,
-        patterns: null,
+        patterns: {},
         volatility: null,
         currencyForce: null,
         strength: null,

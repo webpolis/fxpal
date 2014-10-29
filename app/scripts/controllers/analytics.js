@@ -24,6 +24,18 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             data: null,
             type: 'candlestick',
             pointInterval: null,
+            cursor: 'pointer',
+            point: {
+                events: {
+                    click: function() {
+                        var flag = this;
+                        $scope.showCandlestickPatterns({
+                            x: this.options.x,
+                            patterns: $scope.selected.patterns[this.options.x]
+                        });
+                    }
+                }
+            },
             id: 'prices'
         }, {
             name: 'Regression',
@@ -623,7 +635,6 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                         var high = parseFloat(isRevertedCross ? parseFloat(1 / row.Low).toFixed(6) : parseFloat(row.High).toFixed(6));
                         var low = parseFloat(isRevertedCross ? parseFloat(1 / row.High).toFixed(6) : parseFloat(row.Low).toFixed(6));
                         var c = new Array(time, open, high, low, close);
-                        candles.push(c);
                         // render trend signal
                         var renderTrendSignal = true,
                             up = row.UpTrend === '1';
@@ -671,7 +682,9 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                                 text: 'Patterns detected',
                                 patterns: patterns
                             });
+                            $scope.selected.patterns[time.valueOf()] = patterns;
                         }
+                        candles.push(c);
                     });
                     $scope.$apply(function() {
                         $scope.optsHighchartsCross.series[0].data = candles;
