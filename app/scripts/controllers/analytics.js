@@ -567,6 +567,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
     };
     $scope.chart = function(period) {
         var start = null;
+        $scope.selected.granularity = period.granularity ||  null;
         switch (period.label) {
             case 'Intraday':
                 switch (moment().day()) {
