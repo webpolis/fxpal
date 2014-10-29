@@ -216,7 +216,9 @@ getSupportsAndResistances <- function(candles){
 }
 
 graphBreakoutArea <- function(instrument="EUR_USD",granularity="D",candles=NA,bars=600,save=T,showGraph=F,fillCongested=T,drawLines=F){
-	candles = ifelse(is.na(candles),getCandles(instrument,granularity,count=bars),candles)
+	if(is.na(candles)){
+		candles = getCandles(instrument,granularity,count=bars)
+	}
 	prices = HLC(candles)
 	ret = getSupportsAndResistances(candles)
 
