@@ -5,10 +5,7 @@ dist
 bower_components
 app/data/.Rapp.history
 platforms/**/
-www
 app/data/candles/**
 !app/data/candles/.empty
-!www/config.xml
-!www/res
 **/*/.Rapp.history
 .Rapp.history
