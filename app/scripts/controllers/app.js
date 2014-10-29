@@ -30,10 +30,10 @@ angular.module('aifxApp').controller('appController', function($scope, $ionicSid
         events: null
     }, $scope.rootScope = $rootScope;
     $scope.config = {
-        appName: 'cella.in FX',
+        appName: 'qfx.club',
         token: 'pWGUEdRoPxqEdp66WRYv',
         urls: {
-            api: 'http://cella.in:9999/api/',
+            api: 'http://qfx.club:9999/api/',
             //api: 'http://localhost:9999/api/',
             cross: 'http://www.quandl.com/api/v1/datasets/QUANDL/{{cross}}.json?trim_start={{startDate}}&trim_end={{endDate}}&collapse=daily&auth_token={{token}}',
             multiset: 'http://quandl.com/api/v1/multisets.json?columns={{sets}}&collapse=daily&trim_start={{startDate}}&auth_token={{token}}',
