@@ -12,9 +12,11 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         exporting: {
             enabled: false
         },
-        navigator: {
-            enabled: true,
-            adaptToUpdatedData: false
+        options: {
+            navigator: {
+                enabled: true,
+                adaptToUpdatedData: false
+            }
         },
         title: {
             text: false
@@ -205,6 +207,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         if (angular.isDefined($stateParams.cross)) {
             $scope.selected.cross1 = $stateParams.cross.split('').splice(0, 3).join('');
             $scope.selected.cross2 = $stateParams.cross.split('').splice(3, 3).join('');
+            $scope.selected.cross = jsonPath.eval($scope.data.currencies, '$[?(@.displayName=="' + [$scope.selected.cross1, $scope.selected.cross2].join('/') + '")]')[0] || null;
         }
         var cross = $scope.selected.cross1 + $scope.selected.cross2,
             startDate = moment().subtract('years', 4).format('YYYY-MM-DD'),
