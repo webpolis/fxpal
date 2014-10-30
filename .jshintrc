@@ -16,7 +16,9 @@
     "Highcharts": true,
     "alert": true,
     "stemmer": true,
-    "math": true
+    "math": true,
+    "connect": true,
+    "ga": true
   },
   "globalstrict": true,
   "quotmark": true,
