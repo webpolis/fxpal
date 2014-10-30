@@ -48,3 +48,7 @@
 .bar-header .dropdown {
     height: 100%;
 }
+.bar-header .beta {
+    display: inline-block !important;
+    line-height: 34px!important;
+}

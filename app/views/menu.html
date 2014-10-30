@@ -6,7 +6,7 @@
 <select class="dropdown" ng-model="selected.cross" ng-options="cross as cross.displayName for cross in data.currencies">
     <option value="">Choose a cross</option>
 </select>
-<a ng-href="#/app/cross/{{selected.cross1 + selected.cross2}}" ng-if="(selected.cross1 && selected.cross2) && state.current.name == 'app.main'" class="button button-balanced">Start <i class="icon ion-play"></i></a>
+<a ng-href="#/app/cross/{{selected.cross1 + selected.cross2}}" ng-if="(selected.cross1 && selected.cross2) && state.current.name != 'app.cross' && state.current.name != 'app.chart'" class="button button-balanced">Start <i class="icon ion-play"></i></a>
 <a ng-href="#/app/cross/{{selected.cross1 + selected.cross2}}/chart" ng-if="state.current.name == 'app.cross'" class="button button-royal">Price Action <i class="icon ion-arrow-graph-up-right"></i></a>
 <a ng-href="#/app/cross/{{selected.cross1 + selected.cross2}}" ng-if="state.current.name == 'app.chart'" class="button button-calm"><i class="icon ion-arrow-left-a"></i> Market Status</a>
 </ion-nav-buttons>
