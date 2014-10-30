@@ -1,3 +1,4 @@
+'use strict';
 var _urq = _urq || [];
 _urq.push(['initSite', '95400a0a-cf80-4a44-ab38-e895aad7b00f']);
 (function() {
