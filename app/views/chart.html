@@ -23,7 +23,7 @@
         <h2>Breakout Areas</h2>
         <p>These are regions where interesting action could happen. The lighter grey areas offer good opportunities, when their top or bottom lines are crossed, meaning the trend will continue or do the opposite, depending on the direction of the breakout.</p>
         <p>If the picture shows a lot of grey areas, whether dark or light, it means the price is trending or there is a lot of volatility.</p>
-        <img style="max-width:100%;height:100%" ng-src="data/breakout/{{ selected.cross1 + '_' + selected.cross2 + '-' + selected.granularity }}.jpg?{{ Date.now() }}" />
+        <img style="max-width:100%;height:100%" ng-src="data/breakout/{{ selected.cross1 + '_' + selected.cross2 + '-' + selected.granularity }}.jpg?r={{ getRandom() }}" />
     </div>
 </div>
 </ion-content>

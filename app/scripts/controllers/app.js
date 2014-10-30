@@ -157,4 +157,7 @@ angular.module('aifxApp').controller('appController', function($scope, $ionicSid
             $scope.data.currencies = data;
         });
     };
+    $scope.getRandom = function() {
+        return Math.ceil(Math.random() + Date.now());
+    };
 });
