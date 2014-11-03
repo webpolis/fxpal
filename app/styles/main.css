@@ -52,3 +52,6 @@
     display: inline-block !important;
     line-height: 34px!important;
 }
+.row{
+    margin:0!important;
+}

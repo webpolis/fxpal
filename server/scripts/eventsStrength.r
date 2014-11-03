@@ -1,10 +1,5 @@
-pwd = ifelse(is.null(sys.frames()),paste(getwd(),"/server/scripts",sep=""),dirname(sys.frame(1)$ofile))
-dataPath = paste(pwd,"/../../app/data/",sep="")
-
-Sys.setenv(TZ="UTC")
-
-library(RCurl)
-library(rjson)
+pwd = ifelse(is.null(sys.frames()),getwd(),paste(dirname(sys.frame(1)$ofile),"/../..",sep=""));
+dataPath = paste(pwd,"/../app/data/",sep="");
 
 opts = commandArgs(trailingOnly = TRUE)
 weeks = ifelse((exists("opts") && !is.na(opts[1])), as.integer(opts[1]), 52)

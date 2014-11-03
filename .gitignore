@@ -13,7 +13,9 @@ app/data/breakout/*.*
 app/data/candles/*.*
 app/data/cot/*.*
 app/data/calendar*.csv
+app/data/volatility.csv
 www/data/breakout/*.*
 www/data/candles/*.*
 www/data/cot/*.*
 www/data/calendar*.csv
+www/data/volatility.csv
