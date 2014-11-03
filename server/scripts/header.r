@@ -35,21 +35,22 @@ getCandles <- function(instrument, granularity, startDate = NA, count = 600){
 	ret = ret[,-(grep("[a-z]+Ask|complete",names(ret)))]
 	rownames(ret) = ret[,1]
 	ret = ret[,-1]
-	names(ret) = c("Open","High","Low","Close","Volume")
+
+	colnames(ret) = c("Open","High","Low","Close","Volume")
 	rownames(ret) = as.POSIXlt(gsub("T|\\.\\d{6}Z", " ", rownames(ret)))
 	ret = as.xts(ret)
 
 	return(ret)
 }
 
-getCandlestickPatterns <- function(varName){
+getCandlestickPatterns <- function(ohlc){
 	ret = xts()
 	cMethods = ls("package:candlesticks")
 	csp = cMethods[grep("^CSP.*", cMethods)]
 	csp = csp[-(grep('CSP(?:Long|Short)Candle(?:Body)?', csp, ignore.case = TRUE, perl = TRUE))]
 	for(c in 1:length(csp)){
 		tryCatch({
-			method = paste(csp[c], "(", varName, ")", sep = "")
+			method = paste(csp[c], "(ohlc)", sep = "")
 			tmp = eval(parse(text = method))
 			ret = merge(tmp, ret)
 		}, error = function(cond){
