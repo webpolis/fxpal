@@ -64,7 +64,7 @@ getVolatility <- function(crosses){
 	ret = xts()
 	for(cross in crosses){
 		tmp = getCandles(cross,"H1",count = 8)
-		vol = volatility(n=6,calc="garman.klass",OHLC(tmp))
+		vol = TTR::volatility(tmp, n=6,calc="garman.klass")
 		names(vol) = c(cross)
 		ret = cbind(vol,ret)
 	}
@@ -131,7 +131,7 @@ getCurrencyStrengthPerPeriod <- function(table){
 	df = data.frame(matrix(ncol=length(currencies),nrow=length(periods)))
 	rownames(df) = periods
 	colnames(df) = sort(currencies)
-	df[is.na(df)] <- 0
+	df[is.na(df)] = 0
 
 	for(cross in crosses){
 		cross1 = sub("(\\w{3})_(\\w{3})","\\1",cross)
@@ -163,11 +163,11 @@ getSupportsAndResistances <- function(candles){
 	resistances = as.double(names(t[t>10]))
 	supports = as.double(names(t2[t2>10]))
 	resdist = as.matrix(dist(resistances,method="manhattan"))
-	colnames(resdist) <- resistances
-	rownames(resdist) <- resistances
+	colnames(resdist) = resistances
+	rownames(resdist) = resistances
 	supdist = as.matrix(dist(supports,method="manhattan"))
-	colnames(supdist) <- supports
-	rownames(supdist) <- supports
+	colnames(supdist) = supports
+	rownames(supdist) = supports
 
 	resLessDistances = sort(resdist[resdist<sd(resdist)&resdist>0])
 	supLessDistances = sort(supdist[supdist<sd(supdist)&supdist>0])
@@ -203,8 +203,8 @@ getSupportsAndResistances <- function(candles){
 }
 
 addCopyright <- function(label, image, x, y, size, ...) {
-	lab <- textGrob(label = label, x = unit(x, "npc"), y = unit(y, "npc"),just = c("left", "centre"), gp = gpar(...))
-	logo <- rasterGrob(image = image,
+	lab = textGrob(label = label, x = unit(x, "npc"), y = unit(y, "npc"),just = c("left", "centre"), gp = gpar(...))
+	logo = rasterGrob(image = image,
 	x = unit(x, "npc") + unit(1, "grobwidth", lab), y = unit(y, "npc"),
 	width = unit(size, "cm"), height = unit(size, "cm"),
 	just = c("left", "centre"), gp = gpar(...))

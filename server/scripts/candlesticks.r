@@ -1,5 +1,5 @@
 pwd = ifelse(is.null(sys.frames()),getwd(),paste(dirname(sys.frame(1)$ofile),"/../..",sep=""));
-dataPath = paste(pwd,"/../app/data/",sep="");
+dataPath = paste(pwd,"/app/data/",sep="");
 
 opts = commandArgs(trailingOnly = TRUE);
 startDate = ifelse((length(opts)>0 && !is.na(opts[1])), opts[1], NA);
@@ -11,7 +11,7 @@ oandaCurrencies = read.table(paste(dataPath,"oandaCurrencies.csv",sep=""), sep =
 crosses = read.csv(paste(dataPath,"availableCrosses.csv",sep=""), sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8");
 crosses = as.character(crosses$instrument);
 
-analysis <- function(instrument,granularity,startDate){
+qfxAnalysis <- function(instrument,granularity,startDate){
 	cross = instrument;
 
 	out = getCandles(instrument, granularity, startDate);
@@ -29,7 +29,7 @@ analysis <- function(instrument,granularity,startDate){
 
 	write.csv(cbind(out,trend,patterns), quote = FALSE, row.names = FALSE, file = paste(dataPath,"candles/", cross, "-", granularity, ".csv", sep = ""), fileEncoding = "UTF-8");
 }
-volatility <- function(){
+qfxVolatility <- function(){
 	vol = getVolatility(crosses);
 	vol = vol[,vol>=0.011];
 	tmp = matrix(as.list(vol));
@@ -40,7 +40,7 @@ volatility <- function(){
 
 	write.csv(as.matrix(vol), append = FALSE, quote = FALSE, row.names = FALSE, file = paste(dataPath,"volatility.csv",sep=""), fileEncoding = "UTF-8");
 }
-force <- function(){
+qfxForce <- function(){
 	table = round(getCrossesStrengthPerPeriod(crosses),6);
 	table$period = rownames(table);
 	strengths = getCurrencyStrengthPerPeriod(table[-(grep("period",colnames(table)))]);
