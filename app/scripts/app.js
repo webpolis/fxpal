@@ -62,7 +62,7 @@ angular.module('aifxApp', ['ngAnimate', 'ngCookies', 'ngResource', 'ngRoute', 'n
         'Accept-Encoding': 'gzip, deflate'
     };
     $httpProvider.defaults.headers.post = {
-        'Content-Type': 'application/json'
+        'Accept': 'application/json, text/plain, */*'
     };
     $httpProvider.defaults.headers.put = {
         'Content-Type': 'application/json'

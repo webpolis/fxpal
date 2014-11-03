@@ -12,6 +12,8 @@ app/data/candles/**
 app/data/breakout/*.*
 app/data/candles/*.*
 app/data/cot/*.*
+app/data/calendar*.csv
 www/data/breakout/*.*
 www/data/candles/*.*
 www/data/cot/*.*
+www/data/calendar*.csv

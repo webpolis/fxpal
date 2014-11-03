@@ -448,7 +448,10 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             return 'http://' + url;
         });
         $http.post($scope.config.urls.api + 'calendar/' + [$scope.selected.cross1, $scope.selected.cross2].join(''), urlsCalendars, {
-            cache: true
+            cache: true,
+            headers: {
+                'Content-Type': 'application/json'
+            }
         }).success(function(ret) {
             $ionicLoading.hide();
             $scope.selected.events = parseCsv(ret);

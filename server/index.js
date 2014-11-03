@@ -57,6 +57,15 @@ var runRScript = function(scriptName) {
     return rio.bufferAndEval(script.replace(/\;/g, '\n'));
 };
 /**
+ * Init API
+ */
+server.use(restify.bodyParser({
+    mapParams: false
+}));
+server.use(restify.CORS());
+server.use(restify.gzipResponse());
+server.pre(restify.pre.sanitizePath());
+/**
  * API methods
  */
 server.get('/api/portfolio', function respond(req, res, next) {
@@ -64,8 +73,8 @@ server.get('/api/portfolio', function respond(req, res, next) {
     var outFile = __dirname + '/../app/data/portfolio.csv';
     // only generate file if it's older than 1 day
     if (isOutdatedFile(outFile, 60 * 24)) {
-        //sh.run(['Rscript', __dirname + '/scripts/portfolio.r'].join(' '));
-        console.log(runRScript('portfolio'));
+        var rname = [__dirname, '../server/scripts', ['portfolio', 'r'].join('.')].join('/');
+        rio.sourceAndEval(rname);
     }
     fs.readFile(outFile, {}, function(err, data) {
         res.send(data);
@@ -78,6 +87,7 @@ server.get('/api/candles/:cross/:start/:granularity', function respond(req, res,
     var outFile = [__dirname + '/../app/data/candles/', cross, '-', req.params.granularity, '.csv'].join('');
     var bImgFile = [__dirname + '/../app/data/breakout/', cross, '-', req.params.granularity, '.jpg'].join('');
     var sinceMinutes = null;
+    var instrument = /(?:[a-z]{3}){2}/gi.test(req.params.cross) ? req.params.cross.toUpperCase().replace(/([a-z]{3})([a-z]{3})/gi, '$1_$2') : req.params.cross.toUpperCase();
     switch (req.params.granularity.toUpperCase()) {
         case 'M15':
             sinceMinutes = 15;
@@ -103,7 +113,15 @@ server.get('/api/candles/:cross/:start/:granularity', function respond(req, res,
     }
     // only generate file if it's older than XX minutes
     if (isOutdatedFile(outFile, sinceMinutes)) {
-        sh.run(['Rscript', __dirname + '/scripts/candlesticks.r', req.params.start, req.params.cross.toUpperCase(), req.params.granularity.toUpperCase(), 'analysis'].join(' '));
+        var rname = [__dirname, '../server/scripts', ['candlesticks', 'r'].join('.')].join('/');
+        rio.sourceAndEval(rname, {
+            entryPoint: 'qfxAnalysis',
+            data: {
+                instrument: instrument,
+                granularity: req.params.granularity.toUpperCase(),
+                startDate: req.params.start
+            }
+        });
         // copy on deploy folder
         sh.run(['cp', outFile, outFile.replace(/\/app\//g, '/www/')].join(' '));
         sh.run(['cp', bImgFile, bImgFile.replace(/\/app\//g, '/www/')].join(' '));
@@ -119,7 +137,10 @@ server.get('/api/candles/volatility', function respond(req, res, next) {
     var sinceMinutes = 60;
     // only generate file if it's older than XX minutes
     if (isOutdatedFile(outFile, sinceMinutes)) {
-        sh.run(['Rscript', __dirname + '/scripts/candlesticks.r', 0, 0, 0, 'volatility'].join(' '));
+        var rname = [__dirname, '../server/scripts', ['candlesticks', 'r'].join('.')].join('/');
+        rio.sourceAndEval(rname, {
+            entryPoint: 'qfxVolatility'
+        });
     }
     fs.readFile(outFile, {}, function(err, data) {
         res.send(data);
@@ -132,7 +153,10 @@ server.get('/api/currencyForce', function respond(req, res, next) {
     var sinceMinutes = 60;
     // only generate file if it's older than XX minutes
     if (isOutdatedFile(outFile, sinceMinutes)) {
-        sh.run(['Rscript', __dirname + '/scripts/candlesticks.r', 0, 0, 0, 'force'].join(' '));
+        var rname = [__dirname, '../server/scripts', ['candlesticks', 'r'].join('.')].join('/');
+        rio.sourceAndEval(rname, {
+            entryPoint: 'qfxForce'
+        });
     }
     fs.readFile(outFile, {}, function(err, data) {
         res.send(data);
@@ -156,6 +180,7 @@ server.post('/api/calendar/:cross', function respond(req, res, next) {
     var ret = [],
         all = [];
     res.setHeader('content-type', 'text/csv');
+
     if (req.body.length > 0) {
         all = req.body.map(function(url) {
             return requestCalendarCsv(url, req.params.cross.toUpperCase());
@@ -199,15 +224,6 @@ var resCalendarStrength = function respond(req, res, next) {
     });
     next();
 };
-/**
- * Init API
- */
-server.use(restify.bodyParser({
-    mapParams: false
-}));
-server.use(restify.CORS());
-server.use(restify.gzipResponse());
-server.pre(restify.pre.sanitizePath());
 server.get('/api/calendar/strength/:weeks/:cross', resCalendarStrength);
 server.get('/api/calendar/strength/:weeks', resCalendarStrength);
 server.get('/api/calendar/strength', resCalendarStrength);
