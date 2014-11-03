@@ -9,3 +9,9 @@ app/data/candles/**
 !app/data/candles/.empty
 **/*/.Rapp.history
 .Rapp.history
+app/data/breakout/*.*
+app/data/candles/*.*
+app/data/cot/*.*
+www/data/breakout/*.*
+www/data/candles/*.*
+www/data/cot/*.*

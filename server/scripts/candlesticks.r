@@ -1,5 +1,5 @@
 pwd = ifelse(is.null(sys.frames()),getwd(),paste(dirname(sys.frame(1)$ofile),"/../..",sep=""));
-dataPath = paste(pwd,"/app/data/",sep="");
+dataPath = paste(pwd,"/../app/data/",sep="");
 
 opts = commandArgs(trailingOnly = TRUE);
 startDate = ifelse((length(opts)>0 && !is.na(opts[1])), opts[1], NA);
@@ -49,6 +49,6 @@ qfxForce <- function(){
 	write.csv(as.matrix(strengths), append = FALSE, quote = FALSE, row.names = FALSE, file = paste(dataPath,"force.csv",sep=""), fileEncoding = "UTF-8");
 	write.csv(as.matrix(table), append = FALSE, quote = FALSE, row.names = FALSE, file = paste(dataPath,"forceCrosses.csv",sep=""), fileEncoding = "UTF-8");
 }
-breakout <- function(){
+qfxBreakout <- function(){
 	graphBreakoutArea(instrument,granularity);
 }
