@@ -1,19 +1,12 @@
 pwd = ifelse(is.null(sys.frames()),getwd(),paste(dirname(sys.frame(1)$ofile),"/../..",sep=""));
 dataPath = paste(pwd,"/../app/data/",sep="");
 
-opts = commandArgs(trailingOnly = TRUE);
-startDate = ifelse((length(opts)>0 && !is.na(opts[1])), opts[1], NA);
-instrument = sub("(\\w{3})(\\w{3})", "\\1_\\2", ifelse((length(opts)>0 && !is.na(opts[2])), opts[2], "EURUSD"));
-granularity = ifelse((length(opts)>0 && !is.na(opts[3])), opts[3], "H1");
-type = ifelse((length(opts)>0 && !is.na(opts[4])), opts[4], NA);
-
 oandaCurrencies = read.table(paste(dataPath,"oandaCurrencies.csv",sep=""), sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8");
 crosses = read.csv(paste(dataPath,"availableCrosses.csv",sep=""), sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8");
 crosses = as.character(crosses$instrument);
 
 qfxAnalysis <- function(args){
 	args = fromJSON(args);
-	cross = instrument;
 
 	out = getCandles(args$instrument, args$granularity, args$startDate);
 	out = OHLC(out);
@@ -26,9 +19,9 @@ qfxAnalysis <- function(args){
 	patterns$Time = 0;
 	patterns$Time = out$Time;
 
-	graphBreakoutArea(instrument,granularity,candles=out);
+	graphBreakoutArea(args$instrument,args$granularity,candles=out);
 
-	write.csv(cbind(out,trend,patterns), quote = FALSE, row.names = FALSE, file = paste(dataPath,"candles/", cross, "-", granularity, ".csv", sep = ""), fileEncoding = "UTF-8");
+	write.csv(cbind(out,trend,patterns), quote = FALSE, row.names = FALSE, file = paste(dataPath,"candles/", args$instrument, "-", args$granularity, ".csv", sep = ""), fileEncoding = "UTF-8");
 }
 qfxVolatility <- function(){
 	vol = getVolatility(crosses);
