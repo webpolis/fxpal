@@ -3,9 +3,7 @@ Sys.setenv(TZ="UTC")
 pwd = ifelse(is.null(sys.frames()),getwd(),paste(dirname(sys.frame(1)$ofile),"/../..",sep=""))
 dataPath = paste(pwd,"/app/data/",sep="")
 
-source(paste(pwd,"/candlesticks.r",sep=""))
-library("quantmod")
-library("PerformanceAnalytics")
+source(paste(pwd,"/server/scripts/candlesticks.r",sep=""))
 
 TradingStrategy <- function(strategy, data,param1=NA,param2=NA,param3=NA, retSignals=F){
   tradingreturns = NULL

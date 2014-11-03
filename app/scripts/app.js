@@ -55,6 +55,19 @@ angular.module('aifxApp', ['ngAnimate', 'ngCookies', 'ngResource', 'ngRoute', 'n
         }
     });
     $urlRouterProvider.otherwise('/app/main');
+    // hack for CORS
+    $httpProvider.defaults.useXDomain = true;
+    $httpProvider.defaults.headers.common = {
+        'Connection': 'Keep-Alive',
+        'Accept-Encoding': 'gzip, deflate'
+    };
+    $httpProvider.defaults.headers.post = {
+        'Content-Type': 'application/json'
+    };
+    $httpProvider.defaults.headers.put = {
+        'Content-Type': 'application/json'
+    };
+    $httpProvider.defaults.headers.patch = {};
 });
 var PhoneGapInit = function() {
     this.boot = function() {

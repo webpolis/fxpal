@@ -7,7 +7,8 @@ var fs = require('fs'),
     server = restify.createServer(),
     sh = require('execSync'),
     string = require('./lib/string'),
-    cron = require('cronzitto');
+    cron = require('cronzitto'),
+    rio = require('rio');
 /**
  * Checks whether a file has been modified until now
  *
@@ -51,15 +52,10 @@ var requestCalendarCsv = function(url, cross) {
     }).on('error', _def.reject);
     return _def.promise;
 };
-/**
- * Init API
- */
-server.use(restify.bodyParser({
-    mapParams: false
-}));
-server.use(restify.CORS());
-server.use(restify.gzipResponse());
-server.pre(restify.pre.sanitizePath());
+var runRScript = function(scriptName) {
+    var script = fs.readFileSync([__dirname, '../server/scripts', [scriptName, 'r'].join('.')].join('/'), 'utf8').replace(/\n+|(?:\r\n)+/g, '');
+    return rio.bufferAndEval(script.replace(/\;/g, '\n'));
+};
 /**
  * API methods
  */
@@ -68,7 +64,8 @@ server.get('/api/portfolio', function respond(req, res, next) {
     var outFile = __dirname + '/../app/data/portfolio.csv';
     // only generate file if it's older than 1 day
     if (isOutdatedFile(outFile, 60 * 24)) {
-        sh.run(['Rscript', __dirname + '/scripts/portfolio.r'].join(' '));
+        //sh.run(['Rscript', __dirname + '/scripts/portfolio.r'].join(' '));
+        console.log(runRScript('portfolio'));
     }
     fs.readFile(outFile, {}, function(err, data) {
         res.send(data);
@@ -202,12 +199,18 @@ var resCalendarStrength = function respond(req, res, next) {
     });
     next();
 };
+/**
+ * Init API
+ */
+server.use(restify.bodyParser({
+    mapParams: false
+}));
+server.use(restify.CORS());
+server.use(restify.gzipResponse());
+server.pre(restify.pre.sanitizePath());
 server.get('/api/calendar/strength/:weeks/:cross', resCalendarStrength);
 server.get('/api/calendar/strength/:weeks', resCalendarStrength);
 server.get('/api/calendar/strength', resCalendarStrength);
-/**
- * Init API server
- */
 server.listen(9999, function() {
     console.log('%s listening at %s', server.name, server.url);
 });
