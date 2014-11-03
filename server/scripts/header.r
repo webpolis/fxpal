@@ -15,7 +15,7 @@ getCandles <- function(instrument, granularity, startDate = NA, count = 600){
 	oandaToken = 'ce6b72e81af59be0bbc90152cad8d731-03d41860ed7849e3c4555670858df786'
 	urlPractice = paste("https://api-fxpractice.oanda.com/v1/candles?instrument=", instrument, "&granularity=", granularity, "&weeklyAlignment=Monday", "&candleFormat=bidask", sep = "")
 
-	if(!is.na(startDate)){
+	if(length(startDate)>0){
 		urlPractice = paste(urlPractice,"&start=", startDate,sep="")
 	}else if(!is.na(count)){
 		urlPractice = paste(urlPractice,"&count=", count,sep="")

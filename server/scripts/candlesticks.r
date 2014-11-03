@@ -11,10 +11,11 @@ oandaCurrencies = read.table(paste(dataPath,"oandaCurrencies.csv",sep=""), sep =
 crosses = read.csv(paste(dataPath,"availableCrosses.csv",sep=""), sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8");
 crosses = as.character(crosses$instrument);
 
-qfxAnalysis <- function(instrument,granularity,startDate){
+qfxAnalysis <- function(args){
+	args = fromJSON(args);
 	cross = instrument;
 
-	out = getCandles(instrument, granularity, startDate);
+	out = getCandles(args$instrument, args$granularity, args$startDate);
 	out = OHLC(out);
 
 	trend = TrendDetectionChannel(out, n = 20, DCSector = .25);
