@@ -1,7 +1,3 @@
-pwd = ifelse(is.null(sys.frames()),getwd(),paste(dirname(sys.frame(1)$ofile),"/../..",sep=""));
-dataPath = paste(pwd,"/../app/data/",sep="");
-
-oandaCurrencies = read.table(paste(dataPath,"oandaCurrencies.csv",sep=""), sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8");
 crosses = read.csv(paste(dataPath,"availableCrosses.csv",sep=""), sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8");
 crosses = as.character(crosses$instrument);
 
@@ -29,7 +25,7 @@ qfxVolatility <- function(){
 	tmp = matrix(as.list(vol));
 	tmp = cbind(names(vol),tmp);
 	colnames(tmp) = c("cross","volatility");
-	vol = as.data.frame(tmp);
+	vol = as.data.frame(tmp);	
 	vol = vol[with(vol, order(-(as.numeric(volatility)), cross)), ];
 
 	write.csv(as.matrix(vol), append = FALSE, quote = FALSE, row.names = FALSE, file = paste(dataPath,"volatility.csv",sep=""), fileEncoding = "UTF-8");
@@ -43,6 +39,7 @@ qfxForce <- function(){
 	write.csv(as.matrix(strengths), append = FALSE, quote = FALSE, row.names = FALSE, file = paste(dataPath,"force.csv",sep=""), fileEncoding = "UTF-8");
 	write.csv(as.matrix(table), append = FALSE, quote = FALSE, row.names = FALSE, file = paste(dataPath,"forceCrosses.csv",sep=""), fileEncoding = "UTF-8");
 }
-qfxBreakout <- function(){
-	graphBreakoutArea(instrument,granularity);
+qfxBreakout <- function(args){
+	args = fromJSON(args);
+	graphBreakoutArea(args$instrument, args$granularity);
 }

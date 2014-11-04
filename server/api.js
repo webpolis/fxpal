@@ -52,9 +52,14 @@ var requestCalendarCsv = function(url, cross) {
     }).on('error', _def.reject);
     return _def.promise;
 };
-var runRScript = function(scriptName) {
-    var script = fs.readFileSync([__dirname, '../server/scripts', [scriptName, 'r'].join('.')].join('/'), 'utf8').replace(/\n+|(?:\r\n)+/g, '');
-    return rio.bufferAndEval(script.replace(/\;/g, '\n'));
+var runRScript = function(scriptName, opts) {
+    var fname = [__dirname, '../server/scripts', [scriptName, 'r'].join('.')].join('/');
+    var script = fs.readFileSync(fname, 'utf8').replace(/\n+|(?:\r\n)+/g, '');
+    if (typeof(opts) !== 'undefined' && opts.entryPoint) {
+        script = script + ';' + opts.entryPoint + '(' + JSON.stringify(opts.data) + ')';
+    }
+    rio.sourceAndEval(fname, opts); //rio.bufferAndEval(script.replace(/\;/g, '\n'));
+    return true;
 };
 /**
  * Init API
@@ -73,12 +78,16 @@ server.get('/api/portfolio', function respond(req, res, next) {
     var outFile = __dirname + '/../app/data/portfolio.csv';
     // only generate file if it's older than 1 day
     if (isOutdatedFile(outFile, 60 * 24)) {
-        var rname = [__dirname, '../server/scripts', ['portfolio', 'r'].join('.')].join('/');
-        rio.sourceAndEval(rname);
+        if (runRScript('portfolio')) {
+            fs.readFile(outFile, {}, function(err, data) {
+                res.send(data);
+            });
+        }
+    } else {
+        fs.readFile(outFile, {}, function(err, data) {
+            res.send(data);
+        });
     }
-    fs.readFile(outFile, {}, function(err, data) {
-        res.send(data);
-    });
     next();
 });
 server.get('/api/candles/:cross/:start/:granularity', function respond(req, res, next) {
@@ -114,21 +123,26 @@ server.get('/api/candles/:cross/:start/:granularity', function respond(req, res,
     // only generate file if it's older than XX minutes
     if (isOutdatedFile(outFile, sinceMinutes)) {
         var rname = [__dirname, '../server/scripts', ['candlesticks', 'r'].join('.')].join('/');
-        rio.sourceAndEval(rname, {
+        if (runRScript('candlesticks', {
             entryPoint: 'qfxAnalysis',
             data: {
                 instrument: instrument,
                 granularity: req.params.granularity.toUpperCase(),
                 startDate: req.params.start
             }
+        })) {
+            // copy on deploy folder
+            sh.run(['cp', outFile, outFile.replace(/\/app\//g, '/www/')].join(' '));
+            sh.run(['cp', bImgFile, bImgFile.replace(/\/app\//g, '/www/')].join(' '));
+            fs.readFile(outFile, {}, function(err, data) {
+                res.send(data);
+            });
+        }
+    } else {
+        fs.readFile(outFile, {}, function(err, data) {
+            res.send(data);
         });
-        // copy on deploy folder
-        sh.run(['cp', outFile, outFile.replace(/\/app\//g, '/www/')].join(' '));
-        sh.run(['cp', bImgFile, bImgFile.replace(/\/app\//g, '/www/')].join(' '));
     }
-    fs.readFile(outFile, {}, function(err, data) {
-        res.send(data);
-    });
     next();
 });
 server.get('/api/candles/volatility', function respond(req, res, next) {
@@ -137,14 +151,18 @@ server.get('/api/candles/volatility', function respond(req, res, next) {
     var sinceMinutes = 60;
     // only generate file if it's older than XX minutes
     if (isOutdatedFile(outFile, sinceMinutes)) {
-        var rname = [__dirname, '../server/scripts', ['candlesticks', 'r'].join('.')].join('/');
-        rio.sourceAndEval(rname, {
+        if (runRScript('candlesticks', {
             entryPoint: 'qfxVolatility'
+        })) {
+            fs.readFile(outFile, {}, function(err, data) {
+                res.send(data);
+            });
+        }
+    } else {
+        fs.readFile(outFile, {}, function(err, data) {
+            res.send(data);
         });
     }
-    fs.readFile(outFile, {}, function(err, data) {
-        res.send(data);
-    });
     next();
 });
 server.get('/api/currencyForce', function respond(req, res, next) {
@@ -153,14 +171,18 @@ server.get('/api/currencyForce', function respond(req, res, next) {
     var sinceMinutes = 60;
     // only generate file if it's older than XX minutes
     if (isOutdatedFile(outFile, sinceMinutes)) {
-        var rname = [__dirname, '../server/scripts', ['candlesticks', 'r'].join('.')].join('/');
-        rio.sourceAndEval(rname, {
+        if (runRScript('candlesticks', {
             entryPoint: 'qfxForce'
+        })) {
+            fs.readFile(outFile, {}, function(err, data) {
+                res.send(data);
+            });
+        }
+    } else {
+        fs.readFile(outFile, {}, function(err, data) {
+            res.send(data);
         });
     }
-    fs.readFile(outFile, {}, function(err, data) {
-        res.send(data);
-    });
     next();
 });
 server.post('/api/stemmer/:cross', function respond(req, res, next) {
@@ -208,18 +230,23 @@ var resCalendarStrength = function respond(req, res, next) {
     var cross = req.params.cross && req.params.cross.match(/[a-z]{3}/gi) || [];
     var weeks = req.params.weeks ||  52;
     var outFile = [__dirname + '/../app/data/', 'calendar', '-', weeks];
+    var sinceMinutes = 15;
     if (cross.length > 0) {
         outFile = outFile.concat('-' + [cross[0], cross[1]].join('-'));
     }
     outFile = outFile.concat(['-', 'strength', '.csv']).join('');
     // only generate file if it's older than XX minutes
-    if (isOutdatedFile(outFile, 15)) {
-        var rname = [__dirname, '../server/scripts', ['eventsStrength', 'r'].join('.')].join('/');
-        rio.sourceAndEval(rname);
+    if (isOutdatedFile(outFile, sinceMinutes)) {
+        if (runRScript('eventsStrength')) {
+            fs.readFile(outFile, {}, function(err, data) {
+                res.send(data);
+            });
+        }
+    } else {
+        fs.readFile(outFile, {}, function(err, data) {
+            res.send(data);
+        });
     }
-    fs.readFile(outFile, {}, function(err, data) {
-        res.send(data);
-    });
     next();
 };
 server.get('/api/calendar/strength/:weeks/:cross', resCalendarStrength);

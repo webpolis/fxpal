@@ -1,6 +1,3 @@
-pwd = ifelse(is.null(sys.frames()),getwd(),paste(dirname(sys.frame(1)$ofile),"/../..",sep=""));
-dataPath = paste(pwd,"/../app/data/",sep="");
-
 opts = commandArgs(trailingOnly = TRUE)
 weeks = ifelse((exists("opts") && !is.na(opts[1])), as.integer(opts[1]), 52)
 cross1 = ifelse((exists("opts") && !is.na(opts[2])), opts[2], NA)

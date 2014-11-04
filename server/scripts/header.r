@@ -11,6 +11,9 @@ library(PerformanceAnalytics)
 
 Sys.setenv(TZ="UTC")
 
+pwd = getwd()
+dataPath = paste(pwd,"/app/data/",sep="");
+
 getCandles <- function(instrument, granularity, startDate = NA, count = 600){
 	oandaToken = 'ce6b72e81af59be0bbc90152cad8d731-03d41860ed7849e3c4555670858df786'
 	urlPractice = paste("https://api-fxpractice.oanda.com/v1/candles?instrument=", instrument, "&granularity=", granularity, "&weeklyAlignment=Monday", "&candleFormat=bidask", sep = "")
@@ -94,12 +97,7 @@ getSlopeByPeriod <- function(currency, period){
 	tmp = getCandles(currency,newPeriod,count = newCount)
 	roc = na.omit(ROC(Cl(tmp),type="discrete"))
 	lm = lm(roc~na.omit(ROC(tmp$Volume,type="discrete")))
-
-	# graph
-	#dev.new()
-	#lineChart(roc, name=paste(currency,period,sep=" - "))
 	f = as.numeric(fitted(lm))
-	#addLines(f)
 
 	return(last(atan(f)))
 }

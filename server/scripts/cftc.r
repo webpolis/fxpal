@@ -1,6 +1,3 @@
-pwd = ifelse(is.null(sys.frames()),getwd(),paste(dirname(sys.frame(1)$ofile),"/../..",sep=""));
-dataPath = paste(pwd,"/../app/data/",sep="");
-
 day = format(Sys.time(),"%d");
 month = format(Sys.time(),"%m");
 year = format(Sys.time(),"%Y");
