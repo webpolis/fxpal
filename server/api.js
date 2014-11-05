@@ -54,10 +54,7 @@ var requestCalendarCsv = function(url, cross) {
 };
 var runRScript = function(scriptName, opts) {
     var fname = [__dirname, '../server/scripts', [scriptName, 'r'].join('.')].join('/');
-    var script = fs.readFileSync(fname, 'utf8').replace(/\n+|(?:\r\n)+/g, '');
-    if (typeof(opts) !== 'undefined' && opts.entryPoint) {
-        script = script + ';' + opts.entryPoint + '(' + JSON.stringify(opts.data) + ')';
-    }
+    console.log('running ' + scriptName);
     rio.sourceAndEval(fname, opts); //rio.bufferAndEval(script.replace(/\;/g, '\n'));
     return true;
 };

@@ -236,7 +236,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                 tmp.push({
                     name: cross.cross.replace(/_/g, '/'),
                     color: $scope.utils.getRandomColorCode(),
-                    y: parseFloat(cross.volatility)
+                    y: parseFloat(cross.value)
                 });
             });
             $scope.$apply(function() {
