@@ -1,6 +1,7 @@
 'use strict';
 var fs = require('fs'),
     http = require('http'),
+    https = require('https'),
     q = require('q'),
     restify = require('restify'),
     moment = require('../bower_components/momentjs/moment.js'),
@@ -8,7 +9,8 @@ var fs = require('fs'),
     sh = require('execSync'),
     string = require('./lib/string'),
     cron = require('cronzitto'),
-    rio = require('rio');
+    rio = require('rio'),
+    zlib = require('zlib');
 /**
  * Checks whether a file has been modified until now
  *
@@ -91,9 +93,12 @@ server.get('/api/candles/:cross/:start/:granularity', function respond(req, res,
     res.setHeader('content-type', 'text/csv');
     var cross = req.params.cross.replace(/([a-z]{3})([a-z]{3})/gi, '$1_$2').toUpperCase();
     var outFile = [__dirname + '/../app/data/candles/', cross, '-', req.params.granularity, '.csv'].join('');
+    var inFile = [__dirname + '/../app/data/candles/', cross, '-', req.params.granularity, '.json'].join('');
     var bImgFile = [__dirname + '/../app/data/breakout/', cross, '-', req.params.granularity, '.jpg'].join('');
     var sinceMinutes = null;
     var instrument = /(?:[a-z]{3}){2}/gi.test(req.params.cross) ? req.params.cross.toUpperCase().replace(/([a-z]{3})([a-z]{3})/gi, '$1_$2') : req.params.cross.toUpperCase();
+    var granularity = req.params.granularity.toUpperCase();
+    var startDate = req.params.start;
     switch (req.params.granularity.toUpperCase()) {
         case 'M15':
             sinceMinutes = 15;
@@ -120,21 +125,56 @@ server.get('/api/candles/:cross/:start/:granularity', function respond(req, res,
     // only generate file if it's older than XX minutes
     if (isOutdatedFile(outFile, sinceMinutes)) {
         var rname = [__dirname, '../server/scripts', ['candlesticks', 'r'].join('.')].join('/');
-        if (runRScript('candlesticks', {
-            entryPoint: 'qfxAnalysis',
-            data: {
-                instrument: instrument,
-                granularity: req.params.granularity.toUpperCase(),
-                startDate: req.params.start
+        // retrieve candles
+        var oandaApiHost = 'api-fxpractice.oanda.com';
+        var oandaToken = 'ce6b72e81af59be0bbc90152cad8d731-03d41860ed7849e3c4555670858df786';
+        var url = ['/v1/candles?instrument=', instrument, '&granularity=', granularity, '&startDate=', startDate, '&weeklyAlignment=Monday', '&candleFormat=bidask'].join('');
+        var opts = {
+            host: oandaApiHost,
+            path: url,
+            headers: {
+                'Authorization': ['Bearer', oandaToken].join(' '),
+                'Accept-Encoding': 'gzip,deflate'
             }
-        })) {
-            // copy on deploy folder
-            sh.run(['cp', outFile, outFile.replace(/\/app\//g, '/www/')].join(' '));
-            sh.run(['cp', bImgFile, bImgFile.replace(/\/app\//g, '/www/')].join(' '));
-            fs.readFile(outFile, {}, function(err, data) {
-                res.send(data);
+        };
+        var request = https.get(opts, function(_ret) {
+            _ret.on('end', function() {
+                if (runRScript('candlesticks', {
+                    entryPoint: 'qfxAnalysis',
+                    data: {
+                        instrument: instrument,
+                        granularity: granularity,
+                        startDate: startDate
+                    }
+                })) {
+                    // copy on deploy folder
+                    sh.run(['cp', outFile, outFile.replace(/\/app\//g, '/www/')].join(' '));
+                    sh.run(['cp', bImgFile, bImgFile.replace(/\/app\//g, '/www/')].join(' '));
+                    fs.readFile(outFile, {}, function(err, data) {
+                        res.send(data);
+                    });
+                }
             });
-        }
+        });
+        request.on('error', function(e) {
+            console.log(e);
+            res.send(e);
+        });
+        request.on('response', function(response) {
+            var output = fs.createWriteStream(inFile);
+            switch (response.headers['content-encoding']) {
+                // or, just use zlib.createUnzip() to handle both cases
+                case 'gzip':
+                    response.pipe(zlib.createGunzip()).pipe(output);
+                    break;
+                case 'deflate':
+                    response.pipe(zlib.createInflate()).pipe(output);
+                    break;
+                default:
+                    response.pipe(output);
+                    break;
+            }
+        });
     } else {
         fs.readFile(outFile, {}, function(err, data) {
             res.send(data);
