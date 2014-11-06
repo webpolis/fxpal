@@ -3,7 +3,7 @@ library(grid)
 library(png)
 library(TTR)
 library(xts)
-library(fPortfolio)
+#library(fPortfolio)
 library(quantmod)
 library(PerformanceAnalytics)
 library(rjson)
@@ -26,15 +26,13 @@ getCandles <- function(instrument, granularity, startDate = NA, count = 600){
 		urlPractice = paste(urlPractice,'&count=', count,sep='')
 	}
 
-	print(paste('requesting ',urlPractice))
-	headers =  c('Authorization' = paste('Bearer ', oandaToken))
-	data = getURL(url=urlPractice, httpheader=headers, verbose=F)
-	json = fromJSON(data)
+	inFile = paste(dataPath,'candles/', instrument, '-', granularity, '.json', sep = '')
+	json = fromJSON(readChar(inFile,nchars=1e6))
+	print("done importing json candles")
 
 	ret = NULL
 	for(c in 1:length(json$candles)){
 		candle = as.data.frame(json$candles[c])
-		print(candle)
 		rbind(ret, candle) -> ret
 	}
 
@@ -228,8 +226,11 @@ graphBreakoutArea <- function(instrument='EUR_USD',granularity='D',candles=NA,ba
 			lineChart(Cl(candles),name=paste(instrument,granularity,sep=' - '))
 		}
 		if(save){
-			jpeg(paste(dataPath,'breakout/', instrument, '-', granularity, '.jpg', sep = ''),width=1334,height=750,quality=100)
+			iname = paste(dataPath,'breakout/', instrument, '-', granularity, '.jpg', sep = '')
+			print(paste('saving image',iname))
+			jpeg(iname,width=1334,height=750,quality=100)
 			lineChart(Cl(candles),name=paste(instrument,granularity,sep=' - '))
+			print("done")
 		}
 
 		if(drawLines){
@@ -292,6 +293,7 @@ getPosition <- function(currency){
 qfxAnalysis <- function(args){
 	print(paste('Running qfxAnalysis. Data path is',dataPath,sep=' '))
 	args = fromJSON(args)
+	outFile = paste(dataPath,'candles/', args$instrument, '-', args$granularity, '.csv', sep = '')
 
 	out = getCandles(args$instrument, args$granularity, args$startDate)
 	out = OHLC(out)
@@ -299,14 +301,17 @@ qfxAnalysis <- function(args){
 	trend = TrendDetectionChannel(out, n = 20, DCSector = .25)
 	trend$Time = 0
 	trend$Time = index(out)
+	out = cbind(out,trend)
 
-	patterns = getCandlestickPatterns(out)
-	patterns$Time = 0
-	patterns$Time = out$Time
+	#patterns = getCandlestickPatterns(out)
+	#patterns$Time = 0
+	#patterns$Time = out$Time
+	#out = cbind(out,patterns)
 
-	graphBreakoutArea(args$instrument,args$granularity,candles=out)
-
-	write.csv(cbind(out,trend,patterns), quote = FALSE, row.names = FALSE, file = paste(dataPath,'candles/', args$instrument, '-', args$granularity, '.csv', sep = ''), fileEncoding = 'UTF-8')
+	# Rserve ignores call to jpeg. Move this to custom script
+	#graphBreakoutArea(args$instrument,args$granularity,candles=OHLC(out))
+	print(paste("saving to",outFile))
+	write.csv(out, quote = FALSE, row.names = FALSE, file = outFile, fileEncoding = 'UTF-8')
 }
 qfxVolatility <- function(){
 	print(paste('Running qfxVolatility. Data path is',dataPath,sep=' '))
