@@ -10,7 +10,23 @@ var fs = require('fs'),
     string = require('./lib/string'),
     cron = require('cronzitto'),
     rio = require('rio'),
-    zlib = require('zlib');
+    zlib = require('zlib'),
+    csv = require('csv-parse');
+/**
+ * Global vars
+ */
+var crosses = null;
+var periods = ['M15', 'H1', 'D', 'W', 'M'];
+/**
+ * Load oanda currencies
+ */
+var rs = fs.createReadStream(__dirname + '/../app/data/availableCrosses.csv');
+var parser = csv({
+    columns: true
+}, function(err, data) {
+    crosses = data;
+});
+rs.pipe(parser);
 /**
  * Checks whether a file has been modified until now
  *
@@ -54,12 +70,18 @@ var requestCalendarCsv = function(url, cross) {
     }).on('error', _def.reject);
     return _def.promise;
 };
-var requestOandaCandles = function(instrument, granularity, startDate) {
+var requestOandaCandles = function(instrument, granularity, startDate, count) {
     var _def = q.defer();
     var inFile = [__dirname + '/../app/data/candles/', instrument, '-', granularity, '.json'].join('');
     var oandaApiHost = 'api-fxpractice.oanda.com';
     var oandaToken = 'ce6b72e81af59be0bbc90152cad8d731-03d41860ed7849e3c4555670858df786';
-    var url = ['/v1/candles?instrument=', instrument, '&granularity=', granularity, '&startDate=', startDate, '&weeklyAlignment=Monday', '&candleFormat=bidask'].join('');
+    var urlParams = ['instrument=' + instrument, 'granularity=' + granularity, 'weeklyAlignment=Monday', 'candleFormat=bidask'];
+    if (typeof(startDate) !== 'undefined') {
+        urlParams.push('start=' + startDate);
+    } else if (typeof(count) !== 'undefined') {
+        urlParams.push('count=' + count);
+    }
+    var url = ['/v1/candles', urlParams.join('&')].join('?');
     var opts = {
         host: oandaApiHost,
         path: url,
@@ -92,6 +114,50 @@ var requestOandaCandles = function(instrument, granularity, startDate) {
         }
     });
     return _def.promise;
+};
+var getMultipleCandles = function(_crosses, _periods, _count) {
+    var requests = [],
+        all = null;
+    var getCandles = function(req) {
+        return requestOandaCandles(req.cross, req.period, req.count);
+    };
+    for (var c in _crosses) {
+        var cross = _crosses[c];
+        for (var p in _periods) {
+            var period = _periods[p];
+            var newPeriod = period,
+                newCount = _count;
+            switch (period) {
+                case 'M15':
+                    newPeriod = 'M1';
+                    newCount = 15;
+                    break;
+                case 'H1':
+                    newPeriod = 'M5';
+                    newCount = 12;
+                    break;
+                case 'D':
+                    newPeriod = 'H2';
+                    newCount = 12;
+                    break;
+                case 'W':
+                    newPeriod = 'D';
+                    newCount = 7;
+                    break;
+                case 'M':
+                    newPeriod = 'D';
+                    newCount = 30;
+                    break;
+            }
+            requests.push({
+                cross: cross,
+                period: newPeriod,
+                count: newCount
+            });
+        }
+    }
+    all = q.all(requests.map(getCandles));
+    return all;
 };
 var runRScript = function(scriptName, opts) {
     var fname = [__dirname, '../server/scripts', [scriptName, 'r'].join('.')].join('/');
@@ -221,13 +287,18 @@ server.get('/api/currencyForce', function respond(req, res, next) {
     var sinceMinutes = 60;
     // only generate file if it's older than XX minutes
     if (isOutdatedFile(outFile, sinceMinutes)) {
-        runRScript('candlesticks', {
-            entryPoint: 'qfxForce',
-            callback: function(err, _res) {
-                fs.readFile(outFile, {}, function(err, data) {
-                    res.send(data);
-                });
-            }
+        getMultipleCandles(crosses, periods).then(function(ret) {
+            runRScript('candlesticks', {
+                entryPoint: 'qfxForce',
+                callback: function(err, _res) {
+                    fs.readFile(outFile, {}, function(err, data) {
+                        res.send(data);
+                    });
+                }
+            });
+        }, function(err) {
+            console.log(err);
+            res.send(err);
         });
     } else {
         fs.readFile(outFile, {}, function(err, data) {

@@ -17,15 +17,6 @@ logFile = file(paste(dataPath,'R.log',sep=''),open='wt')
 sink(logFile,type='message')
 
 getCandles <- function(instrument, granularity, startDate = NA, count = 600){
-	oandaToken = 'ce6b72e81af59be0bbc90152cad8d731-03d41860ed7849e3c4555670858df786'
-	urlPractice = paste('https://api-fxpractice.oanda.com/v1/candles?instrument=', instrument, '&granularity=', granularity, '&weeklyAlignment=Monday', '&candleFormat=bidask', sep = '')
-
-	if(!is.na(startDate)){
-		urlPractice = paste(urlPractice,'&start=', startDate,sep='')
-	}else if(!is.na(count)){
-		urlPractice = paste(urlPractice,'&count=', count,sep='')
-	}
-
 	inFile = paste(dataPath,'candles/', instrument, '-', granularity, '.json', sep = '')
 	json = fromJSON(readChar(inFile,nchars=1e6))
 	print("done importing json candles")
