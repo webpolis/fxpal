@@ -11,12 +11,14 @@ var fs = require('fs'),
     cron = require('cronzitto'),
     rio = require('rio'),
     zlib = require('zlib'),
-    csv = require('csv-parse');
+    csv = require('csv-parse'),
+    sleep = require('sleep');
 /**
  * Global vars
  */
 var crosses = null;
 var periods = ['M15', 'H1', 'D', 'W', 'M'];
+var reqCount = 0;
 /**
  * Load oanda currencies
  */
@@ -70,9 +72,9 @@ var requestCalendarCsv = function(url, cross) {
     }).on('error', _def.reject);
     return _def.promise;
 };
-var requestOandaCandles = function(instrument, granularity, startDate, count) {
+var requestOandaCandles = function(instrument, granularity, startDate, count, pause) {
     var _def = q.defer();
-    var inFile = [__dirname + '/../app/data/candles/', instrument, '-', granularity, '.json'].join('');
+    var inFile = [__dirname + '/../.tmp/', instrument, '-', granularity, '.json'].join('');
     var oandaApiHost = 'api-fxpractice.oanda.com';
     var oandaToken = 'ce6b72e81af59be0bbc90152cad8d731-03d41860ed7849e3c4555670858df786';
     var urlParams = ['instrument=' + instrument, 'granularity=' + granularity, 'weeklyAlignment=Monday', 'candleFormat=bidask'];
@@ -90,7 +92,16 @@ var requestOandaCandles = function(instrument, granularity, startDate, count) {
             'Accept-Encoding': 'gzip,deflate'
         }
     };
+    console.log(['requesting', opts.host + opts.path].join(' '));
     var request = https.get(opts, function(_res) {
+        if (pause) {
+            reqCount++;
+            sleep.usleep(Math.floor(150000));
+            if (reqCount === 7) {
+                sleep.sleep(2);
+                reqCount = 0;
+            }
+        }
         _res.on('end', function(_ret) {
             _def.resolve(inFile);
         });
@@ -119,7 +130,7 @@ var getMultipleCandles = function(_crosses, _periods, _count) {
     var requests = [],
         all = null;
     var getCandles = function(req) {
-        return requestOandaCandles(req.cross, req.period, req.count);
+        return requestOandaCandles(req.cross, req.period, undefined, req.count, true);
     };
     for (var c in _crosses) {
         var cross = _crosses[c];
@@ -127,27 +138,29 @@ var getMultipleCandles = function(_crosses, _periods, _count) {
             var period = _periods[p];
             var newPeriod = period,
                 newCount = _count;
-            switch (period) {
-                case 'M15':
-                    newPeriod = 'M1';
-                    newCount = 15;
-                    break;
-                case 'H1':
-                    newPeriod = 'M5';
-                    newCount = 12;
-                    break;
-                case 'D':
-                    newPeriod = 'H2';
-                    newCount = 12;
-                    break;
-                case 'W':
-                    newPeriod = 'D';
-                    newCount = 7;
-                    break;
-                case 'M':
-                    newPeriod = 'D';
-                    newCount = 30;
-                    break;
+            if (typeof(_count) === 'undefined') {
+                switch (period) {
+                    case 'M15':
+                        newPeriod = 'M1';
+                        newCount = 15;
+                        break;
+                    case 'H1':
+                        newPeriod = 'M5';
+                        newCount = 12;
+                        break;
+                    case 'D':
+                        newPeriod = 'H2';
+                        newCount = 12;
+                        break;
+                    case 'W':
+                        newPeriod = 'D';
+                        newCount = 7;
+                        break;
+                    case 'M':
+                        newPeriod = 'D';
+                        newCount = 30;
+                        break;
+                }
             }
             requests.push({
                 cross: cross,
@@ -284,14 +297,19 @@ server.get('/api/candles/volatility', function respond(req, res, next) {
 server.get('/api/currencyForce', function respond(req, res, next) {
     res.setHeader('content-type', 'text/csv');
     var outFile = [__dirname + '/../app/data/', 'force', '.csv'].join('');
-    var sinceMinutes = 60;
+    var sinceMinutes = 70;
     // only generate file if it's older than XX minutes
     if (isOutdatedFile(outFile, sinceMinutes)) {
-        getMultipleCandles(crosses, periods).then(function(ret) {
+        getMultipleCandles(crosses.map(function(c) {
+            return c.instrument;
+        }), periods).then(function(ret) {
+            reqCount = 0;
             runRScript('candlesticks', {
                 entryPoint: 'qfxForce',
                 callback: function(err, _res) {
                     fs.readFile(outFile, {}, function(err, data) {
+                        // delete json files
+                        sh.run(['rm', __dirname + '/../.tmp/*.json'].join(' '));
                         res.send(data);
                     });
                 }

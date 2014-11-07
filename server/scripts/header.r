@@ -13,11 +13,12 @@ Sys.setenv(TZ='UTC')
 
 pwd = getwd()
 dataPath = paste(pwd,'/app/data/',sep='')
+tmpPath = paste(pwd,'/.tmp/',sep='')
 logFile = file(paste(dataPath,'R.log',sep=''),open='wt')
 sink(logFile,type='message')
 
 getCandles <- function(instrument, granularity, startDate = NA, count = 600){
-	inFile = paste(dataPath,'candles/', instrument, '-', granularity, '.json', sep = '')
+	inFile = paste(tmpPath, instrument, '-', granularity, '.json', sep = '')
 	json = fromJSON(readChar(inFile,nchars=1e6))
 	print("done importing json candles")
 
