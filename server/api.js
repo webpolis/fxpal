@@ -200,18 +200,11 @@ server.get('/api/portfolio', function respond(req, res, next) {
     var outFile = __dirname + '/../app/data/portfolio.csv';
     // only generate file if it's older than 1 day
     if (isOutdatedFile(outFile, 60 * 24)) {
-        runRScript('portfolio', {
-            callback: function(err, _res) {
-                fs.readFile(outFile, {}, function(err, data) {
-                    res.send(data);
-                });
-            }
-        });
-    } else {
-        fs.readFile(outFile, {}, function(err, data) {
-            res.send(data);
-        });
+        sh.run(['Rscript', __dirname + '/scripts/portfolio.r'].join(' '));
     }
+    fs.readFile(outFile, {}, function(err, data) {
+        res.send(data);
+    });
     next();
 });
 server.get('/api/candles/:cross/:start/:granularity', function respond(req, res, next) {
@@ -259,7 +252,7 @@ server.get('/api/candles/:cross/:start/:granularity', function respond(req, res,
                 },
                 callback: function(err, _res) {
                     // copy on deploy folder
-                    sh.run(['Rscript', __dirname + '/scripts/breakout.r', instrument, granularity.toUpperCase()].join(' '));
+                    sh.run(['Rscript', __dirname + '/scripts/breakout.r', instrument, granularity].join(' '));
                     sh.run(['cp', outFile, outFile.replace(/\/app\//g, '/www/')].join(' '));
                     sh.run(['cp', bImgFile, bImgFile.replace(/\/app\//g, '/www/')].join(' '));
                     fs.readFile(outFile, {}, function(err, data) {
