@@ -14,6 +14,10 @@ var fs = require('fs'),
     csv = require('csv-parse'),
     sleep = require('sleep');
 /**
+ * Init server
+ */
+server.pre(restify.pre.sanitizePath());
+/**
  * Global vars
  */
 var crosses = null;
@@ -74,7 +78,8 @@ var requestCalendarCsv = function(url, cross) {
 };
 var requestOandaCandles = function(instrument, granularity, startDate, count, pause) {
     var _def = q.defer();
-    var inFile = [__dirname + '/../.tmp/', instrument, '-', granularity, '.json'].join('');
+    var inFile = [__dirname + '/../.tmp/', instrument, '-', granularity];
+    inFile = typeof(count) !== 'undefined' ? inFile.concat(['-', count, '.json']).join('') : inFile.concat('.json').join('');
     var oandaApiHost = 'api-fxpractice.oanda.com';
     var oandaToken = 'ce6b72e81af59be0bbc90152cad8d731-03d41860ed7849e3c4555670858df786';
     var urlParams = ['instrument=' + instrument, 'granularity=' + granularity, 'weeklyAlignment=Monday', 'candleFormat=bidask'];
@@ -243,7 +248,6 @@ server.get('/api/candles/:cross/:start/:granularity', function respond(req, res,
     }
     // only generate file if it's older than XX minutes
     if (isOutdatedFile(outFile, sinceMinutes)) {
-        var rname = [__dirname, '../server/scripts', ['candlesticks', 'r'].join('.')].join('/');
         // retrieve candles
         requestOandaCandles(instrument, granularity, startDate).then(function(inFile) {
             runRScript('candlesticks', {
@@ -255,6 +259,7 @@ server.get('/api/candles/:cross/:start/:granularity', function respond(req, res,
                 },
                 callback: function(err, _res) {
                     // copy on deploy folder
+                    sh.run(['Rscript', __dirname + '/scripts/breakout.r', instrument, granularity.toUpperCase()].join(' '));
                     sh.run(['cp', outFile, outFile.replace(/\/app\//g, '/www/')].join(' '));
                     sh.run(['cp', bImgFile, bImgFile.replace(/\/app\//g, '/www/')].join(' '));
                     fs.readFile(outFile, {}, function(err, data) {
@@ -276,16 +281,26 @@ server.get('/api/candles/:cross/:start/:granularity', function respond(req, res,
 server.get('/api/candles/volatility', function respond(req, res, next) {
     res.setHeader('content-type', 'text/csv');
     var outFile = [__dirname + '/../app/data/', 'volatility', '.csv'].join('');
-    var sinceMinutes = 60;
+    var sinceMinutes = 70;
     // only generate file if it's older than XX minutes
     if (isOutdatedFile(outFile, sinceMinutes)) {
-        runRScript('candlesticks', {
-            entryPoint: 'qfxVolatility',
-            callback: function(err, _res) {
-                fs.readFile(outFile, {}, function(err, data) {
-                    res.send(data);
-                });
-            }
+        getMultipleCandles(crosses.map(function(c) {
+            return c.instrument;
+        }), ['H1'], 8).then(function(ret) {
+            reqCount = 0;
+            runRScript('candlesticks', {
+                entryPoint: 'qfxVolatility',
+                callback: function(err, _res) {
+                    // delete json files
+                    //sh.run(['rm', __dirname + '/../.tmp/*.json'].join(' '));
+                    fs.readFile(outFile, {}, function(err, data) {
+                        res.send(data);
+                    });
+                }
+            });
+        }, function(err) {
+            console.log(err);
+            res.send(err);
         });
     } else {
         fs.readFile(outFile, {}, function(err, data) {
@@ -309,7 +324,7 @@ server.get('/api/currencyForce', function respond(req, res, next) {
                 callback: function(err, _res) {
                     fs.readFile(outFile, {}, function(err, data) {
                         // delete json files
-                        sh.run(['rm', __dirname + '/../.tmp/*.json'].join(' '));
+                        //sh.run(['rm', __dirname + '/../.tmp/*.json'].join(' '));
                         res.send(data);
                     });
                 }
@@ -324,6 +339,15 @@ server.get('/api/currencyForce', function respond(req, res, next) {
         });
     }
     next();
+});
+server.get('/api/cot/:month/:year', function respond(req, res, next) {
+    var file = [__dirname, '../app/data/cot', ['COT', '-', req.params.month, '-', req.params.year, '.jpg'].join('')].join('/');
+    fs.stat(file, function(err, stat) {
+        var img = fs.readFileSync(file);
+        res.contentType = 'image/jpg';
+        res.contentLength = stat.size;
+        res.end(img, 'binary');
+    });
 });
 server.post('/api/stemmer/:cross', function respond(req, res, next) {
     var ret = [];

@@ -3,7 +3,6 @@ library(grid)
 library(png)
 library(TTR)
 library(xts)
-#library(fPortfolio)
 library(quantmod)
 library(PerformanceAnalytics)
 library(rjson)
@@ -17,8 +16,14 @@ tmpPath = paste(pwd,'/.tmp/',sep='')
 logFile = file(paste(dataPath,'R.log',sep=''),open='wt')
 sink(logFile,type='message')
 
-getCandles <- function(instrument, granularity, startDate = NA, count = 600){
-	inFile = paste(tmpPath, instrument, '-', granularity, '.json', sep = '')
+getCandles <- function(instrument, granularity, startDate = NA, count = NA){
+	inFile = paste(tmpPath, instrument, '-', granularity,sep='')
+	
+	if(!is.na(count)){
+		inFile = paste(inFile,'-',count,sep='')
+	}
+	inFile = paste(inFile,'json',sep='.')
+
 	json = fromJSON(readChar(inFile,nchars=1e6))
 	print("done importing json candles")
 
@@ -205,7 +210,7 @@ addCopyright <- function(label, image, x, y, size, ...) {
 	grid.draw(logo)
 }
 
-graphBreakoutArea <- function(instrument='EUR_USD',granularity='D',candles=NA,bars=600,save=T,showGraph=F,fillCongested=T,drawLines=F){
+graphBreakoutArea <- function(instrument='EUR_USD',granularity='D',candles=NA,bars=NA,save=T,showGraph=F,fillCongested=T,drawLines=F){
 	if(is.na(candles)){
 		candles = getCandles(instrument,granularity,count=bars)
 	}
@@ -295,10 +300,10 @@ qfxAnalysis <- function(args){
 	trend$Time = index(out)
 	out = cbind(out,trend)
 
-	#patterns = getCandlestickPatterns(out)
-	#patterns$Time = 0
-	#patterns$Time = out$Time
-	#out = cbind(out,patterns)
+	patterns = getCandlestickPatterns(out)
+	patterns$Time = 0
+	patterns$Time = out$Time
+	out = cbind(out,patterns)
 
 	# Rserve ignores call to jpeg. Move this to custom script
 	#graphBreakoutArea(args$instrument,args$granularity,candles=OHLC(out))

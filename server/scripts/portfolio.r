@@ -1,34 +1,51 @@
-data = read.table(paste(dataPath,'multisetsInputs.csv',sep=''), sep = ',', dec = '.', strip.white = TRUE, header=TRUE, encoding = 'UTF-8')
+setwd("app/data/")
+
+Sys.setenv(TZ="UTC")
+
+library("xts")
+library("fPortfolio")
+#library("financeR")
+library("quantmod")
+
+data = read.table("multisetsInputs.csv", sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
 data = data[-c(1, 30:41)]
-crosses = toupper(gsub('\\.{3}[\\w]+|QUANDL\\.|\\.Price', '', names(data), perl = TRUE))
+crosses = toupper(gsub("\\.{3}[\\w]+|QUANDL\\.|\\.Price", "", names(data), perl = TRUE))
 names(data) = crosses
-print(data)
+
 tmp = matrix(nrow=nrow(data), ncol=ncol(data))
 colnames(tmp) = colnames(data)
 
-for(n in 1:ncol(tmp)){
-	tmp[,n] = round(ROC(data[,n], 1, type = 'discrete'), 6)
+for(n in 1:ncol(data)){
+	tmp[,n] = round(ROC(data[,n], 1, type = "discrete"), 6)
 }
 
-returns = na.spline(tmp)
-returns = as.timeSeries(returns)
+tmp = as.timeSeries(na.spline(tmp))
 spec = portfolioSpec()
-setNFrontierPoints(spec) = 10
-constraints = c('Short')
-setSolver(spec) = 'solveRshortExact'
-setTargetReturn(spec) = mean(colMeans(returns))
+setNFrontierPoints(spec) <- 10
+constraints <- c("Short")
+setSolver(spec) <- "solveRshortExact"
+setTargetReturn(spec) <- mean(colMeans(tmp))
 
-tp = tangencyPortfolio(returns, spec, constraints)
-mp = maxreturnPortfolio(returns, spec, constraints)
-ep = efficientPortfolio(returns, spec, constraints)
+tp = tangencyPortfolio(tmp, spec, constraints)
+mp = maxreturnPortfolio(tmp, spec, constraints)
+ep = efficientPortfolio(tmp, spec, constraints)
 tpWeights = getWeights(tp)
 mpWeights = getWeights(mp)
 epWeights = getWeights(ep)
 
 mediumWeights = round((tpWeights + mpWeights + epWeights) / 3, 6)
-names(mediumWeights) = names(returns)
+names(mediumWeights) = names(tmp)
 mediumWeights = sort(mediumWeights, decreasing = TRUE)
+
+# result = portfolio.optim(na.spline(tmp), shorts = TRUE)
+# pf = round(result$pw, 6)
+# names(pf) = names(data)
+# pf = sort(pf, decreasing = TRUE)
+
+#barplot(pf, cex.names = 0.34)
 
 out = as.data.frame(mediumWeights)
 out = data.frame(cross = names(mediumWeights), percentage = mediumWeights)
-write.csv(out, quote = FALSE, row.names = FALSE, file = paste(dataPath,'portfolio.csv',sep=''), fileEncoding = 'UTF-8')
+write.csv(out, quote = FALSE, row.names = FALSE, file = "portfolio.csv", fileEncoding = "UTF-8")
+
+quit()
