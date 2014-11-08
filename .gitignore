@@ -6,7 +6,6 @@ bower_components
 app/data/.Rapp.history
 platforms/**/
 app/data/candles/**
-!app/data/candles/.empty
 **/*/.Rapp.history
 .Rapp.history
 app/data/breakout/*.*
@@ -21,3 +20,5 @@ www/data/cot/*.*
 www/data/calendar*.csv
 www/data/volatility.csv
 www/data/portfolio.csv
+!app/data/candles/.empty
+!app/data/cot/.empty
