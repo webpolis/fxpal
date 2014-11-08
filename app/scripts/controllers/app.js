@@ -1,5 +1,6 @@
 'use strict';
 angular.module('aifxApp').controller('appController', function($scope, $ionicSideMenuDelegate, $rootScope, utils, $state, api, $location) {
+    $scope.now = new Date();
     $scope.utils = utils, $scope.state = $state, $scope.api = api;
     $scope.data = {
         currencies: null,
