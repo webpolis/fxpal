@@ -265,7 +265,9 @@ server.get('/api/candles/:cross/:start/:granularity', function respond(req, res,
             res.send(err);
         });
     } else {
-        sh.run(['Rscript', __dirname + '/scripts/breakout.r', instrument, granularity].join(' '));
+        if (isOutdatedFile(bImgFile, sinceMinutes)) {
+            sh.run(['Rscript', __dirname + '/scripts/breakout.r', instrument, granularity].join(' '));
+        }
         fs.readFile(outFile, {}, function(err, data) {
             res.send(data);
         });
