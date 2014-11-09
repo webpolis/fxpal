@@ -278,9 +278,9 @@ graphBreakoutArea <- function(instrument='EUR_USD',granularity='D',candles=NA,ba
 
 getPosition <- function(currency){
 	curr = subset(data,Market.and.Exchange.Names==currency)
-	cl = ROC(rev(curr$Noncommercial.Positions.Long..All.),type='discrete')
-	cs = ROC(rev(curr$Noncommercial.Positions.Short..All.),type='discrete')
-	ci = ROC(rev(curr$Open.Interest..All.),type='discrete')
+	cl = ROC(rev(curr$Noncommercial.Positions.Long..All.),type='continuous')
+	cs = ROC(rev(curr$Noncommercial.Positions.Short..All.),type='continuous')
+	ci = ROC(rev(curr$Open.Interest..All.),type='continuous')
 	pos = matrix(c(cl,cs,ci),ncol=3,dimnames=list(NULL,c('long','short','interest')))
 	ret = last(zoo(pos))
 	index(ret) = c(currency)
