@@ -243,7 +243,7 @@ server.get('/api/candles/:cross/:start/:granularity', function respond(req, res,
     if (isOutdatedFile(outFile, sinceMinutes)) {
         // retrieve candles
         requestOandaCandles(instrument, granularity, startDate).then(function(inFile) {
-            runRScript('candlesticks', {
+            runRScript('main', {
                 entryPoint: 'qfxAnalysis',
                 data: {
                     instrument: instrument,
@@ -284,7 +284,7 @@ server.get('/api/candles/volatility', function respond(req, res, next) {
             return c.instrument;
         }), ['H1'], 8).then(function(ret) {
             reqCount = 0;
-            runRScript('candlesticks', {
+            runRScript('main', {
                 entryPoint: 'qfxVolatility',
                 callback: function(err, _res) {
                     // delete json files
@@ -315,7 +315,7 @@ server.get('/api/currencyForce', function respond(req, res, next) {
             return c.instrument;
         }), periods).then(function(ret) {
             reqCount = 0;
-            runRScript('candlesticks', {
+            runRScript('main', {
                 entryPoint: 'qfxForce',
                 callback: function(err, _res) {
                     fs.readFile(outFile, {}, function(err, data) {
@@ -387,17 +387,24 @@ server.post('/api/calendar/:cross', function respond(req, res, next) {
 });
 var resCalendarStrength = function respond(req, res, next) {
     res.setHeader('content-type', 'text/csv');
-    var cross = req.params.cross && req.params.cross.match(/[a-z]{3}/gi) || [];
     var weeks = req.params.weeks ||  52;
+    var country1 = req.params.country1 ||  null;
+    var country2 = req.params.country2 ||  null;
     var outFile = [__dirname + '/../app/data/', 'calendar', '-', weeks];
     var sinceMinutes = 15;
-    if (cross.length > 0) {
-        outFile = outFile.concat('-' + [cross[0], cross[1]].join('-'));
+    if (country1 !== null && country2 !== null) {
+        outFile = outFile.concat('-' + [country1, country2].join('-'));
     }
     outFile = outFile.concat(['-', 'strength', '.csv']).join('');
     // only generate file if it's older than XX minutes
     if (isOutdatedFile(outFile, sinceMinutes)) {
-        runRScript('eventsStrength', {
+        runRScript('main', {
+            entryPoint: 'qfxEventsStrength',
+            data: {
+                weeks: weeks,
+                country1: country1,
+                country2: country2
+            },
             callback: function(err, _res) {
                 fs.readFile(outFile, {}, function(err, data) {
                     res.send(data);
@@ -411,7 +418,7 @@ var resCalendarStrength = function respond(req, res, next) {
     }
     next();
 };
-server.get('/api/calendar/strength/:weeks/:cross', resCalendarStrength);
+server.get('/api/calendar/strength/:weeks/:country1/:country2', resCalendarStrength);
 server.get('/api/calendar/strength/:weeks', resCalendarStrength);
 server.get('/api/calendar/strength', resCalendarStrength);
 server.listen(9999, function() {

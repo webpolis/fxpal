@@ -18,7 +18,8 @@
     "stemmer": true,
     "math": true,
     "connect": true,
-    "ga": true
+    "ga": true,
+    "OutputCache": true
   },
   "globalstrict": true,
   "quotmark": true,

@@ -287,6 +287,63 @@ getPosition <- function(currency){
 	return(ret)
 }
 
+getCurrenciesStrength <- function(data = NA, w = 52, country1=NA, country2=NA){
+	reDate = '([^\\s]+)(?:\\s+[^\\s]+){1,}'
+	df = data.frame()
+	for(i in 1:length(data)){
+		cal = data[[i]]
+
+		if(length(cal$Data)==0){
+			next
+		}
+		rowData = sapply(cal$Data,unlist)
+		actual = rowData['Actual',]
+		actual = actual[actual!='' && !is.na(actual)]
+
+		if(length(actual)==0){
+			next
+		}
+
+		tmpDf = data.frame()
+		actual = as.numeric(na.omit(actual))
+		avg = mean(actual)
+		tmpDf[1,'name'] = cal$Name
+		tmpDf[1,'code'] = cal$EventCode
+		tmpDf[1,'country'] = cal$Country
+		tmpDf[1,'date'] = cal$Released
+		tmpDf[1,'actual'] = avg
+		df = rbind(tmpDf,df)
+	}
+
+	df$date = gsub(reDate,'\\1',df$date,perl=T)
+	df$date = as.Date(df$date,format='%m/%d/%Y')
+	df = df[order(df$date),]
+
+	startWeek = as.Date(format(Sys.Date(),format='%Y-%m-%d')) - as.difftime(w,units='weeks')
+	tmp = df[df$date>=startWeek,]
+
+	if(!is.na(country1) && !is.na(country2)){
+		tmp = tmp[grep(paste(country1,country2,sep='|'), tmp$country, ignore.case=TRUE),]
+	}
+
+	# invert value for unemployment
+	inv = 'unempl|jobless'
+	tmp[grep(inv,tmp$name, ignore.case=TRUE),'actual'] = -(tmp[grep(inv,tmp$name, ignore.case=TRUE),'actual'])
+	
+	tmp = aggregate(tmp$actual, by=list(code=tmp$code,country=tmp$country),FUN=diff)
+	tmp[,'x'] = sapply(tmp[,'x'],simplify=T,FUN=function(n) round(sum(n),6))
+	tmp$scale = round(scale(tmp[,'x'], scale = TRUE, center = FALSE), 6)
+	tmp = tmp[!is.na(tmp$scale),]
+
+	scaled = aggregate(tmp$scale, by=list(country=tmp$country),FUN=mean)
+	names(scaled) <- c('country','strength')
+	scaled = scaled[order(-scaled[,'strength']),]
+	scaled[,'strength'] = round(scale(scaled[,'strength'], scale = TRUE, center = FALSE), 6)
+	scaled$sd = sd(scaled$strength)
+	scaled$strength = scale(scaled$strength+scaled$sd,center=F)
+	return(scaled)
+}
+
 qfxAnalysis <- function(args){
 	print(paste('Running qfxAnalysis. Data path is',dataPath,sep=' '))
 	args = fromJSON(args)
@@ -310,6 +367,7 @@ qfxAnalysis <- function(args){
 	print(paste("saving to",outFile))
 	write.csv(out, quote = FALSE, row.names = FALSE, file = outFile, fileEncoding = 'UTF-8')
 }
+
 qfxVolatility <- function(){
 	print(paste('Running qfxVolatility. Data path is',dataPath,sep=' '))
 	vol = getVolatility(crosses)
@@ -322,6 +380,7 @@ qfxVolatility <- function(){
 
 	write.csv(as.matrix(vol), append = FALSE, quote = FALSE, row.names = FALSE, file = paste(dataPath,'volatility.csv',sep=''), fileEncoding = 'UTF-8')
 }
+
 qfxForce <- function(){
 	print(paste('Running qfxForce. Data path is',dataPath,sep=' '))
 	table = round(getCrossesStrengthPerPeriod(crosses),6)
@@ -332,8 +391,39 @@ qfxForce <- function(){
 	write.csv(as.matrix(strengths), append = FALSE, quote = FALSE, row.names = FALSE, file = paste(dataPath,'force.csv',sep=''), fileEncoding = 'UTF-8')
 	write.csv(as.matrix(table), append = FALSE, quote = FALSE, row.names = FALSE, file = paste(dataPath,'forceCrosses.csv',sep=''), fileEncoding = 'UTF-8')
 }
+
 qfxBreakout <- function(args){
 	print(paste('Running qfxBreakout. Data path is',dataPath,sep=' '))
 	args = fromJSON(args)
 	graphBreakoutArea(args$instrument, args$granularity)
+}
+
+qfxEventsStrength <- function(args){
+	args = fromJSON(args)
+
+	reDate = '([^\\s]+)(?:\\s+[^\\s]+){1,}'
+	calendar = fromJSON(file=paste(dataPath,'calendar.json',sep=''))
+	total = length(calendar$d)
+	last = calendar$d[[total]]
+	lastDate = gsub(reDate,'\\1',last$Released,perl=T)
+	endDate = format(Sys.Date(),format='%m/%d/%Y')
+
+	diffWeeks = as.integer(difftime(as.Date(endDate,format='%m/%d/%Y'),as.Date(lastDate,format='%m/%d/%Y'),units='weeks'))
+	startWeek = as.Date(format(Sys.Date(),format='%Y-%m-%d')) - as.difftime(diffWeeks,units='weeks')
+	startDate = format(startWeek,format='%m/%d/%Y')
+
+	url = 'http://www.forex.com/UIService.asmx/getEconomicCalendarForPeriod'
+	params = toJSON(list(aStratDate=startDate,aEndDate=endDate))
+	headers = list('Accept' = 'application/json', 'Content-Type' = 'application/json')
+	ret = fromJSON(postForm(url, .opts=list(postfields=params, httpheader=headers)))
+
+	calendar = append(calendar$d, ret$d)
+
+	strength = getCurrenciesStrength(calendar, as.integer(args$weeks), args$country1, args$country2)
+	outFile = paste('calendar',as.integer(args$weeks),sep = '-')
+	if(!is.na(args$country1) && !is.na(args$country2)){
+		outFile = paste(outFile,args$country1,args$country2, sep = '-')
+	}
+	outFile = paste(outFile,'strength', sep = '-')
+	write.csv(strength, quote = FALSE, row.names = FALSE, file =  paste(dataPath, paste(outFile,'.csv',sep=''),sep=''), fileEncoding = 'UTF-8')
 }
