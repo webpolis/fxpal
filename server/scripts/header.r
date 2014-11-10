@@ -401,6 +401,13 @@ qfxBreakout <- function(args){
 qfxEventsStrength <- function(args){
 	args = fromJSON(args)
 
+	if(is.null(args$country1)){
+		args$country1 = NA
+	}
+	if(is.null(args$country2)){
+		args$country2 = NA
+	}
+
 	reDate = '([^\\s]+)(?:\\s+[^\\s]+){1,}'
 	calendar = fromJSON(file=paste(dataPath,'calendar.json',sep=''))
 	total = length(calendar$d)
