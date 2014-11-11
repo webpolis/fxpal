@@ -287,7 +287,7 @@ getPosition <- function(currency){
 	return(ret)
 }
 
-getCurrenciesStrength <- function(data = NA, w = 52, country1=NA, country2=NA){
+getCurrencyFundamentalStrength <- function(data = NA, w = 52, country1=NA, country2=NA){
 	reDate = '([^\\s]+)(?:\\s+[^\\s]+){1,}'
 	df = data.frame()
 	for(i in 1:length(data)){
@@ -426,7 +426,7 @@ qfxEventsStrength <- function(args){
 
 	calendar = append(calendar$d, ret$d)
 
-	strength = getCurrenciesStrength(calendar, as.integer(args$weeks), args$country1, args$country2)
+	strength = getCurrencyFundamentalStrength(calendar, as.integer(args$weeks), args$country1, args$country2)
 	outFile = paste('calendar',as.integer(args$weeks),sep = '-')
 	if(!is.na(args$country1) && !is.na(args$country2)){
 		outFile = paste(outFile,args$country1,args$country2, sep = '-')

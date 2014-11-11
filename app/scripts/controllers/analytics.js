@@ -199,6 +199,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         pointInterval: 86400000
     }];
     $scope.optChartPeriod = null;
+    $scope.stats = 'force';
     $scope.start = function(loadExtras, loadChart) {
         $ionicLoading.show({
             template: 'Loading...'
@@ -672,7 +673,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                                 }
                                 if (row[p] === 1) {
                                     var pat = {};
-                                    var patName = p.replace(/\.\d+/g, '').replace(/([A-Z])|\./g, ' $1').trim().replace(/\s{1,}/g, ' ');
+                                    var patName = p.replace(/\.\d+/g, '').replace(/([A-Z])|\./g, ' $1').trim().replace(/\s{1,}/g, ' ').replace(/(\b)day(\b)/gi, '$1Bar$2');
                                     var originalPattern = jsonPath.eval($scope.data.patterns, '$.[?(@.Name == "' + patName + '")]')[0] ||  null;
                                     if (originalPattern !== null) {
                                         patterns.push(originalPattern);
