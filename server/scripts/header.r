@@ -16,6 +16,8 @@ tmpPath = paste(pwd,'/.tmp/',sep='')
 logFile = file(paste(dataPath,'R.log',sep=''),open='wt')
 sink(logFile,type='message')
 
+source(paste(pwd,"server","scripts","strategy.r",sep="/"))
+
 getCandles <- function(instrument, granularity, startDate = NA, count = NA){
 	inFile = paste(tmpPath, instrument, '-', granularity,sep='')
 	
@@ -361,6 +363,9 @@ qfxAnalysis <- function(args){
 	patterns$Time = 0
 	patterns$Time = out$Time
 	out = cbind(out,patterns)
+
+	out = cbind(out, getSignals(OHLC(out)))
+	names(out) = sub("^avg$","signal",names(out))
 
 	# Rserve ignores call to jpeg. Move this to custom script
 	#graphBreakoutArea(args$instrument,args$granularity,candles=OHLC(out))
