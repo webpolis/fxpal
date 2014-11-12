@@ -19,7 +19,8 @@
     "math": true,
     "connect": true,
     "ga": true,
-    "OutputCache": true
+    "OutputCache": true,
+    "Spinner": true
   },
   "globalstrict": true,
   "quotmark": true,

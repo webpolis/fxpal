@@ -1,5 +1,5 @@
 'use strict';
-angular.module('aifxApp').controller('portfolioController', function($scope, $ionicSideMenuDelegate, $http, $ionicLoading, $stateParams, $timeout, $q, $location) {
+angular.module('aifxApp').controller('portfolioController', function($scope, $ionicSideMenuDelegate, $http, $stateParams, $timeout, $q, $location) {
     $scope.optsHighchartsPortfolio = {
         options: {
             scrollbar: {
@@ -55,9 +55,6 @@ angular.module('aifxApp').controller('portfolioController', function($scope, $io
     $scope.start = function() {
         $scope.optsHighchartsPortfolio.series[0].data = [];
         var tmp = [];
-        $ionicLoading.show({
-            template: 'Loading...'
-        });
         csv2json.csv($scope.config.urls.api + 'portfolio', function(data) {
             $scope.selected.portfolio = data;
             angular.forEach($scope.selected.portfolio, function(cross) {
@@ -70,7 +67,6 @@ angular.module('aifxApp').controller('portfolioController', function($scope, $io
             $scope.$apply(function() {
                 $scope.optsHighchartsPortfolio.series[0].data = tmp;
             });
-            $ionicLoading.hide();
         });
     };
 });

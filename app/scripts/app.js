@@ -56,24 +56,22 @@ angular.module('aifxApp', ['ngAnimate', 'ngCookies', 'ngResource', 'ngRoute', 'n
     });
     $urlRouterProvider.otherwise('/app/main');
     // set interceptors
-    $httpProvider.interceptors.push(function($q, $ionicLoading) {
+    $httpProvider.interceptors.push(function($q, log) {
         return {
             'request': function(config) {
-                $ionicLoading.show({
-                    template: 'Loading...'
-                });
+                log.spinner();
                 return config;
             },
             'requestError': function(rejection) {
-                $ionicLoading.hide();
+                log.spinner(true);
                 return $q.reject(rejection);
             },
             'response': function(response) {
-                $ionicLoading.hide();
+                log.spinner(true);
                 return response;
             },
             'responseError': function(rejection) {
-                $ionicLoading.hide();
+                log.spinner(true);
                 return $q.reject(rejection);
             }
         };
