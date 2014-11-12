@@ -56,7 +56,7 @@ angular.module('aifxApp', ['ngAnimate', 'ngCookies', 'ngResource', 'ngRoute', 'n
     });
     $urlRouterProvider.otherwise('/app/main');
     // set interceptors
-    $httpProvider.interceptors.push(function($q, $cookieStore, log, $ionicLoading) {
+    $httpProvider.interceptors.push(function($q, $ionicLoading) {
         return {
             'request': function(config) {
                 $ionicLoading.show({
