@@ -22,3 +22,4 @@ www/data/volatility.csv
 www/data/portfolio.csv
 !app/data/candles/.empty
 !app/data/cot/.empty
+server/socket

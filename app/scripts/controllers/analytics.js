@@ -1,5 +1,5 @@
 'use strict';
-angular.module('aifxApp').controller('analyticsController', function($scope, $ionicSideMenuDelegate, $http, $ionicLoading, $stateParams, $timeout, $q, ngTableParams, $ionicPopup, $location) {
+angular.module('aifxApp').controller('analyticsController', function($scope, $ionicSideMenuDelegate, $http, $stateParams, $timeout, $q, ngTableParams, $ionicPopup, $location) {
     $scope.tblEvents = new ngTableParams({}, {
         counts: []
     });
@@ -201,9 +201,6 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
     $scope.optChartPeriod = null;
     $scope.stats = 'force';
     $scope.start = function(loadExtras, loadChart) {
-        $ionicLoading.show({
-            template: 'Loading...'
-        });
         // set cross via param
         if (angular.isDefined($stateParams.cross)) {
             $scope.selected.cross1 = $stateParams.cross.split('').splice(0, 3).join('');
@@ -213,7 +210,6 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         var cross = $scope.selected.cross1 + $scope.selected.cross2,
             startDate = moment().subtract('years', 4).format('YYYY-MM-DD'),
             endDate = moment().format('YYYY-MM-DD');
-        $ionicLoading.hide();
         if (!angular.isDefined(loadExtras) || loadExtras) {
             $scope.correlated('markets');
             $scope.processEvents().then(function() {
@@ -228,9 +224,6 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
     $scope.computeVolatility = function() {
         $scope.optsHighchartsVolatility.series[0].data = [];
         var tmp = [];
-        $ionicLoading.show({
-            template: 'Loading...'
-        });
         csv2json.csv($scope.config.urls.api + 'candles/volatility', function(data) {
             $scope.selected.volatility = data;
             angular.forEach($scope.selected.volatility, function(cross) {
@@ -243,16 +236,12 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             $scope.$apply(function() {
                 $scope.optsHighchartsVolatility.series[0].data = tmp;
             });
-            $ionicLoading.hide();
         });
     };
     $scope.computeCurrencyForce = function() {
         $scope.optsHighchartsCurrencyForce.series[0].data = [];
         var tmp = [];
         var currencies = {};
-        $ionicLoading.show({
-            template: 'Loading...'
-        });
         csv2json.csv($scope.config.urls.api + 'currencyForce', function(data) {
             $scope.selected.currencyForce = data;
             // initialize currencies
@@ -289,15 +278,11 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             $scope.$apply(function() {
                 $scope.optsHighchartsCurrencyForce.series[0].data = tmp;
             });
-            $ionicLoading.hide();
         });
     };
     $scope.computeStrength = function() {
         $scope.optsHighchartsStrength.series[0].data = [];
         var tmp = [];
-        $ionicLoading.show({
-            template: 'Loading...'
-        });
         csv2json.csv($scope.config.urls.api + ['calendar', 'strength', 52].join('/'), function(data) {
             $scope.selected.strength = data;
             angular.forEach($scope.selected.strength, function(row) {
@@ -313,7 +298,6 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             $scope.$apply(function() {
                 $scope.optsHighchartsStrength.series[0].data = tmp;
             });
-            $ionicLoading.hide();
         });
     };
     /**
@@ -325,9 +309,6 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
      */
     $scope.computeChange = function(sets, type) {
         var def = $q.defer();
-        $ionicLoading.show({
-            template: 'Loading...'
-        });
         switch (type) {
             case 'weeklyChange':
             case 'monthlyChange':
@@ -367,10 +348,8 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                             });
                         });
                     }
-                    $ionicLoading.hide();
                     def.resolve();
                 }).error(function(err) {
-                    $ionicLoading.hide();
                     def.reject(err);
                 });
                 break;
@@ -397,10 +376,8 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                             });
                         }
                     }
-                    $ionicLoading.hide();
                     def.resolve();
                 }).error(function(err) {
-                    $ionicLoading.hide();
                     def.reject(err);
                 });
                 break;
@@ -427,9 +404,6 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             });
             return data;
         };
-        $ionicLoading.show({
-            template: 'Loading...'
-        });
         // retrieve events
         var startWeekDate = null;
         switch (moment().day()) {
@@ -454,7 +428,6 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                 'Content-Type': 'application/json'
             }
         }).success(function(ret) {
-            $ionicLoading.hide();
             $scope.selected.events = parseCsv(ret);
             $scope.selected.events = $scope.selected.events.map(function(ev) {
                 var o = {}, reCross = new RegExp('^(' + [$scope.selected.cross1, $scope.selected.cross2].join('|') + ')\\s+', 'g');
@@ -615,9 +588,6 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         $scope.optsHighchartsCross.series[3].data = [];
     };
     $scope.candlesticksAnalysis = function(optsOanda, period) {
-        $ionicLoading.show({
-            template: 'Loading...'
-        });
         $scope.resetChart();
         var isRevertedCross = $scope.api.isRevertedCross($scope.selected.cross1, $scope.selected.cross2);
         // retrieve candles information
@@ -702,7 +672,6 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                         $scope.optsHighchartsCross.series[1].data = linearRegresssion.points;
                         $scope.optsHighchartsCross.series[2].data = trends;
                         $scope.optsHighchartsCross.series[3].data = detectedPatterns;
-                        $ionicLoading.hide();
                     });
                 }
             });

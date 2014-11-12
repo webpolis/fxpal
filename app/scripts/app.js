@@ -55,6 +55,29 @@ angular.module('aifxApp', ['ngAnimate', 'ngCookies', 'ngResource', 'ngRoute', 'n
         }
     });
     $urlRouterProvider.otherwise('/app/main');
+    // set interceptors
+    $httpProvider.interceptors.push(function($q, $cookieStore, log, $ionicLoading) {
+        return {
+            'request': function(config) {
+                $ionicLoading.show({
+                    template: 'Loading...'
+                });
+                return config;
+            },
+            'requestError': function(rejection) {
+                $ionicLoading.hide();
+                return $q.reject(rejection);
+            },
+            'response': function(response) {
+                $ionicLoading.hide();
+                return response;
+            },
+            'responseError': function(rejection) {
+                $ionicLoading.hide();
+                return $q.reject(rejection);
+            }
+        };
+    });
     // hack for CORS
     $httpProvider.defaults.useXDomain = true;
     $httpProvider.defaults.headers.common = {
