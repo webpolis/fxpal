@@ -10,7 +10,7 @@ window.addEventListener('error', function(evt) {
     evt.preventDefault();
 });
 // setup angular
-angular.module('aifxApp', ['ngAnimate', 'ngCookies', 'ngResource', 'ngRoute', 'ngSanitize', 'ngTouch', 'ionic', 'ngTable', 'highcharts-ng', 'timer']).config(function($stateProvider, $urlRouterProvider, $httpProvider) {
+angular.module('aifxApp', ['ngAnimate', 'ngCookies', 'ngResource', 'ngRoute', 'ngSanitize', 'ngTouch', 'ionic', 'ngTable', 'highcharts-ng', 'timer', 'aifxApp.services']).config(function($stateProvider, $urlRouterProvider, $httpProvider) {
     $stateProvider.state('app', {
         url: '/app',
         templateUrl: 'views/menu.html'
@@ -56,26 +56,28 @@ angular.module('aifxApp', ['ngAnimate', 'ngCookies', 'ngResource', 'ngRoute', 'n
     });
     $urlRouterProvider.otherwise('/app/main');
     // set interceptors
-    $httpProvider.interceptors.push(function($q, log) {
-        return {
-            'request': function(config) {
-                log.spinner();
-                return config;
-            },
-            'requestError': function(rejection) {
-                log.spinner(true);
-                return $q.reject(rejection);
-            },
-            'response': function(response) {
-                log.spinner(true);
-                return response;
-            },
-            'responseError': function(rejection) {
-                log.spinner(true);
-                return $q.reject(rejection);
-            }
-        };
-    });
+    $httpProvider.interceptors.push(['$q', 'log',
+        function($q, log) {
+            return {
+                'request': function(config) {
+                    log.spinner();
+                    return config;
+                },
+                'requestError': function(rejection) {
+                    log.spinner(true);
+                    return $q.reject(rejection);
+                },
+                'response': function(response) {
+                    log.spinner(true);
+                    return response;
+                },
+                'responseError': function(rejection) {
+                    log.spinner(true);
+                    return $q.reject(rejection);
+                }
+            };
+        }
+    ]);
     // hack for CORS
     $httpProvider.defaults.useXDomain = true;
     $httpProvider.defaults.headers.common = {
