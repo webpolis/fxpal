@@ -180,6 +180,9 @@ var getMultipleCandles = function(_crosses, _periods, _count) {
 var runRScript = function(scriptName, opts) {
     var fname = [__dirname, '../server/scripts', [scriptName, 'r'].join('.')].join('/');
     console.log('running ' + scriptName);
+    opts.path = [__dirname, '../server/socket'].join('/');
+    delete opts.host;
+    delete opts.port;
     rio.sourceAndEval(fname, opts); //rio.bufferAndEval(script.replace(/\;/g, '\n'));
     return true;
 };
