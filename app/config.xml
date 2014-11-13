@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.webpolis.aifx" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>aifx</name>
+    <name>qfx.club</name>
     <description>
-        Artificial intelligence applied to markets.
+        Quantitative Finance for the masses.
     </description>
     <author email="nico@webpolis.com.ar" href="http://webpolis.com.ar">
         webpolis::code::design

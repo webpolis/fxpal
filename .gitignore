@@ -23,3 +23,7 @@ www/data/portfolio.csv
 !app/data/candles/.empty
 !app/data/cot/.empty
 server/socket
+
+www
+!www/config.xml
+!www/res
