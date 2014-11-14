@@ -1,7 +1,3 @@
-setwd("app/data/")
-
-Sys.setenv(TZ="UTC")
-
 library(tm.plugin.webmining)
 library(RCurl)
 library(XML)
@@ -17,6 +13,7 @@ rss.actionfx2.nodes = getNodeSet(rss.actionfx2.content,"//item")
 rss.mt5.nodes = getNodeSet(rss.mt5.content,"//item")
 rss.dailyfx.nodes = getNodeSet(rss.dailyfx.content,"//item")
 rss.fxstreet.list = lapply(rss.fxstreet.nodes,xmlToList)
+rss.actionfx.list = lapply(rss.actionfx.nodes,xmlToList)
 rss.actionfx2.list = lapply(rss.actionfx2.nodes,xmlToList)
 rss.mt5.list = lapply(rss.mt5.nodes,xmlToList)
 rss.dailyfx.list = lapply(rss.dailyfx.nodes,xmlToList)
@@ -56,3 +53,18 @@ rss.df$pubDate = as.POSIXlt(rss.df$pubDate,origin="1970-01-01")
 startWeek = as.Date(format(Sys.Date(),format="%Y-%m-%d")) - as.difftime(2,units="weeks")
 rss.df.filtered = rss.df[as.Date(rss.df$pubDate)>=startWeek,]
 rss.df.filtered$description= sapply(rss.df.filtered$description,extractHTMLStrip)
+
+corpus = Corpus(VectorSource(rss.df.filtered$description))
+
+corpus = tm_map(corpus,content_transformer(tolower))
+corpus = tm_map(corpus,content_transformer(removePunctuation))
+corpus = tm_map(corpus,content_transformer(removeNumbers))
+corpus = tm_map(corpus,removeWords,stopwords("english"))
+#corpus = tm_map(corpus,stemDocument)
+
+dtm = TermDocumentMatrix(corpus, control = list(minWordLength = 1))
+dtmSparse = removeSparseTerms(dtm,0.9)
+dfSparse = as.data.frame(inspect(dtmSparse))
+scaleSparse = scale(dfSparse)
+distSparse = dist(scaleSparse, method = "euclidean")
+clustSparse = hclust(distSparse, method="ward")

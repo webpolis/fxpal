@@ -14,7 +14,7 @@ pwd = getwd()
 dataPath = paste(pwd,'/app/data/',sep='')
 tmpPath = paste(pwd,'/.tmp/',sep='')
 logFile = file(paste(dataPath,'R.log',sep=''),open='wt')
-sink(logFile,type='message')
+#sink(logFile,type='message')
 
 source(paste(pwd,"server","scripts","strategy.r",sep="/"))
 

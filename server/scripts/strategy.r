@@ -1,8 +1,16 @@
-TradingStrategy <- function(strategy, data,param1=NA,param2=NA,param3=NA, retSignals=F){
+tmpGranularity = NA
+
+TradingStrategy <- function(strategy=NA, data=NA,param1=NA,param2=NA,param3=NA, retSignals=F,V1=NA,V2=NA,V3=NA){
   tradingreturns = NULL
   returns = Delt(Op(data),Cl(data))
   runName = NULL
   signal = 0
+
+  param1 = ifelse(is.na(V1),param1,V1)
+  param2 = ifelse(is.na(V2),param2,V2)
+  param3 = ifelse(is.na(V3),param3,V3)
+
+  print(paste(strategy,param1,param2,param3,sep="-"))
 
   switch(strategy, CCI={
     cci = CCI(Op(data),n=param1)
@@ -52,99 +60,33 @@ TradingStrategy <- function(strategy, data,param1=NA,param2=NA,param3=NA, retSig
   }
 }
 
-RunIterativeStrategy <- function(data, strategy = NA){
+RunIterativeStrategy <- function(data, strategy = NA, paramsRange = NA, paramsCount = 1){
   #This function will run the TradingStrategy
   #It will iterate over a given set of input variables
-  firstRun <- TRUE
   results = NULL
+  min = 3
+  max = 20
+  
+  if(!is.na(paramsRange)){
+    min = min(paramsRange)
+    max = max(paramsRange)
+  }
 
-  switch(strategy, CCI={
-    for(paramA in 7:20) {
-      runResult <- TradingStrategy(strategy, data,paramA)
-      if(firstRun){
-        firstRun <- FALSE
-        results <- runResult
-      } else {
-        results <- cbind(results,runResult)
-      }
+  tmp = matrix(combn(min:max,paramsCount),ncol=paramsCount,byrow=T)
+  f = function(...){
+    return(TradingStrategy(strategy, data, ...))
+  }
+
+  for(i in 1:nrow(tmp)){
+    r = tmp[i,]
+    cols = paste(strategy,paste(as.character(r), collapse=","),sep=",")
+    ret = do.call(f,as.list(r));
+    if(is.null(results)){
+      results = ret
+    }else{
+      results = cbind(results,ret)
     }
-  }, MACD={
-    for(paramA in 4:12) {
-      for(paramB in 4:20) {
-        for(paramC in 4:20) {
-          runResult <- TradingStrategy(strategy, data,paramA,paramB,paramC)
-          if(firstRun){
-            firstRun <- FALSE
-            results <- runResult
-          } else {
-            results <- cbind(results,runResult)
-          }
-        }
-      }
-    }
-  }, EMA={
-    for(paramA in 3:16) {
-      for(paramB in 3:16) {
-        for(paramC in 3:16) {
-          runResult <- TradingStrategy(strategy, data,paramA,paramB,paramC)
-          if(firstRun){
-            firstRun <- FALSE
-            results <- runResult
-          } else {
-            results <- cbind(results,runResult)
-          }
-        }
-      }
-    }
-  }, SMI={
-    for(paramA in 3:20) {
-      for(paramB in 3:20) {
-        for(paramC in 3:20) {
-          runResult <- TradingStrategy(strategy, data,paramA,paramB,paramC)
-          if(firstRun){
-            firstRun <- FALSE
-            results <- runResult
-          } else {
-            results <- cbind(results,runResult)
-          }
-        }
-      }
-    }
-  }, RSI={
-    for(paramA in 3:20) {
-      runResult <- TradingStrategy(strategy, data,paramA)
-      if(firstRun){
-        firstRun <- FALSE
-        results <- runResult
-      } else {
-        results <- cbind(results,runResult)
-      }
-    }
-  }, STOCH={
-    for(paramA in 3:12) {
-      for(paramB in 3:16) {
-        for(paramC in 3:16) {
-          runResult <- TradingStrategy(strategy, data,paramA,paramB,paramC)
-          if(firstRun){
-            firstRun <- FALSE
-            results <- runResult
-          } else {
-            results <- cbind(results,runResult)
-          }
-        }
-      }
-    }
-  }, ADX={
-    for(paramA in 3:20) {
-      runResult <- TradingStrategy(strategy, data,paramA)
-      if(firstRun){
-        firstRun <- FALSE
-        results <- runResult
-      } else {
-        results <- cbind(results,runResult)
-      }
-    }
-  })
+  }
 
   return(results)
 }
@@ -157,9 +99,9 @@ CalculatePerformanceMetric <- function(returns,metric){
   if(length(grep("sharperatio",metric,ignore.case=T))>0){
     periods = 252
 
-    if(length(grep("[a-z]\\d+",granularity,ignore.case=T))>0){
-      unit = gsub("([a-z])(\\d+)","\\1",granularity,ignore.case=T)
-      num = as.integer(gsub("([a-z])(\\d+)","\\2",granularity,ignore.case=T))
+    if(length(grep("[a-z]\\d+",tmpGranularity,ignore.case=T))>0){
+      unit = gsub("([a-z])(\\d+)","\\1",tmpGranularity,ignore.case=T)
+      num = as.integer(gsub("([a-z])(\\d+)","\\2",tmpGranularity,ignore.case=T))
       switch(unit, H={
           periods=8760/num
       }, M={
@@ -193,7 +135,7 @@ PerformanceTable <- function(returns){
 }
 
 OrderPerformanceTable <- function(performanceTable,metric){
-return (performanceTable[order(performanceTable[,metric],decreasing=TRUE),])
+  return (performanceTable[order(performanceTable[,metric],decreasing=TRUE),])
 }
 
 SelectTopNStrategies <- function(returns,performanceTable,metric,n){
@@ -208,9 +150,9 @@ SelectTopNStrategies <- function(returns,performanceTable,metric,n){
   return (topNMetrics)
 }
 
-FindOptimumStrategy <- function(trainingData, strategy = NA){
+FindOptimumStrategy <- function(trainingData, strategy = NA, paramsRange=NA,paramsCount=1){
   #Optimise the strategy
-  trainingReturns <- RunIterativeStrategy(trainingData, strategy)
+  trainingReturns <- RunIterativeStrategy(trainingData, strategy, paramsRange,paramsCount)
   pTab <- PerformanceTable(trainingReturns)
   toptrainingReturns <- SelectTopNStrategies(trainingReturns,pTab,"SharpeRatio",5)
 
@@ -219,12 +161,12 @@ FindOptimumStrategy <- function(trainingData, strategy = NA){
   return (pTab)
 }
 #1
-trainStrategy <- function(data,granularity,strategy){
+trainStrategy <- function(data,strategy, paramsRange=NA,paramsCount=1){
   startDate = index(data[1,])
   ##endDate = index(data[ceiling(nrow(data)/2),])
   endDate = index(data[nrow(data),])
   trainingData <- window(data, start =startDate, end = endDate)
-  pTab <- FindOptimumStrategy(trainingData,strategy) #pTab is the performance table of the various parameters tested
+  pTab <- FindOptimumStrategy(trainingData,strategy,paramsRange,paramsCount) #pTab is the performance table of the various parameters tested
 }
 #2
 testStrategy <- function(data, instrument,strategy,param1=NA,param2=NA,param3=NA){
