@@ -278,7 +278,7 @@ graphBreakoutArea <- function(instrument='EUR_USD',granularity='D',candles=NA,ba
 	}
 }
 
-getPosition <- function(currency){
+getPosition <- function(currency,data=NA){
 	curr = subset(data,Market.and.Exchange.Names==currency)
 	cl = ROC(rev(curr$Noncommercial.Positions.Long..All.),type='continuous')
 	cs = ROC(rev(curr$Noncommercial.Positions.Short..All.),type='continuous')

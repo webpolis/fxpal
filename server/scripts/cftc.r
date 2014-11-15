@@ -21,16 +21,16 @@ data[,1] = gsub('(.*)\\s+\\-\\s+.*','\\1',data[,1],ignore.case=T,perl=T);
 
 currencies = c('CANADIAN DOLLAR','SWISS FRANC','BRITISH POUND STERLING','JAPANESE YEN','EURO FX','NEW ZEALAND DOLLAR','AUSTRALIAN DOLLAR','U.S. DOLLAR INDEX','NIKKEI STOCK AVERAGE');
 
-stats = Reduce(rbind,lapply(currencies,getPosition));
+stats = Reduce(rbind,lapply(currencies,getPosition,data));
 index(stats) <- c('AUD','GBP','CAD','EUR','JPY','NZD','NIKKEI','CHF','USD');
 
 unlink(tmp);
 unlink(reportName);
 
 jpeg(paste(dataPath,'cot/COT-', month, '-',year, '.jpg', sep = ''),width=1334,height=750,quality=100,bg='dimgray');
-barplot(as.matrix(t(stats)),ylab='Positioning',beside=T,col=c('olivedrab4','firebrick3','dodgerblue4'),cex.names=2,width=0.75,col.lab='white',col.axis='white',main='COT Status',col.main='white');
+barplot(as.matrix(t(stats)),ylab='Positioning',beside=T,col=c('olivedrab4','firebrick3','dodgerblue4'),cex.names=2,col.lab='white',col.axis='white',main='COT Status',col.main='white');
 
-legend('topright', c('long','short','interest'), cex=1.5,col=c('olivedrab4','firebrick3','dodgerblue4'), lty=c(1,1,1),pch=22,text.col='white');
+legend('topright', c('long','short','interest'), cex=c(2),pt.cex=c(3),col=c('olivedrab4','firebrick3','dodgerblue4'), lty=c(1,1,1),pch=c(15),pt.lwd=0,text.col='white');
 grid();
 
 logoPath = paste(dataPath,'../images/logo-s.png',sep='');

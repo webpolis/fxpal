@@ -1,3 +1,4 @@
+library(tm)
 library(tm.plugin.webmining)
 library(RCurl)
 library(XML)
