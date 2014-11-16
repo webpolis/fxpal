@@ -390,7 +390,7 @@ graphCOTPositioning <- function(currency1,currency2,cross,data=NA,cotData=NA,sav
 	}
 }
 
-getCurrency1FundamentalStrength <- function(data = NA, w = 52, country1=NA, country2=NA){
+getCurrencyFundamentalStrength <- function(data = NA, w = 52, country1=NA, country2=NA){
 	reDate = '([^\\s]+)(?:\\s+[^\\s]+){1,}'
 	df = data.frame()
 	for(i in 1:length(data)){
