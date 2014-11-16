@@ -18,6 +18,8 @@ angular.module('aifxApp').controller('appController', function($scope, $ionicSid
     $scope.selected = {
         cross1: null,
         cross2: null,
+        currency1: null, // cot name
+        currency2: null,
         cross: null,
         portfolio: null,
         patterns: {},
@@ -61,28 +63,36 @@ angular.module('aifxApp').controller('appController', function($scope, $ionicSid
         maps: {
             currency: [{
                 country: 'us',
-                code: 'USD'
+                code: 'USD',
+                cot: 'U.S. DOLLAR INDEX'
             }, {
                 country: 'nz',
-                code: 'NZD'
+                code: 'NZD',
+                cot: 'NEW ZEALAND DOLLAR'
             }, {
                 country: 'au',
-                code: 'AUD'
+                code: 'AUD',
+                cot: 'AUSTRALIAN DOLLAR'
             }, {
                 country: 'ca',
-                code: 'CAD'
+                code: 'CAD',
+                cot: 'CANADIAN DOLLAR'
             }, {
                 country: 'ch',
-                code: 'CHF'
+                code: 'CHF',
+                cot: 'SWISS FRANC'
             }, {
                 country: 'jp',
-                code: 'JPY'
+                code: 'JPY',
+                cot: 'JAPANESE YEN'
             }, {
                 country: 'gb',
-                code: 'GBP'
+                code: 'GBP',
+                cot: 'BRITISH POUND STERLING'
             }, {
                 country: 'em',
-                code: 'EUR'
+                code: 'EUR',
+                cot: 'EURO FX'
             }],
             tickers: [{
                 quandl: 'YAHOO.INDEX_GDAXI',

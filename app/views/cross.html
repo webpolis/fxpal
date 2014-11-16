@@ -26,86 +26,20 @@
         </div>
     </div>
 </div>
-<div class="card crosses">
-    <div class="item item-divider">
-        <span class="maroon pull-left">Related Markets</span>
-    </div>
-    <div class="item item-text-wrap">
-        <span class="energized" ng-if="!selected.correlation.markets || selected.correlation.markets.length == 0">No relevant items found</span>
-        <div class="row row-top" ng-if="!(!selected.correlation.markets || selected.correlation.markets.length == 0)">
-            <div class="col">
-                <span class="gray size-13">Market / Index</span>
-            </div>
-            <div class="col">
-                <span class="gray size-13">Daily change</span>
-            </div>
-            <div class="col">
-                <span class="gray size-13">Weekly change</span>
-            </div>
-            <div class="col">
-                <span class="gray size-13">Monthly change</span>
-            </div>
-        </div>
-        <div class="row" ng-repeat="corr in selected.correlation.markets">
-            <div class="col">
-                <span class="size-12" ng-class="{'green':corr.rel>0,'red':corr.rel<0}">
-                <i class="icon" ng-class="{'ion-plus-round':corr.rel>0,'ion-minus-round':corr.rel<0}"></i>
-                <a ng-if="corr.currency" ng-href="#/app/cross/{{corr.label}}">{{corr.label}}</a>
-                <span ng-if="!corr.currency">{{corr.label}}</span>
-                </span>
-            </div>
-            <div class="col">
-                <rate-change ng-if="corr.currency" period="D" count="2" symbol="corr"></rate-change>
-                <i class="icon size-16" ng-class="{'ion-android-arrow-up-right green':corr.dailyChange>0,'ion-android-arrow-down-right red':corr.dailyChange<0,'ion-android-remove':corr.dailyChange==0}"></i>
-            </div>
-            <div class="col">
-                <rate-change ng-if="corr.currency" period="W" count="2" symbol="corr"></rate-change>
-                <i class="icon size-16" ng-class="{'ion-android-arrow-up-right green':corr.weeklyChange>0,'ion-android-arrow-down-right red':corr.weeklyChange<0,'ion-android-remove':corr.weeklyChange==0}"></i>
-            </div>
-            <div class="col">
-                <rate-change ng-if="corr.currency" period="M" count="2" symbol="corr"></rate-change>
-                <i class="icon size-16" ng-class="{'ion-android-arrow-up-right green':corr.monthlyChange>0,'ion-android-arrow-down-right red':corr.monthlyChange<0,'ion-android-remove':corr.monthlyChange==0}"></i>
-            </div>
-        </div>
-    </div>
+<div class="button-bar">
+    <a href="" class="button" ng-click="stats = 'markets'">
+    <i class="icon ion-battery-half green size-32"></i>
+    Related Markets
+    </a>
+    <a href="" class="button" ng-click="stats = 'events'">
+    <i class="icon ion-flash blue size-32"></i>
+    Events
+    </a>
+    <a href="" class="button" ng-click="stats = 'positioning'">
+    <i class="icon ion-arrow-swap orange size-32"></i>
+    Speculative Positioning
+    </a>
 </div>
-<div class="card">
-    <div class="item item-divider">
-        <span class="maroon pull-left">Events</span>
-        <div class="pull-right">
-            <button ng-class="{'button-calm':optShowCalendar,'button-dark':!optShowCalendar}" ng-click="optShowCalendar = !optShowCalendar" type="button" class="button button-small"><i class="icon ion-calendar"></i> Full Calendar</button>
-        </div>
-    </div>
-    <div class="item item-text-wrap">
-        <div ng-if="nextEvents" ng-init="nxtEventTime = nextEvents[0].timestamp" class="row">
-            <div class="col">
-                <b><i class="icon ion-clock"></i> Next event in</b>
-                <timer class="maroon" end-time="nxtEventTime" max-time-unit="'hour'">
-                {{hhours}} hour{{hoursS}}, {{mminutes}} minute{{minutesS}}, {{sseconds}} second{{secondsS}}.
-                </timer>
-            </div>
-        </div>
-        <div>
-            <span class="energized" ng-if="!selected.events || selected.events.length == 0">No relevant events found</span>
-            <div class="row row-top" ng-if="!(!selected.events || selected.events.length == 0)">
-                <div class="col">
-                    <table class="table" ng-table="tblEvents">
-                        <tr ng-repeat="event in selected.events | filter:isCurrencyEvent" ng-if="optShowCalendar || (nextEvents[0] && event.timestamp == nextEvents[0].timestamp && event.Code == nextEvents[0].Code)">
-                            <td data-title="'Date'">{{event.localDate | date:'short'}}</td>
-                            <td data-title="'Currency'">{{event.currency | uppercase}}</td>
-                            <td data-title="'Title'">{{event.event}}</td>
-                            <td data-title="'Importance'" ng-class="{'red':event.importance == 'High','orange':event.importance == 'Medium','teal':event.importance == 'Low'}">{{event.importance}}</td>
-                            <td data-title="'Actual'">{{event.actual}}</td>
-                            <td data-title="'Forecast'">{{event.forecast}}</td>
-                            <td data-title="'Previous'">{{event.previous}}</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <div>
-        </div>
-    </div>
-</div>
+<div ng-include="'views/elements/'+stats+'.html'"></div>
 </ion-content>
 </ion-view>

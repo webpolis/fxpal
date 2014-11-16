@@ -10,6 +10,9 @@ library(RCurl)
 
 Sys.setenv(TZ='UTC')
 
+maxWidth=1334
+maxHeight=750
+
 pwd = getwd()
 dataPath = paste(pwd,'/app/data/',sep='')
 tmpPath = paste(pwd,'/.tmp/',sep='')
@@ -227,7 +230,7 @@ graphBreakoutArea <- function(instrument='EUR_USD',granularity='D',candles=NA,ba
 		if(save){
 			iname = paste(dataPath,'breakout/', instrument, '-', granularity, '.jpg', sep = '')
 			print(paste('saving image',iname))
-			jpeg(iname,width=1334,height=750,quality=100)
+			png(iname,width=maxWidth,height=maxHeight)
 			lineChart(Cl(candles),name=paste(instrument,granularity,sep=' - '))
 			print("done")
 		}
@@ -278,29 +281,36 @@ graphBreakoutArea <- function(instrument='EUR_USD',granularity='D',candles=NA,ba
 	}
 }
 
-getCOTData <- function(){
-	day = format(Sys.time(),'%d');
+getCOTData <- function(yearsAgo=0){
+	week = format(Sys.time(),'%U');
 	month = format(Sys.time(),'%m');
-	year = format(Sys.time(),'%Y');
+	year = as.integer(format(Sys.time(),'%Y'))-yearsAgo;
 
 	url = 'http://www.cftc.gov/files/dea/history/deacot{{year}}.zip';
 	urlFinal = gsub('\\{\\{year\\}\\}',year,url);
 	reportName = 'annual.txt';
-	tmp = tempfile(tmpdir='/tmp');
-	download.file(urlFinal,tmp);
+	tmp = paste(tmpPath,'cot',week,year,'.zip',sep='')#tempfile(tmpdir='/tmp');
+	
+	if(!file.exists(tmp)){
+		download.file(urlFinal,tmp);
+	}
+
 	unzip(tmp,files=c(reportName));
 	data = read.table(reportName, sep = ',', dec = '.', strip.white = TRUE, header=TRUE, encoding = 'UTF-8');
 	data = subset(data,CFTC.Market.Code.in.Initials=='CME'|CFTC.Market.Code.in.Initials=='ICUS');
 	data[,1] = gsub('(.*)\\s+\\-\\s+.*','\\1',data[,1],ignore.case=T,perl=T);
 
+	unlink(reportName)
+
 	return(data)
 }
 
 getCOTPosition <- function(currency,data=NA){
+	data = data[order(as.Date(data$As.of.Date.in.Form.YYYY.MM.DD, format="%Y-%m-%d")),]
 	curr = subset(data,Market.and.Exchange.Names==currency)
-	cl = ROC(rev(curr$Noncommercial.Positions.Long..All.),type='continuous')
-	cs = ROC(rev(curr$Noncommercial.Positions.Short..All.),type='continuous')
-	ci = ROC(rev(curr$Open.Interest..All.),type='continuous')
+	cl = ROC(curr$Noncommercial.Positions.Long..All,type='continuous')
+	cs = ROC(curr$Noncommercial.Positions.Short..All,type='continuous')
+	ci = ROC(curr$Open.Interest..All,type='continuous')
 	pos = matrix(c(cl,cs,ci),ncol=3,dimnames=list(NULL,c('long','short','interest')))
 	ret = last(zoo(pos))
 	index(ret) = c(currency)
@@ -308,14 +318,15 @@ getCOTPosition <- function(currency,data=NA){
 }
 
 getCOTPositions <- function(currency,data=NA){
+	data = data[order(as.Date(data$As.of.Date.in.Form.YYYY.MM.DD, format="%Y-%m-%d")),]
 	curr = subset(data,Market.and.Exchange.Names==currency)
 	curr$netdiff = curr$Noncommercial.Positions.Long..All.-curr$Noncommercial.Positions.Short..All.
-	cn = rev(curr$netdiff)
-	ci = rev(curr$Open.Interest..All.)
+	cn = curr$netdiff
+	ci = curr$Open.Interest..All.
 	pos = matrix(c(cn,ci),ncol=2,dimnames=list(NULL,c('netpos','interest')))
 	ret = zoo(pos)
-	ret$market = rev(curr$Market.and.Exchange.Names)
-	index(ret) = as.Date(rev(curr$As.of.Date.in.Form.YYYY.MM.DD))
+	ret$market = curr$Market.and.Exchange.Names
+	index(ret) = as.Date(curr$As.of.Date.in.Form.YYYY.MM.DD)
 	return(ret)
 }
 
@@ -325,7 +336,9 @@ graphCOTPositioning <- function(currency1,currency2,cross,data=NA,cotData=NA,sav
 	}
 	
 	if(is.na(cotData)){
-		cotData = getCOTData()
+		cotData = getCOTData(1)
+		cotData = rbind(cotData,getCOTData(0))
+		cotData = cotData[order(as.Date(cotData$As.of.Date.in.Form.YYYY.MM.DD, format="%Y-%m-%d")),]
 	}
 
 	if(showGraph){
@@ -338,6 +351,8 @@ graphCOTPositioning <- function(currency1,currency2,cross,data=NA,cotData=NA,sav
 
 	pos1 = getCOTPositions(currency1,cotData)
 	pos2 = getCOTPositions(currency2,cotData)
+	pos1 = pos1[index(pos1) >= min(as.Date(index(candles))) & index(pos1) <=  max(as.Date(index(candles))),]
+	pos2 = pos2[index(pos2) >= min(as.Date(index(candles))) & index(pos2) <=  max(as.Date(index(candles))),]
 	tmp = na.locf(merge(pos1,pos2,candles))
 
 	netpos1 = scale(as.double(tmp$netpos.pos1))
@@ -356,14 +371,11 @@ graphCOTPositioning <- function(currency1,currency2,cross,data=NA,cotData=NA,sav
 
 	if(save){
 		instrument = sub('/','_',cross)
-		iname = paste(dataPath,'cot/', instrument, '.jpg', sep = '')
-		jpeg(iname,width=1334,height=750,quality=100)
+		iname = paste(dataPath,'cot/', instrument, '.png', sep = '')
+		png(iname,width=maxWidth,height=maxHeight)
 	}
 
-	par(bg='dimgray')
-	par(mar=c(4,2.5,3.5,2.5))
-	par(mfrow=c(3,1))
-	par(ps = 12, cex = 1, cex.main = 1)
+	par(bg='dimgray',mar=c(4,2.5,3.5,2.5),mfrow=c(3,1),ps = 12, cex = 1, cex.main = 1)
 	plot(candles,type='l',ylab=NA,xlab=NA,cex.axis=1,col.lab='white',col.axis='white')
 	title(main=cross, col.main="white",cex=10,col = "white", font=4)
 
@@ -371,13 +383,14 @@ graphCOTPositioning <- function(currency1,currency2,cross,data=NA,cotData=NA,sav
 	title(main=currency1, col.main="white",cex=10,col = "white", font=4)
 	abline(h=0,col='grey')
 	lines(interest1,col='sienna1',lwd=2)
-	legend('topright', c('net position','interest'),col=c('yellow','sienna1'),lty=c(1,1),text.col='white',cex=c(1.5),pt.cex=c(1.5),bty='n',pch=c(15),pt.lwd=0)
 
 	plot(netpos2,type='l',col='yellow',ylab=NA,xlab=NA,cex.axis=1.5,col.lab='white',col.axis='white',lwd=2)
 	title(main=currency2, col.main="white",cex=10,col = "white", font=4)
 	abline(h=0,col='grey')
 	lines(interest2,col='sienna1',lwd=2)
-	legend('topright', c('net position','interest'),col=c('yellow','sienna1'),lty=c(1,1),text.col='white',cex=c(1.5),pt.cex=c(1.5),bty='n',pch=c(15),pt.lwd=0)
+
+	par(xpd=T)
+	legend('bottomright', c('net position','interest'),col=c('yellow','sienna1'),lty=c(1,1),text.col='white',cex=c(1.5),pt.cex=c(1.5),bty='n',pch=c(15),pt.lwd=0)
 
 	# add copyright
 	year = format(Sys.time(),'%Y')
@@ -468,7 +481,7 @@ qfxAnalysis <- function(args){
 	out = cbind(out, getSignals(OHLC(out)))
 	names(out) = sub("^avg$","signal",names(out))
 
-	# Rserve ignores call to jpeg. Move this to custom script
+	# Rserve ignores call to png. Move this to custom script
 	#graphBreakoutArea(args$instrument,args$granularity,candles=OHLC(out))
 	print(paste("saving to",outFile))
 	write.csv(out, quote = FALSE, row.names = FALSE, file = outFile, fileEncoding = 'UTF-8')
@@ -502,6 +515,12 @@ qfxBreakout <- function(args){
 	print(paste('Running qfxBreakout. Data path is',dataPath,sep=' '))
 	args = fromJSON(args)
 	graphBreakoutArea(args$instrument, args$granularity)
+}
+
+qfxCOTPositioning <- function(args){
+	print(paste('Running qfxCOTPositioning. Data path is',dataPath,sep=' '))
+	args = fromJSON(args)
+	graphCOTPositioning(args$instrument, args$currency1, args$currency2)
 }
 
 qfxEventsStrength <- function(args){

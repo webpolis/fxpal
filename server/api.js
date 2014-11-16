@@ -348,6 +348,29 @@ server.get('/api/cot/:month/:year', function respond(req, res, next) {
         res.end(img, 'binary');
     });
 });
+server.get('/api/cot/:cross/:currency1/:currency2', function respond(req, res, next) {
+    var instrument = /(?:[a-z]{3}){2}/gi.test(req.params.cross) ? req.params.cross.toUpperCase().replace(/([a-z]{3})([a-z]{3})/gi, '$1_$2') : req.params.cross.toUpperCase();
+    var outFile = [__dirname, '../app/data/cot', [instrument, '.png'].join('')].join('/');
+    var sinceMinutes = 61;
+    // only generate file if it's older than XX minutes
+    if (isOutdatedFile(outFile, sinceMinutes)) {
+        sh.run(['Rscript', __dirname + '/scripts/positioning.r', instrument, req.params.currency1, req.params.currency2].join(' '));
+        fs.stat(outFile, function(err, stat) {
+            var img = fs.readFileSync(outFile);
+            res.contentType = 'image/png';
+            res.contentLength = stat.size;
+            res.end(img, 'binary');
+        });
+    } else {
+        fs.stat(outFile, function(err, stat) {
+            var img = fs.readFileSync(outFile);
+            res.contentType = 'image/png';
+            res.contentLength = stat.size;
+            res.end(img, 'binary');
+        });
+    }
+    next();
+});
 server.post('/api/stemmer/:cross', function respond(req, res, next) {
     var ret = [];
     res.setHeader('content-type', 'application/json');
