@@ -319,33 +319,78 @@ getCOTPositions <- function(currency,data=NA){
 	return(ret)
 }
 
-graphCOTPositioning <- function(currency,cross,cotData=NA){
-	if(is.na(cotData)){
-		cotData = getSymbols(cross,src='oanda',auto.assign=F)
+graphCOTPositioning <- function(currency1,currency2,cross,data=NA,cotData=NA,save=T,showGraph=F){
+	if(is.na(data)){
+		data = getSymbols(cross,src='oanda',auto.assign=F)
 	}
 	
-	cot = getCOTData()
-	mindate = min(as.Date(cot$As.of.Date.in.Form.YYYY.MM.DD))
-	maxdate = max(as.Date(cot$As.of.Date.in.Form.YYYY.MM.DD))
-	candles = cotData[index(cotData) >= mindate & index(cotData) <= maxdate,]
+	if(is.na(cotData)){
+		cotData = getCOTData()
+	}
 
-	pos = getCOTPositions(currency,cot)
-	tmp = na.locf(merge(pos,candles))
+	if(showGraph){
+		dev.new()
+	}
 
-	nmin = as.double(min(tmp$netpos,na.rm=T))
-	nmax = as.double(max(tmp$netpos,na.rm=T))
-	netpos = scale(as.double(tmp$netpos))
-	interest = scale(as.double(tmp$interest))
+	mindate = min(as.Date(cotData$As.of.Date.in.Form.YYYY.MM.DD))
+	maxdate = max(as.Date(cotData$As.of.Date.in.Form.YYYY.MM.DD))
+	candles = data[index(data) >= mindate & index(data) <= maxdate,]
 
-	par(mfrow=c(2,1))
-	plot(candles,type='l')
-	plot(netpos,type='l',col='blue')
+	pos1 = getCOTPositions(currency1,cotData)
+	pos2 = getCOTPositions(currency2,cotData)
+	tmp = na.locf(merge(pos1,pos2,candles))
+
+	netpos1 = scale(as.double(tmp$netpos.pos1))
+	netpos1 = as.zoo(netpos1)
+	index(netpos1) = index(candles)
+	interest1 = scale(as.double(tmp$interest.pos1))
+	interest1 = as.zoo(interest1)
+	index(interest1) = index(candles)
+
+	netpos2 = scale(as.double(tmp$netpos.pos2))
+	netpos2 = as.zoo(netpos2)
+	index(netpos2) = index(candles)
+	interest2 = scale(as.double(tmp$interest.pos2))
+	interest2 = as.zoo(interest2)
+	index(interest2) = index(candles)
+
+	if(save){
+		instrument = sub('/','_',cross)
+		iname = paste(dataPath,'cot/', instrument, '.jpg', sep = '')
+		jpeg(iname,width=1334,height=750,quality=100)
+	}
+
+	par(bg='dimgray')
+	par(mar=c(4,2.5,3.5,2.5))
+	par(mfrow=c(3,1))
+	par(ps = 12, cex = 1, cex.main = 1)
+	plot(candles,type='l',ylab=NA,xlab=NA,cex.axis=1,col.lab='white',col.axis='white')
+	title(main=cross, col.main="white",cex=10,col = "white", font=4)
+
+	plot(netpos1,type='l',col='yellow',ylab=NA,xlab=NA,cex.axis=1.5,col.lab='white',col.axis='white',lwd=2)
+	title(main=currency1, col.main="white",cex=10,col = "white", font=4)
 	abline(h=0,col='grey')
-	lines(interest,col='green')
-	legend('topright', c('net position','interest'), cex=c(1),pt.cex=c(1),col=c('blue','green'), lty=c(1,1),text.col='darkgrey')
+	lines(interest1,col='sienna1',lwd=2)
+	legend('topright', c('net position','interest'),col=c('yellow','sienna1'),lty=c(1,1),text.col='white',cex=c(1.5),pt.cex=c(1.5),bty='n',pch=c(15),pt.lwd=0)
+
+	plot(netpos2,type='l',col='yellow',ylab=NA,xlab=NA,cex.axis=1.5,col.lab='white',col.axis='white',lwd=2)
+	title(main=currency2, col.main="white",cex=10,col = "white", font=4)
+	abline(h=0,col='grey')
+	lines(interest2,col='sienna1',lwd=2)
+	legend('topright', c('net position','interest'),col=c('yellow','sienna1'),lty=c(1,1),text.col='white',cex=c(1.5),pt.cex=c(1.5),bty='n',pch=c(15),pt.lwd=0)
+
+	# add copyright
+	year = format(Sys.time(),'%Y')
+	path = paste(dataPath,'../images/logo-s.png',sep='')
+	logo = readPNG(path)
+	addCopyright(paste('Powered by ',sep=''),logo,x = unit(0.5, 'npc'), y = unit(0.942, 'npc'),1,fontsize=10, col='white')
+
+	if(save){
+		dev.off()
+	}
 }
 
-getCurrencyFundamentalStrength <- function(data = NA, w = 52, country1=NA, country2=NA){
+getCurrency1FundamentalStrength <- function(data = NA, w = 52, country1=NA, country2=NA){
 	reDate = '([^\\s]+)(?:\\s+[^\\s]+){1,}'
 	df = data.frame()
 	for(i in 1:length(data)){

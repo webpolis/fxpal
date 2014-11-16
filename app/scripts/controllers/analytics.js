@@ -321,7 +321,7 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                                 // avoid date col
                                 return;
                             }
-                            change[col.replace(/^(?:QUANDL\.)?([^\s]+).*$/gi, '$1')] = null;
+                            change[col.replace(/^(?:CURRFX\.)?([^\s]+).*$/gi, '$1')] = null;
                         });
                         // get non null values
                         var keys = Object.keys(change);

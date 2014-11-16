@@ -38,7 +38,7 @@ angular.module('aifxApp').controller('appController', function($scope, $ionicSid
         urls: {
             api: 'http://qfx.club:9999/api/',
             //api: 'http://0.0.0.0:9999/api/',
-            cross: 'http://www.quandl.com/api/v1/datasets/QUANDL/{{cross}}.json?trim_start={{startDate}}&trim_end={{endDate}}&collapse=daily&auth_token={{token}}',
+            cross: 'http://www.quandl.com/api/v1/datasets/CURRFX/{{cross}}.json?trim_start={{startDate}}&trim_end={{endDate}}&collapse=daily&auth_token={{token}}',
             multiset: 'http://quandl.com/api/v1/multisets.json?columns={{sets}}&collapse=daily&trim_start={{startDate}}&auth_token={{token}}',
             cpi: 'http://quandl.com/api/v1/multisets.json?columns=&rows=10',
             rate: 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.xchange%20where%20pair%20%3D%20%22{{cross}}%22&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=',
