@@ -278,7 +278,25 @@ graphBreakoutArea <- function(instrument='EUR_USD',granularity='D',candles=NA,ba
 	}
 }
 
-getPosition <- function(currency,data=NA){
+getCOTData <- function(){
+	day = format(Sys.time(),'%d');
+	month = format(Sys.time(),'%m');
+	year = format(Sys.time(),'%Y');
+
+	url = 'http://www.cftc.gov/files/dea/history/deacot{{year}}.zip';
+	urlFinal = gsub('\\{\\{year\\}\\}',year,url);
+	reportName = 'annual.txt';
+	tmp = tempfile(tmpdir='/tmp');
+	download.file(urlFinal,tmp);
+	unzip(tmp,files=c(reportName));
+	data = read.table(reportName, sep = ',', dec = '.', strip.white = TRUE, header=TRUE, encoding = 'UTF-8');
+	data = subset(data,CFTC.Market.Code.in.Initials=='CME'|CFTC.Market.Code.in.Initials=='ICUS');
+	data[,1] = gsub('(.*)\\s+\\-\\s+.*','\\1',data[,1],ignore.case=T,perl=T);
+
+	return(data)
+}
+
+getCOTPosition <- function(currency,data=NA){
 	curr = subset(data,Market.and.Exchange.Names==currency)
 	cl = ROC(rev(curr$Noncommercial.Positions.Long..All.),type='continuous')
 	cs = ROC(rev(curr$Noncommercial.Positions.Short..All.),type='continuous')
@@ -287,6 +305,44 @@ getPosition <- function(currency,data=NA){
 	ret = last(zoo(pos))
 	index(ret) = c(currency)
 	return(ret)
+}
+
+getCOTPositions <- function(currency,data=NA){
+	curr = subset(data,Market.and.Exchange.Names==currency)
+	curr$netdiff = curr$Noncommercial.Positions.Long..All.-curr$Noncommercial.Positions.Short..All.
+	cn = rev(curr$netdiff)
+	ci = rev(curr$Open.Interest..All.)
+	pos = matrix(c(cn,ci),ncol=2,dimnames=list(NULL,c('netpos','interest')))
+	ret = zoo(pos)
+	ret$market = rev(curr$Market.and.Exchange.Names)
+	index(ret) = as.Date(rev(curr$As.of.Date.in.Form.YYYY.MM.DD))
+	return(ret)
+}
+
+graphCOTPositioning <- function(currency,cross,cotData=NA){
+	if(is.na(cotData)){
+		cotData = getSymbols(cross,src='oanda',auto.assign=F)
+	}
+	
+	cot = getCOTData()
+	mindate = min(as.Date(cot$As.of.Date.in.Form.YYYY.MM.DD))
+	maxdate = max(as.Date(cot$As.of.Date.in.Form.YYYY.MM.DD))
+	candles = cotData[index(cotData) >= mindate & index(cotData) <= maxdate,]
+
+	pos = getCOTPositions(currency,cot)
+	tmp = na.locf(merge(pos,candles))
+
+	nmin = as.double(min(tmp$netpos,na.rm=T))
+	nmax = as.double(max(tmp$netpos,na.rm=T))
+	netpos = scale(as.double(tmp$netpos))
+	interest = scale(as.double(tmp$interest))
+
+	par(mfrow=c(2,1))
+	plot(candles,type='l')
+	plot(netpos,type='l',col='blue')
+	abline(h=0,col='grey')
+	lines(interest,col='green')
+	legend('topright', c('net position','interest'), cex=c(1),pt.cex=c(1),col=c('blue','green'), lty=c(1,1),text.col='darkgrey')
 }
 
 getCurrencyFundamentalStrength <- function(data = NA, w = 52, country1=NA, country2=NA){

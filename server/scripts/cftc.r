@@ -5,23 +5,11 @@ dataPath = paste(pwd,"/app/data/",sep="")
 
 source(paste(pwd,'server','scripts','header.r',sep='/'))
 
-day = format(Sys.time(),'%d');
-month = format(Sys.time(),'%m');
-year = format(Sys.time(),'%Y');
-
-url = 'http://www.cftc.gov/files/dea/history/deacot{{year}}.zip';
-urlFinal = gsub('\\{\\{year\\}\\}',year,url);
-reportName = 'annual.txt';
-tmp = tempfile(tmpdir='/tmp');
-download.file(urlFinal,tmp);
-unzip(tmp,files=c(reportName));
-data = read.table(reportName, sep = ',', dec = '.', strip.white = TRUE, header=TRUE, encoding = 'UTF-8');
-data = subset(data,CFTC.Market.Code.in.Initials=='CME'|CFTC.Market.Code.in.Initials=='ICUS');
-data[,1] = gsub('(.*)\\s+\\-\\s+.*','\\1',data[,1],ignore.case=T,perl=T);
+data = getCOTData()
 
 currencies = c('CANADIAN DOLLAR','SWISS FRANC','BRITISH POUND STERLING','JAPANESE YEN','EURO FX','NEW ZEALAND DOLLAR','AUSTRALIAN DOLLAR','U.S. DOLLAR INDEX','NIKKEI STOCK AVERAGE');
 
-stats = Reduce(rbind,lapply(currencies,getPosition,data));
+stats = Reduce(rbind,lapply(currencies,getCOTPosition,data));
 index(stats) <- c('AUD','GBP','CAD','EUR','JPY','NZD','NIKKEI','CHF','USD');
 
 unlink(tmp);
