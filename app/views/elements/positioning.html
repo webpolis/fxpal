@@ -5,6 +5,6 @@
     <div class="item item-text-wrap">
         <p>Propietary indicator which measures speculative positioning according to latest release of the Commitment of Traders Report - COT -.</p>
         <p>Extreme values usually mean trend exhaustion and possible reversion.</p>
-        <img style="max-width:100%;height:100%" ng-src="{{config.urls.api}}cot/{{ selected.cross1 + '_' + selected.cross2 }}.png" />
+        <img style="max-width:100%;height:100%" ng-src="{{config.urls.api}}cot/{{ selected.cross1 + '_' + selected.cross2 + '/' + selected.currency1 + '/' + selected.currency2 }}" />
     </div>
 </div>
