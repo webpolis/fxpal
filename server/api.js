@@ -213,11 +213,11 @@ server.get('/api/portfolio', function respond(req, res, next) {
 server.get('/api/candles/:cross/:start/:granularity', function respond(req, res, next) {
     res.setHeader('content-type', 'text/csv');
     var cross = req.params.cross.replace(/([a-z]{3})([a-z]{3})/gi, '$1_$2').toUpperCase();
+    var instrument = /[a-z]{6}/gi.test(req.params.cross) ? cross : req.params.cross.toUpperCase();
+    var granularity = req.params.granularity.replace(/[^\w\d]+/gi, '').toUpperCase();
     var outFile = [__dirname + '/../app/data/candles/', cross, '-', req.params.granularity, '.csv'].join('');
     var bImgFile = [__dirname + '/../app/data/breakout/', cross, '-', req.params.granularity, '.jpg'].join('');
     var sinceMinutes = null;
-    var instrument = /(?:[a-z]{3}){2}/gi.test(req.params.cross) ? req.params.cross.toUpperCase().replace(/([a-z]{3})([a-z]{3})/gi, '$1_$2') : req.params.cross.toUpperCase();
-    var granularity = req.params.granularity.toUpperCase();
     var startDate = req.params.start;
     switch (req.params.granularity.toUpperCase()) {
         case 'M15':
@@ -350,13 +350,14 @@ server.get('/api/cot/:month/:year', function respond(req, res, next) {
 });
 server.get('/api/cot/:cross/:currency1/:currency2', function respond(req, res, next) {
     var instrument = /(?:[a-z]{3}){2}/gi.test(req.params.cross) ? req.params.cross.toUpperCase().replace(/([a-z]{3})([a-z]{3})/gi, '$1_$2') : req.params.cross.toUpperCase();
+    var currency1 = req.params.currency1.replace(/[^\w\d\s]+/gi, '');
+    var currency2 = req.params.currency2.replace(/[^\w\d\s]+/gi, '');
     var outFile = [__dirname, '../app/data/cot', [instrument, '.png'].join('')].join('/');
     var sinceMinutes = 61;
     // only generate file if it's older than XX minutes
     if (isOutdatedFile(outFile, sinceMinutes)) {
-        sh.run(['Rscript', __dirname + '/scripts/positioning.r', instrument, '"' + req.params.currency1 + '"', '"' + req.params.currency2 + '"'].join(' '));
+        sh.run(['Rscript', __dirname + '/scripts/positioning.r', instrument, '"' + currency1 + '"', '"' + currency2 + '"'].join(' '));
         sh.run(['cp', outFile, outFile.replace(/\/app\//g, '/www/')].join(' '));
-        
         fs.stat(outFile, function(err, stat) {
             var img = fs.readFileSync(outFile);
             res.contentType = 'image/png';
