@@ -150,6 +150,8 @@ angular.module('aifxApp').controller('appController', function($scope, $ionicSid
             var crosses = n.displayName.split('/');
             $scope.selected.cross1 = crosses[0];
             $scope.selected.cross2 = crosses[1];
+            $scope.selected.currency1 = jsonPath.eval($scope.config.maps.currency, '$[?(@.code == "' + $scope.selected.cross1 + '")]')[0].cot ||  null;
+            $scope.selected.currency2 = jsonPath.eval($scope.config.maps.currency, '$[?(@.code == "' + $scope.selected.cross2 + '")]')[0].cot ||  null;
             $location.url('/app/cross/' + $scope.selected.cross1 + $scope.selected.cross2);
         } else {
             $scope.selected.cross1 = $scope.selected.cross2 = null;

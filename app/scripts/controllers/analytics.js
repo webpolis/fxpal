@@ -215,8 +215,6 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             $scope.processEvents().then(function() {
                 //$scope.correlated('events');
             });
-            $scope.selected.currency1 = jsonPath.eval($scope.config.maps.currency, '$[?(@.code == "' + $scope.selected.cross1 + '")]')[0].cot ||  null;
-            $scope.selected.currency2 = jsonPath.eval($scope.config.maps.currency, '$[?(@.code == "' + $scope.selected.cross2 + '")]')[0].cot ||  null;
             $scope.stats = 'markets';
         }
         if (loadChart) {
