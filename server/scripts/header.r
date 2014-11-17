@@ -520,7 +520,7 @@ qfxBreakout <- function(args){
 qfxCOTPositioning <- function(args){
 	print(paste('Running qfxCOTPositioning. Data path is',dataPath,sep=' '))
 	args = fromJSON(args)
-	graphCOTPositioning(args$instrument, args$currency1, args$currency2)
+	graphCOTPositioning(args$currency1, args$currency2,args$instrument)
 }
 
 qfxEventsStrength <- function(args){

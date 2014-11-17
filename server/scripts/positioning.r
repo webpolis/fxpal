@@ -6,7 +6,7 @@ dataPath = paste(pwd,"/app/data/",sep="")
 source(paste(pwd,'server','scripts','header.r',sep='/'))
 
 opts = commandArgs(trailingOnly = TRUE)
-instrument = sub("(\\w{3})_?(\\w{3})", "\\1_\\2", ifelse((length(opts)>0 && !is.na(opts[1])), opts[1], "EURUSD"))
+instrument = sub("(\\w{3})_?(\\w{3})", "\\1/\\2", ifelse((length(opts)>0 && !is.na(opts[1])), opts[1], "EUR/USD"))
 currency1 = ifelse((length(opts)>0 && !is.na(opts[2])), opts[2], NA)
 currency2 = ifelse((length(opts)>0 && !is.na(opts[3])), opts[3], NA)
 
