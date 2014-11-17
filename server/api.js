@@ -350,8 +350,8 @@ server.get('/api/cot/:month/:year', function respond(req, res, next) {
 });
 server.get('/api/cot/:cross/:currency1/:currency2', function respond(req, res, next) {
     var instrument = /(?:[a-z]{3}){2}/gi.test(req.params.cross) ? req.params.cross.toUpperCase().replace(/([a-z]{3})([a-z]{3})/gi, '$1_$2') : req.params.cross.toUpperCase();
-    var currency1 = req.params.currency1.replace(/[^\w\d\s]+/gi, '');
-    var currency2 = req.params.currency2.replace(/[^\w\d\s]+/gi, '');
+    var currency1 = req.params.currency1.replace(/[^\w\d\s\.]+/gi, '');
+    var currency2 = req.params.currency2.replace(/[^\w\d\s\.]+/gi, '');
     var outFile = [__dirname, '../app/data/cot', [instrument, '.png'].join('')].join('/');
     var sinceMinutes = 61;
     // only generate file if it's older than XX minutes
