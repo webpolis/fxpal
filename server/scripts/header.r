@@ -306,6 +306,7 @@ getCOTData <- function(yearsAgo=0){
 }
 
 getCOTPosition <- function(currency,data=NA){
+	currency = as.character(currency)
 	data = data[order(as.Date(data$As.of.Date.in.Form.YYYY.MM.DD, format="%Y-%m-%d")),]
 	curr = subset(data,Market.and.Exchange.Names==currency)
 	cl = ROC(curr$Noncommercial.Positions.Long..All,type='continuous')
@@ -331,6 +332,8 @@ getCOTPositions <- function(currency,data=NA){
 }
 
 graphCOTPositioning <- function(currency1,currency2,cross,data=NA,cotData=NA,save=T,showGraph=F){
+	print(paste("Graphics for COT",currency1,currency2,cross,sep=" "))
+
 	if(is.na(data)){
 		data = getSymbols(cross,src='oanda',auto.assign=F)
 	}
@@ -517,7 +520,13 @@ qfxBreakout <- function(args){
 	graphBreakoutArea(args$instrument, args$granularity)
 }
 
-qfxCOTPositioning <- function(args){
+qfxGraphCOTPositioning <- function(args){
+	print(paste('Running qfxGraphCOTPositioning. Data path is',dataPath,sep=' '))
+	args = fromJSON(args)
+	graphCOTPositioning(args$currency1, args$currency2,args$instrument)
+}
+
+qfxBatchCOTPositioning <- function(args){
 	print(paste('Running qfxCOTPositioning. Data path is',dataPath,sep=' '))
 	args = fromJSON(args)
 	graphCOTPositioning(args$currency1, args$currency2,args$instrument)

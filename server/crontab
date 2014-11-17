@@ -4,3 +4,4 @@
 */21 * * * * cd /Users/macbook/workspace/nico/aifx && curl -G http://0.0.0.0:9999/api/calendar/strength/52 >/dev/null 2>&1
 */21 * * * * cd /Users/macbook/workspace/nico/aifx && grunt copy:data >/dev/null 2>&1
 0 0 * * 6 cd /Users/macbook/workspace/nico/aifx && Rscript server/scripts/cftc.r >/dev/null 2>&1
+5 0 * * 6 cd /Users/macbook/workspace/nico/aifx && Rscript server/scripts/positioning.r 0 0 0 1 >/dev/null 2>&1

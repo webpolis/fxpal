@@ -1,19 +1,13 @@
-Sys.setenv(TZ="UTC")
-
 pwd = ifelse(is.null(sys.frames()),getwd(),paste(dirname(sys.frame(1)$ofile),"/../..",sep=""))
-dataPath = paste(pwd,"/app/data/",sep="")
-
 source(paste(pwd,'server','scripts','header.r',sep='/'))
 
 data = getCOTData()
 
-currencies = c('CANADIAN DOLLAR','SWISS FRANC','BRITISH POUND STERLING','JAPANESE YEN','EURO FX','NEW ZEALAND DOLLAR','AUSTRALIAN DOLLAR','U.S. DOLLAR INDEX','NIKKEI STOCK AVERAGE');
+markets = list('CAD'='CANADIAN DOLLAR','CHF'='SWISS FRANC','GBP'='BRITISH POUND STERLING','JPY'='JAPANESE YEN','EUR'='EURO FX','NZD'='NEW ZEALAND DOLLAR','AUD'='AUSTRALIAN DOLLAR','USD'='U.S. DOLLAR INDEX','NIKKEI'='NIKKEI STOCK AVERAGE');
+markets = as.list(as.data.frame(markets)[order(as.data.frame(markets))])
 
-stats = Reduce(rbind,lapply(currencies,getCOTPosition,data));
-index(stats) <- c('AUD','GBP','CAD','EUR','JPY','NZD','NIKKEI','CHF','USD');
-
-unlink(tmp);
-unlink(reportName);
+stats = Reduce(rbind,lapply(markets,getCOTPosition,data));
+index(stats) <- names(markets) #c('AUD','GBP','CAD','EUR','JPY','NZD','NIKKEI','CHF','USD');
 
 jpeg(paste(dataPath,'cot/COT-', month, '-',year, '.jpg', sep = ''),width=1334,height=750,quality=100,bg='dimgray');
 barplot(as.matrix(t(stats)),ylab='Positioning',beside=T,col=c('olivedrab4','firebrick3','dodgerblue4'),cex.names=2,col.lab='white',col.axis='white',main='COT Status',col.main='white');
