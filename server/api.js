@@ -355,7 +355,7 @@ server.get('/api/cot/:cross/:currency1/:currency2', function respond(req, res, n
     var outFile = [__dirname, '../app/data/cot', [instrument, '.png'].join('')].join('/');
     var sinceMinutes = 61;
     // only generate file if it's older than XX minutes
-    if (isOutdatedFile(outFile, sinceMinutes)) {
+    if (!fs.existsSync(outFile)) {
         sh.run(['Rscript', __dirname + '/scripts/positioning.r', instrument, '"' + currency1 + '"', '"' + currency2 + '"'].join(' '));
         sh.run(['cp', outFile, outFile.replace(/\/app\//g, '/www/')].join(' '));
         fs.stat(outFile, function(err, stat) {
