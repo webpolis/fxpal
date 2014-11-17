@@ -1,3 +1,4 @@
+pwd = ifelse(is.null(sys.frames()),getwd(),paste(dirname(sys.frame(1)$ofile),"/../..",sep=""))
 source(paste(pwd,'server','scripts','header.r',sep='/'))
 
 opts = commandArgs(trailingOnly = TRUE)

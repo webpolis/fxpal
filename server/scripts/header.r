@@ -481,8 +481,8 @@ qfxAnalysis <- function(args){
 	patterns$Time = out$Time
 	out = cbind(out,patterns)
 
-	out = cbind(out, getSignals(OHLC(out)))
-	names(out) = sub("^avg$","signal",names(out))
+	#out = cbind(out, getSignals(OHLC(out)))
+	#names(out) = sub("^avg$","signal",names(out))
 
 	# Rserve ignores call to png. Move this to custom script
 	#graphBreakoutArea(args$instrument,args$granularity,candles=OHLC(out))
