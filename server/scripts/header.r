@@ -358,17 +358,17 @@ graphCOTPositioning <- function(currency1,currency2,cross,data=NA,cotData=NA,sav
 	pos2 = pos2[index(pos2) >= min(as.Date(index(candles))) & index(pos2) <=  max(as.Date(index(candles))),]
 	tmp = na.locf(merge(pos1,pos2,candles))
 
-	netpos1 = scale(as.double(tmp$netpos.pos1))
+	netpos1 = EMA(scale(as.double(tmp$netpos.pos1)),n=2)
 	netpos1 = as.zoo(netpos1)
 	index(netpos1) = index(candles)
-	interest1 = scale(as.double(tmp$interest.pos1))
+	interest1 = EMA(scale(as.double(tmp$interest.pos1)),n=2)
 	interest1 = as.zoo(interest1)
 	index(interest1) = index(candles)
 
-	netpos2 = scale(as.double(tmp$netpos.pos2))
+	netpos2 = EMA(scale(as.double(tmp$netpos.pos2)),n=2)
 	netpos2 = as.zoo(netpos2)
 	index(netpos2) = index(candles)
-	interest2 = scale(as.double(tmp$interest.pos2))
+	interest2 = EMA(scale(as.double(tmp$interest.pos2)),n=2)
 	interest2 = as.zoo(interest2)
 	index(interest2) = index(candles)
 
