@@ -382,12 +382,12 @@ graphCOTPositioning <- function(currency1,currency2,cross,data=NA,cotData=NA,sav
 	plot(candles,type='l',ylab=NA,xlab=NA,cex.axis=1,col.lab='white',col.axis='white')
 	title(main=cross, col.main="white",cex=10,col = "white", font=4)
 
-	plot(netpos1,type='l',col='yellow',ylab=NA,xlab=NA,cex.axis=1.5,col.lab='white',col.axis='white',lwd=2,ylim=c(min(c(netpos1,interest1)),max(c(netpos1,interest1)))
+	plot(netpos1,type='l',col='yellow',ylab=NA,xlab=NA,cex.axis=1.5,col.lab='white',col.axis='white',lwd=2,ylim=c(min(c(netpos1,interest1)),max(c(netpos1,interest1))))
 	title(main=currency1, col.main="white",cex=10,col = "white", font=4)
 	abline(h=0,col='grey')
 	lines(interest1,col='sienna1',lwd=2)
 
-	plot(netpos2,type='l',col='yellow',ylab=NA,xlab=NA,cex.axis=1.5,col.lab='white',col.axis='white',lwd=2,ylim=c(min(c(netpos2,interest2)),max(c(netpos2,interest2)))
+	plot(netpos2,type='l',col='yellow',ylab=NA,xlab=NA,cex.axis=1.5,col.lab='white',col.axis='white',lwd=2,ylim=c(min(c(netpos2,interest2)),max(c(netpos2,interest2))))
 	title(main=currency2, col.main="white",cex=10,col = "white", font=4)
 	abline(h=0,col='grey')
 	lines(interest2,col='sienna1',lwd=2)
