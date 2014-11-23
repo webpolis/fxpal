@@ -201,6 +201,10 @@ server.pre(restify.pre.sanitizePath());
 server.get('/api/portfolio', function respond(req, res, next) {
     res.setHeader('content-type', 'text/csv');
     var outFile = __dirname + '/../app/data/portfolio.csv';
+    // only generate file if it's older than 1 day
+    if (isOutdatedFile(outFile, 60 * 24)) {
+        sh.run(['Rscript', __dirname + '/scripts/portfolio.r'].join(' '));
+    }
     fs.readFile(outFile, {}, function(err, data) {
         res.send(data);
     });
@@ -277,18 +281,62 @@ server.get('/api/candles/volatility', function respond(req, res, next) {
     res.setHeader('content-type', 'text/csv');
     var outFile = [__dirname + '/../app/data/', 'volatility', '.csv'].join('');
     var sinceMinutes = 70;
-    fs.readFile(outFile, {}, function(err, data) {
-        res.send(data);
-    });
+    // only generate file if it's older than XX minutes
+    if (isOutdatedFile(outFile, sinceMinutes)) {
+        getMultipleCandles(crosses.map(function(c) {
+            return c.instrument;
+        }), ['H1'], 8).then(function(ret) {
+            reqCount = 0;
+            runRScript('main', {
+                entryPoint: 'qfxVolatility',
+                callback: function(err, _res) {
+                    // delete json files
+                    //sh.run(['rm', __dirname + '/../.tmp/*.json'].join(' '));
+                    fs.readFile(outFile, {}, function(err, data) {
+                        res.send(data);
+                    });
+                }
+            });
+        }, function(err) {
+            console.log(err);
+            res.send(err);
+        });
+    } else {
+        fs.readFile(outFile, {}, function(err, data) {
+            res.send(data);
+        });
+    }
     next();
 });
 server.get('/api/currencyForce', function respond(req, res, next) {
     res.setHeader('content-type', 'text/csv');
     var outFile = [__dirname + '/../app/data/', 'force', '.csv'].join('');
     var sinceMinutes = 70;
-    fs.readFile(outFile, {}, function(err, data) {
-        res.send(data);
-    });
+    // only generate file if it's older than XX minutes
+    if (isOutdatedFile(outFile, sinceMinutes)) {
+        getMultipleCandles(crosses.map(function(c) {
+            return c.instrument;
+        }), periods).then(function(ret) {
+            reqCount = 0;
+            runRScript('main', {
+                entryPoint: 'qfxForce',
+                callback: function(err, _res) {
+                    fs.readFile(outFile, {}, function(err, data) {
+                        // delete json files
+                        //sh.run(['rm', __dirname + '/../.tmp/*.json'].join(' '));
+                        res.send(data);
+                    });
+                }
+            });
+        }, function(err) {
+            console.log(err);
+            res.send(err);
+        });
+    } else {
+        fs.readFile(outFile, {}, function(err, data) {
+            res.send(data);
+        });
+    }
     next();
 });
 server.get('/api/cot/:month/:year', function respond(req, res, next) {
@@ -377,9 +425,26 @@ var resCalendarStrength = function respond(req, res, next) {
         outFile = outFile.concat('-' + [country1, country2].join('-'));
     }
     outFile = outFile.concat(['-', 'strength', '.csv']).join('');
-    fs.readFile(outFile, {}, function(err, data) {
-        res.send(data);
-    });
+    // only generate file if it's older than XX minutes
+    if (isOutdatedFile(outFile, sinceMinutes)) {
+        runRScript('main', {
+            entryPoint: 'qfxEventsStrength',
+            data: {
+                weeks: weeks,
+                country1: country1,
+                country2: country2
+            },
+            callback: function(err, _res) {
+                fs.readFile(outFile, {}, function(err, data) {
+                    res.send(data);
+                });
+            }
+        });
+    } else {
+        fs.readFile(outFile, {}, function(err, data) {
+            res.send(data);
+        });
+    }
     next();
 };
 server.get('/api/calendar/strength/:weeks/:country1/:country2', resCalendarStrength);
