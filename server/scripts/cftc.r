@@ -3,7 +3,7 @@ source(paste(pwd,'server','scripts','header.r',sep='/'))
 
 week = format(Sys.time(),'%U');
 month = format(Sys.time(),'%m');
-year = as.integer(format(Sys.time(),'%Y'))-yearsAgo;
+year = as.integer(format(Sys.time(),'%Y'));
 data = getCOTData()
 
 markets = list('CAD'='CANADIAN DOLLAR','CHF'='SWISS FRANC','GBP'='BRITISH POUND STERLING','JPY'='JAPANESE YEN','EUR'='EURO FX','NZD'='NEW ZEALAND DOLLAR','AUD'='AUSTRALIAN DOLLAR','USD'='U.S. DOLLAR INDEX','NIKKEI'='NIKKEI STOCK AVERAGE');
