@@ -277,12 +277,13 @@ server.get('/api/candles/:cross/:start/:granularity', function respond(req, res,
     }
     next();
 });
-server.get('/api/candles/volatility', function respond(req, res, next) {
+server.get('/api/candles/volatility/:isCron', function respond(req, res, next) {
     res.setHeader('content-type', 'text/csv');
     var outFile = [__dirname + '/../app/data/', 'volatility', '.csv'].join('');
     var sinceMinutes = 70;
+    var isCron = Boolean(req.params.isCron);
     // only generate file if it's older than XX minutes
-    if (isOutdatedFile(outFile, sinceMinutes)) {
+    if (isCron && isOutdatedFile(outFile, sinceMinutes)) {
         getMultipleCandles(crosses.map(function(c) {
             return c.instrument;
         }), ['H1'], 8).then(function(ret) {
@@ -308,12 +309,13 @@ server.get('/api/candles/volatility', function respond(req, res, next) {
     }
     next();
 });
-server.get('/api/currencyForce', function respond(req, res, next) {
+server.get('/api/currencyForce/:isCron', function respond(req, res, next) {
     res.setHeader('content-type', 'text/csv');
     var outFile = [__dirname + '/../app/data/', 'force', '.csv'].join('');
     var sinceMinutes = 70;
+    var isCron = Boolean(req.params.isCron);
     // only generate file if it's older than XX minutes
-    if (isOutdatedFile(outFile, sinceMinutes)) {
+    if (isCron && isOutdatedFile(outFile, sinceMinutes)) {
         getMultipleCandles(crosses.map(function(c) {
             return c.instrument;
         }), periods).then(function(ret) {
@@ -420,13 +422,14 @@ var resCalendarStrength = function respond(req, res, next) {
     var country1 = req.params.country1 ||  null;
     var country2 = req.params.country2 ||  null;
     var outFile = [__dirname + '/../app/data/', 'calendar', '-', weeks];
+    var isCron = Boolean(req.params.isCron);
     var sinceMinutes = 15;
     if (country1 !== null && country2 !== null) {
         outFile = outFile.concat('-' + [country1, country2].join('-'));
     }
     outFile = outFile.concat(['-', 'strength', '.csv']).join('');
     // only generate file if it's older than XX minutes
-    if (isOutdatedFile(outFile, sinceMinutes)) {
+    if (isCron && isOutdatedFile(outFile, sinceMinutes)) {
         runRScript('main', {
             entryPoint: 'qfxEventsStrength',
             data: {
@@ -447,8 +450,8 @@ var resCalendarStrength = function respond(req, res, next) {
     }
     next();
 };
-server.get('/api/calendar/strength/:weeks/:country1/:country2', resCalendarStrength);
-server.get('/api/calendar/strength/:weeks', resCalendarStrength);
+server.get('/api/calendar/strength/:weeks/:isCron/:country1/:country2', resCalendarStrength);
+server.get('/api/calendar/strength/:weeks/:isCron', resCalendarStrength);
 server.get('/api/calendar/strength', resCalendarStrength);
 server.listen(9999, function() {
     console.log('%s listening at %s', server.name, server.url);
