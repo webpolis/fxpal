@@ -277,7 +277,7 @@ server.get('/api/candles/:cross/:start/:granularity', function respond(req, res,
     }
     next();
 });
-server.get('/api/candles/volatility/:isCron', function respond(req, res, next) {
+var reqVolatility = function respond(req, res, next) {
     res.setHeader('content-type', 'text/csv');
     var outFile = [__dirname + '/../app/data/', 'volatility', '.csv'].join('');
     var sinceMinutes = 70;
@@ -308,8 +308,10 @@ server.get('/api/candles/volatility/:isCron', function respond(req, res, next) {
         });
     }
     next();
-});
-server.get('/api/currencyForce/:isCron', function respond(req, res, next) {
+};
+server.get('/api/candles/volatility', reqVolatility);
+server.get('/api/candles/volatility/:isCron', reqVolatility);
+var reqCurrencyForce = function respond(req, res, next) {
     res.setHeader('content-type', 'text/csv');
     var outFile = [__dirname + '/../app/data/', 'force', '.csv'].join('');
     var sinceMinutes = 70;
@@ -340,7 +342,9 @@ server.get('/api/currencyForce/:isCron', function respond(req, res, next) {
         });
     }
     next();
-});
+};
+server.get('/api/currencyForce', reqCurrencyForce);
+server.get('/api/currencyForce/:isCron', reqCurrencyForce);
 server.get('/api/cot/:month/:year', function respond(req, res, next) {
     var file = [__dirname, '../app/data/cot', ['COT', '-', req.params.month, '-', req.params.year, '.jpg'].join('')].join('/');
     fs.stat(file, function(err, stat) {
@@ -452,6 +456,7 @@ var resCalendarStrength = function respond(req, res, next) {
 };
 server.get('/api/calendar/strength/:weeks/:isCron/:country1/:country2', resCalendarStrength);
 server.get('/api/calendar/strength/:weeks/:isCron', resCalendarStrength);
+server.get('/api/calendar/strength/:weeks', resCalendarStrength);
 server.get('/api/calendar/strength', resCalendarStrength);
 server.listen(9999, function() {
     console.log('%s listening at %s', server.name, server.url);
