@@ -223,10 +223,10 @@ module.exports = function(grunt) {
                 }]
             }
         },
-        // ngmin tries to make the code safe for minification automatically by
-        // using the Angular long form for dependency injection. It doesn't work on
-        // things like resolve or inject so those have to be done manually.
-        ngmin: {
+        ngAnnotate: {
+            options: {
+                singleQuotes: true,
+            },
             dist: {
                 files: [{
                     expand: true,
@@ -307,7 +307,7 @@ module.exports = function(grunt) {
         grunt.task.run(['serve:' + target]);
     });
     grunt.registerTask('test', ['clean:server', 'concurrent:test', 'autoprefixer', 'connect:test', 'karma']);
-    grunt.registerTask('build', ['clean:dist', 'wiredep', 'useminPrepare', 'concurrent:dist', 'autoprefixer', 'concat', 'ngmin', 'copy:flags', 'copy:data', 'copy:dist', /*'cdnify',*/ 'cssmin', 'uglify', 'filerev', 'usemin', 'htmlmin']);
-    grunt.registerTask('quick', ['clean:dist', 'wiredep', 'useminPrepare', 'concurrent:dist', 'autoprefixer', 'concat', 'copy:flags', 'copy:data', 'copy:dist', /*'cdnify',*/ 'cssmin', 'filerev', 'usemin', 'htmlmin']);
+    grunt.registerTask('build', ['clean:dist', 'wiredep', 'useminPrepare', 'concurrent:dist', 'autoprefixer', 'concat', 'ngAnnotate', 'copy:flags', 'copy:data', 'copy:dist', /*'cdnify',*/ 'cssmin', 'uglify', 'filerev', 'usemin', 'htmlmin']);
+    grunt.registerTask('quick', ['clean:dist', 'wiredep', 'useminPrepare', 'concurrent:dist', 'autoprefixer', 'concat', 'ngAnnotate', 'copy:flags', 'copy:data', 'copy:dist', /*'cdnify',*/ 'cssmin', 'filerev', 'usemin', 'htmlmin']);
     grunt.registerTask('default', ['newer:jshint', 'test', 'build']);
 };

@@ -32,7 +32,7 @@
     "grunt-google-cdn": "",
     "grunt-karma": "",
     "grunt-newer": "",
-    "grunt-ngmin": "",
+    "grunt-ng-annotate": "^0.7.0",
     "grunt-shell": "",
     "grunt-svgmin": "",
     "grunt-usemin": "",
