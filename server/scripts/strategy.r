@@ -211,10 +211,11 @@ getSignals <- function(data){
   names(stochema) = c("E.EMA","E.STOCH")
   # ADX+ATR
   adxatr = TradingStrategy("ADXATR",data,3,7, retSignals=T)
-  names(adxatr) = c("F.ADXATR")
+  names(adxatr) = c("F.ADX.ATR")
 
   stats = cbind(ccimacd,rsimsi,stochrsi,adxsar,stochema,adxatr)
   stats$avg = rowMeans(stats[,1:ncol(stats)])
+  stats$signal = DEMA(scale(stats$avg),4,wilder=T)
 
   return(stats)
 }
