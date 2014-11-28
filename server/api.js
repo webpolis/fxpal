@@ -226,6 +226,9 @@ server.get('/api/candles/:cross/:start/:granularity', function respond(req, res,
         case 'H1':
             sinceMinutes = 60;
             break;
+        case 'H4':
+            sinceMinutes = 60*4;
+            break;
         case 'D':
             sinceMinutes = 60 * 24;
             break;
