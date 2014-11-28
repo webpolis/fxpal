@@ -153,6 +153,10 @@ var getMultipleCandles = function(_crosses, _periods, _count) {
                         newPeriod = 'M5';
                         newCount = 12;
                         break;
+                    case 'H4':
+                        newPeriod = 'M15';
+                        newCount = 16;
+                        break;
                     case 'D':
                         newPeriod = 'H2';
                         newCount = 12;
