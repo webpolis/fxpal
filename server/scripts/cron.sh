@@ -5,6 +5,10 @@ curl -G -A "Mozilla/5.0 (Windows NT 6.1; rv:19.0) Gecko/20100101 Firefox/19.0" -
 
 cd $CURDIR/../../
 
+find app/data/candles/*.* -type f -ctime +1 -exec rm {} \;
+find app/data/breakout/*.* -type f -ctime +1 -exec rm {} \;
+find .tmp/*.json -type f -ctime +1 -exec rm {} \;
+
 rm app/data/multisetsOutputs.csv
 
 Rscript server/scripts/multisets.r
