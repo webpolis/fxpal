@@ -478,8 +478,6 @@ qfxAnalysis <- function(args){
 	out = cbind(out,trend)
 
 	patterns = getCandlestickPatterns(out)
-	patterns$Time = 0
-	patterns$Time = out$Time
 	out = cbind(out,patterns)
 
 	out = cbind(out, qfxMomentum(OHLC(out),emaPeriod=5))

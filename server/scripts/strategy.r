@@ -200,23 +200,18 @@ qfxMomentum <- function(data,emaPeriod=4){
 getSignals <- function(data){
   # CCI+MACD
   ccimacd = cbind(TradingStrategy("CCI",data,18, retSignals=T),TradingStrategy("MACD",data,7,9,4, retSignals=T))
-  ccimacd = ifelse(ccimacd>0,1,ifelse(ccimacd<0,-1,0))
   names(ccimacd) = c("A.CCI","A.MACD")
   # RSI+SMI
   rsimsi = cbind(TradingStrategy("SMI",data,10,7,16, retSignals=T),TradingStrategy("RSI",data,14, retSignals=T))
-  rsimsi = ifelse(rsimsi>0,1,ifelse(rsimsi<0,-1,0))
   names(rsimsi) = c("B.SMI","B.RSI")
   # RSI+STOCH
   stochrsi = cbind(TradingStrategy("RSI",data,14, retSignals=T),TradingStrategy("STOCH",data,3,3,3, retSignals=T))
-  stochrsi = ifelse(stochrsi>0,1,ifelse(stochrsi<0,-1,0))
   names(stochrsi) = c("C.RSI","C.STOCH")
   # ADX+SAR
   adxsar = cbind(TradingStrategy("ADX",data,3, retSignals=T),TradingStrategy("SAR",data, retSignals=T))
-  adxsar = ifelse(adxsar>0,1,ifelse(adxsar<0,-1,0))
   names(adxsar) = c("D.ADX","D.SAR")
   # EMA+STOCH
   stochema = cbind(TradingStrategy("EMA",data,6,11,5, retSignals=T),TradingStrategy("STOCH",data,3,3,3, retSignals=T))
-  stochema = ifelse(stochema>0,1,ifelse(stochema<0,-1,0))
   names(stochema) = c("E.EMA","E.STOCH")
   # ADX+ATR
   adxatr = TradingStrategy("ADXATR",data,3,7, retSignals=T)
