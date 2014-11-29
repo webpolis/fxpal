@@ -13,7 +13,10 @@ TradingStrategy <- function(strategy=NA, data=NA,param1=NA,param2=NA,param3=NA, 
 
   print(paste(strategy,param1,param2,param3,sep="-"))
 
-  switch(strategy, ADXATR={
+  switch(strategy, , qfxMomentum={
+    qm = qfxMomentum(OHLC(data),emaPeriod=param1)
+    signal = apply(qm,1,function (x) {if(is.na(x["signal"])){ return (0) } else { if(x["signal"]>1){return (1)} else if(x["signal"]<(-1)) {return (-1)}else{ return(0)}}})
+  }, ADXATR={
     adx = ADX(HLC(data),n=param1)
     atr = ATR(HLC(data),n=param2)
     tmp = cbind(adx,atr)
@@ -188,6 +191,12 @@ testStrategy <- function(data, instrument,strategy,param1=NA,param2=NA,param3=NA
   charts.PerformanceSummary(finalReturns,main=paste(strategy,"- data of Sample"),geometric=FALSE)
 }
 
+qfxMomentum <- function(data,emaPeriod=4){
+  stats = getSignals(data)
+  stats$signal = round(DEMA(scale(stats$avg),emaPeriod,wilder=T),5)
+  return(stats$signal)
+}
+
 getSignals <- function(data){
   # CCI+MACD
   ccimacd = cbind(TradingStrategy("CCI",data,18, retSignals=T),TradingStrategy("MACD",data,7,9,4, retSignals=T))
@@ -215,7 +224,7 @@ getSignals <- function(data){
 
   stats = cbind(ccimacd,rsimsi,stochrsi,adxsar,stochema,adxatr)
   stats$avg = rowMeans(stats[,1:ncol(stats)])
-  stats$signal = DEMA(scale(stats$avg),4,wilder=T)
+  stats$signal = DEMA(scale(stats$avg),5,wilder=T)
 
   return(stats)
 }
