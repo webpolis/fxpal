@@ -489,7 +489,7 @@ qfxAnalysis <- function(args){
 	write.csv(out, quote = FALSE, row.names = FALSE, file = outFile, fileEncoding = 'UTF-8')
 }
 
-qfxBatchAnalysis <- function(crosses){
+qfxBatchAnalysis <- function(){
 	for(c in crosses){
 		for(p in seq_along(periods)){
 			period=periods[p]
