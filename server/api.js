@@ -332,14 +332,20 @@ var reqCachedCandles = function respond(req, res, next) {
     next();
 };
 server.get('/api/candles/:cross/:start/:granularity', reqCachedCandles);
-server.get('/api/candles/all/', function respond(req, res, next) {
+server.get('/api/candles/all/:granularity', function respond(req, res, next) {
+    var granularity = req.params.granularity.replace(/[^\w\d]+/gi, '').toUpperCase();
     var _counts = [96, 168, 180, 365],
-        _periods = ['M15', 'H1', 'H4', 'D'];
+        _periods = ['M15', 'H1', 'H4', 'D'],
+        ix = _periods.indexOf(granularity);
     getMultipleCandles(crosses.map(function(c) {
         return c.instrument;
-    }), _periods, _counts).then(function(ret) {
+    }), [_periods[ix]], [_counts[ix]]).then(function(ret) {
         runRScript('main', {
             entryPoint: 'qfxBatchAnalysis',
+            data: {
+                granularity: _periods[ix],
+                count: _counts[ix]
+            },
             callback: function(err, _res) {
                 res.send(ret);
             }

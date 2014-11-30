@@ -489,17 +489,12 @@ qfxAnalysis <- function(args){
 	write.csv(out, quote = FALSE, row.names = FALSE, file = outFile, fileEncoding = 'UTF-8')
 }
 
-qfxBatchAnalysis <- function(){
-	periods = c('M15','H1','H4','D')
-	counts=c(96, 168, 180, 365)
+qfxBatchAnalysis <- function(args){
+	args = fromJSON(args)
 	for(c in crosses){
-		for(p in seq_along(periods)){
-			period=periods[p]
-			ccount=counts[p]
-			opts=toJSON(list(instrument=c,granularity=period,count=ccount,startDate=NULL))
-			qfxAnalysis(opts)
-			qfxBreakout(opts)
-		}
+		opts=toJSON(list(instrument=c,granularity=args$granularity,count=args$count,startDate=NULL))
+		qfxAnalysis(opts)
+		qfxBreakout(opts)
 	}
 }
 
