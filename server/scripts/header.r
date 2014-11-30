@@ -490,6 +490,7 @@ qfxAnalysis <- function(args){
 }
 
 qfxBatchAnalysis <- function(){
+	periods = c('M15','H1','H4','D')
 	for(c in crosses){
 		for(p in seq_along(periods)){
 			period=periods[p]
