@@ -322,10 +322,6 @@ var reqCachedCandles = function respond(req, res, next) {
             }
             break;
     }
-    // only generate file if it's older than XX minutes
-    if (isOutdatedFile(bImgFile, sinceMinutes)) {
-        sh.run(['Rscript', __dirname + '/scripts/breakout.r', instrument, granularity].join(' '));
-    }
     fs.readFile(outFile, {}, function(err, data) {
         res.send(data);
     });
