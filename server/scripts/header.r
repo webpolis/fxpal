@@ -93,8 +93,8 @@ getSlopeByPeriod <- function(currency, period){
 	tmp = getCandles(currency,period,count = newCount)
 	roc = na.omit(ROC(Cl(tmp),type='discrete'))
 	vroc = na.omit(ROC(tmp$Volume,type='discrete'))
-	lm = lm(roc~vroc)
-	f = as.numeric(fitted(lm))
+	lmm = lm(roc~vroc)
+	f = as.numeric(fitted(lmm))
 
 	return(last(atan(f)))
 }
