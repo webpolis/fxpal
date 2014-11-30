@@ -210,7 +210,7 @@ addCopyright <- function(label, image, x, y, size, ...) {
 
 graphBreakoutArea <- function(instrument='EUR_USD',granularity='D',candles=NA,save=T,showGraph=F,fillCongested=T,drawLines=F){
 	if(is.na(candles)){
-		switch(period,M15={
+		switch(granularity,M15={
 			newCount = 96
 		},H1={
 			newCount = 168
