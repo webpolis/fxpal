@@ -44,9 +44,8 @@ mediumWeights = sort(mediumWeights, decreasing = TRUE)
 
 #barplot(pf, cex.names = 0.34)
 
-out = as.data.frame(mediumWeights)
 out = data.frame(cross = names(mediumWeights), percentage = mediumWeights)
-out = out[out$percentage > 0.006 | out$percentage < 0.005,]
+out = out[out$percentage>0.006|out$percentage< -0.005,]
 write.csv(out, quote = FALSE, row.names = FALSE, file = "portfolio.csv", fileEncoding = "UTF-8")
 
 quit()
