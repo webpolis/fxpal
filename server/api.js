@@ -338,13 +338,11 @@ server.get('/api/candles/all/', function respond(req, res, next) {
     getMultipleCandles(crosses.map(function(c) {
         return c.instrument;
     }), _periods, _counts).then(function(ret) {
-        ret.forEach(function(opts) {
-            runRScript('main', {
-                entryPoint: 'qfxBatchAnalysis',
-                callback: function(err, _res) {
-                    res.send(ret);
-                }
-            });
+        runRScript('main', {
+            entryPoint: 'qfxBatchAnalysis',
+            callback: function(err, _res) {
+                res.send(ret);
+            }
         });
     }, function(err) {
         console.log(err);
