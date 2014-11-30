@@ -21,7 +21,7 @@ logFile = file(paste(dataPath,'R.log',sep=''),open='wt')
 
 source(paste(pwd,"server","scripts","strategy.r",sep="/"))
 
-getCandles <- function(instrument, granularity, startDate = NA, count = NA){
+getCandles <- function(instrument=NA, granularity=NA, startDate = NA, count = NA){
 	inFile = paste(tmpPath, instrument, '-', granularity,sep='')
 	
 	if(!is.na(count)){
@@ -69,36 +69,28 @@ getCandlestickPatterns <- function(ohlc){
 getVolatility <- function(crosses){
 	ret = xts()
 	for(cross in crosses){
-		tmp = getCandles(cross,'H1',count = 8)
+		tmp = getCandles(cross,'H1',count = 168)
 		vol = volatility(tmp, n=6,calc='garman.klass')
 		names(vol) = c(cross)
 		ret = cbind(vol,ret)
 	}
 	ret = na.omit(ret)
-	return(ret[nrow(ret),])
+	return(last(ret))
 }
 
 getSlopeByPeriod <- function(currency, period){
-	newPeriod = period
 	newCount = 0
 	switch(period,M15={
-		newPeriod = 'M1'
-		newCount = 15
+		newCount = 96
 	},H1={
-		newPeriod = 'M5'
-		newCount = 12
+		newCount = 168
+	},H4={
+		newCount = 180
 	},D={
-		newPeriod = 'H2'
-		newCount = 12
-	},W={
-		newPeriod = 'D'
-		newCount = 7
-	},M={
-		newPeriod = 'D'
-		newCount = 30
+		newCount = 365
 	})
-	print(paste("getSlopeByPeriod",currency,newPeriod,newCount,sep='-'))
-	tmp = getCandles(currency,newPeriod,count = newCount)
+	print(paste("getSlopeByPeriod",currency,period,newCount,sep='-'))
+	tmp = getCandles(currency,period,count = newCount)
 	roc = na.omit(ROC(Cl(tmp),type='discrete'))
 	vroc = na.omit(ROC(tmp$Volume,type='discrete'))
 	lm = lm(roc~vroc)
@@ -108,7 +100,7 @@ getSlopeByPeriod <- function(currency, period){
 }
 
 getCrossesStrengthPerPeriod <- function(crosses){
-	periods = c('M15','H1','D','W','M')
+	periods = c('M15','H1','H4','D')
 	df = data.frame(matrix(ncol=length(crosses),nrow=length(periods)))
 
 	rownames(df) = periods
@@ -469,7 +461,7 @@ qfxAnalysis <- function(args){
 	args = fromJSON(args)
 	outFile = paste(dataPath,'candles/', args$instrument, '-', args$granularity, '.csv', sep = '')
 
-	out = getCandles(args$instrument, args$granularity, args$startDate)
+	out = getCandles(args$instrument, args$granularity, args$startDate,count=args$count)
 	out = OHLC(out)
 
 	trend = TrendDetectionChannel(out, n = 20, DCSector = .25)
@@ -486,6 +478,17 @@ qfxAnalysis <- function(args){
 	#graphBreakoutArea(args$instrument,args$granularity,candles=OHLC(out))
 	print(paste("saving to",outFile))
 	write.csv(out, quote = FALSE, row.names = FALSE, file = outFile, fileEncoding = 'UTF-8')
+}
+
+qfxBatchAnalysis <- function(crosses){
+	for(c in crosses){
+		for(p in seq_along(periods)){
+			period=periods[p]
+			ccount=counts[p]
+			opts=toJSON(list(instrument=c,granularity=period,count=ccount,startDate=NULL))
+			qfxAnalysis(opts)
+		}
+	}
 }
 
 qfxVolatility <- function(){

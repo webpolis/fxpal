@@ -108,7 +108,11 @@ var requestOandaCandles = function(instrument, granularity, startDate, count, pa
             }
         }
         _res.on('end', function(_ret) {
-            _def.resolve(inFile);
+            _def.resolve({
+                instrument: instrument,
+                granularity: granularity,
+                count: count
+            });
         });
     });
     request.on('error', function(e) {
@@ -131,7 +135,7 @@ var requestOandaCandles = function(instrument, granularity, startDate, count, pa
     });
     return _def.promise;
 };
-var getMultipleCandles = function(_crosses, _periods, _count) {
+var getMultipleCandles = function(_crosses, _periods, _counts) {
     var requests = [],
         all = null;
     var getCandles = function(req) {
@@ -142,8 +146,8 @@ var getMultipleCandles = function(_crosses, _periods, _count) {
         for (var p in _periods) {
             var period = _periods[p];
             var newPeriod = period,
-                newCount = _count;
-            if (typeof(_count) === 'undefined') {
+                newCount = _counts[p] || null;
+            if (typeof(_counts) === 'undefined') {
                 switch (period) {
                     case 'M15':
                         newPeriod = 'M1';
@@ -214,7 +218,7 @@ server.get('/api/portfolio', function respond(req, res, next) {
     });
     next();
 });
-server.get('/api/candles/:cross/:start/:granularity', function respond(req, res, next) {
+var reqCandles = function respond(req, res, next) {
     res.setHeader('content-type', 'text/csv');
     var cross = req.params.cross.replace(/([a-z]{3})([a-z]{3})/gi, '$1_$2').toUpperCase();
     var instrument = /[a-z]{6}/gi.test(req.params.cross) ? cross : req.params.cross.toUpperCase();
@@ -231,7 +235,7 @@ server.get('/api/candles/:cross/:start/:granularity', function respond(req, res,
             sinceMinutes = 60;
             break;
         case 'H4':
-            sinceMinutes = 60*4;
+            sinceMinutes = 60 * 4;
             break;
         case 'D':
             sinceMinutes = 60 * 24;
@@ -243,7 +247,7 @@ server.get('/api/candles/:cross/:start/:granularity', function respond(req, res,
             sinceMinutes = 43800;
             break;
         default:
-            var m = req.params.granularity.replace(/\M(\d+)/gi, '$1') || null;
+            var m = granularity.replace(/\M(\d+)/gi, '$1') || null;
             if (m !== null) {
                 sinceMinutes = m + 1;
             }
@@ -282,6 +286,70 @@ server.get('/api/candles/:cross/:start/:granularity', function respond(req, res,
             res.send(data);
         });
     }
+    next();
+};
+var reqCachedCandles = function respond(req, res, next) {
+    res.setHeader('content-type', 'text/csv');
+    var cross = req.params.cross.replace(/([a-z]{3})([a-z]{3})/gi, '$1_$2').toUpperCase();
+    var instrument = /[a-z]{6}/gi.test(req.params.cross) ? cross : req.params.cross.toUpperCase();
+    var granularity = req.params.granularity.replace(/[^\w\d]+/gi, '').toUpperCase();
+    var outFile = [__dirname + '/../app/data/candles/', cross, '-', req.params.granularity, '.csv'].join('');
+    var bImgFile = [__dirname + '/../app/data/breakout/', cross, '-', req.params.granularity, '.jpg'].join('');
+    var sinceMinutes = null;
+    switch (req.params.granularity.toUpperCase()) {
+        case 'M15':
+            sinceMinutes = 15;
+            break;
+        case 'H1':
+            sinceMinutes = 60;
+            break;
+        case 'H4':
+            sinceMinutes = 60 * 4;
+            break;
+        case 'D':
+            sinceMinutes = 60 * 24;
+            break;
+        case 'W':
+            sinceMinutes = 10080;
+            break;
+        case 'M':
+            sinceMinutes = 43800;
+            break;
+        default:
+            var m = granularity.replace(/\M(\d+)/gi, '$1') || null;
+            if (m !== null) {
+                sinceMinutes = m + 1;
+            }
+            break;
+    }
+    // only generate file if it's older than XX minutes
+    /*    if (isOutdatedFile(bImgFile, sinceMinutes)) {
+        sh.run(['Rscript', __dirname + '/scripts/breakout.r', instrument, granularity].join(' '));
+    }*/
+    fs.readFile(outFile, {}, function(err, data) {
+        res.send(data);
+    });
+    next();
+};
+server.get('/api/candles/:cross/:start/:granularity', reqCachedCandles);
+server.get('/api/candles/all/', function respond(req, res, next) {
+    var _counts = [96, 168, 180, 365],
+        _periods = ['M15', 'H1', 'H4', 'D'];
+    getMultipleCandles(crosses.map(function(c) {
+        return c.instrument;
+    }), _periods, _counts).then(function(ret) {
+        ret.forEach(function(opts) {
+            runRScript('main', {
+                entryPoint: 'qfxBatchAnalysis',
+                callback: function(err, _res) {
+                    res.send(ret);
+                }
+            });
+        });
+    }, function(err) {
+        console.log(err);
+        res.send(err);
+    });
     next();
 });
 var reqVolatility = function respond(req, res, next) {
