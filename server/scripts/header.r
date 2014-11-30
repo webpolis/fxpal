@@ -19,32 +19,39 @@ tmpPath = paste(pwd,'/.tmp/',sep='')
 logFile = file(paste(dataPath,'R.log',sep=''),open='wt')
 sink(logFile,type='message')
 
-source(paste(pwd,"server","scripts","strategy.r",sep="/"))
+source(paste(pwd,'server','scripts','strategy.r',sep='/'))
 
-getCandles <- function(instrument=NA, granularity=NA, startDate = NA, count = NA){
-	inFile = paste(tmpPath, instrument, '-', granularity,sep='')
+getCandles <- function(instrument=NA, granularity=NA, startDate = NA, count = NA, restore=F){
+	inFile = paste(ifelse(restore,paste(dataPath,'candles/',sep=''),tmpPath), instrument, '-', granularity,sep='')
 	
-	if(!is.na(count)){
+	if(!is.na(count) & !restore){
 		inFile = paste(inFile,'-',count,sep='')
 	}
-	inFile = paste(inFile,'json',sep='.')
+	inFile = paste(inFile,ifelse(restore,'csv','json'),sep='.')
+	print(paste('importing from',inFile,sep=' '))
 
-	json = fromJSON(readChar(inFile,nchars=1e6))
-	print("done importing json candles")
+	if(!restore){
+		json = fromJSON(readChar(inFile,nchars=1e6))
+		print('done importing json candles')
 
-	ret = NULL
-	for(c in 1:length(json$candles)){
-		candle = as.data.frame(json$candles[c])
-		rbind(ret, candle) -> ret
+		ret = NULL
+		for(c in 1:length(json$candles)){
+			candle = as.data.frame(json$candles[c])
+			rbind(ret, candle) -> ret
+		}
+
+		ret = ret[,-(grep('[a-z]+Ask|complete',names(ret)))]
+		rownames(ret) = ret[,1]
+		ret = ret[,-1]
+
+		colnames(ret) = c('Open','High','Low','Close','Volume')
+		rownames(ret) = as.POSIXlt(gsub('T|\\.\\d{6}Z', ' ', rownames(ret)))
+		ret = as.xts(ret)
+	}else{
+		ret = read.csv(inFile)
+		rownames(ret)=as.POSIXct(ret$Time,origin="1970-01-01")
+		ret = as.xts(ret)
 	}
-
-	ret = ret[,-(grep('[a-z]+Ask|complete',names(ret)))]
-	rownames(ret) = ret[,1]
-	ret = ret[,-1]
-
-	colnames(ret) = c('Open','High','Low','Close','Volume')
-	rownames(ret) = as.POSIXlt(gsub('T|\\.\\d{6}Z', ' ', rownames(ret)))
-	ret = as.xts(ret)
 
 	return(ret)
 }
@@ -89,7 +96,7 @@ getSlopeByPeriod <- function(currency, period){
 	},D={
 		newCount = 365
 	})
-	print(paste("getSlopeByPeriod",currency,period,newCount,sep='-'))
+	print(paste('getSlopeByPeriod',currency,period,newCount,sep='-'))
 	tmp = getCandles(currency,period,count = newCount)
 	roc = na.omit(ROC(Cl(tmp),type='discrete'))
 	vroc = na.omit(ROC(tmp$Volume,type='discrete'))
@@ -234,7 +241,7 @@ graphBreakoutArea <- function(instrument='EUR_USD',granularity='D',candles=NA,sa
 			print(paste('saving image',iname))
 			png(iname,width=maxWidth,height=maxHeight)
 			lineChart(Cl(candles),name=paste(instrument,granularity,sep=' - '))
-			print("done")
+			print('done')
 		}
 
 		if(drawLines){
@@ -309,7 +316,7 @@ getCOTData <- function(yearsAgo=0){
 
 getCOTPosition <- function(currency,data=NA){
 	currency = as.character(currency)
-	data = data[order(as.Date(data$As.of.Date.in.Form.YYYY.MM.DD, format="%Y-%m-%d")),]
+	data = data[order(as.Date(data$As.of.Date.in.Form.YYYY.MM.DD, format='%Y-%m-%d')),]
 	curr = subset(data,Market.and.Exchange.Names==currency)
 	cl = ROC(curr$Noncommercial.Positions.Long..All,type='continuous')
 	cs = ROC(curr$Noncommercial.Positions.Short..All,type='continuous')
@@ -321,7 +328,7 @@ getCOTPosition <- function(currency,data=NA){
 }
 
 getCOTPositions <- function(currency,data=NA){
-	data = data[order(as.Date(data$As.of.Date.in.Form.YYYY.MM.DD, format="%Y-%m-%d")),]
+	data = data[order(as.Date(data$As.of.Date.in.Form.YYYY.MM.DD, format='%Y-%m-%d')),]
 	curr = subset(data,Market.and.Exchange.Names==currency)
 	curr$netdiff = curr$Noncommercial.Positions.Long..All.-curr$Noncommercial.Positions.Short..All.
 	cn = curr$netdiff
@@ -334,7 +341,7 @@ getCOTPositions <- function(currency,data=NA){
 }
 
 graphCOTPositioning <- function(currency1,currency2,cross,data=NA,cotData=NA,save=T,showGraph=F){
-	print(paste("Graphics for COT",currency1,currency2,cross,sep=" "))
+	print(paste('Graphics for COT',currency1,currency2,cross,sep=' '))
 
 	if(is.na(data)){
 		data = getSymbols(cross,src='oanda',auto.assign=F)
@@ -343,7 +350,7 @@ graphCOTPositioning <- function(currency1,currency2,cross,data=NA,cotData=NA,sav
 	if(is.na(cotData)){
 		cotData = getCOTData(1)
 		cotData = rbind(cotData,getCOTData(0))
-		cotData = cotData[order(as.Date(cotData$As.of.Date.in.Form.YYYY.MM.DD, format="%Y-%m-%d")),]
+		cotData = cotData[order(as.Date(cotData$As.of.Date.in.Form.YYYY.MM.DD, format='%Y-%m-%d')),]
 	}
 
 	if(showGraph){
@@ -382,15 +389,15 @@ graphCOTPositioning <- function(currency1,currency2,cross,data=NA,cotData=NA,sav
 
 	par(bg='dimgray',mar=c(4,2.5,3.5,2.5),mfrow=c(3,1),ps = 12, cex = 1, cex.main = 1)
 	plot(candles,type='l',ylab=NA,xlab=NA,cex.axis=1,col.lab='white',col.axis='white')
-	title(main=cross, col.main="white",cex=10,col = "white", font=4)
+	title(main=cross, col.main='white',cex=10,col = 'white', font=4)
 
 	plot(netpos1,type='l',col='yellow',ylab=NA,xlab=NA,cex.axis=1.5,col.lab='white',col.axis='white',lwd=2,ylim=c(min(c(as.double(netpos1),as.double(interest1)),na.rm=T),max(c(as.double(netpos1),as.double(interest1)),na.rm=T)))
-	title(main=currency1, col.main="white",cex=10,col = "white", font=4)
+	title(main=currency1, col.main='white',cex=10,col = 'white', font=4)
 	abline(h=0,col='grey')
 	lines(interest1,col='sienna1',lwd=2)
 
 	plot(netpos2,type='l',col='yellow',ylab=NA,xlab=NA,cex.axis=1.5,col.lab='white',col.axis='white',lwd=2,ylim=c(min(c(as.double(netpos2),as.double(interest2)),na.rm=T),max(c(as.double(netpos2),as.double(interest2)),na.rm=T)))
-	title(main=currency2, col.main="white",cex=10,col = "white", font=4)
+	title(main=currency2, col.main='white',cex=10,col = 'white', font=4)
 	abline(h=0,col='grey')
 	lines(interest2,col='sienna1',lwd=2)
 
@@ -485,7 +492,7 @@ qfxAnalysis <- function(args){
 
 	# Rserve ignores call to png. Move this to custom script
 	#graphBreakoutArea(args$instrument,args$granularity,candles=OHLC(out))
-	print(paste("saving to",outFile))
+	print(paste('saving to',outFile))
 	write.csv(out, quote = FALSE, row.names = FALSE, file = outFile, fileEncoding = 'UTF-8')
 }
 
@@ -575,4 +582,67 @@ qfxEventsStrength <- function(args){
 	}
 	outFile = paste(outFile,'strength', sep = '-')
 	write.csv(strength, quote = FALSE, row.names = FALSE, file =  paste(dataPath, paste(outFile,'.csv',sep=''),sep=''), fileEncoding = 'UTF-8')
+}
+
+qfxQmSignal <- function(args){
+	args = fromJSON(args)
+	granularity = args$granularity
+	restoreCsv = as.integer(args$csv)
+
+	switch(granularity,M15={
+		newCount = 96
+	},H1={
+		newCount = 168
+	},H4={
+		newCount = 180
+	},D={
+		newCount = 365
+	})
+
+	tmp = xts()
+	for(c in crosses){
+		candles = getCandles(c,granularity,count=newCount,restore=restoreCsv)
+		if(restoreCsv==F){
+			qm = qfxMomentum(OHLC(candles),emaPeriod=5)
+		}else{
+			qm = candles$signal
+		}
+		names(qm) = c
+		tmp = cbind(tmp, last(qm,1))
+	}
+
+	tmp = t(tmp)
+	tmp = data.frame(cross=rownames(tmp),qm=tmp[,],row.names=NULL)
+	tmp = tmp[order(tmp$cross),]
+
+	return(tmp)
+}
+
+qfxBatchSignals <- function(){
+	periods = c('M15','H1','H4','D')
+
+	tmp = NULL
+
+	for(p in periods){
+		qm = qfxQmSignal(toJSON(c(granularity=p,csv=1)))
+		rownames(qm) = qm$cross
+		qm[,p] = qm$qm
+		qm[,'cross'] = NULL
+		qm[,'qm'] = NULL
+		if(is.null(tmp)){
+			tmp = qm
+		}else{
+			tmp = cbind(tmp, qm)
+		}
+	}
+
+	tmp[tmp > 1] = 1
+	tmp[tmp < -1] = -1
+	tmp[tmp<1&tmp > -1] = 0
+	tmp = tmp[rowSums(tmp==0)!=length(periods),]
+	tmp$cross = rownames(tmp)
+
+	write.csv(as.matrix(tmp), append = FALSE, quote = FALSE, row.names = FALSE, file = paste(dataPath,'signal.csv',sep=''), fileEncoding = 'UTF-8')
+
+	return(tmp)
 }
