@@ -323,9 +323,9 @@ var reqCachedCandles = function respond(req, res, next) {
             break;
     }
     // only generate file if it's older than XX minutes
-    /*    if (isOutdatedFile(bImgFile, sinceMinutes)) {
+    if (isOutdatedFile(bImgFile, sinceMinutes)) {
         sh.run(['Rscript', __dirname + '/scripts/breakout.r', instrument, granularity].join(' '));
-    }*/
+    }
     fs.readFile(outFile, {}, function(err, data) {
         res.send(data);
     });
@@ -359,23 +359,13 @@ var reqVolatility = function respond(req, res, next) {
     var isCron = Boolean(req.params.isCron);
     // only generate file if it's older than XX minutes
     if (isCron && isOutdatedFile(outFile, sinceMinutes)) {
-        getMultipleCandles(crosses.map(function(c) {
-            return c.instrument;
-        }), ['H1'], 8).then(function(ret) {
-            reqCount = 0;
-            runRScript('main', {
-                entryPoint: 'qfxVolatility',
-                callback: function(err, _res) {
-                    // delete json files
-                    //sh.run(['rm', __dirname + '/../.tmp/*.json'].join(' '));
-                    fs.readFile(outFile, {}, function(err, data) {
-                        res.send(data);
-                    });
-                }
-            });
-        }, function(err) {
-            console.log(err);
-            res.send(err);
+        runRScript('main', {
+            entryPoint: 'qfxVolatility',
+            callback: function(err, _res) {
+                fs.readFile(outFile, {}, function(err, data) {
+                    res.send(data);
+                });
+            }
         });
     } else {
         fs.readFile(outFile, {}, function(err, data) {
@@ -393,23 +383,13 @@ var reqCurrencyForce = function respond(req, res, next) {
     var isCron = Boolean(req.params.isCron);
     // only generate file if it's older than XX minutes
     if (isCron && isOutdatedFile(outFile, sinceMinutes)) {
-        getMultipleCandles(crosses.map(function(c) {
-            return c.instrument;
-        }), periods).then(function(ret) {
-            reqCount = 0;
-            runRScript('main', {
-                entryPoint: 'qfxForce',
-                callback: function(err, _res) {
-                    fs.readFile(outFile, {}, function(err, data) {
-                        // delete json files
-                        //sh.run(['rm', __dirname + '/../.tmp/*.json'].join(' '));
-                        res.send(data);
-                    });
-                }
-            });
-        }, function(err) {
-            console.log(err);
-            res.send(err);
+        runRScript('main', {
+            entryPoint: 'qfxForce',
+            callback: function(err, _res) {
+                fs.readFile(outFile, {}, function(err, data) {
+                    res.send(data);
+                });
+            }
         });
     } else {
         fs.readFile(outFile, {}, function(err, data) {

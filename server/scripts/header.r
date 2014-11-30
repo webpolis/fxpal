@@ -17,7 +17,7 @@ pwd = getwd()
 dataPath = paste(pwd,'/app/data/',sep='')
 tmpPath = paste(pwd,'/.tmp/',sep='')
 logFile = file(paste(dataPath,'R.log',sep=''),open='wt')
-#sink(logFile,type='message')
+sink(logFile,type='message')
 
 source(paste(pwd,"server","scripts","strategy.r",sep="/"))
 
@@ -208,9 +208,18 @@ addCopyright <- function(label, image, x, y, size, ...) {
 	grid.draw(logo)
 }
 
-graphBreakoutArea <- function(instrument='EUR_USD',granularity='D',candles=NA,bars=NA,save=T,showGraph=F,fillCongested=T,drawLines=F){
+graphBreakoutArea <- function(instrument='EUR_USD',granularity='D',candles=NA,save=T,showGraph=F,fillCongested=T,drawLines=F){
 	if(is.na(candles)){
-		candles = getCandles(instrument,granularity,count=bars)
+		switch(period,M15={
+			newCount = 96
+		},H1={
+			newCount = 168
+		},H4={
+			newCount = 180
+		},D={
+			newCount = 365
+		})
+		candles = getCandles(instrument,granularity,count=newCount)
 	}
 	prices = HLC(candles)
 	ret = getSupportsAndResistances(candles)
@@ -487,6 +496,7 @@ qfxBatchAnalysis <- function(crosses){
 			ccount=counts[p]
 			opts=toJSON(list(instrument=c,granularity=period,count=ccount,startDate=NULL))
 			qfxAnalysis(opts)
+			qfxBreakout(opts)
 		}
 	}
 }
