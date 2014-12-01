@@ -16,6 +16,8 @@ app/data/cot/*.*
 app/data/calendar*.csv
 app/data/volatility.csv
 app/data/portfolio.csv
+app/data/signal.csv
+app/data/force*.csv
 www/data/breakout/*.*
 www/data/candles/*.*
 www/data/cot/*.*
