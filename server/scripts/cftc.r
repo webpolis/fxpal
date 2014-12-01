@@ -12,7 +12,7 @@ markets = as.list(as.data.frame(markets)[order(as.data.frame(markets))])
 stats = Reduce(rbind,lapply(markets,getCOTPosition,data));
 index(stats) <- names(markets) #c('AUD','GBP','CAD','EUR','JPY','NZD','NIKKEI','CHF','USD');
 
-jpeg(paste(dataPath,'cot/COT-', month, '-',year, '.jpg', sep = ''),width=1334,height=750,quality=100,bg='dimgray');
+jpeg(paste(dataPath,'cot/COT', '-',year, '.jpg', sep = ''),width=1334,height=750,quality=100,bg='dimgray');
 barplot(as.matrix(t(stats)),ylab='Positioning',beside=T,col=c('olivedrab4','firebrick3','dodgerblue4'),cex.names=2,col.lab='white',col.axis='white',main='COT Status',col.main='white');
 
 legend('topright', c('long','short','interest'), cex=c(2),pt.cex=c(3),col=c('olivedrab4','firebrick3','dodgerblue4'), lty=c(1,1,1),pch=c(15),pt.lwd=0,text.col='white');
