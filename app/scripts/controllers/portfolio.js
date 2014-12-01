@@ -58,11 +58,22 @@ angular.module('aifxApp').controller('portfolioController', function($scope, $io
         csv2json.csv($scope.config.urls.api + 'portfolio', function(data) {
             $scope.selected.portfolio = data;
             angular.forEach($scope.selected.portfolio, function(cross) {
+                var cross1 = cross.cross.split('').slice(0, 3).join('');
+                var cross2 = cross.cross.split('').slice(3, 6).join('');
+                var isRevertedCross = $scope.api.isRevertedCross(cross1, cross2);
                 tmp.push({
-                    name: cross.cross,
+                    name: !isRevertedCross ? cross.cross : [cross2, cross1].join(''),
                     color: $scope.utils.getRandomColorCode(),
-                    y: parseFloat(cross.percentage)
+                    y: !isRevertedCross ? parseFloat(cross.percentage) : -(parseFloat(cross.percentage))
                 });
+            });
+            tmp.sort(function(a, b) {
+                if (a.y > b.y) {
+                    return -1;
+                } else {
+                    return 1;
+                }
+                return 0;
             });
             $scope.$apply(function() {
                 $scope.optsHighchartsPortfolio.series[0].data = tmp;
