@@ -352,6 +352,19 @@ server.get('/api/candles/all/:granularity', function respond(req, res, next) {
     });
     next();
 });
+server.get('/api/signals', function respond(req, res, next) {
+    var outFile = [__dirname + '/../app/data/', 'signal', '.csv'].join('');
+    runRScript('main', {
+        entryPoint: 'qfxBatchSignals',
+        callback: function(err, _res) {
+            sh.run(['cp', outFile, outFile.replace(/\/app\//g, '/www/')].join(' '));
+            fs.readFile(outFile, {}, function(err, data) {
+                res.send(data);
+            });
+        }
+    });
+    next();
+});
 var reqVolatility = function respond(req, res, next) {
     res.setHeader('content-type', 'text/csv');
     var outFile = [__dirname + '/../app/data/', 'volatility', '.csv'].join('');
