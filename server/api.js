@@ -353,6 +353,7 @@ server.get('/api/candles/all/:granularity', function respond(req, res, next) {
     next();
 });
 server.get('/api/signals', function respond(req, res, next) {
+    res.setHeader('content-type', 'text/csv');
     var outFile = [__dirname + '/../app/data/', 'signal', '.csv'].join('');
     runRScript('main', {
         entryPoint: 'qfxBatchSignals',
