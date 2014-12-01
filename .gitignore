@@ -18,12 +18,11 @@ app/data/volatility.csv
 app/data/portfolio.csv
 app/data/signal.csv
 app/data/force*.csv
+app/data/multisets*.csv
 www/data/breakout/*.*
 www/data/candles/*.*
 www/data/cot/*.*
-www/data/calendar*.csv
-www/data/volatility.csv
-www/data/portfolio.csv
+www/data/*.csv
 !app/data/candles/.empty
 !app/data/cot/.empty
 server/socket
