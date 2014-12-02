@@ -245,6 +245,12 @@ graphBreakoutArea <- function(instrument='EUR_USD',granularity='D',candles=NA,sa
 		}
 
 		if(drawLines){
+			x = as.numeric(Cl(candles))
+			fit = lm(x~seq_along(x))
+			co=coef(fit)
+			abline(co[1],0,col='yellow',lwd=2)
+			abline(co[1],co[2],col='yellow',lwd=2)
+
 			for(r in ret$resistances){addLines(h=r,on=1,col='blue')}
 			for(r in ret$supports){addLines(h=r,on=1,col='red')}
 		}
