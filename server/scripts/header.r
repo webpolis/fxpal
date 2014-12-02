@@ -219,8 +219,8 @@ drawTrend <- function(candles){
 	x = as.numeric(Cl(candles))
 	fit = lm(x~seq_along(x))
 	co=coef(fit)
-	abline(co[1],0,col='yellow',lwd=2)
-	abline(co[1],co[2],col='yellow',lwd=2)
+	abline(co[1],0,col='yellow',lwd=1)
+	abline(co[1],co[2],col='yellow',lwd=1)
 }
 
 graphBreakoutArea <- function(instrument='EUR_USD',granularity='D',candles=NA,save=T,showGraph=F,fillCongested=T,drawLines=F){
@@ -243,14 +243,12 @@ graphBreakoutArea <- function(instrument='EUR_USD',granularity='D',candles=NA,sa
 		if(showGraph){
 			dev.new()
 			lineChart(Cl(candles),name=paste(instrument,granularity,sep=' - '))
-			drawTrend(candles)
 		}
 		if(save){
 			iname = paste(dataPath,'breakout/', instrument, '-', granularity, '.jpg', sep = '')
 			print(paste('saving image',iname))
 			png(iname,width=maxWidth,height=maxHeight)
 			lineChart(Cl(candles),name=paste(instrument,granularity,sep=' - '))
-			drawTrend(candles)
 			print('done')
 		}
 
@@ -287,6 +285,8 @@ graphBreakoutArea <- function(instrument='EUR_USD',granularity='D',candles=NA,sa
 				}
 			})
 		}
+
+		drawTrend(candles)
 
 		# add copyright
 		year = format(Sys.time(),'%Y')
