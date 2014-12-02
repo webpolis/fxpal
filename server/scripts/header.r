@@ -76,7 +76,7 @@ getCandlestickPatterns <- function(ohlc){
 getVolatility <- function(crosses){
 	ret = xts()
 	for(cross in crosses){
-		tmp = getCandles(cross,'H1',count = 168,restore=T)
+		tmp = getCandles(cross,'H1',count = 168,restore=F)
 		vol = volatility(OHLC(tmp), n=6,calc='garman.klass')
 		names(vol) = c(cross)
 		ret = cbind(vol,ret)
@@ -97,7 +97,7 @@ getSlopeByPeriod <- function(currency, period){
 		newCount = 365
 	})
 	print(paste('getSlopeByPeriod',currency,period,newCount,sep='-'))
-	tmp = getCandles(currency,period,count = newCount,restore=T)
+	tmp = getCandles(currency,period,count = newCount,restore=F)
 	roc = na.omit(ROC(Cl(tmp),type='discrete'))
 	vroc = na.omit(ROC(tmp$Volume,type='discrete'))
 	lmm = lm(roc~vroc)
@@ -226,7 +226,7 @@ graphBreakoutArea <- function(instrument='EUR_USD',granularity='D',candles=NA,sa
 		},D={
 			newCount = 365
 		})
-		candles = getCandles(instrument,granularity,count=newCount,restore=T)
+		candles = getCandles(instrument,granularity,count=newCount,restore=F)
 	}
 	prices = HLC(candles)
 	ret = getSupportsAndResistances(candles)
