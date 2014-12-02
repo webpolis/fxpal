@@ -1,7 +1,9 @@
 0 * * * 0,1,2,3,4,5 cd /Users/macbook/workspace/nico/aifx && ./server/scripts/cron.sh >/dev/null 2>&1
 5 * * * 0,1,2,3,4,5 cd /Users/macbook/workspace/nico/aifx && curl -G http://0.0.0.0:9999/api/candles/volatility/1 >/dev/null 2>&1
 10-59/15 * * * 0,1,2,3,4,5 cd /Users/macbook/workspace/nico/aifx && curl -G http://0.0.0.0:9999/api/candles/all/M15 && grunt copy:data >/dev/null 2>&1
-30 * * * 0,1,2,3,4,5 cd /Users/macbook/workspace/nico/aifx && curl -G http://0.0.0.0:9999/api/candles/all/H1 && curl -G http://0.0.0.0:9999/api/currencyForce/1 && curl -G http://0.0.0.0:9999/api/calendar/strength/52/1 >/dev/null 2>&1
+30 * * * 0,1,2,3,4,5 cd /Users/macbook/workspace/nico/aifx && curl -G http://0.0.0.0:9999/api/candles/all/H1 >/dev/null 2>&1
+8 */2 * * 0,1,2,3,4,5 cd /Users/macbook/workspace/nico/aifx && curl -G http://0.0.0.0:9999/api/currencyForce/1 >/dev/null 2>&1
+30 */2 * * 0,1,2,3,4,5 cd /Users/macbook/workspace/nico/aifx && curl -G http://0.0.0.0:9999/api/calendar/strength/52/1 >/dev/null 2>&1
 45 */4 * * 0,1,2,3,4,5 cd /Users/macbook/workspace/nico/aifx && curl -G http://0.0.0.0:9999/api/candles/all/H4 >/dev/null 2>&1
 55 0 * * 0,1,2,3,4,5 cd /Users/macbook/workspace/nico/aifx && curl -G http://0.0.0.0:9999/api/candles/all/D >/dev/null 2>&1
 0 0 * * 6 cd /Users/macbook/workspace/nico/aifx && Rscript server/scripts/cftc.r >/dev/null 2>&1
