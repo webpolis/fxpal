@@ -215,6 +215,14 @@ addCopyright <- function(label, image, x, y, size, ...) {
 	grid.draw(logo)
 }
 
+drawTrend <- function(candles){
+	x = as.numeric(Cl(candles))
+	fit = lm(x~seq_along(x))
+	co=coef(fit)
+	abline(co[1],0,col='yellow',lwd=2)
+	abline(co[1],co[2],col='yellow',lwd=2)
+}
+
 graphBreakoutArea <- function(instrument='EUR_USD',granularity='D',candles=NA,save=T,showGraph=F,fillCongested=T,drawLines=F){
 	if(is.na(candles)){
 		switch(granularity,M15={
@@ -235,22 +243,18 @@ graphBreakoutArea <- function(instrument='EUR_USD',granularity='D',candles=NA,sa
 		if(showGraph){
 			dev.new()
 			lineChart(Cl(candles),name=paste(instrument,granularity,sep=' - '))
+			drawTrend(candles)
 		}
 		if(save){
 			iname = paste(dataPath,'breakout/', instrument, '-', granularity, '.jpg', sep = '')
 			print(paste('saving image',iname))
 			png(iname,width=maxWidth,height=maxHeight)
 			lineChart(Cl(candles),name=paste(instrument,granularity,sep=' - '))
+			drawTrend(candles)
 			print('done')
 		}
 
 		if(drawLines){
-			x = as.numeric(Cl(candles))
-			fit = lm(x~seq_along(x))
-			co=coef(fit)
-			abline(co[1],0,col='yellow',lwd=2)
-			abline(co[1],co[2],col='yellow',lwd=2)
-
 			for(r in ret$resistances){addLines(h=r,on=1,col='blue')}
 			for(r in ret$supports){addLines(h=r,on=1,col='red')}
 		}
