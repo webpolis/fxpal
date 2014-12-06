@@ -156,15 +156,15 @@ getCurrencyStrengthPerPeriod <- function(table){
 	return(df)
 }
 
-getSupportsAndResistances <- function(candles){
+getSupportsAndResistances <- function(candles,threshold=7){
 	prices = HLC(candles)
 	dc = lag(DonchianChannel(Cl(prices),n=20),-2)
 	dc$count = 1
 
 	t = table(dc$high)
 	t2 = table(dc$low)
-	resistances = as.double(names(t[t>10]))
-	supports = as.double(names(t2[t2>10]))
+	resistances = as.double(names(t[t>=threshold]))
+	supports = as.double(names(t2[t2>=threshold]))
 	resdist = as.matrix(dist(resistances,method='manhattan'))
 	colnames(resdist) = resistances
 	rownames(resdist) = resistances
