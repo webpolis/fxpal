@@ -470,15 +470,14 @@ getCurrencyFundamentalStrength <- function(data = NA, w = 52, country1=NA, count
 	
 	tmp = aggregate(tmp$actual, by=list(code=tmp$code,country=tmp$country),FUN=diff)
 	tmp[,'x'] = sapply(tmp[,'x'],simplify=T,FUN=function(n) round(sum(n),6))
-	tmp$scale = round(scale(tmp[,'x'], scale = TRUE, center = FALSE), 6)
+	tmp$scale = round(scale(tmp[,'x'], scale = TRUE, center = TRUE), 6)
 	tmp = tmp[!is.na(tmp$scale),]
 
 	scaled = aggregate(tmp$scale, by=list(country=tmp$country),FUN=mean)
 	names(scaled) <- c('country','strength')
 	scaled = scaled[order(-scaled[,'strength']),]
-	scaled[,'strength'] = round(scale(scaled[,'strength'], scale = TRUE, center = FALSE), 6)
 	scaled$sd = sd(scaled$strength)
-	scaled$strength = scale(scaled$strength+scaled$sd,center=F)
+	scaled$strength = scale(scaled$strength+scaled$sd,center=T)
 	return(scaled)
 }
 
