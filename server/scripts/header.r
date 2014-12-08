@@ -56,6 +56,36 @@ getCandles <- function(instrument=NA, granularity=NA, startDate = NA, count = NA
 	return(ret)
 }
 
+getLiveCandles <- function(instrument, granularity, startDate = NA, count = 600){
+	oandaToken = 'ce6b72e81af59be0bbc90152cad8d731-03d41860ed7849e3c4555670858df786'
+	urlPractice = paste('https://api-fxpractice.oanda.com/v1/candles?instrument=', instrument, '&granularity=', granularity, '&weeklyAlignment=Monday', '&candleFormat=bidask', sep = '')
+
+	if(!is.na(startDate)){
+		urlPractice = paste(urlPractice,'&start=', startDate,sep='')
+	}else if(!is.na(count)){
+		urlPractice = paste(urlPractice,'&count=', count,sep='')
+	}
+
+	print(paste('requesting ',urlPractice))
+
+	json = fromJSON(getURL(url = urlPractice, httpheader = c('Accept' = 'application/json', Authorization = paste('Bearer ', oandaToken))))
+
+	ret = NULL
+	for(c in 1:length(json$candles)){
+		candle = as.data.frame(json$candles[c])
+		rbind(ret, candle) -> ret
+	}
+
+	ret = ret[,-(grep('[a-z]+Ask|complete',names(ret)))]
+	rownames(ret) = ret[,1]
+	ret = ret[,-1]
+	names(ret) = c('Open','High','Low','Close','Volume')
+	rownames(ret) = as.POSIXlt(gsub('T|\\.\\d{6}Z', ' ', rownames(ret)))
+	ret = as.xts(ret)
+
+	return(ret)
+}
+
 getCandlestickPatterns <- function(ohlc){
 	ret = xts()
 	cMethods = ls('package:candlesticks')
