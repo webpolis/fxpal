@@ -209,10 +209,6 @@ server.pre(restify.pre.sanitizePath());
 server.get('/api/portfolio', function respond(req, res, next) {
     res.setHeader('content-type', 'text/csv');
     var outFile = __dirname + '/../app/data/portfolio.csv';
-    // only generate file if it's older than 1 day
-    if (isOutdatedFile(outFile, 60 * 24)) {
-        sh.run(['Rscript', __dirname + '/scripts/portfolio.r'].join(' '));
-    }
     fs.readFile(outFile, {}, function(err, data) {
         res.send(data);
     });
