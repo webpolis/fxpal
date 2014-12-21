@@ -3,7 +3,7 @@ Sys.setenv(TZ="UTC")
 pwd = ifelse(is.null(sys.frames()),getwd(),paste(dirname(sys.frame(1)$ofile),"/../..",sep=""))
 dataPath = paste(pwd,"/app/data/",sep="")
 
-qs = list.files(paste(dataPath,"../../.tmp",sep=""),pattern="([^\\.]+\\.){3}csv",full.names=T)
+qs = list.files(paste(dataPath,"quandl/",sep=""),pattern="([^\\.]+\\.){3}csv",full.names=T)
 
 rm(dataset)
 for (file in qs){

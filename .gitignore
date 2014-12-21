@@ -19,6 +19,7 @@ app/data/portfolio.csv
 app/data/signal.csv
 app/data/force*.csv
 app/data/multisets*.csv
+app/data/quandl/*.csv
 www/data/breakout/*.*
 www/data/candles/*.*
 www/data/cot/*.*
