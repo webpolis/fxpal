@@ -6,7 +6,7 @@ for s in $(cat app/data/quandlSymbols.lst);
 		out=$CURDIR/../../app/data/quandl/${s}.csv
 		symbol=(${s//./ })
 		curl -G -A "Mozilla/5.0 (Windows NT 6.1; rv:19.0) Gecko/20100101 Firefox/19.0" -o $out "http://quandl.com/api/v1/datasets/${symbol[0]}/${symbol[1]}.csv?column=${symbol[2]}&collapse=daily&trim_start=2005-01-01&auth_token=pWGUEdRoPxqEdp66WRYv"
-		sed -E -i '' "1s/\,([^\,]+)/,${s}/g" $out
+		sed -E -i "1s/\,([^\,]+)/,${s}/g" $out
 done
 
 #paste -d, $(ls .tmp/*.csv) > $CURDIR/../../app/data/multisetsInputs.csv
