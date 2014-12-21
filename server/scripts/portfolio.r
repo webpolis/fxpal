@@ -9,7 +9,7 @@ library("quantmod")
 
 data = read.table("multisetsInputs.csv", sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
 data = data[-c(1, 30:41)]
-crosses = toupper(gsub("\\.{3}[\\w]+|CURRFX\\.|\\.Price", "", names(data), perl = TRUE))
+crosses = toupper(gsub("\\.{3}[\\w]+|CURRFX\\.|\\.\\d+|\\.Price", "", names(data), perl = TRUE))
 names(data) = crosses
 
 tmp = matrix(nrow=nrow(data), ncol=ncol(data))
