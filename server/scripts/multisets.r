@@ -20,6 +20,8 @@ for (file in qs){
 	}
 }
 
+write.csv(dataset, quote = FALSE, row.names = FALSE, file = paste(dataPath,"multisetsInputs.csv",sep=""), fileEncoding = "UTF-8")
+
 names(dataset) = toupper(gsub("\\.{3}[\\w]+|CURRFX\\.|\\.Price", "", names(dataset), perl = TRUE))
 
 dataset = dataset[-(match("DATE", colnames(dataset)))]
