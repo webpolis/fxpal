@@ -3,13 +3,29 @@ Sys.setenv(TZ="UTC")
 pwd = ifelse(is.null(sys.frames()),getwd(),paste(dirname(sys.frame(1)$ofile),"/../..",sep=""))
 dataPath = paste(pwd,"/app/data/",sep="")
 
-data = read.table(paste(dataPath,"multisetsInputs.csv",sep=""), sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
-names(data) = toupper(gsub("\\.{3}[\\w]+|CURRFX\\.|\\.Price", "", names(data), perl = TRUE))
+qs = list.files(paste(dataPath,"../../.tmp",sep=""),pattern="([^\\.]+\\.){3}csv",full.names=T)
 
-data = data[-(match("DATE", colnames(data)))]
+rm(dataset)
+for (file in qs){
+	# if the merged dataset doesn't exist, create it
+	if (!exists("dataset")){
+		dataset = read.csv(file, sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
+	}
 
-data = cor(data, use="pairwise.complete.obs", method="pearson")
-correlation = as.data.frame(as.table(data))
+	# if the merged dataset does exist, append to it
+	if (exists("dataset")){
+		tmp = read.csv(file, sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
+		dataset = merge(dataset, tmp, all.x=T)
+		rm(tmp)
+	}
+}
+
+names(dataset) = toupper(gsub("\\.{3}[\\w]+|CURRFX\\.|\\.Price", "", names(dataset), perl = TRUE))
+
+dataset = dataset[-(match("DATE", colnames(dataset)))]
+
+dataset = cor(dataset, use="pairwise.complete.obs", method="pearson")
+correlation = as.data.frame(as.table(dataset))
 correlation = na.omit(correlation)
 names(correlation) = c("cross1", "cross2", "rel")
 correlation = correlation[correlation$rel!=1,]
