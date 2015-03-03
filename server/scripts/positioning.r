@@ -27,7 +27,7 @@ if(batch){
 		currency1 = markets[[curr1]]
 		currency2 = markets[[curr2]]
 
-		args = paste('{"instrument":"',cross,'","currency1":"',currency1,'", "currency2":"',currency2,'"}',sep='')
+		args = paste('{"instrument":"',sub('\\/','_',cross),'","currency1":"',currency1,'", "currency2":"',currency2,'"}',sep='')
 		qfxGraphCOTPositioning(args)
 	}
 }
