@@ -384,7 +384,8 @@ graphCOTPositioning <- function(currency1,currency2,cross,data=NA,cotData=NA,sav
 	print(paste('Graphics for COT',currency1,currency2,cross,sep=' '))
 
 	if(is.na(data)){
-		data = getSymbols(cross,src='oanda',auto.assign=F)
+		#data = getSymbols(cross,src='oanda',auto.assign=F)
+		data = getCandles(instrument=cross,granularity="D",count=365)
 	}
 	
 	if(is.na(cotData)){
