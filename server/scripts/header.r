@@ -400,12 +400,14 @@ graphCOTPositioning <- function(currency1,currency2,cross,data=NA,cotData=NA,sav
 
 	mindate = min(as.Date(cotData$As.of.Date.in.Form.YYYY.MM.DD))
 	maxdate = max(as.Date(cotData$As.of.Date.in.Form.YYYY.MM.DD))
-	candles = data[index(data) >= mindate & index(data) <= maxdate,]
+	candles = data[as.Date(index(data)) >= mindate & as.Date(index(data)) <= maxdate,]
+	index(candles) = as.Date(index(candles))
+	candles = Cl(candles)
 
 	pos1 = getCOTPositions(currency1,cotData)
 	pos2 = getCOTPositions(currency2,cotData)
-	pos1 = pos1[index(pos1) >= min(as.Date(index(candles))) & index(pos1) <=  max(as.Date(index(candles))),]
-	pos2 = pos2[index(pos2) >= min(as.Date(index(candles))) & index(pos2) <=  max(as.Date(index(candles))),]
+	pos1 = pos1[index(pos1) >= min(index(candles)) & index(pos1) <=  max(index(candles)),]
+	pos2 = pos2[index(pos2) >= min(index(candles)) & index(pos2) <=  max(index(candles)),]
 	tmp = na.locf(merge(pos1,pos2,candles))
 
 	netpos1 = EMA(scale(as.double(tmp$netpos.pos1)),n=5)
