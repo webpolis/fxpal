@@ -5,26 +5,35 @@ dataPath = paste(pwd,"/app/data/",sep="")
 
 qs = list.files(paste(dataPath,"quandl/",sep=""),pattern="([^\\.]+\\.){3}csv",full.names=T)
 
-rm(dataset)
-for (file in qs){
-	# if the merged dataset doesn't exist, create it
-	if (!exists("dataset")){
-		dataset = read.csv(file, sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
-	}
+if (exists("dataset")){
+	rm(dataset)
+}
 
-	# if the merged dataset does exist, append to it
-	if (exists("dataset")){
+for (file in qs){
+	if (!exists("dataset")){
+		# if the merged dataset doesn't exist, create it
+		dataset = read.csv(file, sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
+		rownames(dataset) = as.Date(dataset[,1])
+		dataset$Date = NULL
+		dataset = as.xts(dataset)
+	}else{
+		# if the merged dataset does exist, append to it
 		tmp = read.csv(file, sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
-		dataset = merge(dataset, tmp, all.x=T)
+		rownames(tmp) = as.Date(tmp[,1])
+		tmp$Date = NULL
+		tmp$Trade.Date = NULL
+		tmp = as.xts(tmp)
+		dataset = merge.xts(dataset, tmp)
 		rm(tmp)
 	}
 }
 
-write.csv(dataset, quote = FALSE, row.names = FALSE, file = paste(dataPath,"multisetsInputs.csv",sep=""), fileEncoding = "UTF-8")
+tmp = as.data.frame(dataset)
+tmp$Date = as.Date(index(dataset))
+write.csv(tmp, quote = FALSE, row.names = FALSE, file = paste(dataPath,"multisetsInputs.csv",sep=""), fileEncoding = "UTF-8")
+rm(tmp)
 
 names(dataset) = toupper(gsub("\\.{3}[\\w]+|CURRFX\\.|\\.\\d+|\\.Price", "", names(dataset), perl = TRUE))
-
-dataset = dataset[-(match("DATE", colnames(dataset)))]
 
 dataset = cor(dataset, use="pairwise.complete.obs", method="pearson")
 correlation = as.data.frame(as.table(dataset))
