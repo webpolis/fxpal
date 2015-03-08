@@ -448,6 +448,8 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                             $scope.selected.correlation[target][k].label = cor.cross;
                         } else {
                             sets.push(cor.cross + '.1');
+                            var ticker = jsonPath.eval($scope.config.maps.tickers, '$[?(@.quandl=="' + cor.cross + '")]')[0].name ||  null;
+                            $scope.selected.correlation[target][k].label = ticker;
                         }
                     });
                     if (sets.length === 0) {

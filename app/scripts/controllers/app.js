@@ -107,7 +107,7 @@ angular.module('aifxApp').controller('appController', function($scope, $ionicSid
                 symbol: 'GCN14.CMX',
                 name: 'GOLD'
             }, {
-                quandl: 'OFDP.COPPER_6.3',
+                quandl: 'OFDP.COPPER_6',
                 symbol: 'HGN14.CMX',
                 name: 'COPPER'
             }, {
