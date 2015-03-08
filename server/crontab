@@ -9,3 +9,4 @@
 55 0 * * 0,1,2,3,4,5 cd /Users/macbook/workspace/nico/aifx && curl -G http://0.0.0.0:9999/api/candles/all/D >/dev/null 2>&1
 0 0 * * 6 cd /Users/macbook/workspace/nico/aifx && Rscript server/scripts/cftc.r >/dev/null 2>&1
 5 0 * * 6 cd /Users/macbook/workspace/nico/aifx && Rscript server/scripts/positioning.r 0 0 0 1 >/dev/null 2>&1
+0 0 * * 5 cd /Users/macbook/workspace/nico/aifx && rm .tmp/cot*.zip >/dev/null 2>&1
