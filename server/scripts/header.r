@@ -249,8 +249,8 @@ drawTrend <- function(candles){
 	x = as.numeric(Cl(candles))
 	fit = lm(x~seq_along(x))
 	co=coef(fit)
-	abline(co[1],0,col='yellow',lwd=1)
-	abline(co[1],co[2],col='yellow',lwd=1)
+	abline(co[1],0,col='yellow',lwd=1) # pivot
+	abline(co[1],co[2],col='yellow',lwd=1) # slope
 }
 
 graphBreakoutArea <- function(instrument='EUR_USD',granularity='D',candles=NA,save=T,showGraph=F,fillCongested=T,drawLines=F){
