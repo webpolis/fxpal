@@ -95,6 +95,42 @@ angular.module('aifxApp').controller('appController', function($scope, $ionicSid
                 cot: 'EURO FX'
             }],
             tickers: [{
+                quandl: 'NIKKEI.INDEX',
+                symbol: 'N225',
+                name: 'NIKKEI'
+            }, {
+                quandl: 'LBMA.SILVER',
+                symbol: 'SIN14.CMX',
+                name: 'SILVER'
+            }, {
+                quandl: 'BUNDESBANK.BBK01_WT5511',
+                symbol: 'GCN14.CMX',
+                name: 'GOLD'
+            }, {
+                quandl: 'OFDP.COPPER_6.3',
+                symbol: 'HGN14.CMX',
+                name: 'COPPER'
+            }, {
+                quandl: 'WSJ.CORN_2',
+                symbol: 'CU14.CBT',
+                name: 'CORN'
+            }, {
+                quandl: 'LPPM.PLAT',
+                symbol: 'PLN14.NYM',
+                name: 'PLATINUM'
+            }, {
+                quandl: 'DOE.RWTC',
+                symbol: 'CLQ14.NYM',
+                name: 'OIL'
+            }, {
+                quandl: 'NASDAQOMX.NDX',
+                symbol: 'CLQ14.NYM',
+                name: 'NASDAQ'
+            }, {
+                quandl: 'BCB.UDJIAD1',
+                symbol: 'CLQ14.NYM',
+                name: 'DOW JONES'
+            }, {
                 quandl: 'YAHOO.INDEX_GDAXI',
                 symbol: 'GDAXI',
                 name: 'DAX'
@@ -107,41 +143,21 @@ angular.module('aifxApp').controller('appController', function($scope, $ionicSid
                 symbol: 'AORD',
                 name: 'AORD'
             }, {
-                quandl: 'NIKKEI.INDEX',
-                symbol: 'N225',
-                name: 'NIKKEI'
+                quandl: 'YAHOO.INDEX_SSEC',
+                symbol: 'SSEC',
+                name: 'SSEC'
+            }, {
+                quandl: 'YAHOO.INDEX_GSPC',
+                symbol: 'GSPC',
+                name: 'GSPC'
+            }, {
+                quandl: 'YAHOO.INDEX_FCHI',
+                symbol: 'FCHI',
+                name: 'FCHI'
             }, {
                 quandl: 'YAHOO.INDEX_GSPTSE',
                 symbol: 'GSPTSE',
                 name: 'GSPTSE'
-            }, {
-                quandl: 'OFDP.SILVER_5',
-                symbol: 'SIN14.CMX',
-                name: 'SILVER'
-            }, {
-                quandl: 'WGC.GOLD_DAILY_USD',
-                symbol: 'GCN14.CMX',
-                name: 'GOLD'
-            }, {
-                quandl: 'WSJ.COPPER',
-                symbol: 'HGN14.CMX',
-                name: 'COPPER'
-            }, {
-                quandl: 'WSJ.CORN_2',
-                symbol: 'CU14.CBT',
-                name: 'CORN'
-            }, {
-                quandl: 'WSJ.PL_MKT',
-                symbol: 'PLN14.NYM',
-                name: 'PLATINUM'
-            }, {
-                quandl: 'OFDP.FUTURE_B1',
-                symbol: 'CLQ14.NYM',
-                name: 'OIL'
-            }, {
-                quandl: 'FED.JRXWTFB_N_B',
-                symbol: 'DX-Y.NYB',
-                name: 'DOLLAR INDEX'
             }]
         }
     };
