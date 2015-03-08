@@ -301,90 +301,6 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
             });
         });
     };
-    /**
-     * we only process commodities & indexes here; currencies are handled by rateChange directive
-     *
-     * @param  {[type]} sets [description]
-     * @param  {[type]} type [description]
-     * @return {[type]}      [description]
-     */
-    $scope.computeChange = function(sets, type) {
-        var def = $q.defer();
-        switch (type) {
-            case 'weeklyChange':
-            case 'monthlyChange':
-                $http.get($scope.config.urls[type].replace(/\{\{sets\}\}/gi, sets.join(','))).success(function(ret) {
-                    // update correlated items and set change
-                    var change = {};
-                    if (angular.isArray(ret.column_names) && angular.isArray(ret.data)) {
-                        angular.forEach(ret.column_names, function(col, k) {
-                            if (k === 0) {
-                                // avoid date col
-                                return;
-                            }
-                            change[col.replace(/^(?:CURRFX\.)?([^\s]+).*$/gi, '$1')] = null;
-                        });
-                        // get non null values
-                        var keys = Object.keys(change);
-                        angular.forEach(ret.data, function(d, kk) {
-                            angular.forEach(d, function(val, kkk) {
-                                if (kkk === 0) {
-                                    // avoid date col
-                                    return;
-                                }
-                                if (val !== null && change[keys[kkk - 1]] === null) {
-                                    var ix = keys[kkk - 1];
-                                    var ticker = jsonPath.eval($scope.config.maps.tickers, '$.[?(@.quandl=="' + ix + '")]')[0] ||  false;
-                                    if (ticker) {
-                                        change[ix] = val;
-                                        // set value
-                                        jsonPath.eval($scope.selected.correlation.markets, '$[?(@.cross && @.cross == "' + ix + '")]')[0][type] = val;
-                                    } else {
-                                        // set currency flag
-                                        jsonPath.eval($scope.selected.correlation.markets, '$[?(@.cross && @.cross == "' + ix + '")]')[0].currency = true;
-                                    }
-                                    // set label
-                                    jsonPath.eval($scope.selected.correlation.markets, '$[?(@.cross && @.cross == "' + ix + '")]')[0].label = ix;
-                                }
-                            });
-                        });
-                    }
-                    def.resolve();
-                }).error(function(err) {
-                    def.reject(err);
-                });
-                break;
-            case 'dailyChange':
-                var tickers = $scope.config.maps.tickers.map(function(ticker) {
-                    var symbol = '"' + (/\./g.test(ticker.symbol) ? ticker.symbol : '^' + ticker.symbol) + '"';
-                    return symbol;
-                });
-                var symbols = $scope.config.yqls.quotes.replace(/\{\{sets\}\}/gi, tickers.join(','));
-                $http.get($scope.config.urls.yql.replace(/\{\{query\}\}/gi, encodeURIComponent(symbols))).success(function(ret) {
-                    if (angular.isDefined(ret.query) && angular.isObject(ret.query.results)) {
-                        if (angular.isArray(ret.query.results.quote)) {
-                            angular.forEach(ret.query.results.quote, function(quote) {
-                                var symbol = quote.Symbol.replace(/\^/g, '');
-                                var ticker = jsonPath.eval($scope.config.maps.tickers, '$.[?(@.symbol=="' + symbol + '")]')[0] ||  null;
-                                try {
-                                    if (ticker !== null) {
-                                        // set value
-                                        jsonPath.eval($scope.selected.correlation.markets, '$[?(@.cross && @.cross == "' + ticker.quandl + '")]')[0][type] = quote.Change && parseFloat(quote.Change) ||  0.0;
-                                        // set label
-                                        jsonPath.eval($scope.selected.correlation.markets, '$[?(@.cross && @.cross == "' + ticker.quandl + '")]')[0].label = ticker.name;
-                                    }
-                                } catch (err) {}
-                            });
-                        }
-                    }
-                    def.resolve();
-                }).error(function(err) {
-                    def.reject(err);
-                });
-                break;
-        }
-        return def.promise;
-    };
     $scope.isCurrencyEvent = function(event) {
         var re = new RegExp('(' + [$scope.selected.cross1, $scope.selected.cross2].join('|') + ')', 'gi');
         return re.test(event.currency);
@@ -537,11 +453,6 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                     if (sets.length === 0) {
                         return;
                     }
-                    $scope.computeChange(sets, 'monthlyChange').then(function() {
-                        $scope.computeChange(sets, 'weeklyChange').then(function() {
-                            $scope.computeChange(null, 'dailyChange');
-                        });
-                    });
                 }
             });
         });

@@ -533,6 +533,24 @@ getMarketChange <- function(){
 	return(list(daily=ret.daily,weekly=ret.weekly,monthly=ret.monthly,annual=ret.annual))
 }
 
+qfxMarketChange <- function(){
+	print(paste('Running qfxMarketChange. Data path is',dataPath,sep=' '))
+
+	chg = getMarketChange()
+	periods = c('daily','weekly','monthly','annual')
+	ret = data.frame(row.names=periods,col.names)
+	cols = names(chg[[1]])
+	data = matrix(unlist(chg),byrow=T,nrow=length(periods))
+	rownames(data) = periods
+	colnames(data) = cols
+	data = cbind(data,periods)
+	colnames(data)[which(colnames(data)=='periods')] = 'period'
+	colnames(data) = toupper(gsub("\\.{3}[\\w]+|CURRFX\\.|\\.\\d+|\\.Price", "", colnames(data), perl = TRUE))
+
+	print(paste('saving to',outFile))
+	write.csv(data, quote = FALSE, row.names = FALSE, file = paste(dataPath,'marketChange.csv',sep=''), fileEncoding = 'UTF-8')
+}
+
 qfxAnalysis <- function(args){
 	print(paste('Running qfxAnalysis. Data path is',dataPath,sep=' '))
 	args = fromJSON(args)
