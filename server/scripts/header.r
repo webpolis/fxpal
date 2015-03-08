@@ -514,6 +514,25 @@ getCurrencyFundamentalStrength <- function(data = NA, w = 52, country1=NA, count
 	return(scaled)
 }
 
+getMarketChange <- function(){
+	dataset = read.csv(file = paste(dataPath,'multisetsInputs.csv',sep=''),sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
+
+	dates = dataset$Date
+	rownames(dataset) = dates
+	dataset = as.xts(dataset)
+	dataset$Date = NULL
+
+	dataset = apply(dataset,2,FUN=function(x){round(as.double(x),6)})
+	rownames(dataset) = dates
+	dataset = na.locf(as.xts(dataset))
+	ret.daily = last(ROC(dataset,n=3))
+	ret.weekly = last(ROC(dataset[endpoints(dataset,on="weeks",k=1),]))
+	ret.monthly = last(ROC(dataset[endpoints(dataset,on="months",k=1),]))
+	ret.annual = last(ROC(dataset[endpoints(dataset,on="years",k=1),]))
+
+	return(list(daily=ret.daily,weekly=ret.weekly,monthly=ret.monthly,annual=ret.annual))
+}
+
 qfxAnalysis <- function(args){
 	print(paste('Running qfxAnalysis. Data path is',dataPath,sep=' '))
 	args = fromJSON(args)
