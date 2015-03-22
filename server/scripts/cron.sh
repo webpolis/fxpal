@@ -22,6 +22,7 @@ cd $CURDIR/../../
 
 find app/data/candles/*.* -type f -ctime +1 -exec rm {} \;
 find app/data/breakout/*.* -type f -ctime +1 -exec rm {} \;
+find app/data/quandl/*.csv -type f -ctime +1 -exec rm {} \;
 find .tmp/*.json -type f -ctime +1 -exec rm {} \;
 
 rm app/data/multisetsOutputs.csv
