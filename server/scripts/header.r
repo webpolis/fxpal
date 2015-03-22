@@ -535,6 +535,7 @@ getMarketChange <- function(){
 
 qfxMarketChange <- function(){
 	print(paste('Running qfxMarketChange. Data path is',dataPath,sep=' '))
+	outFile = paste(dataPath,'marketChange', '.csv', sep = '')
 
 	chg = getMarketChange()
 	periods = c('daily','weekly','monthly','annual')
@@ -548,7 +549,7 @@ qfxMarketChange <- function(){
 	colnames(data) = toupper(gsub("\\.{3}[\\w]+|CURRFX\\.|\\.\\d+|\\.Price", "", colnames(data), perl = TRUE))
 
 	print(paste('saving to',outFile))
-	write.csv(data, quote = FALSE, row.names = FALSE, file = paste(dataPath,'marketChange.csv',sep=''), fileEncoding = 'UTF-8')
+	write.csv(data, quote = FALSE, row.names = FALSE, file = outFile, fileEncoding = 'UTF-8')
 }
 
 qfxAnalysis <- function(args){
