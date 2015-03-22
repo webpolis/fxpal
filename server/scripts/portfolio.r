@@ -22,8 +22,8 @@ for(n in 1:ncol(data)){
 tmp = as.timeSeries(na.spline(tmp))
 spec = portfolioSpec()
 setNFrontierPoints(spec) <- 10
-constraints <- c("LongOnly")
-setSolver(spec) <- "solveRquadprog"
+constraints <- c("Short")
+setSolver(spec) <- "solveRshortExact"
 setTargetReturn(spec) <- mean(colMeans(tmp))
 
 tp = tangencyPortfolio(tmp, spec, constraints)
