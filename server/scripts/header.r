@@ -538,7 +538,7 @@ qfxMarketChange <- function(){
 
 	chg = getMarketChange()
 	periods = c('daily','weekly','monthly','annual')
-	ret = data.frame(row.names=periods,col.names)
+	ret = data.frame(row.names=periods)
 	cols = names(chg[[1]])
 	data = matrix(unlist(chg),byrow=T,nrow=length(periods))
 	rownames(data) = periods
