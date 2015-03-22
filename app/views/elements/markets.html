@@ -27,16 +27,13 @@
                 </span>
             </div>
             <div class="col">
-                <rate-change ng-if="corr.currency" period="D" count="2" symbol="corr"></rate-change>
-                <i class="icon size-16" ng-class="{'ion-android-arrow-up-right green':corr.dailyChange>0,'ion-android-arrow-down-right red':corr.dailyChange<0,'ion-android-remove':corr.dailyChange==0}"></i>
+                <i class="icon size-16" ng-class="{'ion-android-arrow-up-right green':data.marketChange[corr.ticker].daily>0,'ion-android-arrow-down-right red':data.marketChange[corr.ticker].daily<0,'ion-android-remove':data.marketChange[corr.ticker].daily==0}"></i>
             </div>
             <div class="col">
-                <rate-change ng-if="corr.currency" period="W" count="2" symbol="corr"></rate-change>
-                <i class="icon size-16" ng-class="{'ion-android-arrow-up-right green':corr.weeklyChange>0,'ion-android-arrow-down-right red':corr.weeklyChange<0,'ion-android-remove':corr.weeklyChange==0}"></i>
+                <i class="icon size-16" ng-class="{'ion-android-arrow-up-right green':data.marketChange[corr.ticker].weekly>0,'ion-android-arrow-down-right red':data.marketChange[corr.ticker].weekly<0,'ion-android-remove':data.marketChange[corr.ticker].weekly==0}"></i>
             </div>
             <div class="col">
-                <rate-change ng-if="corr.currency" period="M" count="2" symbol="corr"></rate-change>
-                <i class="icon size-16" ng-class="{'ion-android-arrow-up-right green':corr.monthlyChange>0,'ion-android-arrow-down-right red':corr.monthlyChange<0,'ion-android-remove':corr.monthlyChange==0}"></i>
+                <i class="icon size-16" ng-class="{'ion-android-arrow-up-right green':data.marketChange[corr.ticker].monthly>0,'ion-android-arrow-down-right red':data.marketChange[corr.ticker].monthly<0,'ion-android-remove':data.marketChange[corr.ticker].monthly==0}"></i>
             </div>
         </div>
     </div>

@@ -12,16 +12,13 @@
     <div class="col col-75" ng-if="(selected.cross1 && selected.cross2)" ng-init="curr = {label: selected.cross1+selected.cross2}">
         <div class="row">
             <div class="col">
-                <rate-change period="D" count="2" symbol="curr"></rate-change>
-                <span class="gray">Daily:</span> <i class="icon size-16" ng-class="{'ion-android-arrow-up-right green':curr.dailyChange>0,'ion-android-arrow-down-right red':curr.dailyChange<0,'ion-android-remove':curr.dailyChange==0}"></i>
+                <span class="gray">Daily:</span> <i class="icon size-16" ng-class="{'ion-android-arrow-up-right green':data.marketChange[curr.label].daily>0,'ion-android-arrow-down-right red':data.marketChange[curr.label].daily<0,'ion-android-remove':data.marketChange[curr.label].daily==0}"></i>
             </div>
             <div class="col">
-                <rate-change period="W" count="2" symbol="curr"></rate-change>
-                <span class="gray">Weekly:</span> <i class="icon size-16" ng-class="{'ion-android-arrow-up-right green':curr.weeklyChange>0,'ion-android-arrow-down-right red':curr.weeklyChange<0,'ion-android-remove':curr.weeklyChange==0}"></i>
+                <span class="gray">Weekly:</span> <i class="icon size-16" ng-class="{'ion-android-arrow-up-right green':data.marketChange[curr.label].weekly>0,'ion-android-arrow-down-right red':data.marketChange[curr.label].weekly<0,'ion-android-remove':data.marketChange[curr.label].weekly==0}"></i>
             </div>
             <div class="col">
-                <rate-change period="M" count="2" symbol="curr"></rate-change>
-                <span class="gray">Monthly:</span> <i class="icon size-16" ng-class="{'ion-android-arrow-up-right green':curr.monthlyChange>0,'ion-android-arrow-down-right red':curr.monthlyChange<0,'ion-android-remove':curr.monthlyChange==0}"></i>
+                <span class="gray">Monthly:</span> <i class="icon size-16" ng-class="{'ion-android-arrow-up-right green':data.marketChange[curr.label].monthly>0,'ion-android-arrow-down-right red':data.marketChange[curr.label].monthly<0,'ion-android-remove':data.marketChange[curr.label].monthly==0}"></i>
             </div>
         </div>
     </div>

@@ -365,16 +365,25 @@ server.get('/api/signals', function respond(req, res, next) {
 server.get('/api/marketChange', function respond(req, res, next) {
     res.setHeader('content-type', 'text/csv');
     var outFile = [__dirname + '/../app/data/', 'marketChange', '.csv'].join('');
-    runRScript('main', {
-        entryPoint: 'qfxMarketChange',
-        callback: function(err, _res) {
-            sh.run(['cp', outFile, outFile.replace(/\/app\//g, '/www/')].join(' '));
-            fs.readFile(outFile, {}, function(err, data) {
-                res.send(data);
-            });
-        }
-    });
+    var sinceMinutes = 15;
+    var isCron = Boolean(req.params.isCron);
+    if (isCron && isOutdatedFile(outFile, sinceMinutes)) {
+        runRScript('main', {
+            entryPoint: 'qfxMarketChange',
+            callback: function(err, _res) {
+                sh(['cp', outFile, outFile.replace(/\/app\//g, '/www/')].join(' '));
+                fs.readFile(outFile, {}, function(err, data) {
+                    res.send(data);
+                });
+            }
+        });
+    } else {
+        fs.readFile(outFile, {}, function(err, data) {
+            res.send(data);
+        });
+    }
     next();
+
 });
 var reqVolatility = function respond(req, res, next) {
     res.setHeader('content-type', 'text/csv');

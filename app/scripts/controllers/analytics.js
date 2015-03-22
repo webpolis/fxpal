@@ -210,17 +210,40 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         var cross = $scope.selected.cross1 + $scope.selected.cross2,
             startDate = moment().subtract('years', 4).format('YYYY-MM-DD'),
             endDate = moment().format('YYYY-MM-DD');
-        if (!angular.isDefined(loadExtras) || loadExtras) {
-            $scope.correlated('markets');
-            $scope.processEvents().then(function() {
-                //$scope.correlated('events');
+        // load market chg
+        csv2json.csv($scope.config.urls.api + 'marketChange', function(marketChange) {
+            $scope.$apply(function() {
+                $scope.data.marketChange = {};
+                if (angular.isArray(marketChange)) {
+                    var tickers = Object.keys(marketChange[0]);
+                    angular.forEach(tickers, function(ticker) {
+                        $scope.data.marketChange[ticker] = {
+                            daily: null,
+                            monthly: null,
+                            weekly: null,
+                            annual: null
+                        };
+                    });
+                    angular.forEach(marketChange, function(chg){
+                        angular.forEach(tickers, function(ticker) {
+                            $scope.data.marketChange[ticker][chg.PERIOD] = parseFloat(chg[ticker]);
+                        });
+                    });
+                }
             });
-            $scope.stats = 'markets';
-        }
-        if (loadChart) {
-            $scope.optChartPeriod = $scope.optsChartPeriods[0];
-            $scope.chart($scope.optChartPeriod);
-        }
+
+            if (!angular.isDefined(loadExtras) || loadExtras) {
+                $scope.correlated('markets');
+                $scope.processEvents().then(function() {
+                    //$scope.correlated('events');
+                });
+                $scope.stats = 'markets';
+            }
+            if (loadChart) {
+                $scope.optChartPeriod = $scope.optsChartPeriods[0];
+                $scope.chart($scope.optChartPeriod);
+            }
+        });
     };
     $scope.computeVolatility = function() {
         $scope.optsHighchartsVolatility.series[0].data = [];
@@ -245,6 +268,9 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         var currencies = {};
         csv2json.csv($scope.config.urls.api + 'currencyForce', function(data) {
             $scope.selected.currencyForce = data;
+            if (!data ||  !angular.isObject(data) ||  !angular.isObject(data[0])) {
+                return;
+            }
             // initialize currencies
             Object.keys(data[0]).map(function(cur) {
                 if (cur === 'period') return;
@@ -347,7 +373,8 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
         }).success(function(ret) {
             $scope.selected.events = parseCsv(ret);
             $scope.selected.events = $scope.selected.events.map(function(ev) {
-                var o = {}, reCross = new RegExp('^(' + [$scope.selected.cross1, $scope.selected.cross2].join('|') + ')\\s+', 'g');
+                var o = {},
+                    reCross = new RegExp('^(' + [$scope.selected.cross1, $scope.selected.cross2].join('|') + ')\\s+', 'g');
                 for (var p in ev) {
                     o[angular.lowercase(p)] = ev[p];
                     if (/event/gi.test(p)) {
@@ -440,21 +467,17 @@ angular.module('aifxApp').controller('analyticsController', function($scope, $io
                 });
                 if (target === 'markets') {
                     // retrieve change per correlated item
-                    var sets = [];
                     angular.forEach($scope.selected.correlation[target], function(cor, k) {
                         if (!(/^[a-z]+\..*$/gi.test(cor.cross))) {
-                            //sets.push('QUANDL.' + cor.cross + '.1');
                             $scope.selected.correlation[target][k].currency = true;
                             $scope.selected.correlation[target][k].label = cor.cross;
+                            $scope.selected.correlation[target][k].ticker = cor.cross;
                         } else {
-                            sets.push(cor.cross + '.1');
-                            var ticker = jsonPath.eval($scope.config.maps.tickers, '$[?(@.quandl=="' + cor.cross + '")]')[0].name ||  null;
-                            $scope.selected.correlation[target][k].label = ticker;
+                            var tickerName = jsonPath.eval($scope.config.maps.tickers, '$[?(@.quandl=="' + cor.cross + '")]')[0].name ||  null;
+                            $scope.selected.correlation[target][k].label = tickerName;
+                            $scope.selected.correlation[target][k].ticker = cor.cross;
                         }
                     });
-                    if (sets.length === 0) {
-                        return;
-                    }
                 }
             });
         });
