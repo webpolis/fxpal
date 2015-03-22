@@ -13,7 +13,7 @@ crosses = toupper(gsub("\\.{3}[\\w]+|CURRFX\\.|\\.\\d+|\\.Price", "", names(data
 names(data) = crosses
 
 tmp = as.timeSeries(na.omit(data))
-returns = returnSeries(tmp)
+returns = returnSeries(tmp, method= "discrete")
 
 spec = portfolioSpec()
 setNFrontierPoints(spec) <- 10
