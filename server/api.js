@@ -366,8 +366,8 @@ server.get('/api/marketChange', function respond(req, res, next) {
     res.setHeader('content-type', 'text/csv');
     var outFile = [__dirname + '/../app/data/', 'marketChange', '.csv'].join('');
     var sinceMinutes = 15;
-    var isCron = Boolean(req.params.isCron);
-    if (isCron && isOutdatedFile(outFile, sinceMinutes)) {
+
+    if (isOutdatedFile(outFile, sinceMinutes)) {
         runRScript('main', {
             entryPoint: 'qfxMarketChange',
             callback: function(err, _res) {
