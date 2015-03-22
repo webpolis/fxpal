@@ -1,3 +1,5 @@
+library("xts")
+
 Sys.setenv(TZ="UTC")
 
 pwd = ifelse(is.null(sys.frames()),getwd(),paste(dirname(sys.frame(1)$ofile),"/../..",sep=""))
