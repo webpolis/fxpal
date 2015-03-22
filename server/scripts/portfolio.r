@@ -21,12 +21,14 @@ constraints <- c("Short")
 setSolver(spec) <- "solveRshortExact"
 setTargetReturn(spec) <- mean(returns)
 
+tp = tangencyPortfolio(tmp, spec, constraints)
 mp = maxreturnPortfolio(tmp, spec, constraints)
 ep = efficientPortfolio(tmp, spec, constraints)
+tpWeights = getWeights(tp)
 mpWeights = getWeights(mp)
 epWeights = getWeights(ep)
 
-mediumWeights = round((mpWeights + epWeights) / 2, 6)
+mediumWeights = round((tpWeights + mpWeights + epWeights) / 3, 6)
 names(mediumWeights) = names(tmp)
 mediumWeights = sort(mediumWeights, decreasing = TRUE)
 
