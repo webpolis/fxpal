@@ -12,19 +12,14 @@ data = data[-grep("date", names(data), ignore.case=T)]
 crosses = toupper(gsub("\\.{3}[\\w]+|CURRFX\\.|\\.\\d+|\\.Price", "", names(data), perl = TRUE))
 names(data) = crosses
 
-tmp = matrix(nrow=nrow(data), ncol=ncol(data))
-colnames(tmp) = colnames(data)
+tmp = as.timeSeries(na.omit(data))
+returns = returnSeries(tmp)
 
-for(n in 1:ncol(data)){
-	tmp[,n] = round(ROC(data[,n], 1, type = "discrete"), 6)
-}
-
-tmp = as.timeSeries(na.spline(tmp))
 spec = portfolioSpec()
-setNFrontierPoints(spec) <- 20
-constraints <- c("LongOnly")
-setSolver(spec) <- "solveRquadprog"
-setTargetReturn(spec) <- mean(colMeans(tmp))
+setNFrontierPoints(spec) <- 10
+constraints <- c("Short")
+setSolver(spec) <- "solveRshortExact"
+setTargetReturn(spec) <- mean(returns)
 
 mp = maxreturnPortfolio(tmp, spec, constraints)
 ep = efficientPortfolio(tmp, spec, constraints)
