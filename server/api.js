@@ -6,7 +6,7 @@ var fs = require('fs'),
     restify = require('restify'),
     moment = require('../bower_components/momentjs/moment.js'),
     server = restify.createServer(),
-    sh = require('execSync'),
+    sh = require('exec-sync'),
     string = require('./lib/string'),
     cron = require('cronzitto'),
     rio = require('rio'),
@@ -262,9 +262,9 @@ var reqCandles = function respond(req, res, next) {
                 },
                 callback: function(err, _res) {
                     // copy on deploy folder
-                    sh.run(['Rscript', __dirname + '/scripts/breakout.r', instrument, granularity].join(' '));
-                    sh.run(['cp', outFile, outFile.replace(/\/app\//g, '/www/')].join(' '));
-                    sh.run(['cp', bImgFile, bImgFile.replace(/\/app\//g, '/www/')].join(' '));
+                    sh(['Rscript', __dirname + '/scripts/breakout.r', instrument, granularity].join(' '));
+                    sh(['cp', outFile, outFile.replace(/\/app\//g, '/www/')].join(' '));
+                    sh(['cp', bImgFile, bImgFile.replace(/\/app\//g, '/www/')].join(' '));
                     fs.readFile(outFile, {}, function(err, data) {
                         res.send(data);
                     });
@@ -276,7 +276,7 @@ var reqCandles = function respond(req, res, next) {
         });
     } else {
         if (isOutdatedFile(bImgFile, sinceMinutes)) {
-            sh.run(['Rscript', __dirname + '/scripts/breakout.r', instrument, granularity].join(' '));
+            sh(['Rscript', __dirname + '/scripts/breakout.r', instrument, granularity].join(' '));
         }
         fs.readFile(outFile, {}, function(err, data) {
             res.send(data);
@@ -354,7 +354,7 @@ server.get('/api/signals', function respond(req, res, next) {
     runRScript('main', {
         entryPoint: 'qfxBatchSignals',
         callback: function(err, _res) {
-            sh.run(['cp', outFile, outFile.replace(/\/app\//g, '/www/')].join(' '));
+            sh(['cp', outFile, outFile.replace(/\/app\//g, '/www/')].join(' '));
             fs.readFile(outFile, {}, function(err, data) {
                 res.send(data);
             });
@@ -441,8 +441,8 @@ server.get('/api/cot/:cross/:currency1/:currency2', function respond(req, res, n
     var sinceMinutes = 61;
     // only generate file if it's older than XX minutes
     if (!fs.existsSync(outFile)) {
-        sh.run(['Rscript', __dirname + '/scripts/positioning.r', instrument, '"' + currency1 + '"', '"' + currency2 + '"'].join(' '));
-        sh.run(['cp', outFile, outFile.replace(/\/app\//g, '/www/')].join(' '));
+        sh(['Rscript', __dirname + '/scripts/positioning.r', instrument, '"' + currency1 + '"', '"' + currency2 + '"'].join(' '));
+        sh(['cp', outFile, outFile.replace(/\/app\//g, '/www/')].join(' '));
         fs.stat(outFile, function(err, stat) {
             var img = fs.readFileSync(outFile);
             res.contentType = 'image/png';
