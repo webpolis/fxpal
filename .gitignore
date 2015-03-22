@@ -23,6 +23,7 @@ app/data/quandl/*.csv
 www/data/breakout/*.*
 www/data/candles/*.*
 www/data/cot/*.*
+www/data/quandl/*.csv
 www/data/*.csv
 !app/data/candles/.empty
 !app/data/cot/.empty
