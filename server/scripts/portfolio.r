@@ -8,7 +8,7 @@ library("fPortfolio")
 library("quantmod")
 
 data = read.table("multisetsInputs.csv", sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
-data = data[-c(1, 30:41)]
+data = data[-grep("date", names(data), ignore.case=T)]
 crosses = toupper(gsub("\\.{3}[\\w]+|CURRFX\\.|\\.\\d+|\\.Price", "", names(data), perl = TRUE))
 names(data) = crosses
 
