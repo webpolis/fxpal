@@ -21,19 +21,17 @@ for(n in 1:ncol(data)){
 
 tmp = as.timeSeries(na.spline(tmp))
 spec = portfolioSpec()
-setNFrontierPoints(spec) <- 10
-constraints <- c("Short")
-setSolver(spec) <- "solveRshortExact"
+setNFrontierPoints(spec) <- 20
+constraints <- c("LongOnly")
+setSolver(spec) <- "solveRquadprog"
 setTargetReturn(spec) <- mean(colMeans(tmp))
 
-tp = tangencyPortfolio(tmp, spec, constraints)
 mp = maxreturnPortfolio(tmp, spec, constraints)
 ep = efficientPortfolio(tmp, spec, constraints)
-tpWeights = getWeights(tp)
 mpWeights = getWeights(mp)
 epWeights = getWeights(ep)
 
-mediumWeights = round((tpWeights + mpWeights + epWeights) / 3, 6)
+mediumWeights = round((mpWeights + epWeights) / 2, 6)
 names(mediumWeights) = names(tmp)
 mediumWeights = sort(mediumWeights, decreasing = TRUE)
 
