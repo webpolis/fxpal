@@ -716,9 +716,9 @@ qfxBatchSignals <- function(){
 		}
 	}
 
-	tmp[tmp < (-0.5)] = 1
-	tmp[tmp > 1.5] = -1
-	tmp[tmp<1&tmp > -1] = 0
+	tmp[tmp < (-0.5)] = "buy"
+	tmp[tmp > 1.5] = "sell"
+	tmp[tmp!="buy"&tmp !="sell"] = NA
 	tmp = tmp[rowSums(tmp==0)!=length(periods),]
 	tmp$cross = rownames(tmp)
 
