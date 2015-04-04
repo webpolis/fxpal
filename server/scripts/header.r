@@ -716,9 +716,9 @@ qfxBatchSignals <- function(){
 		}
 	}
 
-	tmp[tmp <= -0.5] = 1
-	tmp[tmp >= 1.5] = -1
-	tmp[tmp<-0.5&tmp > 1.5] = 0
+	tmp[tmp < (-0.5)] = 1
+	tmp[tmp > 1.5] = -1
+	tmp[tmp<(-0.5)&tmp > 1.5] = 0
 	tmp = tmp[rowSums(tmp==0)!=length(periods),]
 	tmp$cross = rownames(tmp)
 
