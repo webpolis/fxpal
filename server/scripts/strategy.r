@@ -187,20 +187,20 @@ trainStrategy <- function(data,strategy, paramsRange=NA,paramsCount=1){
   pTab <- FindOptimumStrategy(trainingData,strategy,paramsRange,paramsCount) #pTab is the performance table of the various parameters tested
 }
 #2
-testStrategy <- function(data, instrument,strategy,param1=NA,param2=NA,param3=NA){
+testStrategy <- function(data, instrument,strategy,param1=NA,param2=NA,param3=NA,param4=NA){
   #sampleStartDate = index(data[ceiling(nrow(data)/2)+1,])
   sampleStartDate = index(data[1,])
   testData <- window(data, start = sampleStartDate)
   indexReturns <- Delt(Cl(window(data, start = sampleStartDate)))
   colnames(indexReturns) <- paste(instrument, "Buy&Hold",sep=" ")
-  dataOfSampleReturns <- TradingStrategy(strategy,testData,param1=param1,param2=param2,param3=param3)
+  outOfSampleReturns <- TradingStrategy(strategy,testData,param1=param1,param2=param2,param3=param3,param4=NA)
   finalReturns <- cbind(dataOfSampleReturns,indexReturns)
 
   dev.new()
-  charts.PerformanceSummary(finalReturns,main=paste(strategy,"- data of Sample"),geometric=FALSE)
+  charts.PerformanceSummary(finalReturns,main=paste(strategy,"- out of Sample"),geometric=FALSE)
 }
 
-qfxMomentum <- function(data,emaPeriod=19){
+qfxMomentum <- function(data,emaPeriod=2){
   stats = getSignals(data)
   stats$signal = round(DEMA(scale(stats$avg),emaPeriod,wilder=T),5)
   return(stats$signal)
@@ -228,7 +228,6 @@ getSignals <- function(data){
 
   stats = cbind(ccimacd,rsimsi,stochrsi,adxsar,stochema,adxatr)
   stats$avg = rowMeans(stats[,1:ncol(stats)])
-  stats$signal = DEMA(scale(stats$avg),19,wilder=T)
 
   return(stats)
 }
