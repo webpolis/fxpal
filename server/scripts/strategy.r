@@ -9,6 +9,31 @@ getQfxCandles <- function(instrument=NA,granularity=NA){
   return(candles)
 }
 
+getQfxPortfolio <- function(){
+  portfolio=read.csv(paste("http://qfx.club/data/","portfolio",".csv",sep=""))
+  portfolio=portfolio[portfolio$percentage>0.2|portfolio$percentage<(-0.2),]
+  portfolio$cross = gsub("(\\w{3})(\\w{3})","\\1_\\2",portfolio$cross)
+  return(portfolio)
+}
+
+batchMomentumStrategy <- function(crosses=NA,periods=NA){
+  results= NULL
+  for(cross in crosses){
+    for(period in periods){
+      candles = getQfxCandles(instrument = cross, granularity = period)
+      ret = TradingStrategy(strategy = "qfxMomentum",data = candles,param1 = 2,param2 = 3,param3 = 4,param4 = 13,retSignals = T)
+      names(ret) = c(paste(cross,period,sep="-"))
+      if(is.null(results)){
+        results = ret
+      }else{
+        results = cbind(results,ret)
+      }
+    }
+  }
+  
+  return(results)
+}
+
 TradingStrategy <- function(strategy=NA, data=NA,param1=NA,param2=NA,param3=NA,param4=NA, retSignals=F,V1=NA,V2=NA,V3=NA){
   tradingreturns = NULL
   returns = Delt(Op(data),Cl(data))
@@ -30,7 +55,7 @@ TradingStrategy <- function(strategy=NA, data=NA,param1=NA,param2=NA,param3=NA,p
     qmsd = qmsd + ((.01*param2)*qmsd)
     qfxmomentum = cbind(qm,ema1,ema2)
     names(qfxmomentum) = c("signal","ema1","ema2")
-    signal = apply(qfxmomentum,1,function (x) {if(is.na(x["signal"])){ return (0) } else { if(!is.na(x["ema1"])&!is.na(x["ema2"])&x["signal"]>=qmsd&x["ema1"]<=x["ema2"]){return (1)} else if(!is.na(x["ema1"])&!is.na(x["ema2"])&x["signal"]<=(-(qmsd))&x["ema1"]>=x["ema2"]) {return (-1)}else{ return(0)}}})
+    signal = apply(qfxmomentum,1,function (x) {if(is.na(x["signal"])){ return (0) } else { if(!is.na(x["ema1"])&!is.na(x["ema2"])&x["signal"]>=qmsd&x["ema1"]<=x["ema2"]){return (1)} else if(!is.na(x["ema1"])&!is.na(x["ema2"])&x["signal"]<=-(qmsd)&x["ema1"]>=x["ema2"]) {return (-1)}else{ return(0)}}})
   }, ADXATR={
     adx = ADX(HLC(data),n=param1)
     atr = ATR(HLC(data),n=param2)
@@ -84,9 +109,7 @@ TradingStrategy <- function(strategy=NA, data=NA,param1=NA,param2=NA,param3=NA,p
   }
 }
 
-RunIterativeStrategy <- function(data, strategy = NA, paramsRange = NA, paramsCount = 1){
-  #This function will run the TradingStrategy
-  #It will iterate over a given set of input variables
+RunIterativeStrategy <- function(data = NA, strategy = NA, paramsRange = NA, paramsCount = 1, crosses = NA, periods = NA){
   results = NULL
   min = 3
   max = 20
@@ -105,20 +128,45 @@ RunIterativeStrategy <- function(data, strategy = NA, paramsRange = NA, paramsCo
   
   tmp = matrix(combn(loop,paramsCount),ncol=paramsCount,byrow=T)
   f = function(...){
-    return(TradingStrategy(strategy, data, ...))
+    return(TradingStrategy(strategy, ...))
   }
 
   ix = 1
-  for(i in loop){
-    r = tmp[ix,]
-    cols = paste(strategy,paste(as.character(r), collapse=","),sep=",")
-    ret = do.call(f,as.list(r));
-    if(is.null(results)){
-      results = ret
-    }else{
-      results = cbind(results,ret)
+  
+  if(!is.na(data)){
+    for(i in loop){
+      r = tmp[ix,]
+      cols = paste(strategy,paste(as.character(r), collapse=","),sep=",")
+      params = as.list(r)
+      params$data = data
+      ret = do.call(f,params);
+      if(is.null(results)){
+        results = ret
+      }else{
+        results = cbind(results,ret)
+      }
+      ix = ix+1
     }
-    ix = ix+1
+  }else if(!is.na(crosses) & !is.na(periods)){
+    for(cross in crosses){
+      for(period in periods){
+        ix = 1
+        candles = getQfxCandles(instrument = cross, granularity = period)
+        for(i in loop){
+          r = tmp[ix,]
+          cols = paste(strategy,paste(as.character(r), collapse=","),sep=",")
+          params = as.list(r)
+          params$data = candles
+          ret = do.call(f,params);
+          if(is.null(results)){
+            results = ret
+          }else{
+            results = cbind(results,ret)
+          }
+          ix = ix+1
+        }
+      }
+    }
   }
 
   return(results)
@@ -183,9 +231,9 @@ SelectTopNStrategies <- function(returns,performanceTable,metric,n){
   return (topNMetrics)
 }
 
-FindOptimumStrategy <- function(trainingData, strategy = NA, paramsRange=NA,paramsCount=1){
+FindOptimumStrategy <- function(trainingData=NA, strategy = NA, paramsRange=NA,paramsCount=1, crosses = NA, periods = NA){
   #Optimise the strategy
-  trainingReturns <- RunIterativeStrategy(trainingData, strategy, paramsRange,paramsCount)
+  trainingReturns <- RunIterativeStrategy(trainingData, strategy, paramsRange,paramsCount, crosses=crosses,periods=periods)
   pTab <- PerformanceTable(trainingReturns)
   toptrainingReturns <- SelectTopNStrategies(trainingReturns,pTab,"SharpeRatio",5)
 
@@ -194,12 +242,16 @@ FindOptimumStrategy <- function(trainingData, strategy = NA, paramsRange=NA,para
   return (pTab)
 }
 #1
-trainStrategy <- function(data,strategy, paramsRange=NA,paramsCount=1){
-  startDate = index(data[1,])
-  ##endDate = index(data[ceiling(nrow(data)/2),])
-  endDate = index(data[nrow(data),])
-  trainingData <- window(data, start =startDate, end = endDate)
-  pTab <- FindOptimumStrategy(trainingData,strategy,paramsRange,paramsCount) #pTab is the performance table of the various parameters tested
+trainStrategy <- function(data=NA,strategy, paramsRange=NA,paramsCount=1,crosses=NA,periods=NA){
+  if(!is.na(data)){
+    startDate = index(data[1,])
+    ##endDate = index(data[ceiling(nrow(data)/2),])
+    endDate = index(data[nrow(data),])
+    trainingData <- window(data, start =startDate, end = endDate)
+  }else{
+    trainingData = NA
+  }
+  pTab <- FindOptimumStrategy(trainingData,strategy,paramsRange,paramsCount,crosses=crosses,periods=periods) #pTab is the performance table of the various parameters tested
 }
 #2
 testStrategy <- function(data, instrument,strategy,param1=NA,param2=NA,param3=NA,param4=NA){
