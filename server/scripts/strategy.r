@@ -15,7 +15,7 @@ TradingStrategy <- function(strategy=NA, data=NA,param1=NA,param2=NA,param3=NA, 
 
   switch(strategy, , qfxMomentum={
     qm = qfxMomentum(OHLC(data),emaPeriod=param1)
-    signal = apply(qm,1,function (x) {if(is.na(x["signal"])){ return (0) } else { if(x["signal"]>1){return (1)} else if(x["signal"]<(-1)) {return (-1)}else{ return(0)}}})
+    signal = apply(qm,1,function (x) {if(is.na(x["signal"])){ return (0) } else { if(x["signal"]>1.2){return (-1)} else if(x["signal"]<(-1.2)) {return (1)}else{ return(0)}}})
   }, ADXATR={
     adx = ADX(HLC(data),n=param1)
     atr = ATR(HLC(data),n=param2)
@@ -191,7 +191,7 @@ testStrategy <- function(data, instrument,strategy,param1=NA,param2=NA,param3=NA
   charts.PerformanceSummary(finalReturns,main=paste(strategy,"- data of Sample"),geometric=FALSE)
 }
 
-qfxMomentum <- function(data,emaPeriod=4){
+qfxMomentum <- function(data,emaPeriod=15){
   stats = getSignals(data)
   stats$signal = round(DEMA(scale(stats$avg),emaPeriod,wilder=T),5)
   return(stats$signal)
