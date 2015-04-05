@@ -15,13 +15,13 @@ TradingStrategy <- function(strategy=NA, data=NA,param1=NA,param2=NA,param3=NA,p
 
   switch(strategy, , qfxMomentum={
     qm = qfxMomentum(OHLC(data),emaPeriod=param1)
-    ema1 = EMA(Op(data),n=param3,wilder = T)
-    ema2 = EMA(Op(data),n=param4,wilder = T)
+    ema1 = EMA(Cl(data),n=param3,wilder = T)
+    ema2 = EMA(Cl(data),n=param4,wilder = T)
     qmsd = sd(na.omit(qm$signal))
     qmsd = qmsd + ((.01*param2)*qmsd)
     qfxmomentum = cbind(qm,ema1,ema2)
     names(qfxmomentum) = c("signal","ema1","ema2")
-    signal = apply(qfxmomentum,1,function (x) {if(is.na(x["signal"])){ return (0) } else { if(!is.na(x["ema1"])&!is.na(x["ema2"])&x["signal"]>=qmsd&x["ema1"]<=x["ema2"]){return (-1)} else if(!is.na(x["ema1"])&!is.na(x["ema2"])&x["signal"]<=(-(qmsd))&x["ema1"]>=x["ema2"]) {return (1)}else{ return(0)}}})
+    signal = apply(qfxmomentum,1,function (x) {if(is.na(x["signal"])){ return (0) } else { if(!is.na(x["ema1"])&!is.na(x["ema2"])&x["signal"]>=qmsd&x["ema1"]<=x["ema2"]){return (1)} else if(!is.na(x["ema1"])&!is.na(x["ema2"])&x["signal"]<=(-(qmsd))&x["ema1"]>=x["ema2"]) {return (-1)}else{ return(0)}}})
   }, ADXATR={
     adx = ADX(HLC(data),n=param1)
     atr = ATR(HLC(data),n=param2)
