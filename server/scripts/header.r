@@ -683,7 +683,7 @@ qfxQmSignal <- function(args){
 	for(c in crosses){
 		candles = getCandles(c,granularity,count=newCount,restore=restoreCsv)
 		if(restoreCsv==F){
-			qm = qfxMomentum(OHLC(candles),emaPeriod=15)
+			qm = qfxMomentum(OHLC(candles),emaPeriod=19)
 		}else{
 			qm = candles$signal
 		}

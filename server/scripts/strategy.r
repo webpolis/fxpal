@@ -15,7 +15,7 @@ TradingStrategy <- function(strategy=NA, data=NA,param1=NA,param2=NA,param3=NA, 
 
   switch(strategy, , qfxMomentum={
     qm = qfxMomentum(OHLC(data),emaPeriod=param1)
-    signal = apply(qm,1,function (x) {if(is.na(x["signal"])){ return (0) } else { if(x["signal"]>1.2){return (-1)} else if(x["signal"]<(-1.2)) {return (1)}else{ return(0)}}})
+    signal = apply(qm,1,function (x) {if(is.na(x["signal"])){ return (0) } else { if(x["signal"]>=1.1){return (-1)} else if(x["signal"]<=(-1.1)) {return (1)}else{ return(0)}}})
   }, ADXATR={
     adx = ADX(HLC(data),n=param1)
     atr = ATR(HLC(data),n=param2)
@@ -75,19 +75,27 @@ RunIterativeStrategy <- function(data, strategy = NA, paramsRange = NA, paramsCo
   results = NULL
   min = 3
   max = 20
+  loop = NULL
   
   if(!is.na(paramsRange)){
     min = min(paramsRange)
     max = max(paramsRange)
   }
 
-  tmp = matrix(combn(min:max,paramsCount),ncol=paramsCount,byrow=T)
+  if(min%%1!=0&max%%1!=0){
+    loop = seq(from = min, to = max, by = 0.1)
+  }else{
+    loop = seq(from = min, to = max, by = 1)
+  }
+  
+  tmp = matrix(combn(loop,paramsCount),ncol=paramsCount,byrow=T)
   f = function(...){
     return(TradingStrategy(strategy, data, ...))
   }
 
-  for(i in 1:nrow(tmp)){
-    r = tmp[i,]
+  ix = 1
+  for(i in loop){
+    r = tmp[ix,]
     cols = paste(strategy,paste(as.character(r), collapse=","),sep=",")
     ret = do.call(f,as.list(r));
     if(is.null(results)){
@@ -95,6 +103,7 @@ RunIterativeStrategy <- function(data, strategy = NA, paramsRange = NA, paramsCo
     }else{
       results = cbind(results,ret)
     }
+    ix = ix+1
   }
 
   return(results)
@@ -191,7 +200,7 @@ testStrategy <- function(data, instrument,strategy,param1=NA,param2=NA,param3=NA
   charts.PerformanceSummary(finalReturns,main=paste(strategy,"- data of Sample"),geometric=FALSE)
 }
 
-qfxMomentum <- function(data,emaPeriod=15){
+qfxMomentum <- function(data,emaPeriod=19){
   stats = getSignals(data)
   stats$signal = round(DEMA(scale(stats$avg),emaPeriod,wilder=T),5)
   return(stats$signal)
