@@ -228,7 +228,7 @@ getSignals <- function(data){
 
   stats = cbind(ccimacd,rsimsi,stochrsi,adxsar,stochema,adxatr)
   stats$avg = rowMeans(stats[,1:ncol(stats)])
-  stats$signal = DEMA(scale(stats$avg),5,wilder=T)
+  stats$signal = DEMA(scale(stats$avg),19,wilder=T)
 
   return(stats)
 }

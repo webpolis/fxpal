@@ -568,7 +568,7 @@ qfxAnalysis <- function(args){
 	patterns = getCandlestickPatterns(out)
 	out = cbind(out,patterns)
 
-	out = cbind(out, qfxMomentum(OHLC(out),emaPeriod=5))
+	out = cbind(out, qfxMomentum(OHLC(out),emaPeriod=19))
 
 	# Rserve ignores call to png. Move this to custom script
 	#graphBreakoutArea(args$instrument,args$granularity,candles=OHLC(out))
