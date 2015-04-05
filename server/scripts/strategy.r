@@ -1,5 +1,14 @@
 tmpGranularity = NA
 
+getQfxCandles <- function(instrument=NA,granularity=NA){
+  path = paste(instrument, granularity, sep="-")
+  candles=read.csv(paste("http://qfx.club/data/candles/",path,".csv",sep=""))
+  rownames(candles) = as.POSIXct(candles$Time,origin="1970-01-01")
+  candles = candles[,c("Open","High","Low","Close")]
+  candles=as.xts(candles)
+  return(candles)
+}
+
 TradingStrategy <- function(strategy=NA, data=NA,param1=NA,param2=NA,param3=NA,param4=NA, retSignals=F,V1=NA,V2=NA,V3=NA){
   tradingreturns = NULL
   returns = Delt(Op(data),Cl(data))
