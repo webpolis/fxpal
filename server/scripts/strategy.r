@@ -34,19 +34,37 @@ batchMomentumStrategy <- function(crosses=NA,periods=NA){
   return(results)
 }
 
+batchMomentum <- function(crosses=NA,periods=NA){
+  results= NULL
+  for(cross in crosses){
+    for(period in periods){
+      candles = getQfxCandles(instrument = cross, granularity = period)
+      ret = qfxMomentum(data = candles,emaPeriod = 2)
+      names(ret) = c(paste(cross,period,sep="-"))
+      if(is.null(results)){
+        results = ret
+      }else{
+        results = cbind(results,ret)
+      }
+    }
+  }
+  
+  return(results)
+}
+
 TradingStrategy <- function(strategy=NA, data=NA,param1=NA,param2=NA,param3=NA,param4=NA, retSignals=F,V1=NA,V2=NA,V3=NA){
   tradingreturns = NULL
   returns = Delt(Op(data),Cl(data))
   names(returns)<-c("return")
   runName = NULL
   signal = 0
-
+  
   param1 = ifelse(is.na(V1),param1,V1)
   param2 = ifelse(is.na(V2),param2,V2)
   param3 = ifelse(is.na(V3),param3,V3)
-
+  
   print(paste(strategy,param1,param2,param3,sep="-"))
-
+  
   switch(strategy, , qfxMomentum={
     qm = qfxMomentum(OHLC(data),emaPeriod=param1)
     ema1 = EMA(Cl(data),n=param3,wilder = T)
@@ -94,14 +112,14 @@ TradingStrategy <- function(strategy=NA, data=NA,param1=NA,param2=NA,param3=NA,p
     names(sar) = c("sar")
     signal = apply(cbind(HLC(data),sar),1,function (x) {if(is.na(x["sar"])|is.na(x["High"])|is.na(x["Low"])){ return (0) } else { if(x["sar"]<x["High"]&x["sar"]<x["Low"]){return (1)} else if(x["sar"]>x["High"]&x["sar"]>x["Low"]) {return (-1)}else{ return(0)}}})
   })
-
+  
   runName = paste(strategy,param1,param2,param3,sep=",")
   tradingreturns = signal * returns
   signal = as.xts(signal)
   colnames(tradingreturns) <- runName
   colnames(signal) <- runName
   print(paste("Running Strategy: ",runName))
-
+  
   if(!retSignals){
     return (tradingreturns)
   }else{
@@ -119,7 +137,7 @@ RunIterativeStrategy <- function(data = NA, strategy = NA, paramsRange = NA, par
     min = min(paramsRange)
     max = max(paramsRange)
   }
-
+  
   if(min%%1!=0&max%%1!=0){
     loop = seq(from = min, to = max, by = 0.1)
   }else{
@@ -130,7 +148,7 @@ RunIterativeStrategy <- function(data = NA, strategy = NA, paramsRange = NA, par
   f = function(...){
     return(TradingStrategy(strategy, ...))
   }
-
+  
   ix = 1
   
   if(!is.na(data)){
@@ -168,7 +186,7 @@ RunIterativeStrategy <- function(data = NA, strategy = NA, paramsRange = NA, par
       }
     }
   }
-
+  
   return(results)
 }
 
@@ -179,14 +197,14 @@ CalculatePerformanceMetric <- function(returns,metric){
   metricFunction <- match.fun(metric)
   if(length(grep("sharperatio",metric,ignore.case=T))>0){
     periods = 252
-
+    
     if(length(grep("[a-z]\\d+",tmpGranularity,ignore.case=T))>0){
       unit = gsub("([a-z])(\\d+)","\\1",tmpGranularity,ignore.case=T)
       num = as.integer(gsub("([a-z])(\\d+)","\\2",tmpGranularity,ignore.case=T))
       switch(unit, H={
-          periods=8760/num
+        periods=8760/num
       }, M={
-          periods=525600/num
+        periods=525600/num
       })
       if(unit=="M" & (is.na(num)|is.null(num))){
         periods = 12
@@ -199,7 +217,7 @@ CalculatePerformanceMetric <- function(returns,metric){
   #Some functions return the data the wrong way round
   #Hence cant label columns to need to check and transpose it
   if(nrow(metricData) == 1){
-  metricData <- t(metricData)
+    metricData <- t(metricData)
   }
   colnames(metricData) <- metric
   return (metricData)
@@ -220,11 +238,11 @@ OrderPerformanceTable <- function(performanceTable,metric){
 }
 
 SelectTopNStrategies <- function(returns,performanceTable,metric,n){
-#Metric is the name of the function to apply to the column to select the Top N
-#n is the number of strategies to select
+  #Metric is the name of the function to apply to the column to select the Top N
+  #n is the number of strategies to select
   pTab <- OrderPerformanceTable(performanceTable,metric)
   if(n > ncol(returns)){
-   n <- ncol(returns)
+    n <- ncol(returns)
   }
   strategyNames <- rownames(pTab)[1:n]
   topNMetrics <- returns[,strategyNames]
@@ -236,7 +254,7 @@ FindOptimumStrategy <- function(trainingData=NA, strategy = NA, paramsRange=NA,p
   trainingReturns <- RunIterativeStrategy(trainingData, strategy, paramsRange,paramsCount, crosses=crosses,periods=periods)
   pTab <- PerformanceTable(trainingReturns)
   toptrainingReturns <- SelectTopNStrategies(trainingReturns,pTab,"SharpeRatio",5)
-
+  
   dev.new()
   charts.PerformanceSummary(toptrainingReturns,main=paste(strategy,"- Training"),geometric=FALSE)
   return (pTab)
@@ -262,7 +280,7 @@ testStrategy <- function(data, instrument,strategy,param1=NA,param2=NA,param3=NA
   colnames(indexReturns) <- paste(instrument, "Buy&Hold",sep=" ")
   outOfSampleReturns <- TradingStrategy(strategy,testData,param1=param1,param2=param2,param3=param3,param4=NA)
   finalReturns <- cbind(dataOfSampleReturns,indexReturns)
-
+  
   dev.new()
   charts.PerformanceSummary(finalReturns,main=paste(strategy,"- out of Sample"),geometric=FALSE)
 }
@@ -292,9 +310,9 @@ getSignals <- function(data){
   # ADX+ATR
   adxatr = TradingStrategy("ADXATR",data,3,7, retSignals=T)
   names(adxatr) = c("F.ADX.ATR")
-
+  
   stats = cbind(ccimacd,rsimsi,stochrsi,adxsar,stochema,adxatr)
   stats$avg = rowMeans(stats[,1:ncol(stats)])
-
+  
   return(stats)
 }

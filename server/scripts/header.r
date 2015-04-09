@@ -7,6 +7,7 @@ library(quantmod)
 library(PerformanceAnalytics)
 library(rjson)
 library(RCurl)
+library(DSTrading)
 
 Sys.setenv(TZ='UTC')
 
@@ -233,6 +234,23 @@ getSupportsAndResistances <- function(candles,threshold=7){
 	ret = list('resistances'=resistances,'supports'=supports)
 
 	return(ret)
+}
+
+graphRobustLines <- function(candles=NA){
+  if(!is.na(candles)){
+    hlc = HLC(candles)
+    lineChart(FRAMA(hlc,n=4))
+    f1=line(as.numeric(FRAMA(hlc,n=13)$FRAMA))
+    co=coef(f1)
+    abline(co[1],co[2],0,col='yellow',lwd=2)
+    fr4=na.omit(as.numeric(FRAMA(hlc,n=4)$FRAMA))
+    f2=line(fr4)
+    co2=coef(f2)
+    abline(co2[1],co2[2],0,col='yellow',lwd=2)
+    cc=rbind(co,co2)
+    intersection=c(-solve(cbind(cc[,2],-1)) %*% cc[,1])[2]
+    abline(intersection,0,lwd=2,col="yellow")
+  }
 }
 
 addCopyright <- function(label, image, x, y, size, ...) {
