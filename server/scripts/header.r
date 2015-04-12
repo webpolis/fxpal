@@ -8,6 +8,7 @@ library(PerformanceAnalytics)
 library(rjson)
 library(RCurl)
 library(DSTrading)
+library(IKTrading)
 
 Sys.setenv(TZ='UTC')
 
@@ -250,6 +251,11 @@ graphRobustLines <- function(candles=NA){
     cc=rbind(co,co2)
     intersection=c(-solve(cbind(cc[,2],-1)) %*% cc[,1])[2]
     abline(intersection,0,lwd=2,col="yellow")
+    angle = atan(abs((co[1]-co2[1])/(1-co[1]*co2[1])))
+    rl = list(angle=angle,fit1=fitted(f1),fit2=fitted(f2),co1=co,co2=co2)
+    abline(mean(union(rl$fi1,rl$fit2)),0,lwd=1,col="white")
+    
+    return(rl)
   }
 }
 

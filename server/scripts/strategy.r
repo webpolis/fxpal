@@ -16,6 +16,82 @@ getQfxPortfolio <- function(){
   return(portfolio)
 }
 
+sigQmThreshold = function(label, data=mktdata, relationship=c("gt","lt","eq","gte","lte"),op=FALSE,cross=FALSE){
+  relationship=relationship[1]
+  ret_sig=NULL
+  qmsd = ifelse(op,-(data[,"qmsd.qm"]),data[,"qmsd.qm"])
+
+  switch(relationship,
+         '>' =,
+         'gt' = {ret_sig = data[,"qm.qm"] > qmsd},
+         '<' =,
+         'lt' = {ret_sig = data[,"qm.qm"] < qmsd},
+         'eq'     = {ret_sig = data[,"qm.qm"] == qmsd},
+         'gte' =,
+         'gteq'=,
+         'ge'     = {ret_sig = data[,"qm.qm"] >= qmsd},
+         'lte' =,
+         'lteq'=,
+         'le'     = {ret_sig = data[,"qm.qm"] <= qmsd}
+  )
+  if(isTRUE(cross)) ret_sig <- diff(ret_sig)==1
+  if(!missing(label))
+    colnames(ret_sig)<-label
+  return(ret_sig)
+}
+
+tradeStrategyTest = function(candles=NA, symbols=NA){
+  currency("USD")
+  stock(symbols,currency="USD",multiplier = 1)
+  strategy.st = portfolio.st = account.st = "qfxMomentumStrategy"
+  initEq = 200
+  tradeSize = initEq*.05
+  rm.strat(strategy.st)
+  to=as.character(Sys.Date())
+  initDate=first(index(candles))
+  initPortf(portfolio.st, symbols=symbols, initDate=initDate, currency='USD')
+  initAcct(account.st, portfolios=portfolio.st, initDate=initDate, currency='USD',initEq=initEq)
+  initOrders(portfolio.st, initDate=initDate)
+  strategy(strategy.st, store=TRUE)
+  
+  add.indicator(strategy.st,name="qfxMomentum",arguments = list(data=OHLC(eurusd),emaPeriod=2),label="qm")
+  add.indicator(strategy.st,name="FRAMA",arguments = list(HLC=OHLC(eurusd),n=4),label="frama.4")
+  add.indicator(strategy.st,name="FRAMA",arguments = list(HLC=OHLC(eurusd),n=13),label="frama.13")
+  add.indicator(strategy.st,name="FRAMA",arguments = list(HLC=OHLC(eurusd),n=100),label="frama.100")
+  
+  # buy
+  add.signal(strategy.st,name="sigQmThreshold",arguments = list(relationship="gt"),label="filterQm")
+  add.signal(strategy.st,name="sigComparison",arguments = list(columns=c("FRAMA.frama.4","FRAMA.frama.13"),relationship="lte"),label="filterFrama")
+  add.signal(strategy.st,name="sigAND",arguments = list(columns=c("filterQm","filterFrama"),cross=T),label="shortEntry")
+  
+  add.signal(strategy.st,name="sigQmThreshold",arguments = list(relationship="lte", op=T),label="filterQmExit")
+  add.signal(strategy.st, name="sigComparison",
+             arguments = list(columns=c("FRAMA.frama.4","FRAMA.frama.13"),relationship="gt"),label="filterFramaExit")
+  add.signal(strategy.st,name="sigAND",arguments = list(columns=c("filterQmExit","filterFramaExit"),cross=T),label="shortExit")
+
+  add.rule(strategy.st, name="ruleSignal", 
+           arguments=list(sigcol="shortEntry", sigval=TRUE, ordertype="market", 
+                          orderside="short", replace=FALSE, prefer="Open", 
+                          osFUN=osMaxDollar, tradeSize=-(tradeSize), maxSize=-(tradeSize)), 
+           type="enter", path.dep=TRUE)
+  add.rule(strategy.st, name="ruleSignal", 
+           arguments=list(sigcol="shortExit", sigval=TRUE, orderqty="all", 
+                          ordertype="market", orderside="short", replace=FALSE, 
+                          prefer="Open"), 
+           type="exit", path.dep=TRUE)
+
+  applyStrategy(strategy=strat$strategy,portfolios=strat$portfolios)
+  
+  strat = list(strategy=strategy.st, portfolios=portfolio.st)
+  updatePortf(strat$portfolios)
+  updateAcct(strat$portfolios)
+  updateEndEq(strat$strategy)
+  
+  chart.Posn(strat$portfolios)
+  
+  return(strat)
+}
+
 batchMomentumStrategy <- function(crosses=NA,periods=NA){
   results= NULL
   for(cross in crosses){
@@ -63,17 +139,27 @@ TradingStrategy <- function(strategy=NA, data=NA,param1=NA,param2=NA,param3=NA,p
   param2 = ifelse(is.na(V2),param2,V2)
   param3 = ifelse(is.na(V3),param3,V3)
   
-  print(paste(strategy,param1,param2,param3,sep="-"))
-  
   switch(strategy, , qfxMomentum={
     qm = qfxMomentum(OHLC(data),emaPeriod=param1)
-    ema1 = EMA(Cl(data),n=param3,wilder = T)
-    ema2 = EMA(Cl(data),n=param4,wilder = T)
-    qmsd = sd(na.omit(qm$signal))
-    qmsd = qmsd + ((.01*param2)*qmsd)
+    ema1 = FRAMA(HLC(data),n=param3)$FRAMA
+    ema2 = FRAMA(HLC(data),n=param4)$FRAMA
     qfxmomentum = cbind(qm,ema1,ema2)
-    names(qfxmomentum) = c("signal","ema1","ema2")
-    signal = apply(qfxmomentum,1,function (x) {if(is.na(x["signal"])){ return (0) } else { if(!is.na(x["ema1"])&!is.na(x["ema2"])&x["signal"]>=qmsd&x["ema1"]<=x["ema2"]){return (1)} else if(!is.na(x["ema1"])&!is.na(x["ema2"])&x["signal"]<=-(qmsd)&x["ema1"]>=x["ema2"]) {return (-1)}else{ return(0)}}})
+    names(qfxmomentum) = c("qm","qmsd", "ema1","ema2")
+    signal = apply(qfxmomentum,1,function (x) {
+      if(is.na(x["qm"]) || is.na(x["qmsd"])){
+        return (0)
+      } else if(!is.na(x["ema1"]) && !is.na(x["ema2"])){
+        if(x["qm"]<-(x["qmsd"]) && x["ema1"]>=x["ema2"]){
+          return (1)
+        } else if(x["qm"]>(x["qmsd"]) && x["ema1"]<=x["ema2"]) {
+          return (-1)
+        }else{
+          return(0)
+        }
+      }else{
+        return(0)
+      }
+    })
   }, ADXATR={
     adx = ADX(HLC(data),n=param1)
     atr = ATR(HLC(data),n=param2)
@@ -113,7 +199,7 @@ TradingStrategy <- function(strategy=NA, data=NA,param1=NA,param2=NA,param3=NA,p
     signal = apply(cbind(HLC(data),sar),1,function (x) {if(is.na(x["sar"])|is.na(x["High"])|is.na(x["Low"])){ return (0) } else { if(x["sar"]<x["High"]&x["sar"]<x["Low"]){return (1)} else if(x["sar"]>x["High"]&x["sar"]>x["Low"]) {return (-1)}else{ return(0)}}})
   })
   
-  runName = paste(strategy,param1,param2,param3,sep=",")
+  runName = paste(strategy,param1,param2,param3,param4,sep=",")
   tradingreturns = signal * returns
   signal = as.xts(signal)
   colnames(tradingreturns) <- runName
@@ -278,8 +364,8 @@ testStrategy <- function(data, instrument,strategy,param1=NA,param2=NA,param3=NA
   testData <- window(data, start = sampleStartDate)
   indexReturns <- Delt(Cl(window(data, start = sampleStartDate)))
   colnames(indexReturns) <- paste(instrument, "Buy&Hold",sep=" ")
-  outOfSampleReturns <- TradingStrategy(strategy,testData,param1=param1,param2=param2,param3=param3,param4=NA)
-  finalReturns <- cbind(dataOfSampleReturns,indexReturns)
+  outOfSampleReturns <- TradingStrategy(strategy,testData,param1=param1,param2=param2,param3=param3,param4=param4)
+  finalReturns <- cbind(outOfSampleReturns,indexReturns)
   
   dev.new()
   charts.PerformanceSummary(finalReturns,main=paste(strategy,"- out of Sample"),geometric=FALSE)
@@ -287,8 +373,11 @@ testStrategy <- function(data, instrument,strategy,param1=NA,param2=NA,param3=NA
 
 qfxMomentum <- function(data,emaPeriod=2){
   stats = getSignals(data)
-  stats$signal = round(DEMA(scale(stats$avg),emaPeriod,wilder=T),5)
-  return(stats$signal)
+  stats$qm = round(DEMA(scale(stats$avg),emaPeriod,wilder=T),5)
+  qmsd = sd(na.omit(stats$qm))
+  stats$qmsd = qmsd + ((.01*3)*qmsd)
+  stats = stats[,c("qm","qmsd")]
+  return(stats)
 }
 
 getSignals <- function(data){
