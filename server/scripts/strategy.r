@@ -16,23 +16,23 @@ getQfxPortfolio <- function(){
   return(portfolio)
 }
 
-sigQmThreshold = function(label, data=mktdata, relationship=c("gt","lt","eq","gte","lte"),op=FALSE,cross=FALSE){
+sigQmThreshold = function(label, data=mktdata, relationship=c("gt","lt","eq","gte","lte"),op=FALSE,cross=FALSE,cols=c("qmsd.qm","qm.qm")){
   relationship=relationship[1]
   ret_sig=NULL
-  qmsd = ifelse(op,-(data[,"qmsd.qm"]),data[,"qmsd.qm"])
+  qmsd = ifelse(op,-(data[,cols[1]]),data[,cols[1]])
 
   switch(relationship,
          '>' =,
-         'gt' = {ret_sig = data[,"qm.qm"] > qmsd},
+         'gt' = {ret_sig = data[,cols[2]] > qmsd},
          '<' =,
-         'lt' = {ret_sig = data[,"qm.qm"] < qmsd},
-         'eq'     = {ret_sig = data[,"qm.qm"] == qmsd},
+         'lt' = {ret_sig = data[,cols[2]] < qmsd},
+         'eq'     = {ret_sig = data[,cols[2]] == qmsd},
          'gte' =,
          'gteq'=,
-         'ge'     = {ret_sig = data[,"qm.qm"] >= qmsd},
+         'ge'     = {ret_sig = data[,cols[2]] >= qmsd},
          'lte' =,
          'lteq'=,
-         'le'     = {ret_sig = data[,"qm.qm"] <= qmsd}
+         'le'     = {ret_sig = data[,cols[2]] <= qmsd}
   )
   if(isTRUE(cross)) ret_sig <- diff(ret_sig)==1
   if(!missing(label))
@@ -54,35 +54,54 @@ tradeStrategyTest = function(candles=NA, symbols=NA){
   initOrders(portfolio.st, initDate=initDate)
   strategy(strategy.st, store=TRUE)
   
-  add.indicator(strategy.st,name="qfxMomentum",arguments = list(data=OHLC(eurusd),emaPeriod=2),label="qm")
-  add.indicator(strategy.st,name="FRAMA",arguments = list(HLC=OHLC(eurusd),n=4),label="frama.4")
-  add.indicator(strategy.st,name="FRAMA",arguments = list(HLC=OHLC(eurusd),n=13),label="frama.13")
-  add.indicator(strategy.st,name="FRAMA",arguments = list(HLC=OHLC(eurusd),n=100),label="frama.100")
+  add.indicator(strategy.st,name="qfxMomentum",arguments = list(data=OHLC(candles),emaPeriod=2),label="qm")
+  add.indicator(strategy.st,name="FRAMA",arguments = list(HLC=OHLC(candles),n=4),label="frama.4")
+  add.indicator(strategy.st,name="FRAMA",arguments = list(HLC=OHLC(candles),n=40),label="frama.40")
+  
+  # sell
+#   add.signal(strategy.st,name="sigQmThreshold",arguments = list(relationship="gt"),label="filterQm")
+#   add.signal(strategy.st,name="sigComparison",arguments = list(columns=c("FRAMA.frama.4","FRAMA.frama.40"),relationship="lte"),label="filterFrama")
+#   add.signal(strategy.st,name="sigAND",arguments = list(columns=c("filterQm","filterFrama"),cross=T),label="shortEntry")
+#   
+#   add.signal(strategy.st,name="sigQmThreshold",arguments = list(relationship="lte", op=T),label="filterQmExit")
+#   add.signal(strategy.st, name="sigComparison",
+#              arguments = list(columns=c("FRAMA.frama.4","FRAMA.frama.40"),relationship="gt"),label="filterFramaExit")
+#   add.signal(strategy.st,name="sigAND",arguments = list(columns=c("filterQmExit","filterFramaExit"),cross=T),label="shortExit")
+# 
+#   add.rule(strategy.st, name="ruleSignal", 
+#            arguments=list(sigcol="shortEntry", sigval=TRUE, ordertype="market", 
+#                           orderside="short", replace=FALSE, prefer="Open", 
+#                           osFUN=osMaxDollar, tradeSize=-(tradeSize), maxSize=-(tradeSize)), 
+#            type="enter", path.dep=TRUE)
+#   add.rule(strategy.st, name="ruleSignal", 
+#            arguments=list(sigcol="shortExit", sigval=TRUE, orderqty="all", 
+#                           ordertype="market", orderside="short", replace=FALSE, 
+#                           prefer="Open"), 
+#            type="exit", path.dep=TRUE)
   
   # buy
-  add.signal(strategy.st,name="sigQmThreshold",arguments = list(relationship="gt"),label="filterQm")
-  add.signal(strategy.st,name="sigComparison",arguments = list(columns=c("FRAMA.frama.4","FRAMA.frama.13"),relationship="lte"),label="filterFrama")
-  add.signal(strategy.st,name="sigAND",arguments = list(columns=c("filterQm","filterFrama"),cross=T),label="shortEntry")
+  add.signal(strategy.st,name="sigQmThreshold",arguments = list(relationship="lt",op=T),label="filterQm")
+  add.signal(strategy.st,name="sigComparison",arguments = list(columns=c("FRAMA.frama.4","FRAMA.frama.40"),relationship="gte"),label="filterFrama")
+  add.signal(strategy.st,name="sigAND",arguments = list(columns=c("filterQm","filterFrama"),cross=T),label="longEntry")
   
-  add.signal(strategy.st,name="sigQmThreshold",arguments = list(relationship="lte", op=T),label="filterQmExit")
+  add.signal(strategy.st,name="sigQmThreshold",arguments = list(relationship="gte"),label="filterQmExit")
   add.signal(strategy.st, name="sigComparison",
-             arguments = list(columns=c("FRAMA.frama.4","FRAMA.frama.13"),relationship="gt"),label="filterFramaExit")
-  add.signal(strategy.st,name="sigAND",arguments = list(columns=c("filterQmExit","filterFramaExit"),cross=T),label="shortExit")
-
+             arguments = list(columns=c("FRAMA.frama.4","FRAMA.frama.40"),relationship="lt"),label="filterFramaExit")
+  add.signal(strategy.st,name="sigAND",arguments = list(columns=c("filterQmExit","filterFramaExit"),cross=T),label="longExit")
+  
   add.rule(strategy.st, name="ruleSignal", 
-           arguments=list(sigcol="shortEntry", sigval=TRUE, ordertype="market", 
-                          orderside="short", replace=FALSE, prefer="Open", 
-                          osFUN=osMaxDollar, tradeSize=-(tradeSize), maxSize=-(tradeSize)), 
+           arguments=list(sigcol="longEntry", sigval=TRUE, ordertype="market", 
+                          orderside="long", replace=FALSE, prefer="Open", 
+                          osFUN=osMaxDollar, tradeSize=tradeSize, maxSize=tradeSize), 
            type="enter", path.dep=TRUE)
   add.rule(strategy.st, name="ruleSignal", 
-           arguments=list(sigcol="shortExit", sigval=TRUE, orderqty="all", 
-                          ordertype="market", orderside="short", replace=FALSE, 
+           arguments=list(sigcol="longExit", sigval=TRUE, orderqty="all", 
+                          ordertype="market", orderside="long", replace=FALSE, 
                           prefer="Open"), 
            type="exit", path.dep=TRUE)
-
-  applyStrategy(strategy=strat$strategy,portfolios=strat$portfolios)
   
   strat = list(strategy=strategy.st, portfolios=portfolio.st)
+  applyStrategy(strategy=strat$strategy,portfolios=strat$portfolios)
   updatePortf(strat$portfolios)
   updateAcct(strat$portfolios)
   updateEndEq(strat$strategy)
@@ -97,7 +116,7 @@ batchMomentumStrategy <- function(crosses=NA,periods=NA){
   for(cross in crosses){
     for(period in periods){
       candles = getQfxCandles(instrument = cross, granularity = period)
-      ret = TradingStrategy(strategy = "qfxMomentum",data = candles,param1 = 2,param2 = 3,param3 = 4,param4 = 13,retSignals = T)
+      ret = TradingStrategy(strategy = "qfxMomentum",data = candles,param1 = 2,param2 = 3,param3 = 4,param4 = 40,retSignals = T)
       names(ret) = c(paste(cross,period,sep="-"))
       if(is.null(results)){
         results = ret
@@ -377,6 +396,8 @@ qfxMomentum <- function(data,emaPeriod=2){
   qmsd = sd(na.omit(stats$qm))
   stats$qmsd = qmsd + ((.01*3)*qmsd)
   stats = stats[,c("qm","qmsd")]
+  rl = graphRobustLines(candles = data,graph = F)
+  stats$angle = rl$angle
   return(stats)
 }
 

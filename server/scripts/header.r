@@ -237,23 +237,56 @@ getSupportsAndResistances <- function(candles,threshold=7){
 	return(ret)
 }
 
-graphRobustLines <- function(candles=NA){
+angle <- function(x,y){
+  dot.prod <- x%*%y 
+  norm.x <- norm(x,type="2")
+  norm.y <- norm(y,type="2")
+  theta <- acos(dot.prod / (norm.x * norm.y))
+  as.numeric(theta)
+}
+
+graphRobustLines <- function(candles=NA,name=NA, graph=T){
   if(!is.na(candles)){
     hlc = HLC(candles)
-    lineChart(FRAMA(hlc,n=4))
-    f1=line(as.numeric(FRAMA(hlc,n=13)$FRAMA))
+    f1=line(as.numeric(FRAMA(hlc,n=40)$FRAMA))
+    f2=line(as.numeric(FRAMA(hlc,n=4)$FRAMA))
     co=coef(f1)
-    abline(co[1],co[2],0,col='yellow',lwd=2)
-    fr4=na.omit(as.numeric(FRAMA(hlc,n=4)$FRAMA))
-    f2=line(fr4)
     co2=coef(f2)
-    abline(co2[1],co2[2],0,col='yellow',lwd=2)
-    cc=rbind(co,co2)
-    intersection=c(-solve(cbind(cc[,2],-1)) %*% cc[,1])[2]
-    abline(intersection,0,lwd=2,col="yellow")
-    angle = atan(abs((co[1]-co2[1])/(1-co[1]*co2[1])))
-    rl = list(angle=angle,fit1=fitted(f1),fit2=fitted(f2),co1=co,co2=co2)
-    abline(mean(union(rl$fi1,rl$fit2)),0,lwd=1,col="white")
+    fit1 = fitted(f1)
+    fit2 = fitted(f2)
+    
+    #abline(co[1],co[2],0,col='yellow',lwd=2)
+    #abline(co2[1],co2[2],0,col='yellow',lwd=2)
+    
+    #cc=rbind(co,co2)
+    #intersection=c(-solve(cbind(cc[,2],-1)) %*% cc[,1])[2]
+    intersection = mean(c(fitted(f1),fitted(f2)))
+    
+    rl = list(co1=co,co2=co2,intersection=intersection)
+    
+    lf = mean(c(last(fit1),last(fit2)))
+    un = seq(from=rl$intersection,to=lf,length.out = max(length(fit1),length(fit2)))
+    
+    f3=line(un)
+    co3=coef(f3)
+    rl$co3 = co3
+    
+    rl$fit = fitted(f3)
+    
+    dd <- data.frame(x=1:length(rl$fit),rl$fit,rl$intersection)
+    s1 <- coef(lm(rl.fit~x,dd))[2]
+    s2=coef(lm(rl.intersection~x,dd))[2]
+    ar=atan2(s1-s2,1)
+    
+    rl$angle = ar*180/pi
+    
+    if(graph){
+      lineChart(FRAMA(hlc,n=4),name = name)
+      #plot(FRAMA(hlc,n=4)$FRAMA,type="l",main=name)
+      abline(co3[1],co3[2],col='orange',lwd=2)
+      abline(intersection,0,lwd=2,col="orange")
+      axis(2,at=round(c(last(un),intersection),3),cex.axis=0.75,col.axis='white')
+    }
     
     return(rl)
   }
