@@ -245,18 +245,20 @@ angle <- function(x,y){
   as.numeric(theta)
 }
 
-graphRobustLines <- function(candles=NA,name=NA, graph=T){
+graphRobustLines <- function(candles=NA,name=NA, graph=T, period=NA){
   if(!is.na(candles)){
-    hlc = HLC(candles)
+    if(is.na(period)){
+      hlc = HLC(candles)
+    }else{
+      hlc = last(HLC(candles), period)
+    }
+
     f1=line(as.numeric(FRAMA(hlc,n=40)$FRAMA))
     f2=line(as.numeric(FRAMA(hlc,n=4)$FRAMA))
     co=coef(f1)
     co2=coef(f2)
     fit1 = fitted(f1)
     fit2 = fitted(f2)
-    
-    #abline(co[1],co[2],0,col='yellow',lwd=2)
-    #abline(co2[1],co2[2],0,col='yellow',lwd=2)
     
     #cc=rbind(co,co2)
     #intersection=c(-solve(cbind(cc[,2],-1)) %*% cc[,1])[2]
