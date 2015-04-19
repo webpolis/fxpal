@@ -56,6 +56,11 @@ oanda.init <- function(accountId=2110611,accountType="practice",period="M15"){
   oanda.account.info.period <<- period
 }
 
+oanda.hasEnoughMoney <- function(){
+  equity = oanda.account.info$marginUsed+oanda.account.info$marginAvail
+  return(equity>(oanda.account.info$balance*50/100))
+}
+
 oanda.tick <- function(){
   oanda.account.info <<- oanda.account(oanda.account.info.id, oanda.account.info.type)
   oanda.trades.open <<- oanda.trades()
@@ -63,6 +68,11 @@ oanda.tick <- function(){
 
   for(cross in oanda.portfolio$cross){
     hasOpenTrade = length(grep(cross,oanda.trades.open.crosses,value=T)) > 0
+    
+    if(!hasOpenTrade && !oanda.hasEnoughMoney()){
+      next
+    }
+    
     ret = NULL
     symbol = tolower(gsub("[^A-Za-z]+|\\.\\w+\\d+","",cross))
     eval(parse(text=paste0(symbol,"<<-","getQfxCandles('",cross,"','",oanda.account.info.period,"')")))
@@ -79,7 +89,7 @@ oanda.tick <- function(){
     
     if(hasOpenTrade){
       openSide = lapply(oanda.trades.open,FUN=function(x){if(x$instrument==cross){x$side}})[2]
-      direction = ifelse(openside=="buy",1,-1)
+      direction = ifelse(openSide=="buy",1,-1)
     }
     
     ret = getQfxMomentumStrategySignals(symbol = symbol, long = (ifelse(direction>0,T,F)))
@@ -95,7 +105,7 @@ oanda.tick <- function(){
         print(paste(symbol,side))
       }else if(!is.na(ret[paste0(side,"Exit")])){
         # close open trade
-        
+        print(paste("closing",symbol))
       }
     }
   }
