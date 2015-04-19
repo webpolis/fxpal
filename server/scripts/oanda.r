@@ -1,3 +1,6 @@
+pwd = getwd()
+source(paste(pwd,'server','scripts','header.r',sep='/'))
+
 library(httr)
 
 oanda.account <- function(accountId=2110611, accountType = "practice"){
