@@ -1,3 +1,5 @@
+library(httr)
+
 oanda.account <- function(accountId, accountType = c("trade", "practice")){
   library("httr")
   
@@ -61,12 +63,36 @@ oanda.hasEnoughMoney <- function(){
   return(equity>(oanda.account.info$balance*50/100))
 }
 
+oanda.open <- function(accountId=2110611,accountType="practice",type="market",side=NA,cross=NA, units=2000){
+  if(is.na(side) || is.na(cross)){
+    return(NULL)
+  }
+  
+  stopifnot(is.character(oandaToken))
+  url <- ifelse(accountType == "practice", "https://api-fxpractice.oanda.com/v1/accounts", "https://api-fxtrade.oanda.com/v1/accounts")
+  url <- paste0(url, "/", accountId, "/orders")
+  POST(url, accept_json(), add_headers('Authorization' = paste('Bearer ', oandaToken), "Content-Type"="application/x-www-form-urlencoded"),
+       body = list(instrument=cross, side = side, units = units, type=type),encode="form")
+}
+
+oanda.close <- function(accountId=2110611,accountType="practice",orderId=NA){
+  if(is.na(orderId)){
+    return(NULL)
+  }
+  
+  stopifnot(is.character(oandaToken))
+  url <- ifelse(accountType == "practice", "https://api-fxpractice.oanda.com/v1/accounts", "https://api-fxtrade.oanda.com/v1/accounts")
+  url <- paste0(url, "/", accountId, "/orders/",orderId)
+  DELETE(url, add_headers('Authorization' = paste('Bearer ', oandaToken)))
+}
+
 oanda.tick <- function(){
   oanda.account.info <<- oanda.account(oanda.account.info.id, oanda.account.info.type)
   oanda.trades.open <<- oanda.trades()
   oanda.trades.open.crosses <<- as.character(lapply(oanda.trades.open,FUN=function(x){x$instrument}))
 
   for(cross in oanda.portfolio$cross){
+    openOrderId = NULL
     hasOpenTrade = length(grep(cross,oanda.trades.open.crosses,value=T)) > 0
     
     if(!hasOpenTrade && !oanda.hasEnoughMoney()){
@@ -89,6 +115,7 @@ oanda.tick <- function(){
     
     if(hasOpenTrade){
       openSide = lapply(oanda.trades.open,FUN=function(x){if(x$instrument==cross){x$side}})[2]
+      openOrderId = lapply(oanda.trades.open,FUN=function(x){if(x$instrument==cross){x$id}})[1]
       direction = ifelse(openSide=="buy",1,-1)
     }
     
@@ -98,14 +125,19 @@ oanda.tick <- function(){
     ret = tail(na.locf(ret),1)
     
     side = ifelse(direction>0,"long","short")
+    literalSide = ifelse(direction>0,"buy","sell")
     
     if(nrow(ret)>0){
       if(!hasOpenTrade){
         # open trade
         print(paste(symbol,side))
+        oanda.open(type = "market",side = literalSide,cross = cross)
       }else if(!is.na(ret[paste0(side,"Exit")])){
         # close open trade
         print(paste("closing",symbol))
+        if(!is.null(openOrderId)){
+          oanda.close(orderId = openOrderId)
+        }
       }
     }
   }
