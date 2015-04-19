@@ -90,17 +90,6 @@ getLiveCandles <- function(instrument, granularity, startDate = NA, count = 600)
 	return(ret)
 }
 
-getCurrentPrices <- function(instruments=NA, accountType="Practice", fun = NA){
-  json = NULL
-  stopifnot(is.character(oandaToken), is.character(instruments)) #, class(since) == "Date" | is.null(since)
-  base_url <- ifelse(accountType == "Practice", "https://api-fxpractice.oanda.com/v1/prices?", "https://api-fxtrade.oanda.com/v1/prices?")
-  url <- paste0(base_url, "instruments=", paste(instruments, collapse = "%2C"))
-  getURL(url = url, httpheader = c('Accept' = 'application/json', Authorization = paste('Bearer ', oandaToken)), write = function(ret){
-    json = fromJSON(ret)
-    fun(json)
-  })
-}
-
 getCandlestickPatterns <- function(ohlc){
 	ret = xts()
 	cMethods = ls('package:candlesticks')

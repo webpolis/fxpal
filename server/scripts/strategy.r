@@ -188,7 +188,7 @@ batchMomentum <- function(crosses=NA,periods=NA){
   return(results)
 }
 
-TradingStrategy <- function(strategy=NA, data=NA,param1=NA,param2=NA,param3=NA,param4=NA, retSignals=F,V1=NA,V2=NA,V3=NA){
+TradingStrategy <- function(strategy=NA, data=NA,param1=NA,param2=NA,param3=NA,param4=NA, retSignals=F,V1=NA,V2=NA,V3=NA, debug=T){
   tradingreturns = NULL
   returns = Delt(Op(data),Cl(data))
   names(returns)<-c("return")
@@ -266,7 +266,10 @@ TradingStrategy <- function(strategy=NA, data=NA,param1=NA,param2=NA,param3=NA,p
   signal = as.xts(signal)
   colnames(tradingreturns) <- runName
   colnames(signal) <- runName
-  print(paste("Running Strategy: ",runName))
+  
+  if(debug){
+    print(paste("Running Strategy: ",runName))
+  }
   
   if(!retSignals){
     return (tradingreturns)
@@ -433,8 +436,8 @@ testStrategy <- function(data, instrument,strategy,param1=NA,param2=NA,param3=NA
   charts.PerformanceSummary(finalReturns,main=paste(strategy,"- out of Sample"),geometric=FALSE)
 }
 
-qfxMomentum <- function(data,emaPeriod=2){
-  stats = getSignals(data)
+qfxMomentum <- function(data,emaPeriod=2, debug=T){
+  stats = getSignals(data,debug)
   stats$qm = round(DEMA(scale(stats$avg),emaPeriod,wilder=T),5)
   qmsd = sd(na.omit(stats$qm))
   stats$qmsd = qmsd + ((.01*3)*qmsd)
@@ -444,24 +447,24 @@ qfxMomentum <- function(data,emaPeriod=2){
   return(stats)
 }
 
-getSignals <- function(data){
+getSignals <- function(data,debug){
   # CCI+MACD
-  ccimacd = cbind(TradingStrategy("CCI",data,18, retSignals=T),TradingStrategy("MACD",data,7,9,4, retSignals=T))
+  ccimacd = cbind(TradingStrategy("CCI",data,18, retSignals=T, debug=debug),TradingStrategy("MACD",data,7,9,4, retSignals=T, debug=debug))
   names(ccimacd) = c("A.CCI","A.MACD")
   # RSI+SMI
-  rsimsi = cbind(TradingStrategy("SMI",data,10,7,16, retSignals=T),TradingStrategy("RSI",data,14, retSignals=T))
+  rsimsi = cbind(TradingStrategy("SMI",data,10,7,16, retSignals=T, debug=debug),TradingStrategy("RSI",data,14, retSignals=T, debug=debug))
   names(rsimsi) = c("B.SMI","B.RSI")
   # RSI+STOCH
-  stochrsi = cbind(TradingStrategy("RSI",data,14, retSignals=T),TradingStrategy("STOCH",data,3,3,3, retSignals=T))
+  stochrsi = cbind(TradingStrategy("RSI",data,14, retSignals=T, debug=debug),TradingStrategy("STOCH",data,3,3,3, retSignals=T, debug=debug))
   names(stochrsi) = c("C.RSI","C.STOCH")
   # ADX+SAR
-  adxsar = cbind(TradingStrategy("ADX",data,3, retSignals=T),TradingStrategy("SAR",data, retSignals=T))
+  adxsar = cbind(TradingStrategy("ADX",data,3, retSignals=T, debug=debug),TradingStrategy("SAR",data, retSignals=T, debug=debug))
   names(adxsar) = c("D.ADX","D.SAR")
   # EMA+STOCH
-  stochema = cbind(TradingStrategy("EMA",data,6,11,5, retSignals=T),TradingStrategy("STOCH",data,3,3,3, retSignals=T))
+  stochema = cbind(TradingStrategy("EMA",data,6,11,5, retSignals=T, debug=debug),TradingStrategy("STOCH",data,3,3,3, retSignals=T, debug=debug))
   names(stochema) = c("E.EMA","E.STOCH")
   # ADX+ATR
-  adxatr = TradingStrategy("ADXATR",data,3,7, retSignals=T)
+  adxatr = TradingStrategy("ADXATR",data,3,7, retSignals=T, debug=debug)
   names(adxatr) = c("F.ADX.ATR")
   
   stats = cbind(ccimacd,rsimsi,stochrsi,adxsar,stochema,adxatr)
