@@ -97,7 +97,7 @@ oanda.close <- function(accountId=2110611,accountType="practice",orderId=NA){
   
   stopifnot(is.character(oandaToken))
   url <- ifelse(accountType == "practice", "https://api-fxpractice.oanda.com/v1/accounts", "https://api-fxtrade.oanda.com/v1/accounts")
-  url <- paste0(url, "/", accountId, "/orders/",orderId)
+  url <- paste0(url, "/", accountId, "/trades/",orderId)
   DELETE(url, add_headers('Authorization' = paste('Bearer ', oandaToken)))
 }
 
