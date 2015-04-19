@@ -40,16 +40,17 @@ sigQmThreshold = function(label, data=mktdata, relationship=c("gt","lt","eq","gt
   return(ret_sig)
 }
 
-tradeStrategyTest = function(candles=NA, symbols=NA, graph=T,long=F,short=T){
+tradeStrategyTest = function(symbol=NA, graph=T,long=F,short=T,returnOnly=F){
   currency("USD")
-  stock(symbols,currency="USD",multiplier = 1)
+  candles = get(symbol)
+  stock(symbol,currency="USD",multiplier = 1)
   strategy.st = portfolio.st = account.st = "qfxMomentumStrategy"
   initEq = 200
   tradeSize = initEq*.05
   rm.strat(strategy.st)
   to=as.character(Sys.Date())
   initDate=first(index(candles))
-  initPortf(portfolio.st, symbols=symbols, initDate=initDate, currency='USD')
+  initPortf(portfolio.st, symbols=symbol, initDate=initDate, currency='USD')
   initAcct(account.st, portfolios=portfolio.st, initDate=initDate, currency='USD',initEq=initEq)
   initOrders(portfolio.st, initDate=initDate)
   strategy(strategy.st, store=TRUE)
@@ -67,7 +68,7 @@ tradeStrategyTest = function(candles=NA, symbols=NA, graph=T,long=F,short=T){
     
     add.signal(strategy.st,name="sigQmThreshold",arguments = list(relationship="lte", op=T),label="filterQmExit")
     add.signal(strategy.st, name="sigComparison",
-               arguments = list(columns=c("FRAMA.frama.4","FRAMA.frama.40"),relationship="gt"),label="filterFramaExit")
+               arguments = list(columns=c("Close","FRAMA.frama.4"),relationship="gt"),label="filterFramaExit")
     add.signal(strategy.st,name="sigAND",arguments = list(columns=c("filterQmExit","filterFramaExit"),cross=T),label="shortExit")
   
     add.rule(strategy.st, name="ruleSignal", 
@@ -91,7 +92,7 @@ tradeStrategyTest = function(candles=NA, symbols=NA, graph=T,long=F,short=T){
     
     add.signal(strategy.st,name="sigQmThreshold",arguments = list(relationship="gte"),label="filterQmExit")
     add.signal(strategy.st, name="sigComparison",
-               arguments = list(columns=c("FRAMA.frama.4","FRAMA.frama.40"),relationship="lt"),label="filterFramaExit")
+               arguments = list(columns=c("Close","FRAMA.frama.4"),relationship="lt"),label="filterFramaExit")
     add.signal(strategy.st,name="sigAND",arguments = list(columns=c("filterQmExit","filterFramaExit"),cross=T),label="longExit")
     
     add.rule(strategy.st, name="ruleSignal", 
@@ -107,6 +108,11 @@ tradeStrategyTest = function(candles=NA, symbols=NA, graph=T,long=F,short=T){
   }
   
   strat = list(strategy=strategy.st, portfolios=portfolio.st)
+  
+  if(returnOnly){
+    return(strat)
+  }
+  
   applyStrategy(strategy=strat$strategy,portfolios=strat$portfolios)
   updatePortf(strat$portfolios)
   updateAcct(strat$portfolios)
@@ -117,12 +123,31 @@ tradeStrategyTest = function(candles=NA, symbols=NA, graph=T,long=F,short=T){
   return(strat)
 }
 
+getQfxMomentumStrategySignals <- function(symbol=NA,long=T){
+  strat=tradeStrategyTest(symbol=symbol,long = long,short = !long, returnOnly = T)
+  tt=applyStrategy(strategy=strat$strategy,portfolios=strat$portfolios,debug=T)
+  dd=data.frame(tt$qfxMomentumStrategy[[symbol]]$rules)
+  dd=dd[,grep("pathdep\\.(?:long|short)(?:Exit|Entry)",names(dd))]
+  names(dd) = gsub("pathdep\\.","",names(dd))
+  return(dd)
+}
+
 batchMomentumStrategy <- function(crosses=NA,periods=NA){
   results= NULL
   for(cross in crosses){
     for(period in periods){
+      symbol = tolower(gsub("[^A-Za-z]+","",cross))
       candles = getQfxCandles(instrument = cross, granularity = period)
-      ret = TradingStrategy(strategy = "qfxMomentum",data = candles,param1 = 2,param2 = 3,param3 = 4,param4 = 40,retSignals = T)
+      
+      if(!exists(symbol)){
+        eval(parse(text=paste(symbol, "candles",sep="<<-")))
+      }else{
+        eval(parse(text=paste(symbol,"<<-","rbind(candles,",symbol,")",sep="")))
+      }
+      
+      eval(parse(text=paste(symbol,"<<-",symbol,"[!duplicated(index(",symbol,")),]",sep="")))
+      
+      ret = TradingStrategy(strategy = "qfxMomentum",data = get(symbol),param1 = 2,param2 = 3,param3 = 4,param4 = 40,retSignals = T)
       names(ret) = c(paste(cross,period,sep="-"))
       if(is.null(results)){
         results = ret
@@ -139,9 +164,19 @@ batchMomentum <- function(crosses=NA,periods=NA){
   results= NULL
   for(cross in crosses){
     for(period in periods){
+      symbol = tolower(gsub("[^A-Za-z]+","",cross))
       candles = getQfxCandles(instrument = cross, granularity = period)
-      ret = qfxMomentum(data = candles,emaPeriod = 2)
-      names(ret) = c(paste(cross,period,sep="-"))
+      
+      if(!exists(symbol)){
+        eval(parse(text=paste(symbol, "candles",sep="<<-")))
+      }else{
+        eval(parse(text=paste(symbol,"<<-","rbind(candles,",symbol,")",sep="")))
+      }
+      
+      eval(parse(text=paste(symbol,"<<-",symbol,"[!duplicated(index(",symbol,")),]",sep="")))
+
+      ret = qfxMomentum(data = get(symbol),emaPeriod = 2)
+      names(ret) = c(paste(cross,period,"qm",sep="-"),paste(cross,period,"qmsd",sep="-"),paste(cross,period,"angle",sep="-"))
       if(is.null(results)){
         results = ret
       }else{

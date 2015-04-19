@@ -9,8 +9,11 @@ library(rjson)
 library(RCurl)
 library(DSTrading)
 library(IKTrading)
+library(quantstrat)
 
 Sys.setenv(TZ='UTC')
+
+oandaToken = 'ce6b72e81af59be0bbc90152cad8d731-03d41860ed7849e3c4555670858df786'
 
 maxWidth=1334
 maxHeight=750
@@ -59,7 +62,6 @@ getCandles <- function(instrument=NA, granularity=NA, startDate = NA, count = NA
 }
 
 getLiveCandles <- function(instrument, granularity, startDate = NA, count = 600){
-	oandaToken = 'ce6b72e81af59be0bbc90152cad8d731-03d41860ed7849e3c4555670858df786'
 	urlPractice = paste('https://api-fxpractice.oanda.com/v1/candles?instrument=', instrument, '&granularity=', granularity, '&weeklyAlignment=Monday', '&candleFormat=bidask', sep = '')
 
 	if(!is.na(startDate)){
@@ -86,6 +88,17 @@ getLiveCandles <- function(instrument, granularity, startDate = NA, count = 600)
 	ret = as.xts(ret)
 
 	return(ret)
+}
+
+getCurrentPrices <- function(instruments=NA, accountType="Practice", fun = NA){
+  json = NULL
+  stopifnot(is.character(oandaToken), is.character(instruments)) #, class(since) == "Date" | is.null(since)
+  base_url <- ifelse(accountType == "Practice", "https://api-fxpractice.oanda.com/v1/prices?", "https://api-fxtrade.oanda.com/v1/prices?")
+  url <- paste0(base_url, "instruments=", paste(instruments, collapse = "%2C"))
+  getURL(url = url, httpheader = c('Accept' = 'application/json', Authorization = paste('Bearer ', oandaToken)), write = function(ret){
+    json = fromJSON(ret)
+    fun(json)
+  })
 }
 
 getCandlestickPatterns <- function(ohlc){
@@ -245,7 +258,11 @@ angle <- function(x,y){
   as.numeric(theta)
 }
 
-graphRobustLines <- function(candles=NA,name=NA, graph=T, period=NA){
+graphRobustLines <- function(symbol=NA, graph=T, period=NA, candles=NA){
+  if(is.na(candles)){
+    candles = get(symbol)
+  }
+
   if(!is.na(candles)){
     if(is.na(period)){
       hlc = HLC(candles)
@@ -283,7 +300,7 @@ graphRobustLines <- function(candles=NA,name=NA, graph=T, period=NA){
     rl$angle = ar*180/pi
     
     if(graph){
-      lineChart(FRAMA(hlc,n=4),name = name)
+      lineChart(FRAMA(hlc,n=4),name = symbol)
       #plot(FRAMA(hlc,n=4)$FRAMA,type="l",main=name)
       abline(co3[1],co3[2],col='orange',lwd=2)
       abline(intersection,0,lwd=2,col="orange")
