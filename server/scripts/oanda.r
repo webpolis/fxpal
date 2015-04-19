@@ -46,60 +46,56 @@ oanda.trades <- function(accountId=2110611,accountType="practice"){
   return(json$trades)
 }
 
-oanda.init <- function(accountId=2110611,accountType="practice"){
+oanda.init <- function(accountId=2110611,accountType="practice",period="M15"){
   oanda.portfolio<<-getQfxPortfolio()
   oanda.symbols<<-as.character(lapply(oanda.portfolio$cross,FUN=function(cross){cross = tolower(gsub("[^A-Za-z]+","",cross))}))
   rm(list=oanda.symbols)
   oanda.account.info.id <<- accountId
   oanda.account.info.type <<- accountType
   oanda.account.info <<- oanda.account(accountId, accountType)
+  oanda.account.info.period <<- period
 }
 
 oanda.tick <- function(){
   oanda.account.info <<- oanda.account(oanda.account.info.id, oanda.account.info.type)
   oanda.trades.open <<- oanda.trades()
   oanda.trades.open.crosses <<- as.character(lapply(oanda.trades.open,FUN=function(x){x$instrument}))
-#   oanda.signals<<-batchMomentumStrategy(oanda.portfolio$cross,c("M15"))
-#   oanda.signals.tmp <<- last(oanda.signals,8)
-#   oanda.signals.tmp <<- oanda.signals.tmp[,colSums(oanda.signals.tmp^2)!=0]
-#   oanda.signals.tmp[oanda.signals.tmp==0] <<- NA
-#   oanda.signals.tmp <<- na.locf(oanda.signals.tmp)
-#   oanda.signals <<- last(oanda.signals.tmp)
-  
-#   for(n in names(oanda.signals.tmp)){
-#     symbol = tolower(gsub("[^A-Za-z]+|\\.\\w+\\d+","",n))
-#     momentum = qfxMomentum(data = get(symbol), emaPeriod = 2)
-#     if(momentum[,"angle"] > 0 && oanda.signals[,n] > 0){
-#       print(paste(symbol,"buy"))
-#     }else if(momentum[,"angle"] < 0 && oanda.signals[,n] < 0){
-#       print(paste(symbol,"sell"))
-#     }
-#   }
 
   for(cross in oanda.portfolio$cross){
     hasOpenTrade = length(grep(cross,oanda.trades.open.crosses,value=T)) > 0
     ret = NULL
     symbol = tolower(gsub("[^A-Za-z]+|\\.\\w+\\d+","",cross))
-    eval(parse(text=paste0(symbol,"<<-","getQfxCandles('",cross,"','M15')")))
+    eval(parse(text=paste0(symbol,"<<-","getQfxCandles('",cross,"','",oanda.account.info.period,"')")))
     
     momentum = qfxMomentum(data = get(symbol), emaPeriod = 2, debug=F)
-    if(momentum[,"angle"] > 0){
-      ret = getQfxMomentumStrategySignals(symbol = symbol, long = T)
-      ret = tail(ret,8)
-      ret[ret==0] = NA
-      ret = na.locf(ret)
-      
-      if(nrow(ret)>0){
-        print(paste(symbol,"buy"))
-      }
-    }else if(momentum[,"angle"] < 0){
-      ret = getQfxMomentumStrategySignals(symbol = symbol, long = F)
-      ret = tail(ret,8)
-      ret[ret==0] = NA
-      ret = na.locf(ret)
-      
-      if(nrow(ret)>0){
-        print(paste(symbol,"sell"))
+    
+    if(momentum[,"angle"]>0){
+      direction = 1
+    }else if(momentum[,"angle"]<0){
+      direction = -1
+    }else{
+      next
+    }
+    
+    if(hasOpenTrade){
+      openSide = lapply(oanda.trades.open,FUN=function(x){if(x$instrument==cross){x$side}})[2]
+      direction = ifelse(openside=="buy",1,-1)
+    }
+    
+    ret = getQfxMomentumStrategySignals(symbol = symbol, long = (ifelse(direction>0,T,F)))
+    ret = tail(ret,8)
+    ret[ret==0] = NA
+    ret = tail(na.locf(ret),1)
+    
+    side = ifelse(direction>0,"long","short")
+    
+    if(nrow(ret)>0){
+      if(!hasOpenTrade){
+        # open trade
+        print(paste(symbol,side))
+      }else if(!is.na(ret[paste0(side,"Exit")])){
+        # close open trade
+        
       }
     }
   }

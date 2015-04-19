@@ -55,7 +55,7 @@ tradeStrategyTest = function(symbol=NA, graph=T,long=F,short=T,returnOnly=F){
   initOrders(portfolio.st, initDate=initDate)
   strategy(strategy.st, store=TRUE)
   
-  add.indicator(strategy.st,name="qfxMomentum",arguments = list(data=OHLC(candles),emaPeriod=2),label="qm")
+  add.indicator(strategy.st,name="qfxMomentum",arguments = list(data=OHLC(candles),emaPeriod=2,debug=F),label="qm")
   add.indicator(strategy.st,name="FRAMA",arguments = list(HLC=OHLC(candles),n=4),label="frama.4")
   add.indicator(strategy.st,name="FRAMA",arguments = list(HLC=OHLC(candles),n=40),label="frama.40")
   
