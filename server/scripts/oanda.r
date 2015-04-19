@@ -132,8 +132,9 @@ oanda.tick <- function(){
     }
     
     if(hasOpenTrade){
-      openSide = lapply(oanda.trades.open,FUN=function(x){if(x$instrument==cross){x$side}})[2]
-      openOrderId = lapply(oanda.trades.open,FUN=function(x){if(x$instrument==cross){x$id}})[1]
+      openTrade = Filter(function(x){x$instrument==cross},oanda.trades.open)[[1]]
+      openSide = openTrade$side
+      openOrderId = openTrade$id
       direction = ifelse(openSide=="buy",1,-1)
     }
     
