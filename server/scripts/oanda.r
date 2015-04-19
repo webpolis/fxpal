@@ -1,6 +1,6 @@
 library(httr)
 
-oanda.account <- function(accountId, accountType = c("trade", "practice")){
+oanda.account <- function(accountId=2110611, accountType = "practice"){
   library("httr")
   
   # Check arguments
