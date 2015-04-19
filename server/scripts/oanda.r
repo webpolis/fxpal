@@ -56,6 +56,21 @@ oanda.init <- function(accountId=2110611,accountType="practice",period="M15"){
   oanda.account.info.type <<- accountType
   oanda.account.info <<- oanda.account(accountId, accountType)
   oanda.account.info.period <<- period
+  
+  doDelay = 60*10
+  
+  switch(oanda.account.info.period, M15={
+    doDelay = 60*(60*15)/100
+  }, H1={
+    doDelay = 60*(60*60)/100
+  }, H4={
+    doDelay = 60*(60*60*4)/100
+  })
+  
+  while(TRUE){
+    oanda.tick()
+    Sys.sleep(doDelay)
+  }
 }
 
 oanda.hasEnoughMoney <- function(){
@@ -90,7 +105,7 @@ oanda.tick <- function(){
   oanda.account.info <<- oanda.account(oanda.account.info.id, oanda.account.info.type)
   oanda.trades.open <<- oanda.trades()
   oanda.trades.open.crosses <<- as.character(lapply(oanda.trades.open,FUN=function(x){x$instrument}))
-
+  
   for(cross in oanda.portfolio$cross){
     openOrderId = NULL
     hasOpenTrade = length(grep(cross,oanda.trades.open.crosses,value=T)) > 0
