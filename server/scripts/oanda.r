@@ -114,6 +114,7 @@ oanda.tick <- function(){
     hasOpenTrade = length(grep(cross,oanda.trades.open.crosses,value=T)) > 0
     
     if(!hasOpenTrade && !oanda.hasEnoughMoney()){
+      print("not enough free money")
       next
     }
     
@@ -128,6 +129,7 @@ oanda.tick <- function(){
     }else if(momentum[,"angle"] <= (-0.0008)){
       direction = -1
     }else{
+      print("no relevant direction angle")
       next
     }
     
@@ -157,7 +159,11 @@ oanda.tick <- function(){
         if(!is.null(openOrderId)){
           oanda.close(orderId = openOrderId)
         }
+      }else{
+        print("no action taken")
       }
+    }else{
+      print("no action taken")
     }
   }
 }
