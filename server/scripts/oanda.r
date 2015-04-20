@@ -123,9 +123,9 @@ oanda.tick <- function(){
     
     momentum = qfxMomentum(data = get(symbol), emaPeriod = 2, debug=F)
     
-    if(momentum[,"angle"]>0){
+    if(momentum[,"angle"] >= 0.0008){
       direction = 1
-    }else if(momentum[,"angle"]<0){
+    }else if(momentum[,"angle"] <= (-0.0008)){
       direction = -1
     }else{
       next
