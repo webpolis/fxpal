@@ -129,7 +129,7 @@ oanda.tick <- function(){
     }else if(momentum[,"angle"] <= (-0.0008)){
       direction = -1
     }else{
-      print("no relevant direction angle")
+      print(paste(cross, "no relevant direction angle"))
       next
     }
     
@@ -160,10 +160,10 @@ oanda.tick <- function(){
           oanda.close(orderId = openOrderId)
         }
       }else{
-        print("no action taken")
+        print(paste(cross,"no action taken"))
       }
     }else{
-      print("no action taken")
+      print(paste(cross,"no action taken: no signals"))
     }
   }
 }
