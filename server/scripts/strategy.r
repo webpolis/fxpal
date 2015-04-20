@@ -68,7 +68,7 @@ tradeStrategyTest = function(symbol=NA, graph=T,long=F,short=T,returnOnly=F){
     
     add.signal(strategy.st,name="sigQmThreshold",arguments = list(relationship="lte", op=T),label="filterQmExit")
     add.signal(strategy.st, name="sigComparison",
-               arguments = list(columns=c("Close","FRAMA.frama.4"),relationship="gt"),label="filterFramaExit")
+               arguments = list(columns=c("FRAMA.frama.4","FRAMA.frama.40"),relationship="gt"),label="filterFramaExit")
     add.signal(strategy.st,name="sigAND",arguments = list(columns=c("filterQmExit","filterFramaExit"),cross=T),label="shortExit")
   
     add.rule(strategy.st, name="ruleSignal", 
@@ -92,7 +92,7 @@ tradeStrategyTest = function(symbol=NA, graph=T,long=F,short=T,returnOnly=F){
     
     add.signal(strategy.st,name="sigQmThreshold",arguments = list(relationship="gte"),label="filterQmExit")
     add.signal(strategy.st, name="sigComparison",
-               arguments = list(columns=c("Close","FRAMA.frama.4"),relationship="lt"),label="filterFramaExit")
+               arguments = list(columns=c("FRAMA.frama.4","FRAMA.frama.40"),relationship="lt"),label="filterFramaExit")
     add.signal(strategy.st,name="sigAND",arguments = list(columns=c("filterQmExit","filterFramaExit"),cross=T),label="longExit")
     
     add.rule(strategy.st, name="ruleSignal", 
