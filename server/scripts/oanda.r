@@ -89,8 +89,9 @@ oanda.open <- function(accountId=4952957,accountType="practice",type="market",si
   stopifnot(is.character(oandaToken))
   url <- ifelse(accountType == "practice", "https://api-fxpractice.oanda.com/v1/accounts", "https://api-fxtrade.oanda.com/v1/accounts")
   url <- paste0(url, "/", accountId, "/orders")
-  POST(url, accept_json(), add_headers('Authorization' = paste('Bearer ', oandaToken), "Content-Type"="application/x-www-form-urlencoded"),
+  ret = POST(url, accept_json(), add_headers('Authorization' = paste('Bearer ', oandaToken), "Content-Type"="application/x-www-form-urlencoded"),
        body = list(instrument=cross, side = side, units = units, type=type),encode="form")
+  print(ret)
 }
 
 oanda.close <- function(accountId=4952957,accountType="practice",orderId=NA){
@@ -163,7 +164,7 @@ oanda.tick <- function(){
         print(paste(cross,"no action taken"))
       }
     }else{
-      print(paste(cross,"no action taken: no signals"))
+      print(paste(cross,"no action taken: no recent signals"))
     }
   }
 }
