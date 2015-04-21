@@ -3,7 +3,7 @@ source(paste(pwd,'server','scripts','header.r',sep='/'))
 
 library(httr)
 
-oanda.account <- function(accountId=4952957, accountType = "practice"){
+oanda.account <- function(accountId=3587970, accountType = "practice"){
   library("httr")
   
   # Check arguments
@@ -43,7 +43,7 @@ oanda.prices <- function(instruments=NA, accountType="practice", fun = NA){
   })
 }
 
-oanda.trades <- function(accountId=4952957,accountType="practice"){
+oanda.trades <- function(accountId=3587970,accountType="practice"){
   stopifnot(is.character(oandaToken))
   url <- ifelse(accountType == "practice", "https://api-fxpractice.oanda.com/v1/accounts", "https://api-fxtrade.oanda.com/v1/accounts")
   url <- paste0(url, "/", accountId, "/trades")
@@ -51,7 +51,7 @@ oanda.trades <- function(accountId=4952957,accountType="practice"){
   return(json$trades)
 }
 
-oanda.init <- function(accountId=4952957,accountType="practice",period="M15"){
+oanda.init <- function(accountId=3587970,accountType="practice",period="H1"){
   oanda.portfolio<<-getQfxPortfolio()
   oanda.symbols<<-as.character(lapply(oanda.portfolio$cross,FUN=function(cross){cross = tolower(gsub("[^A-Za-z]+","",cross))}))
   rm(list=oanda.symbols)
@@ -81,7 +81,7 @@ oanda.hasEnoughMoney <- function(){
   return(equity>(oanda.account.info$balance*50/100))
 }
 
-oanda.open <- function(accountId=4952957,accountType="practice",type="market",side=NA,cross=NA, units=2000){
+oanda.open <- function(accountId=3587970,accountType="practice",type="market",side=NA,cross=NA, units=2000){
   if(is.na(side) || is.na(cross)){
     return(NULL)
   }
@@ -94,7 +94,7 @@ oanda.open <- function(accountId=4952957,accountType="practice",type="market",si
   print(ret)
 }
 
-oanda.close <- function(accountId=4952957,accountType="practice",orderId=NA){
+oanda.close <- function(accountId=3587970,accountType="practice",orderId=NA){
   if(is.na(orderId)){
     return(NULL)
   }
