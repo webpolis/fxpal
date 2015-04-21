@@ -129,7 +129,7 @@ oanda.tick <- function(){
       direction = 1
     }else if(momentum[,"angle"] <= (-0.0008)){
       direction = -1
-    }else{
+    }else if(!hasOpenTrade){
       print(paste(cross, "no relevant direction angle"))
       next
     }
