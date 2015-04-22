@@ -3,7 +3,10 @@ source(paste(pwd,'server','scripts','header.r',sep='/'))
 
 library(httr)
 
-oanda.account <- function(accountId=3587970, accountType = "practice"){
+oanda.account.info.accountId = 4952957
+oanda.account.info.period = "M15"
+
+oanda.account <- function(accountType = "practice"){
   library("httr")
   
   # Check arguments
@@ -12,7 +15,7 @@ oanda.account <- function(accountId=3587970, accountType = "practice"){
   
   # Create URL
   url <- ifelse(accountType == "practice", "https://api-fxpractice.oanda.com/v1/accounts", "https://api-fxtrade.oanda.com/v1/accounts")
-  url <- paste0(url, "/", accountId)
+  url <- paste0(url, "/", oanda.account.info.accountId)
   
   # Send Request
   get_request <- GET(url, add_headers(Authorization = paste0("Bearer ", oandaToken)))
@@ -43,22 +46,21 @@ oanda.prices <- function(instruments=NA, accountType="practice", fun = NA){
   })
 }
 
-oanda.trades <- function(accountId=3587970,accountType="practice"){
+oanda.trades <- function(accountType="practice"){
   stopifnot(is.character(oandaToken))
   url <- ifelse(accountType == "practice", "https://api-fxpractice.oanda.com/v1/accounts", "https://api-fxtrade.oanda.com/v1/accounts")
-  url <- paste0(url, "/", accountId, "/trades")
+  url <- paste0(url, "/", oanda.account.info.accountId, "/trades")
   json = fromJSON(getURL(url = url, httpheader = c('Accept' = 'application/json', Authorization = paste('Bearer ', oandaToken))))
   return(json$trades)
 }
 
-oanda.init <- function(accountId=3587970,accountType="practice",period="H1"){
+oanda.init <- function(accountType="practice"){
   oanda.portfolio<<-getQfxPortfolio()
   oanda.symbols<<-as.character(lapply(oanda.portfolio$cross,FUN=function(cross){cross = tolower(gsub("[^A-Za-z]+","",cross))}))
   rm(list=oanda.symbols)
-  oanda.account.info.id <<- accountId
+  
   oanda.account.info.type <<- accountType
-  oanda.account.info <<- oanda.account(accountId, accountType)
-  oanda.account.info.period <<- period
+  oanda.account.info <<- oanda.account(accountType)
   
   doDelay = 60*10
   
@@ -81,32 +83,32 @@ oanda.hasEnoughMoney <- function(){
   return(equity>(oanda.account.info$balance*50/100))
 }
 
-oanda.open <- function(accountId=3587970,accountType="practice",type="market",side=NA,cross=NA, units=2000){
+oanda.open <- function(accountType="practice",type="market",side=NA,cross=NA, units=2000){
   if(is.na(side) || is.na(cross)){
     return(NULL)
   }
   
   stopifnot(is.character(oandaToken))
   url <- ifelse(accountType == "practice", "https://api-fxpractice.oanda.com/v1/accounts", "https://api-fxtrade.oanda.com/v1/accounts")
-  url <- paste0(url, "/", accountId, "/orders")
+  url <- paste0(url, "/", oanda.account.info.accountId, "/orders")
   ret = POST(url, accept_json(), add_headers('Authorization' = paste('Bearer ', oandaToken), "Content-Type"="application/x-www-form-urlencoded"),
        body = list(instrument=cross, side = side, units = units, type=type),encode="form")
   print(ret)
 }
 
-oanda.close <- function(accountId=3587970,accountType="practice",orderId=NA){
+oanda.close <- function(accountType="practice",orderId=NA){
   if(is.na(orderId)){
     return(NULL)
   }
   
   stopifnot(is.character(oandaToken))
   url <- ifelse(accountType == "practice", "https://api-fxpractice.oanda.com/v1/accounts", "https://api-fxtrade.oanda.com/v1/accounts")
-  url <- paste0(url, "/", accountId, "/trades/",orderId)
+  url <- paste0(url, "/", oanda.account.info.accountId, "/trades/",orderId)
   DELETE(url, add_headers('Authorization' = paste('Bearer ', oandaToken)))
 }
 
 oanda.tick <- function(){
-  oanda.account.info <<- oanda.account(oanda.account.info.id, oanda.account.info.type)
+  oanda.account.info <<- oanda.account(oanda.account.info.type)
   oanda.trades.open <<- oanda.trades()
   oanda.trades.open.crosses <<- as.character(lapply(oanda.trades.open,FUN=function(x){x$instrument}))
   
@@ -138,26 +140,38 @@ oanda.tick <- function(){
       openTrade = Filter(function(x){x$instrument==cross},oanda.trades.open)[[1]]
       openSide = openTrade$side
       openOrderId = openTrade$id
+      openOrderTime = as.POSIXlt(gsub('T|\\.\\d{6}Z', ' ', openTrade$time))
       direction = ifelse(openSide=="buy",1,-1)
     }
     
+    signalCut = 1
+    
+    switch(oanda.account.info.period, M15={
+      signalCut = 8
+    },H1={
+      signalCut = 2
+    },H4={
+      signalCut = 1
+    })
+    
     ret = getQfxMomentumStrategySignals(symbol = symbol, long = (ifelse(direction>0,T,F)))
-    ret = tail(ret,8)
+    ret = tail(ret,signalCut)
     ret[ret==0] = NA
     ret = tail(na.locf(ret),1)
+    lastSignalTime = as.POSIXlt(gsub('T|\\.\\d{6}Z', ' ', rownames(ret)[1]))
     
     side = ifelse(direction>0,"long","short")
     literalSide = ifelse(direction>0,"buy","sell")
     
     if(nrow(ret)>0){
-      if(!hasOpenTrade){
+      if(!hasOpenTrade && !is.na(ret[paste0(side,"Entry")])){
         # open trade
         print(paste(symbol,side))
         oanda.open(type = "market",side = literalSide,cross = cross)
-      }else if(!is.na(ret[paste0(side,"Exit")])){
-        # close open trade
-        print(paste("closing",symbol))
-        if(!is.null(openOrderId)){
+      }else if(hasOpenTrade && !is.na(ret[paste0(side,"Exit")])){
+        # close open trade        
+        if(!is.null(openOrderId) && openOrderTime <= lastSignalTime){
+          print(paste("closing",symbol))
           oanda.close(orderId = openOrderId)
         }
       }else{
