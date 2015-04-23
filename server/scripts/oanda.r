@@ -65,16 +65,17 @@ oanda.init <- function(accountType="practice"){
   doDelay = 60*10
   
   switch(oanda.account.info.period, M15={
-    doDelay = 25*(60*15)/100
+    doDelay = 60*(60*15)/100
   }, H1={
-    doDelay = 25*(60*60)/100
+    doDelay = 60*(60*60)/100
   }, H4={
-    doDelay = 25*(60*60*4)/100
+    doDelay = 60*(60*60*4)/100
   })
   
   while(TRUE){
     oanda.tick()
     Sys.sleep(doDelay)
+    #Sys.sleep(30)
   }
 }
 
