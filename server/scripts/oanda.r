@@ -113,6 +113,17 @@ oanda.tick <- function(){
   oanda.trades.open <<- oanda.trades()
   oanda.trades.open.crosses <<- as.character(lapply(oanda.trades.open,FUN=function(x){x$instrument}))
   
+  newCount = 0
+  switch(oanda.account.info.period,M15={
+    newCount = 96
+  },H1={
+    newCount = 168
+  },H4={
+    newCount = 180
+  },D={
+    newCount = 365
+  })
+  
   for(cross in oanda.portfolio$cross){
     openOrderId = NULL
     openOrderTime = NULL
@@ -125,9 +136,10 @@ oanda.tick <- function(){
     
     ret = NULL
     symbol = tolower(gsub("[^A-Za-z]+|\\.\\w+\\d+","",cross))
-    eval(parse(text=paste0(symbol,"<<-","getQfxCandles('",cross,"','",oanda.account.info.period,"')")))
+    eval(parse(text=paste0(symbol,"<<-","getLiveCandles('",cross,"','",oanda.account.info.period,"', count = ",newCount,")")))
     
-    momentum = qfxMomentum(data = get(symbol), emaPeriod = 2, debug=F)
+    Sys.sleep(5)
+    momentum = qfxMomentum(data = OHLC(get(symbol)), emaPeriod = 2, debug=F)
     
     if(momentum[,"angle"] >= 0.0008){
       direction = 1
