@@ -4,7 +4,7 @@ source(paste(pwd,'server','scripts','header.r',sep='/'))
 library(httr)
 
 oanda.account.info.accountId = 4952957
-oanda.account.info.period = "H1"
+oanda.account.info.period = "M15"
 
 oanda.account <- function(accountType = "practice"){
   library("httr")
