@@ -77,7 +77,7 @@ tradeStrategyTest = function(symbol=NA, graph=T,long=F,short=T,returnOnly=F){
                             osFUN=osMaxDollar, tradeSize=-(tradeSize), maxSize=-(tradeSize)), 
              type="enter", path.dep=TRUE)
     add.rule(strategy.st, name="ruleSignal", 
-             arguments=list(sigcol="shortExit", sigval=TRUE, orderqty="all", 
+             arguments=list(sigcol="filterFramaExit", sigval=TRUE, orderqty="all", 
                             ordertype="market", orderside="short", replace=FALSE, 
                             prefer="Open"), 
              type="exit", path.dep=TRUE)
@@ -101,7 +101,7 @@ tradeStrategyTest = function(symbol=NA, graph=T,long=F,short=T,returnOnly=F){
                             osFUN=osMaxDollar, tradeSize=tradeSize, maxSize=tradeSize), 
              type="enter", path.dep=TRUE)
     add.rule(strategy.st, name="ruleSignal", 
-             arguments=list(sigcol="longExit", sigval=TRUE, orderqty="all", 
+             arguments=list(sigcol="filterFramaExit", sigval=TRUE, orderqty="all", 
                             ordertype="market", orderside="long", replace=FALSE, 
                             prefer="Open"), 
              type="exit", path.dep=TRUE)
