@@ -115,6 +115,7 @@ oanda.tick <- function(){
   
   for(cross in oanda.portfolio$cross){
     openOrderId = NULL
+    openOrderTime = NULL
     hasOpenTrade = length(grep(cross,oanda.trades.open.crosses,value=T)) > 0
     
     if(!hasOpenTrade && !oanda.hasEnoughMoney()){
@@ -147,18 +148,9 @@ oanda.tick <- function(){
     
     signalCut = 1
     
-    switch(oanda.account.info.period, M15={
-      signalCut = 8
-    },H1={
-      signalCut = 2
-    },H4={
-      signalCut = 1
-    })
-    
-    ret = getQfxMomentumStrategySignals(symbol = symbol, long = (ifelse(direction>0,T,F)))
-    ret = tail(ret,signalCut)
+    signals = getQfxMomentumStrategySignals(symbol = symbol, long = (ifelse(direction>0,T,F)))
+    ret = tail(signals,signalCut)
     ret[ret==0] = NA
-    ret = tail(na.locf(ret),1)
     lastSignalTime = as.POSIXlt(gsub('T|\\.\\d{6}Z', ' ', rownames(ret)[1]))
     
     side = ifelse(direction>0,"long","short")
@@ -171,7 +163,7 @@ oanda.tick <- function(){
         oanda.open(type = "market",side = literalSide,cross = cross)
       }else if(hasOpenTrade && !is.na(ret[paste0(side,"Exit")])){
         # close open trade        
-        if(!is.null(openOrderId) && openOrderTime <= lastSignalTime){
+        if(!is.null(openOrderId) && !is.null(openOrderTime) && openOrderTime <= lastSignalTime){
           print(paste("closing",symbol))
           oanda.close(orderId = openOrderId)
         }
