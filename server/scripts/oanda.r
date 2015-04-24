@@ -139,7 +139,7 @@ oanda.tick <- function(){
     eval(parse(text=paste0(symbol,"<<-","getLiveCandles('",cross,"','",oanda.account.info.period,"', count = ",newCount,")")))
     
     Sys.sleep(5)
-    momentum = qfxMomentum(data = OHLC(get(symbol)), emaPeriod = 2, debug=F)
+    momentum = qfxMomentum(data = OHLC(get(symbol)), emaPeriod = 8, debug=F)
     
     if(momentum[,"angle"] >= 0.0008){
       direction = 1

@@ -55,9 +55,9 @@ tradeStrategyTest = function(symbol=NA, graph=T,long=F,short=T,returnOnly=F){
   initOrders(portfolio.st, initDate=initDate)
   strategy(strategy.st, store=TRUE)
   
-  add.indicator(strategy.st,name="qfxMomentum",arguments = list(data=OHLC(candles),emaPeriod=2,debug=F),label="qm")
-  add.indicator(strategy.st,name="FRAMA",arguments = list(HLC=OHLC(candles),n=4),label="frama.4")
-  add.indicator(strategy.st,name="FRAMA",arguments = list(HLC=OHLC(candles),n=40),label="frama.40")
+  add.indicator(strategy.st,name="qfxMomentum",arguments = list(data=OHLC(candles),emaPeriod=8,debug=F),label="qm")
+  add.indicator(strategy.st,name="FRAMA",arguments = list(HLC=OHLC(candles),n=9,FC=9,SC=22),label="frama.4")
+  add.indicator(strategy.st,name="FRAMA",arguments = list(HLC=OHLC(candles),n=45,FC=45,SC=112),label="frama.40")
   
   # sell
   if(short){
@@ -147,7 +147,7 @@ batchMomentumStrategy <- function(crosses=NA,periods=NA){
       
       eval(parse(text=paste(symbol,"<<-",symbol,"[!duplicated(index(",symbol,")),]",sep="")))
       
-      ret = TradingStrategy(strategy = "qfxMomentum",data = get(symbol),param1 = 2,param2 = 3,param3 = 4,param4 = 40,retSignals = T)
+      ret = TradingStrategy(strategy = "qfxMomentum",data = get(symbol),param1 = 2,param2 = 3,param3 = 4,param4 = 40,param5=40,retSignals = T)
       names(ret) = c(paste(cross,period,sep="-"))
       if(is.null(results)){
         results = ret
@@ -188,7 +188,7 @@ batchMomentum <- function(crosses=NA,periods=NA){
   return(results)
 }
 
-TradingStrategy <- function(strategy=NA, data=NA,param1=NA,param2=NA,param3=NA,param4=NA, retSignals=F,V1=NA,V2=NA,V3=NA, debug=T){
+TradingStrategy <- function(strategy=NA, data=NA,param1=NA,param2=NA,param3=NA,param4=NA, param5=NA,retSignals=F,V1=NA,V2=NA,V3=NA, debug=T){
   tradingreturns = NULL
   returns = Delt(Op(data),Cl(data))
   names(returns)<-c("return")
@@ -201,8 +201,9 @@ TradingStrategy <- function(strategy=NA, data=NA,param1=NA,param2=NA,param3=NA,p
   
   switch(strategy, , qfxMomentum={
     qm = qfxMomentum(OHLC(data),emaPeriod=param1)
-    ema1 = FRAMA(HLC(data),n=param3)$FRAMA
-    ema2 = FRAMA(HLC(data),n=param4)$FRAMA
+    ema1 = FRAMA(HLC(data),n=param2,FC=param2,SC = param2*2.5)$FRAMA
+    #ema2 = FRAMA(HLC(data),n=param4,FC=param4,SC = param5)$FRAMA
+    ema2 = FRAMA(HLC(data),n=param2*5,FC=param2*5,SC = param2*5*2.5)$FRAMA
     qfxmomentum = cbind(qm,ema1,ema2)
 
     names(qfxmomentum) = c("qm","qmsd","angle","ema1","ema2")
@@ -261,7 +262,7 @@ TradingStrategy <- function(strategy=NA, data=NA,param1=NA,param2=NA,param3=NA,p
     signal = apply(cbind(HLC(data),sar),1,function (x) {if(is.na(x["sar"])|is.na(x["High"])|is.na(x["Low"])){ return (0) } else { if(x["sar"]<x["High"]&x["sar"]<x["Low"]){return (1)} else if(x["sar"]>x["High"]&x["sar"]>x["Low"]) {return (-1)}else{ return(0)}}})
   })
   
-  runName = paste(strategy,param1,param2,param3,param4,sep=",")
+  runName = paste(strategy,param1,param2,param3,param4,param5,sep=",")
   tradingreturns = signal * returns
   signal = as.xts(signal)
   colnames(tradingreturns) <- runName
@@ -299,12 +300,10 @@ RunIterativeStrategy <- function(data = NA, strategy = NA, paramsRange = NA, par
   f = function(...){
     return(TradingStrategy(strategy, ...))
   }
-  
-  ix = 1
-  
+
   if(!is.na(data)){
-    for(i in loop){
-      r = tmp[ix,]
+    for(i in 1:nrow(tmp)){
+      r = tmp[i,]
       cols = paste(strategy,paste(as.character(r), collapse=","),sep=",")
       params = as.list(r)
       params$data = data
@@ -314,7 +313,6 @@ RunIterativeStrategy <- function(data = NA, strategy = NA, paramsRange = NA, par
       }else{
         results = cbind(results,ret)
       }
-      ix = ix+1
     }
   }else if(!is.na(crosses) & !is.na(periods)){
     for(cross in crosses){
@@ -423,13 +421,13 @@ trainStrategy <- function(data=NA,strategy, paramsRange=NA,paramsCount=1,crosses
   pTab <- FindOptimumStrategy(trainingData,strategy,paramsRange,paramsCount,crosses=crosses,periods=periods) #pTab is the performance table of the various parameters tested
 }
 #2
-testStrategy <- function(data, instrument,strategy,param1=NA,param2=NA,param3=NA,param4=NA){
+testStrategy <- function(data, instrument,strategy,param1=NA,param2=NA,param3=NA,param4=NA,param5=NA){
   #sampleStartDate = index(data[ceiling(nrow(data)/2)+1,])
   sampleStartDate = index(data[1,])
   testData <- window(data, start = sampleStartDate)
   indexReturns <- Delt(Cl(window(data, start = sampleStartDate)))
   colnames(indexReturns) <- paste(instrument, "Buy&Hold",sep=" ")
-  outOfSampleReturns <- TradingStrategy(strategy,testData,param1=param1,param2=param2,param3=param3,param4=param4)
+  outOfSampleReturns <- TradingStrategy(strategy,testData,param1=param1,param2=param2,param3=param3,param4=param4,param5=param5)
   finalReturns <- cbind(outOfSampleReturns,indexReturns)
   
   dev.new()
