@@ -259,8 +259,8 @@ graphRobustLines <- function(symbol=NA, graph=T, period=NA, candles=NA){
       hlc = last(HLC(candles), period)
     }
 
-    f1=line(as.numeric(FRAMA(hlc,n=40)$FRAMA))
-    f2=line(as.numeric(FRAMA(hlc,n=4)$FRAMA))
+    f1=line(as.numeric(FRAMA(hlc,n=45,FC=45,SC=112)$FRAMA))
+    f2=line(as.numeric(FRAMA(hlc,n=9,FC=9,SC=22)$FRAMA))
     co=coef(f1)
     co2=coef(f2)
     fit1 = fitted(f1)
@@ -289,7 +289,7 @@ graphRobustLines <- function(symbol=NA, graph=T, period=NA, candles=NA){
     rl$angle = ar*180/pi
     
     if(graph){
-      lineChart(FRAMA(hlc,n=4),name = symbol)
+      lineChart(FRAMA(hlc,n=9,FC=9,SC=22),name = symbol)
       #plot(FRAMA(hlc,n=4)$FRAMA,type="l",main=name)
       abline(co3[1],co3[2],col='orange',lwd=2)
       abline(intersection,0,lwd=2,col="orange")

@@ -115,7 +115,7 @@ oanda.tick <- function(){
   
   newCount = 0
   switch(oanda.account.info.period,M15={
-    newCount = 96
+    newCount = 96*2
   },H1={
     newCount = 168
   },H4={
