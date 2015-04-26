@@ -3,6 +3,7 @@ source(paste(pwd,'server','scripts','header.r',sep='/'))
 
 library(httr)
 
+oanda.account.info.strategy = "snake"
 oanda.account.info.accountId = 4952957
 oanda.account.info.period = "M15"
 
@@ -83,7 +84,12 @@ oanda.init <- function(accountType="practice"){
   })
   
   while(TRUE){
-    oanda.tick()
+    switch(oanda.account.info.strategy, snake={
+      oanda.tickSnake()
+    }, momentum={
+      oanda.tickMomentum()
+    })
+
     Sys.sleep(doDelay)
     #Sys.sleep(30)
   }
@@ -118,7 +124,7 @@ oanda.close <- function(accountType="practice",orderId=NA){
   DELETE(url, add_headers('Authorization' = paste('Bearer ', oandaToken)))
 }
 
-oanda.tick <- function(){
+oanda.tickSnake <- function(){
   oanda.account.info <<- oanda.account(oanda.account.info.type)
   oanda.trades.open <<- oanda.trades()
   oanda.trades.open.crosses <<- as.character(lapply(oanda.trades.open,FUN=function(x){x$instrument}))
@@ -177,6 +183,8 @@ oanda.tick <- function(){
       if(!is.na(direction)){
         side = ifelse(direction>0,"long","short")
         literalSide = ifelse(direction>0,"buy","sell")
+      }else{
+        next
       }
 
       if(!hasOpenTrade){
@@ -198,7 +206,7 @@ oanda.tick <- function(){
   }
 }
 
-oanda.tick_back <- function(){
+oanda.tickMomentum <- function(){
   oanda.account.info <<- oanda.account(oanda.account.info.type)
   oanda.trades.open <<- oanda.trades()
   oanda.trades.open.crosses <<- as.character(lapply(oanda.trades.open,FUN=function(x){x$instrument}))
