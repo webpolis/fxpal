@@ -167,7 +167,7 @@ oanda.tickSnake <- function(){
     
     signalCut = 1
     
-    signals = getQfxSnakeStrategySignals(symbol = symbol, both = T)
+    signals = getQfxSnakeStrategySignals(symbol = symbol)
     ret = tail(signals,signalCut)
     ret[ret==0] = NA
     lastSignalTime = as.POSIXlt(gsub('T|\\.\\d{6}Z', ' ', rownames(ret)[1]))
