@@ -60,7 +60,7 @@ snakeStrategyTest = function(symbol=NA, graph=T,long=F,returnOnly=F,both=F){
   initOrders(portfolio.st, initDate=initDate)
   strategy(strategy.st, store=TRUE)
   
-  add.indicator(strategy.st,name="qfxSnake",arguments = list(data=OHLC(candles),triggerN=13,triggerFC=16,triggerSC=19),label="snake")
+  add.indicator(strategy.st,name="qfxSnake",arguments = list(data=OHLC(candles),triggerN=9,triggerFC=11,triggerSC=22),label="snake")
   
   # sell
   if(short){
@@ -148,20 +148,20 @@ momentumStrategyTest = function(symbol=NA, graph=T,long=F,returnOnly=F, both=F){
   initOrders(portfolio.st, initDate=initDate)
   strategy(strategy.st, store=TRUE)
   
-  add.indicator(strategy.st,name="qfxMomentum",arguments = list(data=OHLC(candles),emaPeriod=8,debug=F),label="qm")
-  add.indicator(strategy.st,name="FRAMA",arguments = list(HLC=OHLC(candles),n=9,FC=9,SC=22),label="frama.9")
-  add.indicator(strategy.st,name="FRAMA",arguments = list(HLC=OHLC(candles),n=45,FC=45,SC=112),label="frama.45")
+  add.indicator(strategy.st,name="qfxMomentum",arguments = list(data=OHLC(candles),emaPeriod=11,debug=F),label="qm")
+  add.indicator(strategy.st,name="FRAMA",arguments = list(HLC=OHLC(candles),n=12,FC=13,SC=32),label="frama.12")
+  add.indicator(strategy.st,name="FRAMA",arguments = list(HLC=OHLC(candles),n=60,FC=65,SC=162),label="frama.60")
   
   # sell
   if(short){
     print("short trading...")
     add.signal(strategy.st,name="sigQmThreshold",arguments = list(relationship="gt"),label="filterQmShort")
-    add.signal(strategy.st,name="sigComparison",arguments = list(columns=c("FRAMA.frama.9","FRAMA.frama.45"),relationship="lte"),label="filterFramaShort")
+    add.signal(strategy.st,name="sigComparison",arguments = list(columns=c("FRAMA.frama.12","FRAMA.frama.60"),relationship="lte"),label="filterFramaShort")
     add.signal(strategy.st,name="sigAND",arguments = list(columns=c("filterQmShort","filterFramaShort"),cross=T),label="shortEntry")
     
     add.signal(strategy.st,name="sigQmThreshold",arguments = list(relationship="lte", op=T),label="filterQmShortExit")
     add.signal(strategy.st, name="sigComparison",
-               arguments = list(columns=c("FRAMA.frama.9","FRAMA.frama.45"),relationship="gt"),label="filterFramaShortExit")
+               arguments = list(columns=c("FRAMA.frama.12","FRAMA.frama.60"),relationship="gt"),label="filterFramaShortExit")
     add.signal(strategy.st,name="sigAND",arguments = list(columns=c("filterQmShortExit","filterFramaShortExit"),cross=T),label="shortExit")
   
     add.rule(strategy.st, name="ruleSignal", 
@@ -180,12 +180,12 @@ momentumStrategyTest = function(symbol=NA, graph=T,long=F,returnOnly=F, both=F){
   if(long){
     print("long trading...")
     add.signal(strategy.st,name="sigQmThreshold",arguments = list(relationship="lt",op=T),label="filterQmLong")
-    add.signal(strategy.st,name="sigComparison",arguments = list(columns=c("FRAMA.frama.9","FRAMA.frama.45"),relationship="gte"),label="filterFramaLong")
+    add.signal(strategy.st,name="sigComparison",arguments = list(columns=c("FRAMA.frama.12","FRAMA.frama.60"),relationship="gte"),label="filterFramaLong")
     add.signal(strategy.st,name="sigAND",arguments = list(columns=c("filterQmLong","filterFramaLong"),cross=T),label="longEntry")
     
     add.signal(strategy.st,name="sigQmThreshold",arguments = list(relationship="gte"),label="filterQmLongExit")
     add.signal(strategy.st, name="sigComparison",
-               arguments = list(columns=c("FRAMA.frama.9","FRAMA.frama.45"),relationship="lt"),label="filterFramaLongExit")
+               arguments = list(columns=c("FRAMA.frama.12","FRAMA.frama.60"),relationship="lt"),label="filterFramaLongExit")
     add.signal(strategy.st,name="sigAND",arguments = list(columns=c("filterQmLongExit","filterFramaLongExit"),cross=T),label="longExit")
     
     add.rule(strategy.st, name="ruleSignal", 
@@ -277,7 +277,7 @@ batchMomentum <- function(crosses=NA,periods=NA){
       
       eval(parse(text=paste(symbol,"<<-",symbol,"[!duplicated(index(",symbol,")),]",sep="")))
 
-      ret = qfxMomentum(data = get(symbol),emaPeriod = 2)
+      ret = qfxMomentum(data = get(symbol),emaPeriod = 11)
       names(ret) = c(paste(cross,period,"qm",sep="-"),paste(cross,period,"qmsd",sep="-"),paste(cross,period,"angle",sep="-"))
       if(is.null(results)){
         results = ret
@@ -301,8 +301,8 @@ TradingStrategy <- function(strategy=NA, data=NA,param1=NA,param2=NA,param3=NA,p
   param2 = ifelse(is.na(V2),param2,V2)
   param3 = ifelse(is.na(V3),param3,V3)
   
-  switch(strategy, SNAKE={
-    ema1 = FRAMA(HLC(data),n=param1,FC=param2,SC = param3)$FRAMA
+  switch(strategy, qfxSnake={
+    ema1 = FRAMA(HLC(data),n=param1,FC=param2,SC = param1*2.5)$FRAMA
     snake = qfxSnake(data = data)
     frama = cbind(ema1$FRAMA, snake$snake, Cl(data))
     names(frama) = c("frama", "snake", "close")
@@ -341,9 +341,9 @@ TradingStrategy <- function(strategy=NA, data=NA,param1=NA,param2=NA,param3=NA,p
     })
   }, qfxMomentum={
     qm = qfxMomentum(OHLC(data),emaPeriod=param1)
-    ema1 = FRAMA(HLC(data),n=param2,FC=param2,SC = param2*2.5)$FRAMA
+    ema1 = FRAMA(HLC(data),n=param2,FC=param3,SC = param3*2.5)$FRAMA
     #ema2 = FRAMA(HLC(data),n=param4,FC=param4,SC = param5)$FRAMA
-    ema2 = FRAMA(HLC(data),n=param2*5,FC=param2*5,SC = param2*5*2.5)$FRAMA
+    ema2 = FRAMA(HLC(data),n=param2*5,FC=param3*5,SC = param3*5*2.5)$FRAMA
     qfxmomentum = cbind(qm,ema1,ema2)
 
     names(qfxmomentum) = c("qm","qmsd","angle","ema1","ema2")
@@ -369,10 +369,10 @@ TradingStrategy <- function(strategy=NA, data=NA,param1=NA,param2=NA,param3=NA,p
     tmp = cbind(adx,atr)
     signal = apply(tmp,1,function (x) {if(is.na(x["atr"])|is.na(x["DIp"])|is.na(x["DIn"])){ return (0) } else if(x["atr"]>0.0011&x["DIp"]>30&x["DIn"]<20){return (1)}else if(x["atr"]>0.0011&x["DIp"]<20&x["DIn"]>30){return (-1)}else if(x["atr"]<0.0006&x["DIp"]>30&x["DIn"]<20){return (1)}else if(x["atr"]<0.0006&x["DIp"]<20&x["DIn"]>30){return (-1)}else{return(0)}})
   }, CCI={
-    cci = CCI(Op(data),n=param1)
+    cci = CCI(HLC(data),n=param1)
     signal = apply(cci,1,function (x) {if(is.na(x["cci"])){ return (0) } else { if(x["cci"]>100){return (1)} else if(x["cci"]<(-100)) {return (-1)}else{ return(0)}}})
   }, MACD={
-    macd = MACD(Op(data),nFast=param1,nSlow=param2,nSig=param3,maType=list(list(EMA),list(EMA),list(SMA)))
+    macd = MACD(Cl(data),nFast=param1,nSlow=param2,nSig=param3,maType=list(list(EMA),list(EMA),list(SMA)))
     signal = apply(macd,1,function (x) { if(is.na(x["macd"]) | is.na(x["signal"])){ return (0) } else { if(x["macd"]>x["signal"] & x["signal"]>0){return (1)} else if(x["macd"]<x["signal"] & x["signal"]<0) {return (-1)}else{ return(0)}}})
   }, EMA={
     ema1 = EMA(Op(data),n=param1)
@@ -382,13 +382,13 @@ TradingStrategy <- function(strategy=NA, data=NA,param1=NA,param2=NA,param3=NA,p
     names(emas) = c("ema1","ema2","ema3")
     signal = apply(emas,1,function (x) {if(is.na(x["ema1"])|is.na(x["ema2"])|is.na(x["ema3"])){ return (0) } else { if(x["ema1"]>x["ema2"]&x["ema2"]>x["ema3"]){return (1)} else if(x["ema1"]<x["ema2"]&x["ema2"]<x["ema3"]){return (-1)}else{return(0)}}})
   }, SMI={
-    smi = SMI(Op(data),nFast=param1,nSlow=param2,nSig=param3,maType=list(list(SMA), list(EMA, wilder=TRUE), list(SMA)))
+    smi = SMI(HLC(data),nFast=param1,nSlow=param2,nSig=param3,maType=list(list(SMA), list(EMA, wilder=TRUE), list(SMA)))
     signal = apply(smi,1,function (x) {if(is.na(x["SMI"])|is.na(x["signal"])){ return (0) } else { if(x["SMI"]>20&x["SMI"]<x["signal"]){return (-1)} else if(x["SMI"]<(-20)&x["SMI"]>x["signal"]){return (1)}else{return(0)}}})
   }, RSI={
-    rsi = RSI(Op(data),n=param1)
+    rsi = RSI(Cl(data),n=param1)
     signal = apply(rsi,1,function (x) {if(is.na(x["EMA"])){ return (0) } else { if(x["EMA"]>60){return (-1)} else if(x["EMA"]<=30){return (1)}else{return(0)}}})
   }, STOCH={
-    stch = stoch(Op(data),nFastK=param1,nFastD=param1,nSlowD=param1,maType=list(list(SMA), list(EMA, wilder=TRUE), list(SMA)))
+    stch = stoch(HLC(data),nFastK=param1,nFastD=param2,nSlowD=param3,maType=list(list(SMA), list(EMA, wilder=TRUE), list(SMA)))
     stch = stch*100
     stch = as.xts(apply(stch,1,mean))
     names(stch) = c("stoch")
@@ -574,7 +574,7 @@ testStrategy <- function(data, instrument,strategy,param1=NA,param2=NA,param3=NA
   charts.PerformanceSummary(finalReturns,main=paste(strategy,"- out of Sample"),geometric=FALSE)
 }
 
-qfxMomentum <- function(data,emaPeriod=2, debug=T){
+qfxMomentum <- function(data,emaPeriod=11, debug=T){
   stats = getSignals(data,debug)
   stats$qm = round(DEMA(scale(stats$avg),emaPeriod,wilder=T),5)
   qmsd = sd(na.omit(stats$qm))
@@ -585,9 +585,9 @@ qfxMomentum <- function(data,emaPeriod=2, debug=T){
   return(stats)
 }
 
-qfxSnake <- function(data = NA, triggerN = 13, triggerFC = 16, triggerSC = 19, graph = F){
-  fr9=FRAMA(HLC(data),n = 9,FC=9,SC=22)
-  fr45=FRAMA(HLC(data),n = 45,FC=45,SC=112)
+qfxSnake <- function(data = NA, triggerN = 9, triggerFC = 11, triggerSC = 22, graph = F){
+  fr9=FRAMA(HLC(data),n = 12,FC=13,SC=32)
+  fr45=FRAMA(HLC(data),n = 60,FC=65,SC=162)
   fr13=FRAMA(HLC(data),n = triggerN,FC=triggerFC,SC=triggerSC)
   ff=cbind(fr9$FRAMA,fr45$FRAMA)
   ff$mean=rowMeans(ff)
@@ -613,13 +613,13 @@ getSignals <- function(data,debug){
   rsimsi = cbind(TradingStrategy("SMI",data,10,7,16, retSignals=T, debug=debug),TradingStrategy("RSI",data,14, retSignals=T, debug=debug))
   names(rsimsi) = c("B.SMI","B.RSI")
   # RSI+STOCH
-  stochrsi = cbind(TradingStrategy("RSI",data,14, retSignals=T, debug=debug),TradingStrategy("STOCH",data,3,3,3, retSignals=T, debug=debug))
+  stochrsi = cbind(TradingStrategy("RSI",data,14, retSignals=T, debug=debug),TradingStrategy("STOCH",data,2,3,8, retSignals=T, debug=debug))
   names(stochrsi) = c("C.RSI","C.STOCH")
   # ADX+SAR
   adxsar = cbind(TradingStrategy("ADX",data,3, retSignals=T, debug=debug),TradingStrategy("SAR",data, retSignals=T, debug=debug))
   names(adxsar) = c("D.ADX","D.SAR")
   # EMA+STOCH
-  stochema = cbind(TradingStrategy("EMA",data,6,11,5, retSignals=T, debug=debug),TradingStrategy("STOCH",data,3,3,3, retSignals=T, debug=debug))
+  stochema = cbind(TradingStrategy("EMA",data,6,11,5, retSignals=T, debug=debug),TradingStrategy("STOCH",data,2,3,8, retSignals=T, debug=debug))
   names(stochema) = c("E.EMA","E.STOCH")
   # ADX+ATR
   adxatr = TradingStrategy("ADXATR",data,3,7, retSignals=T, debug=debug)
