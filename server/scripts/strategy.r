@@ -60,7 +60,7 @@ snakeStrategyTest = function(symbol=NA, graph=T,long=F,returnOnly=F,both=F){
   initOrders(portfolio.st, initDate=initDate)
   strategy(strategy.st, store=TRUE)
   
-  add.indicator(strategy.st,name="qfxSnake",arguments = list(data=OHLC(candles)),label="snake")
+  add.indicator(strategy.st,name="qfxSnake",arguments = list(data=OHLC(candles),triggerN=13,triggerFC=16,triggerSC=19),label="snake")
   
   # sell
   if(short){
@@ -214,6 +214,15 @@ getQfxMomentumStrategySignals <- function(symbol=NA,long=T){
   strat=tradeStrategyTest(symbol=symbol,long = long, returnOnly = T)
   tt=applyStrategy(strategy=strat$strategy,portfolios=strat$portfolios,debug=T)
   dd=data.frame(tt$qfxMomentumStrategy[[symbol]]$rules)
+  dd=dd[,grep("pathdep\\.(?:long|short)(?:Exit|Entry)",names(dd))]
+  names(dd) = gsub("pathdep\\.","",names(dd))
+  return(dd)
+}
+
+getQfxSnakeStrategySignals <- function(symbol=NA){
+  strat=snakeStrategyTest(symbol=symbol,both=T, returnOnly = T)
+  tt=applyStrategy(strategy=strat$strategy,portfolios=strat$portfolios,debug=T)
+  dd=data.frame(tt$qfxSnakeStrategy[[symbol]]$rules)
   dd=dd[,grep("pathdep\\.(?:long|short)(?:Exit|Entry)",names(dd))]
   names(dd) = gsub("pathdep\\.","",names(dd))
   return(dd)
