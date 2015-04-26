@@ -126,9 +126,15 @@ snakeStrategyTest = function(symbol=NA, graph=T,long=F,returnOnly=F,both=F){
   return(strat)
 }
 
-tradeStrategyTest = function(symbol=NA, graph=T,long=F,returnOnly=F){
+momentumStrategyTest = function(symbol=NA, graph=T,long=F,returnOnly=F, both=F){
   currency("USD")
   short = !long
+  
+  if(both){
+    short = T
+    long = T
+  }
+  
   candles = get(symbol)
   stock(symbol,currency="USD",multiplier = 1)
   strategy.st = portfolio.st = account.st = "qfxMomentumStrategy"
@@ -149,14 +155,14 @@ tradeStrategyTest = function(symbol=NA, graph=T,long=F,returnOnly=F){
   # sell
   if(short){
     print("short trading...")
-    add.signal(strategy.st,name="sigQmThreshold",arguments = list(relationship="gt"),label="filterQm")
-    add.signal(strategy.st,name="sigComparison",arguments = list(columns=c("FRAMA.frama.9","FRAMA.frama.45"),relationship="lte"),label="filterFrama")
-    add.signal(strategy.st,name="sigAND",arguments = list(columns=c("filterQm","filterFrama"),cross=T),label="shortEntry")
+    add.signal(strategy.st,name="sigQmThreshold",arguments = list(relationship="gt"),label="filterQmShort")
+    add.signal(strategy.st,name="sigComparison",arguments = list(columns=c("FRAMA.frama.9","FRAMA.frama.45"),relationship="lte"),label="filterFramaShort")
+    add.signal(strategy.st,name="sigAND",arguments = list(columns=c("filterQmShort","filterFramaShort"),cross=T),label="shortEntry")
     
-    add.signal(strategy.st,name="sigQmThreshold",arguments = list(relationship="lte", op=T),label="filterQmExit")
+    add.signal(strategy.st,name="sigQmThreshold",arguments = list(relationship="lte", op=T),label="filterQmShortExit")
     add.signal(strategy.st, name="sigComparison",
-               arguments = list(columns=c("FRAMA.frama.9","FRAMA.frama.45"),relationship="gt"),label="filterFramaExit")
-    add.signal(strategy.st,name="sigAND",arguments = list(columns=c("filterQmExit","filterFramaExit"),cross=T),label="shortExit")
+               arguments = list(columns=c("FRAMA.frama.9","FRAMA.frama.45"),relationship="gt"),label="filterFramaShortExit")
+    add.signal(strategy.st,name="sigAND",arguments = list(columns=c("filterQmShortExit","filterFramaShortExit"),cross=T),label="shortExit")
   
     add.rule(strategy.st, name="ruleSignal", 
              arguments=list(sigcol="shortEntry", sigval=TRUE, ordertype="market", 
@@ -173,14 +179,14 @@ tradeStrategyTest = function(symbol=NA, graph=T,long=F,returnOnly=F){
   # buy
   if(long){
     print("long trading...")
-    add.signal(strategy.st,name="sigQmThreshold",arguments = list(relationship="lt",op=T),label="filterQm")
-    add.signal(strategy.st,name="sigComparison",arguments = list(columns=c("FRAMA.frama.9","FRAMA.frama.45"),relationship="gte"),label="filterFrama")
-    add.signal(strategy.st,name="sigAND",arguments = list(columns=c("filterQm","filterFrama"),cross=T),label="longEntry")
+    add.signal(strategy.st,name="sigQmThreshold",arguments = list(relationship="lt",op=T),label="filterQmLong")
+    add.signal(strategy.st,name="sigComparison",arguments = list(columns=c("FRAMA.frama.9","FRAMA.frama.45"),relationship="gte"),label="filterFramaLong")
+    add.signal(strategy.st,name="sigAND",arguments = list(columns=c("filterQmLong","filterFramaLong"),cross=T),label="longEntry")
     
-    add.signal(strategy.st,name="sigQmThreshold",arguments = list(relationship="gte"),label="filterQmExit")
+    add.signal(strategy.st,name="sigQmThreshold",arguments = list(relationship="gte"),label="filterQmLongExit")
     add.signal(strategy.st, name="sigComparison",
-               arguments = list(columns=c("FRAMA.frama.9","FRAMA.frama.45"),relationship="lt"),label="filterFramaExit")
-    add.signal(strategy.st,name="sigAND",arguments = list(columns=c("filterQmExit","filterFramaExit"),cross=T),label="longExit")
+               arguments = list(columns=c("FRAMA.frama.9","FRAMA.frama.45"),relationship="lt"),label="filterFramaLongExit")
+    add.signal(strategy.st,name="sigAND",arguments = list(columns=c("filterQmLongExit","filterFramaLongExit"),cross=T),label="longExit")
     
     add.rule(strategy.st, name="ruleSignal", 
              arguments=list(sigcol="longEntry", sigval=TRUE, ordertype="market", 
@@ -211,7 +217,7 @@ tradeStrategyTest = function(symbol=NA, graph=T,long=F,returnOnly=F){
 }
 
 getQfxMomentumStrategySignals <- function(symbol=NA,long=T){
-  strat=tradeStrategyTest(symbol=symbol,long = long, returnOnly = T)
+  strat=momentumStrategyTest(symbol=symbol,long = long, returnOnly = T)
   tt=applyStrategy(strategy=strat$strategy,portfolios=strat$portfolios,debug=T)
   dd=data.frame(tt$qfxMomentumStrategy[[symbol]]$rules)
   dd=dd[,grep("pathdep\\.(?:long|short)(?:Exit|Entry)",names(dd))]
