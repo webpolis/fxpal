@@ -40,6 +40,92 @@ sigQmThreshold = function(label, data=mktdata, relationship=c("gt","lt","eq","gt
   return(ret_sig)
 }
 
+snakeStrategyTest = function(symbol=NA, graph=T,long=F,returnOnly=F,both=F){
+  currency("USD")
+  short = !long
+  if(both){
+    long = T
+    short = T
+  }
+  candles = get(symbol)
+  stock(symbol,currency="USD",multiplier = 1)
+  strategy.st = portfolio.st = account.st = "qfxSnakeStrategy"
+  initEq = 200
+  tradeSize = initEq*.05
+  rm.strat(strategy.st)
+  to=as.character(Sys.Date())
+  initDate=first(index(candles))
+  initPortf(portfolio.st, symbols=symbol, initDate=initDate, currency='USD')
+  initAcct(account.st, portfolios=portfolio.st, initDate=initDate, currency='USD',initEq=initEq)
+  initOrders(portfolio.st, initDate=initDate)
+  strategy(strategy.st, store=TRUE)
+  
+  add.indicator(strategy.st,name="qfxSnake",arguments = list(data=OHLC(candles)),label="snake")
+  
+  # sell
+  if(short){
+    print("short trading...")
+    add.signal(strategy.st,name="sigThreshold",arguments = list(relationship="eq", column="snake.snake", threshold=-1),label="filterSnakeShort")
+    add.signal(strategy.st,name="sigComparison",arguments = list(columns=c("Close","trigger.snake"),relationship="lt"),label="filterFramaShort")
+    add.signal(strategy.st,name="sigAND",arguments = list(columns=c("filterSnakeShort","filterFramaShort"),cross=T),label="shortEntry")
+    
+    add.signal(strategy.st,name="sigThreshold",arguments = list(relationship="eq", column="snake.snake", threshold=1),label="filterSnakeExitShort")
+    add.signal(strategy.st,name="sigComparison",arguments = list(columns=c("trigger.snake","mean.snake"),relationship="gt"),label="filterFramaExitShort")
+    #add.signal(strategy.st,name="sigComparison",arguments = list(columns=c("Close", "trigger.snake"),relationship="gt"),label="filterFramaExitShort")
+    add.signal(strategy.st,name="sigAND",arguments = list(columns=c("filterSnakeExitShort","filterFramaExitShort"),cross=T),label="shortExit")
+    
+    add.rule(strategy.st, name="ruleSignal", 
+             arguments=list(sigcol="shortEntry", sigval=TRUE, ordertype="market", 
+                            orderside="short", replace=FALSE, prefer="Open", 
+                            osFUN=osMaxDollar, tradeSize=-(tradeSize), maxSize=-(tradeSize)), 
+             type="enter", path.dep=TRUE)
+    add.rule(strategy.st, name="ruleSignal", 
+             arguments=list(sigcol="shortExit", sigval=TRUE, orderqty="all", 
+                            ordertype="market", orderside="short", replace=FALSE, 
+                            prefer="Open"), 
+             type="exit", path.dep=TRUE)
+  }
+  
+  # buy
+  if(long){
+    print("long trading...")
+    add.signal(strategy.st,name="sigThreshold",arguments = list(relationship="eq", column="snake.snake", threshold=1),label="filterSnakeLong")
+    add.signal(strategy.st,name="sigComparison",arguments = list(columns=c("Close","trigger.snake"),relationship="gt"),label="filterFramaLong")
+    add.signal(strategy.st,name="sigAND",arguments = list(columns=c("filterSnakeLong","filterFramaLong"),cross=T),label="longEntry")
+    
+    add.signal(strategy.st,name="sigThreshold",arguments = list(relationship="eq", column="snake.snake", threshold=-1),label="filterSnakeExitLong")
+    add.signal(strategy.st,name="sigComparison",arguments = list(columns=c("trigger.snake","mean.snake"),relationship="lt"),label="filterFramaExitLong")
+    #add.signal(strategy.st,name="sigComparison",arguments = list(columns=c("Close", "trigger.snake"),relationship="lt"),label="filterFramaExitLong")
+    add.signal(strategy.st,name="sigAND",arguments = list(columns=c("filterSnakeExitLong","filterFramaExitLong"),cross=T),label="longExit")
+    
+    add.rule(strategy.st, name="ruleSignal", 
+             arguments=list(sigcol="longEntry", sigval=TRUE, ordertype="market", 
+                            orderside="long", replace=FALSE, prefer="Open", 
+                            osFUN=osMaxDollar, tradeSize=tradeSize, maxSize=tradeSize), 
+             type="enter", path.dep=TRUE)
+    add.rule(strategy.st, name="ruleSignal", 
+             arguments=list(sigcol="longExit", sigval=TRUE, orderqty="all", 
+                            ordertype="market", orderside="long", replace=FALSE, 
+                            prefer="Open"), 
+             type="exit", path.dep=TRUE)
+  }
+  
+  strat = list(strategy=strategy.st, portfolios=portfolio.st)
+  
+  if(returnOnly){
+    return(strat)
+  }
+  
+  applyStrategy(strategy=strat$strategy,portfolios=strat$portfolios)
+  updatePortf(strat$portfolios)
+  updateAcct(strat$portfolios)
+  updateEndEq(strat$strategy)
+  
+  chart.Posn(strat$portfolios)
+  
+  return(strat)
+}
+
 tradeStrategyTest = function(symbol=NA, graph=T,long=F,returnOnly=F){
   currency("USD")
   short = !long
@@ -200,7 +286,45 @@ TradingStrategy <- function(strategy=NA, data=NA,param1=NA,param2=NA,param3=NA,p
   param2 = ifelse(is.na(V2),param2,V2)
   param3 = ifelse(is.na(V3),param3,V3)
   
-  switch(strategy, , qfxMomentum={
+  switch(strategy, SNAKE={
+    ema1 = FRAMA(HLC(data),n=param1,FC=param2,SC = param3)$FRAMA
+    snake = qfxSnake(data = data)
+    frama = cbind(ema1$FRAMA, snake$snake, Cl(data))
+    names(frama) = c("frama", "snake", "close")
+    
+    signal = apply(frama,1,function (x) {
+      if(is.na(x["frama"]) || is.na(x["snake"]) || is.na(x["close"])){
+        return (0)
+      } else {
+        if(x["close"] > x["frama"] && x["snake"] == 1){
+          return (1)
+        } else if(x["close"] < x["frama"] && x["snake"] == -1) {
+          return (-1)
+        }else{
+          return(0)
+        }
+      }
+    })
+  }, FRAMA={
+    ema1 = FRAMA(HLC(data),n=param1,FC=param2,SC = param3)$FRAMA
+    ema2 = FRAMA(HLC(data),n=param1*5,FC=param2*5,SC = param3*5)$FRAMA
+    frama = cbind(ema1,ema2)
+    names(frama) = c("ema1","ema2")
+    
+    signal = apply(frama,1,function (x) {
+      if(is.na(x["ema1"]) || is.na(x["ema2"])){
+        return (0)
+      } else {
+        if(x["ema1"] > x["ema2"]){
+          return (1)
+        } else if(x["ema1"] < x["ema2"]) {
+          return (-1)
+        }else{
+          return(0)
+        }
+      }
+    })
+  }, qfxMomentum={
     qm = qfxMomentum(OHLC(data),emaPeriod=param1)
     ema1 = FRAMA(HLC(data),n=param2,FC=param2,SC = param2*2.5)$FRAMA
     #ema2 = FRAMA(HLC(data),n=param4,FC=param4,SC = param5)$FRAMA
@@ -444,6 +568,26 @@ qfxMomentum <- function(data,emaPeriod=2, debug=T){
   rl = graphRobustLines(candles = data,graph = F)
   stats$angle = rl$angle
   return(stats)
+}
+
+qfxSnake <- function(data = NA, triggerN = 13, triggerFC = 16, triggerSC = 19, graph = F){
+  fr9=FRAMA(HLC(data),n = 9,FC=9,SC=22)
+  fr45=FRAMA(HLC(data),n = 45,FC=45,SC=112)
+  fr13=FRAMA(HLC(data),n = triggerN,FC=triggerFC,SC=triggerSC)
+  ff=cbind(fr9$FRAMA,fr45$FRAMA)
+  ff$mean=rowMeans(ff)
+  ret = ifelse(ff$FRAMA>ff$FRAMA.1,1,-1)
+  names(ret) = c("snake")
+  ret$mean = ff$mean
+  ret$trigger = fr13$FRAMA
+  
+  if(graph){
+    plot(Cl(data),type="l")
+    lines(ret$mean,type="p",col=ifelse(ret$snake==1,"green","red"))
+    lines(ret$trigger,type="l",col="blue")
+  }
+  
+  return(ret)
 }
 
 getSignals <- function(data,debug){
