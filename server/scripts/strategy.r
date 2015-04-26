@@ -585,7 +585,7 @@ qfxMomentum <- function(data,emaPeriod=11, debug=T){
   return(stats)
 }
 
-qfxSnake <- function(data = NA, triggerN = 9, triggerFC = 11, triggerSC = 22, graph = F){
+qfxSnake <- function(data = NA, triggerN = 9, triggerFC = 11, triggerSC = 22, graph = F, save = F, name=NA){
   fr9=FRAMA(HLC(data),n = 12,FC=13,SC=32)
   fr45=FRAMA(HLC(data),n = 60,FC=65,SC=162)
   fr13=FRAMA(HLC(data),n = triggerN,FC=triggerFC,SC=triggerSC)
@@ -596,10 +596,18 @@ qfxSnake <- function(data = NA, triggerN = 9, triggerFC = 11, triggerSC = 22, gr
   ret$mean = ff$mean
   ret$trigger = fr13$FRAMA
   
+  if(save && !is.na(name)){
+    jpeg(filename = paste0(name,".png"),width=maxWidth,height=maxHeight)
+  }
+  
   if(graph){
     plot(Cl(data),type="l")
     lines(ret$mean,type="p",col=ifelse(ret$snake==1,"green","red"))
     lines(ret$trigger,type="l",col="blue")
+  }
+  
+  if(save){
+    dev.off()
   }
   
   return(ret)
