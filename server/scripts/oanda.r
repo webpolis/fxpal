@@ -35,15 +35,24 @@ oanda.account <- function(accountType = "practice"){
   return(results_df)
 }
 
-oanda.prices <- function(instruments=NA, accountType="practice", fun = NA){
+oanda.prices <- function(instruments=NA, accountType="practice"){
   json = NULL
   stopifnot(is.character(oandaToken), is.character(instruments)) #, class(since) == "Date" | is.null(since)
   base_url <- ifelse(accountType == "practice", "https://api-fxpractice.oanda.com/v1/prices?", "https://api-fxtrade.oanda.com/v1/prices?")
   url <- paste0(base_url, "instruments=", paste(instruments, collapse = "%2C"))
-  getURL(url = url, httpheader = c('Accept' = 'application/json', Authorization = paste('Bearer ', oandaToken)), write = function(ret){
-    json = fromJSON(ret)
-    fun(json)
-  })
+  ret = getURL(url = url, httpheader = c('Accept' = 'application/json', Authorization = paste('Bearer ', oandaToken)))
+  
+  return(fromJSON(ret))
+}
+
+oanda.instruments <- function(instruments=NA, accountType="practice", fun = NA){
+  json = NULL
+  stopifnot(is.character(oandaToken), is.character(instruments)) #, class(since) == "Date" | is.null(since)
+  base_url <- ifelse(accountType == "practice", "https://api-fxpractice.oanda.com/v1/instruments?", "https://api-fxtrade.oanda.com/v1/instruments?")
+  url <- paste0(base_url, "instruments=", paste(instruments, collapse = "%2C"),"&fields=instrument%2Cpip%2Cprecision&accountId=",oanda.account.info.accountId)
+  ret = getURL(url = url, httpheader = c('Accept' = 'application/json', Authorization = paste('Bearer ', oandaToken)))
+  
+  return(fromJSON(ret))
 }
 
 oanda.trades <- function(accountType="practice"){
@@ -61,6 +70,7 @@ oanda.init <- function(accountType="practice"){
   
   oanda.account.info.type <<- accountType
   oanda.account.info <<- oanda.account(accountType)
+  oanda.account.info.instruments <<- oanda.instruments(oanda.portfolio$cross)
   
   doDelay = 60*10
   
