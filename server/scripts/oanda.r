@@ -56,6 +56,19 @@ oanda.instruments <- function(instruments=NA, accountType="practice", fun = NA){
   return(fromJSON(ret))
 }
 
+oanda.history <- function(accountType="practice",instrument=NA){
+  stopifnot(is.character(oandaToken))
+  url <- ifelse(accountType == "practice", "https://api-fxpractice.oanda.com/v1/accounts", "https://api-fxtrade.oanda.com/v1/accounts")
+  url <- paste0(url, "/", oanda.account.info.accountId, "/transactions")
+  
+  if(!is.na(instrument)){
+    url <- paste0(url, "?instrument=",instrument)
+  }
+
+  json = fromJSON(getURL(url = url, httpheader = c('Accept' = 'application/json', Authorization = paste('Bearer ', oandaToken))))
+  return(json$transactions)
+}
+
 oanda.trades <- function(accountType="practice"){
   stopifnot(is.character(oandaToken))
   url <- ifelse(accountType == "practice", "https://api-fxpractice.oanda.com/v1/accounts", "https://api-fxtrade.oanda.com/v1/accounts")
@@ -143,6 +156,7 @@ oanda.tickSnake <- function(){
   for(cross in oanda.portfolio$cross){
     openOrderId = NULL
     openOrderTime = NULL
+    opSide = NULL
     direction = NA
     hasOpenTrade = length(grep(cross,oanda.trades.open.crosses,value=T)) > 0
     
@@ -183,21 +197,22 @@ oanda.tickSnake <- function(){
       if(!is.na(direction)){
         side = ifelse(direction>0,"long","short")
         literalSide = ifelse(direction>0,"buy","sell")
+        opSide = ifelse(side=="long","short","long")
       }else{
         next
       }
 
-      if(!hasOpenTrade){
-        # open trade
-        print(paste(symbol,side))
-        oanda.open(type = "market",side = literalSide,cross = cross)
-      }else if(hasOpenTrade && !is.na(ret[paste0(side,"Exit")])){
+      if(hasOpenTrade && (!is.na(ret[paste0(side,"Exit")])) || !is.na(ret[paste0(opSide,"Entry")]))){
         # close open trade        
         if(!is.null(openOrderId) && !is.null(openOrderTime) && openOrderTime <= lastSignalTime){
           print(paste("closing",symbol))
           oanda.close(orderId = openOrderId)
         }
-      }else{
+      } else if(!hasOpenTrade){
+        # open trade
+        print(paste(symbol,side))
+        oanda.open(type = "market",side = literalSide,cross = cross)
+      } else{
         print(paste(cross,"no action taken"))
       }
     }else{
