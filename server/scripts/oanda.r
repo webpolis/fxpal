@@ -173,7 +173,8 @@ oanda.tickSnake <- function(){
     
     if(hasOpenTrade){
       openTrade = Filter(function(x){x$instrument==cross},oanda.trades.open)[[1]]
-      openSide = openTrade$side
+      openSide = ifelse(openTrade$side=="buy","long","short")
+      openOpSide = ifelse(openSide=="long","short","long")
       openOrderId = openTrade$id
       openOrderTime = as.POSIXlt(gsub('T|\\.\\d{6}Z', ' ', openTrade$time))
       direction = ifelse(openSide=="buy",1,-1)
@@ -187,13 +188,12 @@ oanda.tickSnake <- function(){
     lastSignalTime = as.POSIXlt(gsub('T|\\.\\d{6}Z', ' ', rownames(ret)[1]))
     
     if(nrow(ret)>0){
-      if(!hasOpenTrade){
-        if(!is.na(ret["longEntry"])){
-          direction = 1
-        }else if(!is.na(ret["shortEntry"])){
-          direction = -1
-        }
+      if(!is.na(ret["longEntry"])){
+        direction = 1
+      }else if(!is.na(ret["shortEntry"])){
+        direction = -1
       }
+        
       if(!is.na(direction)){
         side = ifelse(direction>0,"long","short")
         literalSide = ifelse(direction>0,"buy","sell")
@@ -202,7 +202,7 @@ oanda.tickSnake <- function(){
         next
       }
 
-      if(hasOpenTrade && (!is.na(ret[paste0(side,"Exit")])) || !is.na(ret[paste0(opSide,"Entry")])){
+      if(hasOpenTrade && (!is.na(ret[paste0(openSide,"Exit")])) || !is.na(ret[paste0(openOpSide,"Entry")])){
         # close open trade        
         if(!is.null(openOrderId) && !is.null(openOrderTime)){
           print(paste("closing",symbol))
@@ -211,7 +211,7 @@ oanda.tickSnake <- function(){
         }
       }
       
-      if(!hasOpenTrade){
+      if(!hasOpenTrade && !is.na(ret[paste0(side,"Entry")])){
         # open trade
         print(paste(symbol,side))
         oanda.open(type = "market",side = literalSide,cross = cross)
