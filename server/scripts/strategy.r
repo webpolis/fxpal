@@ -66,7 +66,7 @@ snakeStrategyTest = function(symbol=NA, graph=T,long=F,returnOnly=F,both=F){
   if(short){
     print("short trading...")
     add.signal(strategy.st,name="sigThreshold",arguments = list(relationship="eq", column="snake.snake", threshold=-1),label="filterSnakeShort")
-    add.signal(strategy.st,name="sigComparison",arguments = list(columns=c("Close","trigger.snake"),relationship="lt"),label="filterFramaShort")
+    add.signal(strategy.st,name="sigComparison",arguments = list(columns=c("trigger.snake", "mean.snake"),relationship="lt"),label="filterFramaShort")
     add.signal(strategy.st,name="sigAND",arguments = list(columns=c("filterSnakeShort","filterFramaShort"),cross=T),label="shortEntry")
     
     add.signal(strategy.st,name="sigThreshold",arguments = list(relationship="eq", column="snake.snake", threshold=1),label="filterSnakeExitShort")
@@ -90,7 +90,7 @@ snakeStrategyTest = function(symbol=NA, graph=T,long=F,returnOnly=F,both=F){
   if(long){
     print("long trading...")
     add.signal(strategy.st,name="sigThreshold",arguments = list(relationship="eq", column="snake.snake", threshold=1),label="filterSnakeLong")
-    add.signal(strategy.st,name="sigComparison",arguments = list(columns=c("Close","trigger.snake"),relationship="gt"),label="filterFramaLong")
+    add.signal(strategy.st,name="sigComparison",arguments = list(columns=c("trigger.snake", "mean.snake"),relationship="gt"),label="filterFramaLong")
     add.signal(strategy.st,name="sigAND",arguments = list(columns=c("filterSnakeLong","filterFramaLong"),cross=T),label="longEntry")
     
     add.signal(strategy.st,name="sigThreshold",arguments = list(relationship="eq", column="snake.snake", threshold=-1),label="filterSnakeExitLong")
