@@ -202,7 +202,7 @@ oanda.tickSnake <- function(){
         next
       }
 
-      if(hasOpenTrade && (!is.na(ret[paste0(openSide,"Exit")])) || !is.na(ret[paste0(openOpSide,"Entry")])){
+      if(hasOpenTrade && (!is.na(ret[paste0(openSide,"Exit")]) || !is.na(ret[paste0(openOpSide,"Entry")]))){
         # close open trade        
         if(!is.null(openOrderId) && !is.null(openOrderTime)){
           print(paste("closing",symbol))
