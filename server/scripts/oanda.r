@@ -3,11 +3,12 @@ source(paste(pwd,'server','scripts','header.r',sep='/'))
 
 library(httr)
 
+oanda.account.info.type = "practice"
 oanda.account.info.strategy = "snake"
 oanda.account.info.accountId = 4952957
 oanda.account.info.period = "M15"
 
-oanda.account <- function(accountType = "practice"){
+oanda.account <- function(accountType = oanda.account.info.type){
   library("httr")
   
   # Check arguments
@@ -15,7 +16,7 @@ oanda.account <- function(accountType = "practice"){
   stopifnot(is.character(oandaToken))
   
   # Create URL
-  url <- ifelse(accountType == "practice", "https://api-fxpractice.oanda.com/v1/accounts", "https://api-fxtrade.oanda.com/v1/accounts")
+  url <- ifelse(accountType == oanda.account.info.type, "https://api-fxpractice.oanda.com/v1/accounts", "https://api-fxtrade.oanda.com/v1/accounts")
   url <- paste0(url, "/", oanda.account.info.accountId)
   
   # Send Request
@@ -36,29 +37,29 @@ oanda.account <- function(accountType = "practice"){
   return(results_df)
 }
 
-oanda.prices <- function(instruments=NA, accountType="practice"){
+oanda.prices <- function(instruments=NA, accountType=oanda.account.info.type){
   json = NULL
   stopifnot(is.character(oandaToken), is.character(instruments)) #, class(since) == "Date" | is.null(since)
-  base_url <- ifelse(accountType == "practice", "https://api-fxpractice.oanda.com/v1/prices?", "https://api-fxtrade.oanda.com/v1/prices?")
+  base_url <- ifelse(accountType == oanda.account.info.type, "https://api-fxpractice.oanda.com/v1/prices?", "https://api-fxtrade.oanda.com/v1/prices?")
   url <- paste0(base_url, "instruments=", paste(instruments, collapse = "%2C"))
   ret = getURL(url = url, httpheader = c('Accept' = 'application/json', Authorization = paste('Bearer ', oandaToken)))
   
   return(fromJSON(ret))
 }
 
-oanda.instruments <- function(instruments=NA, accountType="practice", fun = NA){
+oanda.instruments <- function(instruments=NA, accountType=oanda.account.info.type, fun = NA){
   json = NULL
   stopifnot(is.character(oandaToken), is.character(instruments)) #, class(since) == "Date" | is.null(since)
-  base_url <- ifelse(accountType == "practice", "https://api-fxpractice.oanda.com/v1/instruments?", "https://api-fxtrade.oanda.com/v1/instruments?")
+  base_url <- ifelse(accountType == oanda.account.info.type, "https://api-fxpractice.oanda.com/v1/instruments?", "https://api-fxtrade.oanda.com/v1/instruments?")
   url <- paste0(base_url, "instruments=", paste(instruments, collapse = "%2C"),"&fields=instrument%2Cpip%2Cprecision&accountId=",oanda.account.info.accountId)
   ret = getURL(url = url, httpheader = c('Accept' = 'application/json', Authorization = paste('Bearer ', oandaToken)))
   
   return(fromJSON(ret))
 }
 
-oanda.history <- function(accountType="practice",instrument=NA){
+oanda.history <- function(accountType=oanda.account.info.type,instrument=NA){
   stopifnot(is.character(oandaToken))
-  url <- ifelse(accountType == "practice", "https://api-fxpractice.oanda.com/v1/accounts", "https://api-fxtrade.oanda.com/v1/accounts")
+  url <- ifelse(accountType == oanda.account.info.type, "https://api-fxpractice.oanda.com/v1/accounts", "https://api-fxtrade.oanda.com/v1/accounts")
   url <- paste0(url, "/", oanda.account.info.accountId, "/transactions")
   
   if(!is.na(instrument)){
@@ -69,15 +70,15 @@ oanda.history <- function(accountType="practice",instrument=NA){
   return(json$transactions)
 }
 
-oanda.trades <- function(accountType="practice"){
+oanda.trades <- function(accountType=oanda.account.info.type){
   stopifnot(is.character(oandaToken))
-  url <- ifelse(accountType == "practice", "https://api-fxpractice.oanda.com/v1/accounts", "https://api-fxtrade.oanda.com/v1/accounts")
+  url <- ifelse(accountType == oanda.account.info.type, "https://api-fxpractice.oanda.com/v1/accounts", "https://api-fxtrade.oanda.com/v1/accounts")
   url <- paste0(url, "/", oanda.account.info.accountId, "/trades")
   json = fromJSON(getURL(url = url, httpheader = c('Accept' = 'application/json', Authorization = paste('Bearer ', oandaToken))))
   return(json$trades)
 }
 
-oanda.init <- function(accountType="practice"){
+oanda.init <- function(accountType=oanda.account.info.type){
   oanda.portfolio<<-getQfxPortfolio()
   oanda.symbols<<-as.character(lapply(oanda.portfolio$cross,FUN=function(cross){cross = tolower(gsub("[^A-Za-z]+","",cross))}))
   rm(list=oanda.symbols)
@@ -113,26 +114,26 @@ oanda.hasEnoughMoney <- function(){
   return(equity>(oanda.account.info$balance*50/100))
 }
 
-oanda.open <- function(accountType="practice",type="market",side=NA,cross=NA, units=2000){
+oanda.open <- function(accountType=oanda.account.info.type,type="market",side=NA,cross=NA, units=2000){
   if(is.na(side) || is.na(cross)){
     return(NULL)
   }
   
   stopifnot(is.character(oandaToken))
-  url <- ifelse(accountType == "practice", "https://api-fxpractice.oanda.com/v1/accounts", "https://api-fxtrade.oanda.com/v1/accounts")
+  url <- ifelse(accountType == oanda.account.info.type, "https://api-fxpractice.oanda.com/v1/accounts", "https://api-fxtrade.oanda.com/v1/accounts")
   url <- paste0(url, "/", oanda.account.info.accountId, "/orders")
   ret = POST(url, accept_json(), add_headers('Authorization' = paste('Bearer ', oandaToken), "Content-Type"="application/x-www-form-urlencoded"),
        body = list(instrument=cross, side = side, units = units, type=type),encode="form")
   print(ret)
 }
 
-oanda.close <- function(accountType="practice",orderId=NA){
+oanda.close <- function(accountType=oanda.account.info.type,orderId=NA){
   if(is.na(orderId)){
     return(NULL)
   }
   
   stopifnot(is.character(oandaToken))
-  url <- ifelse(accountType == "practice", "https://api-fxpractice.oanda.com/v1/accounts", "https://api-fxtrade.oanda.com/v1/accounts")
+  url <- ifelse(accountType == oanda.account.info.type, "https://api-fxpractice.oanda.com/v1/accounts", "https://api-fxtrade.oanda.com/v1/accounts")
   url <- paste0(url, "/", oanda.account.info.accountId, "/trades/",orderId)
   DELETE(url, add_headers('Authorization' = paste('Bearer ', oandaToken)))
 }
