@@ -91,7 +91,9 @@ oanda.init <- function(accountType=oanda.account.info.type){
   
   switch(oanda.account.info.period, M15={
     doDelay = 25*(60*15)/100
-  }, H1={
+  }, M30={
+    doDelay = 25*(60*30)/100
+  },H1={
     doDelay = 25*(60*60)/100
   }, H4={
     doDelay = 25*(60*60*4)/100
