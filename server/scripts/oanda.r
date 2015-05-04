@@ -146,6 +146,8 @@ oanda.tickSnake <- function(){
   newCount = 0
   switch(oanda.account.info.period,M15={
     newCount = 96*2
+  },M30={
+    newCount = 240
   },H1={
     newCount = 168
   },H4={

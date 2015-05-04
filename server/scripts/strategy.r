@@ -67,7 +67,7 @@ snakeStrategyTest = function(symbol=NA, graph=T,long=F,returnOnly=F,both=F,opt=F
   initOrders(portfolio.st, initDate=initDate)
   strategy(strategy.st, store=TRUE)
   
-  add.indicator(strategy.st,name="qfxSnake",arguments = list(data=OHLC(candles),triggerN=8,triggerFC=13,triggerSC=24),label="snake")
+  add.indicator(strategy.st,name="qfxSnake",arguments = list(data=OHLC(candles),triggerN=9,triggerFC=14,triggerSC=24),label="snake")
   
   # sell
   if(short){
@@ -608,7 +608,7 @@ qfxMomentum <- function(data,emaPeriod=11, debug=T){
   return(stats)
 }
 
-qfxSnake <- function(data = NA, triggerN = 8, triggerFC = 13, triggerSC = 24, graph = F, save = F, name=NA){
+qfxSnake <- function(data = NA, triggerN = 9, triggerFC = 14, triggerSC = 24, graph = F, save = F, name=NA){
   fr9=FRAMA(HLC(data),n = 12,FC=13,SC=32)
   fr45=FRAMA(HLC(data),n = 60,FC=65,SC=162)
   fr13=FRAMA(HLC(data),n = triggerN,FC=triggerFC,SC=triggerSC)
