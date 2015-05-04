@@ -1,3 +1,9 @@
+library(iterators)
+library(foreach)
+library(doParallel)
+
+registerDoParallel()
+
 tmpGranularity = NA
 
 getQfxCandles <- function(instrument=NA,granularity=NA){
@@ -40,7 +46,7 @@ sigQmThreshold = function(label, data=mktdata, relationship=c("gt","lt","eq","gt
   return(ret_sig)
 }
 
-snakeStrategyTest = function(symbol=NA, graph=T,long=F,returnOnly=F,both=F){
+snakeStrategyTest = function(symbol=NA, graph=T,long=F,returnOnly=F,both=F,opt=F){
   currency("USD")
   short = !long
   if(both){
@@ -50,17 +56,18 @@ snakeStrategyTest = function(symbol=NA, graph=T,long=F,returnOnly=F,both=F){
   candles = get(symbol)
   stock(symbol,currency="USD",multiplier = 1)
   strategy.st = portfolio.st = account.st = "qfxSnakeStrategy"
-  initEq = 200
+  initEq = 20000
   tradeSize = initEq*.05
   rm.strat(strategy.st)
   to=as.character(Sys.Date())
+  
   initDate=first(index(candles))
   initPortf(portfolio.st, symbols=symbol, initDate=initDate, currency='USD')
   initAcct(account.st, portfolios=portfolio.st, initDate=initDate, currency='USD',initEq=initEq)
   initOrders(portfolio.st, initDate=initDate)
   strategy(strategy.st, store=TRUE)
   
-  add.indicator(strategy.st,name="qfxSnake",arguments = list(data=OHLC(candles),triggerN=9,triggerFC=11,triggerSC=22),label="snake")
+  add.indicator(strategy.st,name="qfxSnake",arguments = list(data=OHLC(candles),triggerN=8,triggerFC=13,triggerSC=24),label="snake")
   
   # sell
   if(short){
@@ -116,14 +123,30 @@ snakeStrategyTest = function(symbol=NA, graph=T,long=F,returnOnly=F,both=F){
     return(strat)
   }
   
-  applyStrategy(strategy=strat$strategy,portfolios=strat$portfolios)
-  updatePortf(strat$portfolios)
-  updateAcct(strat$portfolios)
-  updateEndEq(strat$strategy)
+  if(!opt){
+    applyStrategy(strategy=strat$strategy,portfolios=strat$portfolios)
+    updatePortf(strat$portfolios)
+    updateAcct(strat$portfolios)
+    updateEndEq(strat$strategy)
+  }
   
-  chart.Posn(strat$portfolios)
-  
-  return(strat)
+  if(opt){
+    vN=(8:13)
+    vFC=(10:20)
+    vSC=(20:30)
+    add.distribution(strategy.st, paramset.label = "qfxSnake", component.type = "indicator", component.label = "snake", 
+                     variable = list(triggerN=vN), label="snakeOptN")
+    add.distribution(strategy.st, paramset.label = "qfxSnake", component.type = "indicator", component.label = "snake", 
+                     variable = list(triggerFC=vFC), label="snakeOptFC")
+    add.distribution(strategy.st, paramset.label = "qfxSnake", component.type = "indicator", component.label = "snake", 
+                     variable = list(triggerSC=vSC), label="snakeOptSC")
+    optimized = apply.paramset(strategy.st, paramset.label = "qfxSnake", portfolio.st = portfolio.st, account.st=account.st, nsamples=0)
+  }else{
+    optimized = NA
+    chart.Posn(strat$portfolios)
+  }  
+
+  return(list(optimized=optimized, strat=strat))
 }
 
 momentumStrategyTest = function(symbol=NA, graph=T,long=F,returnOnly=F, both=F){
@@ -216,8 +239,8 @@ momentumStrategyTest = function(symbol=NA, graph=T,long=F,returnOnly=F, both=F){
   return(strat)
 }
 
-getQfxMomentumStrategySignals <- function(symbol=NA,long=T){
-  strat=momentumStrategyTest(symbol=symbol,long = long, returnOnly = T)
+getQfxMomentumStrategySignals <- function(symbol=NA,long=T,both=F){
+  strat=momentumStrategyTest(symbol=symbol,long = (ifelse(both,F,long)), both=both,returnOnly = T)
   tt=applyStrategy(strategy=strat$strategy,portfolios=strat$portfolios,debug=T)
   dd=data.frame(tt$qfxMomentumStrategy[[symbol]]$rules)
   dd=dd[,grep("pathdep\\.(?:long|short)(?:Exit|Entry)",names(dd))]
@@ -585,7 +608,7 @@ qfxMomentum <- function(data,emaPeriod=11, debug=T){
   return(stats)
 }
 
-qfxSnake <- function(data = NA, triggerN = 9, triggerFC = 11, triggerSC = 22, graph = F, save = F, name=NA){
+qfxSnake <- function(data = NA, triggerN = 8, triggerFC = 13, triggerSC = 24, graph = F, save = F, name=NA){
   fr9=FRAMA(HLC(data),n = 12,FC=13,SC=32)
   fr45=FRAMA(HLC(data),n = 60,FC=65,SC=162)
   fr13=FRAMA(HLC(data),n = triggerN,FC=triggerFC,SC=triggerSC)
