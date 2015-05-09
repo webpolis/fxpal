@@ -7,7 +7,11 @@ library("xts")
 library("fPortfolio")
 library("quantmod")
 
-stocks = c("AMZN", "DOX", "AXP", "BRK-A", "TSLA", "TEVA", "PG", "AAPL", "CSCO", "CAT", "XOM", "GM", "GOOG", "INTC", "JNJ", "PFE", "BP", "SAP", "GSK", "SIE.DE", "VZ", "GS")
+#stocks = c("AMZN", "DOX", "AXP", "BRK-A", "TSLA", "TEVA", "PG", "AAPL", "CSCO", "CAT", "XOM", "GM", "GOOG", "INTC", "JNJ", "PFE", "BP", "SAP", "GSK", "SIE.DE", "VZ", "GS")
+
+#merval
+stocks = read.table(paste0(dataPath, "merval.csv"), sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")$symbol
+stocks = as.character(lapply(stocks,FUN=function(x){paste(x,"BA",sep=".")}))
 
 tickers = getSymbols(stocks, auto.assign = TRUE)
 
@@ -43,5 +47,3 @@ out = data.frame(cross = names(mediumWeights), percentage = mediumWeights)
 outFile = "stocksPortfolio"
 
 write.csv(out, quote = FALSE, row.names = FALSE, file = paste(dataPath, paste(outFile,'.csv',sep=''),sep=""), fileEncoding = "UTF-8")
-
-quit()
