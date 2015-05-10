@@ -100,11 +100,7 @@ oanda.init <- function(accountType=oanda.account.info.type){
   })
   
   while(TRUE){
-    switch(oanda.account.info.strategy, snake={
-      oanda.tickSnake()
-    }, momentum={
-      oanda.tickMomentum()
-    })
+    oanda.tick()
 
     Sys.sleep(doDelay)
     #Sys.sleep(30)
@@ -140,7 +136,7 @@ oanda.close <- function(accountType=oanda.account.info.type,orderId=NA){
   DELETE(url, add_headers('Authorization' = paste('Bearer ', oandaToken)))
 }
 
-oanda.tickSnake <- function(){
+oanda.tick <- function(){
   oanda.account.info <<- oanda.account(oanda.account.info.type)
   oanda.trades.open <<- oanda.trades()
   oanda.trades.open.crosses <<- as.character(lapply(oanda.trades.open,FUN=function(x){x$instrument}))
@@ -187,7 +183,12 @@ oanda.tickSnake <- function(){
     
     signalCut = 1
     
-    signals = getQfxSnakeStrategySignals(symbol = symbol)
+    switch(oanda.account.info.strategy, snake={
+      signals = getQfxSnakeStrategySignals(symbol = symbol)
+    }, momentum={
+      signals = getQfxMomentumStrategySignals(symbol = symbol)
+    })
+    
     ret = tail(signals,signalCut)
     ret[ret==0] = NA
     lastSignalTime = as.POSIXlt(gsub('T|\\.\\d{6}Z', ' ', rownames(ret)[1]))
@@ -221,86 +222,6 @@ oanda.tickSnake <- function(){
         print(paste(symbol,side))
         oanda.open(type = "market",side = literalSide,cross = cross)
       } else{
-        print(paste(cross,"no action taken"))
-      }
-    }else{
-      print(paste(cross,"no action taken: no recent signals"))
-    }
-  }
-}
-
-oanda.tickMomentum <- function(){
-  oanda.account.info <<- oanda.account(oanda.account.info.type)
-  oanda.trades.open <<- oanda.trades()
-  oanda.trades.open.crosses <<- as.character(lapply(oanda.trades.open,FUN=function(x){x$instrument}))
-  
-  newCount = 0
-  switch(oanda.account.info.period,M15={
-    newCount = 96*2
-  },H1={
-    newCount = 168
-  },H4={
-    newCount = 180
-  },D={
-    newCount = 365
-  })
-  
-  for(cross in oanda.portfolio$cross){
-    openOrderId = NULL
-    openOrderTime = NULL
-    hasOpenTrade = length(grep(cross,oanda.trades.open.crosses,value=T)) > 0
-    
-    if(!hasOpenTrade && !oanda.hasEnoughMoney()){
-      print("not enough free money")
-      next
-    }
-    
-    ret = NULL
-    symbol = tolower(gsub("[^A-Za-z]+|\\.\\w+\\d+","",cross))
-    eval(parse(text=paste0(symbol,"<<-","getLiveCandles('",cross,"','",oanda.account.info.period,"', count = ",newCount,")")))
-    
-    Sys.sleep(5)
-    momentum = qfxMomentum(data = OHLC(get(symbol)), emaPeriod = 11, debug=F)
-    
-    if(momentum[,"angle"] >= 0.0008){
-      direction = 1
-    }else if(momentum[,"angle"] <= (-0.0008)){
-      direction = -1
-    }else if(!hasOpenTrade){
-      print(paste(cross, "no relevant direction angle"))
-      next
-    }
-    
-    if(hasOpenTrade){
-      openTrade = Filter(function(x){x$instrument==cross},oanda.trades.open)[[1]]
-      openSide = openTrade$side
-      openOrderId = openTrade$id
-      openOrderTime = as.POSIXlt(gsub('T|\\.\\d{6}Z', ' ', openTrade$time))
-      direction = ifelse(openSide=="buy",1,-1)
-    }
-    
-    signalCut = 1
-    
-    signals = getQfxMomentumStrategySignals(symbol = symbol, long = (ifelse(direction>0,T,F)))
-    ret = tail(signals,signalCut)
-    ret[ret==0] = NA
-    lastSignalTime = as.POSIXlt(gsub('T|\\.\\d{6}Z', ' ', rownames(ret)[1]))
-    
-    side = ifelse(direction>0,"long","short")
-    literalSide = ifelse(direction>0,"buy","sell")
-    
-    if(nrow(ret)>0){
-      if(!hasOpenTrade && !is.na(ret[paste0(side,"Entry")])){
-        # open trade
-        print(paste(symbol,side))
-        oanda.open(type = "market",side = literalSide,cross = cross)
-      }else if(hasOpenTrade && !is.na(ret[paste0(side,"Exit")])){
-        # close open trade        
-        if(!is.null(openOrderId) && !is.null(openOrderTime) && openOrderTime <= lastSignalTime){
-          print(paste("closing",symbol))
-          oanda.close(orderId = openOrderId)
-        }
-      }else{
         print(paste(cross,"no action taken"))
       }
     }else{

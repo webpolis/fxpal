@@ -140,7 +140,10 @@ snakeStrategyTest = function(symbol=NA, graph=T,long=F,returnOnly=F,both=F,opt=F
                      variable = list(triggerFC=vFC), label="snakeOptFC")
     add.distribution(strategy.st, paramset.label = "qfxSnake", component.type = "indicator", component.label = "snake", 
                      variable = list(triggerSC=vSC), label="snakeOptSC")
-    optimized = apply.paramset(strategy.st, paramset.label = "qfxSnake", portfolio.st = portfolio.st, account.st=account.st, nsamples=0)
+    ret = apply.paramset(strategy.st, paramset.label = "qfxSnake", portfolio.st = portfolio.st, account.st=account.st, nsamples=0)
+    
+    optimized=as.data.frame(ret$optimized$tradeStats)
+    optimized=head(optimized[order(optimized$Net.Trading.PL, optimized$Ann.Sharpe, optimized$Profit.Factor, decreasing = T),])
   }else{
     optimized = NA
     chart.Posn(strat$portfolios)
@@ -149,7 +152,7 @@ snakeStrategyTest = function(symbol=NA, graph=T,long=F,returnOnly=F,both=F,opt=F
   return(list(optimized=optimized, strat=strat))
 }
 
-momentumStrategyTest = function(symbol=NA, graph=T,long=F,returnOnly=F, both=F){
+momentumStrategyTest = function(symbol=NA, graph=T,long=F,returnOnly=F, both=F,opt=F){
   currency("USD")
   short = !long
   
@@ -161,7 +164,7 @@ momentumStrategyTest = function(symbol=NA, graph=T,long=F,returnOnly=F, both=F){
   candles = get(symbol)
   stock(symbol,currency="USD",multiplier = 1)
   strategy.st = portfolio.st = account.st = "qfxMomentumStrategy"
-  initEq = 200
+  initEq = 20000
   tradeSize = initEq*.05
   rm.strat(strategy.st)
   to=as.character(Sys.Date())
@@ -172,19 +175,19 @@ momentumStrategyTest = function(symbol=NA, graph=T,long=F,returnOnly=F, both=F){
   strategy(strategy.st, store=TRUE)
   
   add.indicator(strategy.st,name="qfxMomentum",arguments = list(data=OHLC(candles),emaPeriod=11,debug=F),label="qm")
-  add.indicator(strategy.st,name="FRAMA",arguments = list(HLC=OHLC(candles),n=12,FC=13,SC=32),label="frama.12")
-  add.indicator(strategy.st,name="FRAMA",arguments = list(HLC=OHLC(candles),n=60,FC=65,SC=162),label="frama.60")
+  add.indicator(strategy.st,name="FRAMA",arguments = list(HLC=OHLC(candles),n=12,FC=13,SC=32),label="frama.fast")
+  add.indicator(strategy.st,name="FRAMA",arguments = list(HLC=OHLC(candles),n=60,FC=65,SC=162),label="frama.slow")
   
   # sell
   if(short){
     print("short trading...")
     add.signal(strategy.st,name="sigQmThreshold",arguments = list(relationship="gt"),label="filterQmShort")
-    add.signal(strategy.st,name="sigComparison",arguments = list(columns=c("FRAMA.frama.12","FRAMA.frama.60"),relationship="lte"),label="filterFramaShort")
+    add.signal(strategy.st,name="sigComparison",arguments = list(columns=c("FRAMA.frama.fast","FRAMA.frama.slow"),relationship="lte"),label="filterFramaShort")
     add.signal(strategy.st,name="sigAND",arguments = list(columns=c("filterQmShort","filterFramaShort"),cross=T),label="shortEntry")
     
     add.signal(strategy.st,name="sigQmThreshold",arguments = list(relationship="lte", op=T),label="filterQmShortExit")
     add.signal(strategy.st, name="sigComparison",
-               arguments = list(columns=c("FRAMA.frama.12","FRAMA.frama.60"),relationship="gt"),label="filterFramaShortExit")
+               arguments = list(columns=c("FRAMA.frama.fast","FRAMA.frama.slow"),relationship="gt"),label="filterFramaShortExit")
     add.signal(strategy.st,name="sigAND",arguments = list(columns=c("filterQmShortExit","filterFramaShortExit"),cross=T),label="shortExit")
   
     add.rule(strategy.st, name="ruleSignal", 
@@ -203,12 +206,12 @@ momentumStrategyTest = function(symbol=NA, graph=T,long=F,returnOnly=F, both=F){
   if(long){
     print("long trading...")
     add.signal(strategy.st,name="sigQmThreshold",arguments = list(relationship="lt",op=T),label="filterQmLong")
-    add.signal(strategy.st,name="sigComparison",arguments = list(columns=c("FRAMA.frama.12","FRAMA.frama.60"),relationship="gte"),label="filterFramaLong")
+    add.signal(strategy.st,name="sigComparison",arguments = list(columns=c("FRAMA.frama.fast","FRAMA.frama.slow"),relationship="gte"),label="filterFramaLong")
     add.signal(strategy.st,name="sigAND",arguments = list(columns=c("filterQmLong","filterFramaLong"),cross=T),label="longEntry")
     
     add.signal(strategy.st,name="sigQmThreshold",arguments = list(relationship="gte"),label="filterQmLongExit")
     add.signal(strategy.st, name="sigComparison",
-               arguments = list(columns=c("FRAMA.frama.12","FRAMA.frama.60"),relationship="lt"),label="filterFramaLongExit")
+               arguments = list(columns=c("FRAMA.frama.fast","FRAMA.frama.slow"),relationship="lt"),label="filterFramaLongExit")
     add.signal(strategy.st,name="sigAND",arguments = list(columns=c("filterQmLongExit","filterFramaLongExit"),cross=T),label="longExit")
     
     add.rule(strategy.st, name="ruleSignal", 
@@ -229,17 +232,40 @@ momentumStrategyTest = function(symbol=NA, graph=T,long=F,returnOnly=F, both=F){
     return(strat)
   }
   
-  applyStrategy(strategy=strat$strategy,portfolios=strat$portfolios)
-  updatePortf(strat$portfolios)
-  updateAcct(strat$portfolios)
-  updateEndEq(strat$strategy)
+  if(!opt){
+    applyStrategy(strategy=strat$strategy,portfolios=strat$portfolios)
+    updatePortf(strat$portfolios)
+    updateAcct(strat$portfolios)
+    updateEndEq(strat$strategy)
+  }
   
-  chart.Posn(strat$portfolios)
+  if(opt){
+#     qmPeriod = 4:24
+#     add.distribution(strategy.st, paramset.label = "qfxMomentum", component.type = "indicator", component.label = "qm", 
+#                      variable = list(emaPeriod=qmPeriod), label="qmOptEmaPeriod")
+#     ret = apply.paramset(strategy.st, paramset.label = "qfxMomentum", portfolio.st = portfolio.st, account.st=account.st, nsamples=0)
+    vN=(4:14)
+    vFC=(8:24)
+    vSC=(12:34)
+    add.distribution(strategy.st, paramset.label = "FRAMA", component.type = "indicator", component.label = "frama.fast", 
+                     variable = list(n=vN), label="framaFastOptN")
+    add.distribution(strategy.st, paramset.label = "FRAMA", component.type = "indicator", component.label = "frama.fast", 
+                     variable = list(FC=vFC), label="framaFastOptFC")
+    add.distribution(strategy.st, paramset.label = "FRAMA", component.type = "indicator", component.label = "frama.fast", 
+                     variable = list(SC=vSC), label="framaFastOptSC")
+    ret = apply.paramset(strategy.st, paramset.label = "FRAMA", portfolio.st = portfolio.st, account.st=account.st, nsamples=0)
+    
+    optimized=as.data.frame(ret$optimized$tradeStats)
+    optimized=head(optimized[order(optimized$Net.Trading.PL, optimized$Ann.Sharpe, optimized$Profit.Factor, decreasing = T),])
+  }else{
+    optimized = NA
+    chart.Posn(strat$portfolios)
+  }  
   
-  return(strat)
+  return(list(optimized=optimized, strat=strat))
 }
 
-getQfxMomentumStrategySignals <- function(symbol=NA,long=T,both=F){
+getQfxMomentumStrategySignals <- function(symbol=NA,long=F,both=T){
   strat=momentumStrategyTest(symbol=symbol,long = (ifelse(both,F,long)), both=both,returnOnly = T)
   tt=applyStrategy(strategy=strat$strategy,portfolios=strat$portfolios,debug=T)
   dd=data.frame(tt$qfxMomentumStrategy[[symbol]]$rules)
@@ -248,8 +274,8 @@ getQfxMomentumStrategySignals <- function(symbol=NA,long=T,both=F){
   return(dd)
 }
 
-getQfxSnakeStrategySignals <- function(symbol=NA){
-  strat=snakeStrategyTest(symbol=symbol,both=T, returnOnly = T)
+getQfxSnakeStrategySignals <- function(symbol=NA,long=F,both=T){
+  strat=snakeStrategyTest(symbol=symbol,long = (ifelse(both,F,long)), both=both, returnOnly = T)
   tt=applyStrategy(strategy=strat$strategy,portfolios=strat$portfolios,debug=T)
   dd=data.frame(tt$qfxSnakeStrategy[[symbol]]$rules)
   dd=dd[,grep("pathdep\\.(?:long|short)(?:Exit|Entry)",names(dd))]
@@ -344,18 +370,18 @@ TradingStrategy <- function(strategy=NA, data=NA,param1=NA,param2=NA,param3=NA,p
       }
     })
   }, FRAMA={
-    ema1 = FRAMA(HLC(data),n=param1,FC=param2,SC = param3)$FRAMA
-    ema2 = FRAMA(HLC(data),n=param1*5,FC=param2*5,SC = param3*5)$FRAMA
-    frama = cbind(ema1,ema2)
-    names(frama) = c("ema1","ema2")
+    frama1 = FRAMA(HLC(data),n=param1,FC=param2,SC = param3)$FRAMA
+    frama2 = FRAMA(HLC(data),n=param1*2,FC=param2*2,SC = param3*2)$FRAMA
+    frama1 = cbind(Cl(data), frama1, frama2)
+    names(frama1) = c("close", "frama1", "frama2")
     
-    signal = apply(frama,1,function (x) {
-      if(is.na(x["ema1"]) || is.na(x["ema2"])){
+    signal = apply(frama1,1,function (x) {
+      if(is.na(x["frama1"]) || is.na(x["frama2"])){
         return (0)
       } else {
-        if(x["ema1"] > x["ema2"]){
+        if(x["frama1"] > x["frama2"]){
           return (1)
-        } else if(x["ema1"] < x["ema2"]) {
+        } else if(x["frama1"] < x["frama2"]) {
           return (-1)
         }else{
           return(0)
