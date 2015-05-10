@@ -6,6 +6,7 @@ Sys.setenv(TZ="UTC")
 library("xts")
 library("fPortfolio")
 library("quantmod")
+library("financeR")
 
 #stocks = c("AMZN", "DOX", "AXP", "BRK-A", "TSLA", "TEVA", "PG", "AAPL", "CSCO", "CAT", "XOM", "GM", "GOOG", "INTC", "JNJ", "PFE", "BP", "SAP", "GSK", "SIE.DE", "VZ", "GS")
 
@@ -22,6 +23,8 @@ for (i in 2:length(tickers)) {
 
 return_lag <- 5
 data <- na.omit(ROC(na.spline(dataset), return_lag, type = "discrete"))
+scenarios <- dim(data)[1]
+assets <- dim(data)[2]
 names(data) <- stocks
 
 tmp = as.timeSeries(data)

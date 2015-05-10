@@ -142,7 +142,7 @@ snakeStrategyTest = function(symbol=NA, graph=T,long=F,returnOnly=F,both=F,opt=F
                      variable = list(triggerSC=vSC), label="snakeOptSC")
     ret = apply.paramset(strategy.st, paramset.label = "qfxSnake", portfolio.st = portfolio.st, account.st=account.st, nsamples=0)
     
-    optimized=as.data.frame(ret$optimized$tradeStats)
+    optimized=as.data.frame(ret$tradeStats)
     optimized=head(optimized[order(optimized$Net.Trading.PL, optimized$Ann.Sharpe, optimized$Profit.Factor, decreasing = T),])
   }else{
     optimized = NA
@@ -244,9 +244,10 @@ momentumStrategyTest = function(symbol=NA, graph=T,long=F,returnOnly=F, both=F,o
 #     add.distribution(strategy.st, paramset.label = "qfxMomentum", component.type = "indicator", component.label = "qm", 
 #                      variable = list(emaPeriod=qmPeriod), label="qmOptEmaPeriod")
 #     ret = apply.paramset(strategy.st, paramset.label = "qfxMomentum", portfolio.st = portfolio.st, account.st=account.st, nsamples=0)
-    vN=(4:14)
-    vFC=(8:24)
-    vSC=(12:34)
+    vN=(8:14)
+    vFC=(12:24)
+    vSC=(16:34)
+    
     add.distribution(strategy.st, paramset.label = "FRAMA", component.type = "indicator", component.label = "frama.fast", 
                      variable = list(n=vN), label="framaFastOptN")
     add.distribution(strategy.st, paramset.label = "FRAMA", component.type = "indicator", component.label = "frama.fast", 
@@ -255,7 +256,7 @@ momentumStrategyTest = function(symbol=NA, graph=T,long=F,returnOnly=F, both=F,o
                      variable = list(SC=vSC), label="framaFastOptSC")
     ret = apply.paramset(strategy.st, paramset.label = "FRAMA", portfolio.st = portfolio.st, account.st=account.st, nsamples=0)
     
-    optimized=as.data.frame(ret$optimized$tradeStats)
+    optimized=as.data.frame(ret$tradeStats)
     optimized=head(optimized[order(optimized$Net.Trading.PL, optimized$Ann.Sharpe, optimized$Profit.Factor, decreasing = T),])
   }else{
     optimized = NA
