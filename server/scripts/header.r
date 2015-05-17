@@ -12,6 +12,7 @@ library(IKTrading)
 library(quantstrat)
 
 Sys.setenv(TZ='UTC')
+Sys.setlocale("LC_CTYPE","en_US.UTF-8")
 options(scipen=999)
 
 oandaToken = 'ce6b72e81af59be0bbc90152cad8d731-03d41860ed7849e3c4555670858df786'

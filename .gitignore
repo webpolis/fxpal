@@ -32,3 +32,4 @@ server/socket
 !www/res
 annual.txt
 www/data/R.log
+.httr-oauth

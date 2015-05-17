@@ -42,5 +42,3 @@ mediumWeights = sort(mediumWeights, decreasing = TRUE)
 out = data.frame(cross = names(mediumWeights), percentage = mediumWeights)
 out = out[out$percentage>0.025|out$percentage< -0.025,]
 write.csv(out, quote = FALSE, row.names = FALSE, file = "portfolio.csv", fileEncoding = "UTF-8")
-
-quit()
