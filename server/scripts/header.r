@@ -12,8 +12,10 @@ library(IKTrading)
 library(quantstrat)
 
 Sys.setenv(TZ='UTC')
+options(scipen=999)
 
 oandaToken = 'ce6b72e81af59be0bbc90152cad8d731-03d41860ed7849e3c4555670858df786'
+#oandaToken = 'db20e99d133e919fbc5b7363e699774c-50bdf5f0e579d95c98cde13d56beed59'
 
 maxWidth=1334
 maxHeight=750
