@@ -6,7 +6,7 @@ library(httr)
 oanda.account.info.type = "practice"
 oanda.account.info.strategy = "snake"
 oanda.account.info.accountId = 4952957
-oanda.account.info.period = "M15"
+oanda.account.info.period = "M30"
 
 oanda.account <- function(accountType = oanda.account.info.type){
   library("httr")
