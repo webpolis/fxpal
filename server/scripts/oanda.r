@@ -226,7 +226,7 @@ oanda.tick <- function(){
     }
 
     # close existing trade for current iterated cross
-    if(hasOpenTrade && lastSignalTime > openOrderTime 
+    if(hasOpenTrade && lastSignalTime >= openOrderTime 
        && (ret[paste0(openSide,"Exit")]!=0 || ret[paste0(openOpSide,"Entry")]!=0)){
       # close open trade        
       if(!is.null(openOrderId)){
@@ -235,12 +235,14 @@ oanda.tick <- function(){
       }
     }
     
-    if(isNewSignal && !is.null(side)){
-      if(!is.null(openOpSide) && ret[paste0(openOpSide,"Entry")]!=0){
-        side = openOpSide
-        literalSide = literalOpenOpSide
-      }
- 
+    # check if a new opposite entry occurred after last trade
+    if(!is.null(openOpSide) && ret[paste0(openOpSide,"Entry")]!=0){
+      side = openOpSide
+      literalSide = literalOpenOpSide
+      isNewSignal = lastSignalTime >= openOrderTime
+    }
+    
+    if(isNewSignal && !is.null(side)){ 
       # open trade
       print(paste(symbol,side))
       oanda.open(type = "market",side = literalSide,cross = cross)
