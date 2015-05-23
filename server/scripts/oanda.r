@@ -156,9 +156,8 @@ oanda.tick <- function(){
   })
   
   for(cross in oanda.portfolio$cross){
-    openOrderId = NULL
-    openOrderTime = NULL
-    opSide = NULL
+    openTrade = openSide = openOrderId = openOrderTime = openOpSide = openOrderDirection = NULL
+    opSide = side = NULL
     direction = NA
     hasOpenTrade = length(grep(cross,oanda.trades.open.crosses,value=T)) > 0
     
@@ -178,55 +177,62 @@ oanda.tick <- function(){
       openSide = ifelse(openTrade$side=="buy","long","short")
       openOpSide = ifelse(openSide=="long","short","long")
       openOrderId = openTrade$id
-      openOrderTime = as.POSIXlt(gsub('T|\\.\\d{6}Z', ' ', openTrade$time))
-      direction = ifelse(openSide=="buy",1,-1)
+      openOrderTime = openTrade$time
+      openOrderDirection = ifelse(openSide=="long",1,-1)
     }
-    
-    signalCut = 1
-    
+
     switch(oanda.account.info.strategy, snake={
       signals = getQfxSnakeStrategySignals(symbol = symbol)
     }, momentum={
       signals = getQfxMomentumStrategySignals(symbol = symbol)
     })
     
-    ret = tail(signals,signalCut)
-    ret[ret==0] = NA
-    lastSignalTime = as.POSIXlt(gsub('T|\\.\\d{6}Z', ' ', rownames(ret)[1]))
-    
-    if(nrow(ret)>0){
-      if(!is.na(ret["longEntry"])){
-        direction = 1
-      }else if(!is.na(ret["shortEntry"])){
-        direction = -1
-      }
-        
-      if(!is.na(direction)){
-        side = ifelse(direction>0,"long","short")
-        literalSide = ifelse(direction>0,"buy","sell")
-        opSide = ifelse(side=="long","short","long")
-      }else{
-        next
-      }
+    signals = na.omit(signals)
+    confirmedSignals = subset(signals,(shortEntry!=0|shortExit!=0|longEntry!=0|longExit!=0))
+    ret = tail(confirmedSignals,1)
 
-      if(hasOpenTrade && (!is.na(ret[paste0(openSide,"Exit")]) || !is.na(ret[paste0(openOpSide,"Entry")]))){
-        # close open trade        
-        if(!is.null(openOrderId) && !is.null(openOrderTime)){
-          print(paste("closing",symbol))
-          oanda.close(orderId = openOrderId)
-          hasOpenTrade = F
-        }
-      }
-      
-      if(!hasOpenTrade && !is.na(ret[paste0(side,"Entry")])){
-        # open trade
-        print(paste(symbol,side))
-        oanda.open(type = "market",side = literalSide,cross = cross)
-      } else{
-        print(paste(cross,"no action taken"))
-      }
-    }else{
+    if(nrow(ret)==0 || sum(is.na(ret))>0){
       print(paste(cross,"no action taken: no recent signals"))
+      next
+    }
+    
+    # on MT4, it's UTC-4
+    lastSignalTime = ifelse(sum(is.na(ret))!=0,NA,rownames(ret)[1])
+    
+    if(ret["longEntry"]==1){
+      direction = 1
+    }else if(ret["shortEntry"]==1){
+      direction = -1
+    }
+
+    if(!is.na(direction)){
+      side = ifelse(direction==1,"long","short")
+      literalSide = ifelse(direction==1,"buy","sell")
+      opSide = ifelse(side=="long","short","long")
+      literalOpSide = ifelse(opSide=="long","buy","sell")
+    }
+
+    # close existing trade for current iterated cross
+    if(hasOpenTrade && lastSignalTime > openOrderTime 
+       && (ret[paste0(openSide,"Exit")]!=0 || ret[paste0(openOpSide,"Entry")]!=0)){
+      # close open trade        
+      if(!is.null(openOrderId)){
+        print(paste("closing",symbol))
+        oanda.close(orderId = openOrderId)
+      }
+    }
+    
+    isNewSignal = rownames(ret)==rownames(tail(signals,1))
+    if(isNewSignal){
+      if(!is.null(openOpSide) && ret[paste0(openOpSide,"Entry")]!=0){
+        side = openOpSide
+      }
+ 
+      # open trade
+      print(paste(symbol,side))
+      oanda.open(type = "market",side = literalSide,cross = cross)
+    } else{
+      print(paste(cross,"no action taken"))
     }
   }
 }
