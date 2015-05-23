@@ -75,7 +75,10 @@ oanda.trades <- function(accountType=oanda.account.info.type){
   url <- ifelse(accountType == oanda.account.info.type, "https://api-fxpractice.oanda.com/v1/accounts", "https://api-fxtrade.oanda.com/v1/accounts")
   url <- paste0(url, "/", oanda.account.info.accountId, "/trades")
   json = fromJSON(getURL(url = url, httpheader = c('Accept' = 'application/json', Authorization = paste('Bearer ', oandaToken))))
-  json$trades = lapply(json$trades, FUN = function(x){ x$time=as.POSIXct(strptime(x$time, tz = "UTC", "%Y-%m-%dT%H:%M:%OSZ")); x; })
+  json$trades = lapply(json$trades, FUN = function(x){
+    x$time=as.POSIXct(strptime(x$time, tz = "UTC", "%Y-%m-%dT%H:%M:%OSZ"))
+    x
+  })
   return(json$trades)
 }
 
@@ -177,6 +180,7 @@ oanda.tick <- function(){
       openSide = ifelse(openTrade$side=="buy","long","short")
       literalOpenSide = ifelse(openSide=="long","buy","sell")
       openOpSide = ifelse(openSide=="long","short","long")
+      literalOpenOpSide = ifelse(openOpSide=="long","buy","sell")
       openOrderId = openTrade$id
       openOrderTime = openTrade$time
       openOrderDirection = ifelse(openSide=="long",1,-1)
@@ -227,7 +231,7 @@ oanda.tick <- function(){
     if(isNewSignal && !is.null(side)){
       if(!is.null(openOpSide) && ret[paste0(openOpSide,"Entry")]!=0){
         side = openOpSide
-        literalSide = literalOpenSide
+        literalSide = literalOpenOpSide
       }
  
       # open trade
