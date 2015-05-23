@@ -104,6 +104,13 @@ oanda.init <- function(accountType=oanda.account.info.type){
   })
   
   while(TRUE){
+    curDate = as.POSIXlt(Sys.time())
+    isWeekDay = curDate$wday != 0 && curDate$wday != 6
+    
+    if(!isWeekDay){
+      next
+    }
+    
     oanda.tick()
 
     Sys.sleep(doDelay)
@@ -159,7 +166,7 @@ oanda.tick <- function(){
   })
   
   for(cross in oanda.portfolio$cross){
-    openTrade = openSide = openOrderId = openOrderTime = openOpSide = openOrderDirection = literalOpenOpSide = NULL
+    openTrade = openSide = openOrderId = openOrderTime = openOpSide = openOrderDirection = literalOpenOpSide = literalOpenSide = NULL
     opSide = side = literalSide = literalOpSide = NULL
     direction = NA
     hasOpenTrade = length(grep(cross,oanda.trades.open.crosses,value=T)) > 0
@@ -203,6 +210,7 @@ oanda.tick <- function(){
     
     # on MT4, it's UTC-4
     lastSignalTime = ifelse(sum(is.na(ret))!=0,NA,rownames(ret)[1])
+    isNewSignal = rownames(ret)==rownames(tail(signals,1))
     
     if(ret["longEntry"]==1){
       direction = 1
@@ -227,7 +235,6 @@ oanda.tick <- function(){
       }
     }
     
-    isNewSignal = rownames(ret)==rownames(tail(signals,1))
     if(isNewSignal && !is.null(side)){
       if(!is.null(openOpSide) && ret[paste0(openOpSide,"Entry")]!=0){
         side = openOpSide
