@@ -156,8 +156,8 @@ oanda.tick <- function(){
   })
   
   for(cross in oanda.portfolio$cross){
-    openTrade = openSide = openOrderId = openOrderTime = openOpSide = openOrderDirection = NULL
-    opSide = side = NULL
+    openTrade = openSide = openOrderId = openOrderTime = openOpSide = openOrderDirection = literalOpenOpSide = NULL
+    opSide = side = literalSide = literalOpSide = NULL
     direction = NA
     hasOpenTrade = length(grep(cross,oanda.trades.open.crosses,value=T)) > 0
     
@@ -175,6 +175,7 @@ oanda.tick <- function(){
     if(hasOpenTrade){
       openTrade = Filter(function(x){x$instrument==cross},oanda.trades.open)[[1]]
       openSide = ifelse(openTrade$side=="buy","long","short")
+      literalOpenSide = ifelse(openSide=="long","buy","sell")
       openOpSide = ifelse(openSide=="long","short","long")
       openOrderId = openTrade$id
       openOrderTime = openTrade$time
@@ -223,9 +224,10 @@ oanda.tick <- function(){
     }
     
     isNewSignal = rownames(ret)==rownames(tail(signals,1))
-    if(isNewSignal){
+    if(isNewSignal && !is.null(side)){
       if(!is.null(openOpSide) && ret[paste0(openOpSide,"Entry")]!=0){
         side = openOpSide
+        literalSide = literalOpenSide
       }
  
       # open trade
