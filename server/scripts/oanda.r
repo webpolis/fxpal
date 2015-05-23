@@ -75,6 +75,7 @@ oanda.trades <- function(accountType=oanda.account.info.type){
   url <- ifelse(accountType == oanda.account.info.type, "https://api-fxpractice.oanda.com/v1/accounts", "https://api-fxtrade.oanda.com/v1/accounts")
   url <- paste0(url, "/", oanda.account.info.accountId, "/trades")
   json = fromJSON(getURL(url = url, httpheader = c('Accept' = 'application/json', Authorization = paste('Bearer ', oandaToken))))
+  json$trades = lapply(json$trades, FUN = function(x){ x$time=as.POSIXct(strptime(x$time, tz = "UTC", "%Y-%m-%dT%H:%M:%OSZ")); x; })
   return(json$trades)
 }
 

@@ -53,7 +53,8 @@ getCandles <- function(instrument=NA, granularity=NA, startDate = NA, count = NA
 		ret = ret[,-1]
 
 		colnames(ret) = c('Open','High','Low','Close','Volume')
-		rownames(ret) = as.POSIXlt(gsub('T|\\.\\d{6}Z', ' ', rownames(ret)))
+		ddates = as.POSIXct(strptime(rownames(ret), tz = "UTC", "%Y-%m-%dT%H:%M:%OSZ"))
+		rownames(ret) = ddates
 		ret = as.xts(ret)
 	}else{
 		ret = read.csv(inFile)
@@ -64,13 +65,17 @@ getCandles <- function(instrument=NA, granularity=NA, startDate = NA, count = NA
 	return(ret)
 }
 
-getLiveCandles <- function(instrument, granularity, startDate = NA, count = 600){
+getLiveCandles <- function(instrument, granularity, startDate = NA, count = 600, endDate=NA){
 	urlPractice = paste('https://api-fxpractice.oanda.com/v1/candles?instrument=', instrument, '&granularity=', granularity, '&weeklyAlignment=Monday', '&candleFormat=bidask', sep = '')
 
 	if(!is.na(startDate)){
 		urlPractice = paste(urlPractice,'&start=', startDate,sep='')
 	}else if(!is.na(count)){
 		urlPractice = paste(urlPractice,'&count=', count,sep='')
+	}
+  
+	if(!is.na(endDate)){
+	  urlPractice = paste(urlPractice,'&end=', endDate,sep='')
 	}
 
 	print(paste('requesting ',urlPractice))
@@ -87,7 +92,8 @@ getLiveCandles <- function(instrument, granularity, startDate = NA, count = 600)
 	rownames(ret) = ret[,1]
 	ret = ret[,-1]
 	names(ret) = c('Open','High','Low','Close','Volume')
-	rownames(ret) = as.POSIXlt(gsub('T|\\.\\d{6}Z', ' ', rownames(ret)))
+  ddates = as.POSIXct(strptime(rownames(ret), tz = "UTC", "%Y-%m-%dT%H:%M:%OSZ"))
+	rownames(ret) = ddates
 	ret = as.xts(ret)
 
 	return(ret)
