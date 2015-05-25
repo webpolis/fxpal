@@ -232,6 +232,7 @@ oanda.tick <- function(){
       if(!is.null(openOrderId)){
         print(paste("closing",symbol))
         oanda.close(orderId = openOrderId)
+        hasOpenTrade = F
       }
     }
     
@@ -242,7 +243,7 @@ oanda.tick <- function(){
       isNewSignal = lastSignalTime >= openOrderTime
     }
     
-    if(isNewSignal && !is.null(side)){ 
+    if(isNewSignal && !is.null(side) && !hasOpenTrade){ 
       # open trade
       print(paste(symbol,side))
       oanda.open(type = "market",side = literalSide,cross = cross)
