@@ -34,6 +34,11 @@ constraints <- c("LongOnly")
 setSolver(spec) <- "solveRquadprog"
 setTargetReturn(spec) <- mean(colMeans(tmp))
 
+# portfolioConstraints(data, spec, constraints)
+# frontier <- portfolioFrontier(data, spec, constraints)
+# print(frontier)
+# tailoredFrontierPlot(object = frontier)
+
 tp = tangencyPortfolio(tmp, spec, constraints)
 mp = maxreturnPortfolio(tmp, spec, constraints)
 ep = efficientPortfolio(tmp, spec, constraints)
@@ -47,6 +52,10 @@ mediumWeights = sort(mediumWeights, decreasing = TRUE)
 
 out = as.data.frame(mediumWeights)
 out = data.frame(cross = names(mediumWeights), percentage = mediumWeights)
+out=out[out$percentage>0,]
+
+#barplot(height = out$percentage,names.arg = out$cross,cex.names = 0.5)
+
 outFile = "stocksPortfolio"
 
 write.csv(out, quote = FALSE, row.names = FALSE, file = paste(dataPath, paste(outFile,'.csv',sep=''),sep=""), fileEncoding = "UTF-8")

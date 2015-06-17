@@ -30,7 +30,7 @@ getCluster <- function(cross=NA,source="twitter",lang="en",geocode=NULL,resultTy
     wc=params = list(hl = lang, q = cross, ie = "utf-8", num
                      = 1500, output = "rss")
     corpus=WebCorpus(GoogleNewsSource(cross,params=wc))
-    sparse=0.75
+    sparse=0.65
   }
   
   corpus = tm_map(corpus,content_transformer(tolower))
