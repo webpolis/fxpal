@@ -66,7 +66,7 @@ getCandles <- function(instrument=NA, granularity=NA, startDate = NA, count = NA
 }
 
 getLiveCandles <- function(instrument, granularity, startDate = NA, count = 600, endDate=NA){
-	urlPractice = paste('https://api-fxpractice.oanda.com/v1/candles?instrument=', instrument, '&granularity=', granularity, '&weeklyAlignment=Monday', '&candleFormat=bidask', sep = '')
+	urlPractice = paste('https://api-fxpractice.oanda.com/v1/candles?instrument=', instrument, '&granularity=', granularity, '&dailyAlignment=0&weeklyAlignment=Monday', '&candleFormat=bidask', sep = '')
 
 	if(!is.na(startDate)){
 		urlPractice = paste(urlPractice,'&start=', startDate,sep='')
@@ -114,6 +114,10 @@ getCandlestickPatterns <- function(ohlc){
 		})
 	}
 	return(ret)
+}
+
+getPips <- function(X){
+  return(as.double(gsub('^0\\.0+(.*)$', '\\1', as.character(round(X,4)))))
 }
 
 getVolatility <- function(crosses){
