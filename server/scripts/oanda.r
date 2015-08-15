@@ -252,3 +252,30 @@ oanda.tick <- function(){
     }
   }
 }
+
+getPl <- function(open, close, cross, units,direction){
+  baseCur = gsub(".*\\_(.*)","\\1",cross)
+  quote = NULL
+  
+  if(baseCur != "USD"){
+    tt = oanda.prices(c(paste(baseCur,"USD",sep = "_")))
+    
+    if(!is.null(tt$code) && tt$code == 46){
+      tt = oanda.prices(c(paste("USD",baseCur,sep = "_")))
+      price = ifelse(direction=="sell",tt$prices[[1]]$bid,tt$prices[[1]]$ask)
+      quote = 1 / price
+    }else{
+      quote = ifelse(direction=="sell",tt$prices[[1]]$bid,tt$prices[[1]]$ask)
+    }
+  }else{
+    tt = oanda.prices(c(cross))
+    quote = ifelse(direction=="sell",tt$prices[[1]]$bid,tt$prices[[1]]$ask)
+  }
+
+  open=round(open,4)
+  close=round(close,4)
+  pdif=ifelse(direction=="sell",open-close,close-open)
+  ret = pdif * round(quote, 4) * units
+  return(ret)
+}
+

@@ -116,8 +116,11 @@ getCandlestickPatterns <- function(ohlc){
 	return(ret)
 }
 
-getPips <- function(X){
-  return(as.double(gsub('^0\\.0+(.*)$', '\\1', as.character(round(X,4)))))
+getPips <- function(p1, p2){
+  p1=round(p1,4)
+  p2=round(p2,4)
+  pdif=formatC(round(p2-p1,4), format='f', digits=4)
+  return(as.double(gsub('^\\d\\.(.*)$', '\\1', pdif)))
 }
 
 getVolatility <- function(crosses){
