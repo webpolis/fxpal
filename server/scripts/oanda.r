@@ -82,13 +82,17 @@ oanda.trades <- function(accountType=oanda.account.info.type){
   return(json$trades)
 }
 
+oanda.reloadAccountInfo <- function(accountType=oanda.account.info.type){
+  oanda.account.info <<- oanda.account(accountType)
+}
+
 oanda.init <- function(accountType=oanda.account.info.type){
   oanda.portfolio<<-getQfxPortfolio()
   oanda.symbols<<-as.character(lapply(oanda.portfolio$cross,FUN=function(cross){cross = tolower(gsub("[^A-Za-z]+","",cross))}))
   rm(list=oanda.symbols)
   
   oanda.account.info.type <<- accountType
-  oanda.account.info <<- oanda.account(accountType)
+  oanda.reloadAccountInfo(accountType)
   oanda.account.info.instruments <<- oanda.instruments(oanda.portfolio$cross)
   
   doDelay = 60*10
@@ -191,6 +195,23 @@ oanda.tick <- function(){
       openOrderId = openTrade$id
       openOrderTime = openTrade$time
       openOrderDirection = ifelse(openSide=="long",1,-1)
+      openOrderPrice = openTrade$price
+      
+      # check PL
+      oanda.reloadAccountInfo(accountType)
+      closePrice = getMarketPrice(cross, literalOpenSide)
+      pl = getPl(openOrderPrice,closePrice,cross,2000,literalOpenSide)
+      
+      if(pl < 0){
+        equity = oanda.account.info$marginUsed+oanda.account.info$marginAvail
+        
+        # if loosing 5% or more, close order
+        if(abs(pl) >= ((5*equity)/100)){
+          print(paste("closing",symbol,"excessive loss > 5%"))
+          oanda.close(orderId = openOrderId)
+          hasOpenTrade = F
+        }
+      }
     }
 
     switch(oanda.account.info.strategy, snake={
@@ -279,3 +300,8 @@ getPl <- function(open, close, cross, units,direction){
   return(ret)
 }
 
+getMarketPrice <- function(cross, direction){
+  tt = oanda.prices(c(cross))
+  quote = ifelse(direction=="sell",tt$prices[[1]]$bid,tt$prices[[1]]$ask)
+  return(quote)
+}
