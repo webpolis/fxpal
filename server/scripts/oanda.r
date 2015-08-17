@@ -198,7 +198,7 @@ oanda.tick <- function(){
       openOrderPrice = openTrade$price
       
       # check PL
-      oanda.reloadAccountInfo(accountType)
+      oanda.reloadAccountInfo(oanda.account.info.type)
       closePrice = getMarketPrice(cross, literalOpenSide)
       pl = getPl(openOrderPrice,closePrice,cross,2000,literalOpenSide)
       
