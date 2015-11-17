@@ -1,6 +1,7 @@
 library(tm)
 library(twitteR)
 library(SnowballC)
+library(tm.plugin.webmining)
 
 Sys.setlocale("LC_CTYPE","en_US.UTF-8")
 Sys.setenv(TZ='UTC')
