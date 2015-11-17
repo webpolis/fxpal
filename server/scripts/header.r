@@ -745,11 +745,16 @@ qfxEventsStrength <- function(args){
 	write.csv(strength, quote = FALSE, row.names = FALSE, file =  paste(dataPath, paste(outFile,'.csv',sep=''),sep=''), fileEncoding = 'UTF-8')
 }
 
-qfxQmSignal <- function(args){
-	args = fromJSON(args)
-	granularity = args$granularity
-	restoreCsv = as.integer(args$csv)
-
+qfxQmSignal <- function(args = NA, crosses = NA, granularity = NA, restoreCsv = NA){
+	args = ifelse(!is.na(args),fromJSON(args),NA)
+	hasCustomCrosses = !is.na(crosses)
+	
+	if(!is.na(args)){
+  	granularity = args$granularity
+  	restoreCsv = as.integer(args$csv)
+  	crosses = args$crosses
+	}
+  	
 	switch(granularity,M15={
 		newCount = 96
 	},H1={
@@ -761,31 +766,41 @@ qfxQmSignal <- function(args){
 	})
 
 	tmp = xts()
-	for(c in crosses){
-		candles = getCandles(c,granularity,count=newCount,restore=restoreCsv)
+	for(cross in crosses){
+	  if(hasCustomCrosses){
+	    candles = OHLC(get(cross))
+	  }else{
+	    candles = getCandles(cross,granularity,count=newCount,restore=restoreCsv)
+	  }
+
 		if(restoreCsv==F){
-			qm = qfxMomentum(OHLC(candles),emaPeriod=2)
+			qm = qfxMomentum(OHLC(candles),emaPeriod=2)$qm
 		}else{
 			qm = candles$signal
 		}
-		names(qm) = c
+
+		names(qm) = cross
 		tmp = cbind(tmp, last(qm,1))
 	}
 
 	tmp = t(tmp)
 	tmp = data.frame(cross=rownames(tmp),qm=tmp[,],row.names=NULL)
-	tmp = tmp[order(tmp$cross),]
+	tmp = tmp[order(tmp$qm),]
 
 	return(tmp)
 }
 
-qfxBatchSignals <- function(){
+qfxBatchSignals <- function(data = NA){
 	periods = c('M15','H1','H4','D')
 
 	tmp = NULL
 
 	for(p in periods){
-		qm = qfxQmSignal(toJSON(c(granularity=p,csv=1)))
+	  if(is.na(data)){
+		  qm = qfxQmSignal(toJSON(c(granularity=p,csv=1)))
+	  }else{
+	    qm = qfxQmSignal(toJSON(c(granularity=p,csv=0,candles=data)))
+	  }
 		rownames(qm) = qm$cross
 		qm[,p] = qm$qm
 		qm[,'cross'] = NULL

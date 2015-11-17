@@ -9,10 +9,11 @@ library("quantmod")
 library("financeR")
 
 #stocks = c("AMZN", "DOX", "AXP", "BRK-A", "TSLA", "TEVA", "PG", "AAPL", "CSCO", "CAT", "XOM", "GM", "GOOG", "INTC", "JNJ", "PFE", "BP", "SAP", "GSK", "SIE.DE", "VZ", "GS")
+stocks = c("ADBE","ADSK","ALU.PA","AMX","ARM.L","ATVI","BIDU","CAP.PA","CHKP","CHL","CSCO","DMGT.L","DTE.DE","EA","FB","FSLR","GOOG","HPQ","IBM","IFX.DE","INTC","KING","LNKD","MSFT","MSI","MU","NOK","NVDA","ORCL","RENN","SAP.DE","SGE.L","SNDK","T","TEF","TEO","TRIP","TWTR","VOD","VOD.L","VZ","WDC","YHOO","YNDX","ZNGA")
 
 #merval
-stocks = read.table(paste0(dataPath, "merval.csv"), sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")$symbol
-stocks = as.character(lapply(stocks,FUN=function(x){paste(x,"BA",sep=".")}))
+#stocks = read.table(paste0(dataPath, "merval.csv"), sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")$symbol
+#stocks = as.character(lapply(stocks,FUN=function(x){paste(x,"BA",sep=".")}))
 
 tickers = getSymbols(stocks, auto.assign = TRUE)
 

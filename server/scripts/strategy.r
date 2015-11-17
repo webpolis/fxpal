@@ -1,6 +1,7 @@
 library(iterators)
 library(foreach)
 library(doParallel)
+library(FinancialInstrument)
 
 registerDoParallel()
 
@@ -46,14 +47,18 @@ sigQmThreshold = function(label, data=mktdata, relationship=c("gt","lt","eq","gt
   return(ret_sig)
 }
 
-snakeStrategyTest = function(symbol=NA, graph=T,long=F,returnOnly=F,both=F,opt=F){
+snakeStrategyTest = function(symbol=NA, candles = NA, graph=T,long=F,returnOnly=F,both=F,opt=F){
   currency("USD")
   short = !long
   if(both){
     long = T
     short = T
   }
-  candles = get(symbol)
+  
+  if(is.na(candles)){
+    candles = get(symbol)
+  }
+  
   stock(symbol,currency="USD",multiplier = 1)
   strategy.st = portfolio.st = account.st = "qfxSnakeStrategy"
   initEq = 20000
@@ -624,13 +629,13 @@ testStrategy <- function(data, instrument,strategy,param1=NA,param2=NA,param3=NA
   charts.PerformanceSummary(finalReturns,main=paste(strategy,"- out of Sample"),geometric=FALSE)
 }
 
-qfxMomentum <- function(data,emaPeriod=11, debug=T){
+qfxMomentum <- function(data,emaPeriod=11, debug=T, graph = F, symbol = ""){
   stats = getSignals(data,debug)
   stats$qm = round(DEMA(scale(stats$avg),emaPeriod,wilder=T),5)
   qmsd = sd(na.omit(stats$qm))
   stats$qmsd = qmsd + ((.01*3)*qmsd)
   stats = stats[,c("qm","qmsd")]
-  rl = graphRobustLines(candles = data,graph = F)
+  rl = graphRobustLines(candles = data,graph = graph, symbol = symbol)
   stats$angle = rl$angle
   return(stats)
 }
