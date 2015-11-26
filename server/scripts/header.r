@@ -275,8 +275,9 @@ graphRobustLines <- function(symbol=NA, graph=T, period=NA, candles=NA){
       hlc = last(HLC(candles), period)
     }
 
-    f1=line(as.numeric(FRAMA(hlc,n=60,FC=65,SC=162)$FRAMA))
-    f2=line(as.numeric(FRAMA(hlc,n=12,FC=13,SC=32)$FRAMA))
+    ddates = index(hlc)
+    f1=line(log(as.numeric(FRAMA(hlc,n=60,FC=65,SC=162)$FRAMA)))
+    f2=line(log(as.numeric(FRAMA(hlc,n=12,FC=13,SC=32)$FRAMA)))
     co=coef(f1)
     co2=coef(f2)
     fit1 = fitted(f1)
@@ -305,15 +306,25 @@ graphRobustLines <- function(symbol=NA, graph=T, period=NA, candles=NA){
     rl$angle = ar*180/pi
     
     if(graph){
-      lineChart(FRAMA(hlc,n=12,FC=13,SC=32),name = symbol)
-      #plot(FRAMA(hlc,n=4)$FRAMA,type="l",main=name)
+      ff = as.numeric(FRAMA(hlc,n=12,FC=13,SC=32)$FRAMA)
+      #lineChart(FRAMA(hlc,n=12,FC=13,SC=32),name = symbol)
+      plot(log(ff),type="l",main=symbol,xaxt="n")
       abline(co3[1],co3[2],col='orange',lwd=2)
       abline(intersection,0,lwd=2,col="orange")
-      axis(2,at=round(c(last(un),intersection),3),cex.axis=0.75,col.axis='white')
+      axis(2,at=round(c(last(un),intersection),3),cex.axis=0.75,col.axis='blue')
+      axis(1,at=seq_along(ff),labels=ddates,cex.axis=0.7)
     }
     
     return(rl)
   }
+}
+
+multiPlot <- function(candles = NA){
+  ptitle = deparse(substitute(candles))
+  layout(matrix(c(1,1,2,3),2,2,byrow=T))
+  graphRobustLines(symbol = ptitle,candles = tail(candles,n=365))
+  qfxSnake(data = candles, graph = T)
+  qfxSnake(data = tail(candles,n=365*2), graph = T)
 }
 
 addCopyright <- function(label, image, x, y, size, ...) {
@@ -352,7 +363,7 @@ graphBreakoutArea <- function(instrument='EUR_USD',granularity='D',candles=NA,sa
 
 	if(!is.null(ret$resistances)&!is.null(ret$supports)){
 		if(showGraph){
-			dev.new()
+			#dev.new()
 			lineChart(Cl(candles),name=paste(instrument,granularity,sep=' - '))
 		}
 		if(save){
