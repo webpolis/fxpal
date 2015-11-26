@@ -312,7 +312,7 @@ graphRobustLines <- function(symbol=NA, graph=T, period=NA, candles=NA){
       abline(co3[1],co3[2],col='orange',lwd=2)
       abline(intersection,0,lwd=2,col="orange")
       axis(2,at=round(c(last(un),intersection),3),cex.axis=0.75,col.axis='blue')
-      axis(1,at=seq_along(ff),labels=ddates,cex.axis=0.7)
+      axis(1,at=seq_along(ff),labels=ddates,cex.axis=0.9)
     }
     
     return(rl)
@@ -321,10 +321,15 @@ graphRobustLines <- function(symbol=NA, graph=T, period=NA, candles=NA){
 
 multiPlot <- function(candles = NA){
   ptitle = deparse(substitute(candles))
-  layout(matrix(c(1,1,2,3),2,2,byrow=T))
-  graphRobustLines(symbol = ptitle,candles = tail(candles,n=365))
+  par(mar=c(4,2.5,3.5,2.5),mfrow=c(2,2))
+  #layout(matrix(c(1,1,2,3),2,2,byrow=T))
+  
   qfxSnake(data = candles, graph = T)
   qfxSnake(data = tail(candles,n=365*2), graph = T)
+  graphRobustLines(symbol = ptitle,candles = tail(candles,n=365))
+  
+  mm=qfxMomentum(data = tail(candles,n=365),graph = F)
+  plot(mm$qm,type="l",main=NULL,cex=0.5)
 }
 
 addCopyright <- function(label, image, x, y, size, ...) {
