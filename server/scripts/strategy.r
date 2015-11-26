@@ -27,7 +27,8 @@ sigQmThreshold = function(label, data=mktdata, relationship=c("gt","lt","eq","gt
   relationship=relationship[1]
   ret_sig=NULL
   qmsd = ifelse(op,-(data[,cols[1]]),data[,cols[1]])
-
+  qmsd = mean(qmsd)
+  
   switch(relationship,
          '>' =,
          'gt' = {ret_sig = data[,cols[2]] > qmsd},
@@ -272,8 +273,14 @@ momentumStrategyTest = function(symbol=NA, graph=T,long=F,returnOnly=F, both=F,o
 }
 
 getQfxMomentumStrategySignals <- function(symbol=NA,long=F,both=T){
+  if(exists(symbol)){
+    data = OHLC(get(symbol))
+  }else{
+    data = NULL
+  }
+
   strat=momentumStrategyTest(symbol=symbol,long = (ifelse(both,F,long)), both=both,returnOnly = T)
-  tt=applyStrategy(strategy=strat$strategy,portfolios=strat$portfolios,debug=T)
+  tt=applyStrategy(strategy=strat$strategy,portfolios=strat$portfolios,debug=T, mktdata = data)
   dd=data.frame(tt$qfxMomentumStrategy[[symbol]]$rules)
   dd=dd[,grep("pathdep\\.(?:long|short)(?:Exit|Entry)",names(dd))]
   names(dd) = gsub("pathdep\\.","",names(dd))
@@ -281,8 +288,14 @@ getQfxMomentumStrategySignals <- function(symbol=NA,long=F,both=T){
 }
 
 getQfxSnakeStrategySignals <- function(symbol=NA,long=F,both=T){
+  if(exists(symbol)){
+    data = OHLC(get(symbol))
+  }else{
+    data = NULL
+  }
+  
   strat=snakeStrategyTest(symbol=symbol,long = (ifelse(both,F,long)), both=both, returnOnly = T)
-  tt=applyStrategy(strategy=strat$strategy,portfolios=strat$portfolios,debug=T)
+  tt=applyStrategy(strategy=strat$strategy,portfolios=strat$portfolios,debug=T, mktdata = data)
   dd=data.frame(tt$qfxSnakeStrategy[[symbol]]$rules)
   dd=dd[,grep("pathdep\\.(?:long|short)(?:Exit|Entry)",names(dd))]
   names(dd) = gsub("pathdep\\.","",names(dd))
