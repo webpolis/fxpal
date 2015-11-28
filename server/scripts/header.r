@@ -324,11 +324,18 @@ multiPlot <- function(candles = NA){
   par(mar=c(4,2.5,3.5,2.5),mfrow=c(2,2))
   #layout(matrix(c(1,1,2,3),2,2,byrow=T))
   
-  qfxSnake(data = candles, graph = T)
-  qfxSnake(data = tail(candles,n=365*2), graph = T)
-  graphRobustLines(symbol = ptitle,candles = tail(candles,n=365))
-  
   mm=qfxMomentum(data = tail(candles,n=365),graph = F)
+  ssrr=getSupportsAndResistances(tail(candles,n=365*1),threshold = 10)
+  
+  qfxSnake(data = candles, graph = T)
+  graphRobustLines(symbol = ptitle,candles = tail(candles,n=365))
+  qfxSnake(data = tail(candles,n=365*1), graph = T)
+  
+  for(r in ssrr$resistances){abline(h=r,col='blue')}
+  for(r in ssrr$supports){abline(h=r,col='red')}
+  
+  axis(4,at=round(c(ssrr$resistances,ssrr$supports),3),cex.axis=0.8)
+  
   plot(mm$qm,type="l",main=NULL,cex=0.5)
 }
 

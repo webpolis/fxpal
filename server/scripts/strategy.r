@@ -670,6 +670,7 @@ qfxSnake <- function(data = NA, triggerN = 9, triggerFC = 14, triggerSC = 24, gr
   
   if(graph){
     plot(Cl(data),type="l",ylab=NULL,main=NULL)
+    #axis(side=2,at=seq(min(Cl(data)),max(Cl(data))),cex.axis=.8)
     lines(ret$mean,type="p",col=ifelse(ret$snake==1,"green","red"))
     lines(ret$trigger,type="l",col="blue")
   }
