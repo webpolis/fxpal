@@ -11,20 +11,20 @@ if (exists("dataset")){
 	rm(dataset)
 }
 
-for (file in qs){
+for (csv in qs){
 	if (!exists("dataset")){
 		# if the merged dataset doesn't exist, create it
-		dataset = read.csv(file, sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
+		dataset = read.csv(csv, sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
 		rownames(dataset) = as.Date(dataset[,1])
 		dataset$Date = NULL
-		dataset = as.xts(dataset)
+		dataset = as.xts(dataset)[,1]
 	}else{
 		# if the merged dataset does exist, append to it
-		tmp = read.csv(file, sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
+		tmp = read.csv(csv, sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
 		rownames(tmp) = as.Date(tmp[,1])
 		tmp$Date = NULL
 		tmp$Trade.Date = NULL
-		tmp = as.xts(tmp)
+		tmp = as.xts(tmp)[,1]
 		dataset = merge.xts(dataset, tmp)
 		rm(tmp)
 	}
