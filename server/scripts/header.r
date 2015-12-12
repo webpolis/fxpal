@@ -319,8 +319,11 @@ graphRobustLines <- function(symbol=NA, graph=T, period=NA, candles=NA){
   }
 }
 
-multiPlot <- function(candles = NA){
-  ptitle = deparse(substitute(candles))
+multiPlot <- function(candles = NA, ptitle = NA){
+  if(is.na(ptitle)){
+    ptitle = deparse(substitute(candles))
+  }
+  
   par(mar=c(4,2.5,3.5,2.5),mfrow=c(2,2))
   #layout(matrix(c(1,1,2,3),2,2,byrow=T))
   
