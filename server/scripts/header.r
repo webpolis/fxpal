@@ -126,8 +126,8 @@ getPips <- function(p1, p2){
 getVolatility <- function(crosses){
 	ret = xts()
 	for(cross in crosses){
-		tmp = getCandles(cross,'H1',count = 168,restore=F)
-		vol = volatility(OHLC(tmp), n=6,calc='garman.klass')
+		tmp = getCandles(cross,'H1',count = 168,restore=T)
+		vol = volatility(tmp[,c("Open","High","Low","Close")], n=6,calc='garman.klass')
 		names(vol) = c(cross)
 		ret = cbind(vol,ret)
 	}
