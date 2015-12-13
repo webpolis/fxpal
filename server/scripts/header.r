@@ -135,7 +135,7 @@ getVolatility <- function(crosses){
 	return(last(ret))
 }
 
-getSlopeByPeriod <- function(currency, period){
+getSlopeByPeriod <- function(curr, period){
 	newCount = 0
 	switch(period,M15={
 		newCount = 96
@@ -146,11 +146,12 @@ getSlopeByPeriod <- function(currency, period){
 	},D={
 		newCount = 365
 	})
-	print(paste('getSlopeByPeriod',currency,period,newCount,sep='-'))
-	tmp = getCandles(currency,period,count = newCount,restore=F)
+	print(paste('getSlopeByPeriod',curr,period,newCount,sep='-'))
+	tmp = getCandles(curr,period,count = newCount,restore=T)
 	roc = na.omit(ROC(Cl(tmp),type='discrete'))
-	vroc = na.omit(ROC(tmp$Volume,type='discrete'))
-	lmm = lm(roc~vroc)
+	#vroc = na.omit(ROC(tmp$Volume,type='discrete'))
+	#lmm = lm(roc~vroc)
+	lmm = lm(roc~seq_along(roc))
 	f = as.numeric(fitted(lmm))
 
 	return(last(atan(f)))
