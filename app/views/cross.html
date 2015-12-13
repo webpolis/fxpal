@@ -12,13 +12,13 @@
     <div class="col col-75" ng-if="(selected.cross1 && selected.cross2)" ng-init="curr = {label: selected.cross1+selected.cross2}">
         <div class="row">
             <div class="col">
-                <span class="gray">Daily:</span> <i class="icon size-16" ng-class="{'ion-android-arrow-up-right green':data.marketChange[curr.label].daily>0,'ion-android-arrow-down-right red':data.marketChange[curr.label].daily<0,'ion-android-remove':data.marketChange[curr.label].daily==0}"></i>
+                <span class="gray">Daily:</span> <i class="icon size-16" ng-class="{'ion-android-arrow-up green':data.marketChange[curr.label].daily>0,'ion-android-arrow-down red':data.marketChange[curr.label].daily<0,'ion-android-remove':data.marketChange[curr.label].daily==0}"></i>
             </div>
             <div class="col">
-                <span class="gray">Weekly:</span> <i class="icon size-16" ng-class="{'ion-android-arrow-up-right green':data.marketChange[curr.label].weekly>0,'ion-android-arrow-down-right red':data.marketChange[curr.label].weekly<0,'ion-android-remove':data.marketChange[curr.label].weekly==0}"></i>
+                <span class="gray">Weekly:</span> <i class="icon size-16" ng-class="{'ion-android-arrow-up green':data.marketChange[curr.label].weekly>0,'ion-android-arrow-down red':data.marketChange[curr.label].weekly<0,'ion-android-remove':data.marketChange[curr.label].weekly==0}"></i>
             </div>
             <div class="col">
-                <span class="gray">Monthly:</span> <i class="icon size-16" ng-class="{'ion-android-arrow-up-right green':data.marketChange[curr.label].monthly>0,'ion-android-arrow-down-right red':data.marketChange[curr.label].monthly<0,'ion-android-remove':data.marketChange[curr.label].monthly==0}"></i>
+                <span class="gray">Monthly:</span> <i class="icon size-16" ng-class="{'ion-android-arrow-up green':data.marketChange[curr.label].monthly>0,'ion-android-arrow-down red':data.marketChange[curr.label].monthly<0,'ion-android-remove':data.marketChange[curr.label].monthly==0}"></i>
             </div>
         </div>
     </div>

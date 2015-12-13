@@ -208,7 +208,7 @@ server.pre(restify.pre.sanitizePath());
  */
 server.get('/api/portfolio', function respond(req, res, next) {
     res.setHeader('content-type', 'text/csv');
-    var outFile = __dirname + '/../app/data/portfolio.csv';
+    var outFile = __dirname + '/../app/data/forexPorfolio.csv';
     fs.readFile(outFile, {}, function(err, data) {
         res.send(data);
     });

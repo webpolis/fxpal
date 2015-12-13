@@ -1,4 +1,5 @@
-setwd("app/data/")
+pwd = ifelse(is.null(sys.frames()),paste(getwd(),"/server/scripts",sep=""),dirname(sys.frame(1)$ofile))
+dataPath = paste(pwd,"/../../app/data/",sep="")
 
 Sys.setenv(TZ="UTC")
 
@@ -7,10 +8,10 @@ library("fPortfolio")
 library("financeR")
 library("quantmod")
 
-forex = read.csv('availableCrosses.csv', sep = ',', dec = '.', strip.white = TRUE, header=TRUE, encoding = 'UTF-8')
+forex = read.csv(paste(dataPath, 'availableCrosses.csv', sep=""), sep = ',', dec = '.', strip.white = TRUE, header=TRUE, encoding = 'UTF-8')
 forex = gsub("_", "", as.character(forex$instrument))
 
-dataset = read.table("multisetsInputs.csv", sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
+dataset = read.table(paste(dataPath, "multisetsInputs.csv", sep=""), sep = ",", dec = ".", strip.white = TRUE, header=TRUE, encoding = "UTF-8")
 rownames(dataset) = dataset[grep("date", names(dataset), ignore.case=T)]$Date
 dataset = dataset[-grep("date", names(dataset), ignore.case=T)]
 crosses = toupper(gsub("\\.{3}[\\w]+|CURRFX\\.|\\.\\d+|\\.Price", "", names(dataset), perl = TRUE))
@@ -26,7 +27,7 @@ assets <- dim(data)[2]
 tmp = as.timeSeries(data)
 spec = portfolioSpec()
 setNFrontierPoints(spec) <- 10
-constraints <- c("Short", "LongOnly")
+constraints <- c("LongOnly")
 setSolver(spec) <- "solveRquadprog"
 setTargetReturn(spec) <- mean(colMeans(tmp))
 

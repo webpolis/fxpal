@@ -49,7 +49,7 @@ angular.module('aifxApp').controller('appController', function($scope, $ionicSid
             yahooIndex: 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quoteslist%20where%20symbol%20in%20({{quotes}})&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=',
             /* events: 'http://calendar.fxstreet.com/eventdate/mini?f=json&culture=en-US&rows=165&pastevents=100&hoursbefore=240&timezone=Argentina+Standard+Time&columns=date%2Ctime%2Cevent%2Cconsensus%2Cprevious%2Cactual&showcountryname=false&countrycode=AU%2CCA%2CJP%3AEMU%2CNZ%2CCH%2CUK%2CUS&isfree=true'*/
             // strip protocol for corsproxy
-            events: 'www.dailyfx.com/files/Calendar-{{startWeekDate}}.csv',
+            events: 'www4.dailyfx.com/files/Calendar-{{startWeekDate}}.csv',
             yql: 'https://query.yahooapis.com/v1/public/yql?q={{query}}&format=json&diagnostics=false&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys'
         },
         correlation: {
