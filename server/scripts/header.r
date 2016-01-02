@@ -497,8 +497,8 @@ graphCOTPositioning <- function(currency1,currency2,cross,data=NA,cotData=NA,sav
 	}
 	
 	if(is.na(cotData)){
-		cotData = getCOTData(1)
-		cotData = rbind(cotData,getCOTData(0))
+		cotData = getCOTData(2) # should be 1, but until we get 2016 info is 2 years before now
+		cotData = rbind(cotData,getCOTData(1)) # should be 0, but until we get 2016 info is last year
 		cotData = cotData[order(as.Date(cotData$As.of.Date.in.Form.YYYY.MM.DD, format='%Y-%m-%d')),]
 	}
 
