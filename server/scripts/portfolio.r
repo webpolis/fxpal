@@ -27,8 +27,8 @@ assets <- dim(data)[2]
 tmp = as.timeSeries(data)
 spec = portfolioSpec()
 setNFrontierPoints(spec) <- 10
-constraints <- c("LongOnly")
-setSolver(spec) <- "solveRquadprog"
+constraints <- c("Short")
+setSolver(spec) <- "solveRshortExact"
 setTargetReturn(spec) <- mean(colMeans(tmp))
 
 # portfolioConstraints(data, spec, constraints)
@@ -49,7 +49,7 @@ mediumWeights = sort(mediumWeights, decreasing = TRUE)
 
 out = as.data.frame(mediumWeights)
 out = data.frame(cross = names(mediumWeights), percentage = mediumWeights)
-out=out[out$percentage>0,]
+out[out$percentage>0.025|out$percentage< -0.025,]
 
 #barplot(height = out$percentage,names.arg = out$cross,cex.names = 0.5)
 
