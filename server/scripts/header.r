@@ -566,11 +566,11 @@ graphCOTPositioning <- function(currency1,currency2,cross,data=NA,cotData=NA,sav
 	}
 }
 
-getCurrencyFundamentalStrength <- function(data = NA, w = 52, country1=NA, country2=NA){
+getCurrencyFundamentalStrength <- function(calendar = NA, w = 52, country1=NA, country2=NA){
 	reDate = '([^\\s]+)(?:\\s+[^\\s]+){1,}'
 	df = data.frame()
-	for(i in 1:length(data)){
-		cal = data[[i]]
+	for(i in 1:length(calendar)){
+		cal = calendar[[i]]
 
 		if(length(cal$Data)==0){
 			next
@@ -747,8 +747,13 @@ qfxEventsStrength <- function(args){
 
 	reDate = '([^\\s]+)(?:\\s+[^\\s]+){1,}'
 	calendar = fromJSON(file=paste(dataPath,'calendar.json',sep=''))
-	total = length(calendar$d)
-	last = calendar$d[[total]]
+	
+	datess=sapply(calendar$d,"[[","Released")
+	datess=as.Date(datess,format="%m/%d/%Y")
+	calendar = calendar$d[order(datess)]
+	
+	total = length(calendar)
+	last = calendar[[total]]
 	lastDate = gsub(reDate,'\\1',last$Released,perl=T)
 	endDate = format(Sys.Date(),format='%m/%d/%Y')
 
@@ -756,12 +761,15 @@ qfxEventsStrength <- function(args){
 	startWeek = as.Date(format(Sys.Date(),format='%Y-%m-%d')) - as.difftime(diffWeeks,units='weeks')
 	startDate = format(startWeek,format='%m/%d/%Y')
 
-	url = 'http://www.forex.com/UIService.asmx/getEconomicCalendarForPeriod'
+	url = 'http://www.forex.com/uk/UIService.asmx/getEconomicCalendarForPeriod'
 	params = toJSON(list(aStratDate=startDate,aEndDate=endDate))
 	headers = list('Accept' = 'application/json', 'Content-Type' = 'application/json')
 	ret = fromJSON(postForm(url, .opts=list(postfields=params, httpheader=headers)))
 
-	calendar = append(calendar$d, ret$d)
+	calendar = append(calendar, ret$d)
+	datess=sapply(calendar,"[[","Released")
+	datess=as.Date(datess,format="%m/%d/%Y")
+	calendar = calendar[order(datess)]
 
 	strength = getCurrencyFundamentalStrength(calendar, as.integer(args$weeks), args$country1, args$country2)
 	outFile = paste('calendar',as.integer(args$weeks),sep = '-')
