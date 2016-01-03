@@ -54,13 +54,38 @@ var isOutdatedFile = function(fileName, sinceMinutes) {
 };
 var requestCalendarCsv = function(url, cross) {
     var _def = q.defer();
-    http.get(url, function(_res) {
+    var host = url.replace(/https?:\/\/([^\/]+).*/gi,'$1'), path = url.replace(/https?:\/\/[^\/]+(.*)/gi,'$1');
+    var opts = {
+        host: host,
+        path: path,
+        headers: {
+            'Accept-Encoding': 'gzip,deflate,sdch',
+            'Content-Type': 'text/plain; charset=utf-8',
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.71 Safari/537.36'
+        }
+    };
+    https.get(opts, function(_res) {
         var body = '';
         console.log('requesting calendar ' + url);
-        _res.on('data', function(chunk) {
-            body += chunk;
+        var dec = null;
+
+        switch (_res.headers['content-encoding']) {
+            // or, just use zlib.createUnzip() to handle both cases
+            case 'gzip':
+                dec = zlib.createGunzip();
+                _res.pipe(dec);
+                break;
+            case 'deflate':
+                dec = zlib.createInflate();
+                _res.pipe(dec);
+                break;
+        }
+
+        dec.on('data', function(chunk) {
+            body += chunk.toString();
         });
-        _res.on('end', function() {
+
+        dec.on('end', function() {
             var ret = body.split('\n');
             ret = ret.filter(Boolean).map(function(row, ix) {
                 if (ix === 0) {
@@ -73,7 +98,10 @@ var requestCalendarCsv = function(url, cross) {
             });
             _def.resolve(ret);
         });
+
+        dec.on('error', _def.reject);
     }).on('error', _def.reject);
+
     return _def.promise;
 };
 var requestOandaCandles = function(instrument, granularity, startDate, count, pause) {
