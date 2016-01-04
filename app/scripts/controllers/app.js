@@ -91,6 +91,10 @@ angular.module('aifxApp').controller('appController', function($scope, $ionicSid
                 country: 'em',
                 code: 'EUR',
                 cot: 'EURO FX'
+            }, {
+                country: 'cn',
+                code: 'HKD',
+                cot: 'HONG KONG DOLLAR'
             }],
             tickers: [{
                 quandl: 'NIKKEI.INDEX',
