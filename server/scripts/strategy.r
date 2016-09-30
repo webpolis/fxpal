@@ -670,6 +670,8 @@ qfxSnake <- function(data = NA, triggerN = 9, triggerFC = 14, triggerSC = 24, gr
   }
   
   if(graph){
+    data = OHLC(data)
+    names(data) <- c("Open", "High", "Low", "Close")
     p1 <- ggplot()+
     geom_point(data=ret,aes(x=index(ret),y=mean,color="mean"),color=ifelse(ret$snake==1,"green","red"))+
     geom_line(data=ret,aes(x=index(ret),y=trigger,color="trigger"),color="blue")+
