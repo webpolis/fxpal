@@ -265,6 +265,8 @@ angle <- function(x,y){
 }
 
 graphRobustLines <- function(symbol=NA, graph=T, period=NA, candles=NA){
+  p2 = NULL
+  
   if(is.na(candles)){
     candles = get(symbol)
   }

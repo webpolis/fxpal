@@ -33,3 +33,4 @@ server/socket
 annual.txt
 www/data/R.log
 .httr-oauth
+.Rhistory

@@ -54,7 +54,7 @@ var isOutdatedFile = function(fileName, sinceMinutes) {
 };
 var requestCalendarCsv = function(url, cross) {
     var _def = q.defer();
-    var host = url.replace(/https?:\/\/([^\/]+).*/gi,'$1'), path = url.replace(/https?:\/\/[^\/]+(.*)/gi,'$1');
+    var host = url.replace(/https?:\/\/([^\/]+).*/gi, '$1'), path = url.replace(/https?:\/\/[^\/]+(.*)/gi, '$1');
     var opts = {
         host: host,
         path: path,
@@ -71,14 +71,14 @@ var requestCalendarCsv = function(url, cross) {
 
         switch (_res.headers['content-encoding']) {
             // or, just use zlib.createUnzip() to handle both cases
-            case 'gzip':
-                dec = zlib.createGunzip();
-                _res.pipe(dec);
-                break;
-            case 'deflate':
-                dec = zlib.createInflate();
-                _res.pipe(dec);
-                break;
+        case 'gzip':
+            dec = zlib.createGunzip();
+            _res.pipe(dec);
+            break;
+        case 'deflate':
+            dec = zlib.createInflate();
+            _res.pipe(dec);
+            break;
         }
 
         dec.on('data', function(chunk) {
@@ -107,13 +107,13 @@ var requestCalendarCsv = function(url, cross) {
 var requestOandaCandles = function(instrument, granularity, startDate, count, pause) {
     var _def = q.defer();
     var inFile = [__dirname + '/../.tmp/', instrument, '-', granularity];
-    inFile = typeof(count) !== 'undefined' ? inFile.concat(['-', count, '.json']).join('') : inFile.concat('.json').join('');
+    inFile = typeof (count) !== 'undefined' ? inFile.concat(['-', count, '.json']).join('') : inFile.concat('.json').join('');
     var oandaApiHost = 'api-fxpractice.oanda.com';
     var oandaToken = 'ce6b72e81af59be0bbc90152cad8d731-03d41860ed7849e3c4555670858df786';
     var urlParams = ['instrument=' + instrument, 'granularity=' + granularity, 'weeklyAlignment=Monday', 'candleFormat=bidask'];
-    if (typeof(startDate) !== 'undefined') {
+    if (typeof (startDate) !== 'undefined') {
         urlParams.push('start=' + startDate);
-    } else if (typeof(count) !== 'undefined') {
+    } else if (typeof (count) !== 'undefined') {
         urlParams.push('count=' + count);
     }
     var url = ['/v1/candles', urlParams.join('&')].join('?');
@@ -150,15 +150,15 @@ var requestOandaCandles = function(instrument, granularity, startDate, count, pa
         var output = fs.createWriteStream(inFile);
         switch (response.headers['content-encoding']) {
             // or, just use zlib.createUnzip() to handle both cases
-            case 'gzip':
-                response.pipe(zlib.createGunzip()).pipe(output);
-                break;
-            case 'deflate':
-                response.pipe(zlib.createInflate()).pipe(output);
-                break;
-            default:
-                response.pipe(output);
-                break;
+        case 'gzip':
+            response.pipe(zlib.createGunzip()).pipe(output);
+            break;
+        case 'deflate':
+            response.pipe(zlib.createInflate()).pipe(output);
+            break;
+        default:
+            response.pipe(output);
+            break;
         }
     });
     return _def.promise;
@@ -175,32 +175,32 @@ var getMultipleCandles = function(_crosses, _periods, _counts) {
             var period = _periods[p];
             var newPeriod = period,
                 newCount = _counts[p] || null;
-            if (typeof(_counts) === 'undefined') {
+            if (typeof (_counts) === 'undefined') {
                 switch (period) {
-                    case 'M15':
-                        newPeriod = 'M1';
-                        newCount = 15;
-                        break;
-                    case 'H1':
-                        newPeriod = 'M5';
-                        newCount = 12;
-                        break;
-                    case 'H4':
-                        newPeriod = 'M15';
-                        newCount = 16;
-                        break;
-                    case 'D':
-                        newPeriod = 'H2';
-                        newCount = 12;
-                        break;
-                    case 'W':
-                        newPeriod = 'D';
-                        newCount = 7;
-                        break;
-                    case 'M':
-                        newPeriod = 'D';
-                        newCount = 30;
-                        break;
+                case 'M15':
+                    newPeriod = 'M1';
+                    newCount = 15;
+                    break;
+                case 'H1':
+                    newPeriod = 'M5';
+                    newCount = 12;
+                    break;
+                case 'H4':
+                    newPeriod = 'M15';
+                    newCount = 16;
+                    break;
+                case 'D':
+                    newPeriod = 'H2';
+                    newCount = 12;
+                    break;
+                case 'W':
+                    newPeriod = 'D';
+                    newCount = 7;
+                    break;
+                case 'M':
+                    newPeriod = 'D';
+                    newCount = 30;
+                    break;
                 }
             }
             requests.push({
@@ -219,7 +219,7 @@ var runRScript = function(scriptName, opts) {
     opts.path = [__dirname, '../server/socket'].join('/');
     delete opts.host;
     delete opts.port;
-    rio.sourceAndEval(fname, opts); //rio.bufferAndEval(script.replace(/\;/g, '\n'));
+    rio.sourceAndEval(fname, opts); // rio.bufferAndEval(script.replace(/\;/g, '\n'));
     return true;
 };
 /**
@@ -252,30 +252,30 @@ var reqCandles = function respond(req, res, next) {
     var sinceMinutes = null;
     var startDate = req.params.start;
     switch (req.params.granularity.toUpperCase()) {
-        case 'M15':
-            sinceMinutes = 15;
-            break;
-        case 'H1':
-            sinceMinutes = 60;
-            break;
-        case 'H4':
-            sinceMinutes = 60 * 4;
-            break;
-        case 'D':
-            sinceMinutes = 60 * 24;
-            break;
-        case 'W':
-            sinceMinutes = 10080;
-            break;
-        case 'M':
-            sinceMinutes = 43800;
-            break;
-        default:
-            var m = granularity.replace(/\M(\d+)/gi, '$1') || null;
-            if (m !== null) {
-                sinceMinutes = m + 1;
-            }
-            break;
+    case 'M15':
+        sinceMinutes = 15;
+        break;
+    case 'H1':
+        sinceMinutes = 60;
+        break;
+    case 'H4':
+        sinceMinutes = 60 * 4;
+        break;
+    case 'D':
+        sinceMinutes = 60 * 24;
+        break;
+    case 'W':
+        sinceMinutes = 10080;
+        break;
+    case 'M':
+        sinceMinutes = 43800;
+        break;
+    default:
+        var m = granularity.replace(/\M(\d+)/gi, '$1') || null;
+        if (m !== null) {
+            sinceMinutes = m + 1;
+        }
+        break;
     }
     // only generate file if it's older than XX minutes
     if (isOutdatedFile(outFile, sinceMinutes)) {
@@ -321,30 +321,30 @@ var reqCachedCandles = function respond(req, res, next) {
     var bImgFile = [__dirname + '/../app/data/breakout/', cross, '-', req.params.granularity, '.jpg'].join('');
     var sinceMinutes = null;
     switch (req.params.granularity.toUpperCase()) {
-        case 'M15':
-            sinceMinutes = 15;
-            break;
-        case 'H1':
-            sinceMinutes = 60;
-            break;
-        case 'H4':
-            sinceMinutes = 60 * 4;
-            break;
-        case 'D':
-            sinceMinutes = 60 * 24;
-            break;
-        case 'W':
-            sinceMinutes = 10080;
-            break;
-        case 'M':
-            sinceMinutes = 43800;
-            break;
-        default:
-            var m = granularity.replace(/\M(\d+)/gi, '$1') || null;
-            if (m !== null) {
-                sinceMinutes = m + 1;
-            }
-            break;
+    case 'M15':
+        sinceMinutes = 15;
+        break;
+    case 'H1':
+        sinceMinutes = 60;
+        break;
+    case 'H4':
+        sinceMinutes = 60 * 4;
+        break;
+    case 'D':
+        sinceMinutes = 60 * 24;
+        break;
+    case 'W':
+        sinceMinutes = 10080;
+        break;
+    case 'M':
+        sinceMinutes = 43800;
+        break;
+    default:
+        var m = granularity.replace(/\M(\d+)/gi, '$1') || null;
+        if (m !== null) {
+            sinceMinutes = m + 1;
+        }
+        break;
     }
     fs.readFile(outFile, {}, function(err, data) {
         res.send(data);
