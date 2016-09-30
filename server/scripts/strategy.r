@@ -654,6 +654,7 @@ qfxMomentum <- function(data,emaPeriod=11, debug=T, graph = F, symbol = ""){
 }
 
 qfxSnake <- function(data = NA, triggerN = 9, triggerFC = 14, triggerSC = 24, graph = F, save = F, name=NA){
+  p1 = NULL
   fr9=FRAMA(HLC(data),n = 12,FC=13,SC=32)
   fr45=FRAMA(HLC(data),n = 60,FC=65,SC=162)
   fr13=FRAMA(HLC(data),n = triggerN,FC=triggerFC,SC=triggerSC)
@@ -669,17 +670,21 @@ qfxSnake <- function(data = NA, triggerN = 9, triggerFC = 14, triggerSC = 24, gr
   }
   
   if(graph){
-    plot(Cl(data),type="l",ylab=NULL,main=NULL)
-    #axis(side=2,at=seq(min(Cl(data)),max(Cl(data))),cex.axis=.8)
-    lines(ret$mean,type="p",col=ifelse(ret$snake==1,"green","red"))
-    lines(ret$trigger,type="l",col="blue")
+    p1 <- ggplot()+
+    geom_point(data=ret,aes(x=index(ret),y=mean,color="mean"),color=ifelse(ret$snake==1,"green","red"))+
+    geom_line(data=ret,aes(x=index(ret),y=trigger,color="trigger"),color="blue")+
+    geom_line(data=data,aes(x=index(ret),y=Close,color="close"), color="black")
   }
   
   if(save){
     dev.off()
   }
   
-  return(ret)
+  if(!graph){
+    return(ret)  
+  }
+  
+  return(p1)
 }
 
 getSignals <- function(data,debug){

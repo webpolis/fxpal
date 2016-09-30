@@ -10,6 +10,7 @@ library(RCurl)
 library(DSTrading)
 library(IKTrading)
 library(quantstrat)
+library(ggplot2)
 
 Sys.setenv(TZ='UTC')
 Sys.setlocale("LC_CTYPE","en_US.UTF-8")
@@ -310,19 +311,19 @@ graphRobustLines <- function(symbol=NA, graph=T, period=NA, candles=NA){
     
     if(graph){
       ff = as.numeric(FRAMA(hlc,n=12,FC=13,SC=32)$FRAMA)
-      #lineChart(FRAMA(hlc,n=12,FC=13,SC=32),name = symbol)
-      plot(log(ff),type="l",main=symbol,xaxt="n")
-      abline(co3[1],co3[2],col='orange',lwd=2)
-      abline(intersection,0,lwd=2,col="orange")
-      axis(2,at=round(c(last(un),intersection),3),cex.axis=0.75,col.axis='blue')
-      axis(1,at=seq_along(ff),labels=ddates,cex.axis=0.9)
+      p2 <- ggplot()+
+      geom_line(data=as.data.frame(log(ff)),aes(x=index(ff),y=log(ff)))+
+      geom_abline(slope=co3[2],intercept = co3[1],color="orange")+
+      geom_hline(yintercept = intersection,color="orange")
+      
+      return(p2)
     }
     
     return(rl)
   }
 }
 
-multiPlot <- function(candles = NA, ptitle = NA){
+snapshot <- function(candles = NA, ptitle = NA){
   if(is.na(ptitle)){
     ptitle = deparse(substitute(candles))
   }
@@ -333,16 +334,18 @@ multiPlot <- function(candles = NA, ptitle = NA){
   mm=qfxMomentum(data = tail(candles,n=365),graph = F)
   ssrr=getSupportsAndResistances(tail(candles,n=365*1),threshold = 10)
   
-  qfxSnake(data = candles, graph = T)
-  graphRobustLines(symbol = ptitle,candles = tail(candles,n=365))
-  qfxSnake(data = tail(candles,n=365*1), graph = T)
+  p1 = qfxSnake(data = candles, graph = T)
+  p2 = graphRobustLines(symbol = ptitle,candles = tail(candles,n=365), graph = T)
+  p3 = qfxSnake(data = tail(candles,n=365*1), graph = T)
   
-  for(r in ssrr$resistances){abline(h=r,col='blue')}
-  for(r in ssrr$supports){abline(h=r,col='red')}
+  #for(r in ssrr$resistances){abline(h=r,col='blue')}
+  #for(r in ssrr$supports){abline(h=r,col='red')}
   
-  axis(4,at=round(c(ssrr$resistances,ssrr$supports),3),cex.axis=0.8)
+  #axis(4,at=round(c(ssrr$resistances,ssrr$supports),3),cex.axis=0.8)
   
-  plot(mm$qm,type="l",main=NULL,cex=0.5)
+  p4 <- ggplot()+geom_line(data = mm, aes(x=index(mm),y=qm))
+  
+  multiplot(p1,p2,p3,p4,cols = 2)
 }
 
 addCopyright <- function(label, image, x, y, size, ...) {
@@ -858,4 +861,50 @@ qfxBatchSignals <- function(data = NA){
 	write.csv(as.matrix(tmp), append = FALSE, quote = FALSE, row.names = FALSE, file = paste(dataPath,'signal.csv',sep=''), fileEncoding = 'UTF-8')
 
 	return(tmp)
+}
+
+# Multiple plot function
+#
+# ggplot objects can be passed in ..., or to plotlist (as a list of ggplot objects)
+# - cols:   Number of columns in layout
+# - layout: A matrix specifying the layout. If present, 'cols' is ignored.
+#
+# If the layout is something like matrix(c(1,2,3,3), nrow=2, byrow=TRUE),
+# then plot 1 will go in the upper left, 2 will go in the upper right, and
+# 3 will go all the way across the bottom.
+#
+multiplot <- function(..., plotlist=NULL, file, cols=1, layout=NULL) {
+  library(grid)
+  
+  # Make a list from the ... arguments and plotlist
+  plots <- c(list(...), plotlist)
+  
+  numPlots = length(plots)
+  
+  # If layout is NULL, then use 'cols' to determine layout
+  if (is.null(layout)) {
+    # Make the panel
+    # ncol: Number of columns of plots
+    # nrow: Number of rows needed, calculated from # of cols
+    layout <- matrix(seq(1, cols * ceiling(numPlots/cols)),
+                     ncol = cols, nrow = ceiling(numPlots/cols))
+  }
+  
+  if (numPlots==1) {
+    print(plots[[1]])
+    
+  } else {
+    # Set up the page
+    grid.newpage()
+    pushViewport(viewport(layout = grid.layout(nrow(layout), ncol(layout))))
+    
+    # Make each plot, in the correct location
+    for (i in 1:numPlots) {
+      # Get the i,j matrix positions of the regions that contain this subplot
+      matchidx <- as.data.frame(which(layout == i, arr.ind = TRUE))
+      
+      print(plots[[i]], vp = viewport(layout.pos.row = matchidx$row,
+                                      layout.pos.col = matchidx$col))
+    }
+  }
 }
