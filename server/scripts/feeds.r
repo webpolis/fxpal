@@ -7,17 +7,17 @@ rss.fxstreet.content = xmlParse("http://xml.fxstreet.com/news/forex-news/index.x
 rss.actionfx.content = xmlParse("http://feeds.actionforex.com/ActionInsightallReports",useInternalNodes=T)
 rss.actionfx2.content = xmlParse("http://feeds.actionforex.com/CandlesticksIntradayTrades",useInternalNodes=T)
 rss.mt5.content = xmlParse("http://news.mt5.com/news/rss",useInternalNodes=T)
-rss.dailyfx.content = xmlParse("http://www.dailyfx.com/feeds/forex_market_news",useInternalNodes=T)
+#rss.dailyfx.content = xmlParse("http://www.dailyfx.com/feeds/forex_market_news",useInternalNodes=T)
 rss.fxstreet.nodes = getNodeSet(rss.fxstreet.content,"//item")
 rss.actionfx.nodes = getNodeSet(rss.actionfx.content,"//item")
 rss.actionfx2.nodes = getNodeSet(rss.actionfx2.content,"//item")
 rss.mt5.nodes = getNodeSet(rss.mt5.content,"//item")
-rss.dailyfx.nodes = getNodeSet(rss.dailyfx.content,"//item")
+#rss.dailyfx.nodes = getNodeSet(rss.dailyfx.content,"//item")
 rss.fxstreet.list = lapply(rss.fxstreet.nodes,xmlToList)
 rss.actionfx.list = lapply(rss.actionfx.nodes,xmlToList)
 rss.actionfx2.list = lapply(rss.actionfx2.nodes,xmlToList)
 rss.mt5.list = lapply(rss.mt5.nodes,xmlToList)
-rss.dailyfx.list = lapply(rss.dailyfx.nodes,xmlToList)
+#rss.dailyfx.list = lapply(rss.dailyfx.nodes,xmlToList)
 
 reDate = "[a-z]{1,3}\\,\\s*([0-9]{1,2})\\s*([a-z]{2,3})\\s*[0-9]{2}([0-9]{2})\\s*([0-9]{2}:[0-9]{2}:[0-9]{2}).*"
 
@@ -29,8 +29,8 @@ rss.actionfx2.df = data.frame(Reduce(rbind,rss.actionfx2.list))
 rss.actionfx2.df$pubDate = sapply(rss.actionfx2.df$pubDate,function(l) {as.POSIXct(strptime(gsub(reDate,"\\1-\\2-\\3 \\4",l,ignore.case=T,perl=T),format="%d-%b-%y %T"))})
 rss.mt5.df = data.frame(Reduce(rbind,rss.mt5.list))
 rss.mt5.df$pubDate = sapply(rss.mt5.df$pubDate,function(l) {as.POSIXct(strptime(gsub(reDate,"\\1-\\2-\\3 \\4",l,ignore.case=T,perl=T),format="%d-%b-%y %T"))})
-rss.dailyfx.df = data.frame(Reduce(rbind,rss.dailyfx.list))
-rss.dailyfx.df$pubDate = sapply(rss.dailyfx.df$pubDate,function(l) {as.POSIXct(strptime(gsub(reDate,"\\1-\\2-\\3 \\4",l,ignore.case=T,perl=T),format="%d-%b-%y %T"))})
+#rss.dailyfx.df = data.frame(Reduce(rbind,rss.dailyfx.list))
+#rss.dailyfx.df$pubDate = sapply(rss.dailyfx.df$pubDate,function(l) {as.POSIXct(strptime(gsub(reDate,"\\1-\\2-\\3 \\4",l,ignore.case=T,perl=T),format="%d-%b-%y %T"))})
 
 rss.df = data.frame()
 if(length(grep("pubDate|description|title",names(rss.fxstreet.df)))==3){
