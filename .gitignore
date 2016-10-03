@@ -36,3 +36,5 @@ www/data/R.log
 .Rhistory
 .RData
 app/data/*.jpg
+cv/*.png
+.tags*
