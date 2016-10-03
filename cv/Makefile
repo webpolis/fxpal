@@ -20,4 +20,4 @@ test: all
 	./$(TARGET)
 
 clean:
-	rm -f $(TARGET) *.o $(TARGET)*.png
+	rm -f $(TARGET) *.o *.png
