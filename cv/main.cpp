@@ -34,20 +34,30 @@ int main(int argc, char *argv[]) {
         drawContours(imgTpl, shapeContourTpl, -1, Scalar(0,255,0), 1);
         imwrite(cTpl, imgTpl);
 
-        // compose sample chart and extract shape contour
-        string cSample = string(csv) + string(".sample") + string(".png");
-        drawCandles(csv, rSampleStart, rSampleEnd, cSample.c_str());
-        Mat imgSample = imread(cSample.c_str(), IMREAD_GRAYSCALE);
-        vector<Point> cornerPointsSample = getCornerPoints(imgSample);
-        vector<vector<Point> > shapeContourSample = getContourFromPoints(cornerPointsSample);
+        for(int n = 0; n < rTotal; n += period) {
+                rSampleStart = n;
+                rSampleEnd = rSampleStart + period;
 
-        // debug sample
-        drawContours(imgSample, shapeContourSample, -1, Scalar(0,255,0), 1);
-        imwrite(cSample, imgSample);
+                // compose sample chart and extract shape contour
+                string cSample = string(csv) + string(".sample") + string(".png");
+                drawCandles(csv, rSampleStart, rSampleEnd, cSample.c_str());
+                Mat imgSample = imread(cSample.c_str(), IMREAD_GRAYSCALE);
+                vector<Point> cornerPointsSample = getCornerPoints(imgSample);
+                vector<vector<Point> > shapeContourSample = getContourFromPoints(cornerPointsSample);
 
-        // match shapes
-        const double sh = matchShapes(shapeContourTpl.at(0), shapeContourSample.at(0), CV_CONTOURS_MATCH_I1, 0);
-        cout << "matching shapes by "<<sh << endl;
+                // match shapes
+                const double sh = matchShapes(shapeContourTpl.at(0), shapeContourSample.at(0), CV_CONTOURS_MATCH_I1, 0);
+
+                // interesting match
+                if(sh < 0.16) {
+                        string cMatch = string("match") + to_string(n) + string(".png");
+
+                        // debug sample
+                        drawContours(imgSample, shapeContourSample, -1, Scalar(0,255,0), 1);
+                        imwrite(cMatch, imgSample);
+                        cout << "matching shapes by "<<sh << endl;
+                }
+        }
 
         return 0;
 }
@@ -82,7 +92,7 @@ bool drawCandles(const char* fname, const int start, const int end, const char* 
 
         int r = 0; int rr = 0;
 
-        cout << "start-end "<<start<<","<<end<<" printing "<<rows<<endl;
+        //cout << "start-end "<<start<<","<<end<<" printing "<<rows<<endl;
 
         while(in.read_row(date, open, high, low, close)) {
                 if(r >= start && r < end) {
