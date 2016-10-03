@@ -16,37 +16,41 @@ vector<vector<Point> > getContourFromPoints(vector<Point>);
 int main(int argc, char *argv[]) {
         // initialize chart extraction settings
         const char* csv = argv[1];
-        int pTotal = lines(csv) - 1;
-        int pLast = 110;
+        const int rSampleStart = 0;
+        const int rSampleEnd = lines(csv) - 1;
+        const int rTplStart = rSampleEnd - 10;
+        const int rTplEnd = rSampleEnd;
 
         // setup images names
-        string cLast = string(csv) + to_string(pLast) + string(".png");
-        string cTotal = string(csv) + to_string(pTotal) + string(".png");
+        string cTpl = string(csv) + string(".tpl") + string(".png");
+        string cSample = string(csv) + string(".total") + string(".png");
 
-        // compose charts
-        drawCandles(csv, 100, pLast, cLast.c_str());
-        drawCandles(csv, 0, 10, cTotal.c_str());
+        // compose template chart
+        drawCandles(csv, rTplStart, rTplEnd, cTpl.c_str());
+
+        // compose sample chart
+        drawCandles(csv, rSampleStart, rSampleEnd, cSample.c_str());
 
         // load up charts in grey scale
-        Mat img1 = imread(cLast.c_str(), IMREAD_GRAYSCALE);
-        Mat img2 = imread(cTotal.c_str(), IMREAD_GRAYSCALE);
+        Mat imgTpl = imread(cTpl.c_str(), IMREAD_GRAYSCALE);
+        Mat imgSample = imread(cSample.c_str(), IMREAD_GRAYSCALE);
 
         // get corner points
-        vector<Point> cornerPoints1 = getCornerPoints(img1);
-        vector<Point> cornerPoints2 = getCornerPoints(img2);
+        vector<Point> cornerPointsTpl = getCornerPoints(imgTpl);
+        vector<Point> cornerPointsSample = getCornerPoints(imgSample);
 
         // convert shape points into contour sequence
-        vector<vector<Point> > shapeContour1 = getContourFromPoints(cornerPoints1);
-        vector<vector<Point> > shapeContour2 = getContourFromPoints(cornerPoints2);
+        vector<vector<Point> > shapeContourTpl = getContourFromPoints(cornerPointsTpl);
+        vector<vector<Point> > shapeContourSample = getContourFromPoints(cornerPointsSample);
 
-        double sh = matchShapes(shapeContour1.at(0), shapeContour2.at(0), CV_CONTOURS_MATCH_I1, 0);
+        const double sh = matchShapes(shapeContourTpl.at(0), shapeContourSample.at(0), CV_CONTOURS_MATCH_I1, 0);
         cout << "matching shapes by "<<sh << endl;
 
         // debug images
-        drawContours(img1, shapeContour1, -1, Scalar(0,255,0), 1);
-        imwrite(cLast, img1);
-        drawContours(img2, shapeContour2, -1, Scalar(0,255,0), 1);
-        imwrite(cTotal, img2);
+        drawContours(imgTpl, shapeContourTpl, -1, Scalar(0,255,0), 1);
+        imwrite(cTpl, imgTpl);
+        drawContours(imgSample, shapeContourSample, -1, Scalar(0,255,0), 1);
+        imwrite(cSample, imgSample);
 
         return 0;
 }
