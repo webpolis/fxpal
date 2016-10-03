@@ -15,7 +15,7 @@ vector<vector<Point> > getContourFromPoints(vector<Point>);
 
 int main(int argc, char *argv[]) {
         // initialize chart extraction settings
-        const int period = 10;
+        const int period = atoi(argv[2]);
         const char* csv = argv[1];
         int rSampleStart = 0;
         int rSampleEnd = period;
@@ -49,7 +49,7 @@ int main(int argc, char *argv[]) {
                 const double sh = matchShapes(shapeContourTpl.at(0), shapeContourSample.at(0), CV_CONTOURS_MATCH_I1, 0);
 
                 // interesting match
-                if(sh < 0.16) {
+                if(sh <= 0.1) {
                         string cMatch = string("match") + to_string(n) + string(".png");
 
                         // debug sample
