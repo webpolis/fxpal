@@ -14,13 +14,16 @@ vector<Point> getCornerPoints(Mat);
 vector<vector<Point> > getContourFromPoints(vector<Point>);
 
 int main(int argc, char *argv[]) {
-        // compose charts
+        // initialize chart extraction settings
         const char* csv = argv[1];
-        int pLast = 110;
         int pTotal = lines(csv) - 1;
+        int pLast = 110;
+
+        // setup images names
         string cLast = string(csv) + to_string(pLast) + string(".png");
         string cTotal = string(csv) + to_string(pTotal) + string(".png");
 
+        // compose charts
         drawCandles(csv, 100, pLast, cLast.c_str());
         drawCandles(csv, 0, 10, cTotal.c_str());
 
@@ -37,10 +40,13 @@ int main(int argc, char *argv[]) {
         vector<vector<Point> > shapeContour2 = getContourFromPoints(cornerPoints2);
 
         double sh = matchShapes(shapeContour1.at(0), shapeContour2.at(0), CV_CONTOURS_MATCH_I1, 0);
-        cout << sh << endl;
+        cout << "matching shapes by "<<sh << endl;
 
+        // debug images
         drawContours(img1, shapeContour1, -1, Scalar(0,255,0), 1);
-        imwrite("out1.png", img1);
+        imwrite(cLast, img1);
+        drawContours(img2, shapeContour2, -1, Scalar(0,255,0), 1);
+        imwrite(cTotal, img2);
 
         return 0;
 }
