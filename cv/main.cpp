@@ -34,12 +34,13 @@ int main(int argc, char *argv[]) {
         drawContours(imgTpl, shapeContourTpl, -1, Scalar(0,255,0), 1);
         imwrite(cTpl, imgTpl);
 
+        // compose samples charts and extract shape contours
+        string cSample = string(csv) + string(".sample") + string(".png");
+
         for(int n = 0; n < rTotal; n += period) {
                 rSampleStart = n;
                 rSampleEnd = rSampleStart + period;
 
-                // compose sample chart and extract shape contour
-                string cSample = string(csv) + string(".sample") + string(".png");
                 drawCandles(csv, rSampleStart, rSampleEnd, cSample.c_str());
                 Mat imgSample = imread(cSample.c_str(), IMREAD_GRAYSCALE);
                 vector<Point> cornerPointsSample = getCornerPoints(imgSample);
@@ -111,7 +112,9 @@ bool drawCandles(const char* fname, const int start, const int end, const char* 
 
         // Set the plotarea at (50, 25) and of size 500 x 250 pixels. Enable both the horizontal and
         // vertical grids by setting their colors to grey (0xc0c0c0)
-        c->setPlotArea(0, 0, w, h, Transparent, -1, -1, Transparent, Transparent);
+        c->setPlotArea(-1, -1, w, h, Transparent, -1, -1, Transparent, Transparent);
+        c->setBorder(Transparent);
+        c->setClipping(0);
 
         // Add a CandleStick layer to the chart using green (00ff00) for up candles and red (ff0000) for
         // down candles
@@ -131,7 +134,7 @@ bool drawCandles(const char* fname, const int start, const int end, const char* 
 
         // sanitize chart
         Mat img = imread(cname, IMREAD_GRAYSCALE);
-        Rect roi(0,0,w,h-10);
+        Rect roi(1,0,w-2,h-10);
         Mat cropped(img, roi);
         imwrite(cname, cropped);
 }
@@ -149,7 +152,7 @@ vector<Point> getCornerPoints(Mat img){
         double k = 0.04;
 
         // Detecting corners
-        cornerHarris(img, dst, blockSize, apertureSize, k, BORDER_DEFAULT);
+        cornerHarris(img, dst, blockSize, apertureSize, k, BORDER_CONSTANT);
 
         // Normalizing
         normalize(dst, dst_norm, 0, 255, NORM_MINMAX, CV_32FC1, Mat());
