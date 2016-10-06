@@ -43,6 +43,7 @@ int main(int argc, char *argv[]) {
         vector<vector<Point> > shapeContourTpl = getContourFromPoints(cornerPointsTpl);
 
         // debug template
+        RotatedRect boxTpl = fitEllipse(shapeContourTpl.at(0));
         drawContours(imgTpl, shapeContourTpl, -1, Scalar(255, 255, 255), 1);
         imwrite(cTpl, imgTpl);
 
@@ -60,19 +61,23 @@ int main(int argc, char *argv[]) {
                 Mat imgSampleMm = extractMoments(imgSample);
                 vector<Point> cornerPointsSample = getCornerPoints(imgSampleMm);
                 vector<vector<Point> > shapeContourSample = getContourFromPoints(cornerPointsSample);
+                RotatedRect boxSample = fitEllipse(shapeContourSample.at(0));
 
                 // match shapes
                 const double sh = matchShapes(shapeContourTpl.at(0), shapeContourSample.at(0), CV_CONTOURS_MATCH_I1, 0);
-                const float dist = mysc->computeDistance(cornerPointsTpl, cornerPointsSample);
+                //const float dist = mysc->computeDistance(cornerPointsTpl, cornerPointsSample);
 
                 // interesting match
-                if(sh <= 0.1) {
+                const double largestAngle = boxSample.angle > boxTpl.angle ? boxSample.angle : boxTpl.angle;
+                const double distPAngle = (abs(boxSample.angle - boxTpl.angle) * largestAngle) / 100;
+
+                if(sh <= 0.1 && distPAngle <= 10) {
                         string cMatch = string("match") + to_string(n) + string(".png");
 
                         // debug sample
                         drawContours(imgSample, shapeContourSample, -1, Scalar(255, 255, 255), 1);
                         imwrite(cMatch, imgSample);
-                        cout << sh << "," << dist << "," << cMatch << endl;
+                        cout << sh << "," << boxSample.angle << "," << boxTpl.angle << "," << cMatch << endl;
                 }
         }
 
