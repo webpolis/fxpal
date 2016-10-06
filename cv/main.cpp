@@ -8,6 +8,7 @@
 using namespace std;
 using namespace cv;
 
+int err(int, const char*, const char*, const char*, int, void*);
 int lines(const char*);
 vector<vector<double> > preloadData(const char*);
 bool drawCandles(vector<vector<double> >, const int, const int, const char*);
@@ -24,74 +25,88 @@ const int CLOSE = 3;
 const double MAX_ANGLE_P_ROTATION = 10; // %
 const double MAX_SHAPE_DIST = 0.1;
 
+int err(int status, const char* func_name, const char* err_msg,
+        const char* file_name, int line, void*){
+        return 0;
+}
+
 int main(int argc, char *argv[]) {
-        // initialize chart extraction settings
-        const int period = atoi(argv[2]);
-        const char* csv = argv[1];
-        int rSampleStart = 0;
-        int rSampleEnd = period;
-        const int rTotal = lines(csv) - 1;
-        const int rTplStart = rTotal - period;
-        const int rTplEnd = rTplStart + period;
+        try{
+                cvRedirectError(err);
 
-        // preload data
-        vector<vector<double> > data = preloadData(csv);
+                // initialize chart extraction settings
+                const int period = atoi(argv[2]);
+                const char* csv = argv[1];
+                int rSampleStart = 0;
+                int rSampleEnd = period;
+                const int rTotal = lines(csv) - 1;
+                const int rTplStart = rTotal - period;
+                const int rTplEnd = rTplStart + period;
 
-        // compose template chart and extract shape contour
-        string cTpl = string(csv) + string(".tpl") + string(".png");
-        drawCandles(data, rTplStart, rTplEnd, cTpl.c_str());
-        Mat imgTpl = imread(cTpl.c_str(), IMREAD_GRAYSCALE);
+                // preload data
+                vector<vector<double> > data = preloadData(csv);
 
-        Mat imgMm = extractMoments(imgTpl);
-        vector<Point> cornerPointsTpl = getCornerPoints(imgMm);
-        vector<vector<Point> > shapeContourTpl = getContourFromPoints(cornerPointsTpl);
+                // compose template chart and extract shape contour
+                string cTpl = string(csv) + string("-") + to_string(period) + string(".tpl") + string(".png");
+                drawCandles(data, rTplStart, rTplEnd, cTpl.c_str());
+                Mat imgTpl = imread(cTpl.c_str(), IMREAD_GRAYSCALE);
 
-        // debug template
-        RotatedRect boxTpl = fitEllipse(shapeContourTpl.at(0));
-        drawContours(imgTpl, shapeContourTpl, -1, Scalar(255, 255, 255), 1);
-        imwrite(cTpl, imgTpl);
+                Mat imgMm = extractMoments(imgTpl);
+                vector<Point> cornerPointsTpl = getCornerPoints(imgMm);
+                vector<vector<Point> > shapeContourTpl = getContourFromPoints(cornerPointsTpl);
 
-        const double pcaAngleTpl = getOrientation(shapeContourTpl.at(0), imgMm);
+                // debug template
+                RotatedRect boxTpl = fitEllipse(shapeContourTpl.at(0));
+                drawContours(imgTpl, shapeContourTpl, -1, Scalar(255, 255, 255), 1);
+                imwrite(cTpl, imgTpl);
 
-        //Ptr<ShapeContextDistanceExtractor> mysc = createShapeContextDistanceExtractor();
+                const double pcaAngleTpl = getOrientation(shapeContourTpl.at(0), imgMm);
 
-        // compose samples charts and extract shape contours
-        string cSample = string(csv) + string(".sample") + string(".png");
+                //Ptr<ShapeContextDistanceExtractor> mysc = createShapeContextDistanceExtractor();
 
-        for(int n = 0; n < rTotal; n += period) {
-                rSampleStart = n;
-                rSampleEnd = rSampleStart + period;
+                // compose samples charts and extract shape contours
+                const string cSample = string(csv) + to_string(period) + string(".sample") + string(".png");
 
-                drawCandles(data, rSampleStart, rSampleEnd, cSample.c_str());
-                Mat imgSample = imread(cSample.c_str(), IMREAD_GRAYSCALE);
-                Mat imgSampleMm = extractMoments(imgSample);
-                vector<Point> cornerPointsSample = getCornerPoints(imgSampleMm);
-                vector<vector<Point> > shapeContourSample = getContourFromPoints(cornerPointsSample);
-                RotatedRect boxSample = fitEllipse(shapeContourSample.at(0));
+                for(int n = 0; n < rTotal; n += period) {
+                        rSampleStart = n;
+                        rSampleEnd = rSampleStart + period;
 
-                // match shapes
-                const double sh = matchShapes(shapeContourTpl.at(0), shapeContourSample.at(0), CV_CONTOURS_MATCH_I1, 0);
-                //const float dist = mysc->computeDistance(cornerPointsTpl, cornerPointsSample);
+                        drawCandles(data, rSampleStart, rSampleEnd, cSample.c_str());
+                        Mat imgSample = imread(cSample.c_str(), IMREAD_GRAYSCALE);
+                        Mat imgSampleMm = extractMoments(imgSample);
+                        vector<Point> cornerPointsSample = getCornerPoints(imgSampleMm);
+                        vector<vector<Point> > shapeContourSample = getContourFromPoints(cornerPointsSample);
+                        RotatedRect boxSample = fitEllipse(shapeContourSample.at(0));
 
-                // rotation diff
-                const double largestRotAngle = boxSample.angle > boxTpl.angle ? boxSample.angle : boxTpl.angle;
-                const float distRotAngle = (abs(boxSample.angle - boxTpl.angle) * largestRotAngle) / 100;
+                        // match shapes
+                        const double sh = matchShapes(shapeContourTpl.at(0), shapeContourSample.at(0), CV_CONTOURS_MATCH_I1, 0);
+                        //const float dist = mysc->computeDistance(cornerPointsTpl, cornerPointsSample);
 
-                const double pcaAngleSample = getOrientation(shapeContourSample.at(0), imgSampleMm);
-                const double largestPcaAngle = pcaAngleSample > pcaAngleTpl ? pcaAngleSample : pcaAngleTpl;
-                const float distPcaAngle = (abs(pcaAngleSample - pcaAngleTpl) * largestPcaAngle) / 100;
+                        // rotation diff
+                        const double largestRotAngle = boxSample.angle > boxTpl.angle ? boxSample.angle : boxTpl.angle;
+                        const float distRotAngle = (abs(boxSample.angle - boxTpl.angle) * largestRotAngle) / 100;
 
-                // interesting match
-                if(sh <= MAX_SHAPE_DIST && (distRotAngle <= MAX_ANGLE_P_ROTATION) && (distPcaAngle <= MAX_ANGLE_P_ROTATION)) {
-                        string cMatch = string("match") + to_string(n) + string(".png");
+                        const double pcaAngleSample = getOrientation(shapeContourSample.at(0), imgSampleMm);
+                        const double largestPcaAngle = pcaAngleSample > pcaAngleTpl ? pcaAngleSample : pcaAngleTpl;
+                        const float distPcaAngle = (abs(pcaAngleSample - pcaAngleTpl) * largestPcaAngle) / 100;
 
-                        // debug sample
-                        drawContours(imgSample, shapeContourSample, -1, Scalar(255, 255, 255), 1);
-                        imwrite(cMatch, imgSample);
-                        cout << fixed << sh << "," << distRotAngle << "," << distPcaAngle
-                             << "," << pcaAngleSample << "," << pcaAngleTpl << "," << cMatch << endl;
+                        const bool isSame = (abs(sh) == 0 && abs(distRotAngle) == 0 && abs(distPcaAngle) == 0 && pcaAngleSample == pcaAngleTpl);
+
+                        // interesting match
+                        if(!isSame && sh <= MAX_SHAPE_DIST && (distRotAngle <= MAX_ANGLE_P_ROTATION) && (distPcaAngle <= MAX_ANGLE_P_ROTATION)) {
+                                string cMatch = string("match") + string("-") + to_string(period) +  string("-") + to_string(n) + string(".png");
+
+                                // debug sample
+                                drawContours(imgSample, shapeContourSample, -1, Scalar(255, 255, 255), 1);
+                                imwrite(cMatch, imgSample);
+                                cout << fixed << period << "," << sh << "," << distRotAngle << "," << distPcaAngle
+                                     << "," << pcaAngleSample << "," << pcaAngleTpl << "," << cMatch << endl;
+                        }
+
                 }
-        }
+
+                remove(cSample.c_str());
+        }catch(Exception ex) {};
 
         return 0;
 }
