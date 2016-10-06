@@ -82,13 +82,14 @@ int main(int argc, char *argv[]) {
                 const double distPcaAngle = (abs(pcaAngleSample - pcaAngleTpl) * largestPcaAngle) / 100;
 
                 // interesting match
-                if(sh <= MAX_SHAPE_DIST && distRotAngle <= MAX_ANGLE_P_ROTATION) {
+                if(sh <= MAX_SHAPE_DIST && (distRotAngle <= MAX_ANGLE_P_ROTATION) && (distPcaAngle <= MAX_ANGLE_P_ROTATION)) {
                         string cMatch = string("match") + to_string(n) + string(".png");
 
                         // debug sample
                         drawContours(imgSample, shapeContourSample, -1, Scalar(255, 255, 255), 1);
                         imwrite(cMatch, imgSample);
-                        cout << sh << "," << distRotAngle << "," << distPcaAngle << "," << pcaAngleSample << "," << pcaAngleTpl << "," << cMatch << endl;
+                        cout << sh << "," << distRotAngle << "," << distPcaAngle
+                             << "," << pcaAngleSample << "," << pcaAngleTpl << "," << cMatch << endl;
                 }
         }
 
