@@ -75,11 +75,11 @@ int main(int argc, char *argv[]) {
 
                 // rotation diff
                 const double largestRotAngle = boxSample.angle > boxTpl.angle ? boxSample.angle : boxTpl.angle;
-                const double distRotAngle = (abs(boxSample.angle - boxTpl.angle) * largestRotAngle) / 100;
+                const float distRotAngle = (abs(boxSample.angle - boxTpl.angle) * largestRotAngle) / 100;
 
                 const double pcaAngleSample = getOrientation(shapeContourSample.at(0), imgSampleMm);
                 const double largestPcaAngle = pcaAngleSample > pcaAngleTpl ? pcaAngleSample : pcaAngleTpl;
-                const double distPcaAngle = (abs(pcaAngleSample - pcaAngleTpl) * largestPcaAngle) / 100;
+                const float distPcaAngle = (abs(pcaAngleSample - pcaAngleTpl) * largestPcaAngle) / 100;
 
                 // interesting match
                 if(sh <= MAX_SHAPE_DIST && (distRotAngle <= MAX_ANGLE_P_ROTATION) && (distPcaAngle <= MAX_ANGLE_P_ROTATION)) {
@@ -88,7 +88,7 @@ int main(int argc, char *argv[]) {
                         // debug sample
                         drawContours(imgSample, shapeContourSample, -1, Scalar(255, 255, 255), 1);
                         imwrite(cMatch, imgSample);
-                        cout << sh << "," << distRotAngle << "," << distPcaAngle
+                        cout << fixed << sh << "," << distRotAngle << "," << distPcaAngle
                              << "," << pcaAngleSample << "," << pcaAngleTpl << "," << cMatch << endl;
                 }
         }
@@ -254,8 +254,8 @@ Mat extractMoments(Mat img){
         vector<vector<Point> > contours;
         vector<Vec4i> hierarchy;
 
-        threshold(img, img, 1, 255, THRESH_BINARY_INV);
-        Canny(img, imgCanny, 0, 255, 3);
+        threshold(img, img, 50, 255, CV_THRESH_BINARY_INV | CV_THRESH_OTSU);
+        Canny(img, imgCanny, 100, 255, 3);
         findContours(imgCanny, contours, hierarchy, CV_RETR_LIST, CV_CHAIN_APPROX_NONE, Point(0, 0));
 
         /// Get the moments
