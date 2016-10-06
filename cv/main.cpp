@@ -9,9 +9,16 @@ using namespace std;
 using namespace cv;
 
 int lines(const char*);
-bool drawCandles(const char*, const int, const int, const char*);
+vector<vector<double> > preloadData(const char*);
+bool drawCandles(vector<vector<double> >, const int, const int, const char*);
 vector<Point> getCornerPoints(Mat);
 vector<vector<Point> > getContourFromPoints(vector<Point>);
+Mat extractMoments(Mat img);
+
+const int HIGH = 0;
+const int LOW = 1;
+const int OPEN = 2;
+const int CLOSE = 3;
 
 int main(int argc, char *argv[]) {
         // initialize chart extraction settings
@@ -23,16 +30,23 @@ int main(int argc, char *argv[]) {
         const int rTplStart = rTotal - period;
         const int rTplEnd = rTplStart + period;
 
+        // preload data
+        vector<vector<double> > data = preloadData(csv);
+
         // compose template chart and extract shape contour
         string cTpl = string(csv) + string(".tpl") + string(".png");
-        drawCandles(csv, rTplStart, rTplEnd, cTpl.c_str());
+        drawCandles(data, rTplStart, rTplEnd, cTpl.c_str());
         Mat imgTpl = imread(cTpl.c_str(), IMREAD_GRAYSCALE);
-        vector<Point> cornerPointsTpl = getCornerPoints(imgTpl);
+
+        Mat imgMm = extractMoments(imgTpl);
+        vector<Point> cornerPointsTpl = getCornerPoints(imgMm);
         vector<vector<Point> > shapeContourTpl = getContourFromPoints(cornerPointsTpl);
 
         // debug template
-        drawContours(imgTpl, shapeContourTpl, -1, Scalar(0,255,0), 1);
+        drawContours(imgTpl, shapeContourTpl, -1, Scalar(255, 255, 255), 1);
         imwrite(cTpl, imgTpl);
+
+        Ptr<ShapeContextDistanceExtractor> mysc = createShapeContextDistanceExtractor();
 
         // compose samples charts and extract shape contours
         string cSample = string(csv) + string(".sample") + string(".png");
@@ -41,22 +55,24 @@ int main(int argc, char *argv[]) {
                 rSampleStart = n;
                 rSampleEnd = rSampleStart + period;
 
-                drawCandles(csv, rSampleStart, rSampleEnd, cSample.c_str());
+                drawCandles(data, rSampleStart, rSampleEnd, cSample.c_str());
                 Mat imgSample = imread(cSample.c_str(), IMREAD_GRAYSCALE);
-                vector<Point> cornerPointsSample = getCornerPoints(imgSample);
+                Mat imgSampleMm = extractMoments(imgSample);
+                vector<Point> cornerPointsSample = getCornerPoints(imgSampleMm);
                 vector<vector<Point> > shapeContourSample = getContourFromPoints(cornerPointsSample);
 
                 // match shapes
                 const double sh = matchShapes(shapeContourTpl.at(0), shapeContourSample.at(0), CV_CONTOURS_MATCH_I1, 0);
+                const float dist = mysc->computeDistance(cornerPointsTpl, cornerPointsSample);
 
                 // interesting match
                 if(sh <= 0.1) {
                         string cMatch = string("match") + to_string(n) + string(".png");
 
                         // debug sample
-                        drawContours(imgSample, shapeContourSample, -1, Scalar(0,255,0), 1);
+                        drawContours(imgSample, shapeContourSample, -1, Scalar(255, 255, 255), 1);
                         imwrite(cMatch, imgSample);
-                        cout << "matching shapes by "<<sh << endl;
+                        cout << sh << "," << dist << "," << cMatch << endl;
                 }
         }
 
@@ -74,37 +90,66 @@ int lines(const char* filename){
         return number_of_lines;
 }
 
-bool drawCandles(const char* fname, const int start, const int end, const char* cname){
+vector<vector<double> > preloadData(const char* fname){
+        vector<vector<double> > ret;
+
+        io::CSVReader<5> in(fname);
+        int rows = lines(fname) - 1;
+
+        vector<double> highData;
+        vector<double> lowData;
+        vector<double> openData;
+        vector<double> closeData;
+
+        in.read_header(io::ignore_extra_column, "date", "Open", "High", "Low", "Close");
+        string date; double open; double high; double low; double close;
+
+        while(in.read_row(date, open, high, low, close)) {
+                highData.push_back(high);
+                lowData.push_back(low);
+                openData.push_back(open);
+                closeData.push_back(close);
+        }
+
+        ret.push_back(highData); // HIGH
+        ret.push_back(lowData);
+        ret.push_back(openData);
+        ret.push_back(closeData);
+
+        return ret;
+}
+
+bool drawCandles(vector<vector<double> > data, const int start, const int end, const char* cname){
         double candleDimRatio = (end-start)*15;
         const int w = ceil(candleDimRatio);
         const int h = ceil(candleDimRatio/1.3333);
 
         // load data
         int rows = end-start;
-        io::CSVReader<5> in(fname);
 
         double highData[rows];
         double lowData[rows];
         double openData[rows];
         double closeData[rows];
 
-        in.read_header(io::ignore_extra_column, "date", "Open", "High", "Low", "Close");
-        string date; double open; double high; double low; double close;
+        for(int n = 0; n < 4; n++) {
+                vector<double>::iterator itStart = data.at(n).begin() + start;
+                vector<double>::iterator itEnd = data.at(n).begin() + end;
 
-        int r = 0; int rr = 0;
-
-        //cout << "start-end "<<start<<","<<end<<" printing "<<rows<<endl;
-
-        while(in.read_row(date, open, high, low, close)) {
-                if(r >= start && r < end) {
-                        highData[rr] = high;
-                        lowData[rr] = low;
-                        openData[rr] = open;
-                        closeData[rr] = close;
-                        //cout << highData[rr] << "," << lowData[rr] << "," << openData[rr] << "," << closeData[rr] << "," << endl;
-                        rr++;
+                switch (n) {
+                case HIGH:
+                        copy(itStart, itEnd, highData);
+                        break;
+                case LOW:
+                        copy(itStart, itEnd, lowData);
+                        break;
+                case OPEN:
+                        copy(itStart, itEnd, openData);
+                        break;
+                case CLOSE:
+                        copy(itStart, itEnd, closeData);
+                        break;
                 }
-                r++;
         }
 
         // Create a XYChart object of size 600 x h pixels
@@ -140,9 +185,7 @@ bool drawCandles(const char* fname, const int start, const int end, const char* 
 }
 
 vector<Point> getCornerPoints(Mat img){
-        int thresh = 200;
-        int max_thresh = 255;
-        Mat dst, dst_norm, dst_norm_scaled;
+        Mat dst, dst_norm;
         dst = Mat::zeros(img.size(), CV_32FC1);
         vector<Point> points;
 
@@ -156,13 +199,11 @@ vector<Point> getCornerPoints(Mat img){
 
         // Normalizing
         normalize(dst, dst_norm, 0, 255, NORM_MINMAX, CV_32FC1, Mat());
-        convertScaleAbs(dst_norm, dst_norm_scaled);
 
-        // Drawing a circle around corners
         for(int j = 0; j < dst_norm.rows; j++)
         { for(int i = 0; i < dst_norm.cols; i++)
           {
-                  if((int) dst_norm.at<float>(j,i) > thresh)
+                  if((int) dst_norm.at<float>(j,i) > 200)
                   {
                           points.push_back(Point(i, j));
                   }
@@ -189,4 +230,37 @@ vector<vector<Point> > getContourFromPoints(vector<Point> points){
         shapeContour.push_back(shapePoints);
 
         return shapeContour;
+}
+
+Mat extractMoments(Mat img){
+        Mat imgCanny;
+        vector<vector<Point> > contours;
+        vector<Vec4i> hierarchy;
+
+        threshold(img, img, 1, 255, THRESH_BINARY_INV);
+        Canny(img, imgCanny, 0, 255, 3);
+        findContours(imgCanny, contours, hierarchy, CV_RETR_LIST, CV_CHAIN_APPROX_NONE, Point(0, 0));
+
+        /// Get the moments
+        vector<Moments> mu(contours.size());
+        for(int i = 0; i < contours.size(); i++)
+        { mu[i] = moments(contours[i], true); }
+
+        ///  Get the mass centers:
+        vector<Point2f> mc(contours.size());
+        for(int i = 0; i < contours.size(); i++)
+        { mc[i] = Point2f(mu[i].m10/mu[i].m00, mu[i].m01/mu[i].m00); }
+
+        /// Draw contours
+        Scalar color = Scalar(255,255,255);
+
+        /// Draw contours
+        Mat drawing = Mat::zeros(imgCanny.size(), CV_8UC1);
+        for(int i = 0; i< contours.size(); i++)
+        {
+                //drawContours(drawing, contours, i, color, 1, LINE_4, hierarchy, 2);
+                circle(drawing, mc[i], 1, color, -1, 8, 0);
+        }
+
+        return drawing;
 }
