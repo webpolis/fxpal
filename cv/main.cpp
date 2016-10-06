@@ -14,11 +14,15 @@ bool drawCandles(vector<vector<double> >, const int, const int, const char*);
 vector<Point> getCornerPoints(Mat);
 vector<vector<Point> > getContourFromPoints(vector<Point>);
 Mat extractMoments(Mat img);
+void drawAxis(Mat&, Point, Point, Scalar, const float);
+double getOrientation(const vector<Point> &, Mat&);
 
 const int HIGH = 0;
 const int LOW = 1;
 const int OPEN = 2;
 const int CLOSE = 3;
+const double MAX_ANGLE_P_ROTATION = 10; // %
+const double MAX_SHAPE_DIST = 0.1;
 
 int main(int argc, char *argv[]) {
         // initialize chart extraction settings
@@ -47,7 +51,9 @@ int main(int argc, char *argv[]) {
         drawContours(imgTpl, shapeContourTpl, -1, Scalar(255, 255, 255), 1);
         imwrite(cTpl, imgTpl);
 
-        Ptr<ShapeContextDistanceExtractor> mysc = createShapeContextDistanceExtractor();
+        const double pcaAngleTpl = getOrientation(shapeContourTpl.at(0), imgMm);
+
+        //Ptr<ShapeContextDistanceExtractor> mysc = createShapeContextDistanceExtractor();
 
         // compose samples charts and extract shape contours
         string cSample = string(csv) + string(".sample") + string(".png");
@@ -67,17 +73,22 @@ int main(int argc, char *argv[]) {
                 const double sh = matchShapes(shapeContourTpl.at(0), shapeContourSample.at(0), CV_CONTOURS_MATCH_I1, 0);
                 //const float dist = mysc->computeDistance(cornerPointsTpl, cornerPointsSample);
 
-                // interesting match
-                const double largestAngle = boxSample.angle > boxTpl.angle ? boxSample.angle : boxTpl.angle;
-                const double distPAngle = (abs(boxSample.angle - boxTpl.angle) * largestAngle) / 100;
+                // rotation diff
+                const double largestRotAngle = boxSample.angle > boxTpl.angle ? boxSample.angle : boxTpl.angle;
+                const double distRotAngle = (abs(boxSample.angle - boxTpl.angle) * largestRotAngle) / 100;
 
-                if(sh <= 0.1 && distPAngle <= 10) {
+                const double pcaAngleSample = getOrientation(shapeContourSample.at(0), imgSampleMm);
+                const double largestPcaAngle = pcaAngleSample > pcaAngleTpl ? pcaAngleSample : pcaAngleTpl;
+                const double distPcaAngle = (abs(pcaAngleSample - pcaAngleTpl) * largestPcaAngle) / 100;
+
+                // interesting match
+                if(sh <= MAX_SHAPE_DIST && distRotAngle <= MAX_ANGLE_P_ROTATION) {
                         string cMatch = string("match") + to_string(n) + string(".png");
 
                         // debug sample
                         drawContours(imgSample, shapeContourSample, -1, Scalar(255, 255, 255), 1);
                         imwrite(cMatch, imgSample);
-                        cout << sh << "," << boxSample.angle << "," << boxTpl.angle << "," << cMatch << endl;
+                        cout << sh << "," << distRotAngle << "," << distPcaAngle << "," << pcaAngleSample << "," << pcaAngleTpl << "," << cMatch << endl;
                 }
         }
 
@@ -268,4 +279,59 @@ Mat extractMoments(Mat img){
         }
 
         return drawing;
+}
+
+double getOrientation(const vector<Point> &pts, Mat &img)
+{
+        //Construct a buffer used by the pca analysis
+        int sz = static_cast<int>(pts.size());
+        Mat data_pts = Mat(sz, 2, CV_64FC1);
+        for (int i = 0; i < data_pts.rows; ++i)
+        {
+                data_pts.at<double>(i, 0) = pts[i].x;
+                data_pts.at<double>(i, 1) = pts[i].y;
+        }
+        //Perform PCA analysis
+        PCA pca_analysis(data_pts, Mat(), CV_PCA_DATA_AS_ROW);
+        //Store the center of the object
+        Point cntr = Point(static_cast<int>(pca_analysis.mean.at<double>(0, 0)),
+                           static_cast<int>(pca_analysis.mean.at<double>(0, 1)));
+        //Store the eigenvalues and eigenvectors
+        vector<Point2d> eigen_vecs(2);
+        vector<double> eigen_val(2);
+        for (int i = 0; i < 2; ++i)
+        {
+                eigen_vecs[i] = Point2d(pca_analysis.eigenvectors.at<double>(i, 0),
+                                        pca_analysis.eigenvectors.at<double>(i, 1));
+                eigen_val[i] = pca_analysis.eigenvalues.at<double>(0, i);
+        }
+        // Draw the principal components
+        circle(img, cntr, 3, Scalar(255, 0, 255), 2);
+        Point p1 = cntr + 0.02 * Point(static_cast<int>(eigen_vecs[0].x * eigen_val[0]), static_cast<int>(eigen_vecs[0].y * eigen_val[0]));
+        Point p2 = cntr - 0.02 * Point(static_cast<int>(eigen_vecs[1].x * eigen_val[1]), static_cast<int>(eigen_vecs[1].y * eigen_val[1]));
+        drawAxis(img, cntr, p1, Scalar(0, 255, 0), 1);
+        drawAxis(img, cntr, p2, Scalar(255, 255, 0), 5);
+        double angle = atan2(eigen_vecs[0].y, eigen_vecs[0].x); // orientation in radians
+        return angle;
+}
+
+void drawAxis(Mat& img, Point p, Point q, Scalar colour, const float scale = 0.2)
+{
+        double angle;
+        double hypotenuse;
+        angle = atan2( (double) p.y - q.y, (double) p.x - q.x ); // angle in radians
+        hypotenuse = sqrt( (double) (p.y - q.y) * (p.y - q.y) + (p.x - q.x) * (p.x - q.x));
+//    double degrees = angle * 180 / CV_PI; // convert radians to degrees (0-180 range)
+//    cout << "Degrees: " << abs(degrees - 180) << endl; // angle in 0-360 degrees range
+        // Here we lengthen the arrow by a factor of scale
+        q.x = (int) (p.x - scale * hypotenuse * cos(angle));
+        q.y = (int) (p.y - scale * hypotenuse * sin(angle));
+        line(img, p, q, colour, 1, CV_AA);
+        // create the arrow hooks
+        p.x = (int) (q.x + 9 * cos(angle + CV_PI / 4));
+        p.y = (int) (q.y + 9 * sin(angle + CV_PI / 4));
+        line(img, p, q, colour, 1, CV_AA);
+        p.x = (int) (q.x + 9 * cos(angle - CV_PI / 4));
+        p.y = (int) (q.y + 9 * sin(angle - CV_PI / 4));
+        line(img, p, q, colour, 1, CV_AA);
 }
