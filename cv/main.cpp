@@ -95,16 +95,16 @@ int main(int argc, char *argv[]) {
 
                         // rotation diff
                         const double largestRotAngle = boxSample.angle > boxTpl.angle ? boxSample.angle : boxTpl.angle;
-                        const float distRotAngle = (abs(boxSample.angle - boxTpl.angle) * largestRotAngle) / 100;
+                        const double distRotAngle = (abs(boxSample.angle - boxTpl.angle) * largestRotAngle) / 100;
 
                         const double pcaAngleSample = getOrientation(shapeContourSample.at(0), imgSampleMm);
                         const double largestPcaAngle = pcaAngleSample > pcaAngleTpl ? pcaAngleSample : pcaAngleTpl;
-                        const float distPcaAngle = (abs(pcaAngleSample - pcaAngleTpl) * largestPcaAngle) / 100;
+                        const double distPcaAngle = abs(pcaAngleSample - pcaAngleTpl);
 
                         const bool isSame = (abs(sh) == 0 && abs(distRotAngle) == 0 && abs(distPcaAngle) == 0 && pcaAngleSample == pcaAngleTpl);
 
                         // interesting match
-                        if(!isSame && sh <= MAX_SHAPE_DIST && (distRotAngle <= MAX_ANGLE_P_ROTATION) && (distPcaAngle <= MAX_ANGLE_P_ROTATION)) {
+                        if(!isSame && sh <= MAX_SHAPE_DIST && (distRotAngle <= MAX_ANGLE_P_ROTATION) && distPcaAngle != 0) {
                                 string cMatch = string("match") + string("-") + to_string(period) +  string("-") + to_string(n) + string(".png");
 
                                 // debug sample
