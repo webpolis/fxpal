@@ -8,20 +8,24 @@
 using namespace std;
 using namespace cv;
 
+struct ohlc {
+        double open;
+        double high;
+        double low;
+        double close;
+        string date;
+};
+
 int err(int, const char*, const char*, const char*, int, void*);
 int lines(const char*);
-vector<vector<double> > preloadData(const char*);
-bool drawCandles(vector<vector<double> >, const int, const int, const char*);
+vector<ohlc> preloadData(const char*);
+bool drawCandles(vector<ohlc>, const int, const int, const char*);
 vector<Point> getCornerPoints(Mat);
 vector<vector<Point> > getContourFromPoints(vector<Point>);
 Mat extractMoments(Mat img);
 void drawAxis(Mat&, Point, Point, Scalar, const float);
 double getOrientation(const vector<Point> &, Mat&);
 
-const int HIGH = 0;
-const int LOW = 1;
-const int OPEN = 2;
-const int CLOSE = 3;
 const double MAX_ANGLE_P_ROTATION = 10; // %
 const double MAX_SHAPE_DIST = 0.1;
 
@@ -35,20 +39,23 @@ int main(int argc, char *argv[]) {
                 cvRedirectError(err);
 
                 // initialize chart extraction settings
-                const int period = atoi(argv[2]);
-                const char* csv = argv[1];
+                const int period = atoi(argv[3]);
+                const char* csvTpl = argv[1];
+                const char* csvSample = argv[2];
                 int rSampleStart = 0;
                 int rSampleEnd = period;
-                const int rTotal = lines(csv) - 1;
-                const int rTplStart = rTotal - period;
+                const int rTotalTpl = lines(csvTpl) - 1;
+                const int rTotalSample = lines(csvSample) - 1;
+                const int rTplStart = rTotalTpl - period;
                 const int rTplEnd = rTplStart + period;
 
                 // preload data
-                vector<vector<double> > data = preloadData(csv);
+                vector<ohlc> dataTpl = preloadData(csvTpl);
+                vector<ohlc> dataSample = preloadData(csvSample);
 
                 // compose template chart and extract shape contour
-                string cTpl = string(csv) + string("-") + to_string(period) + string(".tpl") + string(".png");
-                drawCandles(data, rTplStart, rTplEnd, cTpl.c_str());
+                string cTpl = string(csvTpl) + string("-") + to_string(period) + string(".tpl") + string(".png");
+                drawCandles(dataTpl, rTplStart, rTplEnd, cTpl.c_str());
                 Mat imgTpl = imread(cTpl.c_str(), IMREAD_GRAYSCALE);
 
                 Mat imgMm = extractMoments(imgTpl);
@@ -65,13 +72,17 @@ int main(int argc, char *argv[]) {
                 //Ptr<ShapeContextDistanceExtractor> mysc = createShapeContextDistanceExtractor();
 
                 // compose samples charts and extract shape contours
-                const string cSample = string(csv) + to_string(period) + string(".sample") + string(".png");
+                const string cSample = string(csvSample) + to_string(period) + string(".sample") + string(".png");
 
-                for(int n = 0; n < rTotal; n += period) {
+                for(int n = 0; n < rTotalSample; n += period) {
                         rSampleStart = n;
                         rSampleEnd = rSampleStart + period;
 
-                        drawCandles(data, rSampleStart, rSampleEnd, cSample.c_str());
+                        if(rSampleEnd > rTotalSample) {
+                                break;
+                        }
+
+                        drawCandles(dataSample, rSampleStart, rSampleEnd, cSample.c_str());
                         Mat imgSample = imread(cSample.c_str(), IMREAD_GRAYSCALE);
                         Mat imgSampleMm = extractMoments(imgSample);
                         vector<Point> cornerPointsSample = getCornerPoints(imgSampleMm);
@@ -122,36 +133,27 @@ int lines(const char* filename){
         return number_of_lines;
 }
 
-vector<vector<double> > preloadData(const char* fname){
-        vector<vector<double> > ret;
-
+vector<ohlc> preloadData(const char* fname){
+        vector<ohlc> ret;
         io::CSVReader<5> in(fname);
-        int rows = lines(fname) - 1;
-
-        vector<double> highData;
-        vector<double> lowData;
-        vector<double> openData;
-        vector<double> closeData;
 
         in.read_header(io::ignore_extra_column, "date", "Open", "High", "Low", "Close");
         string date; double open; double high; double low; double close;
 
         while(in.read_row(date, open, high, low, close)) {
-                highData.push_back(high);
-                lowData.push_back(low);
-                openData.push_back(open);
-                closeData.push_back(close);
+                ohlc data;
+                data.open = open;
+                data.high = high;
+                data.low = low;
+                data.close = close;
+                data.date = date;
+                ret.push_back(data);
         }
-
-        ret.push_back(highData); // HIGH
-        ret.push_back(lowData);
-        ret.push_back(openData);
-        ret.push_back(closeData);
 
         return ret;
 }
 
-bool drawCandles(vector<vector<double> > data, const int start, const int end, const char* cname){
+bool drawCandles(vector<ohlc> data, const int start, const int end, const char* cname){
         double candleDimRatio = (end-start)*15;
         const int w = ceil(candleDimRatio);
         const int h = ceil(candleDimRatio/1.3333);
@@ -159,29 +161,22 @@ bool drawCandles(vector<vector<double> > data, const int start, const int end, c
         // load data
         int rows = end-start;
 
+        ohlc ohlcs[rows];
         double highData[rows];
         double lowData[rows];
         double openData[rows];
         double closeData[rows];
 
-        for(int n = 0; n < 4; n++) {
-                vector<double>::iterator itStart = data.at(n).begin() + start;
-                vector<double>::iterator itEnd = data.at(n).begin() + end;
+        vector<ohlc>::iterator itStart = data.begin() + start;
+        vector<ohlc>::iterator itEnd = data.begin() + end;
+        copy(itStart, itEnd, ohlcs);
 
-                switch (n) {
-                case HIGH:
-                        copy(itStart, itEnd, highData);
-                        break;
-                case LOW:
-                        copy(itStart, itEnd, lowData);
-                        break;
-                case OPEN:
-                        copy(itStart, itEnd, openData);
-                        break;
-                case CLOSE:
-                        copy(itStart, itEnd, closeData);
-                        break;
-                }
+        for(int n = 0; n < rows; n++) {
+                ohlc row = ohlcs[n];
+                openData[n] = row.open;
+                highData[n] = row.high;
+                lowData[n] = row.low;
+                closeData[n] = row.close;
         }
 
         // Create a XYChart object of size 600 x h pixels
