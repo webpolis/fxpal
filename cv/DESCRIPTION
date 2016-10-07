@@ -1,0 +1,14 @@
+Package: CVMatcher
+Type: Package
+Title: 'Rcpp' Bindings for 'Redis' using the 'hiredis' Library
+Version: 0.1.7
+Date: 2016-04-27
+Author: Dirk Eddelbuettel <edd@debian.org>
+Maintainer: Dirk Eddelbuettel <edd@debian.org>
+Description: Connection to the 'Redis' key/value store using the
+  C-language client library 'hiredis'. 'MsgPack' encoding is optional
+  if the 'RcppMsgPack' package is detected. You can install via from
+  the 'ghrr' drat repository listed below.
+License: GPL (>= 2)
+Imports: Rcpp (>= 0.11.0)
+LinkingTo: Rcpp

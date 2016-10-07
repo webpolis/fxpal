@@ -2,11 +2,13 @@
 #include <fstream>
 #include <vector>
 #include <opencv2/opencv.hpp>
+#include <Rcpp.h>
 #include "chartdir.h"
 #include "csv.h"
 
 using namespace std;
 using namespace cv;
+using namespace Rcpp;
 
 struct ohlc {
         double open;
@@ -47,6 +49,12 @@ int main(int argc, char *argv[]) {
         process(period, dataTpl, dataSample, csvTpl, csvSample);
 
         return 0;
+}
+
+DataFrame processDf(DataFrame dfTpl, DataFrame dfSample){
+        DataFrame ret = DataFrame::create();
+
+        return ret;
 }
 
 void process(const int period, const vector<ohlc> dataTpl, const vector<ohlc> dataSample, const char* csvTpl, const char* csvSample){
@@ -360,4 +368,8 @@ void drawAxis(Mat& img, Point p, Point q, Scalar colour, const float scale = 0.2
         p.x = (int) (q.x + 9 * cos(angle - CV_PI / 4));
         p.y = (int) (q.y + 9 * sin(angle - CV_PI / 4));
         line(img, p, q, colour, 1, CV_AA);
+}
+
+RCPP_MODULE(CVMatcher){
+        Rcpp::function("process", &processDf);
 }
