@@ -16,6 +16,7 @@ struct ohlc {
         string date;
 };
 
+void process(const int, const vector<ohlc>, const vector<ohlc>, const char*, const char*);
 int err(int, const char*, const char*, const char*, int, void*);
 int lines(const char*);
 vector<ohlc> preloadData(const char*);
@@ -26,7 +27,8 @@ Mat extractMoments(Mat img);
 void drawAxis(Mat&, Point, Point, Scalar, const float);
 double getOrientation(const vector<Point> &, Mat&);
 
-const double MAX_ANGLE_P_ROTATION = 10; // %
+bool DEBUG_CMD = false;
+const double MAX_ANGLE_P_ROTATION = 10;         // %
 const double MAX_SHAPE_DIST = 0.1;
 
 int err(int status, const char* func_name, const char* err_msg,
@@ -35,23 +37,29 @@ int err(int status, const char* func_name, const char* err_msg,
 }
 
 int main(int argc, char *argv[]) {
+        DEBUG_CMD = true;
+        const char* csvTpl = argv[1];
+        const char* csvSample = argv[2];
+        const int period = atoi(argv[3]);
+
+        vector<ohlc> dataTpl = preloadData(csvTpl);
+        vector<ohlc> dataSample = preloadData(csvSample);
+        process(period, dataTpl, dataSample, csvTpl, csvSample);
+
+        return 0;
+}
+
+void process(const int period, const vector<ohlc> dataTpl, const vector<ohlc> dataSample, const char* csvTpl, const char* csvSample){
         try{
                 cvRedirectError(err);
 
                 // initialize chart extraction settings
-                const int period = atoi(argv[3]);
-                const char* csvTpl = argv[1];
-                const char* csvSample = argv[2];
                 int rSampleStart = 0;
                 int rSampleEnd = period;
                 const int rTotalTpl = lines(csvTpl) - 1;
                 const int rTotalSample = lines(csvSample) - 1;
                 const int rTplStart = rTotalTpl - period;
                 const int rTplEnd = rTplStart + period;
-
-                // preload data
-                vector<ohlc> dataTpl = preloadData(csvTpl);
-                vector<ohlc> dataSample = preloadData(csvSample);
 
                 // compose template chart and extract shape contour
                 string cTpl = string(csvTpl) + string("-") + to_string(period) + string(".tpl") + string(".png");
@@ -64,8 +72,11 @@ int main(int argc, char *argv[]) {
 
                 // debug template
                 RotatedRect boxTpl = fitEllipse(shapeContourTpl.at(0));
-                drawContours(imgTpl, shapeContourTpl, -1, Scalar(255, 255, 255), 1);
-                imwrite(cTpl, imgTpl);
+
+                if(DEBUG_CMD) {
+                        drawContours(imgTpl, shapeContourTpl, -1, Scalar(255, 255, 255), 1);
+                        imwrite(cTpl, imgTpl);
+                }
 
                 const double pcaAngleTpl = getOrientation(shapeContourTpl.at(0), imgMm);
 
@@ -105,21 +116,25 @@ int main(int argc, char *argv[]) {
 
                         // interesting match
                         if(!isSame && sh <= MAX_SHAPE_DIST && (distRotAngle <= MAX_ANGLE_P_ROTATION) && distPcaAngle != 0) {
-                                string cMatch = string("match") + string("-") + to_string(period) +  string("-") + to_string(n) + string(".png");
+                                if(DEBUG_CMD) {
+                                        // debug sample
+                                        string cMatch = string("match") + string("-") + to_string(period) +  string("-") + to_string(n) + string(".png");
+                                        drawContours(imgSample, shapeContourSample, -1, Scalar(255, 255, 255), 1);
 
-                                // debug sample
-                                drawContours(imgSample, shapeContourSample, -1, Scalar(255, 255, 255), 1);
-                                imwrite(cMatch, imgSample);
-                                cout << fixed << period << "," << sh << "," << distRotAngle << "," << distPcaAngle
-                                     << "," << pcaAngleSample << "," << pcaAngleTpl << "," << cMatch << endl;
+                                        imwrite(cMatch, imgSample);
+
+                                        cout << fixed << period << "," << sh << "," << distRotAngle << "," << distPcaAngle
+                                             << "," << pcaAngleSample << "," << pcaAngleTpl << "," << cMatch << endl;
+                                }
                         }
 
                 }
 
                 remove(cSample.c_str());
-        }catch(Exception ex) {};
 
-        return 0;
+                if(!DEBUG_CMD)
+                        remove(cTpl.c_str());
+        }catch(Exception ex) {};
 }
 
 int lines(const char* filename){
