@@ -98,6 +98,8 @@ extern DataFrame processDf(DataFrame dfTpl, DataFrame dfSample, int period){
         NumericVector distPcaAngle(csvProcessed.size());
         NumericVector pcaAngleSample(csvProcessed.size());
         NumericVector pcaAngleTpl(csvProcessed.size());
+        NumericVector rangeStart(csvProcessed.size());
+        NumericVector rangeEnd(csvProcessed.size());
 
         for(int ii = 0; ii < csvProcessed.size(); ii++) {
                 vector<double> stats;
@@ -108,12 +110,16 @@ extern DataFrame processDf(DataFrame dfTpl, DataFrame dfSample, int period){
                 distPcaAngle[ii] = stats[2];
                 pcaAngleSample[ii] = stats[3];
                 pcaAngleTpl[ii] = stats[4];
+                rangeStart[ii] = stats[5]+1; // R starts at 1
+                rangeEnd[ii] = stats[6]+1;
         }
 
         //dfTpl.attr("index");
 
-        return DataFrame::create(_["shapeMatch"]= shapeMatch, _["distRotAngle"]= distRotAngle, _["distPcaAngle"]= distPcaAngle,
-                                 _["pcaAngleSample"]= pcaAngleSample, _["pcaAngleTpl"]= pcaAngleTpl);
+        return DataFrame::create(_["period"]= period, _["shapeMatch"]= shapeMatch,
+                                 _["distRotAngle"]= distRotAngle, _["distPcaAngle"]= distPcaAngle,
+                                 _["pcaAngleSample"]= pcaAngleSample, _["pcaAngleTpl"]= pcaAngleTpl,
+                                 _["rangeStart"]= rangeStart, _["rangeEnd"]= rangeEnd);
 }
 
 vector<string> process(const int period, const vector<ohlc> dataTpl, const vector<ohlc> dataSample, const char* csvTpl, const char* csvSample){
@@ -123,8 +129,8 @@ vector<string> process(const int period, const vector<ohlc> dataTpl, const vecto
                 cvRedirectError(err);
 
                 // initialize chart extraction settings
-                int rSampleStart = 0;
-                int rSampleEnd = period;
+                int rangeStart = 0;
+                int rangeEnd = period;
                 const int rTotalTpl = dataTpl.size();
                 const int rTotalSample = dataSample.size();
                 const int rTplStart = period != 0 ? rTotalTpl - period : 0;
@@ -155,14 +161,14 @@ vector<string> process(const int period, const vector<ohlc> dataTpl, const vecto
                 const string cSample = string(csvSample) + to_string(period) + string(".sample") + string(".png");
 
                 for(int n = 0; n < rTotalSample; n += period) {
-                        rSampleStart = n;
-                        rSampleEnd = rSampleStart + period;
+                        rangeStart = n;
+                        rangeEnd = rangeStart + period;
 
-                        if(rSampleEnd > rTotalSample) {
+                        if(rangeEnd > rTotalSample) {
                                 break;
                         }
 
-                        drawCandles(dataSample, rSampleStart, rSampleEnd, cSample.c_str());
+                        drawCandles(dataSample, rangeStart, rangeEnd, cSample.c_str());
                         Mat imgSample = imread(cSample.c_str(), IMREAD_GRAYSCALE);
                         Mat imgSampleMm = extractMoments(imgSample);
                         vector<Point> cornerPointsSample = getCornerPoints(imgSampleMm);
@@ -196,11 +202,13 @@ vector<string> process(const int period, const vector<ohlc> dataTpl, const vecto
                                         imwrite(cMatch, imgSample);
 
                                         cout << fixed << period << "," << shapeMatch << "," << distRotAngle << "," << distPcaAngle
-                                             << "," << pcaAngleSample << "," << pcaAngleTpl << "," << cMatch << endl;
+                                             << "," << pcaAngleSample << "," << pcaAngleTpl << "," << cMatch
+                                             << rangeStart << "," << rangeEnd << endl;
                                 }else{
                                         stringstream out;
                                         out << fixed << shapeMatch << "," << distRotAngle << "," << distPcaAngle
-                                            << "," << pcaAngleSample << "," << pcaAngleTpl << endl;
+                                            << "," << pcaAngleSample << "," << pcaAngleTpl << ","
+                                            << rangeStart << "," << rangeEnd << endl;
 
                                         ret.push_back(out.str());
                                 }
