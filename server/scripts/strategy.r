@@ -2,6 +2,7 @@ library(iterators)
 library(foreach)
 library(doParallel)
 library(FinancialInstrument)
+library(CVMatcher)
 
 registerDoParallel()
 
@@ -713,4 +714,23 @@ getSignals <- function(data,debug){
   stats$avg = rowMeans(stats[,1:ncol(stats)])
   
   return(stats)
+}
+
+cvMatcherMultiPeriod <- function(tpl, sample, min, max){
+  cc = c("period", "shapeMatch", "distRotAngle", "distPcaAngle", "pcaAngleSample", 
+         "pcaAngleTpl", "rangeStart", "rangeEnd")
+  out=data.frame(matrix(ncol=length(cc),nrow = 0))
+  colnames(out) <- cc
+  
+  for(p in min:max) {
+    out2=CVMatcher::process(tpl,sample,p);
+    print(out2)
+    if(length(out2)>0)
+      out=merge(out, out2, all = T)
+  }
+  
+  out=out[with(out, order(distPcaAngle, shapeMatch, distRotAngle)),]
+  
+  
+  return(out)
 }

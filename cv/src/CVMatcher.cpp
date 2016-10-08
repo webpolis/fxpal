@@ -93,6 +93,9 @@ extern DataFrame processDf(DataFrame dfTpl, DataFrame dfSample, int period){
 
         const vector<string> csvProcessed = process(period, ohlcTpl, ohlcSample, to_string(r1).c_str(), to_string(r2).c_str());
 
+        if(csvProcessed.size() == 0)
+                return DataFrame::create();
+
         NumericVector shapeMatch(csvProcessed.size());
         NumericVector distRotAngle(csvProcessed.size());
         NumericVector distPcaAngle(csvProcessed.size());
