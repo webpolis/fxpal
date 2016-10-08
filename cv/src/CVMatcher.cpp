@@ -92,8 +92,8 @@ extern DataFrame processDf(DataFrame dfTpl, DataFrame dfSample, int period){
         const int r2 = 100000 + rand() / (RAND_MAX / (999999999999 - 100000 + 1) + 1);
 
         const vector<string> csvProcessed = process(period, ohlcTpl, ohlcSample, to_string(r1).c_str(), to_string(r2).c_str());
-        // sh << "," << distRotAngle << "," << distPcaAngle << "," << pcaAngleSample << "," << pcaAngleTpl
-        NumericVector sh(csvProcessed.size());
+
+        NumericVector shapeMatch(csvProcessed.size());
         NumericVector distRotAngle(csvProcessed.size());
         NumericVector distPcaAngle(csvProcessed.size());
         NumericVector pcaAngleSample(csvProcessed.size());
@@ -103,7 +103,7 @@ extern DataFrame processDf(DataFrame dfTpl, DataFrame dfSample, int period){
                 vector<double> stats;
                 splitCsv(csvProcessed[ii], ',', stats);
 
-                sh[ii] = stats[0];
+                shapeMatch[ii] = stats[0];
                 distRotAngle[ii] = stats[1];
                 distPcaAngle[ii] = stats[2];
                 pcaAngleSample[ii] = stats[3];
@@ -112,7 +112,7 @@ extern DataFrame processDf(DataFrame dfTpl, DataFrame dfSample, int period){
 
         //dfTpl.attr("index");
 
-        return DataFrame::create(_["sh"]= sh, _["distRotAngle"]= distRotAngle, _["distPcaAngle"]= distPcaAngle,
+        return DataFrame::create(_["shapeMatch"]= shapeMatch, _["distRotAngle"]= distRotAngle, _["distPcaAngle"]= distPcaAngle,
                                  _["pcaAngleSample"]= pcaAngleSample, _["pcaAngleTpl"]= pcaAngleTpl);
 }
 
@@ -170,7 +170,7 @@ vector<string> process(const int period, const vector<ohlc> dataTpl, const vecto
                         RotatedRect boxSample = fitEllipse(shapeContourSample.at(0));
 
                         // match shapes
-                        const double sh = matchShapes(shapeContourTpl.at(0), shapeContourSample.at(0), CV_CONTOURS_MATCH_I1, 0);
+                        const double shapeMatch = matchShapes(shapeContourTpl.at(0), shapeContourSample.at(0), CV_CONTOURS_MATCH_I1, 0);
                         //const float dist = mysc->computeDistance(cornerPointsTpl, cornerPointsSample);
 
                         // rotation diff
@@ -181,13 +181,13 @@ vector<string> process(const int period, const vector<ohlc> dataTpl, const vecto
                         const double largestPcaAngle = pcaAngleSample > pcaAngleTpl ? pcaAngleSample : pcaAngleTpl;
                         const double distPcaAngle = abs(pcaAngleSample - pcaAngleTpl);
 
-                        const bool isSame = (abs(sh) == 0 && abs(distRotAngle) == 0 && abs(distPcaAngle) == 0 && pcaAngleSample == pcaAngleTpl);
+                        const bool isSame = (abs(shapeMatch) == 0 && abs(distRotAngle) == 0 && abs(distPcaAngle) == 0 && pcaAngleSample == pcaAngleTpl);
 
-                        // cout << fixed << period << "," << sh << "," << distRotAngle << "," << distPcaAngle
+                        // cout << fixed << period << "," << shapeMatch << "," << distRotAngle << "," << distPcaAngle
                         //      << "," << pcaAngleSample << "," << pcaAngleTpl<<"!!!" << endl;
 
                         // interesting match
-                        if(!isSame && sh <= MAX_SHAPE_DIST && (distRotAngle <= MAX_ANGLE_P_ROTATION) && distPcaAngle != 0) {
+                        if(!isSame && shapeMatch <= MAX_SHAPE_DIST && (distRotAngle <= MAX_ANGLE_P_ROTATION) && distPcaAngle != 0) {
                                 if(DEBUG_CMD) {
                                         // debug sample
                                         string cMatch = string("match") + string("-") + to_string(period) +  string("-") + to_string(n) + string(".png");
@@ -195,11 +195,11 @@ vector<string> process(const int period, const vector<ohlc> dataTpl, const vecto
 
                                         imwrite(cMatch, imgSample);
 
-                                        cout << fixed << period << "," << sh << "," << distRotAngle << "," << distPcaAngle
+                                        cout << fixed << period << "," << shapeMatch << "," << distRotAngle << "," << distPcaAngle
                                              << "," << pcaAngleSample << "," << pcaAngleTpl << "," << cMatch << endl;
                                 }else{
                                         stringstream out;
-                                        out << fixed << sh << "," << distRotAngle << "," << distPcaAngle
+                                        out << fixed << shapeMatch << "," << distRotAngle << "," << distPcaAngle
                                             << "," << pcaAngleSample << "," << pcaAngleTpl << endl;
 
                                         ret.push_back(out.str());
