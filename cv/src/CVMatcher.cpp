@@ -57,7 +57,6 @@ int main(int argc, char *argv[]) {
 extern DataFrame processDf(DataFrame dfTpl, DataFrame dfSample, int period){
         srand(time(NULL));
 
-        DataFrame ret = DataFrame::create();
         vector<ohlc> ohlcTpl;
         vector<ohlc> ohlcSample;
 
@@ -111,15 +110,10 @@ extern DataFrame processDf(DataFrame dfTpl, DataFrame dfSample, int period){
                 pcaAngleTpl[ii] = stats[4];
         }
 
-        ret["sh"] = sh;
-        ret["distRotAngle"] = distRotAngle;
-        ret["distPcaAngle"] = distPcaAngle;
-        ret["pcaAngleSample"] = pcaAngleSample;
-        ret["pcaAngleTpl"] = pcaAngleTpl;
-
         //dfTpl.attr("index");
 
-        return ret;
+        return DataFrame::create(_["sh"]= sh, _["distRotAngle"]= distRotAngle, _["distPcaAngle"]= distPcaAngle,
+                                 _["pcaAngleSample"]= pcaAngleSample, _["pcaAngleTpl"]= pcaAngleTpl);
 }
 
 vector<string> process(const int period, const vector<ohlc> dataTpl, const vector<ohlc> dataSample, const char* csvTpl, const char* csvSample){
