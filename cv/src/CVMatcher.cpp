@@ -18,8 +18,8 @@ struct ohlc {
         string date;
 };
 
-extern DataFrame processDf(DataFrame dfTpl, DataFrame dfSample);
-void process(const int, const vector<ohlc>, const vector<ohlc>, const char*, const char*);
+extern DataFrame processDf(DataFrame dfTpl, DataFrame dfSample, int period);
+vector<string> process(const int, const vector<ohlc>, const vector<ohlc>, const char*, const char*);
 int err(int, const char*, const char*, const char*, int, void*);
 int lines(const char*);
 vector<ohlc> preloadData(const char*);
@@ -29,6 +29,7 @@ vector<vector<Point> > getContourFromPoints(vector<Point>);
 Mat extractMoments(Mat img);
 void drawAxis(Mat&, Point, Point, Scalar, const float);
 double getOrientation(const vector<Point> &, Mat&);
+void splitCsv(const string&, char, vector<double>&);
 
 bool DEBUG_CMD = false;
 const double MAX_ANGLE_P_ROTATION = 10;         // %
@@ -53,33 +54,85 @@ int main(int argc, char *argv[]) {
 }
 
 // [[Rcpp::export]]
-extern DataFrame processDf(DataFrame dfTpl, DataFrame dfSample){
+extern DataFrame processDf(DataFrame dfTpl, DataFrame dfSample, int period){
+        srand(time(NULL));
+
         DataFrame ret = DataFrame::create();
+        vector<ohlc> ohlcTpl;
+        vector<ohlc> ohlcSample;
 
         DoubleVector opensTpl = dfTpl["Open"];
         DoubleVector highsTpl = dfTpl["High"];
         DoubleVector lowsTpl = dfTpl["Low"];
         DoubleVector closesTpl = dfTpl["Close"];
 
+        for(int i = 0; i < opensTpl.size(); i++) {
+                ohlc row;
+                row.open = opensTpl[i];
+                row.high = highsTpl[i];
+                row.low = lowsTpl[i];
+                row.close = closesTpl[i];
+                ohlcTpl.push_back(row);
+        }
+
         DoubleVector opensSample = dfSample["Open"];
         DoubleVector highsSample = dfSample["High"];
         DoubleVector lowsSample = dfSample["Low"];
         DoubleVector closesSample = dfSample["Close"];
 
-        dfTpl.attr("index");
+        for(int i = 0; i < opensSample.size(); i++) {
+                ohlc row;
+                row.open = opensSample[i];
+                row.high = highsSample[i];
+                row.low = lowsSample[i];
+                row.close = closesSample[i];
+                ohlcSample.push_back(row);
+        }
+
+        const int r1 = 100000 + rand() / (RAND_MAX / (999999999999 - 100000 + 1) + 1);
+        const int r2 = 100000 + rand() / (RAND_MAX / (999999999999 - 100000 + 1) + 1);
+
+        const vector<string> csvProcessed = process(period, ohlcTpl, ohlcSample, to_string(r1).c_str(), to_string(r2).c_str());
+        // sh << "," << distRotAngle << "," << distPcaAngle << "," << pcaAngleSample << "," << pcaAngleTpl
+        NumericVector sh(csvProcessed.size());
+        NumericVector distRotAngle(csvProcessed.size());
+        NumericVector distPcaAngle(csvProcessed.size());
+        NumericVector pcaAngleSample(csvProcessed.size());
+        NumericVector pcaAngleTpl(csvProcessed.size());
+
+        for(int ii = 0; ii < csvProcessed.size(); ii++) {
+                vector<double> stats;
+                splitCsv(csvProcessed[ii], ',', stats);
+
+                sh[ii] = stats[0];
+                distRotAngle[ii] = stats[1];
+                distPcaAngle[ii] = stats[2];
+                pcaAngleSample[ii] = stats[3];
+                pcaAngleTpl[ii] = stats[4];
+        }
+
+        ret["sh"] = sh;
+        ret["distRotAngle"] = distRotAngle;
+        ret["distPcaAngle"] = distPcaAngle;
+        ret["pcaAngleSample"] = pcaAngleSample;
+        ret["pcaAngleTpl"] = pcaAngleTpl;
+
+        //dfTpl.attr("index");
 
         return ret;
 }
 
-void process(const int period, const vector<ohlc> dataTpl, const vector<ohlc> dataSample, const char* csvTpl, const char* csvSample){
+vector<string> process(const int period, const vector<ohlc> dataTpl, const vector<ohlc> dataSample, const char* csvTpl, const char* csvSample){
+        vector<string> ret;
+
         try{
                 cvRedirectError(err);
 
                 // initialize chart extraction settings
                 int rSampleStart = 0;
                 int rSampleEnd = period;
-                const int rTotalTpl = lines(csvTpl) - 1;
-                const int rTotalSample = lines(csvSample) - 1;
+                const int rTotalTpl = dataTpl.size();
+                const int rTotalSample = dataSample.size();
                 const int rTplStart = period != 0 ? rTotalTpl - period : 0;
                 const int rTplEnd = period != 0 ? rTplStart + period : dataTpl.size();
 
@@ -136,6 +189,9 @@ void process(const int period, const vector<ohlc> dataTpl, const vector<ohlc> da
 
                         const bool isSame = (abs(sh) == 0 && abs(distRotAngle) == 0 && abs(distPcaAngle) == 0 && pcaAngleSample == pcaAngleTpl);
 
+                        // cout << fixed << period << "," << sh << "," << distRotAngle << "," << distPcaAngle
+                        //      << "," << pcaAngleSample << "," << pcaAngleTpl<<"!!!" << endl;
+
                         // interesting match
                         if(!isSame && sh <= MAX_SHAPE_DIST && (distRotAngle <= MAX_ANGLE_P_ROTATION) && distPcaAngle != 0) {
                                 if(DEBUG_CMD) {
@@ -147,6 +203,12 @@ void process(const int period, const vector<ohlc> dataTpl, const vector<ohlc> da
 
                                         cout << fixed << period << "," << sh << "," << distRotAngle << "," << distPcaAngle
                                              << "," << pcaAngleSample << "," << pcaAngleTpl << "," << cMatch << endl;
+                                }else{
+                                        stringstream out;
+                                        out << fixed << sh << "," << distRotAngle << "," << distPcaAngle
+                                            << "," << pcaAngleSample << "," << pcaAngleTpl << endl;
+
+                                        ret.push_back(out.str());
                                 }
                         }
 
@@ -157,6 +219,8 @@ void process(const int period, const vector<ohlc> dataTpl, const vector<ohlc> da
                 if(!DEBUG_CMD)
                         remove(cTpl.c_str());
         }catch(Exception ex) {};
+
+        return ret;
 }
 
 int lines(const char* filename){
@@ -172,18 +236,17 @@ int lines(const char* filename){
 
 vector<ohlc> preloadData(const char* fname){
         vector<ohlc> ret;
-        io::CSVReader<5> in(fname);
+        io::CSVReader<4> in(fname);
 
-        in.read_header(io::ignore_extra_column, "date", "Open", "High", "Low", "Close");
-        string date; double open; double high; double low; double close;
+        in.read_header(io::ignore_extra_column, "Open", "High", "Low", "Close");
+        double open; double high; double low; double close;
 
-        while(in.read_row(date, open, high, low, close)) {
+        while(in.read_row(open, high, low, close)) {
                 ohlc data;
                 data.open = open;
                 data.high = high;
                 data.low = low;
                 data.close = close;
-                data.date = date;
                 ret.push_back(data);
         }
 
@@ -204,12 +267,8 @@ bool drawCandles(vector<ohlc> data, const int start, const int end, const char* 
         double openData[rows];
         double closeData[rows];
 
-        vector<ohlc>::iterator itStart = data.begin() + start;
-        vector<ohlc>::iterator itEnd = data.begin() + end;
-        copy(itStart, itEnd, ohlcs);
-
         for(int n = 0; n < rows; n++) {
-                ohlc row = ohlcs[n];
+                ohlc row = data.at(n+start);
                 openData[n] = row.open;
                 highData[n] = row.high;
                 lowData[n] = row.low;
@@ -382,6 +441,15 @@ void drawAxis(Mat& img, Point p, Point q, Scalar colour, const float scale = 0.2
         p.x = (int) (q.x + 9 * cos(angle - CV_PI / 4));
         p.y = (int) (q.y + 9 * sin(angle - CV_PI / 4));
         line(img, p, q, colour, 1, CV_AA);
+}
+
+void splitCsv(const string &s, char delim, vector<double> &elems) {
+        stringstream ss;
+        ss.str(s);
+        string item;
+        while (getline(ss, item, delim)) {
+                elems.push_back(stod(item));
+        }
 }
 
 RCPP_MODULE(cvm){
