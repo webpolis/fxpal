@@ -56,6 +56,18 @@ int main(int argc, char *argv[]) {
 extern DataFrame processDf(DataFrame dfTpl, DataFrame dfSample){
         DataFrame ret = DataFrame::create();
 
+        DoubleVector opensTpl = dfTpl["Open"];
+        DoubleVector highsTpl = dfTpl["High"];
+        DoubleVector lowsTpl = dfTpl["Low"];
+        DoubleVector closesTpl = dfTpl["Close"];
+
+        DoubleVector opensSample = dfSample["Open"];
+        DoubleVector highsSample = dfSample["High"];
+        DoubleVector lowsSample = dfSample["Low"];
+        DoubleVector closesSample = dfSample["Close"];
+
+        dfTpl.attr("index");
+
         return ret;
 }
 
@@ -68,8 +80,8 @@ void process(const int period, const vector<ohlc> dataTpl, const vector<ohlc> da
                 int rSampleEnd = period;
                 const int rTotalTpl = lines(csvTpl) - 1;
                 const int rTotalSample = lines(csvSample) - 1;
-                const int rTplStart = rTotalTpl - period;
-                const int rTplEnd = rTplStart + period;
+                const int rTplStart = period != 0 ? rTotalTpl - period : 0;
+                const int rTplEnd = period != 0 ? rTplStart + period : dataTpl.size();
 
                 // compose template chart and extract shape contour
                 string cTpl = string(csvTpl) + string("-") + to_string(period) + string(".tpl") + string(".png");
