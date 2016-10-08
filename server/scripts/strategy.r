@@ -718,7 +718,7 @@ getSignals <- function(data,debug){
 
 cvMatcherMultiPeriod <- function(tpl, sample, min, max){
   tplName = deparse(substitute(tpl))
-  tplSample = deparse(substitute(sample))  
+  sampleName = deparse(substitute(sample))  
     
   cc = c("period", "shapeMatch", "distRotAngle", "distPcaAngle", "pcaAngleSample", 
          "pcaAngleTpl", "rangeStart", "rangeEnd")
