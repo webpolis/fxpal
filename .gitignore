@@ -38,3 +38,6 @@ www/data/R.log
 app/data/*.jpg
 cv/*.png
 .tags*
+*sample*.png
+*tpl*.png
+*match*.png
