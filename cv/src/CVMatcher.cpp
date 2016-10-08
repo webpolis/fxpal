@@ -18,6 +18,7 @@ struct ohlc {
         string date;
 };
 
+extern DataFrame processDf(DataFrame dfTpl, DataFrame dfSample);
 void process(const int, const vector<ohlc>, const vector<ohlc>, const char*, const char*);
 int err(int, const char*, const char*, const char*, int, void*);
 int lines(const char*);
@@ -51,7 +52,8 @@ int main(int argc, char *argv[]) {
         return 0;
 }
 
-DataFrame processDf(DataFrame dfTpl, DataFrame dfSample){
+// [[Rcpp::export]]
+extern DataFrame processDf(DataFrame dfTpl, DataFrame dfSample){
         DataFrame ret = DataFrame::create();
 
         return ret;
@@ -370,6 +372,6 @@ void drawAxis(Mat& img, Point p, Point q, Scalar colour, const float scale = 0.2
         line(img, p, q, colour, 1, CV_AA);
 }
 
-RCPP_MODULE(CVMatcher){
+RCPP_MODULE(cvm){
         Rcpp::function("process", &processDf);
 }
