@@ -717,20 +717,27 @@ getSignals <- function(data,debug){
 }
 
 cvMatcherMultiPeriod <- function(tpl, sample, min, max){
+  tplName = deparse(substitute(tpl))
+  tplSample = deparse(substitute(sample))  
+    
   cc = c("period", "shapeMatch", "distRotAngle", "distPcaAngle", "pcaAngleSample", 
          "pcaAngleTpl", "rangeStart", "rangeEnd")
   out=data.frame(matrix(ncol=length(cc),nrow = 0))
   colnames(out) <- cc
   
+  names(tpl) <- gsub("[A-Za-z]+\\.","",names(tpl))
+  names(sample) <- gsub("[A-Za-z]+\\.","",names(sample))
+  
   for(p in min:max) {
-    out2=CVMatcher::process(tpl,sample,p);
-    print(out2)
+    out2=CVMatcher::process(OHLC(tpl),OHLC(sample),p);
+
     if(length(out2)>0)
       out=merge(out, out2, all = T)
   }
   
   out=out[with(out, order(distPcaAngle, shapeMatch, distRotAngle)),]
-  
+  out$tpl = tplName
+  out$sample = sampleName
   
   return(out)
 }
