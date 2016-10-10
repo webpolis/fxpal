@@ -886,9 +886,9 @@ getSignals <- function(data, debug) {
   return(stats)
 }
 
-cvMatcherMultiPeriod <- function(tpl, sample, min, max) {
-  tplName = deparse(substitute(tpl))
-  sampleName = deparse(substitute(sample))
+cvMatcherMultiPeriod <- function(tpl, sample, min, max, tplName = NA, sampleName = NA) {
+  tplName = ifelse(is.na(tplName),deparse(substitute(tpl)),tplName)
+  sampleName = ifelse(is.na(sampleName),deparse(substitute(sample)),sampleName)
 
   cc = c("period", "shapeMatch", "distRotAngle", "distPcaAngle", "pcaAngleSample",
     "pcaAngleTpl", "rangeStart", "rangeEnd")
@@ -914,7 +914,7 @@ cvMatcherMultiPeriod <- function(tpl, sample, min, max) {
 
 cvMatcherMulti <- function(tpl, samples, min, max) {
   cc = c("period", "shapeMatch", "distRotAngle", "distPcaAngle", "pcaAngleSample",
-    "pcaAngleTpl", "rangeStart", "rangeEnd")
+    "pcaAngleTpl", "rangeStart", "rangeEnd", "tpl", "sample")
   out = data.frame(matrix(ncol = length(cc), nrow = 0))
   colnames(out) <- cc
 
@@ -925,15 +925,10 @@ cvMatcherMulti <- function(tpl, samples, min, max) {
     sampleData = get(sampleName)
     names(sampleData) <- gsub("[A-Za-z]+\\.", "", names(sampleData))
 
-    for (p in min:max) {
-      out2 = CVMatcher::process(OHLC(tail(tpl, p)), OHLC(sampleData), p)
+    out2 = cvMatcherMultiPeriod(tpl, sampleData, min, max, tplName, sampleName)
 
-      if (length(out2) > 0)
-        out = merge(out, out2, all = T)
-    }
-
-    out$tpl = tplName
-    out$sample = sampleName
+    if (length(out2) > 0)
+      out = merge(out, out2, all = T)
   }
 
   out = out[with(out, order(distPcaAngle, shapeMatch, distRotAngle)), ]
