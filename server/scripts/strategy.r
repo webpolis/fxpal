@@ -18,7 +18,7 @@ getQfxCandles <- function(instrument = NA, granularity = NA) {
 }
 
 getQfxPortfolio <- function() {
-  portfolio = read.csv(paste("http://qfx.club/data/", "portfolio", ".csv", sep = ""))
+  portfolio = read.csv(paste("http://qfx.club:9999/api/", "portfolio", sep = ""))
   portfolio = portfolio[portfolio$percentage > 0.2 | portfolio$percentage < (-0.2),
     ]
   portfolio$cross = gsub("(\\w{3})(\\w{3})", "\\1_\\2", portfolio$cross)
@@ -887,8 +887,8 @@ getSignals <- function(data, debug) {
 }
 
 cvMatcherMultiPeriod <- function(tpl, sample, min, max, tplName = NA, sampleName = NA) {
-  tplName = ifelse(is.na(tplName),deparse(substitute(tpl)),tplName)
-  sampleName = ifelse(is.na(sampleName),deparse(substitute(sample)),sampleName)
+  tplName = ifelse(is.na(tplName), deparse(substitute(tpl)), tplName)
+  sampleName = ifelse(is.na(sampleName), deparse(substitute(sample)), sampleName)
 
   cc = c("period", "shapeMatch", "distRotAngle", "distPcaAngle", "pcaAngleSample",
     "pcaAngleTpl", "rangeStart", "rangeEnd")
@@ -906,32 +906,52 @@ cvMatcherMultiPeriod <- function(tpl, sample, min, max, tplName = NA, sampleName
   }
 
   out = out[with(out, order(distPcaAngle, shapeMatch, distRotAngle)), ]
-  out$tpl = tplName
-  out$sample = sampleName
+
+  if (nrow(out) > 0) {
+    out$tpl = tplName
+    out$sample = sampleName
+  }
 
   return(out)
 }
 
-cvMatcherMulti <- function(tpl, samples, min, max) {
+cvMatcherMulti <- function(tpls, samples, min, max) {
   cc = c("period", "shapeMatch", "distRotAngle", "distPcaAngle", "pcaAngleSample",
     "pcaAngleTpl", "rangeStart", "rangeEnd", "tpl", "sample")
   out = data.frame(matrix(ncol = length(cc), nrow = 0))
   colnames(out) <- cc
 
-  tplName = deparse(substitute(tpl))
-  names(tpl) <- gsub("[A-Za-z]+\\.", "", names(tpl))
+  for (tplName in tpls) {
+    tpl = get(tplName)
+    names(tpl) <- gsub("[A-Za-z]+\\.", "", names(tpl))
 
-  for (sampleName in samples) {
-    sampleData = get(sampleName)
-    names(sampleData) <- gsub("[A-Za-z]+\\.", "", names(sampleData))
+    for (sampleName in samples) {
+      if (sampleName == tplName)
+        next
 
-    out2 = cvMatcherMultiPeriod(tpl, sampleData, min, max, tplName, sampleName)
+      sampleData = get(sampleName)
+      names(sampleData) <- gsub("[A-Za-z]+\\.", "", names(sampleData))
 
-    if (length(out2) > 0)
-      out = merge(out, out2, all = T)
+      out2 = cvMatcherMultiPeriod(tpl, sampleData, min, max, tplName, sampleName)
+
+      if (length(out2) > 0)
+        out = merge(out, out2, all = T)
+    }
+
+    out = out[with(out, order(shapeMatch, distPcaAngle, distRotAngle)), ]
   }
 
-  out = out[with(out, order(distPcaAngle, shapeMatch, distRotAngle)), ]
-
   return(out)
+}
+
+# mm cvMatcherMulti output
+cvMatcherMultiPlot <- function(mm = NA, topN = 5) {
+  for (i in 1:topN) {
+    candleChart(tail(get(mm[i, "tpl"]), mm[i, "period"]), name = paste("tpl",
+      mm[i, "tpl"], mm[i, "period"]))
+    candleChart(get(mm[i, "sample"])[mm[i, "rangeStart"]:mm[i, "rangeEnd"]],
+      name = paste(mm[i, "sample"], mm[i, "period"]))
+    candleChart(get(mm[i, "sample"])[mm[i, "rangeStart"]:(mm[i, "rangeEnd"] +
+      mm[i, "period"])], name = paste(mm[i, "sample"], mm[i, "period"]))
+  }
 }
