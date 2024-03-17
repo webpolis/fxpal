@@ -6,8 +6,8 @@ CC = g++
 #
 # Where the libraries and include files are located.
 #
-export PKG_CXXFLAGS=`Rscript -e 'Rcpp:::CxxFlags()'` -rdynamic -O0 -g -std=c++0x -I/usr/share/R/include -I/usr/lib/R/site-library/Rcpp/include -I/home/nico/dev/ChartDirector/include -L/usr/local/lib -L/home/nico/dev/ChartDirector/lib -Wl,-R/home/nico/dev/ChartDirector/lib
-export PKG_LIBS=`Rscript -e 'Rcpp:::LdFlags()'` -lR -lchartdir -lopencv_shape -lopencv_stitching -lopencv_objdetect -lopencv_superres -lopencv_features2d -lopencv_highgui -lopencv_imgcodecs -lopencv_photo -lopencv_ml -lopencv_imgproc -lopencv_flann -lopencv_core -lpthread
+export PKG_CXXFLAGS=`Rscript -e 'Rcpp:::CxxFlags()'` -rdynamic -O0 -g -std=c++0x -I/usr/local/include -I/usr/share/R/include -I/usr/lib/R/site-library/Rcpp/include -I/home/nico/dev/ChartDirector/include -L/usr/local/lib -L/home/nico/dev/ChartDirector/lib -Wl,-R/home/nico/dev/ChartDirector/lib
+export PKG_LIBS=`Rscript -e 'Rcpp:::LdFlags()'` -lR -lchartdir -lopencv_stitching -lopencv_objdetect -lopencv_features2d -lopencv_highgui -lopencv_imgcodecs -lopencv_photo -lopencv_ml -lopencv_imgproc -lopencv_flann -lopencv_core -lpthread
 TARGET = CVMatcher
 
 

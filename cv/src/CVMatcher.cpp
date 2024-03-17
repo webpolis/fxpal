@@ -2,6 +2,7 @@
 #include <fstream>
 #include <vector>
 #include <opencv2/opencv.hpp>
+#include <opencv2/highgui/highgui_c.h>
 #include <Rcpp.h>
 #include "chartdir.h"
 #include "csv.h"
@@ -205,7 +206,7 @@ vector<string> process(const int period, const vector<ohlc> dataTpl, const vecto
                                         imwrite(cMatch, imgSample);
 
                                         cout << fixed << period << "," << shapeMatch << "," << distRotAngle << "," << distPcaAngle
-                                             << "," << pcaAngleSample << "," << pcaAngleTpl << "," << cMatch
+                                             << "," << pcaAngleSample << "," << pcaAngleTpl << "," << cMatch << ","
                                              << rangeStart << "," << rangeEnd << endl;
                                 }else{
                                         stringstream out;
@@ -285,8 +286,8 @@ bool drawCandles(vector<ohlc> data, const int start, const int end, const char* 
 
         // Set the plotarea at (50, 25) and of size 500 x 250 pixels. Enable both the horizontal and
         // vertical grids by setting their colors to grey (0xc0c0c0)
-        c->setPlotArea(-1, -1, w, h, Transparent, -1, -1, Transparent, Transparent);
-        c->setBorder(Transparent);
+        c->setPlotArea(-1, -1, w, h, Chart::Transparent, -1, -1, Chart::Transparent, Chart::Transparent);
+        c->setBorder(Chart::Transparent);
         c->setClipping(0);
 
         // Add a CandleStick layer to the chart using green (00ff00) for up candles and red (ff0000) for
@@ -298,7 +299,7 @@ bool drawCandles(vector<ohlc> data, const int start, const int end, const char* 
 
         // Set the line width to 2 pixels
         layer->setLineWidth(2);
-        layer->setBorderColor(Transparent);
+        layer->setBorderColor(Chart::Transparent);
 
         // Output the chart
         c->makeChart(cname);
