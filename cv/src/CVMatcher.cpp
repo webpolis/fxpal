@@ -1,6 +1,7 @@
 #include "chartdir.h"
 #include "csv.h"
 #include <Rcpp.h>
+#include <filesystem>
 #include <fstream>
 #include <iostream>
 #include <opencv2/highgui/highgui_c.h>
@@ -19,9 +20,9 @@ struct ohlc {
   string date;
 };
 
-extern DataFrame processDf(DataFrame dfTpl, DataFrame dfSample, int period);
+extern DataFrame processDf(DataFrame dfTpl, DataFrame dfSample, int period, float shapeDistMax);
 vector<string> process(const int, const vector<ohlc>, const vector<ohlc>,
-                       const char *, const char *);
+                       const char *, const char *, const float);
 int err(int, const char *, const char *, const char *, int, void *);
 int lines(const char *);
 vector<ohlc> preloadData(const char *);
@@ -33,9 +34,8 @@ void drawAxis(Mat &, Point, Point, Scalar, const float);
 double getOrientation(const vector<Point> &, Mat &);
 void splitCsv(const string &, char, vector<double> &);
 
-bool DEBUG_CMD = false;
+bool DEBUG_CMD = true;
 const double MAX_ANGLE_P_ROTATION = 10; // %
-const double MAX_SHAPE_DIST = 0.1;
 
 int err(int status, const char *func_name, const char *err_msg,
         const char *file_name, int line, void *) {
@@ -43,20 +43,20 @@ int err(int status, const char *func_name, const char *err_msg,
 }
 
 int main(int argc, char *argv[]) {
-  DEBUG_CMD = true;
   const char *csvTpl = argv[1];
   const char *csvSample = argv[2];
   const int period = atoi(argv[3]);
+  const float shapeDistMax = atof(argv[4]);
 
   vector<ohlc> dataTpl = preloadData(csvTpl);
   vector<ohlc> dataSample = preloadData(csvSample);
-  process(period, dataTpl, dataSample, csvTpl, csvSample);
+  process(period, dataTpl, dataSample, csvTpl, csvSample, shapeDistMax);
 
   return 0;
 }
 
 // [[Rcpp::export]]
-extern DataFrame processDf(DataFrame dfTpl, DataFrame dfSample, int period) {
+extern DataFrame processDf(DataFrame dfTpl, DataFrame dfSample, int period, float shapeDistMax) {
   srand(time(NULL));
 
   vector<ohlc> ohlcTpl;
@@ -95,7 +95,7 @@ extern DataFrame processDf(DataFrame dfTpl, DataFrame dfSample, int period) {
 
   const vector<string> csvProcessed =
       process(period, ohlcTpl, ohlcSample, to_string(r1).c_str(),
-              to_string(r2).c_str());
+              to_string(r2).c_str(), shapeDistMax);
 
   if (csvProcessed.size() == 0)
     return DataFrame::create();
@@ -132,7 +132,7 @@ extern DataFrame processDf(DataFrame dfTpl, DataFrame dfSample, int period) {
 
 vector<string> process(const int period, const vector<ohlc> dataTpl,
                        const vector<ohlc> dataSample, const char *csvTpl,
-                       const char *csvSample) {
+                       const char *csvSample, const float shapeDistMax) {
   vector<string> ret;
 
   try {
@@ -149,9 +149,10 @@ vector<string> process(const int period, const vector<ohlc> dataTpl,
     // compose template chart and extract shape contour
     string cTpl = string(csvTpl) + string("-") + to_string(period) +
                   string(".tpl") + string(".png");
-    drawCandles(dataTpl, rTplStart, rTplEnd, cTpl.c_str());
-    Mat imgTpl = imread(cTpl.c_str(), IMREAD_GRAYSCALE);
 
+    drawCandles(dataTpl, rTplStart, rTplEnd, cTpl.c_str());
+
+    Mat imgTpl = imread(cTpl.c_str(), IMREAD_GRAYSCALE);
     Mat imgMm = extractMoments(imgTpl);
     vector<Point> cornerPointsTpl = getCornerPoints(imgMm);
     vector<vector<Point>> shapeContourTpl =
@@ -160,18 +161,14 @@ vector<string> process(const int period, const vector<ohlc> dataTpl,
     // debug template
     RotatedRect boxTpl = fitEllipse(shapeContourTpl.at(0));
 
-    if (DEBUG_CMD) {
-      drawContours(imgTpl, shapeContourTpl, -1, Scalar(255, 255, 255), 1);
-      imwrite(cTpl, imgTpl);
-    }
-
     const double pcaAngleTpl = getOrientation(shapeContourTpl.at(0), imgMm);
 
     // Ptr<ShapeContextDistanceExtractor> mysc =
     // createShapeContextDistanceExtractor();
 
     // compose samples charts and extract shape contours
-    const string cSample = string(csvSample) + to_string(period) +
+    std::filesystem::path samplePath(csvSample);
+    const string cSample = samplePath.stem().string() + to_string(period) +
                            string(".sample") + string(".png");
 
     for (int n = 0; n < rTotalSample; n += period) {
@@ -218,16 +215,22 @@ vector<string> process(const int period, const vector<ohlc> dataTpl,
       //      << "," << pcaAngleSample << "," << pcaAngleTpl<<"!!!" << endl;
 
       // interesting match
-      if (!isSame && shapeMatch <= MAX_SHAPE_DIST &&
+      if (!isSame && shapeMatch <= shapeDistMax &&
           (distRotAngle <= MAX_ANGLE_P_ROTATION) && distPcaAngle != 0) {
         if (DEBUG_CMD) {
           // debug sample
-          string cMatch = string("match") + string("-") + to_string(period) +
-                          string("-") + to_string(rangeStart) + string(".png");
+          string cMatch = string("match") + string("-") +
+                          samplePath.stem().string() + string("-") +
+                          to_string(period) + string("-") +
+                          to_string(rangeStart) + string(".png");
+
           drawContours(imgSample, shapeContourSample, -1, Scalar(255, 255, 255),
                        1);
-
           imwrite(cMatch, imgSample);
+
+          // debug template
+          drawContours(imgTpl, shapeContourTpl, -1, Scalar(255, 255, 255), 1);
+          imwrite(cTpl, imgTpl);
 
           cout << period << "," << shapeMatch << "," << distRotAngle << ","
                << distPcaAngle << "," << pcaAngleSample << "," << pcaAngleTpl
