@@ -20,7 +20,8 @@ struct ohlc {
   string date;
 };
 
-extern DataFrame processDf(DataFrame dfTpl, DataFrame dfSample, int period, float shapeDistMax);
+extern DataFrame processDf(DataFrame dfTpl, DataFrame dfSample, int period,
+                           float shapeDistMax);
 vector<string> process(const int, const vector<ohlc>, const vector<ohlc>,
                        const char *, const char *, const float);
 int err(int, const char *, const char *, const char *, int, void *);
@@ -56,7 +57,8 @@ int main(int argc, char *argv[]) {
 }
 
 // [[Rcpp::export]]
-extern DataFrame processDf(DataFrame dfTpl, DataFrame dfSample, int period, float shapeDistMax) {
+extern DataFrame processDf(DataFrame dfTpl, DataFrame dfSample, int period,
+                           float shapeDistMax) {
   srand(time(NULL));
 
   vector<ohlc> ohlcTpl;
@@ -187,10 +189,22 @@ vector<string> process(const int period, const vector<ohlc> dataTpl,
           getContourFromPoints(cornerPointsSample);
       RotatedRect boxSample = fitEllipse(shapeContourSample.at(0));
 
+      // contours show
+      Mat imgContours = Mat::zeros(imgSampleMm.size(), CV_32FC1);
+
       // match shapes
-      const double shapeMatch =
-          matchShapes(shapeContourTpl.at(0), shapeContourSample.at(0),
-                      CV_CONTOURS_MATCH_I1, 0);
+      double shapeMatch = 0;
+
+      for (int i = 0; i < shapeContourTpl.size(); i++) {
+        if ((i + 1) > shapeContourSample.size()) {
+          continue;
+        }
+
+        shapeMatch = shapeMatch + matchShapes(shapeContourTpl.at(i),
+                                              shapeContourSample.at(i),
+                                              CV_CONTOURS_MATCH_I1, 0);
+      }
+
       // const float dist = mysc->computeDistance(cornerPointsTpl,
       // cornerPointsSample);
 
@@ -246,10 +260,10 @@ vector<string> process(const int period, const vector<ohlc> dataTpl,
       }
     }
 
-    remove(cSample.c_str());
-
-    if (!DEBUG_CMD)
+    if (!DEBUG_CMD) {
+      remove(cSample.c_str());
       remove(cTpl.c_str());
+    }
   } catch (Exception ex) {
   };
 
